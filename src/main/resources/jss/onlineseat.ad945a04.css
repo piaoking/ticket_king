@@ -1,0 +1,186 @@
+.step-header {
+  width: 1200px;
+  margin: 40px auto 0;
+  zoom: 1;
+}
+.step-header:after {
+  content: '';
+  display: block;
+  clear: both;
+}
+.step-header:after {
+  content: "";
+  clear: both;
+  display: block;
+}
+.step-header .logo {
+  border: 0;
+  float: left;
+  margin-right: 20px;
+  width: 104px;
+  height: 40px;
+}
+.step-header .steps {
+  overflow: hidden;
+  margin-left: 25px;
+  width: 1050px;
+  background-color: #f7f7f7;
+  border-radius: 2px;
+  float: left;
+}
+.step-header .steps .step {
+  position: relative;
+  font-size: 16px;
+  width: 20%;
+  text-align: center;
+  height: 42px;
+  line-height: 42px;
+  float: left;
+}
+.step-header .steps .step:before {
+  position: absolute;
+  left: -23px;
+  top: 0;
+  height: 42px;
+  width: 25px;
+  display: block;
+  content: '';
+  background-image: url(//dn-piaoniu-static.qbox.me/pc/ui/img/arr-step-normal.e31864fd.png);
+}
+.step-header .steps .step.first:before {
+  background-image: none;
+}
+.step-header .steps .step.selected {
+  color: #fff;
+  background-color: #f77095;
+}
+.step-header .steps .step.selected:before {
+  z-index: 3;
+  position: absolute;
+  height: 42px;
+  width: 23px;
+  display: block;
+  content: '';
+  background-image: url(//dn-piaoniu-static.qbox.me/pc/ui/img/arr-step-before.c4fc9fae.png);
+  left: 0;
+  top: 0;
+}
+.step-header .steps .step.selected:after {
+  z-index: 4;
+  position: absolute;
+  right: 0;
+  top: 0;
+  height: 42px;
+  width: 23px;
+  display: block;
+  content: '';
+  background-image: url(//dn-piaoniu-static.qbox.me/pc/ui/img/arr-step-after.df1e8bda.png);
+}
+.step-header .steps .step.last.selected:after {
+  background-image: none;
+}
+.step-header {
+  margin-bottom: 20px;
+}
+.head {
+  padding-bottom: 10px;
+}
+.head .title {
+  font-weight: bold;
+  font-size: 16px;
+  color: #535353;
+}
+.head .desc {
+  margin-left: 13px;
+  font-size: 12px;
+  color: #666;
+}
+.choose-ticket {
+  background-color: #ffffff;
+  border: solid 1px #eaeaea;
+  overflow: hidden;
+  min-height: 675px;
+}
+.choose-ticket .seatmap {
+  position: relative;
+  width: 864px;
+  min-height: 20px;
+  height: 100%;
+  float: left;
+}
+.choose-ticket .tickets {
+  float: left;
+  overflow: hidden;
+  background-color: #f9fafb;
+  border-left: 1px solid #eaeaea;
+  width: 332px;
+  height: 100%;
+  padding-bottom: 1000px;
+  margin-bottom: -1000px;
+  position: relative;
+  box-sizing: border-box;
+}
+.choose-ticket .tickets .inner {
+  max-height: 600px;
+  padding: 20px;
+}
+.choose-ticket .tickets .control {
+  min-height: 20px;
+}
+.choose-ticket .tickets .control.events {
+  margin-bottom: 10px;
+}
+.choose-ticket .tickets .control.events .event {
+  border-top: 0;
+}
+.choose-ticket .tickets .control .lbl {
+  width: 35px;
+  margin-right: 5px;
+  font-size: 12px;
+  color: #666;
+  height: 20px;
+  line-height: 20px;
+  float: left;
+}
+.choose-ticket .tickets .control .content {
+  position: relative;
+  margin-left: 40px;
+}
+.choose-ticket .tickets .control .hint {
+  font-size: 12px;
+  color: #666;
+  height: 20px;
+  line-height: 20px;
+}
+.choose-ticket .tickets .num-picker {
+  margin-top: 10px;
+}
+.choose-ticket .tickets .ticket-list {
+  position: absolute;
+  top: 105px;
+  bottom: 114px;
+  width: 100%;
+}
+.choose-ticket .tickets .bottom .seat-bottom-bar {
+  margin-top: 10px;
+}
+.hint-no-empty {
+  position: absolute;
+  width: 150px;
+  height: 120px;
+  top: 30%;
+  left: 50%;
+  transform: translate(-50%);
+  background-repeat: no-repeat;
+  background-position: top left;
+  background-size: 100%;
+}
+.hint-no-empty--middle {
+  background-image: url(//dn-piaoniu-static.qbox.me/pc/activity/onlineseat/img/no-middle-empty.11c29159.png);
+}
+.hint-no-empty--side {
+  background-image: url(//dn-piaoniu-static.qbox.me/pc/activity/onlineseat/img/no-side-empty.532ac649.png);
+}
+[v-cloak] {
+  display: none;
+}

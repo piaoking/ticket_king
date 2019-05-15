@@ -1,0 +1,443 @@
+.rank {
+  line-height: 1;
+  color: #ffb238;
+  overflow: hidden;
+  min-height: 22px;
+}
+.rank .num {
+  float: left;
+  font-size: 24px;
+  margin-right: 15px;
+}
+.rank .num small {
+  font-size: 20px;
+}
+.star {
+  float: left;
+  position: relative;
+  top: 5px;
+}
+.star {
+  height: 16px;
+  width: 100px;
+  background-image: url(//dn-piaoniu-static.qbox.me/pc/ui/img/star-empty.ebc71406.png);
+  background-repeat: repeat-x;
+}
+.star:after {
+  display: block;
+  content: '';
+  height: 100%;
+  background-image: url(//dn-piaoniu-static.qbox.me/pc/ui/img/star-full.04f7ab77.png);
+}
+.star.star-0:after {
+  width: 0;
+}
+.star.star-1:after {
+  width: 8px;
+}
+.star.star-2:after {
+  width: 20px;
+}
+.star.star-3:after {
+  width: 28px;
+}
+.star.star-4:after {
+  width: 40px;
+}
+.star.star-5:after {
+  width: 48px;
+}
+.star.star-6:after {
+  width: 60px;
+}
+.star.star-7:after {
+  width: 68px;
+}
+.star.star-8:after {
+  width: 80px;
+}
+.star.star-9:after {
+  width: 88px;
+}
+.star.star-10:after {
+  width: 100px;
+}
+.star.star-small {
+  width: 70px;
+  height: 12px;
+  background-size: 14px 12px;
+}
+.star.star-small:after {
+  background-size: 14px 12px;
+}
+.star.star-small.star-0:after {
+  width: 0;
+}
+.star.star-small.star-1:after {
+  width: 6px;
+}
+.star.star-small.star-2:after {
+  width: 12px;
+}
+.star.star-small.star-3:after {
+  width: 20.5px;
+}
+.star.star-small.star-4:after {
+  width: 25px;
+}
+.star.star-small.star-5:after {
+  width: 34px;
+}
+.star.star-small.star-6:after {
+  width: 40px;
+}
+.star.star-small.star-7:after {
+  width: 47.5px;
+}
+.star.star-small.star-8:after {
+  width: 52px;
+}
+.star.star-small.star-9:after {
+  width: 62px;
+}
+.star.star-small.star-10:after {
+  width: 70px;
+}
+.status {
+  color: #fff;
+  float: left;
+  bottom: 180px;
+  border-radius: 6px;
+  padding: 0 6px;
+  height: 23px;
+  line-height: 23px;
+  font-size: 12px;
+  margin-right: 5px;
+}
+.status-saling {
+  background-color: #4899fe;
+}
+.status-expired,
+.status-stop-saling,
+.status-refunding {
+  background-color: #ccc;
+}
+.status-booking {
+  background-color: #fb8333;
+}
+.related-activity-list .item {
+  border-bottom: 1px dashed #eaeaec;
+  padding-top: 20px;
+  padding-bottom: 20px;
+}
+.related-activity-list .item:first-child {
+  padding-top: 0;
+}
+.related-activity-list .item:last-child {
+  border-bottom: 0;
+  padding-bottom: 0;
+}
+.related-activity-list .activity-title {
+  font-weight: 400;
+  font-size: 18px;
+  margin-bottom: 13px;
+  color: #333;
+}
+.related-activity-list .rank {
+  margin-bottom: 17px;
+}
+.related-activity-list .activity {
+  overflow: hidden;
+}
+.related-activity-list .activity .poster {
+  float: left;
+  width: 55px;
+  height: 78px;
+  background-size: cover;
+}
+.related-activity-list .activity .info {
+  position: relative;
+  margin-left: 64px;
+  height: 80px;
+}
+.related-activity-list .activity .info .venue {
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  overflow: hidden;
+}
+.related-activity-list .activity .info .venue,
+.related-activity-list .activity .info .time {
+  display: block;
+  color: #666;
+  font-size: 12px;
+}
+.related-activity-list .activity .info .bottom {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+}
+.related-activity-list .activity .info .bottom .status {
+  margin-top: 5px;
+  float: left;
+  margin-right: 17px;
+}
+.related-activity-list .activity .info .bottom .price {
+  float: left;
+  font-size: 24px;
+}
+.related-activity-list .activity .info .bottom .price small {
+  font-size: 12px;
+}
+.related-activity-list .activity .info .bottom .price .amount {
+  margin-right: 5px;
+}
+.related-activity-list .activity .info .bottom .price .qi {
+  font-size: 12px;
+  color: #999;
+}
+.block-app .item {
+  padding: 20px 0 24px;
+  border-top: 1px dashed #e5e5e5;
+  zoom: 1;
+}
+.block-app .item:first-child {
+  padding-top: 0;
+}
+.block-app .item:last-child {
+  padding-bottom: 0;
+}
+.block-app .item:after {
+  content: '';
+  display: block;
+  clear: both;
+}
+.block-app .item .icon {
+  width: 100px;
+  height: 100px;
+  margin-right: 18px;
+  float: left;
+}
+.block-app .item:first-child {
+  border-top: 0;
+}
+.block-app .item .text {
+  float: left;
+}
+.block-app .item .text .title {
+  display: block;
+  margin-top: 25px;
+  margin-bottom: 10px;
+  line-height: 1;
+  color: #333;
+  font-size: 20px;
+}
+.block-app .item .text .desc {
+  color: #999;
+  font-size: 12px;
+}
+.fancy-header .search-form {
+  margin-left: 0;
+}
+.fancy-header .search-form .input {
+  width: 180px;
+}
+.container {
+  width: 960px;
+}
+.container {
+  zoom: 1;
+}
+.container:after {
+  content: '';
+  display: block;
+  clear: both;
+}
+.container .main {
+  float: left;
+  width: 640px;
+  padding-top: 10px;
+}
+.container .main .block-title-redtag {
+  overflow: visible;
+  padding: 0;
+  border-bottom: 1px solid #eaeaec;
+  zoom: 1;
+}
+.container .main .block-title-redtag:after {
+  content: '';
+  display: block;
+  clear: both;
+}
+.container .main .block-title-redtag .title {
+  font-size: 18px;
+  padding: 0 4px;
+  display: inline-block;
+  height: 35px;
+  line-height: 35px;
+  top: 1px;
+  position: relative;
+  z-index: 2;
+  border-bottom: 3px solid #ff2661;
+}
+.container .aside {
+  float: right;
+  width: 290px;
+}
+.footer {
+  margin-top: 60px;
+  border-top: 0;
+}
+.multi-image-picker {
+  margin-top: 10px;
+}
+.multi-image-picker .pic,
+.multi-image-picker .add-btn {
+  float: left;
+  border-radius: 4px;
+  width: 23%;
+  margin-right: 2%;
+  margin-bottom: 2%;
+  position: relative;
+}
+.multi-image-picker .pic:before,
+.multi-image-picker .add-btn:before {
+  content: '';
+  display: block;
+  padding-top: 100%;
+}
+.multi-image-picker .add-btn {
+  cursor: pointer;
+  box-sizing: border-box;
+  border: 2px dotted #eaeaec;
+  background: url(//dn-piaoniu-static.qbox.me/pc/ui/img/num-plus.bde4b88b.png) no-repeat center -50%;
+  background-size: 80% 80%;
+}
+.multi-image-picker .add-btn .title {
+  position: absolute;
+  bottom: 22px;
+  font-size: 14px;
+  width: 100%;
+  color: #999;
+  text-align: center;
+}
+.multi-image-picker .add-btn .hint {
+  position: absolute;
+  bottom: 5px;
+  color: #999;
+  text-align: center;
+  width: 100%;
+  font-size: 12px;
+}
+.multi-image-picker .add-btn input {
+  cursor: pointer;
+  position: absolute;
+  width: 100%;
+  top: 0;
+  bottom: 0;
+  opacity: 0;
+  left: 0;
+}
+.multi-image-picker .pic .close {
+  position: absolute;
+  height: 19px;
+  width: 19px;
+  border-radius: 10px;
+  background-color: #999;
+  top: -5px;
+  left: -5px;
+  z-index: 9;
+  text-align: center;
+  color: #fff;
+  background-image: url(//dn-piaoniu-static.qbox.me/pc/ui/img/icon-close.ac2a7110.png);
+  background-size: 19px 19px;
+}
+.multi-image-picker .pic .video {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+}
+.multi-image-picker .pic .img {
+  background-size: cover;
+  background-position: center center;
+  overflow: hidden;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  border-radius: 4px;
+}
+.aside {
+  width: 290px;
+  float: right;
+}
+.aside .block {
+  margin-bottom: 20px;
+  border: 1px solid #eaeaec;
+}
+.aside .block .block-title {
+  padding: 0 13px;
+  border-bottom: 1px solid #eaeaec;
+  overflow: hidden;
+  font-size: 18px;
+}
+.aside .block .block-title .title {
+  font-size: 16px;
+  height: 50px;
+  line-height: 50px;
+  float: left;
+}
+.aside .block .block-title .more {
+  font-size: 14px;
+  color: #999;
+  line-height: 50px;
+  float: right;
+}
+.aside .block .block-content {
+  padding: 20px;
+}
+.main {
+  margin-bottom: 40px;
+}
+.row {
+  overflow: hidden;
+  margin-bottom: 17px;
+  position: relative;
+  min-height: 18px;
+}
+.row .star {
+  top: 0;
+}
+.row .label {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 80px;
+  text-align: right;
+  height: 20px;
+  font-size: 14px;
+}
+.row .input-control {
+  margin-left: 90px;
+}
+.row .input-control .textarea {
+  height: 380px;
+  padding: 8px;
+  font-size: 14px;
+  display: block;
+  border: 1px solid #eaeaec;
+  resize: none;
+  width: 100%;
+  box-sizing: border-box;
+}
+.row .input-control .btn-submit {
+  border: none;
+  height: 36px;
+  width: 72px;
+  text-align: center;
+  line-height: 36px;
+  color: #fff;
+  background-color: #5fb7fc;
+  font-size: 14px;
+}

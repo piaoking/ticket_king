@@ -1,0 +1,425 @@
+.orderhead {
+  border-collapse: collapse;
+  width: 100%;
+  table-layout: fixed;
+  border: 1px solid #eaeaec;
+  background-color: #f4f5fa;
+  margin-bottom: 15px;
+  font-size: 12px;
+  color: #666;
+}
+.orderhead th {
+  height: 37px;
+  line-height: 37px;
+  padding: 0 30px;
+  border: 1px solid #f4f5fa;
+}
+.orderhead .base-info,
+.order .base-info {
+  width: 350px;
+}
+.orderhead .category,
+.order .category {
+  width: 100px;
+}
+.orderhead .ticket-category,
+.order .ticket-category {
+  width: 160px;
+}
+.orderhead .sale-price,
+.order .sale-price {
+  width: 100px;
+}
+.orderhead .num,
+.order .num {
+  text-align: center;
+  width: 88px;
+}
+.orderhead .total,
+.order .total {
+  text-align: center;
+  width: 100px;
+}
+.orderhead .desc,
+.order .desc {
+  text-align: center;
+  width: 88px;
+}
+.orderhead .operation,
+.order .operation {
+  text-align: center;
+}
+.orderhead th,
+.order th {
+  padding: 0 20px;
+  font-weight: normal;
+  text-align: left;
+}
+.order {
+  margin-bottom: 10px;
+}
+.order .head {
+  height: 34px;
+  line-height: 34px;
+  background-color: #f4f5fa;
+  border: 1px solid #f0f0f0;
+  border-bottom: 0;
+  color: #333;
+  font-size: 12px;
+  padding-left: 20px;
+}
+.order .head .ordersaler {
+  float: left;
+  max-width: 100px;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  margin-right: 0!important;
+}
+.order .head .ordersaler i {
+  font-style: normal;
+  display: inline-block;
+}
+.order .head .ordersaler .shop-name {
+  color: #4B8FEB;
+}
+.order .head .zizhi-icon {
+  display: inline-block;
+  height: 14px;
+  width: 56px;
+  background-image: url(//dn-piaoniu-static.qbox.me/pc/user/img/zizi-icon.bbbcb28c.png);
+  background-size: 100%;
+  margin-top: 10px;
+  margin-left: 5px;
+}
+.order .head .orderid,
+.order .head .ordertime,
+.order .head .ordersaler {
+  margin-right: 30px;
+}
+.order .head .orderid,
+.order .head .ordertime {
+  color: #999;
+  float: right;
+}
+.order table {
+  table-layout: fixed;
+  border-collapse: collapse;
+  width: 100%;
+  border: 1px solid #eaeaec;
+}
+.order td {
+  padding: 20px;
+  font-size: 12px;
+  vertical-align: top;
+  border-right: 1px solid #eaeaec;
+}
+.order td.total {
+  position: relative;
+}
+.order td.total .hint {
+  color: #999;
+}
+.order td.total .compensate {
+  position: absolute;
+  bottom: 10px;
+  left: 0;
+  width: 100%;
+  color: #999;
+}
+.order td.desc {
+  text-align: center;
+}
+.order td.operation {
+  text-align: center;
+  margin-bottom: 10px;
+}
+.order td.operation .countdown {
+  margin-bottom: 10px;
+  padding-left: 2px;
+}
+.order td.operation .countdown .icon-time {
+  width: 15px;
+  height: 15px;
+  display: inline-block;
+  margin-right: 4px;
+  position: relative;
+  top: 2px;
+  background-image: url(/pc/img/icon-time.png);
+}
+.order td.operation .countdown .time {
+  font-size: 14px;
+  color: #666;
+}
+.order td.operation .btn {
+  margin: 0 auto 14px;
+}
+.order td.operation .link {
+  color: #666;
+  display: block;
+  margin-bottom: 10px;
+  line-height: 1;
+}
+.order .poster {
+  float: left;
+  width: 85px;
+  height: 114px;
+  margin-right: 15px;
+  background-color: #eee;
+}
+.order .lz {
+  color: #999;
+  font-size: 12px;
+}
+.order .lz img {
+  margin-right: 3px;
+  position: relative;
+  top: 2px;
+  cursor: pointer;
+}
+.order .ticket-category,
+.order .category,
+.order .sale-price,
+.order .total,
+.order .num {
+  text-align: center;
+  font-weight: bold;
+}
+.order .info {
+  margin-left: 100px;
+}
+.order .info .name {
+  font-weight: bold;
+  color: #333;
+  line-height: 1.2;
+  margin: 10px 0;
+}
+.order .info .address,
+.order .info .time,
+.order .info .category {
+  color: #999;
+  font-size: 12px;
+}
+.order .info .address {
+  margin-bottom: 5px;
+}
+.order .info .time {
+  margin-bottom: 16px;
+}
+.order-status {
+  background-color: #fff6f8;
+  margin-bottom: 20px;
+  border: 1px solid #ffc2cb;
+  overflow: hidden;
+  padding: 28px 60px 28px 25px;
+  height: 38px;
+}
+.order-status.orders-status-3,
+.order-status.orders-status-4 {
+  background-color: #fffbf1;
+  border: 1px solid #ffe495;
+}
+.order-status.orders-status-5 {
+  background-color: #f6fff1;
+  border: 1px solid #c1eaab;
+}
+.order-status.orders-status-6 {
+  background-color: #f9f9f9;
+  border: 1px solid #eaeaec;
+}
+.order-status .title {
+  color: #333;
+  float: left;
+  font-size: 24px;
+  margin-right: 35px;
+}
+.order-status .desc {
+  font-size: 14px;
+  height: 36px;
+  line-height: 36px;
+  float: left;
+}
+.order-status .funcs {
+  float: right;
+}
+.order-status .funcs .btn {
+  width: 80px;
+  float: right;
+}
+.order-status .funcs .link {
+  float: right;
+  text-align: center;
+  font-size: 14px;
+  height: 38px;
+  line-height: 38px;
+  margin-right: 25px;
+}
+.order-status .funcs .refund {
+  font-size: 14px;
+  color: #666;
+}
+.order-status .funcs .btn-urge {
+  background-color: #5fb7fc;
+}
+.order-status .funcs .btn-urge[disabled] {
+  background-color: #ccc;
+}
+.steps {
+  border: 1px solid #eaeaec;
+  background-color: #f7f7f7;
+  margin-bottom: 18px;
+}
+.steps .inner {
+  margin: 30px 26px;
+  margin-top: 0;
+  zoom: 1;
+}
+.steps .inner:after {
+  content: '';
+  display: block;
+  clear: both;
+}
+.steps .inner .step {
+  border-top: 1px solid #dedede;
+  padding-right: 40px;
+  padding-left: 10px;
+  padding-top: 15px;
+  margin-top: 20px;
+  float: left;
+  position: relative;
+}
+.steps .inner .step:before {
+  content: '';
+  position: absolute;
+  width: 12px;
+  height: 12px;
+  border-radius: 6px;
+  top: -6px;
+  left: 10px;
+  background-color: #e2e2e2;
+}
+.steps .inner .step.active .title {
+  color: #ff2661;
+}
+.steps .inner .step.active:before {
+  background-color: #ff2661;
+}
+.steps .inner .step .title {
+  font-size: 14px;
+  line-height: 1;
+  margin-bottom: 6px;
+  color: #666;
+}
+.steps .inner .step .time {
+  line-height: 1;
+  font-size: 12px;
+  color: #999;
+}
+.order-idcards .info .name {
+  display: inline-block;
+  width: 50px;
+  text-align: right;
+  margin-right: 10px;
+}
+.order-idcards .info .idcard {
+  display: inline-block;
+}
+.delivery-infos {
+  border: 1px solid #eaeaec;
+  position: relative;
+}
+.delivery-infos .hongbao {
+  position: fixed;
+  right: 64px;
+  top: 200px;
+  display: none;
+}
+.delivery-infos .inner {
+  padding: 32px 20px 0;
+}
+.delivery-infos .title {
+  font-weight: bold;
+  font-size: 14px;
+  margin-bottom: 10px;
+}
+.delivery-infos .body {
+  font-size: 12px;
+  color: #666;
+  padding-left: 18px;
+  padding-bottom: 20px;
+  padding-right: 65px;
+}
+.delivery-infos .body .row {
+  overflow: hidden;
+}
+.delivery-infos .body .row .label,
+.delivery-infos .body .row .value {
+  float: left;
+}
+.order-footer {
+  margin-bottom: 50px;
+  background-color: #f4f5fa;
+  border: 1px solid #eaeaec;
+  border-top: 0;
+}
+.order-footer .inner {
+  overflow: hidden;
+  padding: 15px 88px;
+}
+.order-footer .inner .row {
+  float: right;
+  clear: both;
+  margin-bottom: 10px;
+}
+.order-footer .inner .row .postageDesc {
+  font-size: 14px;
+  color: #ff2661;
+  font-style: italic;
+}
+.order-footer .inner .row .label {
+  font-size: 14px;
+  width: 300px;
+  text-align: right;
+  display: inline-block;
+  margin-right: 15px;
+}
+.order-footer .inner .row .amount {
+  font-size: 14px;
+  display: inline-block;
+  width: 90px;
+}
+.order-footer .inner .row .amount.coupon-price {
+  color: #1bc466;
+}
+.order-footer .inner .row .pay-amount {
+  color: #ff2661;
+}
+.delivery-infos .order-detail .body {
+  padding-left: 0;
+}
+.info-table .info-label {
+  white-space: nowrap;
+}
+.refund-tip {
+  overflow: hidden;
+  display: block;
+  margin-bottom: 5px;
+}
+.refund-tip .link {
+  float: right;
+  background-position: 7px center;
+  background-repeat: no-repeat;
+  background: url(//dn-piaoniu-static.qbox.me/pc/ui/img/icon-warn-grey.a61d51b0.png) left center no-repeat;
+  background-size: 12px 12px;
+  padding-left: 16px;
+  font-size: 12px;
+  color: #999;
+}
+.refund-new {
+  font-size: 14px;
+  float: right;
+  margin-left: 15px;
+}
+.rebook {
+  font-weight: bold;
+}

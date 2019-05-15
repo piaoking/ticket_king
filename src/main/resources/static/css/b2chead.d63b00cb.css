@@ -1,0 +1,615 @@
+﻿.icon-yi {
+  background-image: url(../images/icon-yi.10092b5a.png);
+}
+.icon-zhe {
+  background-image: url(../images/icon-zhe.9a95d6f0.png);
+}
+.icon-qiang {
+  background-image: url(../images/icon-qiang.1c64413e.png);
+}
+.tip .tiprow {
+  padding: 0 7px 0 0;
+  margin-left: 49px;
+  margin-bottom: 9px;
+  position: relative;
+}
+.tip .icon {
+  background-size: contain;
+  position: absolute;
+  width: 15px;
+  height: 15px;
+  top: 2px;
+  left: -20px;
+}
+.tip .seat {
+  color: #999;
+  padding: 0 3px;
+  font-size: 12px;
+  transform: scale(0.9);
+  transform-origin: right;
+  position: absolute;
+  border: 1px solid #E5E5E5;
+  border-radius: 2px;
+  background-color: #fff;
+  display: inline-block;
+  left: -47px;
+}
+.tip .seat.seat-continuous {
+  left: -36px;
+}
+.type-desc {
+  padding-top: 16px;
+}
+.type-desc .icon {
+  position: relative;
+  top: 1px;
+  background-size: contain;
+  float: left;
+  display: inline-block;
+  color: #fff;
+  width: 15px;
+  height: 15px;
+  font-size: 12px;
+  text-align: center;
+  line-height: 15px;
+}
+.type-desc .icon-quest {
+  margin-left: 7px;
+  position: relative;
+  top: 2px;
+  background-size: contain;
+  cursor: pointer;
+  width: 14px;
+  height: 14px;
+  float: left;
+  background-image: url(../images/quest-mark.06ffca87.png);
+}
+.type-desc .line {
+  margin-bottom: 9px;
+  overflow: hidden;
+}
+.type-desc .line:last-child {
+  margin-bottom: 0;
+}
+.type-desc .line .text {
+  float: left;
+  color: #666666;
+  font-size: 12px;
+  margin-left: 9px;
+}
+.icon-yi {
+  background-image: url(../images/icon-yi.10092b5a.png);
+}
+.icon-zhe {
+  background-image: url(../images/icon-zhe.9a95d6f0.png);
+}
+.icon-qiang {
+  background-image: url(../images/icon-qiang.1c64413e.png);
+}
+.base-info {
+  overflow: hidden;
+  padding-top: 0;
+  background: none;
+}
+.base-info .bg {
+  width: 100%;
+  position: absolute;
+  height: 439px;
+  background-position: center 0;
+  background-repeat: no-repeat;
+  background-image: url(../images/activity-bg.41dc4049.jpg);
+}
+.base-info .container {
+  margin-top: 20px;
+  background-color: #fff;
+  border: 1px solid #eaeaec;
+  border-radius: 3px;
+  padding: 0;
+}
+.base-info .container .main {
+  width: 859px;
+  padding: 20px 0 20px 20px;
+  border-right: 1px dashed #F4F5FA;
+}
+.base-info .container .aside {
+  padding: 20px 20px 20px 0;
+}
+.base-info .head .status {
+  color: #fff;
+  position: relative;
+  top: -2px;
+  display: inline-block;
+  padding: 0 8px;
+  border-radius: 3px;
+  height: 23px;
+  line-height: 23px;
+  font-size: 12px;
+  margin-right: 9px;
+}
+.base-info .head .status.status-expired,
+.base-info .head .status.status-stop-saling,
+.base-info .head .status.status-refunding {
+  background-color: #ccc;
+}
+.base-info .head .status.status-booking {
+  background-color: #fb8333;
+}
+.base-info .head .status.status-waiting-for-sale {
+  background-color: #4899fe;
+}
+.base-info .head .status.status-saling {
+  background-color: #4899fe;
+}
+.base-info .head .status.eticket {
+  background-color: #96a3ff;
+}
+.base-info .head .title {
+  display: inline-block;
+  margin-left: 0;
+  color: #333;
+  font-size: 20px;
+}
+.base-info .desc {
+  color: #666;
+  font-size: 12px;
+}
+.base-info .main-info {
+  overflow: hidden;
+  margin-top: 16px;
+}
+.base-info .main-info .poster {
+  width: 256px;
+  height: 345px;
+  margin-right: 20px;
+  float: left;
+}
+.base-info .main-info .calendar-event-picker .content {
+  width: 390px;
+}
+.base-info .main-info .ticket-info {
+  margin-left: 276px;
+}
+.base-info .main-info .ticket-info .ticket-status {
+  border-collapse: collapse;
+  width: 97%;
+  border: 1px solid #F4F5FA;
+  font-size: 12px;
+  margin-bottom: 20px;
+}
+.base-info .main-info .ticket-info .ticket-status.bottom {
+  margin-bottom: 0;
+}
+.base-info .main-info .ticket-info .ticket-status .status {
+  box-sizing: border-box;
+  width: 58px;
+  height: 58px;
+  text-align: center;
+  border-right: 1px solid #F4F5FA;
+  padding-top: 24px;
+  color: #4B8FEB;
+}
+.base-info .main-info .ticket-info .ticket-status .status.booking {
+  color: #F72A62;
+  background: url(../images/ticket-booking.409b7963.png) no-repeat center 10px;
+  background-size: 20px;
+}
+.base-info .main-info .ticket-info .ticket-status .status.sold-out {
+  background: url(../images/sold-out.8729676f.png) no-repeat center 10px;
+  background-size: 20px;
+}
+.base-info .main-info .ticket-info .ticket-status .status.spc-status {
+  padding-top: 0;
+}
+.base-info .main-info .ticket-info .ticket-status .status.no-sale {
+  background: url(../images/no-sale.c4c1e685.png) no-repeat center 10px;
+  background-size: 20px;
+}
+.base-info .main-info .ticket-info .ticket-status .description {
+  padding-left: 12px;
+  color: #666;
+}
+.base-info .main-info .ticket-info .row {
+  margin-bottom: 10px;
+}
+.base-info .main-info .ticket-info .label {
+  font-size: 12px;
+  color: #666;
+  float: left;
+}
+.base-info .main-info .ticket-info .content {
+  margin-left: 58px;
+}
+.base-info .main-info .ticket-info .content.nosale {
+  margin-left: 0;
+}
+.base-info .main-info .ticket-info .content.nosale .faved {
+  background-color: #EFF6FF !important;
+  color: #4B8FEB;
+}
+.base-info .main-info .ticket-info .discount {
+  display: block;
+  overflow: hidden;
+  margin-bottom: 5px;
+}
+.base-info .main-info .ticket-info .discount .icon {
+  background-color: #FF483F;
+  color: #fff;
+  font-size: 12px;
+  text-align: center;
+  width: 32px;
+  float: left;
+}
+.base-info .main-info .ticket-info .discount .text {
+  font-size: 12px;
+  color: #666;
+  margin-left: 13px;
+  float: left;
+}
+.base-info .main-info .ticket-info .services a {
+  font-size: 12px;
+  color: #333;
+  margin-right: 22px;
+  vertical-align: top;
+}
+.base-info .aside {
+  margin-bottom: 0;
+  width: 280px;
+}
+.base-info .aside .area-image {
+  padding-top: 11px;
+  padding-bottom: 18px;
+}
+.base-info .aside .area-image .title {
+  font-size: 12px;
+  color: #262626;
+  margin-bottom: 11px;
+}
+.base-info .aside .area-image img {
+  max-height: 171px;
+  max-width: 100%;
+}
+.b2c-num-picker {
+  min-height: 38px;
+}
+.ticket-category.selections .items .item,
+.eventtime-picker.selections .items .item,
+.events-picker.selections .items .item {
+  height: 40px;
+  line-height: 40px;
+  padding: 0 17px;
+}
+.ticket-category.selections .items .item.selected,
+.eventtime-picker.selections .items .item.selected,
+.events-picker.selections .items .item.selected {
+  padding: 0 16px;
+  line-height: 38px;
+}
+.ticket-category.selections .items .item {
+  min-width: 70px;
+  min-height: 40px;
+  height: auto;
+}
+.rank-action-buttons {
+  position: relative;
+}
+.rank-partial {
+  padding-bottom: 17px;
+  border-bottom: 1px dashed #F4F5FA;
+}
+.rank-partial .title {
+  margin-bottom: 4px;
+}
+.rank-partial .rank .num {
+  margin-right: 7px;
+}
+.action-partial {
+  position: absolute;
+  right: 0;
+  top: 0;
+}
+.action-partial .action-button {
+  cursor: pointer;
+  width: 50px;
+  height: 50px;
+  border-radius: 3px;
+  margin-left: 9px;
+  display: block;
+  float: left;
+  background-color: #fff;
+  border: 1px solid #E5E5E5;
+}
+.action-partial .action-button.action-fav .img {
+  background-image: url(../images/heart-thin-grey.f7b77fb4.png);
+}
+.action-partial .action-button.action-fav.faved .img {
+  background-image: url(../images/heart.aaa0e468.png);
+}
+.action-partial .action-button.action-review .img {
+  background-image: url(../images/review-thin-grey.6e409afe.png);
+}
+.action-partial .action-button .img {
+  background-size: contain;
+  background-repeat: no-repeat;
+  width: 19px;
+  height: 19px;
+  margin: 9px auto 0;
+}
+.action-partial .action-button .text {
+  color: #666;
+  text-align: center;
+  font-size: 12px;
+}
+.venue {
+  padding-top: 16px;
+  padding-bottom: 22px;
+  border-bottom: 1px dashed #F4F5FA;
+}
+.venue .name {
+  display: block;
+  color: #262626;
+  font-size: 12px;
+}
+.venue .address {
+  display: block;
+  color: #999;
+  font-size: 12px;
+}
+.seat-status {
+  float: left;
+  margin-top: 9px;
+  display: inline-block;
+  border: 1px solid #E6E6E6;
+  padding: 0 3px;
+  border-radius: 2px;
+  color: #666666;
+  font-size: 12px;
+  margin-right: 16px;
+}
+.b2c-result .content {
+  overflow: hidden;
+}
+.b2c-result .content .price {
+  float: left;
+  color: #FF2661;
+  font-size: 24px;
+  font-weight: bold;
+  display: inline-block;
+}
+.b2c-result .content .comment {
+  margin-top: 10px;
+  float: left;
+  color: #666666;
+  font-size: 12px;
+  display: inline-block;
+  margin-left: 20px;
+  position: relative;
+}
+.b2c-result .content .price-change-hint {
+  position: absolute;
+  width: 197.8px;
+  height: 30px;
+  opacity: 0.9;
+  background-color: #ffe7a6;
+  padding: 5px 15px 5px 10px;
+  width: 168px;
+  height: 20px;
+  font-size: 14px;
+  color: #ed7d19;
+  left: 120%;
+  top: -7px;
+  z-index: 9;
+}
+.b2c-result .content .price-change-hint:after {
+  top: 50%;
+  margin-top: -5px;
+  left: -10px;
+  position: absolute;
+  content: '';
+  border-style: solid;
+  border-width: 5px;
+  border-color: transparent #ffe7a6 transparent transparent;
+}
+.b2c-submit .postageTip {
+  margin-left: 10px;
+  display: inline-block;
+  font-size: 12px;
+  color: #999;
+}
+.b2c-submit .btn-submit.official,
+.b2c-submit .btn-seatmap.official {
+  padding-left: 25px;
+  background-repeat: no-repeat;
+  background-size: 14px 16px;
+  background-position: 20px center;
+  background-image: url(../images/official.64d0ef9b.png);
+}
+.b2c-submit .btn-seatmap {
+  margin-right: 10px;
+  display: inline-block;
+  cursor: pointer;
+  width: 138px;
+  height: 42px;
+  color: #fff;
+  line-height: 42px;
+  text-align: center;
+  border-radius: 3px;
+  background-color: #FF883B;
+}
+.b2c-submit .btn-submit,
+.b2c-submit .speed-purchase {
+  margin-right: 10px;
+  display: inline-block;
+  cursor: pointer;
+  width: 138px;
+  height: 42px;
+  color: #fff;
+  line-height: 42px;
+  text-align: center;
+  border-radius: 3px;
+  background-color: #FF2661;
+}
+.b2c-submit .btn-submit.none,
+.b2c-submit .speed-purchase.none {
+  display: none;
+}
+.event-calendar .calendar-title {
+  height: 30px;
+  border: 1px solid #e5e5e5;
+  border-bottom: none;
+  position: relative;
+}
+.event-calendar .calendar-title .prev,
+.event-calendar .calendar-title .next {
+  position: absolute;
+  top: 0;
+  width: 32px;
+  height: 32px;
+}
+.event-calendar .calendar-title .prev:after,
+.event-calendar .calendar-title .next:after {
+  position: absolute;
+  left: 10px;
+  top: 10px;
+  display: block;
+  content: '';
+  background-image: url(../images/calendar-arr.815e70e9.png);
+  width: 7px;
+  height: 11px;
+  background-size: 14px 22px;
+}
+.event-calendar .calendar-title .prev {
+  left: 0;
+}
+.event-calendar .calendar-title .prev:after {
+  background-position: 7px 11px;
+}
+.event-calendar .calendar-title .prev.disabled:after {
+  background-position: 7px 0;
+}
+.event-calendar .calendar-title .next {
+  right: 0;
+}
+.event-calendar .calendar-title .next:after {
+  background-position: 14px 11px;
+}
+.event-calendar .calendar-title .next.disabled:after {
+  background-position: 14px 0;
+}
+.event-calendar .calendar-title .months {
+  margin: 0 35px;
+  overflow: hidden;
+  height: 100%;
+}
+.event-calendar .calendar-title .months ul {
+  height: 100%;
+  white-space: nowrap;
+}
+.event-calendar .calendar-title .month {
+  cursor: pointer;
+  line-height: 28px;
+  display: inline-block;
+  width: 110px;
+  box-sizing: border-box;
+  text-align: center;
+  color: #333333;
+  font-size: 14px;
+  border-bottom: 2px solid transparent;
+}
+.event-calendar .calendar-title .month.selected {
+  border-bottom: 2px solid #FA7FA1;
+}
+.event-calendar .ui-calendar-wrapper {
+  border-collapse: collapse;
+  width: 100%;
+  border: 1px solid #e5e5e5;
+}
+.event-calendar .ui-calendar-wrapper .ui-calendar-week,
+.event-calendar .ui-calendar-wrapper td {
+  font-weight: normal;
+  border: 1px solid #e5e5e5;
+  text-align: center;
+  width: 75px;
+  height: 32px;
+  font-size: 12px;
+}
+.event-calendar .ui-calendar-wrapper .ui-calendar-week {
+  height: 18px;
+}
+.event-calendar .ui-calendar-wrapper td {
+  color: #CCCCCC;
+  background-color: #fff;
+  padding: 1px;
+  box-sizing: border-box;
+}
+.event-calendar .ui-calendar-wrapper .has-event {
+  cursor: pointer;
+}
+.event-calendar .ui-calendar-wrapper .has-ticket {
+  color: #262626;
+}
+.event-calendar .ui-calendar-wrapper .has-ticket.selected {
+  background-repeat: no-repeat;
+  border-color: #ff2661;
+  border-width: 2px;
+  color: #ff2661;
+  line-height: 28px;
+  padding: 0;
+  background-image: url(../images/check.fab30160.png);
+  background-position: right bottom;
+}
+.event-calendar .ui-calendar-wrapper .has-no-ticket {
+  background-color: #FCFCFC;
+  color: #999999;
+}
+.event-calendar .ui-calendar-wrapper .last_month,
+.event-calendar .ui-calendar-wrapper .next_month {
+  background-color: #FDFDFD;
+  color: transparent;
+  border: none;
+  background-image: none;
+}
+.event-calendar .ui-calendar-wrapper .last_month.selected,
+.event-calendar .ui-calendar-wrapper .next_month.selected {
+  color: transparent;
+  background-image: none;
+}
+.selections .items {
+  margin-right: 12px;
+}
+.selections .items .item {
+  position: relative;
+  min-height: 30px;
+  height: auto;
+  word-wrap: break-word;
+  word-break: break-all;
+}
+.selections .items .item.disabled {
+  color: #999999;
+  background-color: #F7F7F7;
+  border: 1px dashed #E5E5E5;
+}
+.selections .items .item .icon {
+  background-size: contain;
+  position: absolute;
+  width: 15px;
+  height: 15px;
+  top: 0;
+  right: 0;
+}
+.notify {
+  color: #fff;
+  text-align: center;
+  width: 120px;
+  height: 42px;
+  margin-bottom: 20px;
+  line-height: 42px;
+  background-color: #fff;
+  border-radius: 5px;
+  display: none;
+  background-color: #5fb7fc;
+  cursor: pointer;
+}
+.notify.faved {
+  cursor: default;
+  background-color: #afafaf;
+}

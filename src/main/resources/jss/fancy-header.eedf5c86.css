@@ -1,0 +1,754 @@
+.side-toolbar {
+  position: fixed;
+  z-index: 9;
+  bottom: 116px;
+  right: 20px;
+  width: 60px;
+  transition: bottom 0.75s ease-in-out;
+}
+.side-toolbar.low {
+  bottom: 10px;
+}
+.side-toolbar .item {
+  border: 1px solid #e5e5e5;
+  height: 60px;
+  cursor: pointer;
+  overflow: hidden;
+}
+.side-toolbar .item .text {
+  display: none;
+  background-color: #ff785e;
+  color: #fff;
+  font-size: 15px;
+  padding: 14px;
+  height: 100%;
+  line-height: 1;
+  line-height: 1.1;
+  text-align: center;
+}
+.side-toolbar .item .icon {
+  height: 100%;
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-color: #fff;
+}
+.side-toolbar .item:hover {
+  border: 1px solid #ff785e;
+}
+.side-toolbar .item:hover .text {
+  display: block;
+}
+.side-toolbar .item:hover .icon {
+  display: none;
+}
+.side-toolbar .item.totop {
+  margin-bottom: 7px;
+}
+.side-toolbar .item.totop .icon {
+  background-image: url(//dn-piaoniu-static.qbox.me/pc/ui/img/icon-totop.befae9e0.png);
+}
+.side-toolbar .item.custom-service .icon {
+  background-image: url(//dn-piaoniu-static.qbox.me/pc/ui/img/icon-custom-service.1ba1b18f.png);
+}
+.side-toolbar .item.common {
+  border-top: 0;
+}
+.side-toolbar .item.common .icon {
+  background-image: url(//dn-piaoniu-static.qbox.me/pc/ui/img/icon-question.7ecc67bf.png);
+}
+.slim-header .city-picker .citylist,
+.fancy-header .city-picker .citylist,
+.filter-header .city-picker .citylist,
+.header .city-picker .citylist,
+.slim-header .other-city .citylist,
+.fancy-header .other-city .citylist,
+.filter-header .other-city .citylist,
+.header .other-city .citylist,
+.slim-header .city-picker .othercitylist,
+.fancy-header .city-picker .othercitylist,
+.filter-header .city-picker .othercitylist,
+.header .city-picker .othercitylist,
+.slim-header .other-city .othercitylist,
+.fancy-header .other-city .othercitylist,
+.filter-header .other-city .othercitylist,
+.header .other-city .othercitylist {
+  display: none;
+  font-size: 12px;
+  line-height: 20px;
+  padding: 15px 20px;
+  width: 440px;
+  position: absolute;
+  left: -16px;
+  background-color: #fff;
+  z-index: 20;
+  top: 45px;
+}
+.slim-header .city-picker .citylist .hot-cities li:hover,
+.fancy-header .city-picker .citylist .hot-cities li:hover,
+.filter-header .city-picker .citylist .hot-cities li:hover,
+.header .city-picker .citylist .hot-cities li:hover,
+.slim-header .other-city .citylist .hot-cities li:hover,
+.fancy-header .other-city .citylist .hot-cities li:hover,
+.filter-header .other-city .citylist .hot-cities li:hover,
+.header .other-city .citylist .hot-cities li:hover,
+.slim-header .city-picker .othercitylist .hot-cities li:hover,
+.fancy-header .city-picker .othercitylist .hot-cities li:hover,
+.filter-header .city-picker .othercitylist .hot-cities li:hover,
+.header .city-picker .othercitylist .hot-cities li:hover,
+.slim-header .other-city .othercitylist .hot-cities li:hover,
+.fancy-header .other-city .othercitylist .hot-cities li:hover,
+.filter-header .other-city .othercitylist .hot-cities li:hover,
+.header .other-city .othercitylist .hot-cities li:hover,
+.slim-header .city-picker .citylist .city-item:hover,
+.fancy-header .city-picker .citylist .city-item:hover,
+.filter-header .city-picker .citylist .city-item:hover,
+.header .city-picker .citylist .city-item:hover,
+.slim-header .other-city .citylist .city-item:hover,
+.fancy-header .other-city .citylist .city-item:hover,
+.filter-header .other-city .citylist .city-item:hover,
+.header .other-city .citylist .city-item:hover,
+.slim-header .city-picker .othercitylist .city-item:hover,
+.fancy-header .city-picker .othercitylist .city-item:hover,
+.filter-header .city-picker .othercitylist .city-item:hover,
+.header .city-picker .othercitylist .city-item:hover,
+.slim-header .other-city .othercitylist .city-item:hover,
+.fancy-header .other-city .othercitylist .city-item:hover,
+.filter-header .other-city .othercitylist .city-item:hover,
+.header .other-city .othercitylist .city-item:hover {
+  background-color: #fff;
+}
+.slim-header .city-picker .citylist .city-name,
+.fancy-header .city-picker .citylist .city-name,
+.filter-header .city-picker .citylist .city-name,
+.header .city-picker .citylist .city-name,
+.slim-header .other-city .citylist .city-name,
+.fancy-header .other-city .citylist .city-name,
+.filter-header .other-city .citylist .city-name,
+.header .other-city .citylist .city-name,
+.slim-header .city-picker .othercitylist .city-name,
+.fancy-header .city-picker .othercitylist .city-name,
+.filter-header .city-picker .othercitylist .city-name,
+.header .city-picker .othercitylist .city-name,
+.slim-header .other-city .othercitylist .city-name,
+.fancy-header .other-city .othercitylist .city-name,
+.filter-header .other-city .othercitylist .city-name,
+.header .other-city .othercitylist .city-name {
+  font-size: 16px;
+  position: absolute;
+  width: 70px;
+  height: 41px;
+  line-height: 41px;
+  background: #fff;
+  top: -42px;
+  padding-left: 15px;
+  border: 1px solid #ccc;
+  border-bottom: 0;
+  left: -1px;
+}
+.slim-header .city-picker .citylist .city-name:after,
+.fancy-header .city-picker .citylist .city-name:after,
+.filter-header .city-picker .citylist .city-name:after,
+.header .city-picker .citylist .city-name:after,
+.slim-header .other-city .citylist .city-name:after,
+.fancy-header .other-city .citylist .city-name:after,
+.filter-header .other-city .citylist .city-name:after,
+.header .other-city .citylist .city-name:after,
+.slim-header .city-picker .othercitylist .city-name:after,
+.fancy-header .city-picker .othercitylist .city-name:after,
+.filter-header .city-picker .othercitylist .city-name:after,
+.header .city-picker .othercitylist .city-name:after,
+.slim-header .other-city .othercitylist .city-name:after,
+.fancy-header .other-city .othercitylist .city-name:after,
+.filter-header .other-city .othercitylist .city-name:after,
+.header .other-city .othercitylist .city-name:after {
+  top: -1px;
+  right: 23px;
+  height: 42px;
+  line-height: 42px;
+}
+.slim-header .city-picker .citylist .top-rows,
+.fancy-header .city-picker .citylist .top-rows,
+.filter-header .city-picker .citylist .top-rows,
+.header .city-picker .citylist .top-rows,
+.slim-header .other-city .citylist .top-rows,
+.fancy-header .other-city .citylist .top-rows,
+.filter-header .other-city .citylist .top-rows,
+.header .other-city .citylist .top-rows,
+.slim-header .city-picker .othercitylist .top-rows,
+.fancy-header .city-picker .othercitylist .top-rows,
+.filter-header .city-picker .othercitylist .top-rows,
+.header .city-picker .othercitylist .top-rows,
+.slim-header .other-city .othercitylist .top-rows,
+.fancy-header .other-city .othercitylist .top-rows,
+.filter-header .other-city .othercitylist .top-rows,
+.header .other-city .othercitylist .top-rows {
+  padding-bottom: 6px;
+  border-bottom: 1px solid #ccc;
+}
+.slim-header .city-picker .citylist .top-rows .row,
+.fancy-header .city-picker .citylist .top-rows .row,
+.filter-header .city-picker .citylist .top-rows .row,
+.header .city-picker .citylist .top-rows .row,
+.slim-header .other-city .citylist .top-rows .row,
+.fancy-header .other-city .citylist .top-rows .row,
+.filter-header .other-city .citylist .top-rows .row,
+.header .other-city .citylist .top-rows .row,
+.slim-header .city-picker .othercitylist .top-rows .row,
+.fancy-header .city-picker .othercitylist .top-rows .row,
+.filter-header .city-picker .othercitylist .top-rows .row,
+.header .city-picker .othercitylist .top-rows .row,
+.slim-header .other-city .othercitylist .top-rows .row,
+.fancy-header .other-city .othercitylist .top-rows .row,
+.filter-header .other-city .othercitylist .top-rows .row,
+.header .other-city .othercitylist .top-rows .row {
+  overflow: hidden;
+}
+.slim-header .city-picker .citylist .top-rows .row .title,
+.fancy-header .city-picker .citylist .top-rows .row .title,
+.filter-header .city-picker .citylist .top-rows .row .title,
+.header .city-picker .citylist .top-rows .row .title,
+.slim-header .other-city .citylist .top-rows .row .title,
+.fancy-header .other-city .citylist .top-rows .row .title,
+.filter-header .other-city .citylist .top-rows .row .title,
+.header .other-city .citylist .top-rows .row .title,
+.slim-header .city-picker .othercitylist .top-rows .row .title,
+.fancy-header .city-picker .othercitylist .top-rows .row .title,
+.filter-header .city-picker .othercitylist .top-rows .row .title,
+.header .city-picker .othercitylist .top-rows .row .title,
+.slim-header .other-city .othercitylist .top-rows .row .title,
+.fancy-header .other-city .othercitylist .top-rows .row .title,
+.filter-header .other-city .othercitylist .top-rows .row .title,
+.header .other-city .othercitylist .top-rows .row .title {
+  font-weight: bold;
+  float: left;
+  color: #000;
+  font-size: 12px;
+  width: 70px;
+}
+.slim-header .city-picker .citylist .top-rows .row ul,
+.fancy-header .city-picker .citylist .top-rows .row ul,
+.filter-header .city-picker .citylist .top-rows .row ul,
+.header .city-picker .citylist .top-rows .row ul,
+.slim-header .other-city .citylist .top-rows .row ul,
+.fancy-header .other-city .citylist .top-rows .row ul,
+.filter-header .other-city .citylist .top-rows .row ul,
+.header .other-city .citylist .top-rows .row ul,
+.slim-header .city-picker .othercitylist .top-rows .row ul,
+.fancy-header .city-picker .othercitylist .top-rows .row ul,
+.filter-header .city-picker .othercitylist .top-rows .row ul,
+.header .city-picker .othercitylist .top-rows .row ul,
+.slim-header .other-city .othercitylist .top-rows .row ul,
+.fancy-header .other-city .othercitylist .top-rows .row ul,
+.filter-header .other-city .othercitylist .top-rows .row ul,
+.header .other-city .othercitylist .top-rows .row ul {
+  overflow: hidden;
+}
+.slim-header .city-picker .citylist .top-rows .row ul li,
+.fancy-header .city-picker .citylist .top-rows .row ul li,
+.filter-header .city-picker .citylist .top-rows .row ul li,
+.header .city-picker .citylist .top-rows .row ul li,
+.slim-header .other-city .citylist .top-rows .row ul li,
+.fancy-header .other-city .citylist .top-rows .row ul li,
+.filter-header .other-city .citylist .top-rows .row ul li,
+.header .other-city .citylist .top-rows .row ul li,
+.slim-header .city-picker .othercitylist .top-rows .row ul li,
+.fancy-header .city-picker .othercitylist .top-rows .row ul li,
+.filter-header .city-picker .othercitylist .top-rows .row ul li,
+.header .city-picker .othercitylist .top-rows .row ul li,
+.slim-header .other-city .othercitylist .top-rows .row ul li,
+.fancy-header .other-city .othercitylist .top-rows .row ul li,
+.filter-header .other-city .othercitylist .top-rows .row ul li,
+.header .other-city .othercitylist .top-rows .row ul li {
+  cursor: pointer;
+  color: #333;
+  float: left;
+  font-size: 14px;
+  margin-right: 10px;
+  margin-bottom: 10px;
+  height: auto;
+  line-height: 1.5;
+}
+.slim-header .city-picker .citylist .top-rows .row ul .selected,
+.fancy-header .city-picker .citylist .top-rows .row ul .selected,
+.filter-header .city-picker .citylist .top-rows .row ul .selected,
+.header .city-picker .citylist .top-rows .row ul .selected,
+.slim-header .other-city .citylist .top-rows .row ul .selected,
+.fancy-header .other-city .citylist .top-rows .row ul .selected,
+.filter-header .other-city .citylist .top-rows .row ul .selected,
+.header .other-city .citylist .top-rows .row ul .selected,
+.slim-header .city-picker .othercitylist .top-rows .row ul .selected,
+.fancy-header .city-picker .othercitylist .top-rows .row ul .selected,
+.filter-header .city-picker .othercitylist .top-rows .row ul .selected,
+.header .city-picker .othercitylist .top-rows .row ul .selected,
+.slim-header .other-city .othercitylist .top-rows .row ul .selected,
+.fancy-header .other-city .othercitylist .top-rows .row ul .selected,
+.filter-header .other-city .othercitylist .top-rows .row ul .selected,
+.header .other-city .othercitylist .top-rows .row ul .selected {
+  padding: 3px 8px;
+  background-color: #fff5f8;
+  color: #ff2661;
+}
+.slim-header .city-picker .citylist .city-indexes,
+.fancy-header .city-picker .citylist .city-indexes,
+.filter-header .city-picker .citylist .city-indexes,
+.header .city-picker .citylist .city-indexes,
+.slim-header .other-city .citylist .city-indexes,
+.fancy-header .other-city .citylist .city-indexes,
+.filter-header .other-city .citylist .city-indexes,
+.header .other-city .citylist .city-indexes,
+.slim-header .city-picker .othercitylist .city-indexes,
+.fancy-header .city-picker .othercitylist .city-indexes,
+.filter-header .city-picker .othercitylist .city-indexes,
+.header .city-picker .othercitylist .city-indexes,
+.slim-header .other-city .othercitylist .city-indexes,
+.fancy-header .other-city .othercitylist .city-indexes,
+.filter-header .other-city .othercitylist .city-indexes,
+.header .other-city .othercitylist .city-indexes {
+  padding-top: 15px;
+  margin-bottom: -10px;
+}
+.slim-header .city-picker .citylist .city-indexes .title,
+.fancy-header .city-picker .citylist .city-indexes .title,
+.filter-header .city-picker .citylist .city-indexes .title,
+.header .city-picker .citylist .city-indexes .title,
+.slim-header .other-city .citylist .city-indexes .title,
+.fancy-header .other-city .citylist .city-indexes .title,
+.filter-header .other-city .citylist .city-indexes .title,
+.header .other-city .citylist .city-indexes .title,
+.slim-header .city-picker .othercitylist .city-indexes .title,
+.fancy-header .city-picker .othercitylist .city-indexes .title,
+.filter-header .city-picker .othercitylist .city-indexes .title,
+.header .city-picker .othercitylist .city-indexes .title,
+.slim-header .other-city .othercitylist .city-indexes .title,
+.fancy-header .other-city .othercitylist .city-indexes .title,
+.filter-header .other-city .othercitylist .city-indexes .title,
+.header .other-city .othercitylist .city-indexes .title {
+  color: #000;
+  font-weight: bold;
+}
+.slim-header .city-picker .citylist .city-indexes .hot-city-capitcals,
+.fancy-header .city-picker .citylist .city-indexes .hot-city-capitcals,
+.filter-header .city-picker .citylist .city-indexes .hot-city-capitcals,
+.header .city-picker .citylist .city-indexes .hot-city-capitcals,
+.slim-header .other-city .citylist .city-indexes .hot-city-capitcals,
+.fancy-header .other-city .citylist .city-indexes .hot-city-capitcals,
+.filter-header .other-city .citylist .city-indexes .hot-city-capitcals,
+.header .other-city .citylist .city-indexes .hot-city-capitcals,
+.slim-header .city-picker .othercitylist .city-indexes .hot-city-capitcals,
+.fancy-header .city-picker .othercitylist .city-indexes .hot-city-capitcals,
+.filter-header .city-picker .othercitylist .city-indexes .hot-city-capitcals,
+.header .city-picker .othercitylist .city-indexes .hot-city-capitcals,
+.slim-header .other-city .othercitylist .city-indexes .hot-city-capitcals,
+.fancy-header .other-city .othercitylist .city-indexes .hot-city-capitcals,
+.filter-header .other-city .othercitylist .city-indexes .hot-city-capitcals,
+.header .other-city .othercitylist .city-indexes .hot-city-capitcals {
+  overflow: hidden;
+  margin-top: 8px;
+}
+.slim-header .city-picker .citylist .city-indexes .hot-city-capitcals li,
+.fancy-header .city-picker .citylist .city-indexes .hot-city-capitcals li,
+.filter-header .city-picker .citylist .city-indexes .hot-city-capitcals li,
+.header .city-picker .citylist .city-indexes .hot-city-capitcals li,
+.slim-header .other-city .citylist .city-indexes .hot-city-capitcals li,
+.fancy-header .other-city .citylist .city-indexes .hot-city-capitcals li,
+.filter-header .other-city .citylist .city-indexes .hot-city-capitcals li,
+.header .other-city .citylist .city-indexes .hot-city-capitcals li,
+.slim-header .city-picker .othercitylist .city-indexes .hot-city-capitcals li,
+.fancy-header .city-picker .othercitylist .city-indexes .hot-city-capitcals li,
+.filter-header .city-picker .othercitylist .city-indexes .hot-city-capitcals li,
+.header .city-picker .othercitylist .city-indexes .hot-city-capitcals li,
+.slim-header .other-city .othercitylist .city-indexes .hot-city-capitcals li,
+.fancy-header .other-city .othercitylist .city-indexes .hot-city-capitcals li,
+.filter-header .other-city .othercitylist .city-indexes .hot-city-capitcals li,
+.header .other-city .othercitylist .city-indexes .hot-city-capitcals li {
+  cursor: pointer;
+  float: left;
+  margin-right: 7px;
+  margin-bottom: 7px;
+  background-color: #eee;
+  color: #666;
+  height: 20px;
+  line-height: 20px;
+  width: 20px;
+  text-align: center;
+}
+.slim-header .hot-cities,
+.fancy-header .hot-cities,
+.filter-header .hot-cities,
+.header .hot-cities {
+  margin-top: 24px;
+  overflow: scroll;
+  height: 150px;
+}
+.slim-header .hot-cities li,
+.fancy-header .hot-cities li,
+.filter-header .hot-cities li,
+.header .hot-cities li {
+  overflow: hidden;
+}
+.slim-header .hot-cities li .capital,
+.fancy-header .hot-cities li .capital,
+.filter-header .hot-cities li .capital,
+.header .hot-cities li .capital {
+  font-size: 17px;
+  color: #333;
+  font-weight: bold;
+  width: 28px;
+  float: left;
+}
+.slim-header .hot-cities li .items,
+.fancy-header .hot-cities li .items,
+.filter-header .hot-cities li .items,
+.header .hot-cities li .items {
+  overflow: hidden;
+  margin-left: 28px;
+}
+.slim-header .hot-cities li .items .item,
+.fancy-header .hot-cities li .items .item,
+.filter-header .hot-cities li .items .item,
+.header .hot-cities li .items .item {
+  cursor: pointer;
+  float: left;
+  margin-right: 15px;
+  margin-bottom: 15px;
+}
+.fancy-header .city-picker .citylist:before {
+  left: 120px;
+  content: '';
+  clear: both;
+  position: absolute;
+  top: -20px;
+  margin-left: -10px;
+  border: 10px solid transparent;
+  border-bottom-color: #fff;
+}
+.fancy-header {
+  background-color: #32313a;
+  height: 60px;
+  line-height: 60px;
+  border-bottom: 0;
+  zoom: 1;
+}
+.fancy-header:after {
+  content: '';
+  display: block;
+  clear: both;
+}
+.fancy-header .logo-wrap {
+  float: left;
+  width: 90px;
+}
+.fancy-header .logo {
+  height: 33px;
+  display: block;
+  margin-top: 13px;
+}
+.fancy-header .search-form {
+  border-radius: 3px;
+  float: left;
+  background-color: #fff;
+  height: 35px;
+  margin-left: 27px;
+  margin-top: 12px;
+  overflow: hidden;
+}
+.fancy-header .search-form .input,
+.fancy-header .search-form .btn-submit {
+  position: relative;
+  z-index: 30;
+}
+.fancy-header .search-form .input {
+  line-height: 35px;
+  border: 0;
+  float: left;
+  padding-left: 8px;
+  width: 227px;
+}
+.fancy-header .search-form .btn-submit {
+  float: right;
+  cursor: pointer;
+  width: 34px;
+  height: 36px;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-color: #fff;
+  background-image: url(//dn-piaoniu-static.qbox.me/pc/ui/img/icon-search.7fb8b568.png);
+  border: 0;
+}
+.fancy-header .search-form .btn-submit:hover {
+  background-color: #eee;
+}
+.fancy-header .search-form .suggest-container {
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+  position: absolute;
+  background-color: #fff;
+  padding: 10px 0;
+  top: 47px;
+  z-index: 20;
+  width: 400px;
+}
+.fancy-header .search-form .suggest-container li {
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  font-size: 12px;
+  padding: 10px;
+  line-height: 1.5;
+  border-bottom: 1px solid #eee;
+  margin: 0 10px;
+}
+.fancy-header .search-form .suggest-container li:last-child {
+  border-bottom: 0;
+}
+.fancy-header .search-form .suggest-container li:hover,
+.fancy-header .search-form .suggest-container li.selected {
+  cursor: pointer;
+  background-color: #f4f5fa;
+}
+.fancy-header .city-picker {
+  float: left;
+  margin-left: 15px;
+  padding-right: 15px;
+  background-repeat: no-repeat;
+  background-position: center right;
+  background-image: url(//dn-piaoniu-static.qbox.me/pc/ui/img/arr-down.9f1dbfdd.png);
+}
+.fancy-header .city-picker .city-name {
+  font-size: 14px;
+  color: #fff;
+  cursor: pointer;
+}
+.fancy-header .city-picker .citylist.submenu {
+  left: -105px;
+}
+.fancy-header .city-picker .citylist.submenu .submenu-inner {
+  left: 0;
+}
+.fancy-header .city-picker .citylist.submenu .submenu-inner:before {
+  left: 120px;
+}
+.fancy-header .city-picker .citylist .city-name {
+  display: none;
+}
+.fancy-header .city-picker .citylist .current {
+  background-color: #f6f6f6;
+  color: #666;
+  padding-left: 15px;
+  font-size: 14px;
+  line-height: 38px;
+  height: 38px;
+}
+.fancy-header .city-picker .citylist .cities {
+  padding: 18px;
+  width: 320px;
+  overflow: hidden;
+}
+.fancy-header .city-picker .citylist .cities li {
+  margin-right: 10px;
+  margin-bottom: 10px;
+  cursor: pointer;
+  width: 85px;
+  padding: 0;
+  text-align: center;
+  float: left;
+  color: #333;
+  border: 1px solid #e5e5e5;
+}
+.fancy-header .city-picker .citylist .cities li:hover {
+  background-color: #fff;
+  border-color: #ff2661;
+  color: #ff2661;
+}
+.fancy-header .city-picker .citylist .cities li.active {
+  background-color: #ff2661;
+  border-color: #ff2661;
+  color: #fff;
+}
+.fancy-header .city-picker .citylist .cities li.active a {
+  color: #fff;
+}
+.fancy-header .city-picker .citylist .others {
+  clear: both;
+  font-size: 12px;
+  color: #999;
+  padding-left: 18px;
+  line-height: 36px;
+}
+.fancy-header .nav {
+  float: left;
+  margin-left: 44px;
+}
+.fancy-header .nav .item {
+  float: left;
+  padding: 0 20px;
+}
+.fancy-header .nav .item a {
+  color: #fff;
+}
+.fancy-header .nav .submenu li {
+  padding: 0 34px;
+}
+.fancy-header .item {
+  position: relative;
+}
+.fancy-header .item .submenu {
+  display: none;
+  border: 0;
+  position: absolute;
+  top: 55px;
+  z-index: 5;
+  left: 50%;
+  opacity: 0;
+  transition: all 0.2s linear;
+}
+.fancy-header .item .submenu .submenu-inner {
+  padding-top: 10px;
+  background-color: #fff;
+  position: relative;
+  top: 0;
+  display: block;
+  left: -50%;
+}
+.fancy-header .item .submenu .submenu-inner:before {
+  content: '';
+  clear: both;
+  position: absolute;
+  top: -20px;
+  left: 50%;
+  margin-left: -10px;
+  border: 10px solid transparent;
+  border-bottom-color: #fff;
+}
+.fancy-header .item .submenu li {
+  text-align: center;
+  height: 34px;
+  line-height: 34px;
+  white-space: nowrap;
+}
+.fancy-header .item .submenu li:hover {
+  background-color: #eee;
+}
+.fancy-header .item .submenu li a {
+  display: block;
+  margin: 0 12px;
+  white-space: nowrap;
+  font-size: 14px;
+  color: #333;
+}
+.fancy-header .item .submenu li .logout {
+  border-top: 1px solid #ebebeb;
+}
+.fancy-header .item.active .submenu {
+  top: 60px;
+  opacity: 1;
+}
+.fancy-header .funcs-wrap {
+  float: right;
+}
+.fancy-header .funcs {
+  float: right;
+}
+.fancy-header .funcs .item {
+  float: left;
+  font-size: 12px;
+  color: #9b9aa2;
+  padding-right: 18px;
+  height: 60px;
+  line-height: 60px;
+}
+.fancy-header .funcs .item > .text {
+  display: block;
+  border: 0;
+  margin-top: 20px;
+  line-height: 14px;
+  height: 14px;
+}
+.fancy-header .funcs .item-login,
+.fancy-header .funcs .item-user {
+  display: none;
+}
+.fancy-header .funcs .item-login .text {
+  cursor: pointer;
+}
+.fancy-header .funcs .item-user .username {
+  color: #ff2661;
+  max-width: 80px;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  float: left;
+  font-size: 14px;
+  text-align: right;
+}
+.fancy-header .funcs .item-user span {
+  float: left;
+  font-size: 14px;
+}
+.fancy-header .funcs .item-mobile > .text {
+  cursor: pointer;
+  padding-left: 40px;
+  border-left: 1px solid #414048;
+  position: relative;
+}
+.fancy-header .funcs .item-mobile > .text:before {
+  width: 14px;
+  height: 19px;
+  position: absolute;
+  content: '';
+  display: block;
+  background-image: url(//dn-piaoniu-static.qbox.me/pc/img/icon-mobile.a94b470b.png);
+  left: 15px;
+  top: -2px;
+}
+.fancy-header .funcs .item-mobile .submenu {
+  left: 0;
+}
+.fancy-header .funcs .item-mobile .submenu .submenu-inner {
+  padding-bottom: 5px;
+  padding-top: 5px;
+}
+.fancy-header .funcs .item-mobile .submenu .submenu-inner:before {
+  left: 170px;
+}
+.fancy-header .funcs .item-mobile .submenu li {
+  height: auto;
+  position: relative;
+  margin: 0 15px;
+  padding: 10px 0 0;
+  font-size: 12px;
+  border-bottom: 1px solid #f4f5fa;
+  zoom: 1;
+}
+.fancy-header .funcs .item-mobile .submenu li:after {
+  content: '';
+  display: block;
+  clear: both;
+}
+.fancy-header .funcs .item-mobile .submenu li:hover {
+  background-color: #fff;
+}
+.fancy-header .funcs .item-mobile .submenu li:last-child {
+  border-bottom: 0;
+}
+.fancy-header .funcs .item-mobile .submenu li .qr {
+  float: left;
+  height: 84px;
+  width: 84px;
+  position: relative;
+  top: -4px;
+}
+.fancy-header .funcs .item-mobile .submenu li .text {
+  overflow: hidden;
+  margin-left: 100px;
+  line-height: 1.5;
+}
+.fancy-header .funcs .item-mobile .submenu li .text .title {
+  font-size: 16px;
+  margin-top: 8px;
+  margin-bottom: 12px;
+  line-height: 1;
+}
+.fancy-header .funcs .item-mobile .submenu li .text .desc {
+  color: #999;
+  font-size: 12px;
+}

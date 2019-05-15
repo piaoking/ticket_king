@@ -1,0 +1,36 @@
+﻿#body {
+  background-color: #f7f7f7;
+  padding-bottom: 58px;
+  padding-top: 1px;
+}
+#body:after {
+  content: "";
+  clear: both;
+  display: block;
+}
+.container-bread-crumb {
+  margin-bottom: 30px;
+}
+.map {
+  display: block;
+}
+.card {
+  display: block;
+  margin-bottom: 40px;
+}
+.card h3 {
+  font-size: 22px;
+  margin-top: 10px;
+  margin-bottom: 15px;
+}
+.card h4 {
+  font-size: 16px;
+  margin-top: 5px;
+  margin-bottom: 10px;
+}
+.card p {
+  line-height: 1;
+  color: #999;
+  font-size: 16px;
+  margin-bottom: 14px;
+}

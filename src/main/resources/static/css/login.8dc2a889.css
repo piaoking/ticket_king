@@ -1,0 +1,186 @@
+.main {
+  background-image: url(//dn-piaoniu-static.qbox.me/pc/user/img/login-bg.ddb15509.png);
+  background-position: top center;
+}
+.main .container {
+  overflow: hidden;
+  height: 690px;
+}
+.login-form {
+  margin-top: 122px;
+  border-radius: 3px;
+  background-color: #fff;
+  float: right;
+  width: 360px;
+  margin-right: 37px;
+  padding: 30px 38px 40px;
+}
+.login-form .title {
+  margin-bottom: 5px;
+  font-size: 24px;
+  color: #333;
+}
+.login-form .hint {
+  visibility: hidden;
+  background-color: #fde2e9;
+  color: #666;
+  padding-left: 48px;
+  height: 28px;
+  line-height: 28px;
+  border: 1px solid #fdc5d4;
+  border-radius: 3px;
+  font-size: 12px;
+  margin-bottom: 6px;
+  background-repeat: no-repeat;
+  background-position: 16px center;
+  background-image: url(//dn-piaoniu-static.qbox.me/pc/user/img/icon-err.db1251c7.png);
+}
+.login-form .hint a {
+  color: #ff2661;
+}
+.login-form .row {
+  overflow: hidden;
+}
+.login-form .row .link {
+  color: #666;
+  font-size: 14px;
+}
+.login-form .row .link-left {
+  float: left;
+}
+.login-form .row .link-right {
+  float: right;
+}
+.login-form .row .link-reg {
+  font-size: 18px;
+  color: #ff2661;
+}
+.login-form .row .btn-submit {
+  background-color: #ff2661;
+  background-image: url(//dn-piaoniu-static.qbox.me/pc/user/img/login-btn-bg.12935c1a.png);
+  color: #fff;
+  width: 100%;
+  height: 52px;
+  border-radius: 4px;
+  border: 0;
+  margin-top: 15px;
+  margin-bottom: 13px;
+  font-size: 22px;
+}
+.login-form .login-fields {
+  display: none;
+}
+.login-form .quick-login-fields {
+  display: block;
+}
+.login-form .login-fields,
+.login-form .quick-login-fields,
+.login-form .fields {
+  margin-bottom: 32px;
+}
+.login-form .login-fields .row,
+.login-form .quick-login-fields .row,
+.login-form .fields .row {
+  border: 1px solid #eaeaec;
+  border-radius: 4px;
+  overflow: hidden;
+  margin-bottom: 20px;
+  position: relative;
+}
+.login-form .login-fields .row .icon,
+.login-form .quick-login-fields .row .icon,
+.login-form .fields .row .icon {
+  width: 36px;
+  height: 28px;
+  border-right: 1px solid #ededed;
+  position: absolute;
+  top: 11px;
+  left: 17px;
+  background-repeat: no-repeat;
+  background-size: contain;
+}
+.login-form .login-fields .row.row-mobile .icon,
+.login-form .quick-login-fields .row.row-mobile .icon,
+.login-form .fields .row.row-mobile .icon {
+  background-image: url(//dn-piaoniu-static.qbox.me/pc/user/img/icon-mobile.175abeb8.png);
+}
+.login-form .login-fields .row.row-password .icon,
+.login-form .quick-login-fields .row.row-password .icon,
+.login-form .fields .row.row-password .icon {
+  background-image: url(//dn-piaoniu-static.qbox.me/pc/user/img/icon-password.7b2d22eb.png);
+}
+.login-form .login-fields .row.row-vcode .icon,
+.login-form .quick-login-fields .row.row-vcode .icon,
+.login-form .fields .row.row-vcode .icon {
+  background-image: url(//dn-piaoniu-static.qbox.me/pc/user/img/icon-vcode.76492ac6.png);
+}
+.login-form .login-fields .row.row-captcha,
+.login-form .quick-login-fields .row.row-captcha,
+.login-form .fields .row.row-captcha {
+  display: none;
+  border: none;
+}
+.login-form .login-fields .row.row-captcha .input-vcode,
+.login-form .quick-login-fields .row.row-captcha .input-vcode,
+.login-form .fields .row.row-captcha .input-vcode {
+  float: left;
+  width: 240px;
+  margin-left: 0;
+  border: 1px solid #eaeaec;
+}
+.login-form .login-fields .row.row-captcha img,
+.login-form .quick-login-fields .row.row-captcha img,
+.login-form .fields .row.row-captcha img {
+  float: right;
+  margin-right: 10px;
+  margin-top: 5px;
+  width: 76.5px;
+  height: 40px;
+}
+.login-form .login-fields .row.row-captcha .btn-captcha,
+.login-form .quick-login-fields .row.row-captcha .btn-captcha,
+.login-form .fields .row.row-captcha .btn-captcha {
+  position: relative;
+  margin-right: 10px;
+  background-color: #fff;
+  float: right;
+  padding-right: 5px;
+  width: auto;
+  padding-left: 15px;
+  border-left: 1px solid #eaeaec;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  height: 30px;
+  line-height: 30px;
+}
+.login-form .login-fields .row.row-focused,
+.login-form .quick-login-fields .row.row-focused,
+.login-form .fields .row.row-focused {
+  border-color: #5fb7fc;
+}
+.login-form .login-fields .row .btn-vcode,
+.login-form .quick-login-fields .row .btn-vcode,
+.login-form .fields .row .btn-vcode {
+  position: absolute;
+  right: 0;
+  top: 0;
+  line-height: 50px;
+  height: 50px;
+  border: 0;
+  background-color: #f8f8f8;
+  width: 128px;
+  color: #999;
+  cursor: pointer;
+  border-left: 1px solid #eaeaec;
+}
+.login-form .login-fields .row .input,
+.login-form .quick-login-fields .row .input,
+.login-form .fields .row .input {
+  outline: none;
+  padding-left: 15px;
+  border: 0;
+  margin-left: 53px;
+  height: 50px;
+  line-height: 50px;
+  width: 290px;
+}

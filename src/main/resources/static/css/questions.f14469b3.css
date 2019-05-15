@@ -1,0 +1,101 @@
+﻿.question-container {
+  margin-top: 30px;
+}
+.question-container .aside {
+  float: left;
+  background-color: #f7f8fa;
+  border: 1px solid #eaeaec;
+  border-top: none;
+  width: 200px;
+  margin-bottom: 20px;
+  margin-right: 27px;
+}
+.question-container .aside .h2 {
+  font-weight: normal;
+  font-size: 20px;
+  height: 56px;
+  line-height: 56px;
+  padding-left: 16px;
+}
+.question-container .aside .h2.active {
+  color: #ea3667;
+}
+.question-container .aside .group {
+  border-top: 1px solid #dfdfdf;
+  padding: 16px 31px 0 31px;
+}
+.question-container .aside .group .h3 {
+  font-size: 16px;
+  cursor: pointer;
+  color: #565656;
+  padding: 0 0 16px 0;
+  line-height: 1;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.question-container .aside .group .h3 img {
+  width: 12px;
+  transform: rotate(180deg);
+}
+.question-container .aside .group.expand .h3 img {
+  transform: rotate(0);
+}
+.question-container .aside .group.expand ul {
+  display: block;
+  max-height: 500px;
+}
+.question-container .aside .group.expand ul li {
+  display: block;
+}
+.question-container .aside .group ul {
+  font-size: 14px;
+  max-height: 0;
+}
+.question-container .aside .group ul li {
+  color: #666;
+  cursor: pointer;
+  display: none;
+}
+.question-container .aside .group ul li span {
+  display: block;
+  border: 1px solid transparent;
+  color: #565656;
+  position: relative;
+  width: 168px;
+  padding: 16px 0;
+  padding-left: 29px;
+  left: -32px;
+}
+.question-container .aside .group ul li.active span {
+  color: #EA3667;
+  position: relative;
+  display: block;
+  background-color: #fff;
+  border: 1px solid #eaeaec;
+  border-right: 0;
+  border-left: 3px solid #EA3667;
+}
+.question-container .questionTitle {
+  padding: 16px 0;
+  color: #535353;
+  font-size: 16px;
+  border-bottom: 1px solid #e6e6e6;
+  margin-bottom: 24px;
+}
+.question-container .questionContent {
+  overflow: hidden;
+  margin-left: 234px;
+  min-height: 700px;
+  color: #999;
+  font-size: 14px;
+  line-height: 1.8;
+}
+.question-container .questionContent .title {
+  margin-top: 27px;
+  margin-bottom: 16px;
+  color: #333;
+}
+.question-container .questionContent .subTitle {
+  color: #666;
+}

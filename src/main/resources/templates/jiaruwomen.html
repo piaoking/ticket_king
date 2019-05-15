@@ -1,0 +1,439 @@
+﻿ <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="mobileUrl" content="//piaoniu.m.zhiye.com/" />
+       <link type="text/css" rel="stylesheet" href="css/frontmodule.css" />
+<link type="text/css" rel="stylesheet" href="css/6_themes_default_style.css" front="css" />
+<script type="text/javascript">
+       //mobileUrl rewrite
+       function goPAGE() {
+		    if ((navigator.userAgent.match(/(phone|pad|pod|iPhone|iPod|ios|iPad|Android|Mobile|BlackBerry|IEMobile|MQQBrowser|JUC|Fennec|wOSBrowser|BrowserNG|WebOS|Symbian|Windows Phone)/i))) {
+          if(window.location.hostname == "hisense.zhiye.com") {
+            window.location.href = "http://hisense.m.zhiye.com/index.html"
+          } else {
+			      var appSrcMetas = document.getElementsByName('mobileUrl');
+			      if(appSrcMetas.length > 0){
+		       		  window.location.href = appSrcMetas[0].getAttribute("content");
+			      }
+          }
+		    } 
+		  }
+      goPAGE();
+       
+       //opsapi
+       window.PERF_START=new Date;
+       function _splash(page, uid, tid, pid){
+        uid =  uid || 0;  // 这里是用户ID
+        tid =  tid || 0;   // 这里是租户ID
+        pid =  pid || 'unknown';  // 这里是项目标识
+        var now = new Date;
+        var start = window.PERF_START || now;
+        var diff = now - start;
+        var rand = Math.round(Math.random()*1000000);
+        var url= document.location.protocol+'//opsapi.beisen.com/opsapi/AddLog?appName='+pid+'&label=%5Bsplash%5D%20'+page+'&uid='+uid+'&tid='+tid+'&time='+diff+'&type=1&sid='+rand+'&step=0';
+        var img = new Image;
+        img.src = url;
+    }
+    </script>
+          <script type="text/javascript" src="js/6_themes_default_scripts_jquery311.js" ></script>
+<script type="text/javascript" src="js/6_themes_default_scripts_bgfull.js" ></script>
+<script type="text/javascript" src="js/6_themes_default_scripts_pagescripts.js" ></script>
+<script type="text/javascript">var $bs_vars={'st':'//stc.beisen.com/','version':'2019.05.07.003','constSite':'//const.italent.cn'};function vstr(str) {
+         if (typeof ($bs_vars) == 'undefine')
+             return str;
+         var result = str;
+         for (var v in $bs_vars) {
+             var regex = new RegExp('\\$\\{' + v.toString() + '\\}|\\{' + v.toString() + '\\}', 'igm');
+             result = result.replace(regex, $bs_vars[v]);
+         }
+         return result;
+     };</script><!--引用静态文件:requirejs-->
+<script type="text/javascript" src="js/require.js" ></script>
+		<title>上海颂诚网络科技有限公司招聘系统</title>
+</head>
+<body>
+  
+  <div class="indexmain">
+  <div class="header">
+    <div class="mainContent">
+          <div class="logo">
+  <img src="picture/109124_medias_2018124_2018124logo.png"/>
+ 
+</div>
+        
+<!--module:menu begin-->
+<div class="bs-module">
+    <div class="menu-template6 ">
+        
+
+
+
+  
+
+
+
+<ul id="portalmenu" class="nav">
+    <li class="line" style="width: 0px; float:left; height: 30px; border-left: 1px solid #ccc; display: inline-block;  vertical-align: top;  position: relative; margin: 15px 30px 0px 0px;"></li>
+
+
+                <li class="item on"><a target="_self" href="/home" >首页</a>
+                </li>                <li class="item "><a target="_self" href="/Social" >社会招聘</a>
+                </li>                <li class="item "><a target="_self" href="/Campus" >校园招聘</a>
+                </li>                <li class="item "><a target="_self" href="/Intern" >实习生招聘</a>
+                </li>                <li class="item "><a target="_blank" href="http://www.piaoniu.com/?channel=baidu_yanchu-yanchu-shanghai-pc_com-pinpai&amp;utm_source=baidusem&amp;utm_ac=%E6%BC%94%E5%87%BA&amp;utm_camp=%E6%BC%94%E5%87%BA-%E6%BC%94%E5%87%BA-%E4%B8%8A%E6%B5%B7-pc&amp;utm_gp=com-%E5%93%81%E7%89%8C&amp;utm_kw=%E7%A5%A8%E7%89%9B%E7%BD%91&amp;" >联系我们</a>
+                </li></ul>
+
+
+
+
+    </div>
+</div>
+<!--module:menu end-->
+        
+<!--module:internalrecommend begin-->
+<div class="bs-module">
+    <div class="internalrecommend-template6 ">
+        
+
+
+
+
+
+
+<div class="internaldiv">
+       <a class="internal" href="http://neitui.zhiye.com/ipiaoniu" target="_blank">内部推荐</a>
+</div>
+
+
+
+
+
+
+    </div>
+</div>
+<!--module:internalrecommend end-->
+<!--module:login begin-->
+<div class="bs-module">
+    <div class="login-template6 ">
+        
+
+
+
+
+
+
+<style type="text/css">
+    .isLogin,.unLogin {
+        display:inline-block;
+        vertical-align: top;
+    }
+</style>
+<div class="login login-hearder">
+   
+        <div class="isLogin" style="display:none">
+            <a href="/Portal/Apply/Index"><span>个人中心</span></a>|
+            <a href="/User/Account/LogOut"><span>退出</span></a>
+        </div>
+   
+    <div class="unLogin" style="display:none">
+        <a class="loginlink" href="/Portal/Account/Login?returnUrl=http%3A%2F%2Fpiaoniu.zhiye.com%2F%2F">登录</a>|
+        <a class="reglink" href="/Portal/Account/Register?returnUrl=http%3A%2F%2Fpiaoniu.zhiye.com%2F%2F">注册</a>
+    </div>
+   
+</div>
+
+<script type="text/javascript">
+    var makeUserInfo = function (resp) {
+        var userInfo = {};
+        //userInfo.name = resp.Model.Email;
+        userInfo.isLogin = resp.Success;
+        return userInfo;
+    }
+    
+    $.ajax({
+        url: '/User/Account/GetUserLoginInfo?v=' + Math.random()
+        , data: {}
+        , cache: false
+        , type: 'post'
+        , success: function (resp) {
+            //配置用户基本信息
+            var userInfo = makeUserInfo(resp);
+            var loginView = $(".login-hearder .isLogin");
+            var unLoginView = $(".login-hearder .unLogin");
+            if (userInfo.isLogin) {
+                loginView.show()
+            }
+            else {
+                unLoginView.show()
+            }
+            
+        }//success
+        , error: function () {
+            throw new Error('ERROR: get user info')
+        }
+    });//ajax
+</script>
+
+
+    </div>
+</div>
+<!--module:login end-->
+    </div>
+</div>
+
+<!--module:customerimage begin-->
+<div class="bs-module">
+    <div class="customerimage-template6home ">
+        
+
+
+
+
+
+
+<div class="bgImg"><img src="picture/109124_medias_2018124_201812492920298.jpg"/></div>
+
+
+
+
+
+
+    </div>
+</div>
+<!--module:customerimage end-->
+<div class="searchBox">
+    
+<!--module:positionsearch begin-->
+<div class="bs-module">
+    <div class="positionsearch-keyandflag ">
+        
+
+
+
+
+<a name="jlt" ></a>
+
+
+<div class="l">
+</div>
+<div class="txtIn">
+    <input type="text" name="k" id="k" autocomplete="off" maxlength="50" />
+</div>
+<a class="searchBtn subButton"></a>
+<style type="text/css">
+    .hotSearch .hot-words {
+      display: inline-block;
+      float: right;
+      float:left;
+      width: 465px;
+    }
+    .hotSearch .hot-words li {
+      float:left;
+      background-color:transparent;
+    }
+    .hotSearch .hot-word-label {
+      display: inline-block;
+      width:85px;
+      float:left;
+    }
+    .searchBox .hotSearch a {
+        filter: none;
+    }
+</style>
+<div class="hotSearch">
+</div>
+
+<script type="text/javascript">
+
+
+    function myHTMLEnCode(str) {
+        var s = "";
+        if (str.length == 0) return "";
+        s = str.replace(/&/g, "&amp;");
+        s = s.replace(/</g, "&lt;");
+        s = s.replace(/>/g, "&gt;");
+        s = s.replace(/ /g, "&nbsp;");
+        s = s.replace(/\'/g, "&#39;");
+        s = s.replace(/\"/g, "&quot;");
+        s = s.replace(/\n/g, "<br>");
+        return s;
+    }
+
+    function myHTMLDeCode(str) {
+        var s = "";
+        if (str.length == 0) return "";
+        s = str.replace(/&amp;/g, "&");
+        s = s.replace(/&lt;/g, "<");
+        s = s.replace(/&gt;/g, ">");
+        s = s.replace(/&nbsp;/g, " ");
+        s = s.replace(/&#39;/g, "\'");
+        s = s.replace(/&quot;/g, "\"");
+        s = s.replace(/<br>/g, "\n");
+        return s;
+    }
+
+
+    $(function () {
+        var defaultText = "请输入职位关键字";
+        $(".subButton").click(function () {
+            var kValue;
+            kValue = $("input[name=k]").val();
+            if (kValue == defaultText) kValue = '';
+            if (kValue == undefined)
+                kValue = "";
+
+            if (kValue == "")
+            window.location = "\/search";
+
+            kValue = myHTMLEnCode(kValue);
+            kValue = encodeURIComponent($.trim(kValue));
+            
+            var para = "k=" + kValue;
+            window.location = "\/search?" + para;
+        });
+
+        $(".skey").click(function () {
+            var key = $(this).attr("key");
+            key = myHTMLEnCode(key);
+            key = encodeURIComponent($.trim(key));
+            window.location = "\/search?k=" + key;
+        });
+        
+        var keyStr = $("#k").val();
+        if (!keyStr || keyStr == "") {
+            $("#k").css("color", "#d2cece");
+            $("#k").val(defaultText);
+        }
+
+        $("#k").focus(function () {
+            var v = $(this).val();
+            if (v == defaultText) {
+                $(this).val("");
+                $(this).css("color", "");
+            }
+        });
+
+        $("#k").blur(function () {
+            var v = $(this).val();
+            if (!v || v == "") {
+                $(this).val(defaultText);
+                $(this).css("color", "#d2cece");
+            }
+        });
+    });
+</script>
+
+
+    </div>
+</div>
+<!--module:positionsearch end-->
+</div>
+<div class="footer">
+    <div class="mainContent">
+        <!--this is a pice of list-->
+        
+<!--module:positionlist begin-->
+<div class="bs-module">
+    <div class="positionlist-template6home ">
+        
+
+
+
+
+
+
+
+<!--开始-->
+<div class="bottomList">
+    <h3>热招职位</h3><a href="/alljob/?o=2" class="more">更多 >></a>
+    <ul>
+            </ul>
+        </div>
+
+
+
+    </div>
+</div>
+<!--module:positionlist end-->
+        <!--pice end-->
+        <div class="devidLine"></div>
+        <!--this is a pice of list-->
+        
+<!--module:positionlist begin-->
+<div class="bs-module">
+    <div class="positionlist-template6home ">
+        
+
+
+
+
+
+
+
+<!--开始-->
+<div class="bottomList">
+    <h3>长招职位</h3><a href="/alljob/?o=1" class="more">更多 >></a>
+    <ul>
+            </ul>
+        </div>
+
+
+
+    </div>
+</div>
+<!--module:positionlist end-->
+        <!--pice end-->
+        <div class="devidLine"></div>
+        
+<!--module:customerimage begin-->
+<div class="bs-module">
+    <div class="customerimage-template6 ">
+        
+
+
+
+
+
+
+<div class="er">
+        <img src="picture/109124_medias_2018124_201812411494329.jpg" class="cusimg"/>
+</div>
+
+
+
+
+
+
+
+    </div>
+</div>
+<!--module:customerimage end-->
+    </div>
+  <div class="footer2">
+           &copy;2019&nbsp;&nbsp;上海颂诚网络科技有限公司&nbsp;&nbsp;&nbsp京ICP备05051632号&nbsp<a target="_blank" href="//www.beian.gov.cn/portal/registerSystemInfo?recordcode=11010802020454" style="display:inline-block;text-decoration:none;height:20px;line-height:20px;color: #000000;"><img src="picture/beian.png" style="float:left;"/>京公网安备 11010802020454号</a>&nbsp;Powered by&nbsp;<a href="http://www.beisen.com" class="footerlogo" target="_blank"></a>
+	</div>
+</div></div>
+<script>
+  $(function(){
+  	if($(".bgImg img").length != 0){
+   	 	$(".indexmain").backstretch($(".bgImg img").attr("src"));
+  	}
+	if(this.location.host.toLowerCase() == "orionstar.zhiye.com"){
+		$($(".footerlogo").parent().contents()[2]).remove();
+            	$(".footerlogo").hide();
+        }
+  })
+</script>
+</body>
+</html><script type="text/javascript">
+        require([
+            vstr('${st}/${version}/cmsportal/skin/js/baiduStatistics.js')
+
+		]);
+    </script><script type="text/javascript">
+    $(function(){
+    _splash('zhiye_home',0,109124,'new.zhiye.com');
+    });
+    </script>

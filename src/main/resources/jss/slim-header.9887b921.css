@@ -1,0 +1,965 @@
+.side-toolbar {
+  position: fixed;
+  z-index: 9;
+  bottom: 116px;
+  right: 20px;
+  width: 60px;
+  transition: bottom 0.75s ease-in-out;
+}
+.side-toolbar.low {
+  bottom: 10px;
+}
+.side-toolbar .item {
+  border: 1px solid #e5e5e5;
+  height: 60px;
+  cursor: pointer;
+  overflow: hidden;
+}
+.side-toolbar .item .text {
+  display: none;
+  background-color: #ff785e;
+  color: #fff;
+  font-size: 15px;
+  padding: 14px;
+  height: 100%;
+  line-height: 1;
+  line-height: 1.1;
+  text-align: center;
+}
+.side-toolbar .item .icon {
+  height: 100%;
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-color: #fff;
+}
+.side-toolbar .item:hover {
+  border: 1px solid #ff785e;
+}
+.side-toolbar .item:hover .text {
+  display: block;
+}
+.side-toolbar .item:hover .icon {
+  display: none;
+}
+.side-toolbar .item.totop {
+  margin-bottom: 7px;
+}
+.side-toolbar .item.totop .icon {
+  background-image: url(//dn-piaoniu-static.qbox.me/pc/ui/img/icon-totop.befae9e0.png);
+}
+.side-toolbar .item.custom-service .icon {
+  background-image: url(//dn-piaoniu-static.qbox.me/pc/ui/img/icon-custom-service.1ba1b18f.png);
+}
+.side-toolbar .item.common {
+  border-top: 0;
+}
+.side-toolbar .item.common .icon {
+  background-image: url(//dn-piaoniu-static.qbox.me/pc/ui/img/icon-question.7ecc67bf.png);
+}
+.headerbar {
+  background-color: #fafafa;
+  border-bottom: 1px solid #dfdfdf;
+}
+.headerbar .funcs {
+  color: #666;
+  font-size: 12px;
+  height: 40px;
+  line-height: 40px;
+  float: left;
+}
+.headerbar .funcs .item {
+  float: left;
+  position: relative;
+  cursor: pointer;
+  width: auto;
+}
+.headerbar .funcs .item:last-child .text {
+  border-right: 1px solid transparent;
+}
+.headerbar .funcs .item .text {
+  border: 1px solid transparent;
+  cursor: pointer;
+  height: 38px;
+  line-height: 38px;
+  position: relative;
+  padding: 0 15px;
+  z-index: 99;
+  border-right: 1px solid #ccc;
+}
+.headerbar .funcs .item-mobile .text:before {
+  width: 14px;
+  background-image: url(//dn-piaoniu-static.qbox.me/pc/img/icon-mobile.a94b470b.png);
+}
+.headerbar .funcs .item-wechat {
+  position: relative;
+}
+.headerbar .funcs .item-wechat .text:before {
+  width: 19px;
+  background-image: url(//dn-piaoniu-static.qbox.me/pc/img/icon-wechat.e249dc14.png);
+}
+.headerbar .funcs .item-mobile .text,
+.headerbar .funcs .item-wechat .text {
+  padding-left: 35px;
+}
+.headerbar .funcs .item-login {
+  display: none;
+}
+.headerbar .funcs .item-menu {
+  position: relative;
+}
+.headerbar .funcs .item-menu ul {
+  display: none;
+}
+.headerbar .funcs .item-menu ul li {
+  font-size: 14px;
+  cursor: pointer;
+}
+.headerbar .funcs .item-menu ul li a {
+  padding: 10px 0;
+  display: block;
+}
+.headerbar .funcs .item-menu ul li:hover {
+  background-color: #f8f8f8;
+}
+.headerbar .funcs .item-menu ul li.logout {
+  border-top: 1px solid #ebebeb;
+  padding: 10px 0;
+  color: #666;
+  margin-top: 8px;
+}
+.headerbar .funcs .item-menu:hover > .text {
+  display: block;
+  background-color: #fff;
+  border: 1px solid #ccc;
+  border-bottom-color: #fff;
+  position: relative;
+  z-index: 99;
+}
+.headerbar .funcs .item-menu:hover > .text:before {
+  top: 9px;
+}
+.headerbar .funcs .item-menu:hover ul {
+  display: block;
+}
+.headerbar .funcs .item-user .text {
+  border-right: 0;
+}
+.headerbar .funcs .item-user .username {
+  color: #ff2661;
+  max-width: 120px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  display: inline-block;
+  position: relative;
+}
+.headerbar .funcs .item-user span {
+  display: inline-block;
+  position: relative;
+  top: -1px;
+  overflow: hidden;
+}
+.headerbar .funcs ul {
+  z-index: 20;
+  display: none;
+  border: 1px solid #ccc;
+  padding: 5px 10px;
+  line-height: 20px;
+  background: #fff;
+  width: 100%;
+  position: absolute;
+  top: 39px;
+  text-align: center;
+  right: 0;
+}
+.headerbar .right-funcs {
+  float: right;
+  font-size: 12px;
+  position: relative;
+}
+.headerbar .right-funcs .item-mobile > .text {
+  display: inline;
+}
+.headerbar .right-funcs .item-mobile > .text:before {
+  content: "";
+  height: 19px;
+  display: block;
+  background-repeat: no-repeat;
+  position: absolute;
+  left: 10px;
+  top: -1px;
+}
+.headerbar .right-funcs .item-mobile ul {
+  padding: 10px 0;
+  width: auto;
+}
+.headerbar .right-funcs .item-mobile ul li {
+  height: auto;
+  position: relative;
+  margin: 0 15px;
+  padding: 10px 0 0;
+  font-size: 12px;
+  border-bottom: 1px solid #f4f5fa;
+  cursor: normal;
+  zoom: 1;
+}
+.headerbar .right-funcs .item-mobile ul li:after {
+  content: '';
+  display: block;
+  clear: both;
+}
+.headerbar .right-funcs .item-mobile ul li:hover {
+  background-color: #fff;
+}
+.headerbar .right-funcs .item-mobile ul li:last-child {
+  border-bottom: 0;
+}
+.headerbar .right-funcs .item-mobile ul li .qr {
+  float: left;
+  height: 84px;
+  width: 84px;
+  position: relative;
+  top: -4px;
+  left: -4px;
+}
+.headerbar .right-funcs .item-mobile ul li .text {
+  overflow: hidden;
+  margin-left: 75px;
+  line-height: 1.5;
+  border: none;
+  padding-left: 0;
+  height: auto;
+}
+.headerbar .right-funcs .item-mobile ul li .text .title {
+  font-size: 16px;
+  margin-top: 8px;
+  margin-bottom: 12px;
+  line-height: 1;
+  white-space: nowrap;
+}
+.headerbar .right-funcs .item-mobile ul li .text .desc {
+  color: #999;
+  font-size: 12px;
+  white-space: nowrap;
+}
+.slim-header .city-picker .citylist,
+.fancy-header .city-picker .citylist,
+.filter-header .city-picker .citylist,
+.header .city-picker .citylist,
+.slim-header .other-city .citylist,
+.fancy-header .other-city .citylist,
+.filter-header .other-city .citylist,
+.header .other-city .citylist,
+.slim-header .city-picker .othercitylist,
+.fancy-header .city-picker .othercitylist,
+.filter-header .city-picker .othercitylist,
+.header .city-picker .othercitylist,
+.slim-header .other-city .othercitylist,
+.fancy-header .other-city .othercitylist,
+.filter-header .other-city .othercitylist,
+.header .other-city .othercitylist {
+  display: none;
+  font-size: 12px;
+  line-height: 20px;
+  padding: 15px 20px;
+  width: 440px;
+  position: absolute;
+  left: -16px;
+  background-color: #fff;
+  z-index: 20;
+  top: 45px;
+}
+.slim-header .city-picker .citylist .hot-cities li:hover,
+.fancy-header .city-picker .citylist .hot-cities li:hover,
+.filter-header .city-picker .citylist .hot-cities li:hover,
+.header .city-picker .citylist .hot-cities li:hover,
+.slim-header .other-city .citylist .hot-cities li:hover,
+.fancy-header .other-city .citylist .hot-cities li:hover,
+.filter-header .other-city .citylist .hot-cities li:hover,
+.header .other-city .citylist .hot-cities li:hover,
+.slim-header .city-picker .othercitylist .hot-cities li:hover,
+.fancy-header .city-picker .othercitylist .hot-cities li:hover,
+.filter-header .city-picker .othercitylist .hot-cities li:hover,
+.header .city-picker .othercitylist .hot-cities li:hover,
+.slim-header .other-city .othercitylist .hot-cities li:hover,
+.fancy-header .other-city .othercitylist .hot-cities li:hover,
+.filter-header .other-city .othercitylist .hot-cities li:hover,
+.header .other-city .othercitylist .hot-cities li:hover,
+.slim-header .city-picker .citylist .city-item:hover,
+.fancy-header .city-picker .citylist .city-item:hover,
+.filter-header .city-picker .citylist .city-item:hover,
+.header .city-picker .citylist .city-item:hover,
+.slim-header .other-city .citylist .city-item:hover,
+.fancy-header .other-city .citylist .city-item:hover,
+.filter-header .other-city .citylist .city-item:hover,
+.header .other-city .citylist .city-item:hover,
+.slim-header .city-picker .othercitylist .city-item:hover,
+.fancy-header .city-picker .othercitylist .city-item:hover,
+.filter-header .city-picker .othercitylist .city-item:hover,
+.header .city-picker .othercitylist .city-item:hover,
+.slim-header .other-city .othercitylist .city-item:hover,
+.fancy-header .other-city .othercitylist .city-item:hover,
+.filter-header .other-city .othercitylist .city-item:hover,
+.header .other-city .othercitylist .city-item:hover {
+  background-color: #fff;
+}
+.slim-header .city-picker .citylist .city-name,
+.fancy-header .city-picker .citylist .city-name,
+.filter-header .city-picker .citylist .city-name,
+.header .city-picker .citylist .city-name,
+.slim-header .other-city .citylist .city-name,
+.fancy-header .other-city .citylist .city-name,
+.filter-header .other-city .citylist .city-name,
+.header .other-city .citylist .city-name,
+.slim-header .city-picker .othercitylist .city-name,
+.fancy-header .city-picker .othercitylist .city-name,
+.filter-header .city-picker .othercitylist .city-name,
+.header .city-picker .othercitylist .city-name,
+.slim-header .other-city .othercitylist .city-name,
+.fancy-header .other-city .othercitylist .city-name,
+.filter-header .other-city .othercitylist .city-name,
+.header .other-city .othercitylist .city-name {
+  font-size: 16px;
+  position: absolute;
+  width: 70px;
+  height: 41px;
+  line-height: 41px;
+  background: #fff;
+  top: -42px;
+  padding-left: 15px;
+  border: 1px solid #ccc;
+  border-bottom: 0;
+  left: -1px;
+}
+.slim-header .city-picker .citylist .city-name:after,
+.fancy-header .city-picker .citylist .city-name:after,
+.filter-header .city-picker .citylist .city-name:after,
+.header .city-picker .citylist .city-name:after,
+.slim-header .other-city .citylist .city-name:after,
+.fancy-header .other-city .citylist .city-name:after,
+.filter-header .other-city .citylist .city-name:after,
+.header .other-city .citylist .city-name:after,
+.slim-header .city-picker .othercitylist .city-name:after,
+.fancy-header .city-picker .othercitylist .city-name:after,
+.filter-header .city-picker .othercitylist .city-name:after,
+.header .city-picker .othercitylist .city-name:after,
+.slim-header .other-city .othercitylist .city-name:after,
+.fancy-header .other-city .othercitylist .city-name:after,
+.filter-header .other-city .othercitylist .city-name:after,
+.header .other-city .othercitylist .city-name:after {
+  top: -1px;
+  right: 23px;
+  height: 42px;
+  line-height: 42px;
+}
+.slim-header .city-picker .citylist .top-rows,
+.fancy-header .city-picker .citylist .top-rows,
+.filter-header .city-picker .citylist .top-rows,
+.header .city-picker .citylist .top-rows,
+.slim-header .other-city .citylist .top-rows,
+.fancy-header .other-city .citylist .top-rows,
+.filter-header .other-city .citylist .top-rows,
+.header .other-city .citylist .top-rows,
+.slim-header .city-picker .othercitylist .top-rows,
+.fancy-header .city-picker .othercitylist .top-rows,
+.filter-header .city-picker .othercitylist .top-rows,
+.header .city-picker .othercitylist .top-rows,
+.slim-header .other-city .othercitylist .top-rows,
+.fancy-header .other-city .othercitylist .top-rows,
+.filter-header .other-city .othercitylist .top-rows,
+.header .other-city .othercitylist .top-rows {
+  padding-bottom: 6px;
+  border-bottom: 1px solid #ccc;
+}
+.slim-header .city-picker .citylist .top-rows .row,
+.fancy-header .city-picker .citylist .top-rows .row,
+.filter-header .city-picker .citylist .top-rows .row,
+.header .city-picker .citylist .top-rows .row,
+.slim-header .other-city .citylist .top-rows .row,
+.fancy-header .other-city .citylist .top-rows .row,
+.filter-header .other-city .citylist .top-rows .row,
+.header .other-city .citylist .top-rows .row,
+.slim-header .city-picker .othercitylist .top-rows .row,
+.fancy-header .city-picker .othercitylist .top-rows .row,
+.filter-header .city-picker .othercitylist .top-rows .row,
+.header .city-picker .othercitylist .top-rows .row,
+.slim-header .other-city .othercitylist .top-rows .row,
+.fancy-header .other-city .othercitylist .top-rows .row,
+.filter-header .other-city .othercitylist .top-rows .row,
+.header .other-city .othercitylist .top-rows .row {
+  overflow: hidden;
+}
+.slim-header .city-picker .citylist .top-rows .row .title,
+.fancy-header .city-picker .citylist .top-rows .row .title,
+.filter-header .city-picker .citylist .top-rows .row .title,
+.header .city-picker .citylist .top-rows .row .title,
+.slim-header .other-city .citylist .top-rows .row .title,
+.fancy-header .other-city .citylist .top-rows .row .title,
+.filter-header .other-city .citylist .top-rows .row .title,
+.header .other-city .citylist .top-rows .row .title,
+.slim-header .city-picker .othercitylist .top-rows .row .title,
+.fancy-header .city-picker .othercitylist .top-rows .row .title,
+.filter-header .city-picker .othercitylist .top-rows .row .title,
+.header .city-picker .othercitylist .top-rows .row .title,
+.slim-header .other-city .othercitylist .top-rows .row .title,
+.fancy-header .other-city .othercitylist .top-rows .row .title,
+.filter-header .other-city .othercitylist .top-rows .row .title,
+.header .other-city .othercitylist .top-rows .row .title {
+  font-weight: bold;
+  float: left;
+  color: #000;
+  font-size: 12px;
+  width: 70px;
+}
+.slim-header .city-picker .citylist .top-rows .row ul,
+.fancy-header .city-picker .citylist .top-rows .row ul,
+.filter-header .city-picker .citylist .top-rows .row ul,
+.header .city-picker .citylist .top-rows .row ul,
+.slim-header .other-city .citylist .top-rows .row ul,
+.fancy-header .other-city .citylist .top-rows .row ul,
+.filter-header .other-city .citylist .top-rows .row ul,
+.header .other-city .citylist .top-rows .row ul,
+.slim-header .city-picker .othercitylist .top-rows .row ul,
+.fancy-header .city-picker .othercitylist .top-rows .row ul,
+.filter-header .city-picker .othercitylist .top-rows .row ul,
+.header .city-picker .othercitylist .top-rows .row ul,
+.slim-header .other-city .othercitylist .top-rows .row ul,
+.fancy-header .other-city .othercitylist .top-rows .row ul,
+.filter-header .other-city .othercitylist .top-rows .row ul,
+.header .other-city .othercitylist .top-rows .row ul {
+  overflow: hidden;
+}
+.slim-header .city-picker .citylist .top-rows .row ul li,
+.fancy-header .city-picker .citylist .top-rows .row ul li,
+.filter-header .city-picker .citylist .top-rows .row ul li,
+.header .city-picker .citylist .top-rows .row ul li,
+.slim-header .other-city .citylist .top-rows .row ul li,
+.fancy-header .other-city .citylist .top-rows .row ul li,
+.filter-header .other-city .citylist .top-rows .row ul li,
+.header .other-city .citylist .top-rows .row ul li,
+.slim-header .city-picker .othercitylist .top-rows .row ul li,
+.fancy-header .city-picker .othercitylist .top-rows .row ul li,
+.filter-header .city-picker .othercitylist .top-rows .row ul li,
+.header .city-picker .othercitylist .top-rows .row ul li,
+.slim-header .other-city .othercitylist .top-rows .row ul li,
+.fancy-header .other-city .othercitylist .top-rows .row ul li,
+.filter-header .other-city .othercitylist .top-rows .row ul li,
+.header .other-city .othercitylist .top-rows .row ul li {
+  cursor: pointer;
+  color: #333;
+  float: left;
+  font-size: 14px;
+  margin-right: 10px;
+  margin-bottom: 10px;
+  height: auto;
+  line-height: 1.5;
+}
+.slim-header .city-picker .citylist .top-rows .row ul .selected,
+.fancy-header .city-picker .citylist .top-rows .row ul .selected,
+.filter-header .city-picker .citylist .top-rows .row ul .selected,
+.header .city-picker .citylist .top-rows .row ul .selected,
+.slim-header .other-city .citylist .top-rows .row ul .selected,
+.fancy-header .other-city .citylist .top-rows .row ul .selected,
+.filter-header .other-city .citylist .top-rows .row ul .selected,
+.header .other-city .citylist .top-rows .row ul .selected,
+.slim-header .city-picker .othercitylist .top-rows .row ul .selected,
+.fancy-header .city-picker .othercitylist .top-rows .row ul .selected,
+.filter-header .city-picker .othercitylist .top-rows .row ul .selected,
+.header .city-picker .othercitylist .top-rows .row ul .selected,
+.slim-header .other-city .othercitylist .top-rows .row ul .selected,
+.fancy-header .other-city .othercitylist .top-rows .row ul .selected,
+.filter-header .other-city .othercitylist .top-rows .row ul .selected,
+.header .other-city .othercitylist .top-rows .row ul .selected {
+  padding: 3px 8px;
+  background-color: #fff5f8;
+  color: #ff2661;
+}
+.slim-header .city-picker .citylist .city-indexes,
+.fancy-header .city-picker .citylist .city-indexes,
+.filter-header .city-picker .citylist .city-indexes,
+.header .city-picker .citylist .city-indexes,
+.slim-header .other-city .citylist .city-indexes,
+.fancy-header .other-city .citylist .city-indexes,
+.filter-header .other-city .citylist .city-indexes,
+.header .other-city .citylist .city-indexes,
+.slim-header .city-picker .othercitylist .city-indexes,
+.fancy-header .city-picker .othercitylist .city-indexes,
+.filter-header .city-picker .othercitylist .city-indexes,
+.header .city-picker .othercitylist .city-indexes,
+.slim-header .other-city .othercitylist .city-indexes,
+.fancy-header .other-city .othercitylist .city-indexes,
+.filter-header .other-city .othercitylist .city-indexes,
+.header .other-city .othercitylist .city-indexes {
+  padding-top: 15px;
+  margin-bottom: -10px;
+}
+.slim-header .city-picker .citylist .city-indexes .title,
+.fancy-header .city-picker .citylist .city-indexes .title,
+.filter-header .city-picker .citylist .city-indexes .title,
+.header .city-picker .citylist .city-indexes .title,
+.slim-header .other-city .citylist .city-indexes .title,
+.fancy-header .other-city .citylist .city-indexes .title,
+.filter-header .other-city .citylist .city-indexes .title,
+.header .other-city .citylist .city-indexes .title,
+.slim-header .city-picker .othercitylist .city-indexes .title,
+.fancy-header .city-picker .othercitylist .city-indexes .title,
+.filter-header .city-picker .othercitylist .city-indexes .title,
+.header .city-picker .othercitylist .city-indexes .title,
+.slim-header .other-city .othercitylist .city-indexes .title,
+.fancy-header .other-city .othercitylist .city-indexes .title,
+.filter-header .other-city .othercitylist .city-indexes .title,
+.header .other-city .othercitylist .city-indexes .title {
+  color: #000;
+  font-weight: bold;
+}
+.slim-header .city-picker .citylist .city-indexes .hot-city-capitcals,
+.fancy-header .city-picker .citylist .city-indexes .hot-city-capitcals,
+.filter-header .city-picker .citylist .city-indexes .hot-city-capitcals,
+.header .city-picker .citylist .city-indexes .hot-city-capitcals,
+.slim-header .other-city .citylist .city-indexes .hot-city-capitcals,
+.fancy-header .other-city .citylist .city-indexes .hot-city-capitcals,
+.filter-header .other-city .citylist .city-indexes .hot-city-capitcals,
+.header .other-city .citylist .city-indexes .hot-city-capitcals,
+.slim-header .city-picker .othercitylist .city-indexes .hot-city-capitcals,
+.fancy-header .city-picker .othercitylist .city-indexes .hot-city-capitcals,
+.filter-header .city-picker .othercitylist .city-indexes .hot-city-capitcals,
+.header .city-picker .othercitylist .city-indexes .hot-city-capitcals,
+.slim-header .other-city .othercitylist .city-indexes .hot-city-capitcals,
+.fancy-header .other-city .othercitylist .city-indexes .hot-city-capitcals,
+.filter-header .other-city .othercitylist .city-indexes .hot-city-capitcals,
+.header .other-city .othercitylist .city-indexes .hot-city-capitcals {
+  overflow: hidden;
+  margin-top: 8px;
+}
+.slim-header .city-picker .citylist .city-indexes .hot-city-capitcals li,
+.fancy-header .city-picker .citylist .city-indexes .hot-city-capitcals li,
+.filter-header .city-picker .citylist .city-indexes .hot-city-capitcals li,
+.header .city-picker .citylist .city-indexes .hot-city-capitcals li,
+.slim-header .other-city .citylist .city-indexes .hot-city-capitcals li,
+.fancy-header .other-city .citylist .city-indexes .hot-city-capitcals li,
+.filter-header .other-city .citylist .city-indexes .hot-city-capitcals li,
+.header .other-city .citylist .city-indexes .hot-city-capitcals li,
+.slim-header .city-picker .othercitylist .city-indexes .hot-city-capitcals li,
+.fancy-header .city-picker .othercitylist .city-indexes .hot-city-capitcals li,
+.filter-header .city-picker .othercitylist .city-indexes .hot-city-capitcals li,
+.header .city-picker .othercitylist .city-indexes .hot-city-capitcals li,
+.slim-header .other-city .othercitylist .city-indexes .hot-city-capitcals li,
+.fancy-header .other-city .othercitylist .city-indexes .hot-city-capitcals li,
+.filter-header .other-city .othercitylist .city-indexes .hot-city-capitcals li,
+.header .other-city .othercitylist .city-indexes .hot-city-capitcals li {
+  cursor: pointer;
+  float: left;
+  margin-right: 7px;
+  margin-bottom: 7px;
+  background-color: #eee;
+  color: #666;
+  height: 20px;
+  line-height: 20px;
+  width: 20px;
+  text-align: center;
+}
+.slim-header .hot-cities,
+.fancy-header .hot-cities,
+.filter-header .hot-cities,
+.header .hot-cities {
+  margin-top: 24px;
+  overflow: scroll;
+  height: 150px;
+}
+.slim-header .hot-cities li,
+.fancy-header .hot-cities li,
+.filter-header .hot-cities li,
+.header .hot-cities li {
+  overflow: hidden;
+}
+.slim-header .hot-cities li .capital,
+.fancy-header .hot-cities li .capital,
+.filter-header .hot-cities li .capital,
+.header .hot-cities li .capital {
+  font-size: 17px;
+  color: #333;
+  font-weight: bold;
+  width: 28px;
+  float: left;
+}
+.slim-header .hot-cities li .items,
+.fancy-header .hot-cities li .items,
+.filter-header .hot-cities li .items,
+.header .hot-cities li .items {
+  overflow: hidden;
+  margin-left: 28px;
+}
+.slim-header .hot-cities li .items .item,
+.fancy-header .hot-cities li .items .item,
+.filter-header .hot-cities li .items .item,
+.header .hot-cities li .items .item {
+  cursor: pointer;
+  float: left;
+  margin-right: 15px;
+  margin-bottom: 15px;
+}
+.fancy-header .city-picker .citylist:before {
+  left: 120px;
+  content: '';
+  clear: both;
+  position: absolute;
+  top: -20px;
+  margin-left: -10px;
+  border: 10px solid transparent;
+  border-bottom-color: #fff;
+}
+.slim-header {
+  border-bottom: 1px solid #eaeaea;
+  box-sizing: border-box;
+  background-color: #fff;
+}
+.slim-header .container {
+  width: 1200px;
+  height: 90px;
+  margin: 0 auto;
+  position: relative;
+}
+.slim-header:after {
+  content: "";
+  clear: both;
+  display: block;
+}
+.slim-header .logo-link {
+  display: block;
+  float: left;
+  margin-top: 25px;
+}
+.slim-header .logo {
+  border: 0;
+  float: left;
+  width: 104px;
+  height: 40px;
+}
+.slim-header .city-picker {
+  float: left;
+  padding-right: 40px;
+  position: relative;
+  margin-top: 35px;
+  margin-left: 17px;
+}
+.slim-header .city-picker .citylist {
+  border: solid 1px #ececec;
+  left: -100px;
+}
+.slim-header .city-picker .citylist:before {
+  content: '';
+  left: 120px;
+  clear: both;
+  position: absolute;
+  top: -15px;
+  margin-left: -10px;
+  background: url('//dn-piaoniu-static.qbox.me/pc/ui/img/arr-up.93f0d344.png');
+  height: 15px;
+  width: 24px;
+  background-size: contain;
+}
+.slim-header .city-picker .city-name {
+  cursor: pointer;
+  font-size: 14px;
+}
+.slim-header .city-picker .city-name:after {
+  display: block;
+  content: "";
+  background-image: url(//dn-piaoniu-static.qbox.me/pc/ui/img/arr-down.9f1dbfdd.png);
+  width: 8px;
+  position: absolute;
+  height: 22px;
+  background-position: center;
+  background-repeat: no-repeat;
+  right: 25px;
+  top: 0;
+}
+.slim-header .menu {
+  position: absolute;
+  height: 100%;
+  left: 210px;
+}
+.slim-header .menu .menu-item {
+  cursor: pointer;
+  margin-right: 35px;
+  box-sizing: border-box;
+  height: 90px;
+  line-height: 90px;
+  float: left;
+  font-size: 18px;
+  color: #535353;
+  font-weight: 500;
+  padding-top: 5px;
+}
+.slim-header .menu .menu-item.selected {
+  border-bottom: 4px solid #ea3667;
+}
+.slim-header .search-bar {
+  position: absolute;
+  left: 500px;
+  top: 20px;
+  width: 455px;
+}
+.slim-header .search-bar .keywords {
+  margin-top: 7px;
+  line-height: 1;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  overflow: hidden;
+  font-weight: 300;
+}
+.slim-header .search-bar .keywords .item {
+  display: inline-block;
+  font-size: 12px;
+  margin-right: 10px;
+}
+.slim-header .search-bar .keywords .item:first-child a {
+  color: #ff2661;
+}
+.slim-header .search-bar .keywords .item a {
+  color: #999;
+}
+.slim-header .search-bar .suggest-container {
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+  position: absolute;
+  background-color: #fff;
+  padding: 10px 0;
+  top: 35px;
+  z-index: 20;
+  width: 372px;
+}
+.slim-header .search-bar .suggest-container .head {
+  padding: 0 15px 5px 15px;
+  font-size: 12px;
+  color: #999;
+}
+.slim-header .search-bar .suggest-container li {
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  font-size: 12px;
+  padding: 10px 15px;
+  line-height: 1.5;
+}
+.slim-header .search-bar .suggest-container li:last-child {
+  border-bottom: 0;
+}
+.slim-header .search-bar .suggest-container li:hover,
+.slim-header .search-bar .suggest-container li.selected {
+  cursor: pointer;
+  background-color: #f4f5fa;
+}
+.slim-header .search-bar .form {
+  overflow: hidden;
+}
+.slim-header .search-bar .form .input {
+  background-image: url('//dn-piaoniu-static.qbox.me/pc/ui/img/search-grey.a1e82abd.png');
+  background-size: 16px 16px;
+  background-repeat: no-repeat;
+  background-position: 9px center;
+  float: left;
+  width: 328px;
+  font-size: 14px;
+  padding: 8px 8px 8px 34px;
+  height: 15px;
+  border: 1px solid #ececec;
+  border: solid 2px #ffa2bc;
+  border-right: 0;
+  outline: none;
+}
+.slim-header .search-bar .form .btn-submit {
+  float: left;
+  display: block;
+  height: 35px;
+  width: 80px;
+  background-color: #ea3667;
+  border: 0;
+  color: #fff;
+  font-size: 16px;
+  background-size: 22px 22px;
+  background-position: center;
+  background-repeat: no-repeat;
+  cursor: pointer;
+}
+.slim-header .right-funcs {
+  float: right;
+}
+.slim-header .right-funcs .item {
+  position: relative;
+  margin-left: 40px;
+  margin-right: 5px;
+  height: 44px;
+  float: right;
+}
+.slim-header .right-funcs .item .text {
+  cursor: pointer;
+  padding-left: 22px;
+  line-height: 44px;
+  font-size: 16px;
+}
+.slim-header .right-funcs .item .icon {
+  background-repeat: no-repeat;
+  background-position: center;
+  position: absolute;
+  height: 100%;
+  width: 18px;
+  margin-right: 4px;
+  left: 0;
+  background-size: contain;
+}
+.slim-header .right-funcs .item.active .submenu {
+  opacity: 1;
+  top: 60px;
+}
+.slim-header .right-funcs .item .submenu {
+  display: none;
+  background-color: #fff;
+  border: 0;
+  position: absolute;
+  top: 50px;
+  left: -50%;
+  z-index: 15;
+  opacity: 0;
+  transition: all 0.2s linear;
+  border: 1px solid #ececec;
+}
+.slim-header .right-funcs .item .submenu:before {
+  content: '';
+  position: absolute;
+  background-repeat: no-repeat;
+  width: 24px;
+  height: 15px;
+  background-size: cover;
+  left: 50%;
+  background-image: url(//dn-piaoniu-static.qbox.me/pc/ui/img/arr-up.93f0d344.png);
+  margin-left: -12px;
+  top: -15px;
+}
+.slim-header .right-funcs .item .submenu .submenu-inner {
+  padding-bottom: 5px;
+  padding-top: 5px;
+}
+.slim-header .right-funcs .item .submenu .submenu-inner:before {
+  left: 170px;
+}
+.slim-header .right-funcs .item .submenu li {
+  height: auto;
+  position: relative;
+  margin: 0 15px;
+  padding: 10px 0 0;
+  font-size: 12px;
+  white-space: nowrap;
+  border-bottom: 1px solid #f4f5fa;
+  zoom: 1;
+}
+.slim-header .right-funcs .item .submenu li:after {
+  content: '';
+  display: block;
+  clear: both;
+}
+.slim-header .right-funcs .item .submenu li:hover {
+  background-color: #fff;
+}
+.slim-header .right-funcs .item .submenu li:last-child {
+  border-bottom: 0;
+}
+.slim-header .right-funcs .item .submenu li .qr {
+  float: left;
+  height: 84px;
+  width: 84px;
+  position: relative;
+  top: -4px;
+}
+.slim-header .right-funcs .item .submenu li .txt {
+  overflow: hidden;
+  margin-left: 100px;
+  line-height: 1.5;
+}
+.slim-header .right-funcs .item .submenu li .txt .title {
+  font-size: 16px;
+  margin-top: 8px;
+  margin-bottom: 12px;
+  line-height: 1;
+}
+.slim-header .right-funcs .item .submenu li .txt .desc {
+  color: #999;
+  font-size: 12px;
+}
+.slim-header .right-funcs .item .submenu-account {
+  left: -90px;
+}
+.slim-header .right-funcs .item .submenu-account:before {
+  left: 115px;
+}
+.slim-header .right-funcs .item .submenu-account li {
+  cursor: pointer;
+  width: 124px;
+  margin: 0;
+  font-size: 12px;
+  border: 0;
+  padding: 0 14px;
+  height: 36px;
+  line-height: 36px;
+}
+.slim-header .right-funcs .item .submenu-account li a {
+  display: block;
+}
+.slim-header .right-funcs .item .submenu-account li:hover {
+  background-color: #f7fafc;
+}
+.slim-header .right-funcs .item-app {
+  width: 97px;
+  margin-top: 23px;
+}
+.slim-header .right-funcs .item-app .icon {
+  width: 14px;
+  background-image: url('//dn-piaoniu-static.qbox.me/pc/ui/img/icon-phone.2f37f772.png');
+}
+.slim-header .right-funcs .item-app:after {
+  content: "";
+  display: block;
+  background-image: url(//dn-piaoniu-static.qbox.me/pc/ui/img/arr-down.9f1dbfdd.png);
+  width: 8px;
+  position: absolute;
+  height: 22px;
+  background-position: center;
+  background-repeat: no-repeat;
+  right: -3px;
+  top: 10px;
+}
+.slim-header .right-funcs .item-user {
+  margin-top: 23px;
+  cursor: pointer;
+}
+.slim-header .right-funcs .item-user .avatar {
+  width: 44px;
+  height: 44px;
+  background-size: cover;
+  border-radius: 50%;
+  border: 1px solid #ebebeb;
+}
+.slim-header .right-funcs .item-user:after {
+  content: "";
+  display: block;
+  background-image: url(//dn-piaoniu-static.qbox.me/pc/ui/img/arr-down.9f1dbfdd.png);
+  width: 8px;
+  position: absolute;
+  height: 22px;
+  background-position: center;
+  background-repeat: no-repeat;
+  right: -3px;
+  top: 10px;
+}
+.slim-header .right-funcs .item-user:after {
+  right: -15px;
+}
+.slim-header .right-funcs .item-login {
+  cursor: pointer;
+  margin-top: 23px;
+}
+.slim-header .right-funcs .item-login .icon {
+  background-image: url('//dn-piaoniu-static.qbox.me/pc/ui/img/icon-user.55c9dbcd.png');
+}
+.slim-header .right-funcs .item-login .text {
+  color: #4b8feb;
+}

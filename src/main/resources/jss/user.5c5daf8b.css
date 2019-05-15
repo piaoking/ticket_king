@@ -1,0 +1,221 @@
+.user-container {
+  margin-top: 30px;
+}
+.user-container .aside {
+  float: left;
+  background-color: #f7f8fa;
+  border: 1px solid #eaeaec;
+  width: 185px;
+  padding: 0 10px 10px;
+  margin-bottom: 20px;
+  margin-right: 27px;
+}
+.user-container .aside .h2 {
+  font-weight: normal;
+  font-size: 20px;
+  height: 56px;
+  line-height: 56px;
+  padding-left: 16px;
+}
+.user-container .aside .h2.active {
+  color: #ff2661;
+}
+.user-container .aside .group {
+  border-top: 1px dashed #dfdfdf;
+  padding: 24px 18px 12px;
+}
+.user-container .aside .group .h3 {
+  font-size: 14px;
+  margin-bottom: 3px;
+}
+.user-container .aside .group ul {
+  padding-left: 14px;
+  font-size: 14px;
+}
+.user-container .aside .group ul li {
+  line-height: 1;
+  color: #666;
+}
+.user-container .aside .group ul li a {
+  display: block;
+  border: 1px solid transparent;
+  height: 36px;
+  line-height: 36px;
+  width: 165px;
+  color: #666;
+  position: relative;
+}
+.user-container .aside .group ul li.active {
+  color: #900;
+}
+.user-container .aside .group ul li.active a {
+  width: 163px;
+  position: relative;
+  left: -42px;
+  display: block;
+  background-color: #fff;
+  padding-left: 40px;
+  color: #666;
+  border: 1px solid #eaeaec;
+  border-right: 0;
+  border-left: 3px solid #ffa9b6;
+}
+.user-container > .content {
+  overflow: hidden;
+  margin-left: 234px;
+  min-height: 700px;
+}
+/** Paper Header **/
+.paper-header {
+  border-top: 1px solid #eaeaec;
+  box-shadow: 0 2px 3px rgba(0, 0, 0, 0.3);
+  position: relative;
+  margin-bottom: 25px;
+}
+.paper-header:after {
+  content: '';
+  display: block;
+  background-image: url(//dn-piaoniu-static.qbox.me/pc/user/img/wave-edge.5d5589c9.png);
+  background-position: bottom;
+  background-repeat: repeat-x;
+  width: 100%;
+  bottom: -5px;
+  left: 0;
+  height: 10px;
+  position: absolute;
+}
+/** Section **/
+.section-head {
+  overflow: hidden;
+  font-size: 18px;
+  padding-bottom: 12px;
+  border-bottom: 2px solid #eaebf0;
+  color: #333;
+  margin-bottom: 20px;
+}
+.section-head i {
+  height: 20px;
+  width: 20px;
+  display: block;
+  background-repeat: no-repeat;
+  float: left;
+  margin-top: 5px;
+  margin-left: 5px;
+  margin-right: 5px;
+}
+.section-head h2 {
+  font-size: 18px;
+  float: left;
+}
+.section-head .icon-bill {
+  background-image: url(//dn-piaoniu-static.qbox.me/pc/user/img/icon-bill.3537484e.png);
+}
+.section-head .more {
+  margin-top: 7px;
+  margin-right: 2px;
+  float: right;
+  color: #19a6ef;
+  font-size: 14px;
+}
+.tab-header {
+  border-bottom: 2px solid #eaeaec;
+  margin-bottom: 20px;
+  zoom: 1;
+}
+.tab-header:after {
+  content: '';
+  display: block;
+  clear: both;
+}
+.tab-header .btn {
+  float: right;
+  margin-top: 8px;
+}
+.tab-header .item {
+  float: left;
+  position: relative;
+  top: 2px;
+  font-size: 18px;
+  padding: 13px 23px;
+  cursor: pointer;
+}
+.tab-header .item.active {
+  color: #ff2661;
+  border-bottom: 2px solid #ff2661;
+}
+/** Buttons **/
+.btn {
+  border: 1px solid #eaeaec;
+  height: 38px;
+  line-height: 38px;
+  border-radius: 3px;
+  color: #333;
+  display: block;
+  width: 86px;
+  text-align: center;
+  font-size: 14px;
+  overflow: hidden;
+}
+.btn-primary {
+  background-color: #ff2661;
+  color: #fff;
+  border: 0;
+}
+.section-body .form {
+  width: 300px;
+  margin: 25px auto 0;
+}
+.section-body .form .field {
+  margin-bottom: 20px;
+}
+.section-body .form .field .name {
+  width: 70px;
+  margin-right: 20px;
+  float: left;
+  height: 32px;
+  line-height: 32px;
+  font-size: 14px;
+  text-align: right;
+}
+.section-body .form .field .value {
+  font-weight: bold;
+  font-size: 14px;
+}
+.section-body .form .field .input {
+  width: 180px;
+  color: #999;
+  height: 32px;
+  border: 1px solid #e1e1e1;
+  border-radius: 2px;
+  padding: 0 8px;
+}
+.section-body .form .field .textarea {
+  font-size: 14px;
+  padding: 8px;
+  height: 100px;
+  resize: none;
+}
+.section-body .form .submit-bar {
+  margin-top: 30px;
+}
+.section-body .form .submit-bar .btn-submit {
+  width: 130px;
+  cursor: pointer;
+  margin-left: 90px;
+}
+.empty {
+  margin-top: 175px;
+}
+.empty .icon {
+  margin: 0 auto;
+  display: block;
+}
+.empty .text {
+  color: #666;
+  margin-top: 10px;
+  text-align: center;
+  font-size: 14px;
+}
+.empty .text a {
+  color: #19a6ef;
+}

@@ -1,0 +1,82 @@
+﻿body,
+ul,
+h1,
+p {
+  margin: 0;
+  padding: 0;
+}
+body {
+  font-family: "Microsoft YaHei", "Hiragino Sans GB", STHeiTi, sans-serif;
+}
+li {
+  list-style: none;
+}
+a {
+  text-decoration: none;
+}
+.container {
+  width: 1200px;
+  margin: 0 auto;
+}
+.container:after {
+  clear: both;
+  content: "";
+  display: block;
+}
+#header {
+  height: 64px;
+  background-color: #fff;
+}
+#header .menu {
+  float: right;
+  height: 64px;
+}
+#header .menu li {
+  line-height: 64px;
+  height: 64px;
+  float: left;
+  margin-left: 80px;
+}
+#header .menu li a {
+  color: #222;
+}
+#header .menu li .active {
+  color: #ff5636;
+}
+#logo {
+  position: relative;
+  top: 14px;
+  height: 37px;
+}
+#body .container {
+  position: relative;
+}
+#footer {
+  color: #888;
+  background-color: #fff;
+  height: 190px;
+}
+#info {
+  float: left;
+  padding-top: 56px;
+}
+#footer p {
+  font-size: 14px;
+  line-height: 1.5;
+}
+#qr-wechat {
+  float: right;
+  margin-top: 26px;
+}
+#qr-wechat img {
+  display: block;
+  height: 80px;
+  width: 80px;
+  margin: 0 auto 8px;
+}
+#qr-wechat span {
+  font-size: 12px;
+  text-align: center;
+  margin: 0 auto;
+  display: block;
+}
