@@ -1,4 +1,4 @@
-﻿.bottom-bar .inner,
+.bottom-bar .inner,
 .footer .inner {
   zoom: 1;
   width: 1200px;
@@ -159,7 +159,7 @@
   height: 15px;
   background-size: cover;
   left: 50%;
-  background-image: url(../images/arr-up.93f0d344.png);
+  background-image: url(//dn-piaoniu-static.qbox.me/pc/ui/img/arr-up.93f0d344.png);
   margin-left: -12px;
   bottom: -14px;
   transform: rotate(180deg);

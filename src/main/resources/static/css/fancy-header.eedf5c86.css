@@ -1,4 +1,4 @@
-﻿.side-toolbar {
+.side-toolbar {
   position: fixed;
   z-index: 9;
   bottom: 116px;
@@ -45,16 +45,16 @@
   margin-bottom: 7px;
 }
 .side-toolbar .item.totop .icon {
-  background-image: url(../images/icon-totop.befae9e0.png);
+  background-image: url(//dn-piaoniu-static.qbox.me/pc/ui/img/icon-totop.befae9e0.png);
 }
 .side-toolbar .item.custom-service .icon {
-  background-image: url(../images/icon-custom-service.1ba1b18f.png);
+  background-image: url(//dn-piaoniu-static.qbox.me/pc/ui/img/icon-custom-service.1ba1b18f.png);
 }
 .side-toolbar .item.common {
   border-top: 0;
 }
 .side-toolbar .item.common .icon {
-  background-image: url(../images/icon-question.7ecc67bf.png);
+  background-image: url(//dn-piaoniu-static.qbox.me/pc/ui/img/icon-question.7ecc67bf.png);
 }
 .slim-header .city-picker .citylist,
 .fancy-header .city-picker .citylist,
@@ -472,7 +472,7 @@
   background-position: center;
   background-repeat: no-repeat;
   background-color: #fff;
-  background-image: url(../images/icon-search.7fb8b568.png);
+  background-image: url(//dn-piaoniu-static.qbox.me/pc/ui/img/icon-search.7fb8b568.png);
   border: 0;
 }
 .fancy-header .search-form .btn-submit:hover {
@@ -511,7 +511,7 @@
   padding-right: 15px;
   background-repeat: no-repeat;
   background-position: center right;
-  background-image: url(../images/arr-down.9f1dbfdd.png);
+  background-image: url(//dn-piaoniu-static.qbox.me/pc/ui/img/arr-down.9f1dbfdd.png);
 }
 .fancy-header .city-picker .city-name {
   font-size: 14px;
@@ -696,7 +696,7 @@
   position: absolute;
   content: '';
   display: block;
-  background-image: url(../images/icon-mobile.a94b470b.png);
+  background-image: url(//dn-piaoniu-static.qbox.me/pc/img/icon-mobile.a94b470b.png);
   left: 15px;
   top: -2px;
 }

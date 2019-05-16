@@ -1,4 +1,4 @@
-﻿.hot-activities ul {
+.hot-activities ul {
   padding-top: 22px;
 }
 .hot-activities .block-content {
@@ -370,7 +370,7 @@
   position: absolute;
   z-index: 2;
   font-size: 12px;
-  background-image: url(../images/tag-discount.68c549d0.png);
+  background-image: url(//dn-piaoniu-static.qbox.me/pc/img/tag-discount.68c549d0.png);
   background-size: contain;
   width: 35px;
   height: 48px;
@@ -426,11 +426,11 @@
   background-repeat: no-repeat;
 }
 .activities .item .info .desc:before {
-  background-image: url(../images/quote-before.55624ba9.png);
+  background-image: url(//dn-piaoniu-static.qbox.me/pc/img/quote-before.55624ba9.png);
 }
 .activities .item .info .desc:after {
   margin-left: 4px;
-  background-image: url(../images/quote-after.16214c97.png);
+  background-image: url(//dn-piaoniu-static.qbox.me/pc/img/quote-after.16214c97.png);
 }
 .activities .item .info .time {
   font-size: 12px;
@@ -650,11 +650,11 @@
 }
 .date-picker .calendar-title .prev {
   left: 0;
-  background-image: url(../images/arr-left.0e07ba0c.png);
+  background-image: url(//dn-piaoniu-static.qbox.me/pc/img/arr-left.0e07ba0c.png);
 }
 .date-picker .calendar-title .next {
   right: 0;
-  background-image: url(../images/arr-right.901864d1.png);
+  background-image: url(//dn-piaoniu-static.qbox.me/pc/img/arr-right.901864d1.png);
 }
 .date-picker .calendar-title .text {
   color: #333;
@@ -813,7 +813,7 @@
   background-position: center;
   background-repeat: no-repeat;
   background-size: 11px 10px;
-  background-image: url('../images/check.6dafbf0b.png');
+  background-image: url('//dn-piaoniu-static.qbox.me/pc/ui/img/check.6dafbf0b.png');
 }
 .sorter .checkbox .input {
   float: left;
@@ -858,7 +858,7 @@
   position: absolute;
   top: -15px;
   margin-left: -10px;
-  background: url('../images/arr-up.93f0d344.png');
+  background: url('//dn-piaoniu-static.qbox.me/pc/ui/img/arr-up.93f0d344.png');
   height: 15px;
   width: 24px;
   background-size: contain;

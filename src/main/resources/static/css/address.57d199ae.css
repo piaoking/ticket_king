@@ -1,0 +1,131 @@
+.address-picker {
+  padding: 42px 0 42px 100px;
+  margin-right: -100px;
+}
+.address-picker .row {
+  height: 35px;
+  margin-bottom: 10px;
+}
+.address-picker .row .label {
+  font-size: #333;
+  float: left;
+  font-size: 14px;
+  margin-right: 15px;
+  line-height: 36px;
+  height: 36px;
+}
+.address-picker .row .input {
+  float: left;
+  padding-left: 15px;
+  height: 36px;
+  line-height: 36px;
+  border: 1px solid #cecece;
+  border-radius: 3px;
+}
+.address-picker .row .input-name {
+  width: 210px;
+}
+.address-picker .row .input-address {
+  width: 320px;
+}
+.address-picker .row .input-mobile {
+  width: 160px;
+}
+.address-picker .row .input-area {
+  float: left;
+}
+.address-picker .row .input-area .select {
+  min-width: 100px;
+  height: 36px;
+  line-height: 36px;
+  border: 1px solid #cecece;
+  border-radius: 3px;
+}
+.address-picker .row .field-city {
+  display: none;
+}
+.address-picker .row .field-district {
+  display: none;
+}
+.address-picker .row-btn {
+  margin-top: 20px;
+}
+.address-picker .row-btn .btn-submit {
+  cursor: pointer;
+  color: #fff;
+  border: 0;
+  width: 150px;
+  height: 45px;
+  line-height: 45px;
+  border-radius: 5px;
+  font-size: 18px;
+  margin-right: 24px;
+  margin-left: 43px;
+  background-color: #ff2661;
+}
+.address-picker .row-btn .btn-cancel {
+  border: none;
+  background-color: transparent;
+  color: #999;
+  font-size: 14px;
+}
+.addresses {
+  overflow: hidden;
+}
+.addresses .item {
+  float: left;
+  margin-right: 10px;
+  margin-bottom: 10px;
+  border: 1px solid #eaeaec;
+  padding: 20px;
+  width: 390px;
+  height: 100px;
+}
+.addresses .item:hover {
+  border: 1px solid #19a6ef;
+}
+.addresses .item .head {
+  margin-bottom: 20px;
+  overflow: hidden;
+}
+.addresses .item .head .name {
+  float: left;
+  font-size: 16px;
+}
+.addresses .item .head .func {
+  float: right;
+}
+.addresses .item .head .func .link {
+  font-size: 12px;
+  margin-left: 10px;
+  color: #666;
+}
+.addresses .item .head .func .link:hover {
+  color: #5fb7fc;
+}
+.addresses .item .address,
+.addresses .item .phone {
+  font-size: 14px;
+  color: #666;
+}
+.addresses .item.new {
+  background-color: #f8f8f9;
+  cursor: pointer;
+}
+.addresses .item.new:hover {
+  border-color: #eaeaec;
+}
+.addresses .item.new .text {
+  margin-top: 40px;
+  text-align: center;
+  color: #666;
+  font-size: 16px;
+}
+.addresses .item.new .icon-add {
+  background-image: url(//dn-piaoniu-static.qbox.me/pc/user/img/icon-add.aef67ba9.png);
+  margin-right: 10px;
+  display: inline-block;
+  width: 13px;
+  height: 13px;
+  background-repeat: no-repeat;
+}

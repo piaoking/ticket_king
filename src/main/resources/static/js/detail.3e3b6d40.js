@@ -6208,7 +6208,7 @@ exports.push([module.i, "/*! fancyBox v2.1.5 fancyapps.com | fancyapps.com/fancy
 		var w1, w2;
 
 		if ($.scrollbarWidth === undefined) {
-			// http://benalman.com/projects/jquery-misc-plugins/#scrollbarwidth
+			// http://benalman.com/projects/jquery-poster-plugins/#scrollbarwidth
 			$.scrollbarWidth = function () {
 				var parent = $('<div style="width:50px;height:50px;overflow:auto"><div/></div>').appendTo('body'),
 				    child = parent.children(),

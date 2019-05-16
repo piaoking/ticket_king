@@ -1,0 +1,89 @@
+.coupons {
+  margin-right: -40px;
+  zoom: 1;
+}
+.coupons:after {
+  content: '';
+  display: block;
+  clear: both;
+}
+.expired .coupon .head {
+  background-image: url(//dn-piaoniu-static.qbox.me/pc/user/img/coupon-edge-expired.0ea15945.png);
+  background-color: #d5d5d5;
+}
+.coupon {
+  float: left;
+  width: 455px;
+  margin-right: 40px;
+  margin-bottom: 30px;
+}
+.coupon .head {
+  float: left;
+  width: 146px;
+  height: 133px;
+  background-image: url(//dn-piaoniu-static.qbox.me/pc/user/img/coupon-edge.f2215991.png);
+  background-color: #ff4587;
+  background-repeat: repeat-y;
+}
+.coupon .head .price {
+  text-align: center;
+  font-size: 30px;
+  height: 133px;
+  line-height: 133px;
+  color: #fff;
+}
+.coupon .head .price small {
+  font-size: 16px;
+  margin-right: 4px;
+}
+.coupon .body {
+  border: 1px solid #eaeaec;
+  border-left: 0;
+  overflow: hidden;
+}
+.coupon .body .content {
+  margin-left: 0;
+  padding: 32px 20px 26px;
+  height: 40px;
+  border-bottom: 1px dashed #dadada;
+}
+.coupon .body .content .title {
+  line-height: 1;
+  font-size: 18px;
+  color: #333;
+  margin-bottom: 8px;
+}
+.coupon .body .content .desc {
+  line-height: 1;
+  font-size: 14px;
+  color: #666;
+}
+.coupon .body .expire {
+  height: 32px;
+  line-height: 32px;
+  color: #999999;
+  font-size: 12px;
+  padding-left: 20px;
+}
+.coupon-exchange-box {
+  width: 408px;
+  height: 150px;
+  margin-left: -204px;
+  padding: 35px 40px;
+}
+.coupon-exchange-box .title {
+  font-size: 20px;
+  margin-bottom: 12px;
+}
+.coupon-exchange-box .input {
+  display: block;
+  height: 38px;
+  line-height: 38px;
+  padding: 0 10px;
+  margin-bottom: 20px;
+  width: 300px;
+}
+.coupon-exchange-box .btn {
+  width: 94px;
+  padding: 0;
+}

@@ -1,4 +1,4 @@
-﻿.side-toolbar {
+.side-toolbar {
   position: fixed;
   z-index: 9;
   bottom: 116px;
@@ -45,16 +45,16 @@
   margin-bottom: 7px;
 }
 .side-toolbar .item.totop .icon {
-  background-image: url(../images/icon-totop.befae9e0.png);
+  background-image: url(//dn-piaoniu-static.qbox.me/pc/ui/img/icon-totop.befae9e0.png);
 }
 .side-toolbar .item.custom-service .icon {
-  background-image: url(../images/icon-custom-service.1ba1b18f.png);
+  background-image: url(//dn-piaoniu-static.qbox.me/pc/ui/img/icon-custom-service.1ba1b18f.png);
 }
 .side-toolbar .item.common {
   border-top: 0;
 }
 .side-toolbar .item.common .icon {
-  background-image: url(../images/icon-question.7ecc67bf.png);
+  background-image: url(//dn-piaoniu-static.qbox.me/pc/ui/img/icon-question.7ecc67bf.png);
 }
 .headerbar {
   background-color: #fafafa;
@@ -88,14 +88,14 @@
 }
 .headerbar .funcs .item-mobile .text:before {
   width: 14px;
-  background-image: url(../images/icon-mobile.a94b470b.png);
+  background-image: url(//dn-piaoniu-static.qbox.me/pc/img/icon-mobile.a94b470b.png);
 }
 .headerbar .funcs .item-wechat {
   position: relative;
 }
 .headerbar .funcs .item-wechat .text:before {
   width: 19px;
-  background-image: url(../images/icon-wechat.e249dc14.png);
+  background-image: url(//dn-piaoniu-static.qbox.me/pc/img/icon-wechat.e249dc14.png);
 }
 .headerbar .funcs .item-mobile .text,
 .headerbar .funcs .item-wechat .text {
@@ -653,7 +653,7 @@
   position: absolute;
   top: -15px;
   margin-left: -10px;
-  background: url('../images/arr-up.93f0d344.png');
+  background: url('//dn-piaoniu-static.qbox.me/pc/ui/img/arr-up.93f0d344.png');
   height: 15px;
   width: 24px;
   background-size: contain;
@@ -665,7 +665,7 @@
 .slim-header .city-picker .city-name:after {
   display: block;
   content: "";
-  background-image: url(../images/arr-down.9f1dbfdd.png);
+  background-image: url(//dn-piaoniu-static.qbox.me/pc/ui/img/arr-down.9f1dbfdd.png);
   width: 8px;
   position: absolute;
   height: 22px;
@@ -753,7 +753,7 @@
   overflow: hidden;
 }
 .slim-header .search-bar .form .input {
-  background-image: url('../images/search-grey.a1e82abd.png');
+  background-image: url('//dn-piaoniu-static.qbox.me/pc/ui/img/search-grey.a1e82abd.png');
   background-size: 16px 16px;
   background-repeat: no-repeat;
   background-position: 9px center;
@@ -831,7 +831,7 @@
   height: 15px;
   background-size: cover;
   left: 50%;
-  background-image: url(../images/arr-up.93f0d344.png);
+  background-image: url(//dn-piaoniu-static.qbox.me/pc/ui/img/arr-up.93f0d344.png);
   margin-left: -12px;
   top: -15px;
 }
@@ -913,12 +913,12 @@
 }
 .slim-header .right-funcs .item-app .icon {
   width: 14px;
-  background-image: url('../images/icon-phone.2f37f772.png');
+  background-image: url('//dn-piaoniu-static.qbox.me/pc/ui/img/icon-phone.2f37f772.png');
 }
 .slim-header .right-funcs .item-app:after {
   content: "";
   display: block;
-  background-image: url(../images/arr-down.9f1dbfdd.png);
+  background-image: url(//dn-piaoniu-static.qbox.me/pc/ui/img/arr-down.9f1dbfdd.png);
   width: 8px;
   position: absolute;
   height: 22px;
@@ -941,7 +941,7 @@
 .slim-header .right-funcs .item-user:after {
   content: "";
   display: block;
-  background-image: url(../images/arr-down.9f1dbfdd.png);
+  background-image: url(//dn-piaoniu-static.qbox.me/pc/ui/img/arr-down.9f1dbfdd.png);
   width: 8px;
   position: absolute;
   height: 22px;
@@ -958,7 +958,7 @@
   margin-top: 23px;
 }
 .slim-header .right-funcs .item-login .icon {
-  background-image: url('../images/icon-user.55c9dbcd.png');
+  background-image: url('//dn-piaoniu-static.qbox.me/pc/ui/img/icon-user.55c9dbcd.png');
 }
 .slim-header .right-funcs .item-login .text {
   color: #4b8feb;
