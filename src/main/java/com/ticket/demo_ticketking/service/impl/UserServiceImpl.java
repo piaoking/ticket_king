@@ -15,6 +15,7 @@ import org.springframework.stereotype.Service;
 public class UserServiceImpl implements IUserService {
     @Autowired
     private UserMapper userMapper;
+
     @Override
     public void register(TbUser tbUser) throws Exception {
         userMapper.register(tbUser);
@@ -33,5 +34,19 @@ public class UserServiceImpl implements IUserService {
         TbUser tbUser = userMapper.query(userId);
         return tbUser;
     }
+
+
+    @Override
+    public void insertUser(String userTel, String userName) {
+        userMapper.insertUser(userTel, userName);
+
+    }
+
+    @Override
+    public void updatePassword(String userPassword, long userId) throws Exception {
+        userMapper.updatePassword(userPassword, userId);
+
+    }
+
 
 }

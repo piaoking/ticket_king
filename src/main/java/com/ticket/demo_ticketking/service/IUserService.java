@@ -8,4 +8,8 @@ public interface IUserService {
 
      void login(String userTel, String userPassword) throws Exception;
      TbUser query(long userId) throws Exception;
+
+     void insertUser(String userTel,String userName);
+     void updatePassword(String userPassword,long userId) throws Exception;
+
 }
