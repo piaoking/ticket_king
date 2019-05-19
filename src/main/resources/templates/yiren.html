@@ -1,7 +1,9 @@
 ﻿<!DOCTYPE html>
 <!-- saved from url=(0028)http://www.piaoniu.com/actor -->
+<html lang="zh-CN" xmlns:th="http://www.thymeleaf.org">
 <html>
 <head>
+    <base th:href="${#request.getContextPath()}+'/'">
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
     <title>艺人-票牛网</title>
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -9,11 +11,11 @@
           content="initial-scale=1.0, maximum-scale=1.0, width=device-width, user-scalable=0, minimal-ui">
     <meta name="keywords" content="">
     <meta name="description" content="">
-    <script charset="utf-8" src="../static/js/v.js"></script>
-    <script src="../static/js/push.js"></script>
-    <script async="" src="../static/js/analytics.js"></script>
-    <script type="text/javascript" async="" src="../static/js/vds.js"></script>
-    <script src="../static/js/hm.js"></script>
+    <script charset="utf-8" src="js/v.js"></script>
+    <script src="js/push.js"></script>
+    <script async="" src="js/analytics.js"></script>
+    <script type="text/javascript" async="" src="js/vds.js"></script>
+    <script src="js/hm.js"></script>
     <script>var _hmt = _hmt || [];
     (function () {
         var hm = document.createElement("script");
@@ -50,14 +52,14 @@
     })(window, document, 'script', '//www.google-analytics.com/analytics.js', 'ga');
     ga('create', 'UA-71591200-1', 'auto');
     ga('send', 'pageview');</script>
-    <link rel="stylesheet" href="../static/css/ui.343fbb43.css">
-    <link rel="stylesheet" href="../static/css/fancy-header.eedf5c86.css">
-    <link rel="stylesheet" href="../static/css/list.aa0fe05b.css">
+    <link rel="stylesheet" href="css/ui.343fbb43.css">
+    <link rel="stylesheet" href="css/fancy-header.eedf5c86.css">
+    <link rel="stylesheet" href="css/list.aa0fe05b.css">
 </head>
 <body>
 <div class="fancy-header headerbar">
     <div class="container"><a href="http://www.piaoniu.com/" class="logo-wrap"><img
-            src="../static/picture/logo-white.a2c333b7.png" class="logo"></a>
+            src="picture/logo-white.a2c333b7.png" class="logo"></a>
         <div class="item city-picker">
             <div class="text city-name">重庆</div>
             <div class="citylist submenu">
@@ -413,13 +415,13 @@
                     <div class="text">手机票牛</div>
                     <div class="submenu">
                         <ul class="submenu-inner">
-                            <li><img src="../static/picture/qr-app.f6b3ee0e.png" class="qr">
+                            <li><img src="picture/qr-app.f6b3ee0e.png" class="qr">
                                 <div class="text">
                                     <div class="title">票牛APP</div>
                                     <div class="desc">热门票随时抢<br>折扣票随时买</div>
                                 </div>
                             </li>
-                            <li><img src="../static/picture/qr-wechat.72c6a6c0.png" class="qr">
+                            <li><img src="picture/qr-wechat.72c6a6c0.png" class="qr">
                                 <div class="text">
                                     <div class="title">微信订阅号</div>
                                     <div class="desc">精彩剧评最新<br>活动随时看</div>
@@ -447,129 +449,24 @@
 <div class="container main-content">
     <div class="main">
         <ul class="list">
+            <tbody th:each="st,itemStat:${tbStars}">
             <li class="expand">
-                <div style="background-image:url(https://img.piaoniu.com/actor/avatar/c38b5f3fccf3a985f6b5d3c7615f77a9da86a921.jpg)"
-                     class="poster img-circle"></div>
-                <div class="detail"><a href="http://www.piaoniu.com/actor/9690">
-                    <div class="title link">BLACKPINK</div>
+                <div class="poster img-circle">
+                    <img style="width: 120px;height:120px;float: left;border-radius: 50%;background-size: cover;background-position: center center;" th:src="@{'picture/'+${st.starImage}}">
+                </div>
+                <div class="detail">
+                    <a href="http://www.piaoniu.com/actor/9690">
+                    <div class="title link" th:text="${st.starName}">BLACKPINK</div>
                 </a>
-                    <div class="desc">BLACKPINK是YG
+                    <div class="desc" th:text="${st.starIntro}">BLACKPINK是YG
                         Entertainment于2016年8月8日推出的女子演唱组合，由金智秀（JISOO）、金智妮（JENNIE）、朴彩英（ROSÉ）、LISA
                         4名成员组成。BLACKPINK这个组合名在看起来很美的粉色中稍微加入了否定的意义，旨在传达出&amp;...
                     </div>
                 </div>
             </li>
-            <li class="expand">
-                <div style="background-image:url(https://img.piaoniu.com/actor/avatar/4b1c868947be184697af383911ecb9866a085c90.png)"
-                     class="poster img-circle"></div>
-                <div class="detail"><a href="http://www.piaoniu.com/actor/9689">
-                    <div class="title link">苏诗丁</div>
-                </a>
-                    <div class="desc">
-                        苏诗丁被称作为“小龙女”，她在音乐剧表演方面颇有经验，而她温和的外表下则极具爆发力，无论高音还是低音她都切换自如。苏诗丁在演唱歌曲《痛快的哀艳》时，她用自己的歌喉和丰沛的肢体语言深深感染了现场的观众，并将气氛带入了高潮（《信息时报》评）。[1]
-
-                        苏诗丁虽...
-                    </div>
-                </div>
-            </li>
-            <li class="expand">
-                <div style="background-image:url(https://img.piaoniu.com/actor/avatar/94c3c56c9d4e21d22ac4e6592b1863063e9f11e4.jpg)"
-                     class="poster img-circle"></div>
-                <div class="detail"><a href="http://www.piaoniu.com/actor/9688">
-                    <div class="title link">aimer</div>
-                </a>
-                    <div class="desc">Aimer，日本女歌手，在2011年9月7日以单曲「六等星の夜/悲しみはオーロラに/TWINKLE TWINKLE LITTLE
-                        STAR」正式出道，隶属唱片公司是日本索尼音乐娱乐旗下的DefSTAR Records，2015年9月移籍到SME Records。
-
-                        代表曲有「六等...
-                    </div>
-                </div>
-            </li>
-            <li class="expand">
-                <div style="background-image:url(https://img.piaoniu.com/actor/avatar/230a1f4724f6bc5ce266f116e9bd5cd89fa922cd.jpg)"
-                     class="poster img-circle"></div>
-                <div class="detail"><a href="http://www.piaoniu.com/actor/9687">
-                    <div class="title link">王以太</div>
-                </a>
-                    <div class="desc">王以太，又名王闪火，中国内地说唱男歌手。
-                        2015年，推出首张个人混音带《Ready To Flow
-                        Mixtape》，从而正式进入演艺圈。2016年，推出第2张个人混音带《闪火mixtape》。2018年，推出第3张个人混音带《Feel &amp; Sight》；同年，参加爱奇...
-                    </div>
-                </div>
-            </li>
-            <li class="expand">
-                <div style="background-image:url(https://img.piaoniu.com/actor/avatar/2fca12a8fb66273dfbf028d9424487ca471f9c56.jpg)"
-                     class="poster img-circle"></div>
-                <div class="detail"><a href="http://www.piaoniu.com/actor/9685">
-                    <div class="title link">徐秉龙</div>
-                </a>
-                    <div class="desc">徐秉龙，2000年出生于浙江省台州市 &nbsp; ，中国内地流行乐男歌手。
-                        2016年，发布个人第一首原创歌曲《我们》，从而正式进入演艺圈；同年，他还推出了《梧桐》、《还记得》等原创单曲。2017年，其演唱的歌曲《鸽子》正式上线；同年，推出个人单曲《白羊》。2018年，推出首张...
-                    </div>
-                </div>
-            </li>
-            <li class="expand">
-                <div style="background-image:url(https://img.piaoniu.com/actor/avatar/d0959bc7dfafa1b207d3cbc7f7d3af93edd60cf9.jpg)"
-                     class="poster img-circle"></div>
-                <div class="detail"><a href="http://www.piaoniu.com/actor/9684">
-                    <div class="title link">宿羽阳</div>
-                </a>
-                    <div class="desc">宿羽阳独立音乐人&nbsp;
-                        居住地 现居北京&nbsp;
-                        所在行业 艺术娱乐&nbsp;
-                        教育经历 北京电影学院 · 影视制片管理&nbsp;
-                        个人简介 写歌悦己，歌唱愉众。
-                    </div>
-                </div>
-            </li>
-            <li class="expand">
-                <div style="background-image:url(https://img.piaoniu.com/actor/avatar/3d6c239bd0ffbe258c979d841484bf43e349b641.jpg)"
-                     class="poster img-circle"></div>
-                <div class="detail"><a href="http://www.piaoniu.com/actor/9683">
-                    <div class="title link">郑秀妍（Jessica Jung）</div>
-                </a>
-                    <div class="desc">郑秀妍（Jessica Jung），1989年4月18日出生于美国加利福尼亚州旧金山市，歌手、演员、设计师。
-                        2000年，郑秀妍回国探亲时被韩国SM娱乐有限公司发掘，成为其旗下练习生。2007年8月，以演唱团体少女时代成员身份正式出道，是组合里训练时间最长的成员。2009年，首次...
-                    </div>
-                </div>
-            </li>
-            <li class="expand">
-                <div style="background-image:url(https://img.piaoniu.com/actor/avatar/b418ad850ed339221b5ab01cf0256d54fe4ccbc1.jpg)"
-                     class="poster img-circle"></div>
-                <div class="detail"><a href="http://www.piaoniu.com/actor/9682">
-                    <div class="title link">Westlife</div>
-                </a>
-                    <div class="desc">
-                        西城男孩（Westlife）是于1998年成立于爱尔兰斯莱戈郡的男子组合，由奇恩·伊根、尚恩·菲南、马克·菲海利、尼基·柏恩和布莱恩·尼古拉斯·麦克法丹（2004年离队）组成。
-                        1999年4月9日...
-                    </div>
-                </div>
-            </li>
-            <li class="expand">
-                <div style="background-image:url(https://img.piaoniu.com/actor/avatar/6158973c669b8191a2879384d9370b409d502387.jpg)"
-                     class="poster img-circle"></div>
-                <div class="detail"><a href="http://www.piaoniu.com/actor/9681">
-                    <div class="title link">Skrillex</div>
-                </a>
-                    <div class="desc">Skrillex，原名桑尼·约翰·摩尔（Sonny John
-                        Moore），1988年1月15日出生于美国加利福利亚州洛杉矶海兰帕克，美国歌手、吉他手、DJ、音乐制作人。
-                        2004年，Skrillex加入乐队From First to Last并担当主...
-                    </div>
-                </div>
-            </li>
-            <li class="expand">
-                <div style="background-image:url(https://img.piaoniu.com/actor/avatar/4c5fb303cbb60b5aadf803d75eff7eb7171c5580.jpg)"
-                     class="poster img-circle"></div>
-                <div class="detail"><a href="http://www.piaoniu.com/actor/9680">
-                    <div class="title link">YAHYEL</div>
-                </a>
-                    <div class="desc">
-                        2015年3月に池貝峻、篠田ミル、杉本亘の3名によって結成。古今東西のベース・ミュージックを貪欲に吸収したトラック、ブルース経由のスモーキーな歌声、ディストピア的情景や皮肉なまでの誠実さが表出する詩世界、これらを合わせたほの暗い質感を持つ楽曲たちがyahyelを特徴付ける。
-                    </div>
-                </div>
-            </li>
+            </tbody>
         </ul>
-        <div class="paging">
+      <!--  <div class="paging">
             <div class="total">共962页</div>
             <ul class="paginator">
                 <li class="page selected"><a href="http://www.piaoniu.com/actor?pageIndex=1">1</a></li>
@@ -579,7 +476,7 @@
                 <li class="page"><a href="http://www.piaoniu.com/actor?pageIndex=962">962</a></li>
                 <li class="page"><a href="http://www.piaoniu.com/actor?pageIndex=2">下一页</a></li>
             </ul>
-        </div>
+        </div>-->
     </div>
     <div class="aside">
         <div class="block block-actor">
@@ -587,16 +484,19 @@
                 <div class="title">热门艺人</div>
             </div>
             <div class="block-content">
+                <tbody th:each="st1,itemStat:${tbStars1}">
                 <li class="expand">
-                    <div style="background-image:url(https://img.piaoniu.com/actor/avatar/a989036d485b91f6c46b42310767cd4a043774a6.jpg)"
-                         class="poster img-circle"></div>
+                    <div class="poster img-circle">
+                        <img style="width:80px;height:80px;float: left;border-radius: 50%;background-size: cover;background-position: center center;" th:src="@{'picture/'+${st1.starImage}}">
+                    </div>
                     <div class="detail"><a href="http://www.piaoniu.com/actor/11">
-                        <div class="title link">张学友</div>
+                        <div class="title link" th:text="${st1.starName}">张学友</div>
                     </a>
                         <div class="desc"></div>
                     </div>
                 </li>
-                <li class="expand">
+                </tbody>
+                <!--<li class="expand">
                     <div style="background-image:url(https://img.piaoniu.com/actor/avatar/99ecd3e92fbad2cb433b2cca636eeb137d72fce7.jpg)"
                          class="poster img-circle"></div>
                     <div class="detail"><a href="http://www.piaoniu.com/actor/9">
@@ -631,12 +531,12 @@
                     </a>
                         <div class="desc"></div>
                     </div>
-                </li>
+                </li>-->
             </div>
         </div>
         <div class="block block-app">
             <div class="block-content">
-                <div class="item"><img alt="票牛APP" src="../static/picture/qrcode.e7315dc5.png" class="icon">
+                <div class="item"><img alt="票牛APP" src="picture/qrcode.e7315dc5.png" class="icon">
                     <div class="text"><a href="https://www.piaoniu.com/app" rel="nofollow" class="title">票牛APP</a>
                         <div class="desc">热门票随时抢 <br>折扣票随时买</div>
                     </div>
@@ -647,19 +547,19 @@
 </div>
 <div class="slogan-bar">
     <div class="container"><a href="http://www.piaoniu.com/services#service1" rel="nofollow" class="item"><img
-            src="../static/picture/icon-diamond.bb7002bc.png" class="icon">
+            src="picture/icon-diamond.bb7002bc.png" class="icon">
         <div class="text">
             <div class="title">无票赔付</div>
             <div class="desc">无票赔付，最高退一赔二</div>
         </div>
     </a><a href="http://www.piaoniu.com/services#service2" rel="nofollow" class="item"><img
-            src="../static/picture/icon-shield.09fa5cdb.png" class="icon">
+            src="picture/icon-shield.09fa5cdb.png" class="icon">
         <div class="text">
             <div class="title">出票保真</div>
             <div class="desc">全程消费保障，买得放心</div>
         </div>
     </a><a href="http://www.piaoniu.com/services#service3" rel="nofollow" class="item"><img
-            src="../static/picture/icon-umbrella.b2c3c4c4.png" class="icon">
+            src="picture/icon-umbrella.b2c3c4c4.png" class="icon">
         <div class="text">
             <div class="title">配送保障</div>
             <div class="desc">多种取票方式 安全送达</div>
@@ -678,9 +578,9 @@
 <!--					img(src='#{staticHelper.getUrl("/img/footer/juchen.png")}', style='height:23px')-->
 <div class="footer bottom-bar">
     <div class="container">
-        <div class="links-and-brand"><img src="../static/picture/footer-logo.d5e1202e.png" class="footer-logo">
+        <div class="links-and-brand"><img src="picture/footer-logo.d5e1202e.png" class="footer-logo">
             <div class="qr-codes">
-                <div class="item"><img src="../static/picture/qr-app.f6b3ee0e.png" class="img">
+                <div class="item"><img src="picture/qr-app.f6b3ee0e.png" class="img">
                     <div class="text">票牛app</div>
                 </div>
             </div>
@@ -779,10 +679,10 @@
             href="http://www.miitbeian.gov.cn/" target="_blank">沪ICP备14000399号-2</a></div>
     <div class="police-icons"><a href="http://www.beian.gov.cn/portal/registerSystemInfo?recordcode=31010602001682"
                                  target="_blank" rel="nofollow" class="link link-police"><img
-            src="../static/picture/police.c9ff2fec.png" class="icon">
+            src="picture/police.c9ff2fec.png" class="icon">
         <div class="text">沪公网安备 31010602001682号</div>
     </a><a href="http://www.sgs.gov.cn/lz/licenseLink.do?method=licenceView&amp;entyId=2016050618242638" target="_blank"
-           rel="nofollow" class="link link-gongshang"><img src="../static/picture/gongshang.df298c0c.png" class="icon">
+           rel="nofollow" class="link link-gongshang"><img src="picture/gongshang.df298c0c.png" class="icon">
         <div class="text">上海工商</div>
     </a></div>
 </div>
@@ -3362,20 +3262,20 @@ var activeCities = [{
 <div class="banner-content">
     <div class="banner">
         <div class="center">
-            <div class="left"><img src="../static/picture/logox2.78a31cd1.png"></div>
+            <div class="left"><img src="picture/logox2.78a31cd1.png"></div>
             <div class="app-load"><a href="http://www.piaoniu.com/app" class="apple"></a><a
                     href="http://www.piaoniu.com/app" class="android"></a></div>
-            <div class="code"><img src="../static/picture/code.0294fe21.png"></div>
+            <div class="code"><img src="picture/code.0294fe21.png"></div>
         </div>
         <span class="close"></span></div>
-    <div class="left-img left"><img src="../static/picture/left.e32ac038.png"></div>
+    <div class="left-img left"><img src="picture/left.e32ac038.png"></div>
 </div>
 <!--[if lte IE 7]>
 <script src="http://static.piaoniu.com/pc/vendors/json3.6787b55e.js"></script><![endif]-->
 <!--[if lte IE 8]>
 <script src="http://static.piaoniu.com/pc/vendors/es5-shim.c3b1fc73.js"></script>
 <script src="http://static.piaoniu.com/pc/vendors/es5-sham.095d9e53.js"></script><![endif]-->
-<script src="../static/js/common.7ec1644e.js"></script><!-- 登录用户--><!-- 错误监控-->
+<script src="js/common.7ec1644e.js"></script><!-- 登录用户--><!-- 错误监控-->
 <script>Raven.config('https://8f0cab137a7b47769dec9f0dd89f5885@sentry.piaoniu.com/3y', {
     whitelistUrls: [/www\.piaoniu\.com/],
     ignoreErrors: [/MyAppGet/, '$UCBrowser']
@@ -3420,8 +3320,8 @@ var activeCities = [{
     }
 })()
 </script><!--引用自己服务器上easemob.js文件的路径-->
-<script src="../static/js/easemob.f3ced40f.js" async="async"></script>
-<script src="../static/js/fancy-header.20a88453.js"></script>
+<script src="js/easemob.f3ced40f.js" async="async"></script>
+<script src="js/fancy-header.20a88453.js"></script>
 <div class="loading" style="display: none;">加载中...</div>
 <div class="loading" style="display: none;">加载中...</div>
 <div class="overlay" style="display: none; opacity: 0;"></div>
@@ -3438,7 +3338,7 @@ var activeCities = [{
         </div>
         <div class="row row-vcode">
             <input placeholder="图形验证码" name="vcode" class="input input-vcode">
-            <img src="../static/js/captcha" class="vcode">
+            <img src="js/captcha" class="vcode">
             <!-- <div class="btn btn-vcode">换一张</div> -->
         </div>
         <div class="row row-getcode">
@@ -3460,15 +3360,15 @@ var activeCities = [{
         </div>
         <div class="row row-vcode form-login-vcode">
             <input placeholder="请输入验证码" name="captcha" class="input input-vcode">
-            <img src="../static/js/captcha" class="vcode">
+            <img src="js/captcha" class="vcode">
         </div>
         <div class="row">
             <input type="submit" class="btn btn-submit" value="登录">
         </div>
     </form>
 </div>
-<script src="../static/js/bottom.4481684d.js"></script>
-<script src="../static/js/list.462bbf9a.js"></script>
+<script src="js/bottom.4481684d.js"></script>
+<script src="js/list.462bbf9a.js"></script>
 </div>
 <div class="sogoutip" style="z-index: 2147483645; visibility: hidden; display: none;"></div>
 <div class="sogoubottom" id="sougou_bottom" style="display: none;"></div>
@@ -3480,7 +3380,7 @@ var activeCities = [{
             认</a> <a id="sogoucancel" href="http://www.piaoniu.com/actor#" class="extconfirm">取 消</a></div>
 </div>
 <div id="ext_overlay" class="ext_overlayBG" style="display: none; z-index: 2147483646;"></div>
-<iframe class="sogou_sugg_feedbackquan" frameborder="0" scrolling="no" src="../static/js/yun6.html"
+<iframe class="sogou_sugg_feedbackquan" frameborder="0" scrolling="no" src="js/yun6.html"
         style="background: transparent; border: none; display: none; height: 84px; width: 100%; z-index: 2147483645;"></iframe>
 </body>
 </html>

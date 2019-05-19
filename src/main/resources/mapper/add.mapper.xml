@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.ticket.demo_ticketking.mapper.AddMapper">
+    <resultMap id="baseResult" type="com.ticket.demo_ticketking.vo.UserAddVO">
+        <id property="addId" column="add_id" javaType="java.lang.Long"/>
+        <result property="userId" column="user_id" javaType="java.lang.Long"/>
+        <result property="addAdd" column="add_add" javaType="java.lang.String"/>
+        <result property="userTel" column="user_tel" javaType="java.lang.String"/>
+    </resultMap>
+    <select id="queryAdd" resultMap="baseResult">
+       select u.user_id,a.add_add,u.user_tel from tb_add a join tb_user u on a.user_id = u.user_id and a.user_id = #{userId};
+    </select>
+</mapper>
