@@ -28,4 +28,10 @@ public class UserServiceImpl implements IUserService {
 
     }
 
+    @Override
+    public TbUser query(long userId) throws Exception {
+        TbUser tbUser = userMapper.query(userId);
+        return tbUser;
+    }
+
 }

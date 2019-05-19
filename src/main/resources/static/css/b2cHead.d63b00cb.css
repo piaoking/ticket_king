@@ -1,11 +1,11 @@
-﻿.icon-yi {
-  background-image: url(../images/icon-yi.10092b5a.png);
+.icon-yi {
+  background-image: url(//dn-piaoniu-static.qbox.me/pc/activity/img/icon-yi.10092b5a.png);
 }
 .icon-zhe {
-  background-image: url(../images/icon-zhe.9a95d6f0.png);
+  background-image: url(//dn-piaoniu-static.qbox.me/pc/activity/img/icon-zhe.9a95d6f0.png);
 }
 .icon-qiang {
-  background-image: url(../images/icon-qiang.1c64413e.png);
+  background-image: url(//dn-piaoniu-static.qbox.me/pc/activity/img/icon-qiang.1c64413e.png);
 }
 .tip .tiprow {
   padding: 0 7px 0 0;
@@ -62,7 +62,7 @@
   width: 14px;
   height: 14px;
   float: left;
-  background-image: url(../images/quest-mark.06ffca87.png);
+  background-image: url(//dn-piaoniu-static.qbox.me/pc/activity/img/quest-mark.06ffca87.png);
 }
 .type-desc .line {
   margin-bottom: 9px;
@@ -78,13 +78,13 @@
   margin-left: 9px;
 }
 .icon-yi {
-  background-image: url(../images/icon-yi.10092b5a.png);
+  background-image: url(//dn-piaoniu-static.qbox.me/pc/activity/img/icon-yi.10092b5a.png);
 }
 .icon-zhe {
-  background-image: url(../images/icon-zhe.9a95d6f0.png);
+  background-image: url(//dn-piaoniu-static.qbox.me/pc/activity/img/icon-zhe.9a95d6f0.png);
 }
 .icon-qiang {
-  background-image: url(../images/icon-qiang.1c64413e.png);
+  background-image: url(//dn-piaoniu-static.qbox.me/pc/activity/img/icon-qiang.1c64413e.png);
 }
 .base-info {
   overflow: hidden;
@@ -97,7 +97,7 @@
   height: 439px;
   background-position: center 0;
   background-repeat: no-repeat;
-  background-image: url(../images/activity-bg.41dc4049.jpg);
+  background-image: url(//dn-piaoniu-static.qbox.me/pc/activity/img/activity-bg.41dc4049.jpg);
 }
 .base-info .container {
   margin-top: 20px;
@@ -190,18 +190,18 @@
 }
 .base-info .main-info .ticket-info .ticket-status .status.booking {
   color: #F72A62;
-  background: url(../images/ticket-booking.409b7963.png) no-repeat center 10px;
+  background: url(//dn-piaoniu-static.qbox.me/pc/activity/img/ticket-booking.409b7963.png) no-repeat center 10px;
   background-size: 20px;
 }
 .base-info .main-info .ticket-info .ticket-status .status.sold-out {
-  background: url(../images/sold-out.8729676f.png) no-repeat center 10px;
+  background: url(//dn-piaoniu-static.qbox.me/pc/activity/img/sold-out.8729676f.png) no-repeat center 10px;
   background-size: 20px;
 }
 .base-info .main-info .ticket-info .ticket-status .status.spc-status {
   padding-top: 0;
 }
 .base-info .main-info .ticket-info .ticket-status .status.no-sale {
-  background: url(../images/no-sale.c4c1e685.png) no-repeat center 10px;
+  background: url(//dn-piaoniu-static.qbox.me/pc/activity/img/no-sale.c4c1e685.png) no-repeat center 10px;
   background-size: 20px;
 }
 .base-info .main-info .ticket-info .ticket-status .description {
@@ -278,13 +278,13 @@
   line-height: 40px;
   padding: 0 17px;
 }
-.ticket-category.selections .items .item.selected,
-.eventtime-picker.selections .items .item.selected,
-.events-picker.selections .items .item.selected {
+.ticket-category .selections .items .itemss  .item .selected,
+.eventtime-picker .selections .items .itemss .item .selected,
+.events-picker .selections .items .itemss .item .selected {
   padding: 0 16px;
   line-height: 38px;
 }
-.ticket-category.selections .items .item {
+.ticket-category.selections .items .item .itemss {
   min-width: 70px;
   min-height: 40px;
   height: auto;
@@ -319,13 +319,13 @@
   border: 1px solid #E5E5E5;
 }
 .action-partial .action-button.action-fav .img {
-  background-image: url(../images/heart-thin-grey.f7b77fb4.png);
+  background-image: url(//dn-piaoniu-static.qbox.me/pc/activity/img/heart-thin-grey.f7b77fb4.png);
 }
 .action-partial .action-button.action-fav.faved .img {
-  background-image: url(../images/heart.aaa0e468.png);
+  background-image: url(//dn-piaoniu-static.qbox.me/pc/activity/img/heart.aaa0e468.png);
 }
 .action-partial .action-button.action-review .img {
-  background-image: url(../images/review-thin-grey.6e409afe.png);
+  background-image: url(//dn-piaoniu-static.qbox.me/pc/activity/img/review-thin-grey.6e409afe.png);
 }
 .action-partial .action-button .img {
   background-size: contain;
@@ -421,7 +421,7 @@
   background-repeat: no-repeat;
   background-size: 14px 16px;
   background-position: 20px center;
-  background-image: url(../images/official.64d0ef9b.png);
+  background-image: url(//dn-piaoniu-static.qbox.me/pc/activity/img/official.64d0ef9b.png);
 }
 .b2c-submit .btn-seatmap {
   margin-right: 10px;
@@ -472,7 +472,7 @@
   top: 10px;
   display: block;
   content: '';
-  background-image: url(../images/calendar-arr.815e70e9.png);
+  background-image: url(//dn-piaoniu-static.qbox.me/pc/activity/img/calendar-arr.815e70e9.png);
   width: 7px;
   height: 11px;
   background-size: 14px 22px;
@@ -554,7 +554,7 @@
   color: #ff2661;
   line-height: 28px;
   padding: 0;
-  background-image: url(../images/check.fab30160.png);
+  background-image: url(//dn-piaoniu-static.qbox.me/pc/activity/img/check.fab30160.png);
   background-position: right bottom;
 }
 .event-calendar .ui-calendar-wrapper .has-no-ticket {

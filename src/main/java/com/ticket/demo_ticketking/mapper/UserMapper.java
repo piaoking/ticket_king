@@ -9,4 +9,5 @@ import org.apache.ibatis.annotations.Param;
 public interface UserMapper {
     void register(TbUser tbUser);
     TbUser checkUsername(@Param("userTel") String userTel);
+    TbUser query(@Param("userId") long userId);
 }

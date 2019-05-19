@@ -7,4 +7,5 @@ public interface IUserService {
      void register(TbUser tbUser) throws Exception;
 
      void login(String userTel, String userPassword) throws Exception;
+     TbUser query(long userId) throws Exception;
 }

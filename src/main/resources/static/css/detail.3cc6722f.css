@@ -1,4 +1,4 @@
-﻿.hot-activities ul {
+.hot-activities ul {
   padding-top: 22px;
 }
 .hot-activities .block-content {
@@ -530,7 +530,7 @@
   cursor: pointer;
 }
 .tickets-picker .show-more i {
-  background-image: url(../images/arr-more.ea8c229d.png);
+  background-image: url(//dn-piaoniu-static.qbox.me/pc/activity/img/arr-more.ea8c229d.png);
   width: 10px;
   height: 8px;
   display: inline-block;
@@ -682,7 +682,7 @@
 .tickets-picker .saler .ticket .buy .btn-purchase {
   background-color: #5fb7fc;
   background-repeat: no-repeat;
-  background-image: url(../images/arr-down-white.291bd370.png);
+  background-image: url(//dn-piaoniu-static.qbox.me/pc/ui/img/arr-down-white.291bd370.png);
   background-position: center right 10px;
   margin-top: 25px;
   display: block;
@@ -754,7 +754,7 @@
   top: 5px;
   background-repeat: no-repeat;
   background-position: center right;
-  background-image: url(../images/arr-more.ea8c229d.png);
+  background-image: url(//dn-piaoniu-static.qbox.me/pc/activity/img/arr-more.ea8c229d.png);
 }
 .selections .items {
   overflow: hidden;
@@ -781,7 +781,7 @@
   color: #ff2661;
   line-height: 28px;
   padding: 0 5px;
-  background-image: url(../images/check.fab30160.png);
+  background-image: url(//dn-piaoniu-static.qbox.me/pc/activity/img/check.fab30160.png);
   background-position: right bottom;
 }
 .selections .items .item.disabled {
@@ -804,7 +804,7 @@
   width: 24px;
   height: 24px;
   background-size: contain;
-  background-image: url('../images/alarm.e9cb67b3.png');
+  background-image: url('//dn-piaoniu-static.qbox.me/pc/activity/img/alarm.e9cb67b3.png');
 }
 .ticket-info .agency-info .desc {
   font-size: 16px;
@@ -852,7 +852,7 @@
   margin-bottom: 20px;
 }
 .agency .icon {
-  background-image: url('../images/agency-tag.9611cb91.png');
+  background-image: url('//dn-piaoniu-static.qbox.me/pc/activity/img/agency-tag.9611cb91.png');
   background-position: center;
   background-size: contain;
   position: absolute;
@@ -1019,7 +1019,7 @@
   background-repeat: no-repeat;
 }
 .review-main .funcs .btn-reply {
-  background-image: url(../images/icon-reply.4c1a85db.png);
+  background-image: url(//dn-piaoniu-static.qbox.me/pc/review/img/icon-reply.4c1a85db.png);
 }
 .review-main .funcs .btn-reply:hover {
   text-decoration: underline;
@@ -1028,17 +1028,17 @@
   position: relative;
   cursor: pointer;
   background-size: auto 16px;
-  background-image: url(../images/icon-like.479b123c.png);
+  background-image: url(//dn-piaoniu-static.qbox.me/pc/review/img/icon-like.479b123c.png);
 }
 .review-main .funcs .btn-like:hover {
   text-decoration: underline;
 }
 .review-main .funcs .btn-like.btn-liked {
-  background-image: url(../images/icon-liked.beaedae1.png);
+  background-image: url(//dn-piaoniu-static.qbox.me/pc/review/img/icon-liked.beaedae1.png);
 }
 .review-main .funcs .btn-edit {
   background-size: auto 16px;
-  background-image: url(../images/icon-edit.de34dd79.png);
+  background-image: url(//dn-piaoniu-static.qbox.me/pc/review/img/icon-edit.de34dd79.png);
 }
 .review-item {
   zoom: 1;
@@ -1063,14 +1063,14 @@
 .star {
   height: 16px;
   width: 100px;
-  background-image: url(../images/star-empty.ebc71406.png);
+  background-image: url(//dn-piaoniu-static.qbox.me/pc/ui/img/star-empty.ebc71406.png);
   background-repeat: repeat-x;
 }
 .star:after {
   display: block;
   content: '';
   height: 100%;
-  background-image: url(../images/star-full.04f7ab77.png);
+  background-image: url(//dn-piaoniu-static.qbox.me/pc/ui/img/star-full.04f7ab77.png);
 }
 .star.star-0:after {
   width: 0;
@@ -1191,7 +1191,7 @@
 }
 .base-info {
   background-color: #fff;
-  background-image: url(../images/activity-bg.41dc4049.jpg);
+  background-image: url(//dn-piaoniu-static.qbox.me/pc/activity/img/activity-bg.41dc4049.jpg);
   background-size: cover;
   background-repeat: no-repeat;
   padding-top: 20px;
@@ -1390,7 +1390,7 @@
   top: 50%;
 }
 .block-head-info {
-  background-image: url(../images/aside-head-bg.47ad7a5e.png);
+  background-image: url(//dn-piaoniu-static.qbox.me/pc/activity/img/aside-head-bg.47ad7a5e.png);
   border: 0;
   margin-bottom: 15px;
   height: 300px;
@@ -1408,7 +1408,7 @@
   margin-right: 10px;
   width: 36px;
   height: 36px;
-  background-image: url(../images/icon-presell.86e7e33a.png);
+  background-image: url(//dn-piaoniu-static.qbox.me/pc/activity/img/icon-presell.86e7e33a.png);
 }
 .block-head-info .presell .text {
   font-size: 12px;
@@ -1449,7 +1449,7 @@
   left: 30px;
   width: 16px;
   height: 32px;
-  background-image: url(../images/heart-thin.ebfd0c67.png);
+  background-image: url(//dn-piaoniu-static.qbox.me/pc/activity/img/heart-thin.ebfd0c67.png);
   background-size: contain;
   background-repeat: no-repeat;
   background-position: center center;
@@ -1462,13 +1462,13 @@
   color: #fff;
 }
 .block-head-info .action-partial .action-button.action-fav .img {
-  background-image: url(../images/heart-thin.ebfd0c67.png);
+  background-image: url(//dn-piaoniu-static.qbox.me/pc/activity/img/heart-thin.ebfd0c67.png);
 }
 .block-head-info .action-partial .action-button.action-fav.faved .img {
-  background-image: url(../images/heart.aaa0e468.png);
+  background-image: url(//dn-piaoniu-static.qbox.me/pc/activity/img/heart.aaa0e468.png);
 }
 .block-head-info .action-partial .action-button.action-review .img {
-  background-image: url(../images/review-thin.ae5ed1e6.png);
+  background-image: url(//dn-piaoniu-static.qbox.me/pc/activity/img/review-thin.ae5ed1e6.png);
 }
 .block-head-info .hightlights-partial {
   padding-left: 16px;
@@ -1490,7 +1490,7 @@
   top: 3px;
   width: 16px;
   height: 16px;
-  background-image: url(../images/features.481a3383.png);
+  background-image: url(//dn-piaoniu-static.qbox.me/pc/activity/img/features.481a3383.png);
   background-size: 16px 48px;
 }
 .block-head-info .hightlights-partial .row.row-2:before {
@@ -1790,7 +1790,7 @@
   background-position: center right;
   background-size: 8px 12px;
   font-size: 16px;
-  background-image: url(../images/blue-arr-right.d9d712d7.png);
+  background-image: url(//dn-piaoniu-static.qbox.me/pc/img/blue-arr-right.d9d712d7.png);
 }
 .is-sticky .body-header {
   background-color: #f4f5fa;
@@ -1836,7 +1836,7 @@
   background-repeat: no-repeat;
   background-position: center;
   display: inline-block;
-  background-image: url(../images/heart.aaa0e468.png);
+  background-image: url(//dn-piaoniu-static.qbox.me/pc/activity/img/heart.aaa0e468.png);
   height: 21px;
   width: 24px;
 }
@@ -1866,7 +1866,7 @@
   height: 396px;
   margin-top: -198px;
   margin-left: -322px;
-  background: url('../images/download-app.4cd8e895.png') no-repeat;
+  background: url('//dn-piaoniu-static.qbox.me/pc/activity/img/download-app.4cd8e895.png') no-repeat;
   z-index: 100;
   display: none;
 }
@@ -1874,7 +1874,7 @@
   position: absolute;
   height: 48px;
   width: 48px;
-  background: url('../images/icon-close.b0edb787.png') center center no-repeat;
+  background: url('//dn-piaoniu-static.qbox.me/pc/activity/img/icon-close.b0edb787.png') center center no-repeat;
   right: -15px;
   top: 119px;
   cursor: pointer;
