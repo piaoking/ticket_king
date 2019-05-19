@@ -1,23 +1,23 @@
 <!DOCTYPE html>
 <!-- saved from url=(0033)http://www.piaoniu.com/user/order -->
-<html>
+<html lang="zh-CN" xmlns:th="http://www.thymeleaf.org">
 <head>
+    <base th:href="${#request.getContextPath()}+'/'">
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-    <title>我的订单 - 票牛</title>
+    <title>我的订单 - 票王</title>
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta id="viewport" name="viewport"
           content="initial-scale=1.0, maximum-scale=1.0, width=device-width, user-scalable=0, minimal-ui">
     <meta name="keywords">
     <meta name="description">
-    <meta name="baidu-site-verification" content="K4F8wWE2Bq"
-    "="">
-    <link rel="stylesheet" href="../static/css/ui.343fbb43.css">
-    <link rel="stylesheet" href="../static/css/slim-header.9887b921.css">
-    <script charset="utf-8" src="../static/js/v.js"></script>
-    <script src="../static/js/push.js"></script>
-    <script async="" src="../static/js/analytics.js"></script>
-    <script type="text/javascript" async="" src="../static/js/vds.js"></script>
-    <script src="../static/js/hm.js"></script>
+    <meta name="baidu-site-verification" content="K4F8wWE2Bq">
+    <link rel="stylesheet" href="css/ui.343fbb43.css">
+    <link rel="stylesheet" href="css/slim-header.9887b921.css">
+    <script charset="utf-8" src="js/v.js"></script>
+    <script src="js/push.js"></script>
+    <script async="" src="js/analytics.js"></script>
+    <script type="text/javascript" async="" src="js/vds.js"></script>
+    <script src="js/hm.js"></script>
     <script>var _hmt = _hmt || [];
     (function () {
         var hm = document.createElement("script");
@@ -54,13 +54,13 @@
     })(window, document, 'script', '//www.google-analytics.com/analytics.js', 'ga');
     ga('create', 'UA-71591200-1', 'auto');
     ga('send', 'pageview');</script>
-    <link rel="stylesheet" href="../static/css/user.5c5daf8b.css">
-    <link rel="stylesheet" href="../static/css/order.a0bab08a.css">
+    <link rel="stylesheet" href="css/user.5c5daf8b.css">
+    <link rel="stylesheet" href="css/order.a0bab08a.css">
 </head>
 <body>
 <div class="slim-header">
     <div class="container"><a href="http://www.piaoniu.com/" class="logo-link"><img
-            src="../static/picture/logo.252971b3.png" class="logo"></a>
+            src="picture/logo.252971b3.png" class="logo"></a>
         <div class="city-picker">
             <div class="city-name">重庆</div>
             <div class="citylist" style="display: none;">
@@ -394,13 +394,13 @@
                     登录
                 </div>
             </div>
-            <div style="display: block" class="item-user item"><img src="../static/picture/default-avatar.c0a5928c.png"
+            <div style="display: block" class="item-user item"><img src="picture/default-avatar.c0a5928c.png"
                                                                     class="avatar">
                 <div class="submenu submenu-account">
                     <ul class="submenu-inner">
-                        <li><a href="http://www.piaoniu.com/user/order">我的订单</a></li>
-                        <li><a href="http://www.piaoniu.com/user/balance">我的钱包</a></li>
-                        <li><a href="http://www.piaoniu.com/user/profile">账户设置</a></li>
+                        <li><a href="http://localhost:8080/ticketking/users/goorders/?userId=1">我的订单</a></li>
+                        <li><a href="http://localhost:8080/ticketking/users/balance/?userId=1">我的钱包</a></li>
+                        <li><a href="http://localhost:8080/ticketking/users/update/?userId=1">账户设置</a></li>
                         <li><a href="javascript:;" class="logout">退出登录</a></li>
                     </ul>
                 </div>
@@ -412,13 +412,13 @@
                 </div>
                 <div class="submenu">
                     <ul class="submenu-inner">
-                        <li><img src="../static/picture/qr-app.f6b3ee0e.png" class="qr">
+                        <li><img src="picture/qr-app.f6b3ee0e.png" class="qr">
                             <div class="txt">
-                                <div class="title">票牛APP</div>
+                                <div class="title">票王APP</div>
                                 <div class="desc">热门票随时抢<br>折扣票随时买</div>
                             </div>
                         </li>
-                        <li><img src="../static/picture/qr-wechat.72c6a6c0.png" class="qr">
+                        <li><img src="picture/qr-wechat.72c6a6c0.png" class="qr">
                             <div class="txt">
                                 <div class="title">微信订阅号</div>
                                 <div class="desc">精彩剧评最新<br>活动随时看</div>
@@ -431,24 +431,24 @@
     </div>
 </div>
 <div class="container user-container">
-    <div class="aside"><h2 class="h2"><a href="http://www.piaoniu.com/user/home">我的票牛</a></h2>
+    <div class="aside"><h2 class="h2"><a href="http://localhost:8080/ticketking/users/home/?userId=1">我的票王</a></h2>
         <div class="group"><h3 class="h3">我的演出</h3>
             <ul>
-                <li class="active"><a href="http://www.piaoniu.com/user/order">我的订单</a></li>
-                <li><a href="http://www.piaoniu.com/user/favorite">我的关注</a></li>
+                <li class="active"><a href="http://localhost:8080/ticketking/users/goorders/?userId=1">我的订单</a></li>
+                <li><a href="">我的关注</a></li>
             </ul>
         </div>
         <div class="group"><h3 class="h3">我的钱包</h3>
             <ul>
-                <li><a href="http://www.piaoniu.com/user/coupon">我的优惠券</a></li>
-                <li><a href="http://www.piaoniu.com/user/balance">我的余额</a></li>
+                <li><a href="我的优惠券.html">我的优惠券</a></li>
+                <li><a href="http://localhost:8080/ticketking/users/balance/?userId=1">我的余额</a></li>
             </ul>
         </div>
         <div class="group"><h3 class="h3">账户设置</h3>
             <ul>
-                <li><a href="http://www.piaoniu.com/user/profile">个人信息</a></li>
-                <li><a href="http://www.piaoniu.com/user/address">收货地址</a></li>
-                <li><a href="http://www.piaoniu.com/user/password">密码管理</a></li>
+                <li><a href="http://localhost:8080/ticketking/users/name/?userId=1">个人信息</a></li>
+                <li><a href="http://localhost:8080/ticketking/users/add/?userId=1">收货地址</a></li>
+                <li><a href="http://localhost:8080/ticketking/users/update/?userId=1">密码管理</a></li>
             </ul>
         </div>
     </div>
@@ -479,263 +479,59 @@
                 <div data-id="13460286" data-left-time="0" class="order">
                     <div class="head"><span class="orderid">订单号：13460286</span><span class="ordertime">下单时间：2019年05月14日 17:06</span>
                     </div>
+                    <tbody th:each="order:${tbOrder}">
                     <table>
-                        <tbody>
                         <tr data-products="[{&quot;id&quot;:13460286,&quot;addTime&quot;:1557824815000,&quot;updateTime&quot;:1557825720000,&quot;status&quot;:6,&quot;buyerId&quot;:3272130,&quot;cityId&quot;:7,&quot;supplement&quot;:&quot;&quot;,&quot;totalAmount&quot;:2992.00,&quot;payAmount&quot;:2992.00,&quot;settleAmount&quot;:2840.00,&quot;userAddressId&quot;:2117736,&quot;postageOrigin&quot;:10.00,&quot;postage&quot;:10.00,&quot;postageDesc&quot;:&quot;邮费&quot;,&quot;display&quot;:1,&quot;clientType&quot;:20,&quot;b2c&quot;:true,&quot;orderGroupId&quot;:0,&quot;deliverSort&quot;:null,&quot;expectShipTime&quot;:null,&quot;shop&quot;:{&quot;id&quot;:7946,&quot;addTime&quot;:1467815956000,&quot;updateTime&quot;:1557864004000,&quot;name&quot;:&quot;文化票务&quot;,&quot;img&quot;:&quot;https://img.piaoniu.com/shop/79461467816073549.jpg&quot;,&quot;mobile&quot;:&quot;17666050714&quot;,&quot;owner&quot;:2260241,&quot;type&quot;:2,&quot;status&quot;:2,&quot;rejectReason&quot;:&quot;无&quot;,&quot;cityId&quot;:4,&quot;totalScore&quot;:850,&quot;weipiaoStatus&quot;:2,&quot;channel&quot;:null,&quot;clientType&quot;:null},&quot;venue&quot;:{&quot;id&quot;:1359,&quot;addTime&quot;:1479867673000,&quot;updateTime&quot;:1544149504000,&quot;name&quot;:&quot;香港体育馆（红磡体育馆）&quot;,&quot;address&quot;:&quot;香港红磡湾畅运道9号&quot;,&quot;avatar&quot;:&quot;http://image.juooo.com/uploads/venue/20111024155159808.jpg&quot;,&quot;cityId&quot;:341,&quot;regionId&quot;:0,&quot;latitude&quot;:22.304562,&quot;longitude&quot;:114.193522,&quot;latitudeBd&quot;:22.304562,&quot;longitudeBd&quot;:114.193522,&quot;phones&quot;:&quot;(00852)23557234&quot;,&quot;parking&quot;:null,&quot;transportation&quot;:&quot;红磡站-公交车站：城巴a21路, 城巴e21x, 九龙区专线小巴6路&quot;,&quot;desc&quot;:&quot;&amp;lt;p&amp;gt;&amp;amp;nbsp;香港体育馆（亦称红磡体育馆，简称红馆）是香港的综合室内多用途表演场馆，位于九龙油尖旺区红磡畅运道9号、港铁红磡站平台上，1983年4月27日开幕，现时由康乐及文化事务署管理。香港体育馆外形上阔下窄像一颗钻石或倒转的金字塔，全馆设有空气调节，内里设有12,500个座位，场内并无任何支柱。 香港体育馆在1983年启用，外形如倒立的金字塔，馆内没有梁柱，视线开阔，座位达12500个，适合举办各类体育活动、音乐会及展览。 香港体育馆位于香港特别行政区（香港特区）的「红磡」区域，香港市民喜欢称它为「红馆」。「红」其实是语带双关的，除了是因为「红馆」的位置所在之外，「红」亦指艺人在演艺事业上成功、受赏识的意思，而用这个称号来形容这座多用途场馆，实在是最贴切不过，因为过去22年，曾经有数以千计的本地和国际娱乐、体育节目在这里举行过。 香港体育馆于一九八三年四月二十七日正式落成启用，前后花了六年时间建造。该馆位置优越，交通便利，可提供座位多达12500个，至今仍是香港最大的一个室内场馆。尽管与其它城市的主要室内场馆比较，12 500的座位规模不算太大，但是，香港市民均以这座耗资1亿7,500万港元的体育馆为荣，因为这项设施完全切合我们的需求：一座可以用作举办不同类型活动，包括文娱、体育、庆典、会议及集会的世界级室内体育馆。 香港体育馆建筑独树一帜，外型像一座倒置的金字塔，并采用了独特的建造技术－首先兴建屋顶架构，将之升高，然后才兴建支撑场馆的四面主墙，表演场面积达41米乘41米，用途多元化，适合举办不同类型的节目。&amp;lt;/p&amp;gt;&quot;,&quot;status&quot;:1},&quot;activity&quot;:{&quot;activityId&quot;:91037,&quot;properName&quot;:&quot;刘德华红馆演唱会&quot;,&quot;poster&quot;:&quot;https://img.piaoniu.com/poster/4ec6d51bdef51db2b733e41cab3d1667fd366613.jpg&quot;,&quot;crossPoster&quot;:null,&quot;timeRange&quot;:&quot;2020.02.15 - 02.22&quot;,&quot;categoryId&quot;:1,&quot;subCategoryId&quot;:1,&quot;cityId&quot;:7,&quot;venueId&quot;:1359,&quot;status&quot;:4,&quot;publishStatus&quot;:1,&quot;openTime&quot;:null,&quot;addTime&quot;:1554188574000,&quot;fullName&quot;:&quot;刘德华红馆演唱会&quot;,&quot;areaImage&quot;:null,&quot;name&quot;:&quot;刘德华红馆演唱会&quot;,&quot;id&quot;:91037},&quot;activityEvent&quot;:{&quot;activityId&quot;:91037,&quot;activityEventId&quot;:362079,&quot;start&quot;:1582027200000,&quot;end&quot;:1582034400000,&quot;specification&quot;:&quot;2020年02月18日 周二 20:00&quot;,&quot;status&quot;:1},&quot;ticketGroups&quot;:[{&quot;ticketGroupId&quot;:5624920,&quot;salePrice&quot;:2982.00,&quot;originPrice&quot;:380.00,&quot;specification&quot;:&quot;380（HK$）&quot;,&quot;count&quot;:1,&quot;areaName&quot;:&quot;对应区域&quot;,&quot;continuousSeat&quot;:true,&quot;desc&quot;:null}],&quot;areaTicketType&quot;:2,&quot;shopNotice&quot;:&quot;商品提供: 文化票务&quot;,&quot;deliverNotice&quot;:&quot;最晚明天20点发货&quot;,&quot;yoho&quot;:null,&quot;noTicketCompensateAmount&quot;:114.00,&quot;shopInfo&quot;:{&quot;verified&quot;:true,&quot;shopName&quot;:&quot;文化票务&quot;,&quot;shopLisenceUrl&quot;:&quot;https://m.piaoniu.com/shop/trade-license.html?shopId=7946&quot;},&quot;hasSeat&quot;:true}]">
-                            <td class="base-info"><a href="http://www.piaoniu.com/activity/91037"><img
-                                    src="../static/picture/4ec6d51bdef51db2b733e41cab3d1667fd366613.jpg" class="poster">
+                            <td class="base-info">
+                                <a href="http://www.piaoniu.com/activity/91037">
+                                    <img th:src="@{'picture/'+${order.orderTicketImage}}" class="poster">
                                 <div class="info">
-                                    <div class="name">刘德华红馆演唱会</div>
-                                    <div class="address">香港红磡湾畅运道9号</div>
-                                    <div class="time">2020年02月18日 周二 20:00</div>
+                                    <div class="name" th:text="${order.orderTicketName}">刘德华红馆演唱会</div>
+                                    <div class="address" th:text="${order.orderTicketPlace}">香港红磡湾畅运道9号</div>
+                                    <div class="time" th:text="${order.orderTicketTime}">2020年02月18日 周二 20:00</div>
                                 </div>
                             </a></td>
-                            <td class="num">x1</td>
-                            <td class="total">￥2992.00<br><span class="hint">(含邮费:10.00)</span></td>
-                            <td class="desc">订单已关闭</td>
-                            <td class="operation"><a href="http://www.piaoniu.com/user/orderdetail/13460286"
-                                                     rel="nofollow" class="link">订单详情</a></td>
+                            <td class="num" th:text="${order.orderSum}">x1</td>
+                            <td class="total" th:text="${order.orderPrice}">￥2992.00<br><span class="hint">(含邮费:10.00)</span></td>
+                            <td class="desc" th:text="${order.orderState}">订单已关闭</td>
+                            <td class="operation">
+                                <a href="我的订单详情.html" rel="nofollow" class="link">订单详情</a>
+                            </td>
                         </tr>
-                        </tbody>
-                    </table>
-                </div>
-                <div data-id="13460233" data-left-time="0" class="order">
-                    <div class="head"><span class="orderid">订单号：13460233</span><span class="ordertime">下单时间：2019年05月14日 16:42</span>
-                    </div>
-                    <table>
-                        <tbody>
-                        <tr data-products="[{&quot;id&quot;:13460233,&quot;addTime&quot;:1557823372000,&quot;updateTime&quot;:1557824280000,&quot;status&quot;:6,&quot;buyerId&quot;:3272130,&quot;cityId&quot;:2,&quot;supplement&quot;:&quot;&quot;,&quot;totalAmount&quot;:184.00,&quot;payAmount&quot;:184.00,&quot;settleAmount&quot;:182.00,&quot;userAddressId&quot;:2119533,&quot;postageOrigin&quot;:10.00,&quot;postage&quot;:0.00,&quot;postageDesc&quot;:&quot;免邮&quot;,&quot;display&quot;:1,&quot;clientType&quot;:20,&quot;b2c&quot;:true,&quot;orderGroupId&quot;:0,&quot;deliverSort&quot;:null,&quot;expectShipTime&quot;:null,&quot;shop&quot;:{&quot;id&quot;:41870,&quot;addTime&quot;:1552050840000,&quot;updateTime&quot;:1557864038000,&quot;name&quot;:&quot;金桔票务&quot;,&quot;img&quot;:&quot;https://img.piaoniu.com/shop/418701553681474496.jpg/f514cdede4e6613932b666d6499a6f606849c977.jpg&quot;,&quot;mobile&quot;:&quot;13290220187&quot;,&quot;owner&quot;:2537909,&quot;type&quot;:2,&quot;status&quot;:2,&quot;rejectReason&quot;:&quot;无&quot;,&quot;cityId&quot;:1,&quot;totalScore&quot;:910,&quot;weipiaoStatus&quot;:2,&quot;channel&quot;:null,&quot;clientType&quot;:null},&quot;venue&quot;:{&quot;id&quot;:5218,&quot;addTime&quot;:1533721949000,&quot;updateTime&quot;:1533754845000,&quot;name&quot;:&quot;疆进酒•OMNI SPACE&quot;,&quot;address&quot;:&quot;北京市西城区天桥南大街9号天桥艺术中心b103&quot;,&quot;avatar&quot;:null,&quot;cityId&quot;:2,&quot;regionId&quot;:0,&quot;latitude&quot;:39.882268,&quot;longitude&quot;:116.397839,&quot;latitudeBd&quot;:39.888620,&quot;longitudeBd&quot;:116.404235,&quot;phones&quot;:&quot;&quot;,&quot;parking&quot;:null,&quot;transportation&quot;:null,&quot;desc&quot;:&quot;&quot;,&quot;status&quot;:1},&quot;activity&quot;:{&quot;activityId&quot;:91805,&quot;properName&quot;:&quot;曹方2019全国巡演北京站&quot;,&quot;poster&quot;:&quot;https://img.piaoniu.com/poster/72f3b8605b7c9f9dd8954568aa027345fab0b260.jpg&quot;,&quot;crossPoster&quot;:null,&quot;timeRange&quot;:&quot;2019.06.16 20:30&quot;,&quot;categoryId&quot;:1,&quot;subCategoryId&quot;:3,&quot;cityId&quot;:2,&quot;venueId&quot;:5218,&quot;status&quot;:1,&quot;publishStatus&quot;:1,&quot;openTime&quot;:1554996254000,&quot;addTime&quot;:1554996254000,&quot;fullName&quot;:&quot;曹方《面包会有的》2019轻旅行全国巡演北京站&quot;,&quot;areaImage&quot;:null,&quot;name&quot;:&quot;曹方2019全国巡演北京站&quot;,&quot;id&quot;:91805},&quot;activityEvent&quot;:{&quot;activityId&quot;:91805,&quot;activityEventId&quot;:363488,&quot;start&quot;:1560688200000,&quot;end&quot;:1560693600000,&quot;specification&quot;:&quot;2019年06月16日 周日 20:30&quot;,&quot;status&quot;:1},&quot;ticketGroups&quot;:[{&quot;ticketGroupId&quot;:5675976,&quot;salePrice&quot;:184.00,&quot;originPrice&quot;:120.00,&quot;specification&quot;:&quot;预售票 120&quot;,&quot;count&quot;:1,&quot;areaName&quot;:&quot;对应区域&quot;,&quot;continuousSeat&quot;:true,&quot;desc&quot;:null}],&quot;areaTicketType&quot;:2,&quot;shopNotice&quot;:&quot;商品提供: 金桔票务&quot;,&quot;deliverNotice&quot;:&quot;最晚明天20点发货&quot;,&quot;yoho&quot;:null,&quot;noTicketCompensateAmount&quot;:48.00,&quot;shopInfo&quot;:{&quot;verified&quot;:true,&quot;shopName&quot;:&quot;金桔票务&quot;,&quot;shopLisenceUrl&quot;:&quot;https://m.piaoniu.com/shop/trade-license.html?shopId=41870&quot;},&quot;hasSeat&quot;:false}]">
-                            <td class="base-info"><a href="http://www.piaoniu.com/activity/91805"><img
-                                    src="../static/picture/72f3b8605b7c9f9dd8954568aa027345fab0b260.jpg" class="poster">
-                                <div class="info">
-                                    <div class="name">曹方2019全国巡演北京站</div>
-                                    <div class="address">北京市西城区天桥南大街9号天桥艺术中心b103</div>
-                                    <div class="time">2019年06月16日 周日 20:30</div>
-                                </div>
-                            </a></td>
-                            <td class="num">x1</td>
-                            <td class="total">￥184.00<br><span class="hint">(含邮费:0.00)</span></td>
-                            <td class="desc">订单已关闭</td>
-                            <td class="operation"><a href="http://www.piaoniu.com/user/orderdetail/13460233"
-                                                     rel="nofollow" class="link">订单详情</a></td>
-                        </tr>
-                        </tbody>
-                    </table>
-                </div>
-                <div data-id="13464046" data-left-time="0" class="order">
-                    <div class="head"><span class="orderid">订单号：13464046</span><span class="ordertime">下单时间：2019年05月14日 15:25</span>
-                    </div>
-                    <table>
-                        <tbody>
-                        <tr data-products="[{&quot;id&quot;:13464046,&quot;addTime&quot;:1557818722000,&quot;updateTime&quot;:1557819660000,&quot;status&quot;:6,&quot;buyerId&quot;:3272130,&quot;cityId&quot;:7,&quot;supplement&quot;:&quot;&quot;,&quot;totalAmount&quot;:514.00,&quot;payAmount&quot;:514.00,&quot;settleAmount&quot;:480.00,&quot;userAddressId&quot;:2117736,&quot;postageOrigin&quot;:10.00,&quot;postage&quot;:10.00,&quot;postageDesc&quot;:&quot;邮费&quot;,&quot;display&quot;:1,&quot;clientType&quot;:20,&quot;b2c&quot;:true,&quot;orderGroupId&quot;:0,&quot;deliverSort&quot;:null,&quot;expectShipTime&quot;:null,&quot;shop&quot;:{&quot;id&quot;:42087,&quot;addTime&quot;:1553847938000,&quot;updateTime&quot;:1557864039000,&quot;name&quot;:&quot;追光者&quot;,&quot;img&quot;:&quot;https://img.piaoniu.com/user/699256/avatar/1508645035247.jpg&quot;,&quot;mobile&quot;:&quot;18675977845&quot;,&quot;owner&quot;:699256,&quot;type&quot;:2,&quot;status&quot;:2,&quot;rejectReason&quot;:null,&quot;cityId&quot;:4,&quot;totalScore&quot;:1000,&quot;weipiaoStatus&quot;:2,&quot;channel&quot;:null,&quot;clientType&quot;:null},&quot;venue&quot;:{&quot;id&quot;:1359,&quot;addTime&quot;:1479867673000,&quot;updateTime&quot;:1544149504000,&quot;name&quot;:&quot;香港体育馆（红磡体育馆）&quot;,&quot;address&quot;:&quot;香港红磡湾畅运道9号&quot;,&quot;avatar&quot;:&quot;http://image.juooo.com/uploads/venue/20111024155159808.jpg&quot;,&quot;cityId&quot;:341,&quot;regionId&quot;:0,&quot;latitude&quot;:22.304562,&quot;longitude&quot;:114.193522,&quot;latitudeBd&quot;:22.304562,&quot;longitudeBd&quot;:114.193522,&quot;phones&quot;:&quot;(00852)23557234&quot;,&quot;parking&quot;:null,&quot;transportation&quot;:&quot;红磡站-公交车站：城巴a21路, 城巴e21x, 九龙区专线小巴6路&quot;,&quot;desc&quot;:&quot;&amp;lt;p&amp;gt;&amp;amp;nbsp;香港体育馆（亦称红磡体育馆，简称红馆）是香港的综合室内多用途表演场馆，位于九龙油尖旺区红磡畅运道9号、港铁红磡站平台上，1983年4月27日开幕，现时由康乐及文化事务署管理。香港体育馆外形上阔下窄像一颗钻石或倒转的金字塔，全馆设有空气调节，内里设有12,500个座位，场内并无任何支柱。 香港体育馆在1983年启用，外形如倒立的金字塔，馆内没有梁柱，视线开阔，座位达12500个，适合举办各类体育活动、音乐会及展览。 香港体育馆位于香港特别行政区（香港特区）的「红磡」区域，香港市民喜欢称它为「红馆」。「红」其实是语带双关的，除了是因为「红馆」的位置所在之外，「红」亦指艺人在演艺事业上成功、受赏识的意思，而用这个称号来形容这座多用途场馆，实在是最贴切不过，因为过去22年，曾经有数以千计的本地和国际娱乐、体育节目在这里举行过。 香港体育馆于一九八三年四月二十七日正式落成启用，前后花了六年时间建造。该馆位置优越，交通便利，可提供座位多达12500个，至今仍是香港最大的一个室内场馆。尽管与其它城市的主要室内场馆比较，12 500的座位规模不算太大，但是，香港市民均以这座耗资1亿7,500万港元的体育馆为荣，因为这项设施完全切合我们的需求：一座可以用作举办不同类型活动，包括文娱、体育、庆典、会议及集会的世界级室内体育馆。 香港体育馆建筑独树一帜，外型像一座倒置的金字塔，并采用了独特的建造技术－首先兴建屋顶架构，将之升高，然后才兴建支撑场馆的四面主墙，表演场面积达41米乘41米，用途多元化，适合举办不同类型的节目。&amp;lt;/p&amp;gt;&quot;,&quot;status&quot;:1},&quot;activity&quot;:{&quot;activityId&quot;:90303,&quot;properName&quot;:&quot;容祖儿 香港演唱会&quot;,&quot;poster&quot;:&quot;https://img.piaoniu.com/poster/afe2fb8174c4f6f58c7238edca75e7cba1cf120e.jpg&quot;,&quot;crossPoster&quot;:null,&quot;timeRange&quot;:&quot;2019.08.05-08.24&quot;,&quot;categoryId&quot;:1,&quot;subCategoryId&quot;:1,&quot;cityId&quot;:7,&quot;venueId&quot;:1359,&quot;status&quot;:4,&quot;publishStatus&quot;:1,&quot;openTime&quot;:null,&quot;addTime&quot;:1553574737000,&quot;fullName&quot;:&quot;容祖儿 香港演唱会 2019&quot;,&quot;areaImage&quot;:&quot;https://img.piaoniu.com/areaImg/61ab13b5ef562b2aa2aebefd4bcd870853b4003b.png&quot;,&quot;name&quot;:&quot;容祖儿 香港演唱会&quot;,&quot;id&quot;:90303},&quot;activityEvent&quot;:{&quot;activityId&quot;:90303,&quot;activityEventId&quot;:363511,&quot;start&quot;:1566303240000,&quot;end&quot;:1566310500000,&quot;specification&quot;:&quot;2019年08月20日 周二 20:14&quot;,&quot;status&quot;:1},&quot;ticketGroups&quot;:[{&quot;ticketGroupId&quot;:5881397,&quot;salePrice&quot;:504.00,&quot;originPrice&quot;:380.00,&quot;specification&quot;:&quot;380（HK$）&quot;,&quot;count&quot;:1,&quot;areaName&quot;:&quot;对应区域&quot;,&quot;continuousSeat&quot;:true,&quot;desc&quot;:null}],&quot;areaTicketType&quot;:2,&quot;shopNotice&quot;:&quot;商品提供: 追光者&quot;,&quot;deliverNotice&quot;:&quot;最晚明天20点发货&quot;,&quot;yoho&quot;:null,&quot;noTicketCompensateAmount&quot;:114.00,&quot;shopInfo&quot;:{&quot;verified&quot;:true,&quot;shopName&quot;:&quot;追光者&quot;,&quot;shopLisenceUrl&quot;:&quot;https://m.piaoniu.com/shop/trade-license.html?shopId=42087&quot;},&quot;hasSeat&quot;:true}]">
-                            <td class="base-info"><a href="http://www.piaoniu.com/activity/90303"><img
-                                    src="../static/picture/afe2fb8174c4f6f58c7238edca75e7cba1cf120e.jpg" class="poster">
-                                <div class="info">
-                                    <div class="name">容祖儿 香港演唱会</div>
-                                    <div class="address">香港红磡湾畅运道9号</div>
-                                    <div class="time">2019年08月20日 周二 20:14</div>
-                                </div>
-                            </a></td>
-                            <td class="num">x1</td>
-                            <td class="total">￥514.00<br><span class="hint">(含邮费:10.00)</span></td>
-                            <td class="desc">订单已关闭</td>
-                            <td class="operation"><a href="http://www.piaoniu.com/user/orderdetail/13464046"
-                                                     rel="nofollow" class="link">订单详情</a></td>
-                        </tr>
-                        </tbody>
-                    </table>
-                </div>
-                <div data-id="13464151" data-left-time="0" class="order">
-                    <div class="head"><span class="orderid">订单号：13464151</span><span class="ordertime">下单时间：2019年05月14日 14:56</span>
-                    </div>
-                    <table>
-                        <tbody>
-                        <tr data-products="[{&quot;id&quot;:13464151,&quot;addTime&quot;:1557817017000,&quot;updateTime&quot;:1557817920000,&quot;status&quot;:6,&quot;buyerId&quot;:3272130,&quot;cityId&quot;:10,&quot;supplement&quot;:&quot;&quot;,&quot;totalAmount&quot;:490.00,&quot;payAmount&quot;:490.00,&quot;settleAmount&quot;:456.00,&quot;userAddressId&quot;:2117736,&quot;postageOrigin&quot;:10.00,&quot;postage&quot;:10.00,&quot;postageDesc&quot;:&quot;邮费&quot;,&quot;display&quot;:1,&quot;clientType&quot;:20,&quot;b2c&quot;:true,&quot;orderGroupId&quot;:0,&quot;deliverSort&quot;:null,&quot;expectShipTime&quot;:null,&quot;shop&quot;:{&quot;id&quot;:40079,&quot;addTime&quot;:1525885258000,&quot;updateTime&quot;:1557864025000,&quot;name&quot;:&quot;evefirst&quot;,&quot;img&quot;:&quot;https://img.piaoniu.com/user/1392895/avatar/1523469018827.jpg/e202b4e1046b87ebac1b99eeaa77b4d47a4d0eec.jpg&quot;,&quot;mobile&quot;:&quot;13682078204&quot;,&quot;owner&quot;:1392895,&quot;type&quot;:3,&quot;status&quot;:2,&quot;rejectReason&quot;:null,&quot;cityId&quot;:10,&quot;totalScore&quot;:1000,&quot;weipiaoStatus&quot;:2,&quot;channel&quot;:null,&quot;clientType&quot;:null},&quot;venue&quot;:{&quot;id&quot;:3417,&quot;addTime&quot;:1513581429000,&quot;updateTime&quot;:1529607634000,&quot;name&quot;:&quot;天津大剧院&quot;,&quot;address&quot;:&quot;天津市河西区平江道58号增1号&quot;,&quot;avatar&quot;:null,&quot;cityId&quot;:10,&quot;regionId&quot;:0,&quot;latitude&quot;:39.087342,&quot;longitude&quot;:117.216161,&quot;latitudeBd&quot;:39.093447,&quot;longitudeBd&quot;:117.222605,&quot;phones&quot;:&quot;&quot;,&quot;parking&quot;:null,&quot;transportation&quot;:null,&quot;desc&quot;:&quot;&quot;,&quot;status&quot;:1},&quot;activity&quot;:{&quot;activityId&quot;:94285,&quot;properName&quot;:&quot;《巴黎圣母院》&quot;,&quot;poster&quot;:&quot;https://img.piaoniu.com/poster/2308fc48a50f86b2a34b3bc8cc71e7b050758513.jpg&quot;,&quot;crossPoster&quot;:null,&quot;timeRange&quot;:&quot;2019.09.13 - 09.15&quot;,&quot;categoryId&quot;:2,&quot;subCategoryId&quot;:8,&quot;cityId&quot;:10,&quot;venueId&quot;:3417,&quot;status&quot;:1,&quot;publishStatus&quot;:1,&quot;openTime&quot;:1557465664000,&quot;addTime&quot;:1557465664000,&quot;fullName&quot;:&quot;法国音乐剧《巴黎圣母院》&quot;,&quot;areaImage&quot;:null,&quot;name&quot;:&quot;《巴黎圣母院》&quot;,&quot;id&quot;:94285},&quot;activityEvent&quot;:{&quot;activityId&quot;:94285,&quot;activityEventId&quot;:379485,&quot;start&quot;:1568460600000,&quot;end&quot;:1568469600000,&quot;specification&quot;:&quot;2019年09月14日 周六 19:30&quot;,&quot;status&quot;:1},&quot;ticketGroups&quot;:[{&quot;ticketGroupId&quot;:5907566,&quot;salePrice&quot;:480.00,&quot;originPrice&quot;:480.00,&quot;specification&quot;:&quot;480&quot;,&quot;count&quot;:1,&quot;areaName&quot;:&quot;对应区域&quot;,&quot;continuousSeat&quot;:true,&quot;desc&quot;:null}],&quot;areaTicketType&quot;:2,&quot;shopNotice&quot;:&quot;商品提供: evefirst&quot;,&quot;deliverNotice&quot;:&quot;最晚明天20点发货&quot;,&quot;yoho&quot;:null,&quot;noTicketCompensateAmount&quot;:192.00,&quot;shopInfo&quot;:{&quot;verified&quot;:true,&quot;shopName&quot;:&quot;evefirst&quot;,&quot;shopLisenceUrl&quot;:&quot;https://m.piaoniu.com/shop/trade-license.html?shopId=40079&quot;},&quot;hasSeat&quot;:true}]">
-                            <td class="base-info"><a href="http://www.piaoniu.com/activity/94285"><img
-                                    src="../static/picture/2308fc48a50f86b2a34b3bc8cc71e7b050758513.jpg" class="poster">
-                                <div class="info">
-                                    <div class="name">《巴黎圣母院》</div>
-                                    <div class="address">天津市河西区平江道58号增1号</div>
-                                    <div class="time">2019年09月14日 周六 19:30</div>
-                                </div>
-                            </a></td>
-                            <td class="num">x1</td>
-                            <td class="total">￥490.00<br><span class="hint">(含邮费:10.00)</span></td>
-                            <td class="desc">订单已关闭</td>
-                            <td class="operation"><a href="http://www.piaoniu.com/user/orderdetail/13464151"
-                                                     rel="nofollow" class="link">订单详情</a></td>
-                        </tr>
-                        </tbody>
-                    </table>
-                </div>
-                <div data-id="13447333" data-left-time="0" class="order">
-                    <div class="head"><span class="orderid">订单号：13447333</span><span class="ordertime">下单时间：2019年05月14日 11:05</span>
-                    </div>
-                    <table>
-                        <tbody>
-                        <tr data-products="[{&quot;id&quot;:13447333,&quot;addTime&quot;:1557803150000,&quot;updateTime&quot;:1557804060000,&quot;status&quot;:6,&quot;buyerId&quot;:3272130,&quot;cityId&quot;:16,&quot;supplement&quot;:&quot;&quot;,&quot;totalAmount&quot;:184.00,&quot;payAmount&quot;:184.00,&quot;settleAmount&quot;:167.40,&quot;userAddressId&quot;:2117736,&quot;postageOrigin&quot;:10.00,&quot;postage&quot;:10.00,&quot;postageDesc&quot;:&quot;邮费&quot;,&quot;display&quot;:1,&quot;clientType&quot;:20,&quot;b2c&quot;:true,&quot;orderGroupId&quot;:0,&quot;deliverSort&quot;:null,&quot;expectShipTime&quot;:null,&quot;shop&quot;:{&quot;id&quot;:40668,&quot;addTime&quot;:1534328212000,&quot;updateTime&quot;:1557864029000,&quot;name&quot;:&quot;深圳福田孟京辉戏剧工作室&quot;,&quot;img&quot;:&quot;https://img.piaoniu.com/shop/406681553145992343.jpg/79fd3e47275e79c00b6a325a4f12ece714f29334.jpg&quot;,&quot;mobile&quot;:&quot;13925211185&quot;,&quot;owner&quot;:2104993,&quot;type&quot;:3,&quot;status&quot;:2,&quot;rejectReason&quot;:null,&quot;cityId&quot;:7,&quot;totalScore&quot;:1000,&quot;weipiaoStatus&quot;:2,&quot;channel&quot;:null,&quot;clientType&quot;:null},&quot;venue&quot;:{&quot;id&quot;:1570,&quot;addTime&quot;:1482260372000,&quot;updateTime&quot;:1520834502000,&quot;name&quot;:&quot;中南剧场大剧场&quot;,&quot;address&quot;:&quot;武汉市江岸区京汉大道1001号&quot;,&quot;avatar&quot;:&quot;&quot;,&quot;cityId&quot;:16,&quot;regionId&quot;:0,&quot;latitude&quot;:30.596506,&quot;longitude&quot;:114.298995,&quot;latitudeBd&quot;:30.602163,&quot;longitudeBd&quot;:114.305583,&quot;phones&quot;:&quot;&quot;,&quot;parking&quot;:null,&quot;transportation&quot;:null,&quot;desc&quot;:&quot;&quot;,&quot;status&quot;:1},&quot;activity&quot;:{&quot;activityId&quot;:86660,&quot;properName&quot;:&quot;孟京辉戏剧作品《两只狗的生活意见》&quot;,&quot;poster&quot;:&quot;https://img.piaoniu.com/poster/19ba8c9d356cd68536495cd3d5c2dbcfe6291867.jpg&quot;,&quot;crossPoster&quot;:null,&quot;timeRange&quot;:&quot;2019.05.17 - 05.19&quot;,&quot;categoryId&quot;:2,&quot;subCategoryId&quot;:7,&quot;cityId&quot;:16,&quot;venueId&quot;:1570,&quot;status&quot;:1,&quot;publishStatus&quot;:1,&quot;openTime&quot;:1549504647000,&quot;addTime&quot;:1549504647000,&quot;fullName&quot;:&quot;MaiLive 孟京辉戏剧作品《两只狗的生活意见》武汉站&quot;,&quot;areaImage&quot;:null,&quot;name&quot;:&quot;孟京辉戏剧作品《两只狗的生活意见》&quot;,&quot;id&quot;:86660},&quot;activityEvent&quot;:{&quot;activityId&quot;:86660,&quot;activityEventId&quot;:343246,&quot;start&quot;:1558247400000,&quot;end&quot;:1558252800000,&quot;specification&quot;:&quot;2019年05月19日 周日 14:30&quot;,&quot;status&quot;:5},&quot;ticketGroups&quot;:[{&quot;ticketGroupId&quot;:5453251,&quot;salePrice&quot;:174.00,&quot;originPrice&quot;:180.00,&quot;specification&quot;:&quot;180&quot;,&quot;count&quot;:1,&quot;areaName&quot;:&quot;对应区域&quot;,&quot;continuousSeat&quot;:true,&quot;desc&quot;:null}],&quot;areaTicketType&quot;:2,&quot;shopNotice&quot;:&quot;商品提供: 深圳福田孟京辉戏剧工作室&quot;,&quot;deliverNotice&quot;:&quot;最晚明天20点发货&quot;,&quot;yoho&quot;:null,&quot;noTicketCompensateAmount&quot;:72.00,&quot;shopInfo&quot;:{&quot;verified&quot;:true,&quot;shopName&quot;:&quot;深圳福田孟京辉戏剧工作室&quot;,&quot;shopLisenceUrl&quot;:&quot;https://m.piaoniu.com/shop/trade-license.html?shopId=40668&quot;},&quot;hasSeat&quot;:true}]">
-                            <td class="base-info"><a href="http://www.piaoniu.com/activity/86660"><img
-                                    src="../static/picture/19ba8c9d356cd68536495cd3d5c2dbcfe6291867.jpg" class="poster">
-                                <div class="info">
-                                    <div class="name">孟京辉戏剧作品《两只狗的生活意见》</div>
-                                    <div class="address">武汉市江岸区京汉大道1001号</div>
-                                    <div class="time">2019年05月19日 周日 14:30</div>
-                                </div>
-                            </a></td>
-                            <td class="num">x1</td>
-                            <td class="total">￥184.00<br><span class="hint">(含邮费:10.00)</span></td>
-                            <td class="desc">订单已关闭</td>
-                            <td class="operation"><a href="http://www.piaoniu.com/user/orderdetail/13447333"
-                                                     rel="nofollow" class="link">订单详情</a></td>
-                        </tr>
-                        </tbody>
-                    </table>
-                </div>
-                <div data-id="13446119" data-left-time="0" class="order">
-                    <div class="head"><span class="orderid">订单号：13446119</span><span class="ordertime">下单时间：2019年05月14日 10:27</span>
-                    </div>
-                    <table>
-                        <tbody>
-                        <tr data-products="[{&quot;id&quot;:13446119,&quot;addTime&quot;:1557800839000,&quot;updateTime&quot;:1557801780000,&quot;status&quot;:6,&quot;buyerId&quot;:3272130,&quot;cityId&quot;:16,&quot;supplement&quot;:&quot;&quot;,&quot;totalAmount&quot;:172.00,&quot;payAmount&quot;:172.00,&quot;settleAmount&quot;:170.00,&quot;userAddressId&quot;:2118611,&quot;postageOrigin&quot;:10.00,&quot;postage&quot;:0.00,&quot;postageDesc&quot;:&quot;免邮&quot;,&quot;display&quot;:1,&quot;clientType&quot;:20,&quot;b2c&quot;:true,&quot;orderGroupId&quot;:0,&quot;deliverSort&quot;:null,&quot;expectShipTime&quot;:null,&quot;shop&quot;:{&quot;id&quot;:39256,&quot;addTime&quot;:1514786882000,&quot;updateTime&quot;:1557864018000,&quot;name&quot;:&quot;谦谦joker票务&quot;,&quot;img&quot;:&quot;https://img.piaoniu.com/shop/392561556856717552.jpg/be9bd0ffd8b1147b8a7fe737e519f4989ac10b94.jpg&quot;,&quot;mobile&quot;:&quot;18942933046&quot;,&quot;owner&quot;:958174,&quot;type&quot;:6,&quot;status&quot;:2,&quot;rejectReason&quot;:null,&quot;cityId&quot;:16,&quot;totalScore&quot;:1000,&quot;weipiaoStatus&quot;:2,&quot;channel&quot;:null,&quot;clientType&quot;:null},&quot;venue&quot;:{&quot;id&quot;:1585,&quot;addTime&quot;:1482288586000,&quot;updateTime&quot;:1520834503000,&quot;name&quot;:&quot;武汉剧院&quot;,&quot;address&quot;:&quot;江岸区解放大道1012号(青少年宫对面)&quot;,&quot;avatar&quot;:&quot;https://img.piaoniu.com/venue/2880f11e1bf287c1fb61f6f2cc1d7acfb1d15c4f.jpg&quot;,&quot;cityId&quot;:16,&quot;regionId&quot;:0,&quot;latitude&quot;:30.587666,&quot;longitude&quot;:114.286996,&quot;latitudeBd&quot;:30.593396,&quot;longitudeBd&quot;:114.293556,&quot;phones&quot;:&quot;(027)82787752&quot;,&quot;parking&quot;:null,&quot;transportation&quot;:null,&quot;desc&quot;:&quot;武汉剧院1959年10月建成正式使用，地处解放大道循礼门东侧，紧靠武汉繁华的江汉路步行街，毗邻市青少年宫、天安（假日）大酒店，环境优雅，交通方便。&quot;,&quot;status&quot;:1},&quot;activity&quot;:{&quot;activityId&quot;:87107,&quot;properName&quot;:&quot;《乌龙山伯爵》 第8轮&quot;,&quot;poster&quot;:&quot;https://img.piaoniu.com/mahuaPoster/8732e19a1e79a319cf3ef8e83d26d211de0bbcd1.jpg&quot;,&quot;crossPoster&quot;:null,&quot;timeRange&quot;:&quot;2019.05.17 - 05.19&quot;,&quot;categoryId&quot;:2,&quot;subCategoryId&quot;:7,&quot;cityId&quot;:16,&quot;venueId&quot;:1585,&quot;status&quot;:1,&quot;publishStatus&quot;:1,&quot;openTime&quot;:null,&quot;addTime&quot;:1550214272000,&quot;fullName&quot;:&quot;开心麻花经典爆笑舞台剧《乌龙山伯爵》 第8轮&quot;,&quot;areaImage&quot;:&quot;&quot;,&quot;name&quot;:&quot;《乌龙山伯爵》 第8轮&quot;,&quot;id&quot;:87107},&quot;activityEvent&quot;:{&quot;activityId&quot;:87107,&quot;activityEventId&quot;:345156,&quot;start&quot;:1558092600000,&quot;end&quot;:1558103400000,&quot;specification&quot;:&quot;2019年05月17日 周五 19:30&quot;,&quot;status&quot;:5},&quot;ticketGroups&quot;:[{&quot;ticketGroupId&quot;:5854444,&quot;salePrice&quot;:172.00,&quot;originPrice&quot;:180.00,&quot;specification&quot;:&quot;180元&quot;,&quot;count&quot;:1,&quot;areaName&quot;:&quot;对应区域&quot;,&quot;continuousSeat&quot;:true,&quot;desc&quot;:null}],&quot;areaTicketType&quot;:2,&quot;shopNotice&quot;:&quot;商品提供: 谦谦joker票务&quot;,&quot;deliverNotice&quot;:&quot;最晚明天20点发货&quot;,&quot;yoho&quot;:null,&quot;noTicketCompensateAmount&quot;:180.00,&quot;shopInfo&quot;:{&quot;verified&quot;:true,&quot;shopName&quot;:&quot;仔仔票务&quot;,&quot;shopLisenceUrl&quot;:&quot;https://m.piaoniu.com/shop/trade-license.html?shopId=42317&quot;},&quot;hasSeat&quot;:true}]">
-                            <td class="base-info"><a href="http://www.piaoniu.com/activity/87107"><img
-                                    src="../static/picture/8732e19a1e79a319cf3ef8e83d26d211de0bbcd1.jpg" class="poster">
-                                <div class="info">
-                                    <div class="name">《乌龙山伯爵》 第8轮</div>
-                                    <div class="address">江岸区解放大道1012号(青少年宫对面)</div>
-                                    <div class="time">2019年05月17日 周五 19:30</div>
-                                </div>
-                            </a></td>
-                            <td class="num">x1</td>
-                            <td class="total">￥172.00<br><span class="hint">(含邮费:0.00)</span></td>
-                            <td class="desc">订单已关闭</td>
-                            <td class="operation"><a href="http://www.piaoniu.com/user/orderdetail/13446119"
-                                                     rel="nofollow" class="link">订单详情</a></td>
-                        </tr>
-                        </tbody>
-                    </table>
-                </div>
-                <div data-id="13446198" data-left-time="0" class="order">
-                    <div class="head"><span class="orderid">订单号：13446198</span><span class="ordertime">下单时间：2019年05月14日 09:58</span>
-                    </div>
-                    <table>
-                        <tbody>
-                        <tr data-products="[{&quot;id&quot;:13446198,&quot;addTime&quot;:1557799118000,&quot;updateTime&quot;:1557800040000,&quot;status&quot;:6,&quot;buyerId&quot;:3272130,&quot;cityId&quot;:8,&quot;supplement&quot;:&quot;&quot;,&quot;totalAmount&quot;:9.90,&quot;payAmount&quot;:9.90,&quot;settleAmount&quot;:9.90,&quot;userAddressId&quot;:2118535,&quot;postageOrigin&quot;:10.00,&quot;postage&quot;:0.00,&quot;postageDesc&quot;:&quot;免邮&quot;,&quot;display&quot;:1,&quot;clientType&quot;:20,&quot;b2c&quot;:true,&quot;orderGroupId&quot;:0,&quot;deliverSort&quot;:null,&quot;expectShipTime&quot;:null,&quot;shop&quot;:{&quot;id&quot;:38212,&quot;addTime&quot;:1501643720000,&quot;updateTime&quot;:1557864011000,&quot;name&quot;:&quot;大喜时代&quot;,&quot;img&quot;:&quot;https://img.piaoniu.com/shop/382121501643858835.jpg&quot;,&quot;mobile&quot;:&quot;18180726097&quot;,&quot;owner&quot;:1938841,&quot;type&quot;:3,&quot;status&quot;:2,&quot;rejectReason&quot;:null,&quot;cityId&quot;:9,&quot;totalScore&quot;:1000,&quot;weipiaoStatus&quot;:2,&quot;channel&quot;:null,&quot;clientType&quot;:null},&quot;venue&quot;:{&quot;id&quot;:5466,&quot;addTime&quot;:1536030524000,&quot;updateTime&quot;:1536087644000,&quot;name&quot;:&quot;大喜时代剧场&quot;,&quot;address&quot;:&quot;成都市成华区二环路东二段29号SM广场F3&quot;,&quot;avatar&quot;:null,&quot;cityId&quot;:8,&quot;regionId&quot;:0,&quot;latitude&quot;:30.669787,&quot;longitude&quot;:104.111784,&quot;latitudeBd&quot;:30.675529,&quot;longitudeBd&quot;:104.118350,&quot;phones&quot;:&quot;&quot;,&quot;parking&quot;:null,&quot;transportation&quot;:null,&quot;desc&quot;:&quot;&quot;,&quot;status&quot;:1},&quot;activity&quot;:{&quot;activityId&quot;:71088,&quot;properName&quot;:&quot;大喜时代国际少儿艺术中心2019启明星课&quot;,&quot;poster&quot;:&quot;https://img.piaoniu.com/poster/3d66791282fa816a87056b1974806bcda1fb5287.jpg&quot;,&quot;crossPoster&quot;:null,&quot;timeRange&quot;:&quot;2018.10.30 - 2020.02.28&quot;,&quot;categoryId&quot;:9,&quot;subCategoryId&quot;:43,&quot;cityId&quot;:8,&quot;venueId&quot;:5466,&quot;status&quot;:1,&quot;publishStatus&quot;:1,&quot;openTime&quot;:1540871577000,&quot;addTime&quot;:1540871577000,&quot;fullName&quot;:&quot;9.9元体验大喜时代国际少儿艺术中心2019启明星课&quot;,&quot;areaImage&quot;:null,&quot;name&quot;:&quot;大喜时代国际少儿艺术中心2019启明星课&quot;,&quot;id&quot;:71088},&quot;activityEvent&quot;:{&quot;activityId&quot;:71088,&quot;activityEventId&quot;:351614,&quot;start&quot;:1551407400000,&quot;end&quot;:1582898400000,&quot;specification&quot;:&quot;即日-2020.02.28&quot;,&quot;status&quot;:1},&quot;ticketGroups&quot;:[{&quot;ticketGroupId&quot;:5291414,&quot;salePrice&quot;:9.90,&quot;originPrice&quot;:9.90,&quot;specification&quot;:&quot;9.9元&quot;,&quot;count&quot;:1,&quot;areaName&quot;:&quot;对应区域&quot;,&quot;continuousSeat&quot;:true,&quot;desc&quot;:null}],&quot;areaTicketType&quot;:2,&quot;shopNotice&quot;:&quot;商品提供: 大喜时代&quot;,&quot;deliverNotice&quot;:&quot;最晚明天20点发货&quot;,&quot;yoho&quot;:null,&quot;noTicketCompensateAmount&quot;:19.80,&quot;shopInfo&quot;:{&quot;verified&quot;:true,&quot;shopName&quot;:&quot;大喜时代&quot;,&quot;shopLisenceUrl&quot;:&quot;https://m.piaoniu.com/shop/trade-license.html?shopId=38212&quot;},&quot;hasSeat&quot;:false}]">
-                            <td class="base-info"><a href="http://www.piaoniu.com/activity/71088"><img
-                                    src="../static/picture/3d66791282fa816a87056b1974806bcda1fb5287.jpg" class="poster">
-                                <div class="info">
-                                    <div class="name">大喜时代国际少儿艺术中心2019启明星课</div>
-                                    <div class="address">成都市成华区二环路东二段29号SM广场F3</div>
-                                    <div class="time">即日-2020.02.28</div>
-                                </div>
-                            </a></td>
-                            <td class="num">x1</td>
-                            <td class="total">￥9.90<br><span class="hint">(含邮费:0.00)</span></td>
-                            <td class="desc">订单已关闭</td>
-                            <td class="operation"><a href="http://www.piaoniu.com/user/orderdetail/13446198"
-                                                     rel="nofollow" class="link">订单详情</a></td>
-                        </tr>
-                        </tbody>
-                    </table>
-                </div>
-                <div data-id="13446268" data-left-time="0" class="order">
-                    <div class="head"><span class="orderid">订单号：13446268</span><span class="ordertime">下单时间：2019年05月14日 09:43</span>
-                    </div>
-                    <table>
-                        <tbody>
-                        <tr data-products="[{&quot;id&quot;:13446268,&quot;addTime&quot;:1557798214000,&quot;updateTime&quot;:1557799140000,&quot;status&quot;:6,&quot;buyerId&quot;:3272130,&quot;cityId&quot;:5,&quot;supplement&quot;:&quot;&quot;,&quot;totalAmount&quot;:676.00,&quot;payAmount&quot;:676.00,&quot;settleAmount&quot;:600.00,&quot;userAddressId&quot;:2117736,&quot;postageOrigin&quot;:10.00,&quot;postage&quot;:10.00,&quot;postageDesc&quot;:&quot;邮费&quot;,&quot;display&quot;:1,&quot;clientType&quot;:20,&quot;b2c&quot;:true,&quot;orderGroupId&quot;:0,&quot;deliverSort&quot;:null,&quot;expectShipTime&quot;:null,&quot;shop&quot;:{&quot;id&quot;:40760,&quot;addTime&quot;:1535340734000,&quot;updateTime&quot;:1557864030000,&quot;name&quot;:&quot;文东票务&quot;,&quot;img&quot;:&quot;https://img.piaoniu.com/shop/0d537fa3a02c42f7af1fd7a457352b325ca5adb0.jpg&quot;,&quot;mobile&quot;:&quot;15002155610&quot;,&quot;owner&quot;:1742805,&quot;type&quot;:2,&quot;status&quot;:2,&quot;rejectReason&quot;:null,&quot;cityId&quot;:1,&quot;totalScore&quot;:1000,&quot;weipiaoStatus&quot;:2,&quot;channel&quot;:null,&quot;clientType&quot;:null},&quot;venue&quot;:{&quot;id&quot;:5397,&quot;addTime&quot;:1535094738000,&quot;updateTime&quot;:1535137244000,&quot;name&quot;:&quot;苏州奥林匹克体育中心体育馆&quot;,&quot;address&quot;:&quot;苏州市吴中区苏州工业园区中新大道东999号&quot;,&quot;avatar&quot;:null,&quot;cityId&quot;:6,&quot;regionId&quot;:0,&quot;latitude&quot;:31.302332,&quot;longitude&quot;:120.748438,&quot;latitudeBd&quot;:31.308358,&quot;longitudeBd&quot;:120.754915,&quot;phones&quot;:&quot;&quot;,&quot;parking&quot;:null,&quot;transportation&quot;:null,&quot;desc&quot;:&quot;&quot;,&quot;status&quot;:1},&quot;activity&quot;:{&quot;activityId&quot;:91838,&quot;properName&quot;:&quot;林宥嘉演唱会苏州站&quot;,&quot;poster&quot;:&quot;https://img.piaoniu.com/poster/62cf5ba7c7532fe0cb89c7852fbeefc08635d6e3.jpg&quot;,&quot;crossPoster&quot;:null,&quot;timeRange&quot;:&quot;2019.06.15 19:30&quot;,&quot;categoryId&quot;:1,&quot;subCategoryId&quot;:1,&quot;cityId&quot;:5,&quot;venueId&quot;:5397,&quot;status&quot;:1,&quot;publishStatus&quot;:1,&quot;openTime&quot;:1557378874000,&quot;addTime&quot;:1555043355000,&quot;fullName&quot;:&quot;林宥嘉idol世界巡回演唱会苏州站&quot;,&quot;areaImage&quot;:null,&quot;name&quot;:&quot;林宥嘉演唱会苏州站&quot;,&quot;id&quot;:91838},&quot;activityEvent&quot;:{&quot;activityId&quot;:91838,&quot;activityEventId&quot;:363598,&quot;start&quot;:1560598200000,&quot;end&quot;:1560609060000,&quot;specification&quot;:&quot;2019年06月15日 周六 19:30&quot;,&quot;status&quot;:1},&quot;ticketGroups&quot;:[{&quot;ticketGroupId&quot;:5893151,&quot;salePrice&quot;:666.00,&quot;originPrice&quot;:380.00,&quot;specification&quot;:&quot;380（看台）&quot;,&quot;count&quot;:1,&quot;areaName&quot;:&quot;对应区域&quot;,&quot;continuousSeat&quot;:true,&quot;desc&quot;:null}],&quot;areaTicketType&quot;:2,&quot;shopNotice&quot;:&quot;商品提供: 文东票务&quot;,&quot;deliverNotice&quot;:&quot;最晚明天20点发货&quot;,&quot;yoho&quot;:null,&quot;noTicketCompensateAmount&quot;:152.00,&quot;shopInfo&quot;:{&quot;verified&quot;:true,&quot;shopName&quot;:&quot;文东票务&quot;,&quot;shopLisenceUrl&quot;:&quot;https://m.piaoniu.com/shop/trade-license.html?shopId=40760&quot;},&quot;hasSeat&quot;:true}]">
-                            <td class="base-info"><a href="http://www.piaoniu.com/activity/91838"><img
-                                    src="../static/picture/62cf5ba7c7532fe0cb89c7852fbeefc08635d6e3.jpg" class="poster">
-                                <div class="info">
-                                    <div class="name">林宥嘉演唱会苏州站</div>
-                                    <div class="address">苏州市吴中区苏州工业园区中新大道东999号</div>
-                                    <div class="time">2019年06月15日 周六 19:30</div>
-                                </div>
-                            </a></td>
-                            <td class="num">x1</td>
-                            <td class="total">￥676.00<br><span class="hint">(含邮费:10.00)</span></td>
-                            <td class="desc">订单已关闭</td>
-                            <td class="operation"><a href="http://www.piaoniu.com/user/orderdetail/13446268"
-                                                     rel="nofollow" class="link">订单详情</a></td>
-                        </tr>
-                        </tbody>
-                    </table>
-                </div>
-                <div data-id="13446266" data-left-time="0" class="order">
-                    <div class="head"><span class="orderid">订单号：13446266</span><span class="ordertime">下单时间：2019年05月14日 09:41</span>
-                    </div>
-                    <table>
-                        <tbody>
-                        <tr data-products="[{&quot;id&quot;:13446266,&quot;addTime&quot;:1557798062000,&quot;updateTime&quot;:1557799020000,&quot;status&quot;:6,&quot;buyerId&quot;:3272130,&quot;cityId&quot;:11,&quot;supplement&quot;:&quot;&quot;,&quot;totalAmount&quot;:35.00,&quot;payAmount&quot;:35.00,&quot;settleAmount&quot;:35.00,&quot;userAddressId&quot;:2118501,&quot;postageOrigin&quot;:10.00,&quot;postage&quot;:0.00,&quot;postageDesc&quot;:&quot;免邮&quot;,&quot;display&quot;:1,&quot;clientType&quot;:20,&quot;b2c&quot;:true,&quot;orderGroupId&quot;:0,&quot;deliverSort&quot;:null,&quot;expectShipTime&quot;:null,&quot;shop&quot;:{&quot;id&quot;:41457,&quot;addTime&quot;:1544603806000,&quot;updateTime&quot;:1557864035000,&quot;name&quot;:&quot;暮一映像&quot;,&quot;img&quot;:&quot;https://img.piaoniu.com/shop/414571544604957963.jpg/20d4f78178a0fe50ff7ebc70073a4119c57739d7.jpg&quot;,&quot;mobile&quot;:&quot;18668869850&quot;,&quot;owner&quot;:1855390,&quot;type&quot;:2,&quot;status&quot;:2,&quot;rejectReason&quot;:null,&quot;cityId&quot;:11,&quot;totalScore&quot;:1000,&quot;weipiaoStatus&quot;:2,&quot;channel&quot;:null,&quot;clientType&quot;:null},&quot;venue&quot;:{&quot;id&quot;:1898,&quot;addTime&quot;:1491964054000,&quot;updateTime&quot;:1520798476000,&quot;name&quot;:&quot;宁波逸夫剧院&quot;,&quot;address&quot;:&quot;宁波市解放南路187号&quot;,&quot;avatar&quot;:null,&quot;cityId&quot;:11,&quot;regionId&quot;:0,&quot;latitude&quot;:29.868297,&quot;longitude&quot;:121.548248,&quot;latitudeBd&quot;:29.874592,&quot;longitudeBd&quot;:121.554664,&quot;phones&quot;:&quot;&quot;,&quot;parking&quot;:null,&quot;transportation&quot;:null,&quot;desc&quot;:&quot;宁波逸夫剧院是宁波市集文艺演出、电影放映、会议等功能于一体的中心剧院。剧院始建于1976年，原称宁波剧院，1996年装修改造时得到香港著名人士邵逸夫先生的部分捐助，后更名为宁波逸夫剧院。改造后的剧院造型气派，气势恢宏，并洋溢着浓厚的艺术气息，成为宁波市又一风格独特、内涵丰富的标志性文化建筑。 剧院观众厅内设豪华软座964只；主舞台台口宽14米，高8米，舞台台面宽22米，深17米；舞台配有平衡吊杆34道，约30平方米的自动升降乐池；配置国际先进的电脑数字控制调光台192路，灯位250路，基本面侧光固定灯具150余只；采用进口全环绕立体声音响设施；配备恒温式冷暖中央空调；总电容量1000千瓦，舞台可用电容量450千瓦；舞台后台区配有齐全的化妆室、抢妆室、服装室等，功能完善，设施先进。 1997年剧院改造完成至今，已先后有一大批著名的国内外艺术表演团体来剧院演出。如比利时管弦乐团、澳大利亚儿童剧院、德国现代芭蕾舞团、俄罗斯希金芭蕾舞团、俄罗斯阿穆尔艺术团、哈萨克斯坦国家芭蕾舞剧院、加拿大阿肯民俗歌舞团、台湾高雄国乐团、库克艺术团、奥地利下奥州交响乐团、维也纳约翰·施特劳斯圆舞曲乐团等，国内的中国歌剧舞剧院、中国青年交响乐团、华夏室内乐、香港芭蕾舞团、广州芭蕾舞团等，著名小提琴演奏家盛中国、著名钢琴演奏家孔祥乐、著名歌唱家宋祖英、董文华等都在剧院演出过。并成功承办了第二届中国舞蹈“荷花奖”舞剧、舞蹈诗决赛剧目在剧院的演出。&quot;,&quot;status&quot;:1},&quot;activity&quot;:{&quot;activityId&quot;:92556,&quot;properName&quot;:&quot;《钢琴音乐会》&quot;,&quot;poster&quot;:&quot;https://img.piaoniu.com/poster/bebd69d7b87662dd111d21284be8413a386163fb.jpg&quot;,&quot;crossPoster&quot;:null,&quot;timeRange&quot;:&quot;2019.05.24 19:30&quot;,&quot;categoryId&quot;:3,&quot;subCategoryId&quot;:42,&quot;cityId&quot;:11,&quot;venueId&quot;:1898,&quot;status&quot;:1,&quot;publishStatus&quot;:1,&quot;openTime&quot;:1555655897000,&quot;addTime&quot;:1555655897000,&quot;fullName&quot;:&quot;《钢琴音乐会》&quot;,&quot;areaImage&quot;:&quot;https://img.piaoniu.com/areaImg/977839b3478962d73da8dcd6917a0b862e06dffd.png&quot;,&quot;name&quot;:&quot;《钢琴音乐会》&quot;,&quot;id&quot;:92556},&quot;activityEvent&quot;:{&quot;activityId&quot;:92556,&quot;activityEventId&quot;:367060,&quot;start&quot;:1558697400000,&quot;end&quot;:1558704600000,&quot;specification&quot;:&quot;2019年05月24日 周五 19:30&quot;,&quot;status&quot;:1},&quot;ticketGroups&quot;:[{&quot;ticketGroupId&quot;:5750298,&quot;salePrice&quot;:35.00,&quot;originPrice&quot;:50.00,&quot;specification&quot;:&quot;50&quot;,&quot;count&quot;:1,&quot;areaName&quot;:&quot;对应区域&quot;,&quot;continuousSeat&quot;:true,&quot;desc&quot;:null}],&quot;areaTicketType&quot;:2,&quot;shopNotice&quot;:&quot;商品提供: 暮一映像&quot;,&quot;deliverNotice&quot;:&quot;最晚明天20点发货&quot;,&quot;yoho&quot;:null,&quot;noTicketCompensateAmount&quot;:50.00,&quot;shopInfo&quot;:{&quot;verified&quot;:true,&quot;shopName&quot;:&quot;暮一映像&quot;,&quot;shopLisenceUrl&quot;:&quot;https://m.piaoniu.com/shop/trade-license.html?shopId=41457&quot;},&quot;hasSeat&quot;:true}]">
-                            <td class="base-info"><a href="http://www.piaoniu.com/activity/92556"><img
-                                    src="../static/picture/bebd69d7b87662dd111d21284be8413a386163fb.jpg" class="poster">
-                                <div class="info">
-                                    <div class="name">《钢琴音乐会》</div>
-                                    <div class="address">宁波市解放南路187号</div>
-                                    <div class="time">2019年05月24日 周五 19:30</div>
-                                </div>
-                            </a></td>
-                            <td class="num">x1</td>
-                            <td class="total">￥35.00<br><span class="hint">(含邮费:0.00)</span></td>
-                            <td class="desc">订单已关闭</td>
-                            <td class="operation"><a href="http://www.piaoniu.com/user/orderdetail/13446266"
-                                                     rel="nofollow" class="link">订单详情</a></td>
-                        </tr>
-                        </tbody>
-                    </table>
-                </div>
-                <div data-id="13485018" data-left-time="0" class="order">
-                    <div class="head"><span class="orderid">订单号：13485018</span><span class="ordertime">下单时间：2019年05月13日 20:23</span>
-                    </div>
-                    <table>
-                        <tbody>
-                        <tr data-products="[{&quot;id&quot;:13485018,&quot;addTime&quot;:1557750238000,&quot;updateTime&quot;:1557750851000,&quot;status&quot;:6,&quot;buyerId&quot;:3272130,&quot;cityId&quot;:5,&quot;supplement&quot;:&quot;&quot;,&quot;totalAmount&quot;:676.00,&quot;payAmount&quot;:676.00,&quot;settleAmount&quot;:600.00,&quot;userAddressId&quot;:2117736,&quot;postageOrigin&quot;:10.00,&quot;postage&quot;:10.00,&quot;postageDesc&quot;:&quot;邮费&quot;,&quot;display&quot;:1,&quot;clientType&quot;:20,&quot;b2c&quot;:true,&quot;orderGroupId&quot;:0,&quot;deliverSort&quot;:null,&quot;expectShipTime&quot;:null,&quot;shop&quot;:{&quot;id&quot;:40760,&quot;addTime&quot;:1535340734000,&quot;updateTime&quot;:1557864030000,&quot;name&quot;:&quot;文东票务&quot;,&quot;img&quot;:&quot;https://img.piaoniu.com/shop/0d537fa3a02c42f7af1fd7a457352b325ca5adb0.jpg&quot;,&quot;mobile&quot;:&quot;15002155610&quot;,&quot;owner&quot;:1742805,&quot;type&quot;:2,&quot;status&quot;:2,&quot;rejectReason&quot;:null,&quot;cityId&quot;:1,&quot;totalScore&quot;:1000,&quot;weipiaoStatus&quot;:2,&quot;channel&quot;:null,&quot;clientType&quot;:null},&quot;venue&quot;:{&quot;id&quot;:5397,&quot;addTime&quot;:1535094738000,&quot;updateTime&quot;:1535137244000,&quot;name&quot;:&quot;苏州奥林匹克体育中心体育馆&quot;,&quot;address&quot;:&quot;苏州市吴中区苏州工业园区中新大道东999号&quot;,&quot;avatar&quot;:null,&quot;cityId&quot;:6,&quot;regionId&quot;:0,&quot;latitude&quot;:31.302332,&quot;longitude&quot;:120.748438,&quot;latitudeBd&quot;:31.308358,&quot;longitudeBd&quot;:120.754915,&quot;phones&quot;:&quot;&quot;,&quot;parking&quot;:null,&quot;transportation&quot;:null,&quot;desc&quot;:&quot;&quot;,&quot;status&quot;:1},&quot;activity&quot;:{&quot;activityId&quot;:91838,&quot;properName&quot;:&quot;林宥嘉演唱会苏州站&quot;,&quot;poster&quot;:&quot;https://img.piaoniu.com/poster/62cf5ba7c7532fe0cb89c7852fbeefc08635d6e3.jpg&quot;,&quot;crossPoster&quot;:null,&quot;timeRange&quot;:&quot;2019.06.15 19:30&quot;,&quot;categoryId&quot;:1,&quot;subCategoryId&quot;:1,&quot;cityId&quot;:5,&quot;venueId&quot;:5397,&quot;status&quot;:1,&quot;publishStatus&quot;:1,&quot;openTime&quot;:1557378874000,&quot;addTime&quot;:1555043355000,&quot;fullName&quot;:&quot;林宥嘉idol世界巡回演唱会苏州站&quot;,&quot;areaImage&quot;:null,&quot;name&quot;:&quot;林宥嘉演唱会苏州站&quot;,&quot;id&quot;:91838},&quot;activityEvent&quot;:{&quot;activityId&quot;:91838,&quot;activityEventId&quot;:363598,&quot;start&quot;:1560598200000,&quot;end&quot;:1560609060000,&quot;specification&quot;:&quot;2019年06月15日 周六 19:30&quot;,&quot;status&quot;:1},&quot;ticketGroups&quot;:[{&quot;ticketGroupId&quot;:5893151,&quot;salePrice&quot;:666.00,&quot;originPrice&quot;:380.00,&quot;specification&quot;:&quot;380（看台）&quot;,&quot;count&quot;:1,&quot;areaName&quot;:&quot;对应区域&quot;,&quot;continuousSeat&quot;:true,&quot;desc&quot;:null}],&quot;areaTicketType&quot;:2,&quot;shopNotice&quot;:&quot;商品提供: 文东票务&quot;,&quot;deliverNotice&quot;:&quot;最晚明天20点发货&quot;,&quot;yoho&quot;:null,&quot;noTicketCompensateAmount&quot;:152.00,&quot;shopInfo&quot;:{&quot;verified&quot;:true,&quot;shopName&quot;:&quot;文东票务&quot;,&quot;shopLisenceUrl&quot;:&quot;https://m.piaoniu.com/shop/trade-license.html?shopId=40760&quot;},&quot;hasSeat&quot;:true}]">
-                            <td class="base-info"><a href="http://www.piaoniu.com/activity/91838"><img
-                                    src="../static/picture/62cf5ba7c7532fe0cb89c7852fbeefc08635d6e3.jpg" class="poster">
-                                <div class="info">
-                                    <div class="name">林宥嘉演唱会苏州站</div>
-                                    <div class="address">苏州市吴中区苏州工业园区中新大道东999号</div>
-                                    <div class="time">2019年06月15日 周六 19:30</div>
-                                </div>
-                            </a></td>
-                            <td class="num">x1</td>
-                            <td class="total">￥676.00<br><span class="hint">(含邮费:10.00)</span></td>
-                            <td class="desc">订单已关闭</td>
-                            <td class="operation"><a href="http://www.piaoniu.com/user/orderdetail/13485018"
-                                                     rel="nofollow" class="link">订单详情</a></td>
-                        </tr>
-                        </tbody>
+
                     </table>
                 </div>
             </div>
         </div>
+        </tbody>
     </div>
 </div>
 <div class="banner-content">
     <div class="banner">
         <div class="center">
-            <div class="left"><img src="../static/picture/logox2.78a31cd1.png"></div>
+            <div class="left"><img src="picture/logox2.78a31cd1.png"></div>
             <div class="app-load"><a href="http://www.piaoniu.com/app" class="apple"></a><a
                     href="http://www.piaoniu.com/app" class="android"></a></div>
-            <div class="code"><img src="../static/picture/code.0294fe21.png"></div>
+            <div class="code"><img src="picture/code.0294fe21.png"></div>
         </div>
         <span class="close"></span></div>
-    <div class="left-img left"><img src="../static/picture/left.e32ac038.png"></div>
+    <div class="left-img left"><img src="picture/left.e32ac038.png"></div>
 </div>
 <div class="slogan-bar">
     <div class="container"><a href="http://www.piaoniu.com/services#service1" rel="nofollow" class="item"><img
-            src="../static/picture/icon-diamond.bb7002bc.png" class="icon">
+            src="picture/icon-diamond.bb7002bc.png" class="icon">
         <div class="text">
             <div class="title">无票赔付</div>
             <div class="desc">无票赔付，最高退一赔二</div>
         </div>
     </a><a href="http://www.piaoniu.com/services#service2" rel="nofollow" class="item"><img
-            src="../static/picture/icon-shield.09fa5cdb.png" class="icon">
+            src="picture/icon-shield.09fa5cdb.png" class="icon">
         <div class="text">
             <div class="title">出票保真</div>
             <div class="desc">全程消费保障，买得放心</div>
         </div>
     </a><a href="http://www.piaoniu.com/services#service3" rel="nofollow" class="item"><img
-            src="../static/picture/icon-umbrella.b2c3c4c4.png" class="icon">
+            src="picture/icon-umbrella.b2c3c4c4.png" class="icon">
         <div class="text">
             <div class="title">配送保障</div>
             <div class="desc">多种取票方式 安全送达</div>
@@ -754,10 +550,10 @@
 <!--					img(src='#{staticHelper.getUrl("/img/footer/juchen.png")}', style='height:23px')-->
 <div class="footer bottom-bar">
     <div class="container">
-        <div class="links-and-brand"><img src="../static/picture/footer-logo.d5e1202e.png" class="footer-logo">
+        <div class="links-and-brand"><img src="picture/footer-logo.d5e1202e.png" class="footer-logo">
             <div class="qr-codes">
-                <div class="item"><img src="../static/picture/qr-app.f6b3ee0e.png" class="img">
-                    <div class="text">票牛app</div>
+                <div class="item"><img src="picture/qr-app.f6b3ee0e.png" class="img">
+                    <div class="text">票王app</div>
                 </div>
             </div>
             <div class="helps">
@@ -831,7 +627,7 @@
                                                                                     rel="nofollow">加入我们</a><a
                     href="http://www.piaoniu.com/actor" rel="nofollow">艺人</a><a href="http://www.piaoniu.com/city/all"
                                                                                 rel="nofollow">全部城市</a><a
-                    href="http://news.piaoniu.com/" rel="nofollow">票牛资讯</a><a
+                    href="http://news.piaoniu.com/" rel="nofollow">票王资讯</a><a
                     href="https://m.piaoniu.com/about/privacy-policy.html" rel="nofollow">隐私政策</a><a
                     href="http://www.piaoniu.com/disputeResolution" rel="nofollow">争议调解</a>
                 <div class="hot-search"><span>热门搜索</span>
@@ -855,10 +651,10 @@
             href="http://www.miitbeian.gov.cn/" target="_blank">沪ICP备14000399号-2</a></div>
     <div class="police-icons"><a href="http://www.beian.gov.cn/portal/registerSystemInfo?recordcode=31010602001682"
                                  target="_blank" rel="nofollow" class="link link-police"><img
-            src="../static/picture/police.c9ff2fec.png" class="icon">
+            src="picture/police.c9ff2fec.png" class="icon">
         <div class="text">沪公网安备 31010602001682号</div>
     </a><a href="http://www.sgs.gov.cn/lz/licenseLink.do?method=licenceView&amp;entyId=2016050618242638" target="_blank"
-           rel="nofollow" class="link link-gongshang"><img src="../static/picture/gongshang.df298c0c.png" class="icon">
+           rel="nofollow" class="link link-gongshang"><img src="picture/gongshang.df298c0c.png" class="icon">
         <div class="text">上海工商</div>
     </a></div>
 </div>
@@ -3440,7 +3236,7 @@ var activeCities = [{
 <!--[if lte IE 8]>
 <script src="http://static.piaoniu.com/pc/vendors/es5-shim.c3b1fc73.js"></script>
 <script src="http://static.piaoniu.com/pc/vendors/es5-sham.095d9e53.js"></script><![endif]-->
-<script src="../static/js/common.7ec1644e.js"></script><!-- 登录用户-->
+<script src="js/common.7ec1644e.js"></script><!-- 登录用户-->
 <script>var user = {
     "userId": 3272130,
     "mobileNo": "18162865997",
@@ -3501,8 +3297,8 @@ var activeCities = [{
     }
 })()
 </script><!--引用自己服务器上easemob.js文件的路径-->
-<script src="../static/js/easemob.f3ced40f.js" async="async"></script>
-<script src="../static/js/slim-header.45e0e6b4.js"></script>
+<script src="js/easemob.f3ced40f.js" async="async"></script>
+<script src="js/slim-header.45e0e6b4.js"></script>
 <div class="loading" style="display: none;">加载中...</div>
 <div class="loading" style="display: none;">加载中...</div>
 <div class="overlay" style="display: none; opacity: 0;"></div>
@@ -3519,7 +3315,7 @@ var activeCities = [{
         </div>
         <div class="row row-vcode">
             <input placeholder="图形验证码" name="vcode" class="input input-vcode">
-            <img src="../static/js/captcha" class="vcode">
+            <img src="js/captcha" class="vcode">
             <!-- <div class="btn btn-vcode">换一张</div> -->
         </div>
         <div class="row row-getcode">
@@ -3529,7 +3325,7 @@ var activeCities = [{
         <div class="row">
             <input type="submit" class="btn btn-submit" value="登录">
         </div>
-        <div class="hint">免注册，登录即创建票牛账户</div>
+        <div class="hint">免注册，登录即创建票王账户</div>
     </form>
 
     <form method="post" class="form form-login">
@@ -3541,15 +3337,15 @@ var activeCities = [{
         </div>
         <div class="row row-vcode form-login-vcode">
             <input placeholder="请输入验证码" name="captcha" class="input input-vcode">
-            <img src="../static/js/captcha" class="vcode">
+            <img src="js/captcha" class="vcode">
         </div>
         <div class="row">
             <input type="submit" class="btn btn-submit" value="登录">
         </div>
     </form>
 </div>
-<script src="../static/js/bottom.4481684d.js"></script>
-<script src="../static/js/order.bdfc1bed.js"></script>
+<script src="js/bottom.4481684d.js"></script>
+<script src="js/order.bdfc1bed.js"></script>
 <div class="loading" style="display: none;">加载中...</div>
 </body>
 </html>

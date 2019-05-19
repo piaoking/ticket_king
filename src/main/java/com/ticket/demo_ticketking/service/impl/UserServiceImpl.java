@@ -28,4 +28,15 @@ public class UserServiceImpl implements IUserService {
 
     }
 
+    @Override
+    public void insertUser(String userTel, String userName) {
+        userMapper.insertUser(userTel,userName);
+
+    }
+
+    @Override
+    public void updatePassword(String userPassword, long userId) throws Exception {
+        userMapper.updatePassword(userPassword,userId);
+    }
+
 }

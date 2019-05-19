@@ -1,0 +1,744 @@
+.address-picker {
+  padding: 42px 0 42px 100px;
+  margin-right: -100px;
+}
+.address-picker .row {
+  height: 35px;
+  margin-bottom: 10px;
+}
+.address-picker .row .label {
+  font-size: #333;
+  float: left;
+  font-size: 14px;
+  margin-right: 15px;
+  line-height: 36px;
+  height: 36px;
+}
+.address-picker .row .input {
+  float: left;
+  padding-left: 15px;
+  height: 36px;
+  line-height: 36px;
+  border: 1px solid #cecece;
+  border-radius: 3px;
+}
+.address-picker .row .input-name {
+  width: 210px;
+}
+.address-picker .row .input-address {
+  width: 320px;
+}
+.address-picker .row .input-mobile {
+  width: 160px;
+}
+.address-picker .row .input-area {
+  float: left;
+}
+.address-picker .row .input-area .select {
+  min-width: 100px;
+  height: 36px;
+  line-height: 36px;
+  border: 1px solid #cecece;
+  border-radius: 3px;
+}
+.address-picker .row .field-city {
+  display: none;
+}
+.address-picker .row .field-district {
+  display: none;
+}
+.address-picker .row-btn {
+  margin-top: 20px;
+}
+.address-picker .row-btn .btn-submit {
+  cursor: pointer;
+  color: #fff;
+  border: 0;
+  width: 150px;
+  height: 45px;
+  line-height: 45px;
+  border-radius: 5px;
+  font-size: 18px;
+  margin-right: 24px;
+  margin-left: 43px;
+  background-color: #ff2661;
+}
+.address-picker .row-btn .btn-cancel {
+  border: none;
+  background-color: transparent;
+  color: #999;
+  font-size: 14px;
+}
+.order-header {
+  width: 1200px;
+  margin: 40px auto 0;
+  zoom: 1;
+}
+.order-header:after {
+  content: '';
+  display: block;
+  clear: both;
+}
+.order-header:after {
+  content: "";
+  clear: both;
+  display: block;
+}
+.order-header .logo {
+  border: 0;
+  float: left;
+  margin-right: 20px;
+  width: 104px;
+  height: 40px;
+}
+.order-header .steps {
+  overflow: hidden;
+  margin-left: 25px;
+  width: 1050px;
+  background-color: #f7f7f7;
+  border-radius: 2px;
+  float: left;
+}
+.order-header .steps .step {
+  position: relative;
+  font-size: 16px;
+  width: 25%;
+  text-align: center;
+  height: 42px;
+  line-height: 42px;
+  float: left;
+}
+.order-header .steps .step:before {
+  position: absolute;
+  left: -23px;
+  top: 0;
+  height: 42px;
+  width: 25px;
+  display: block;
+  content: '';
+  background-image: url(//dn-piaoniu-static.qbox.me/pc/order/img/arr-normal.e31864fd.png);
+}
+.order-header .steps .step.first:before {
+  background-image: none;
+}
+.order-header .steps .step.selected {
+  color: #fff;
+  background-color: #ff2661;
+}
+.order-header .steps .step.selected:before {
+  z-index: 3;
+  position: absolute;
+  height: 42px;
+  width: 23px;
+  display: block;
+  content: '';
+  background-image: url(//dn-piaoniu-static.qbox.me/pc/order/img/arr-before.c17bb813.png);
+  left: 0;
+  top: 0;
+}
+.order-header .steps .step.selected:after {
+  z-index: 4;
+  position: absolute;
+  right: 0;
+  top: 0;
+  height: 42px;
+  width: 23px;
+  display: block;
+  content: '';
+  background-image: url(//dn-piaoniu-static.qbox.me/pc/order/img/arr-after.aafcbdf2.png);
+}
+.order-header .steps .step.last.selected:after {
+  background-image: none;
+}
+.table-activity-info {
+  border-spacing: 0;
+  border: 1px solid #eaeaec;
+  width: 100%;
+}
+.table-activity-info thead {
+  background-color: #f0f0f0;
+}
+.table-activity-info thead th {
+  text-align: center;
+  font-weight: normal;
+  color: #333;
+  font-size: 12px;
+  padding: 10px 20px;
+}
+.table-activity-info thead th:first-child {
+  text-align: left;
+}
+.table-activity-info thead th:first-child span,
+.table-activity-info thead th:first-child a {
+  float: left;
+  display: inline-block;
+  line-height: 14px;
+}
+.table-activity-info thead th:first-child .shop-name {
+  color: #4B8FEB;
+  max-width: 60px;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  display: inline-block;
+}
+.table-activity-info thead th:first-child .icon {
+  display: inline-block;
+  height: 14px;
+  width: 56px;
+  background-image: url(//dn-piaoniu-static.qbox.me/pc/order/img/zizi-icon.bbbcb28c.png);
+  background-size: 100%;
+  margin-left: 5px;
+}
+.table-activity-info td {
+  text-align: center;
+  padding: 10px 0;
+  font-size: 14px;
+}
+.table-activity-info td:first-child {
+  text-align: left;
+}
+.table-activity-info td .poster {
+  margin-left: 20px;
+  width: 82px;
+  height: 105px;
+  margin-right: 24px;
+  float: left;
+}
+.table-activity-info td .lz {
+  color: #999;
+  font-size: 12px;
+}
+.table-activity-info td .lz img {
+  cursor: pointer;
+  margin-right: 3px;
+  position: relative;
+  top: 2px;
+}
+.table-activity-info td .info {
+  font-size: 12px;
+  padding-left: 125px;
+}
+.table-activity-info td .info .title {
+  margin: 3px 0 10px;
+  font-size: 12px;
+}
+.table-activity-info td .info .time {
+  margin-bottom: 18px;
+}
+.table-activity-info td .info .notice {
+  display: block;
+  color: #999;
+  font-size: 12px;
+  padding-left: 16px;
+  background: url(//dn-piaoniu-static.qbox.me/pc/ui/img/icon-warn-grey.a61d51b0.png) no-repeat left center;
+  background-size: 12px 12px;
+  margin-bottom: 20px;
+}
+.table-activity-info td .info .deliver-notice {
+  color: #999;
+  font-style: 12px;
+}
+.table-product-info {
+  margin-bottom: 10px;
+}
+.table-product-info td {
+  vertical-align: top;
+}
+.table-product-info td .ticket-category,
+.table-product-info td .sale-price {
+  margin-bottom: 8px;
+}
+.table-product-info .ticket-category-cell,
+.table-product-info .sale-price-cell,
+.table-product-info .ticket-count-cell {
+  padding-top: 0;
+}
+.table-product-info .ticket-category-cell.first,
+.table-product-info .sale-price-cell.first,
+.table-product-info .ticket-count-cell.first {
+  padding-top: 10px;
+}
+.table-product-info .ticket-category-cell .ticket-category,
+.table-product-info .sale-price-cell .ticket-category,
+.table-product-info .ticket-count-cell .ticket-category,
+.table-product-info .ticket-category-cell .sale-price,
+.table-product-info .sale-price-cell .sale-price,
+.table-product-info .ticket-count-cell .sale-price {
+  margin-bottom: 0;
+}
+.table-product-info .ticket-category {
+  text-align: left;
+  padding-left: 10px;
+}
+.table-product-info .ticket-category .specification {
+  margin-left: 5px;
+  font-size: 12px;
+  color: #999;
+}
+.section.notice {
+  height: 34px;
+  line-height: 34px;
+  background-color: #ffe7a7;
+  box-sizing: border-box;
+  color: #ed7d19;
+  font-size: 14px;
+  margin-top: 16px;
+  margin-bottom: 16px;
+  padding-left: 34px;
+  background-size: 16px 16px;
+  background-position: 7px center;
+  background-repeat: no-repeat;
+  background-image: url(//dn-piaoniu-static.qbox.me/pc/ui/img/icon-notice.cb192840.png);
+}
+.section.section-realname .form {
+  border-top: 1px solid #e5e5e5;
+  padding: 20px;
+  overflow: hidden;
+  position: relative;
+}
+.section.section-realname .form .split {
+  position: absolute;
+  left: 50%;
+  height: 100%;
+  border-right: 1px dashed #e5e5e5;
+}
+.section.section-realname .form .receiver-info {
+  padding-left: 66px;
+  box-sizing: border-box;
+  float: left;
+}
+.section.section-realname .form .receiver-info label {
+  margin-right: 5px;
+}
+.section.section-realname .form .receiver-info input {
+  height: 40px;
+  line-height: 40px;
+  border: 1px solid #cecece;
+  padding: 0 13px;
+  border-radius: 2px;
+}
+.section.section-realname .form .receiver-info .input-name {
+  width: 70px;
+  box-sizing: border-box;
+}
+.section.section-realname .form .receiver-info .input-idcardType {
+  height: 40px;
+  line-height: 40px;
+  width: 100px;
+}
+.section.section-realname .form .receiver-info .label-idcardType {
+  margin-left: 25px;
+}
+.section.section-realname .form .receiver-info .label-idcard {
+  margin-left: 25px;
+}
+.section {
+  width: 1200px;
+  margin: 0 auto;
+}
+.section .title {
+  color: #333;
+  font-weight: bold;
+  font-size: 18px;
+  margin-left: 5px;
+  margin-bottom: 25px;
+  margin-top: 38px;
+}
+.section .title .desc {
+  font-size: 13px;
+  display: inline-block;
+  margin-left: 10px;
+  color: #666;
+}
+.delivery-type {
+  overflow: hidden;
+  margin-bottom: 20px;
+}
+.delivery-type .item {
+  float: left;
+  padding: 0 20px;
+  margin-right: 30px;
+  height: 40px;
+  line-height: 40px;
+  border-radius: 5px;
+  color: #666;
+  background-color: #fff;
+  border: 1px solid #e5e5e5;
+  cursor: pointer;
+}
+.delivery-type .item.selected {
+  color: #ff2661;
+  border-color: #ffc2cb;
+  background-color: #fff5f8;
+  z-index: 9;
+}
+.delivery-type .item.disabled {
+  background-color: #f6f6f6;
+}
+.type-block {
+  display: none;
+}
+.type-block-1 {
+  display: block;
+}
+.type-block-1:before {
+  content: "";
+  display: block;
+  background: url(//dn-piaoniu-static.qbox.me/pc/order/img/arr-up.3a70a206.png);
+  width: 20px;
+  height: 11px;
+  position: absolute;
+  top: -11px;
+  left: 40px;
+}
+.type-block-2:before {
+  content: "";
+  display: block;
+  background: url(//dn-piaoniu-static.qbox.me/pc/order/img/arr-up.3a70a206.png);
+  width: 20px;
+  height: 11px;
+  position: absolute;
+  top: -11px;
+  left: 40px;
+  left: 180px;
+}
+.type-block-3:before {
+  content: "";
+  display: block;
+  background: url(//dn-piaoniu-static.qbox.me/pc/order/img/arr-up.3a70a206.png);
+  width: 20px;
+  height: 11px;
+  position: absolute;
+  top: -11px;
+  left: 40px;
+  left: 315px;
+}
+.delivery-info {
+  font-size: 14px;
+  position: relative;
+  border: 1px solid #eaeaec;
+  zoom: 1;
+}
+.delivery-info:after {
+  content: '';
+  display: block;
+  clear: both;
+}
+.delivery-info:after {
+  content: "";
+  clear: both;
+  display: block;
+}
+.delivery-info .form {
+  float: left;
+  padding: 55px 220px 65px 65px;
+  border-right: 1px solid #eaeaec;
+}
+.delivery-info .form .row {
+  margin-bottom: 10px;
+  overflow: hidden;
+}
+.delivery-info .form .row .label {
+  float: left;
+  line-height: 40px;
+  margin-right: 15px;
+}
+.delivery-info .form .row .input {
+  border: 1px solid #eaeaec;
+  width: 210px;
+  border-radius: 3px;
+  padding-left: 10px;
+  height: 40px;
+  line-height: 40px;
+  float: left;
+}
+.delivery-info .meta-info,
+.delivery-info .meta-info-onsite {
+  padding: 80px 64px;
+  float: left;
+  max-width: 500px;
+}
+.section-extra-info .form {
+  display: table;
+}
+.section-extra-info .label,
+.section-extra-info .field {
+  display: table-cell;
+}
+.section-extra-info .row {
+  display: table-row;
+  min-height: 40px;
+  overflow: hidden;
+  margin-bottom: 10px;
+}
+.section-extra-info .row .label {
+  display: table-cell;
+  min-width: 105px;
+  text-align: right;
+  height: 40px;
+  line-height: 40px;
+  padding-right: 15px;
+  white-space: nowrap;
+  vertical-align: top;
+  margin-right: 15px;
+}
+.section-extra-info .row .label .star {
+  color: #ff2561;
+}
+.section-extra-info .row .label .desc {
+  font-size: 12px;
+  color: #666;
+}
+.section-extra-info .row .field {
+  display: table-cell;
+}
+.section-extra-info .row .field .input,
+.section-extra-info .row .field .textarea {
+  width: 210px;
+  box-sizing: border-box;
+  border-radius: 3px;
+  border: 1px solid #cecece;
+  padding: 0 10px;
+}
+.section-extra-info .row .field .textarea {
+  width: 500px;
+  margin-bottom: 5px;
+}
+.section-extra-info .row .field .input {
+  height: 40px;
+  line-height: 40px;
+}
+.section-extra-info .row .field .textarea {
+  padding: 10px;
+}
+.section-extra-info .row .item {
+  height: 40px;
+  line-height: 40px;
+  float: left;
+  min-width: 80px;
+  margin-right: 10px;
+  cursor: pointer;
+}
+.section-extra-info .row .item .radio,
+.section-extra-info .row .item .checkbox {
+  margin-right: 10px;
+}
+.addresses {
+  position: relative;
+  border: 1px solid #eaeaec;
+  padding: 25px 0 25px 138px;
+}
+.addresses:before {
+  content: "";
+  display: block;
+  background: url(//dn-piaoniu-static.qbox.me/pc/order/img/arr-up.3a70a206.png);
+  width: 20px;
+  height: 11px;
+  position: absolute;
+  top: -11px;
+  left: 40px;
+}
+.addresses.no-address .btn-add {
+  height: 53px;
+  padding: 0;
+  line-height: 53px;
+  border-radius: 5px;
+  text-align: center;
+  width: 188px;
+  font-size: 18px;
+  background-color: #19a6ef;
+  margin: 65px auto;
+  cursor: pointer;
+  color: #fff;
+  display: block;
+}
+.addresses.no-address .btn-add .icon-add {
+  font-size: 24px;
+  margin-right: 10px;
+  color: #fff;
+}
+.addresses.no-address .btn-add .text {
+  color: #fff;
+}
+.addresses .current-hint {
+  transition: all 0.2s linear;
+  font-size: 12px;
+  z-index: 5;
+  padding-left: 40px;
+  height: 48px;
+  line-height: 48px;
+  position: absolute;
+  left: 50px;
+  top: 25px;
+  right: 50px;
+  visibility: visible;
+  background: url(//dn-piaoniu-static.qbox.me/pc/order/img/icon-marker.24eaf677.png) no-repeat 14px 12px;
+  color: #ff2661;
+  border: 1px solid #ffc2cb;
+  background-color: #fff5f8;
+}
+.addresses ul {
+  position: relative;
+  z-index: 99;
+}
+.addresses ul .address {
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  padding-left: 5px;
+  margin-right: 60px;
+  height: 40px;
+  line-height: 40px;
+  font-size: 12px;
+  transition: all 0.2s linear;
+}
+.addresses ul .address .radio {
+  margin-right: 10px;
+}
+.addresses ul .address.selected {
+  height: 50px;
+  line-height: 50px;
+  font-size: 14px;
+}
+.addresses .btn-add {
+  font-size: 12px;
+  padding-left: 30px;
+  color: #19a6ef;
+}
+.table-footer {
+  overflow: hidden;
+  padding-top: 30px;
+}
+.table-footer .supplement {
+  border: 1px solid #eaeaec;
+  padding: 0 16px;
+  height: 42px;
+  width: 450px;
+  line-height: 44px;
+}
+.table-footer .total {
+  float: right;
+  width: 355px;
+  font-size: 14px;
+  color: #999;
+  margin-bottom: 50px;
+}
+.table-footer .total .notice {
+  background-size: 16px 16px;
+  background-position: 7px center;
+  background-repeat: no-repeat;
+  background: url(//dn-piaoniu-static.qbox.me/pc/ui/img/icon-warn-grey.a61d51b0.png) left center no-repeat;
+  background-size: 12px 12px;
+  padding-left: 16px;
+  margin-bottom: 20px;
+  color: #999;
+  font-size: 12px;
+  margin-right: 20px;
+  margin-top: 40px;
+  float: right;
+}
+.table-footer .total .row {
+  margin-bottom: 16px;
+  zoom: 1;
+}
+.table-footer .total .row .label {
+  float: left;
+  width: 70px;
+  text-align: right;
+  margin-right: 15px;
+}
+.table-footer .total .row .campaign-text {
+  float: left;
+  margin-right: 8px;
+}
+.table-footer .total .row .campaign-text .choose-campaign {
+  float: left;
+  margin-right: 5px;
+  margin-top: 4px;
+}
+.table-footer .total .row .text {
+  max-width: 194px;
+}
+.table-footer .total .row:after {
+  content: '';
+  display: block;
+  clear: both;
+}
+.table-footer .total .row:after {
+  content: "";
+  clear: both;
+  display: block;
+}
+.table-footer .total .promo-notice {
+  color: #28a7ec;
+  margin-top: 16px;
+  font-size: 14px;
+  text-align: right;
+  display: block;
+}
+.table-footer .total .postage .text {
+  float: left;
+  width: 160px;
+  margin-left: 17px;
+}
+.table-footer .total .postage .price {
+  color: #666;
+  font-size: 14px;
+  float: right;
+}
+.table-footer .total .campaign .text {
+  float: left;
+  color: #333;
+}
+.table-footer .total .campaign .desc {
+  font-size: 12px;
+  margin-left: 18px;
+  float: left;
+  margin-top: 3px;
+}
+.table-footer .total .campaign .price {
+  float: right;
+  color: #ff2661;
+}
+.table-footer .total .coupon .select {
+  float: left;
+  border: 1px solid #eaeaec;
+  height: 40px;
+  position: relative;
+  max-width: 138px;
+  margin-left: 17px;
+}
+.table-footer .total .coupon .price {
+  float: right;
+  color: #ff2661;
+}
+.table-footer .total .deal {
+  position: relative;
+  margin-bottom: 30px;
+}
+.table-footer .total .deal .price {
+  position: absolute;
+  top: -15px;
+  right: 0;
+  font-size: 30px;
+  color: #ff2661;
+}
+.table-footer .total .btn-purchase {
+  float: right;
+  color: #fff;
+  background-color: #ff2661;
+  width: 172px;
+  height: 60px;
+  line-height: 60px;
+  font-size: 22px;
+  border-radius: 6px;
+  text-align: center;
+  cursor: pointer;
+}
+/**
+ * 无票赔付
+ */
+.compensate-onsite {
+  display: none;
+}

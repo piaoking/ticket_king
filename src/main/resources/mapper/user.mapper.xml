@@ -18,12 +18,13 @@
             values(#{userTel},#{userPassword});
         </insert>
 
-
     <select id="checkUsername" resultMap="baseResult">
         select * from tb_user WHERE user_tel=#{userTel}
     </select>
-
-
-
-
+    <insert id="insertUser">
+        insert into tb_user(user_tel,user_name)values (#{userTel},#{userName})
+    </insert>
+    <update id="updatePassword">
+        update tb_user set user_password = #{userPassword} where user_id =#{userId};
+    </update>
 </mapper>
