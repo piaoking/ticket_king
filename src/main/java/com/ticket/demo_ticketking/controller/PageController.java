@@ -13,4 +13,12 @@ public class PageController {
         System.out.println("---->");
         return page;
     }
+    @RequestMapping("/shifen")
+    public String shifen(){
+        return "shifenxianchang";
+    }
+    @RequestMapping("/faxian")
+    public String faxian(){
+        return "faxian";
+    }
 }

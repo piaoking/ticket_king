@@ -5,7 +5,9 @@ import com.ticket.demo_ticketking.po.TbIntro;
 import com.ticket.demo_ticketking.po.TbUser;
 import com.ticket.demo_ticketking.service.IUserService;
 import com.ticket.demo_ticketking.service.OrderBuyService;
+import com.ticket.demo_ticketking.service.PayOrderService;
 import com.ticket.demo_ticketking.vo.OrderBuyVO;
+import com.ticket.demo_ticketking.vo.PayOrderVO;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -21,6 +23,8 @@ public class DemoTicketKingApplicationTests {
     private OrderBuyService orderBuyService;
     @Autowired
     private IUserService iUserService;
+    @Autowired
+    private PayOrderService payOrderService;
     @Test
     public void contextLoads() {
     }
@@ -51,4 +55,14 @@ public class DemoTicketKingApplicationTests {
         }
         System.out.println(tbIntro);
     }
+   /* @Test
+    public void test4(){
+        TbIntro tbIntro = null;
+        try {
+            PayOrderVO payOrderVO = payOrderService.payOrder(1);
+            System.out.println(payOrderVO);
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+    }*/
 }

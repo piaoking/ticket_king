@@ -1,23 +1,23 @@
-    <!DOCTYPE html>
-<!-- saved from url=(0033)http://www.piaoniu.com/user/order -->
-<html lang="zh-CN" xmlns:th="http://www.thymeleaf.org">
+<!DOCTYPE html>
+<!-- saved from url=(0034)http://www.piaoniu.com/user/coupon -->
+<html>
 <head>
-    <base th:href="${#request.getContextPath()}+'/'">
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-    <title>我的订单 - 票王</title>
+    <title>我的优惠券 - 票牛</title>
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta id="viewport" name="viewport"
           content="initial-scale=1.0, maximum-scale=1.0, width=device-width, user-scalable=0, minimal-ui">
     <meta name="keywords">
     <meta name="description">
-    <meta name="baidu-site-verification" content="K4F8wWE2Bq">
-    <link rel="stylesheet" href="css/ui.343fbb43.css">
-    <link rel="stylesheet" href="css/slim-header.9887b921.css">
-    <script charset="utf-8" src="js/v.js"></script>
-    <script src="js/push.js"></script>
-    <script async="" src="js/analytics.js"></script>
-    <script type="text/javascript" async="" src="js/vds.js"></script>
-    <script src="js/hm.js"></script>
+    <meta name="baidu-site-verification" content="K4F8wWE2Bq"
+    "="">
+    <link rel="stylesheet" href="../static/css/ui.343fbb43.css">
+    <link rel="stylesheet" href="../static/css/slim-header.9887b921.css">
+    <script charset="utf-8" src="../static/css/v.js"></script>
+    <script src="../static/js/push.js"></script>
+    <script async="" src="../static/js/analytics.js"></script>
+    <script type="text/javascript" async="" src="../static/js/vds.js"></script>
+    <script src="../static/js/hm.js"></script>
     <script>var _hmt = _hmt || [];
     (function () {
         var hm = document.createElement("script");
@@ -25,7 +25,7 @@
         var s = document.getElementsByTagName("script")[0];
         s.parentNode.insertBefore(hm, s);
     })();
-    _hmt.push(['_setCustomVar', 1, 'city', '重庆']);
+    _hmt.push(['_setCustomVar', 1, 'city', '北京']);
     </script>
     <script>var _vds = _vds || [];
     window._vds = _vds;
@@ -54,21 +54,21 @@
     })(window, document, 'script', '//www.google-analytics.com/analytics.js', 'ga');
     ga('create', 'UA-71591200-1', 'auto');
     ga('send', 'pageview');</script>
-    <link rel="stylesheet" href="css/user.5c5daf8b.css">
-    <link rel="stylesheet" href="css/order.a0bab08a.css">
+    <link rel="stylesheet" href="../static/css/user.5c5daf8b.css">
+    <link rel="stylesheet" href="../static/css/coupon.43c2c41e.css">
 </head>
 <body>
 <div class="slim-header">
-    <div class="container"><a href="http://www.piaoniu.com/" class="logo-link"><img
-            src="picture/logo.252971b3.png" class="logo"></a>
+    <div class="container"><a href="http://www.piaoniu.com/" class="logo-link"><img src="../static/picture/logo.252971b3.png"
+                                                                                    class="logo"></a>
         <div class="city-picker">
-            <div class="city-name">重庆</div>
+            <div class="city-name">北京</div>
             <div class="citylist" style="display: none;">
                 <div class="top-rows">
                     <div class="row">
                         <div class="title">当前城市：</div>
                         <ul>
-                            <li class="selected" data-name="chongqing">重庆</li>
+                            <li class="selected" data-name="beijing">北京</li>
                         </ul>
                     </div>
                     <div class="row">
@@ -376,11 +376,11 @@
                 </div>
             </div>
         </div>
-        <div class="menu"><a href="http://www.piaoniu.com/chongqing" class="menu-item">首页</a><a
-                href="http://www.piaoniu.com/cq-all" class="menu-item">全部演出</a><a
-                href="http://www.piaoniu.com/cq-discovery" class="menu-item">发现</a></div>
+        <div class="menu"><a href="http://www.piaoniu.com/beijing" class="menu-item">首页</a><a
+                href="http://www.piaoniu.com/bj-all" class="menu-item">全部演出</a><a
+                href="http://www.piaoniu.com/bj-discovery" class="menu-item">发现</a></div>
         <div class="search-bar">
-            <div path="/cq-all" class="form"><input placeholder="找演出、明星、场馆" autocomplete="off" name="keyword" value=""
+            <div path="/bj-all" class="form"><input placeholder="找演出、明星、场馆" autocomplete="off" name="keyword" value=""
                                                     class="input"><input type="button" value="搜索" class="btn-submit">
                 <div class="suggest-container" style="display: none;">
                     <ul class="suggest-item-list"></ul>
@@ -394,13 +394,13 @@
                     登录
                 </div>
             </div>
-            <div style="display: block" class="item-user item"><img src="picture/default-avatar.c0a5928c.png"
+            <div style="display: block" class="item-user item"><img src="../static/picture/default-avatar.c0a5928c.png"
                                                                     class="avatar">
                 <div class="submenu submenu-account">
                     <ul class="submenu-inner">
-                        <li><a href="http://localhost:8080/ticketking/users/goorders/?userId=1">我的订单</a></li>
-                        <li><a href="http://localhost:8080/ticketking/users/balance/?userId=1">我的钱包</a></li>
-                        <li><a href="http://localhost:8080/ticketking/users/update/?userId=1">账户设置</a></li>
+                        <li><a href="http://www.piaoniu.com/user/order">我的订单</a></li>
+                        <li><a href="http://www.piaoniu.com/user/balance">我的钱包</a></li>
+                        <li><a href="http://www.piaoniu.com/user/profile">账户设置</a></li>
                         <li><a href="javascript:;" class="logout">退出登录</a></li>
                     </ul>
                 </div>
@@ -412,13 +412,13 @@
                 </div>
                 <div class="submenu">
                     <ul class="submenu-inner">
-                        <li><img src="picture/qr-app.f6b3ee0e.png" class="qr">
+                        <li><img src="../static/picture/qr-app.f6b3ee0e.png" class="qr">
                             <div class="txt">
-                                <div class="title">票王APP</div>
+                                <div class="title">票牛APP</div>
                                 <div class="desc">热门票随时抢<br>折扣票随时买</div>
                             </div>
                         </li>
-                        <li><img src="picture/qr-wechat.72c6a6c0.png" class="qr">
+                        <li><img src="../static/picture/qr-wechat.72c6a6c0.png" class="qr">
                             <div class="txt">
                                 <div class="title">微信订阅号</div>
                                 <div class="desc">精彩剧评最新<br>活动随时看</div>
@@ -431,107 +431,257 @@
     </div>
 </div>
 <div class="container user-container">
-    <div class="aside"><h2 class="h2"><a href="http://localhost:8080/ticketking/users/home/?userId=1">我的票王</a></h2>
+    <div class="aside"><h2 class="h2"><a href="http://www.piaoniu.com/user/home">我的票牛</a></h2>
         <div class="group"><h3 class="h3">我的演出</h3>
             <ul>
-                <li class="active"><a href="http://localhost:8080/ticketking/users/goorders/?userId=1">我的订单</a></li>
-                <li><a href="">我的关注</a></li>
+                <li><a href="http://www.piaoniu.com/user/order">我的订单</a></li>
+                <li><a href="http://www.piaoniu.com/user/favorite">我的关注</a></li>
             </ul>
         </div>
         <div class="group"><h3 class="h3">我的钱包</h3>
             <ul>
-                <li><a href="我的优惠券.html">我的优惠券</a></li>
-                <li><a href="http://localhost:8080/ticketking/users/balance/?userId=1">我的余额</a></li>
+                <li class="active"><a href="http://www.piaoniu.com/user/coupon">我的优惠券</a></li>
+                <li><a href="http://www.piaoniu.com/user/balance">我的余额</a></li>
             </ul>
         </div>
         <div class="group"><h3 class="h3">账户设置</h3>
             <ul>
-                <li><a href="http://localhost:8080/ticketking/users/name/?userId=1">个人信息</a></li>
-                <li><a href="http://localhost:8080/ticketking/users/add/?userId=1">收货地址</a></li>
-                <li><a href="http://localhost:8080/ticketking/users/update/?userId=1">密码管理</a></li>
+                <li><a href="http://www.piaoniu.com/user/profile">个人信息</a></li>
+                <li><a href="http://www.piaoniu.com/user/address">收货地址</a></li>
+                <li><a href="http://www.piaoniu.com/user/password">密码管理</a></li>
             </ul>
         </div>
     </div>
     <div class="content">
-        <div class="section">
-            <div class="section-head"><h2>我的订单</h2></div>
-            <div class="section-body">
-                <div class="funcs"><select class="filter">
-                    <option value="0">全部订单</option>
-                    <option value="2">待支付</option>
-                    <option value="3">待出票</option>
-                    <option value="4">待收货</option>
-                    <option value="5">已完成</option>
-                    <option value="6">已取消</option>
-                    <option value="7">已退款</option>
-                </select></div>
-                <table class="orderhead">
-                    <tbody>
-                    <tr>
-                        <th class="base-info">演出信息</th>
-                        <th class="num">数量</th>
-                        <th class="total">支付总金额</th>
-                        <th class="desc">状态</th>
-                        <th class="operation">操作</th>
-                    </tr>
-                    </tbody>
-                </table>
-                <div data-id="13460286" data-left-time="0" class="order">
-                    <div class="head"><span class="orderid">订单号：13460286</span><span class="ordertime">下单时间：2019年05月14日 17:06</span>
+        <div class="tab-header"><a href="http://www.piaoniu.com/user/coupon" class="item active">未使用</a><a
+                href="http://www.piaoniu.com/user/coupon?expired=1" class="item">已过期</a>
+            <div class="btn btn-primary">兑换优惠券</div>
+        </div>
+        <div class="coupons">
+            <div data-id="44993300" class="coupon">
+                <div class="head">
+                    <div class="price">
+                        <small>¥</small>
+                        38
                     </div>
-                    <tbody th:each="order:${tbOrder}">
-                    <table>
-                        <tr data-products="[{&quot;id&quot;:13460286,&quot;addTime&quot;:1557824815000,&quot;updateTime&quot;:1557825720000,&quot;status&quot;:6,&quot;buyerId&quot;:3272130,&quot;cityId&quot;:7,&quot;supplement&quot;:&quot;&quot;,&quot;totalAmount&quot;:2992.00,&quot;payAmount&quot;:2992.00,&quot;settleAmount&quot;:2840.00,&quot;userAddressId&quot;:2117736,&quot;postageOrigin&quot;:10.00,&quot;postage&quot;:10.00,&quot;postageDesc&quot;:&quot;邮费&quot;,&quot;display&quot;:1,&quot;clientType&quot;:20,&quot;b2c&quot;:true,&quot;orderGroupId&quot;:0,&quot;deliverSort&quot;:null,&quot;expectShipTime&quot;:null,&quot;shop&quot;:{&quot;id&quot;:7946,&quot;addTime&quot;:1467815956000,&quot;updateTime&quot;:1557864004000,&quot;name&quot;:&quot;文化票务&quot;,&quot;img&quot;:&quot;https://img.piaoniu.com/shop/79461467816073549.jpg&quot;,&quot;mobile&quot;:&quot;17666050714&quot;,&quot;owner&quot;:2260241,&quot;type&quot;:2,&quot;status&quot;:2,&quot;rejectReason&quot;:&quot;无&quot;,&quot;cityId&quot;:4,&quot;totalScore&quot;:850,&quot;weipiaoStatus&quot;:2,&quot;channel&quot;:null,&quot;clientType&quot;:null},&quot;venue&quot;:{&quot;id&quot;:1359,&quot;addTime&quot;:1479867673000,&quot;updateTime&quot;:1544149504000,&quot;name&quot;:&quot;香港体育馆（红磡体育馆）&quot;,&quot;address&quot;:&quot;香港红磡湾畅运道9号&quot;,&quot;avatar&quot;:&quot;http://image.juooo.com/uploads/venue/20111024155159808.jpg&quot;,&quot;cityId&quot;:341,&quot;regionId&quot;:0,&quot;latitude&quot;:22.304562,&quot;longitude&quot;:114.193522,&quot;latitudeBd&quot;:22.304562,&quot;longitudeBd&quot;:114.193522,&quot;phones&quot;:&quot;(00852)23557234&quot;,&quot;parking&quot;:null,&quot;transportation&quot;:&quot;红磡站-公交车站：城巴a21路, 城巴e21x, 九龙区专线小巴6路&quot;,&quot;desc&quot;:&quot;&amp;lt;p&amp;gt;&amp;amp;nbsp;香港体育馆（亦称红磡体育馆，简称红馆）是香港的综合室内多用途表演场馆，位于九龙油尖旺区红磡畅运道9号、港铁红磡站平台上，1983年4月27日开幕，现时由康乐及文化事务署管理。香港体育馆外形上阔下窄像一颗钻石或倒转的金字塔，全馆设有空气调节，内里设有12,500个座位，场内并无任何支柱。 香港体育馆在1983年启用，外形如倒立的金字塔，馆内没有梁柱，视线开阔，座位达12500个，适合举办各类体育活动、音乐会及展览。 香港体育馆位于香港特别行政区（香港特区）的「红磡」区域，香港市民喜欢称它为「红馆」。「红」其实是语带双关的，除了是因为「红馆」的位置所在之外，「红」亦指艺人在演艺事业上成功、受赏识的意思，而用这个称号来形容这座多用途场馆，实在是最贴切不过，因为过去22年，曾经有数以千计的本地和国际娱乐、体育节目在这里举行过。 香港体育馆于一九八三年四月二十七日正式落成启用，前后花了六年时间建造。该馆位置优越，交通便利，可提供座位多达12500个，至今仍是香港最大的一个室内场馆。尽管与其它城市的主要室内场馆比较，12 500的座位规模不算太大，但是，香港市民均以这座耗资1亿7,500万港元的体育馆为荣，因为这项设施完全切合我们的需求：一座可以用作举办不同类型活动，包括文娱、体育、庆典、会议及集会的世界级室内体育馆。 香港体育馆建筑独树一帜，外型像一座倒置的金字塔，并采用了独特的建造技术－首先兴建屋顶架构，将之升高，然后才兴建支撑场馆的四面主墙，表演场面积达41米乘41米，用途多元化，适合举办不同类型的节目。&amp;lt;/p&amp;gt;&quot;,&quot;status&quot;:1},&quot;activity&quot;:{&quot;activityId&quot;:91037,&quot;properName&quot;:&quot;刘德华红馆演唱会&quot;,&quot;poster&quot;:&quot;https://img.piaoniu.com/poster/4ec6d51bdef51db2b733e41cab3d1667fd366613.jpg&quot;,&quot;crossPoster&quot;:null,&quot;timeRange&quot;:&quot;2020.02.15 - 02.22&quot;,&quot;categoryId&quot;:1,&quot;subCategoryId&quot;:1,&quot;cityId&quot;:7,&quot;venueId&quot;:1359,&quot;status&quot;:4,&quot;publishStatus&quot;:1,&quot;openTime&quot;:null,&quot;addTime&quot;:1554188574000,&quot;fullName&quot;:&quot;刘德华红馆演唱会&quot;,&quot;areaImage&quot;:null,&quot;name&quot;:&quot;刘德华红馆演唱会&quot;,&quot;id&quot;:91037},&quot;activityEvent&quot;:{&quot;activityId&quot;:91037,&quot;activityEventId&quot;:362079,&quot;start&quot;:1582027200000,&quot;end&quot;:1582034400000,&quot;specification&quot;:&quot;2020年02月18日 周二 20:00&quot;,&quot;status&quot;:1},&quot;ticketGroups&quot;:[{&quot;ticketGroupId&quot;:5624920,&quot;salePrice&quot;:2982.00,&quot;originPrice&quot;:380.00,&quot;specification&quot;:&quot;380（HK$）&quot;,&quot;count&quot;:1,&quot;areaName&quot;:&quot;对应区域&quot;,&quot;continuousSeat&quot;:true,&quot;desc&quot;:null}],&quot;areaTicketType&quot;:2,&quot;shopNotice&quot;:&quot;商品提供: 文化票务&quot;,&quot;deliverNotice&quot;:&quot;最晚明天20点发货&quot;,&quot;yoho&quot;:null,&quot;noTicketCompensateAmount&quot;:114.00,&quot;shopInfo&quot;:{&quot;verified&quot;:true,&quot;shopName&quot;:&quot;文化票务&quot;,&quot;shopLisenceUrl&quot;:&quot;https://m.piaoniu.com/shop/trade-license.html?shopId=7946&quot;},&quot;hasSeat&quot;:true}]">
-                            <td class="base-info">
-                                <a href="http://www.piaoniu.com/activity/91037">
-                                    <img th:src="@{'picture/'+${order.orderTicketImage}}" class="poster">
-                                <div class="info">
-                                    <div class="name" th:text="${order.orderTicketName}">刘德华红馆演唱会</div>
-                                    <div class="address" th:text="${order.orderTicketPlace}">香港红磡湾畅运道9号</div>
-                                    <div class="time" th:text="${order.orderTicketTime}">2020年02月18日 周二 20:00</div>
-                                </div>
-                            </a></td>
-                            <td class="num" th:text="${order.orderSum}">x1</td>
-                            <td class="total" th:text="${order.orderPrice}">￥2992.00<br><span class="hint">(含邮费:10.00)</span></td>
-                            <td class="desc" th:text="${order.orderState}">订单已关闭</td>
-                            <td class="operation">
-                                <a href="我的订单详情.html" rel="nofollow" class="link">订单详情</a>
-                            </td>
-                        </tr>
-
-                    </table>
+                </div>
+                <div class="body">
+                    <div class="content">
+                        <div class="title">演唱会立减38元</div>
+                        <div class="desc">APP专享，满2000元可用</div>
+                    </div>
+                    <div class="expire">有效期：2019.05.13 - 2019.08.11</div>
+                </div>
+            </div>
+            <div data-id="44993299" class="coupon">
+                <div class="head">
+                    <div class="price">
+                        <small>¥</small>
+                        30
+                    </div>
+                </div>
+                <div class="body">
+                    <div class="content">
+                        <div class="title">话剧歌剧立减30元</div>
+                        <div class="desc">APP专享，满1000元可用</div>
+                    </div>
+                    <div class="expire">有效期：2019.05.13 - 2019.08.11</div>
+                </div>
+            </div>
+            <div data-id="44993298" class="coupon">
+                <div class="head">
+                    <div class="price">
+                        <small>¥</small>
+                        20
+                    </div>
+                </div>
+                <div class="body">
+                    <div class="content">
+                        <div class="title">话剧歌剧立减20元</div>
+                        <div class="desc">APP专享，满800元可用</div>
+                    </div>
+                    <div class="expire">有效期：2019.05.13 - 2019.08.11</div>
+                </div>
+            </div>
+            <div data-id="44993297" class="coupon">
+                <div class="head">
+                    <div class="price">
+                        <small>¥</small>
+                        20
+                    </div>
+                </div>
+                <div class="body">
+                    <div class="content">
+                        <div class="title">体育赛事立减20元</div>
+                        <div class="desc">APP专享，满500元可用</div>
+                    </div>
+                    <div class="expire">有效期：2019.05.13 - 2019.08.11</div>
+                </div>
+            </div>
+            <div data-id="44993296" class="coupon">
+                <div class="head">
+                    <div class="price">
+                        <small>¥</small>
+                        20
+                    </div>
+                </div>
+                <div class="body">
+                    <div class="content">
+                        <div class="title">儿童亲子立减20元</div>
+                        <div class="desc">APP专享，满500元可用</div>
+                    </div>
+                    <div class="expire">有效期：2019.05.13 - 2019.08.11</div>
+                </div>
+            </div>
+            <div data-id="44993295" class="coupon">
+                <div class="head">
+                    <div class="price">
+                        <small>¥</small>
+                        15
+                    </div>
+                </div>
+                <div class="body">
+                    <div class="content">
+                        <div class="title">话剧歌剧立减15元</div>
+                        <div class="desc">APP专享，满500元可用</div>
+                    </div>
+                    <div class="expire">有效期：2019.05.13 - 2019.08.11</div>
+                </div>
+            </div>
+            <div data-id="44993294" class="coupon">
+                <div class="head">
+                    <div class="price">
+                        <small>¥</small>
+                        10
+                    </div>
+                </div>
+                <div class="body">
+                    <div class="content">
+                        <div class="title">全场立减10元</div>
+                        <div class="desc">APP专享，满400元可用</div>
+                    </div>
+                    <div class="expire">有效期：2019.05.13 - 2019.11.09</div>
+                </div>
+            </div>
+            <div data-id="44993293" class="coupon">
+                <div class="head">
+                    <div class="price">
+                        <small>¥</small>
+                        10
+                    </div>
+                </div>
+                <div class="body">
+                    <div class="content">
+                        <div class="title">全场立减10元</div>
+                        <div class="desc">APP专享，满400元可用</div>
+                    </div>
+                    <div class="expire">有效期：2019.05.13 - 2019.11.09</div>
+                </div>
+            </div>
+            <div data-id="44993292" class="coupon">
+                <div class="head">
+                    <div class="price">
+                        <small>¥</small>
+                        5
+                    </div>
+                </div>
+                <div class="body">
+                    <div class="content">
+                        <div class="title">休闲展览 立减5元</div>
+                        <div class="desc">APP专享，满200元可用</div>
+                    </div>
+                    <div class="expire">有效期：2019.05.13 - 2019.08.11</div>
+                </div>
+            </div>
+            <div data-id="44993291" class="coupon">
+                <div class="head">
+                    <div class="price">
+                        <small>¥</small>
+                        5
+                    </div>
+                </div>
+                <div class="body">
+                    <div class="content">
+                        <div class="title">休闲展览 立减5元</div>
+                        <div class="desc">APP专享，满200元可用</div>
+                    </div>
+                    <div class="expire">有效期：2019.05.13 - 2019.08.11</div>
+                </div>
+            </div>
+            <div data-id="44993290" class="coupon">
+                <div class="head">
+                    <div class="price">
+                        <small>¥</small>
+                        5
+                    </div>
+                </div>
+                <div class="body">
+                    <div class="content">
+                        <div class="title">全场立减5元</div>
+                        <div class="desc">APP专享，满200元可用</div>
+                    </div>
+                    <div class="expire">有效期：2019.05.13 - 2019.11.09</div>
+                </div>
+            </div>
+            <div data-id="44993289" class="coupon">
+                <div class="head">
+                    <div class="price">
+                        <small>¥</small>
+                        5
+                    </div>
+                </div>
+                <div class="body">
+                    <div class="content">
+                        <div class="title">全场立减5元</div>
+                        <div class="desc">APP专享，满200元可用</div>
+                    </div>
+                    <div class="expire">有效期：2019.05.13 - 2019.11.09</div>
+                </div>
+            </div>
+            <div data-id="44993288" class="coupon">
+                <div class="head">
+                    <div class="price">
+                        <small>¥</small>
+                        5
+                    </div>
+                </div>
+                <div class="body">
+                    <div class="content">
+                        <div class="title">全场立减5元</div>
+                        <div class="desc">APP专享，满200元可用</div>
+                    </div>
+                    <div class="expire">有效期：2019.05.13 - 2019.11.09</div>
                 </div>
             </div>
         </div>
-        </tbody>
     </div>
 </div>
 <div class="banner-content">
     <div class="banner">
         <div class="center">
-            <div class="left"><img src="picture/logox2.78a31cd1.png"></div>
+            <div class="left"><img src="../static/picture/logox2.78a31cd1.png"></div>
             <div class="app-load"><a href="http://www.piaoniu.com/app" class="apple"></a><a
                     href="http://www.piaoniu.com/app" class="android"></a></div>
-            <div class="code"><img src="picture/code.0294fe21.png"></div>
+            <div class="code"><img src="../static/picture/code.0294fe21.png"></div>
         </div>
         <span class="close"></span></div>
-    <div class="left-img left"><img src="picture/left.e32ac038.png"></div>
+    <div class="left-img left"><img src="../static/picture/left.e32ac038.png"></div>
 </div>
 <div class="slogan-bar">
     <div class="container"><a href="http://www.piaoniu.com/services#service1" rel="nofollow" class="item"><img
-            src="picture/icon-diamond.bb7002bc.png" class="icon">
+            src="../static/picture/icon-diamond.bb7002bc.png" class="icon">
         <div class="text">
             <div class="title">无票赔付</div>
             <div class="desc">无票赔付，最高退一赔二</div>
         </div>
     </a><a href="http://www.piaoniu.com/services#service2" rel="nofollow" class="item"><img
-            src="picture/icon-shield.09fa5cdb.png" class="icon">
+            src="../static/picture/icon-shield.09fa5cdb.png" class="icon">
         <div class="text">
             <div class="title">出票保真</div>
             <div class="desc">全程消费保障，买得放心</div>
         </div>
     </a><a href="http://www.piaoniu.com/services#service3" rel="nofollow" class="item"><img
-            src="picture/icon-umbrella.b2c3c4c4.png" class="icon">
+            src="../static/picture/icon-umbrella.b2c3c4c4.png" class="icon">
         <div class="text">
             <div class="title">配送保障</div>
             <div class="desc">多种取票方式 安全送达</div>
@@ -550,10 +700,10 @@
 <!--					img(src='#{staticHelper.getUrl("/img/footer/juchen.png")}', style='height:23px')-->
 <div class="footer bottom-bar">
     <div class="container">
-        <div class="links-and-brand"><img src="picture/footer-logo.d5e1202e.png" class="footer-logo">
+        <div class="links-and-brand"><img src="../static/picture/footer-logo.d5e1202e.png" class="footer-logo">
             <div class="qr-codes">
-                <div class="item"><img src="picture/qr-app.f6b3ee0e.png" class="img">
-                    <div class="text">票王app</div>
+                <div class="item"><img src="../static/picture/qr-app.f6b3ee0e.png" class="img">
+                    <div class="text">票牛app</div>
                 </div>
             </div>
             <div class="helps">
@@ -627,20 +777,20 @@
                                                                                     rel="nofollow">加入我们</a><a
                     href="http://www.piaoniu.com/actor" rel="nofollow">艺人</a><a href="http://www.piaoniu.com/city/all"
                                                                                 rel="nofollow">全部城市</a><a
-                    href="http://news.piaoniu.com/" rel="nofollow">票王资讯</a><a
+                    href="http://news.piaoniu.com/" rel="nofollow">票牛资讯</a><a
                     href="https://m.piaoniu.com/about/privacy-policy.html" rel="nofollow">隐私政策</a><a
                     href="http://www.piaoniu.com/disputeResolution" rel="nofollow">争议调解</a>
                 <div class="hot-search"><span>热门搜索</span>
-                    <div class="hot-search-list"><a href="http://www.piaoniu.com/stag/36863">黄品源天津演唱会</a><a
-                            href="http://www.piaoniu.com/stag/47687">林宥嘉东莞演唱会行程</a><a
-                            href="http://www.piaoniu.com/stag/70714">陈慧琳长沙演唱会行程</a><a
-                            href="http://www.piaoniu.com/stag/80117">手嶌葵香港演唱会行程</a><a
-                            href="http://www.piaoniu.com/stag/81126">于文文九江演唱会行程</a><a
-                            href="http://www.piaoniu.com/stag/84646">陈志朋西安演唱会安排</a><a
-                            href="http://www.piaoniu.com/stag/97201">新街口组合赣州演唱会安排</a><a
-                            href="http://www.piaoniu.com/stag/98720">Ben UFO新加坡演唱会安排</a><a
-                            href="http://www.piaoniu.com/stag/116996">袁娅维泰州演唱会安排</a><a
-                            href="http://www.piaoniu.com/stag/119869">阿肆2018演唱会行程</a></div>
+                    <div class="hot-search-list"><a href="http://www.piaoniu.com/stag/50793">张洪量武汉演唱会行程</a><a
+                            href="http://www.piaoniu.com/stag/69086">洪卓立重庆演唱会行程</a><a
+                            href="http://www.piaoniu.com/stag/71522">蛋堡重庆演唱会行程</a><a
+                            href="http://www.piaoniu.com/stag/77350">刘德华长沙演唱会行程</a><a
+                            href="http://www.piaoniu.com/stag/85672">Gareth Emery澳门演唱会安排</a><a
+                            href="http://www.piaoniu.com/stag/94453">野孩子乐队无锡演唱会安排</a><a
+                            href="http://www.piaoniu.com/stag/100496">Huun Huur Tu南京演唱会安排</a><a
+                            href="http://www.piaoniu.com/stag/108657">毛不易青岛演唱会安排</a><a
+                            href="http://www.piaoniu.com/stag/112737">王杰江门演唱会安排</a><a
+                            href="http://www.piaoniu.com/stag/118502">苏醒南通演唱会安排</a></div>
                 </div>
             </div>
         </div>
@@ -651,38 +801,38 @@
             href="http://www.miitbeian.gov.cn/" target="_blank">沪ICP备14000399号-2</a></div>
     <div class="police-icons"><a href="http://www.beian.gov.cn/portal/registerSystemInfo?recordcode=31010602001682"
                                  target="_blank" rel="nofollow" class="link link-police"><img
-            src="picture/police.c9ff2fec.png" class="icon">
+            src="../static/picture/police.c9ff2fec.png" class="icon">
         <div class="text">沪公网安备 31010602001682号</div>
     </a><a href="http://www.sgs.gov.cn/lz/licenseLink.do?method=licenceView&amp;entyId=2016050618242638" target="_blank"
-           rel="nofollow" class="link link-gongshang"><img src="picture/gongshang.df298c0c.png" class="icon">
+           rel="nofollow" class="link link-gongshang"><img src="../static/picture/gongshang.df298c0c.png" class="icon">
         <div class="text">上海工商</div>
     </a></div>
 </div>
 <script>var currentCity = {
-    "cityId": 9,
-    "cityName": "重庆",
-    "cityEnName": "chongqing",
-    "cityAbbrCode": "cq",
-    "provinceId": 22,
+    "cityId": 2,
+    "cityName": "北京",
+    "cityEnName": "beijing",
+    "cityAbbrCode": "bj",
+    "provinceId": 1,
     "status": 3,
-    "regionCityId": 9,
-    "adCode": "500100",
+    "regionCityId": 2,
+    "adCode": "110100",
     "hotCity": true,
-    "glat": 29.562686,
-    "glng": 106.551234
+    "glat": 39.904667,
+    "glng": 116.408198
 }
 var city = {
-    "cityId": 9,
-    "cityName": "重庆",
-    "cityEnName": "chongqing",
-    "cityAbbrCode": "cq",
-    "provinceId": 22,
+    "cityId": 2,
+    "cityName": "北京",
+    "cityEnName": "beijing",
+    "cityAbbrCode": "bj",
+    "provinceId": 1,
     "status": 3,
-    "regionCityId": 9,
-    "adCode": "500100",
+    "regionCityId": 2,
+    "adCode": "110100",
     "hotCity": true,
-    "glat": 29.562686,
-    "glng": 106.551234
+    "glat": 39.904667,
+    "glng": 116.408198
 }
 var hotCities = [{
     "cityId": 1,
@@ -3236,7 +3386,7 @@ var activeCities = [{
 <!--[if lte IE 8]>
 <script src="http://static.piaoniu.com/pc/vendors/es5-shim.c3b1fc73.js"></script>
 <script src="http://static.piaoniu.com/pc/vendors/es5-sham.095d9e53.js"></script><![endif]-->
-<script src="js/common.7ec1644e.js"></script><!-- 登录用户-->
+<script src="../static/js/common.7ec1644e.js"></script><!-- 登录用户-->
 <script>var user = {
     "userId": 3272130,
     "mobileNo": "18162865997",
@@ -3244,13 +3394,13 @@ var activeCities = [{
     "avatar": "",
     "status": 0,
     "addTime": 1557748452000,
-    "updateTime": 1557912674000,
+    "updateTime": 1557751186000,
     "score": 5.00,
     "level": 0,
-    "bio": "123",
+    "bio": "",
     "gender": 0,
     "birthday": null,
-    "cityId": 9
+    "cityId": 16
 }
 </script><!-- 错误监控-->
 <script>Raven.config('https://8f0cab137a7b47769dec9f0dd89f5885@sentry.piaoniu.com/3y', {
@@ -3297,8 +3447,8 @@ var activeCities = [{
     }
 })()
 </script><!--引用自己服务器上easemob.js文件的路径-->
-<script src="js/easemob.f3ced40f.js" async="async"></script>
-<script src="js/slim-header.45e0e6b4.js"></script>
+<script src="../static/js/easemob.f3ced40f.js" async="async"></script>
+<script src="../static/js/slim-header.45e0e6b4.js"></script>
 <div class="loading" style="display: none;">加载中...</div>
 <div class="loading" style="display: none;">加载中...</div>
 <div class="overlay" style="display: none; opacity: 0;"></div>
@@ -3315,7 +3465,7 @@ var activeCities = [{
         </div>
         <div class="row row-vcode">
             <input placeholder="图形验证码" name="vcode" class="input input-vcode">
-            <img src="js/captcha" class="vcode">
+            <img src="../static/js/captcha" class="vcode">
             <!-- <div class="btn btn-vcode">换一张</div> -->
         </div>
         <div class="row row-getcode">
@@ -3325,7 +3475,7 @@ var activeCities = [{
         <div class="row">
             <input type="submit" class="btn btn-submit" value="登录">
         </div>
-        <div class="hint">免注册，登录即创建票王账户</div>
+        <div class="hint">免注册，登录即创建票牛账户</div>
     </form>
 
     <form method="post" class="form form-login">
@@ -3337,15 +3487,26 @@ var activeCities = [{
         </div>
         <div class="row row-vcode form-login-vcode">
             <input placeholder="请输入验证码" name="captcha" class="input input-vcode">
-            <img src="js/captcha" class="vcode">
+            <img src="../static/js/captcha" class="vcode">
         </div>
         <div class="row">
             <input type="submit" class="btn btn-submit" value="登录">
         </div>
     </form>
 </div>
-<script src="js/bottom.4481684d.js"></script>
-<script src="js/order.bdfc1bed.js"></script>
+<script src="../static/js/bottom.4481684d.js"></script>
+<script src="../static/js/coupon.c39f501a.js"></script>
 <div class="loading" style="display: none;">加载中...</div>
+<div class="overlay" style="display: none;"></div>
+<div class="mbox coupon-exchange-box" style="display: none;">
+    <div class="close"></div>
+    <div class="title"></div>
+    <div class="content">
+        <div class="title">输入兑换码，兑换优惠券</div>
+        <input placeholder="请输入兑换码" class="input">
+        <div class="btn btn-primary btn-large">确定</div>
+    </div>
+</div>
+
 </body>
 </html>

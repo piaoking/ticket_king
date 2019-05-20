@@ -1,23 +1,23 @@
-    <!DOCTYPE html>
-<!-- saved from url=(0033)http://www.piaoniu.com/user/order -->
-<html lang="zh-CN" xmlns:th="http://www.thymeleaf.org">
+<!DOCTYPE html>
+<!-- saved from url=(0035)http://www.piaoniu.com/user/profile -->
+<html>
 <head>
-    <base th:href="${#request.getContextPath()}+'/'">
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-    <title>我的订单 - 票王</title>
+    <title>个人信息 - 票牛</title>
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta id="viewport" name="viewport"
           content="initial-scale=1.0, maximum-scale=1.0, width=device-width, user-scalable=0, minimal-ui">
     <meta name="keywords">
     <meta name="description">
-    <meta name="baidu-site-verification" content="K4F8wWE2Bq">
-    <link rel="stylesheet" href="css/ui.343fbb43.css">
-    <link rel="stylesheet" href="css/slim-header.9887b921.css">
-    <script charset="utf-8" src="js/v.js"></script>
-    <script src="js/push.js"></script>
-    <script async="" src="js/analytics.js"></script>
-    <script type="text/javascript" async="" src="js/vds.js"></script>
-    <script src="js/hm.js"></script>
+    <meta name="baidu-site-verification" content="K4F8wWE2Bq"
+    "="">
+    <link rel="stylesheet" href="../static/css/ui.343fbb43.css">
+    <link rel="stylesheet" href="../static/css/slim-header.9887b921.css">
+    <script charset="utf-8" src="../static/js/v.js"></script>
+    <script src="../static/js/push.js"></script>
+    <script async="" src="../static/js/analytics.js"></script>
+    <script type="text/javascript" async="" src="../static/js/vds.js"></script>
+    <script src="../static/js/hm.js"></script>
     <script>var _hmt = _hmt || [];
     (function () {
         var hm = document.createElement("script");
@@ -25,7 +25,7 @@
         var s = document.getElementsByTagName("script")[0];
         s.parentNode.insertBefore(hm, s);
     })();
-    _hmt.push(['_setCustomVar', 1, 'city', '重庆']);
+    _hmt.push(['_setCustomVar', 1, 'city', '北京']);
     </script>
     <script>var _vds = _vds || [];
     window._vds = _vds;
@@ -54,21 +54,21 @@
     })(window, document, 'script', '//www.google-analytics.com/analytics.js', 'ga');
     ga('create', 'UA-71591200-1', 'auto');
     ga('send', 'pageview');</script>
-    <link rel="stylesheet" href="css/user.5c5daf8b.css">
-    <link rel="stylesheet" href="css/order.a0bab08a.css">
+    <link rel="stylesheet" href="../static/css/user.5c5daf8b.css">
+    <link rel="stylesheet" href="../static/css/profile.21dcded2.css">
 </head>
 <body>
 <div class="slim-header">
-    <div class="container"><a href="http://www.piaoniu.com/" class="logo-link"><img
-            src="picture/logo.252971b3.png" class="logo"></a>
+    <div class="container"><a href="http://www.piaoniu.com/" class="logo-link"><img src="../static/picture/logo.252971b3.png"
+                                                                                    class="logo"></a>
         <div class="city-picker">
-            <div class="city-name">重庆</div>
-            <div class="citylist" style="display: none;">
+            <div class="city-name">北京</div>
+            <div class="citylist">
                 <div class="top-rows">
                     <div class="row">
                         <div class="title">当前城市：</div>
                         <ul>
-                            <li class="selected" data-name="chongqing">重庆</li>
+                            <li class="selected" data-name="beijing">北京</li>
                         </ul>
                     </div>
                     <div class="row">
@@ -376,11 +376,11 @@
                 </div>
             </div>
         </div>
-        <div class="menu"><a href="http://www.piaoniu.com/chongqing" class="menu-item">首页</a><a
-                href="http://www.piaoniu.com/cq-all" class="menu-item">全部演出</a><a
-                href="http://www.piaoniu.com/cq-discovery" class="menu-item">发现</a></div>
+        <div class="menu"><a href="http://www.piaoniu.com/beijing" class="menu-item">首页</a><a
+                href="http://www.piaoniu.com/bj-all" class="menu-item">全部演出</a><a
+                href="http://www.piaoniu.com/bj-discovery" class="menu-item">发现</a></div>
         <div class="search-bar">
-            <div path="/cq-all" class="form"><input placeholder="找演出、明星、场馆" autocomplete="off" name="keyword" value=""
+            <div path="/bj-all" class="form"><input placeholder="找演出、明星、场馆" autocomplete="off" name="keyword" value=""
                                                     class="input"><input type="button" value="搜索" class="btn-submit">
                 <div class="suggest-container" style="display: none;">
                     <ul class="suggest-item-list"></ul>
@@ -394,13 +394,13 @@
                     登录
                 </div>
             </div>
-            <div style="display: block" class="item-user item"><img src="picture/default-avatar.c0a5928c.png"
+            <div style="display: block" class="item-user item"><img src="../static/picture/default-avatar.c0a5928c.png"
                                                                     class="avatar">
                 <div class="submenu submenu-account">
                     <ul class="submenu-inner">
-                        <li><a href="http://localhost:8080/ticketking/users/goorders/?userId=1">我的订单</a></li>
-                        <li><a href="http://localhost:8080/ticketking/users/balance/?userId=1">我的钱包</a></li>
-                        <li><a href="http://localhost:8080/ticketking/users/update/?userId=1">账户设置</a></li>
+                        <li><a href="http://www.piaoniu.com/user/order">我的订单</a></li>
+                        <li><a href="http://www.piaoniu.com/user/balance">我的钱包</a></li>
+                        <li><a href="http://www.piaoniu.com/user/profile">账户设置</a></li>
                         <li><a href="javascript:;" class="logout">退出登录</a></li>
                     </ul>
                 </div>
@@ -412,13 +412,13 @@
                 </div>
                 <div class="submenu">
                     <ul class="submenu-inner">
-                        <li><img src="picture/qr-app.f6b3ee0e.png" class="qr">
+                        <li><img src="../static/picture/qr-app.f6b3ee0e.png" class="qr">
                             <div class="txt">
-                                <div class="title">票王APP</div>
+                                <div class="title">票牛APP</div>
                                 <div class="desc">热门票随时抢<br>折扣票随时买</div>
                             </div>
                         </li>
-                        <li><img src="picture/qr-wechat.72c6a6c0.png" class="qr">
+                        <li><img src="../static/picture/qr-wechat.72c6a6c0.png" class="qr">
                             <div class="txt">
                                 <div class="title">微信订阅号</div>
                                 <div class="desc">精彩剧评最新<br>活动随时看</div>
@@ -431,107 +431,84 @@
     </div>
 </div>
 <div class="container user-container">
-    <div class="aside"><h2 class="h2"><a href="http://localhost:8080/ticketking/users/home/?userId=1">我的票王</a></h2>
+    <div class="aside"><h2 class="h2"><a href="http://www.piaoniu.com/user/home">我的票牛</a></h2>
         <div class="group"><h3 class="h3">我的演出</h3>
             <ul>
-                <li class="active"><a href="http://localhost:8080/ticketking/users/goorders/?userId=1">我的订单</a></li>
-                <li><a href="">我的关注</a></li>
+                <li><a href="http://www.piaoniu.com/user/order">我的订单</a></li>
+                <li><a href="http://www.piaoniu.com/user/favorite">我的关注</a></li>
             </ul>
         </div>
         <div class="group"><h3 class="h3">我的钱包</h3>
             <ul>
-                <li><a href="我的优惠券.html">我的优惠券</a></li>
-                <li><a href="http://localhost:8080/ticketking/users/balance/?userId=1">我的余额</a></li>
+                <li><a href="http://www.piaoniu.com/user/coupon">我的优惠券</a></li>
+                <li><a href="http://www.piaoniu.com/user/balance">我的余额</a></li>
             </ul>
         </div>
         <div class="group"><h3 class="h3">账户设置</h3>
             <ul>
-                <li><a href="http://localhost:8080/ticketking/users/name/?userId=1">个人信息</a></li>
-                <li><a href="http://localhost:8080/ticketking/users/add/?userId=1">收货地址</a></li>
-                <li><a href="http://localhost:8080/ticketking/users/update/?userId=1">密码管理</a></li>
+                <li class="active"><a href="http://www.piaoniu.com/user/profile">个人信息</a></li>
+                <li><a href="http://www.piaoniu.com/user/address">收货地址</a></li>
+                <li><a href="http://www.piaoniu.com/user/password">密码管理</a></li>
             </ul>
         </div>
     </div>
     <div class="content">
         <div class="section">
-            <div class="section-head"><h2>我的订单</h2></div>
+            <div class="section-head"><h2>个人信息</h2></div>
             <div class="section-body">
-                <div class="funcs"><select class="filter">
-                    <option value="0">全部订单</option>
-                    <option value="2">待支付</option>
-                    <option value="3">待出票</option>
-                    <option value="4">待收货</option>
-                    <option value="5">已完成</option>
-                    <option value="6">已取消</option>
-                    <option value="7">已退款</option>
-                </select></div>
-                <table class="orderhead">
-                    <tbody>
-                    <tr>
-                        <th class="base-info">演出信息</th>
-                        <th class="num">数量</th>
-                        <th class="total">支付总金额</th>
-                        <th class="desc">状态</th>
-                        <th class="operation">操作</th>
-                    </tr>
-                    </tbody>
-                </table>
-                <div data-id="13460286" data-left-time="0" class="order">
-                    <div class="head"><span class="orderid">订单号：13460286</span><span class="ordertime">下单时间：2019年05月14日 17:06</span>
+                <div class="avatar-container"><input id="fileupload" type="file" name="file"
+                                                     data-url="/api/v1/user/avatar"><img
+                        src="../static/picture/default-avatar.c0a5928c.png" class="avatar">
+                    <div class="hint">更改头像</div>
+                </div>
+                <div class="form">
+                    <div class="field">
+                        <div class="name">手机号</div>
+                        <div class="value">18162865997</div>
                     </div>
-                    <tbody th:each="order:${tbOrder}">
-                    <table>
-                        <tr data-products="[{&quot;id&quot;:13460286,&quot;addTime&quot;:1557824815000,&quot;updateTime&quot;:1557825720000,&quot;status&quot;:6,&quot;buyerId&quot;:3272130,&quot;cityId&quot;:7,&quot;supplement&quot;:&quot;&quot;,&quot;totalAmount&quot;:2992.00,&quot;payAmount&quot;:2992.00,&quot;settleAmount&quot;:2840.00,&quot;userAddressId&quot;:2117736,&quot;postageOrigin&quot;:10.00,&quot;postage&quot;:10.00,&quot;postageDesc&quot;:&quot;邮费&quot;,&quot;display&quot;:1,&quot;clientType&quot;:20,&quot;b2c&quot;:true,&quot;orderGroupId&quot;:0,&quot;deliverSort&quot;:null,&quot;expectShipTime&quot;:null,&quot;shop&quot;:{&quot;id&quot;:7946,&quot;addTime&quot;:1467815956000,&quot;updateTime&quot;:1557864004000,&quot;name&quot;:&quot;文化票务&quot;,&quot;img&quot;:&quot;https://img.piaoniu.com/shop/79461467816073549.jpg&quot;,&quot;mobile&quot;:&quot;17666050714&quot;,&quot;owner&quot;:2260241,&quot;type&quot;:2,&quot;status&quot;:2,&quot;rejectReason&quot;:&quot;无&quot;,&quot;cityId&quot;:4,&quot;totalScore&quot;:850,&quot;weipiaoStatus&quot;:2,&quot;channel&quot;:null,&quot;clientType&quot;:null},&quot;venue&quot;:{&quot;id&quot;:1359,&quot;addTime&quot;:1479867673000,&quot;updateTime&quot;:1544149504000,&quot;name&quot;:&quot;香港体育馆（红磡体育馆）&quot;,&quot;address&quot;:&quot;香港红磡湾畅运道9号&quot;,&quot;avatar&quot;:&quot;http://image.juooo.com/uploads/venue/20111024155159808.jpg&quot;,&quot;cityId&quot;:341,&quot;regionId&quot;:0,&quot;latitude&quot;:22.304562,&quot;longitude&quot;:114.193522,&quot;latitudeBd&quot;:22.304562,&quot;longitudeBd&quot;:114.193522,&quot;phones&quot;:&quot;(00852)23557234&quot;,&quot;parking&quot;:null,&quot;transportation&quot;:&quot;红磡站-公交车站：城巴a21路, 城巴e21x, 九龙区专线小巴6路&quot;,&quot;desc&quot;:&quot;&amp;lt;p&amp;gt;&amp;amp;nbsp;香港体育馆（亦称红磡体育馆，简称红馆）是香港的综合室内多用途表演场馆，位于九龙油尖旺区红磡畅运道9号、港铁红磡站平台上，1983年4月27日开幕，现时由康乐及文化事务署管理。香港体育馆外形上阔下窄像一颗钻石或倒转的金字塔，全馆设有空气调节，内里设有12,500个座位，场内并无任何支柱。 香港体育馆在1983年启用，外形如倒立的金字塔，馆内没有梁柱，视线开阔，座位达12500个，适合举办各类体育活动、音乐会及展览。 香港体育馆位于香港特别行政区（香港特区）的「红磡」区域，香港市民喜欢称它为「红馆」。「红」其实是语带双关的，除了是因为「红馆」的位置所在之外，「红」亦指艺人在演艺事业上成功、受赏识的意思，而用这个称号来形容这座多用途场馆，实在是最贴切不过，因为过去22年，曾经有数以千计的本地和国际娱乐、体育节目在这里举行过。 香港体育馆于一九八三年四月二十七日正式落成启用，前后花了六年时间建造。该馆位置优越，交通便利，可提供座位多达12500个，至今仍是香港最大的一个室内场馆。尽管与其它城市的主要室内场馆比较，12 500的座位规模不算太大，但是，香港市民均以这座耗资1亿7,500万港元的体育馆为荣，因为这项设施完全切合我们的需求：一座可以用作举办不同类型活动，包括文娱、体育、庆典、会议及集会的世界级室内体育馆。 香港体育馆建筑独树一帜，外型像一座倒置的金字塔，并采用了独特的建造技术－首先兴建屋顶架构，将之升高，然后才兴建支撑场馆的四面主墙，表演场面积达41米乘41米，用途多元化，适合举办不同类型的节目。&amp;lt;/p&amp;gt;&quot;,&quot;status&quot;:1},&quot;activity&quot;:{&quot;activityId&quot;:91037,&quot;properName&quot;:&quot;刘德华红馆演唱会&quot;,&quot;poster&quot;:&quot;https://img.piaoniu.com/poster/4ec6d51bdef51db2b733e41cab3d1667fd366613.jpg&quot;,&quot;crossPoster&quot;:null,&quot;timeRange&quot;:&quot;2020.02.15 - 02.22&quot;,&quot;categoryId&quot;:1,&quot;subCategoryId&quot;:1,&quot;cityId&quot;:7,&quot;venueId&quot;:1359,&quot;status&quot;:4,&quot;publishStatus&quot;:1,&quot;openTime&quot;:null,&quot;addTime&quot;:1554188574000,&quot;fullName&quot;:&quot;刘德华红馆演唱会&quot;,&quot;areaImage&quot;:null,&quot;name&quot;:&quot;刘德华红馆演唱会&quot;,&quot;id&quot;:91037},&quot;activityEvent&quot;:{&quot;activityId&quot;:91037,&quot;activityEventId&quot;:362079,&quot;start&quot;:1582027200000,&quot;end&quot;:1582034400000,&quot;specification&quot;:&quot;2020年02月18日 周二 20:00&quot;,&quot;status&quot;:1},&quot;ticketGroups&quot;:[{&quot;ticketGroupId&quot;:5624920,&quot;salePrice&quot;:2982.00,&quot;originPrice&quot;:380.00,&quot;specification&quot;:&quot;380（HK$）&quot;,&quot;count&quot;:1,&quot;areaName&quot;:&quot;对应区域&quot;,&quot;continuousSeat&quot;:true,&quot;desc&quot;:null}],&quot;areaTicketType&quot;:2,&quot;shopNotice&quot;:&quot;商品提供: 文化票务&quot;,&quot;deliverNotice&quot;:&quot;最晚明天20点发货&quot;,&quot;yoho&quot;:null,&quot;noTicketCompensateAmount&quot;:114.00,&quot;shopInfo&quot;:{&quot;verified&quot;:true,&quot;shopName&quot;:&quot;文化票务&quot;,&quot;shopLisenceUrl&quot;:&quot;https://m.piaoniu.com/shop/trade-license.html?shopId=7946&quot;},&quot;hasSeat&quot;:true}]">
-                            <td class="base-info">
-                                <a href="http://www.piaoniu.com/activity/91037">
-                                    <img th:src="@{'picture/'+${order.orderTicketImage}}" class="poster">
-                                <div class="info">
-                                    <div class="name" th:text="${order.orderTicketName}">刘德华红馆演唱会</div>
-                                    <div class="address" th:text="${order.orderTicketPlace}">香港红磡湾畅运道9号</div>
-                                    <div class="time" th:text="${order.orderTicketTime}">2020年02月18日 周二 20:00</div>
-                                </div>
-                            </a></td>
-                            <td class="num" th:text="${order.orderSum}">x1</td>
-                            <td class="total" th:text="${order.orderPrice}">￥2992.00<br><span class="hint">(含邮费:10.00)</span></td>
-                            <td class="desc" th:text="${order.orderState}">订单已关闭</td>
-                            <td class="operation">
-                                <a href="我的订单详情.html" rel="nofollow" class="link">订单详情</a>
-                            </td>
-                        </tr>
-
-                    </table>
+                    <div class="field">
+                        <div class="name">昵称</div>
+                        <div class="value"><input value="用户181****5997-RRg9j" class="username input"></div>
+                    </div>
+                    <div class="field">
+                        <div class="name">个性签名</div>
+                        <div class="value"><textarea placeholder="20字以内" maxlength="20"
+                                                     class="bio input textarea"></textarea></div>
+                    </div>
+                    <div class="submit-bar">
+                        <div class="btn btn-primary btn-submit">保存</div>
+                    </div>
                 </div>
             </div>
         </div>
-        </tbody>
     </div>
 </div>
 <div class="banner-content">
     <div class="banner">
         <div class="center">
-            <div class="left"><img src="picture/logox2.78a31cd1.png"></div>
+            <div class="left"><img src="../static/picture/logox2.78a31cd1.png"></div>
             <div class="app-load"><a href="http://www.piaoniu.com/app" class="apple"></a><a
                     href="http://www.piaoniu.com/app" class="android"></a></div>
-            <div class="code"><img src="picture/code.0294fe21.png"></div>
+            <div class="code"><img src="../static/picture/code.0294fe21.png"></div>
         </div>
         <span class="close"></span></div>
-    <div class="left-img left"><img src="picture/left.e32ac038.png"></div>
+    <div class="left-img left"><img src="../static/picture/left.e32ac038.png"></div>
 </div>
 <div class="slogan-bar">
     <div class="container"><a href="http://www.piaoniu.com/services#service1" rel="nofollow" class="item"><img
-            src="picture/icon-diamond.bb7002bc.png" class="icon">
+            src="../static/picture/icon-diamond.bb7002bc.png" class="icon">
         <div class="text">
             <div class="title">无票赔付</div>
             <div class="desc">无票赔付，最高退一赔二</div>
         </div>
     </a><a href="http://www.piaoniu.com/services#service2" rel="nofollow" class="item"><img
-            src="picture/icon-shield.09fa5cdb.png" class="icon">
+            src="../static/picture/icon-shield.09fa5cdb.png" class="icon">
         <div class="text">
             <div class="title">出票保真</div>
             <div class="desc">全程消费保障，买得放心</div>
         </div>
     </a><a href="http://www.piaoniu.com/services#service3" rel="nofollow" class="item"><img
-            src="picture/icon-umbrella.b2c3c4c4.png" class="icon">
+            src="../static/picture/icon-umbrella.b2c3c4c4.png" class="icon">
         <div class="text">
             <div class="title">配送保障</div>
             <div class="desc">多种取票方式 安全送达</div>
@@ -550,10 +527,10 @@
 <!--					img(src='#{staticHelper.getUrl("/img/footer/juchen.png")}', style='height:23px')-->
 <div class="footer bottom-bar">
     <div class="container">
-        <div class="links-and-brand"><img src="picture/footer-logo.d5e1202e.png" class="footer-logo">
+        <div class="links-and-brand"><img src="../static/picture/footer-logo.d5e1202e.png" class="footer-logo">
             <div class="qr-codes">
-                <div class="item"><img src="picture/qr-app.f6b3ee0e.png" class="img">
-                    <div class="text">票王app</div>
+                <div class="item"><img src="../static/picture/qr-app.f6b3ee0e.png" class="img">
+                    <div class="text">票牛app</div>
                 </div>
             </div>
             <div class="helps">
@@ -627,20 +604,20 @@
                                                                                     rel="nofollow">加入我们</a><a
                     href="http://www.piaoniu.com/actor" rel="nofollow">艺人</a><a href="http://www.piaoniu.com/city/all"
                                                                                 rel="nofollow">全部城市</a><a
-                    href="http://news.piaoniu.com/" rel="nofollow">票王资讯</a><a
+                    href="http://news.piaoniu.com/" rel="nofollow">票牛资讯</a><a
                     href="https://m.piaoniu.com/about/privacy-policy.html" rel="nofollow">隐私政策</a><a
                     href="http://www.piaoniu.com/disputeResolution" rel="nofollow">争议调解</a>
                 <div class="hot-search"><span>热门搜索</span>
-                    <div class="hot-search-list"><a href="http://www.piaoniu.com/stag/36863">黄品源天津演唱会</a><a
-                            href="http://www.piaoniu.com/stag/47687">林宥嘉东莞演唱会行程</a><a
-                            href="http://www.piaoniu.com/stag/70714">陈慧琳长沙演唱会行程</a><a
-                            href="http://www.piaoniu.com/stag/80117">手嶌葵香港演唱会行程</a><a
-                            href="http://www.piaoniu.com/stag/81126">于文文九江演唱会行程</a><a
-                            href="http://www.piaoniu.com/stag/84646">陈志朋西安演唱会安排</a><a
-                            href="http://www.piaoniu.com/stag/97201">新街口组合赣州演唱会安排</a><a
-                            href="http://www.piaoniu.com/stag/98720">Ben UFO新加坡演唱会安排</a><a
-                            href="http://www.piaoniu.com/stag/116996">袁娅维泰州演唱会安排</a><a
-                            href="http://www.piaoniu.com/stag/119869">阿肆2018演唱会行程</a></div>
+                    <div class="hot-search-list"><a href="http://www.piaoniu.com/stag/32751">郝云深圳演唱会</a><a
+                            href="http://www.piaoniu.com/stag/63503">Forkyrie温州演唱会行程</a><a
+                            href="http://www.piaoniu.com/stag/88541">陈奂仁桂林演唱会安排</a><a
+                            href="http://www.piaoniu.com/stag/96920">Ceui泰州演唱会安排</a><a
+                            href="http://www.piaoniu.com/stag/108412">独壹不贰ONO张家口演唱会安排</a><a
+                            href="http://www.piaoniu.com/stag/109566">朱迅佛山演唱会安排</a><a
+                            href="http://www.piaoniu.com/stag/110650">藤木直人台州演唱会安排</a><a
+                            href="http://www.piaoniu.com/stag/111240">金玟岐海口演唱会安排</a><a
+                            href="http://www.piaoniu.com/stag/113284">AGA张家口演唱会安排</a><a
+                            href="http://www.piaoniu.com/stag/116834">苦鬼黄勇泉州演唱会安排</a></div>
                 </div>
             </div>
         </div>
@@ -651,38 +628,38 @@
             href="http://www.miitbeian.gov.cn/" target="_blank">沪ICP备14000399号-2</a></div>
     <div class="police-icons"><a href="http://www.beian.gov.cn/portal/registerSystemInfo?recordcode=31010602001682"
                                  target="_blank" rel="nofollow" class="link link-police"><img
-            src="picture/police.c9ff2fec.png" class="icon">
+            src="../static/picture/police.c9ff2fec.png" class="icon">
         <div class="text">沪公网安备 31010602001682号</div>
     </a><a href="http://www.sgs.gov.cn/lz/licenseLink.do?method=licenceView&amp;entyId=2016050618242638" target="_blank"
-           rel="nofollow" class="link link-gongshang"><img src="picture/gongshang.df298c0c.png" class="icon">
+           rel="nofollow" class="link link-gongshang"><img src="../static/picture/gongshang.df298c0c.png" class="icon">
         <div class="text">上海工商</div>
     </a></div>
 </div>
 <script>var currentCity = {
-    "cityId": 9,
-    "cityName": "重庆",
-    "cityEnName": "chongqing",
-    "cityAbbrCode": "cq",
-    "provinceId": 22,
+    "cityId": 2,
+    "cityName": "北京",
+    "cityEnName": "beijing",
+    "cityAbbrCode": "bj",
+    "provinceId": 1,
     "status": 3,
-    "regionCityId": 9,
-    "adCode": "500100",
-    "hotCity": true,
-    "glat": 29.562686,
-    "glng": 106.551234
+    "regionCityId": 2,
+    "adCode": "110100",
+    "glat": 39.904667,
+    "glng": 116.408198,
+    "hotCity": true
 }
 var city = {
-    "cityId": 9,
-    "cityName": "重庆",
-    "cityEnName": "chongqing",
-    "cityAbbrCode": "cq",
-    "provinceId": 22,
+    "cityId": 2,
+    "cityName": "北京",
+    "cityEnName": "beijing",
+    "cityAbbrCode": "bj",
+    "provinceId": 1,
     "status": 3,
-    "regionCityId": 9,
-    "adCode": "500100",
-    "hotCity": true,
-    "glat": 29.562686,
-    "glng": 106.551234
+    "regionCityId": 2,
+    "adCode": "110100",
+    "glat": 39.904667,
+    "glng": 116.408198,
+    "hotCity": true
 }
 var hotCities = [{
     "cityId": 1,
@@ -693,9 +670,9 @@ var hotCities = [{
     "status": 3,
     "regionCityId": 1,
     "adCode": "310100",
-    "hotCity": true,
     "glat": 31.230708,
-    "glng": 121.472916
+    "glng": 121.472916,
+    "hotCity": true
 }, {
     "cityId": 2,
     "cityName": "北京",
@@ -705,9 +682,9 @@ var hotCities = [{
     "status": 3,
     "regionCityId": 2,
     "adCode": "110100",
-    "hotCity": true,
     "glat": 39.904667,
-    "glng": 116.408198
+    "glng": 116.408198,
+    "hotCity": true
 }, {
     "cityId": 4,
     "cityName": "广州",
@@ -717,9 +694,9 @@ var hotCities = [{
     "status": 3,
     "regionCityId": 4,
     "adCode": "440100",
-    "hotCity": true,
     "glat": 23.129075,
-    "glng": 113.264423
+    "glng": 113.264423,
+    "hotCity": true
 }, {
     "cityId": 7,
     "cityName": "深圳",
@@ -729,9 +706,9 @@ var hotCities = [{
     "status": 3,
     "regionCityId": 7,
     "adCode": "440300",
-    "hotCity": true,
     "glat": 22.543447,
-    "glng": 114.057818
+    "glng": 114.057818,
+    "hotCity": true
 }, {
     "cityId": 8,
     "cityName": "成都",
@@ -741,9 +718,9 @@ var hotCities = [{
     "status": 3,
     "regionCityId": 8,
     "adCode": "510100",
-    "hotCity": true,
     "glat": 30.658602,
-    "glng": 104.064857
+    "glng": 104.064857,
+    "hotCity": true
 }, {
     "cityId": 9,
     "cityName": "重庆",
@@ -753,9 +730,9 @@ var hotCities = [{
     "status": 3,
     "regionCityId": 9,
     "adCode": "500100",
-    "hotCity": true,
     "glat": 29.562686,
-    "glng": 106.551234
+    "glng": 106.551234,
+    "hotCity": true
 }, {
     "cityId": 10,
     "cityName": "天津",
@@ -765,9 +742,9 @@ var hotCities = [{
     "status": 3,
     "regionCityId": 10,
     "adCode": "120100",
-    "hotCity": true,
     "glat": 39.120876,
-    "glng": 117.21503
+    "glng": 117.21503,
+    "hotCity": true
 }, {
     "cityId": 3,
     "cityName": "杭州",
@@ -777,9 +754,9 @@ var hotCities = [{
     "status": 3,
     "regionCityId": 3,
     "adCode": "330100",
-    "hotCity": true,
     "glat": 30.273497,
-    "glng": 120.155249
+    "glng": 120.155249,
+    "hotCity": true
 }, {
     "cityId": 5,
     "cityName": "南京",
@@ -789,9 +766,9 @@ var hotCities = [{
     "status": 3,
     "regionCityId": 5,
     "adCode": "320100",
-    "hotCity": true,
     "glat": 32.058365,
-    "glng": 118.796468
+    "glng": 118.796468,
+    "hotCity": true
 }, {
     "cityId": 11,
     "cityName": "宁波",
@@ -801,9 +778,9 @@ var hotCities = [{
     "status": 3,
     "regionCityId": 11,
     "adCode": "330200",
-    "hotCity": true,
     "glat": 29.868336,
-    "glng": 121.54399
+    "glng": 121.54399,
+    "hotCity": true
 }, {
     "cityId": 16,
     "cityName": "武汉",
@@ -813,9 +790,9 @@ var hotCities = [{
     "status": 3,
     "regionCityId": 16,
     "adCode": "420100",
-    "hotCity": true,
     "glat": 30.593088,
-    "glng": 114.305172
+    "glng": 114.305172,
+    "hotCity": true
 }, {
     "cityId": 17,
     "cityName": "西安",
@@ -825,9 +802,9 @@ var hotCities = [{
     "status": 3,
     "regionCityId": 17,
     "adCode": "610100",
-    "hotCity": true,
     "glat": 34.26488,
-    "glng": 108.944265
+    "glng": 108.944265,
+    "hotCity": true
 }, {
     "cityId": 344,
     "cityName": "长沙",
@@ -837,9 +814,9 @@ var hotCities = [{
     "status": 3,
     "regionCityId": 344,
     "adCode": "430100",
-    "hotCity": true,
     "glat": 28.228528,
-    "glng": 112.938827
+    "glng": 112.938827,
+    "hotCity": true
 }, {
     "cityId": 160,
     "cityName": "郑州",
@@ -849,9 +826,9 @@ var hotCities = [{
     "status": 3,
     "regionCityId": 160,
     "adCode": "410100",
-    "hotCity": true,
     "glat": 34.747285,
-    "glng": 113.624863
+    "glng": 113.624863,
+    "hotCity": true
 }, {
     "cityId": 267,
     "cityName": "昆明",
@@ -861,9 +838,9 @@ var hotCities = [{
     "status": 3,
     "regionCityId": 267,
     "adCode": "530100",
-    "hotCity": true,
     "glat": 25.037283,
-    "glng": 102.722125
+    "glng": 102.722125,
+    "hotCity": true
 }]
 var activeCities = [{
     "cityId": 117,
@@ -878,9 +855,9 @@ var activeCities = [{
     "name": null,
     "path": null,
     "selected": "",
-    "hotCity": false,
     "glat": 30.524961,
-    "glng": 117.05673
+    "glng": 117.05673,
+    "hotCity": false
 }, {
     "cityId": 58,
     "cityName": "鞍山",
@@ -894,9 +871,9 @@ var activeCities = [{
     "name": null,
     "path": null,
     "selected": "",
-    "hotCity": false,
     "glat": 41.108546,
-    "glng": 122.994646
+    "glng": 122.994646,
+    "hotCity": false
 }, {
     "cityId": 261,
     "cityName": "安顺",
@@ -910,9 +887,9 @@ var activeCities = [{
     "name": null,
     "path": null,
     "selected": "",
-    "hotCity": false,
     "glat": 26.253072,
-    "glng": 105.947594
+    "glng": 105.947594,
+    "hotCity": false
 }, {
     "cityId": 342,
     "cityName": "澳门",
@@ -926,9 +903,9 @@ var activeCities = [{
     "name": null,
     "path": null,
     "selected": "",
-    "hotCity": false,
     "glat": 22.198745,
-    "glng": 113.543873
+    "glng": 113.543873,
+    "hotCity": false
 }, {
     "cityId": 2342,
     "cityName": "曼谷",
@@ -942,9 +919,9 @@ var activeCities = [{
     "name": null,
     "path": null,
     "selected": "",
-    "hotCity": false,
     "glat": 13.752222,
-    "glng": 100.493889
+    "glng": 100.493889,
+    "hotCity": false
 }, {
     "cityId": 29,
     "cityName": "保定",
@@ -958,9 +935,9 @@ var activeCities = [{
     "name": null,
     "path": null,
     "selected": "",
-    "hotCity": false,
     "glat": 38.873972,
-    "glng": 115.46463
+    "glng": 115.46463,
+    "hotCity": false
 }, {
     "cityId": 47,
     "cityName": "包头",
@@ -974,9 +951,9 @@ var activeCities = [{
     "name": null,
     "path": null,
     "selected": "",
-    "hotCity": false,
     "glat": 40.657447,
-    "glng": 109.840385
+    "glng": 109.840385,
+    "hotCity": false
 }, {
     "cityId": 228,
     "cityName": "北海",
@@ -990,9 +967,9 @@ var activeCities = [{
     "name": null,
     "path": null,
     "selected": "",
-    "hotCity": false,
     "glat": 21.481198,
-    "glng": 109.119951
+    "glng": 109.119951,
+    "hotCity": false
 }, {
     "cityId": 2,
     "cityName": "北京",
@@ -1006,9 +983,9 @@ var activeCities = [{
     "name": null,
     "path": null,
     "selected": "",
-    "hotCity": false,
     "glat": 39.904667,
-    "glng": 116.408198
+    "glng": 116.408198,
+    "hotCity": false
 }, {
     "cityId": 112,
     "cityName": "蚌埠",
@@ -1022,9 +999,9 @@ var activeCities = [{
     "name": null,
     "path": null,
     "selected": "",
-    "hotCity": false,
     "glat": 32.916282,
-    "glng": 117.38971
+    "glng": 117.38971,
+    "hotCity": false
 }, {
     "cityId": 60,
     "cityName": "本溪",
@@ -1038,9 +1015,9 @@ var activeCities = [{
     "name": null,
     "path": null,
     "selected": "",
-    "hotCity": false,
     "glat": 41.294176,
-    "glng": 123.766485
+    "glng": 123.766485,
+    "hotCity": false
 }, {
     "cityId": 158,
     "cityName": "滨州",
@@ -1054,9 +1031,9 @@ var activeCities = [{
     "name": null,
     "path": null,
     "selected": "",
-    "hotCity": false,
     "glat": 37.381403,
-    "glng": 117.97143
+    "glng": 117.97143,
+    "hotCity": false
 }, {
     "cityId": 70,
     "cityName": "长春",
@@ -1070,9 +1047,9 @@ var activeCities = [{
     "name": null,
     "path": null,
     "selected": "",
-    "hotCity": false,
     "glat": 43.886841,
-    "glng": 125.3245
+    "glng": 125.3245,
+    "hotCity": false
 }, {
     "cityId": 329,
     "cityName": "昌吉州",
@@ -1086,9 +1063,9 @@ var activeCities = [{
     "name": null,
     "path": null,
     "selected": "",
-    "hotCity": false,
     "glat": 44.011183,
-    "glng": 87.308225
+    "glng": 87.308225,
+    "hotCity": false
 }, {
     "cityId": 344,
     "cityName": "长沙",
@@ -1102,9 +1079,9 @@ var activeCities = [{
     "name": null,
     "path": null,
     "selected": "",
-    "hotCity": false,
     "glat": 28.228528,
-    "glng": 112.938827
+    "glng": 112.938827,
+    "hotCity": false
 }, {
     "cityId": 417,
     "cityName": "常熟",
@@ -1118,9 +1095,9 @@ var activeCities = [{
     "name": null,
     "path": null,
     "selected": "",
-    "hotCity": false,
     "glat": 31.65355,
-    "glng": 120.75239
+    "glng": 120.75239,
+    "hotCity": false
 }, {
     "cityId": 93,
     "cityName": "常州",
@@ -1134,9 +1111,9 @@ var activeCities = [{
     "name": null,
     "path": null,
     "selected": "",
-    "hotCity": false,
     "glat": 31.810077,
-    "glng": 119.974454
+    "glng": 119.974454,
+    "hotCity": false
 }, {
     "cityId": 31,
     "cityName": "承德",
@@ -1150,9 +1127,9 @@ var activeCities = [{
     "name": null,
     "path": null,
     "selected": "",
-    "hotCity": false,
     "glat": 40.978744,
-    "glng": 117.943621
+    "glng": 117.943621,
+    "hotCity": false
 }, {
     "cityId": 8,
     "cityName": "成都",
@@ -1166,9 +1143,9 @@ var activeCities = [{
     "name": null,
     "path": null,
     "selected": "",
-    "hotCity": false,
     "glat": 30.658602,
-    "glng": 104.064857
+    "glng": 104.064857,
+    "hotCity": false
 }, {
     "cityId": 9,
     "cityName": "重庆",
@@ -1182,9 +1159,9 @@ var activeCities = [{
     "name": null,
     "path": null,
     "selected": "",
-    "hotCity": false,
     "glat": 29.562686,
-    "glng": 106.551234
+    "glng": 106.551234,
+    "hotCity": false
 }, {
     "cityId": 19,
     "cityName": "大连",
@@ -1198,9 +1175,9 @@ var activeCities = [{
     "name": null,
     "path": null,
     "selected": "",
-    "hotCity": false,
     "glat": 38.913779,
-    "glng": 121.614771
+    "glng": 121.614771,
+    "hotCity": false
 }, {
     "cityId": 84,
     "cityName": "大庆",
@@ -1214,9 +1191,9 @@ var activeCities = [{
     "name": null,
     "path": null,
     "selected": "",
-    "hotCity": false,
     "glat": 46.59019,
-    "glng": 125.104637
+    "glng": 125.104637,
+    "hotCity": false
 }, {
     "cityId": 241,
     "cityName": "德阳",
@@ -1230,9 +1207,9 @@ var activeCities = [{
     "name": null,
     "path": null,
     "selected": "",
-    "hotCity": false,
     "glat": 31.127537,
-    "glng": 104.397808
+    "glng": 104.397808,
+    "hotCity": false
 }, {
     "cityId": 156,
     "cityName": "德州",
@@ -1246,9 +1223,9 @@ var activeCities = [{
     "name": null,
     "path": null,
     "selected": "",
-    "hotCity": false,
     "glat": 37.45092,
-    "glng": 116.302587
+    "glng": 116.302587,
+    "hotCity": false
 }, {
     "cityId": 219,
     "cityName": "东莞",
@@ -1262,9 +1239,9 @@ var activeCities = [{
     "name": null,
     "path": null,
     "selected": "",
-    "hotCity": false,
     "glat": 23.020536,
-    "glng": 113.751766
+    "glng": 113.751766,
+    "hotCity": false
 }, {
     "cityId": 147,
     "cityName": "东营",
@@ -1278,9 +1255,9 @@ var activeCities = [{
     "name": null,
     "path": null,
     "selected": "",
-    "hotCity": false,
     "glat": 37.435382,
-    "glng": 118.675487
+    "glng": 118.675487,
+    "hotCity": false
 }, {
     "cityId": 208,
     "cityName": "佛山",
@@ -1294,9 +1271,9 @@ var activeCities = [{
     "name": null,
     "path": null,
     "selected": "",
-    "hotCity": false,
     "glat": 23.021721,
-    "glng": 113.121316
+    "glng": 113.121316,
+    "hotCity": false
 }, {
     "cityId": 59,
     "cityName": "抚顺",
@@ -1310,9 +1287,9 @@ var activeCities = [{
     "name": null,
     "path": null,
     "selected": "",
-    "hotCity": false,
     "glat": 41.880701,
-    "glng": 123.915237
+    "glng": 123.915237,
+    "hotCity": false
 }, {
     "cityId": 14,
     "cityName": "福州",
@@ -1326,9 +1303,9 @@ var activeCities = [{
     "name": null,
     "path": null,
     "selected": "",
-    "hotCity": false,
     "glat": 26.074286,
-    "glng": 119.296579
+    "glng": 119.296579,
+    "hotCity": false
 }, {
     "cityId": 140,
     "cityName": "赣州",
@@ -1342,9 +1319,9 @@ var activeCities = [{
     "name": null,
     "path": null,
     "selected": "",
-    "hotCity": false,
     "glat": 25.829209,
-    "glng": 114.933553
+    "glng": 114.933553,
+    "hotCity": false
 }, {
     "cityId": 250,
     "cityName": "广安",
@@ -1358,9 +1335,9 @@ var activeCities = [{
     "name": null,
     "path": null,
     "selected": "",
-    "hotCity": false,
     "glat": 30.45593,
-    "glng": 106.633204
+    "glng": 106.633204,
+    "hotCity": false
 }, {
     "cityId": 232,
     "cityName": "玉林",
@@ -1374,9 +1351,9 @@ var activeCities = [{
     "name": null,
     "path": null,
     "selected": "",
-    "hotCity": false,
     "glat": 22.636379,
-    "glng": 110.164756
+    "glng": 110.164756,
+    "hotCity": false
 }, {
     "cityId": 4,
     "cityName": "广州",
@@ -1390,9 +1367,9 @@ var activeCities = [{
     "name": null,
     "path": null,
     "selected": "",
-    "hotCity": false,
     "glat": 23.129075,
-    "glng": 113.264423
+    "glng": 113.264423,
+    "hotCity": false
 }, {
     "cityId": 226,
     "cityName": "桂林",
@@ -1406,9 +1383,9 @@ var activeCities = [{
     "name": null,
     "path": null,
     "selected": "",
-    "hotCity": false,
     "glat": 25.273567,
-    "glng": 110.290195
+    "glng": 110.290195,
+    "hotCity": false
 }, {
     "cityId": 258,
     "cityName": "贵阳",
@@ -1422,9 +1399,9 @@ var activeCities = [{
     "name": null,
     "path": null,
     "selected": "",
-    "hotCity": false,
     "glat": 26.578343,
-    "glng": 106.713478
+    "glng": 106.713478,
+    "hotCity": false
 }, {
     "cityId": 79,
     "cityName": "哈尔滨",
@@ -1438,9 +1415,9 @@ var activeCities = [{
     "name": null,
     "path": null,
     "selected": "",
-    "hotCity": false,
     "glat": 45.756967,
-    "glng": 126.642464
+    "glng": 126.642464,
+    "hotCity": false
 }, {
     "cityId": 23,
     "cityName": "海口",
@@ -1454,9 +1431,9 @@ var activeCities = [{
     "name": null,
     "path": null,
     "selected": "",
-    "hotCity": false,
     "glat": 20.030765,
-    "glng": 110.328873
+    "glng": 110.328873,
+    "hotCity": false
 }, {
     "cityId": 27,
     "cityName": "邯郸",
@@ -1470,9 +1447,9 @@ var activeCities = [{
     "name": null,
     "path": null,
     "selected": "",
-    "hotCity": false,
     "glat": 36.612267,
-    "glng": 114.492968
+    "glng": 114.492968,
+    "hotCity": false
 }, {
     "cityId": 3,
     "cityName": "杭州",
@@ -1486,9 +1463,9 @@ var activeCities = [{
     "name": null,
     "path": null,
     "selected": "",
-    "hotCity": false,
     "glat": 30.273497,
-    "glng": 120.155249
+    "glng": 120.155249,
+    "hotCity": false
 }, {
     "cityId": 110,
     "cityName": "合肥",
@@ -1502,9 +1479,9 @@ var activeCities = [{
     "name": null,
     "path": null,
     "selected": "",
-    "hotCity": false,
     "glat": 31.865779,
-    "glng": 117.286983
+    "glng": 117.286983,
+    "hotCity": false
 }, {
     "cityId": 34,
     "cityName": "衡水",
@@ -1518,9 +1495,9 @@ var activeCities = [{
     "name": null,
     "path": null,
     "selected": "",
-    "hotCity": false,
     "glat": 37.735302,
-    "glng": 115.69868
+    "glng": 115.69868,
+    "hotCity": false
 }, {
     "cityId": 194,
     "cityName": "衡阳",
@@ -1534,9 +1511,9 @@ var activeCities = [{
     "name": null,
     "path": null,
     "selected": "",
-    "hotCity": false,
     "glat": 26.893839,
-    "glng": 112.5719
+    "glng": 112.5719,
+    "hotCity": false
 }, {
     "cityId": 216,
     "cityName": "河源",
@@ -1550,9 +1527,9 @@ var activeCities = [{
     "name": null,
     "path": null,
     "selected": "",
-    "hotCity": false,
     "glat": 23.743538,
-    "glng": 114.700446
+    "glng": 114.700446,
+    "hotCity": false
 }, {
     "cityId": 96,
     "cityName": "淮安",
@@ -1566,9 +1543,9 @@ var activeCities = [{
     "name": null,
     "path": null,
     "selected": "",
-    "hotCity": false,
     "glat": 33.611084,
-    "glng": 119.015755
+    "glng": 119.015755,
+    "hotCity": false
 }, {
     "cityId": 185,
     "cityName": "黄冈",
@@ -1582,9 +1559,9 @@ var activeCities = [{
     "name": null,
     "path": null,
     "selected": "",
-    "hotCity": false,
     "glat": 30.453877,
-    "glng": 114.872253
+    "glng": 114.872253,
+    "hotCity": false
 }, {
     "cityId": 46,
     "cityName": "呼和浩特",
@@ -1598,9 +1575,9 @@ var activeCities = [{
     "name": null,
     "path": null,
     "selected": "",
-    "hotCity": false,
     "glat": 40.84231,
-    "glng": 111.748847
+    "glng": 111.748847,
+    "hotCity": false
 }, {
     "cityId": 213,
     "cityName": "惠州",
@@ -1614,9 +1591,9 @@ var activeCities = [{
     "name": null,
     "path": null,
     "selected": "",
-    "hotCity": false,
     "glat": 23.079404,
-    "glng": 114.412599
+    "glng": 114.412599,
+    "hotCity": false
 }, {
     "cityId": 103,
     "cityName": "湖州",
@@ -1630,9 +1607,9 @@ var activeCities = [{
     "name": null,
     "path": null,
     "selected": "",
-    "hotCity": false,
     "glat": 30.89436,
-    "glng": 120.08681800000001
+    "glng": 120.08681800000001,
+    "hotCity": false
 }, {
     "cityId": 209,
     "cityName": "江门",
@@ -1646,9 +1623,9 @@ var activeCities = [{
     "name": null,
     "path": null,
     "selected": "",
-    "hotCity": false,
     "glat": 22.57877,
-    "glng": 113.08187
+    "glng": 113.08187,
+    "hotCity": false
 }, {
     "cityId": 143,
     "cityName": "抚州",
@@ -1662,9 +1639,9 @@ var activeCities = [{
     "name": null,
     "path": null,
     "selected": "",
-    "hotCity": false,
     "glat": 27.992296,
-    "glng": 116.358378
+    "glng": 116.358378,
+    "hotCity": false
 }, {
     "cityId": 142,
     "cityName": "宜春",
@@ -1678,9 +1655,9 @@ var activeCities = [{
     "name": null,
     "path": null,
     "selected": "",
-    "hotCity": false,
     "glat": 27.796561,
-    "glng": 114.395108
+    "glng": 114.395108,
+    "hotCity": false
 }, {
     "cityId": 102,
     "cityName": "嘉兴",
@@ -1694,9 +1671,9 @@ var activeCities = [{
     "name": null,
     "path": null,
     "selected": "",
-    "hotCity": false,
     "glat": 30.753924,
-    "glng": 120.758543
+    "glng": 120.758543,
+    "hotCity": false
 }, {
     "cityId": 71,
     "cityName": "吉林",
@@ -1710,9 +1687,9 @@ var activeCities = [{
     "name": null,
     "path": null,
     "selected": "",
-    "hotCity": false,
     "glat": 43.837883,
-    "glng": 126.549572
+    "glng": 126.549572,
+    "hotCity": false
 }, {
     "cityId": 22,
     "cityName": "济南",
@@ -1726,9 +1703,9 @@ var activeCities = [{
     "name": null,
     "path": null,
     "selected": "",
-    "hotCity": false,
     "glat": 36.665282,
-    "glng": 116.994915
+    "glng": 116.994915,
+    "hotCity": false
 }, {
     "cityId": 184,
     "cityName": "荆州",
@@ -1742,9 +1719,9 @@ var activeCities = [{
     "name": null,
     "path": null,
     "selected": "",
-    "hotCity": false,
     "glat": 30.335165,
-    "glng": 112.239741
+    "glng": 112.239741,
+    "hotCity": false
 }, {
     "cityId": 105,
     "cityName": "金华",
@@ -1758,9 +1735,9 @@ var activeCities = [{
     "name": null,
     "path": null,
     "selected": "",
-    "hotCity": false,
     "glat": 29.079164,
-    "glng": 119.647422
+    "glng": 119.647422,
+    "hotCity": false
 }, {
     "cityId": 150,
     "cityName": "济宁",
@@ -1774,9 +1751,9 @@ var activeCities = [{
     "name": null,
     "path": null,
     "selected": "",
-    "hotCity": false,
     "glat": 35.414865,
-    "glng": 116.587075
+    "glng": 116.587075,
+    "hotCity": false
 }, {
     "cityId": 182,
     "cityName": "荆门",
@@ -1790,9 +1767,9 @@ var activeCities = [{
     "name": null,
     "path": null,
     "selected": "",
-    "hotCity": false,
     "glat": 31.035423,
-    "glng": 112.199265
+    "glng": 112.199265,
+    "hotCity": false
 }, {
     "cityId": 137,
     "cityName": "九江",
@@ -1806,9 +1783,9 @@ var activeCities = [{
     "name": null,
     "path": null,
     "selected": "",
-    "hotCity": false,
     "glat": 29.705096,
-    "glng": 116.001982
+    "glng": 116.001982,
+    "hotCity": false
 }, {
     "cityId": 267,
     "cityName": "昆明",
@@ -1822,9 +1799,9 @@ var activeCities = [{
     "name": null,
     "path": null,
     "selected": "",
-    "hotCity": false,
     "glat": 25.037283,
-    "glng": 102.722125
+    "glng": 102.722125,
+    "hotCity": false
 }, {
     "cityId": 416,
     "cityName": "昆山",
@@ -1838,9 +1815,9 @@ var activeCities = [{
     "name": null,
     "path": null,
     "selected": "",
-    "hotCity": false,
     "glat": 31.387641,
-    "glng": 120.982604
+    "glng": 120.982604,
+    "hotCity": false
 }, {
     "cityId": 33,
     "cityName": "廊坊",
@@ -1854,9 +1831,9 @@ var activeCities = [{
     "name": null,
     "path": null,
     "selected": "",
-    "hotCity": false,
     "glat": 39.521017,
-    "glng": 116.706651
+    "glng": 116.706651,
+    "hotCity": false
 }, {
     "cityId": 299,
     "cityName": "兰州",
@@ -1870,9 +1847,9 @@ var activeCities = [{
     "name": null,
     "path": null,
     "selected": "",
-    "hotCity": false,
     "glat": 36.061255,
-    "glng": 103.834377
+    "glng": 103.834377,
+    "hotCity": false
 }, {
     "cityId": 2398,
     "cityName": "拉斯维加斯",
@@ -1886,9 +1863,9 @@ var activeCities = [{
     "name": null,
     "path": null,
     "selected": "",
-    "hotCity": false,
     "glat": 36.208704,
-    "glng": -115.188733
+    "glng": -115.188733,
+    "hotCity": false
 }, {
     "cityId": 246,
     "cityName": "乐山",
@@ -1902,9 +1879,9 @@ var activeCities = [{
     "name": null,
     "path": null,
     "selected": "",
-    "hotCity": false,
     "glat": 29.552064,
-    "glng": 103.765623
+    "glng": 103.765623,
+    "hotCity": false
 }, {
     "cityId": 95,
     "cityName": "连云港",
@@ -1918,9 +1895,9 @@ var activeCities = [{
     "name": null,
     "path": null,
     "selected": "",
-    "hotCity": false,
     "glat": 34.600018,
-    "glng": 119.178821
+    "glng": 119.178821,
+    "hotCity": false
 }, {
     "cityId": 157,
     "cityName": "聊城",
@@ -1934,9 +1911,9 @@ var activeCities = [{
     "name": null,
     "path": null,
     "selected": "",
-    "hotCity": false,
     "glat": 36.456696,
-    "glng": 115.985371
+    "glng": 115.985371,
+    "hotCity": false
 }, {
     "cityId": 279,
     "cityName": "丽江",
@@ -1950,9 +1927,9 @@ var activeCities = [{
     "name": null,
     "path": null,
     "selected": "",
-    "hotCity": false,
     "glat": 26.876774,
-    "glng": 100.230376
+    "glng": 100.230376,
+    "hotCity": false
 }, {
     "cityId": 155,
     "cityName": "临沂",
@@ -1966,9 +1943,9 @@ var activeCities = [{
     "name": null,
     "path": null,
     "selected": "",
-    "hotCity": false,
     "glat": 35.051712,
-    "glng": 118.347708
+    "glng": 118.347708,
+    "hotCity": false
 }, {
     "cityId": 109,
     "cityName": "丽水",
@@ -1982,9 +1959,9 @@ var activeCities = [{
     "name": null,
     "path": null,
     "selected": "",
-    "hotCity": false,
     "glat": 28.451695,
-    "glng": 119.916875
+    "glng": 119.916875,
+    "hotCity": false
 }, {
     "cityId": 225,
     "cityName": "柳州",
@@ -1998,9 +1975,9 @@ var activeCities = [{
     "name": null,
     "path": null,
     "selected": "",
-    "hotCity": false,
     "glat": 24.32551,
-    "glng": 109.415577
+    "glng": 109.415577,
+    "hotCity": false
 }, {
     "cityId": 162,
     "cityName": "洛阳",
@@ -2014,9 +1991,9 @@ var activeCities = [{
     "name": null,
     "path": null,
     "selected": "",
-    "hotCity": false,
     "glat": 34.618154,
-    "glng": 112.454363
+    "glng": 112.454363,
+    "hotCity": false
 }, {
     "cityId": 240,
     "cityName": "泸州",
@@ -2030,9 +2007,9 @@ var activeCities = [{
     "name": null,
     "path": null,
     "selected": "",
-    "hotCity": false,
     "glat": 28.87176,
-    "glng": 105.442141
+    "glng": 105.442141,
+    "hotCity": false
 }, {
     "cityId": 114,
     "cityName": "马鞍山",
@@ -2046,9 +2023,9 @@ var activeCities = [{
     "name": null,
     "path": null,
     "selected": "",
-    "hotCity": false,
     "glat": 31.696788,
-    "glng": 118.504657
+    "glng": 118.504657,
+    "hotCity": false
 }, {
     "cityId": 211,
     "cityName": "茂名",
@@ -2062,9 +2039,9 @@ var activeCities = [{
     "name": null,
     "path": null,
     "selected": "",
-    "hotCity": false,
     "glat": 21.662956,
-    "glng": 110.925467
+    "glng": 110.925467,
+    "hotCity": false
 }, {
     "cityId": 242,
     "cityName": "绵阳",
@@ -2078,9 +2055,9 @@ var activeCities = [{
     "name": null,
     "path": null,
     "selected": "",
-    "hotCity": false,
     "glat": 31.463377,
-    "glng": 104.741274
+    "glng": 104.741274,
+    "hotCity": false
 }, {
     "cityId": 3150,
     "cityName": "莫斯科",
@@ -2094,9 +2071,9 @@ var activeCities = [{
     "name": null,
     "path": null,
     "selected": "",
-    "hotCity": false,
     "glat": 55.735104,
-    "glng": 37.631122
+    "glng": 37.631122,
+    "hotCity": false
 }, {
     "cityId": 88,
     "cityName": "牡丹江",
@@ -2110,9 +2087,9 @@ var activeCities = [{
     "name": null,
     "path": null,
     "selected": "",
-    "hotCity": false,
     "glat": 44.587633,
-    "glng": 129.614665
+    "glng": 129.614665,
+    "hotCity": false
 }, {
     "cityId": 134,
     "cityName": "南昌",
@@ -2126,9 +2103,9 @@ var activeCities = [{
     "name": null,
     "path": null,
     "selected": "",
-    "hotCity": false,
     "glat": 28.676493,
-    "glng": 115.892151
+    "glng": 115.892151,
+    "hotCity": false
 }, {
     "cityId": 5,
     "cityName": "南京",
@@ -2142,9 +2119,9 @@ var activeCities = [{
     "name": null,
     "path": null,
     "selected": "",
-    "hotCity": false,
     "glat": 32.058365,
-    "glng": 118.796468
+    "glng": 118.796468,
+    "hotCity": false
 }, {
     "cityId": 224,
     "cityName": "南宁",
@@ -2158,9 +2135,9 @@ var activeCities = [{
     "name": null,
     "path": null,
     "selected": "",
-    "hotCity": false,
     "glat": 22.818012,
-    "glng": 108.365546
+    "glng": 108.365546,
+    "hotCity": false
 }, {
     "cityId": 94,
     "cityName": "南通",
@@ -2174,9 +2151,9 @@ var activeCities = [{
     "name": null,
     "path": null,
     "selected": "",
-    "hotCity": false,
     "glat": 31.979997,
-    "glng": 120.894324
+    "glng": 120.894324,
+    "hotCity": false
 }, {
     "cityId": 245,
     "cityName": "内江",
@@ -2190,9 +2167,9 @@ var activeCities = [{
     "name": null,
     "path": null,
     "selected": "",
-    "hotCity": false,
     "glat": 29.580237,
-    "glng": 105.0583
+    "glng": 105.0583,
+    "hotCity": false
 }, {
     "cityId": 11,
     "cityName": "宁波",
@@ -2206,9 +2183,9 @@ var activeCities = [{
     "name": null,
     "path": null,
     "selected": "",
-    "hotCity": false,
     "glat": 29.868336,
-    "glng": 121.54399
+    "glng": 121.54399,
+    "hotCity": false
 }, {
     "cityId": 136,
     "cityName": "萍乡",
@@ -2222,9 +2199,9 @@ var activeCities = [{
     "name": null,
     "path": null,
     "selected": "",
-    "hotCity": false,
     "glat": 27.622865,
-    "glng": 113.854676
+    "glng": 113.854676,
+    "hotCity": false
 }, {
     "cityId": 190,
     "cityName": "潜江",
@@ -2238,9 +2215,9 @@ var activeCities = [{
     "name": null,
     "path": null,
     "selected": "",
-    "hotCity": false,
     "glat": 30.40211,
-    "glng": 112.900078
+    "glng": 112.900078,
+    "hotCity": false
 }, {
     "cityId": 21,
     "cityName": "青岛",
@@ -2254,9 +2231,9 @@ var activeCities = [{
     "name": null,
     "path": null,
     "selected": "",
-    "hotCity": false,
     "glat": 36.066348,
-    "glng": 120.382771
+    "glng": 120.382771,
+    "hotCity": false
 }, {
     "cityId": 218,
     "cityName": "清远",
@@ -2270,9 +2247,9 @@ var activeCities = [{
     "name": null,
     "path": null,
     "selected": "",
-    "hotCity": false,
     "glat": 23.681801,
-    "glng": 113.056042
+    "glng": 113.056042,
+    "hotCity": false
 }, {
     "cityId": 26,
     "cityName": "秦皇岛",
@@ -2286,9 +2263,9 @@ var activeCities = [{
     "name": null,
     "path": null,
     "selected": "",
-    "hotCity": false,
     "glat": 39.935377,
-    "glng": 119.600492
+    "glng": 119.600492,
+    "hotCity": false
 }, {
     "cityId": 129,
     "cityName": "泉州",
@@ -2302,9 +2279,9 @@ var activeCities = [{
     "name": null,
     "path": null,
     "selected": "",
-    "hotCity": false,
     "glat": 24.907398,
-    "glng": 118.587114
+    "glng": 118.587114,
+    "hotCity": false
 }, {
     "cityId": 153,
     "cityName": "日照",
@@ -2318,9 +2295,9 @@ var activeCities = [{
     "name": null,
     "path": null,
     "selected": "",
-    "hotCity": false,
     "glat": 35.416377,
-    "glng": 119.526888
+    "glng": 119.526888,
+    "hotCity": false
 }, {
     "cityId": 3258,
     "cityName": "俄罗斯",
@@ -2334,9 +2311,9 @@ var activeCities = [{
     "name": null,
     "path": null,
     "selected": "",
-    "hotCity": false,
     "glat": 62.428794,
-    "glng": 105.636719
+    "glng": 105.636719,
+    "hotCity": false
 }, {
     "cityId": 345,
     "cityName": "三亚",
@@ -2350,9 +2327,9 @@ var activeCities = [{
     "name": null,
     "path": null,
     "selected": "",
-    "hotCity": false,
     "glat": 18.252847,
-    "glng": 109.511909
+    "glng": 109.511909,
+    "hotCity": false
 }, {
     "cityId": 1,
     "cityName": "上海",
@@ -2366,9 +2343,9 @@ var activeCities = [{
     "name": null,
     "path": null,
     "selected": "",
-    "hotCity": false,
     "glat": 31.230708,
-    "glng": 121.472916
+    "glng": 121.472916,
+    "hotCity": false
 }, {
     "cityId": 207,
     "cityName": "汕头",
@@ -2382,9 +2359,9 @@ var activeCities = [{
     "name": null,
     "path": null,
     "selected": "",
-    "hotCity": false,
     "glat": 23.353362,
-    "glng": 116.681943
+    "glng": 116.681943,
+    "hotCity": false
 }, {
     "cityId": 104,
     "cityName": "绍兴",
@@ -2398,9 +2375,9 @@ var activeCities = [{
     "name": null,
     "path": null,
     "selected": "",
-    "hotCity": false,
     "glat": 29.995762,
-    "glng": 120.586109
+    "glng": 120.586109,
+    "hotCity": false
 }, {
     "cityId": 18,
     "cityName": "沈阳",
@@ -2414,9 +2391,9 @@ var activeCities = [{
     "name": null,
     "path": null,
     "selected": "",
-    "hotCity": false,
     "glat": 41.807321,
-    "glng": 123.43045
+    "glng": 123.43045,
+    "hotCity": false
 }, {
     "cityId": 7,
     "cityName": "深圳",
@@ -2430,9 +2407,9 @@ var activeCities = [{
     "name": null,
     "path": null,
     "selected": "",
-    "hotCity": false,
     "glat": 22.543447,
-    "glng": 114.057818
+    "glng": 114.057818,
+    "hotCity": false
 }, {
     "cityId": 24,
     "cityName": "石家庄",
@@ -2446,9 +2423,9 @@ var activeCities = [{
     "name": null,
     "path": null,
     "selected": "",
-    "hotCity": false,
     "glat": 38.04232,
-    "glng": 114.514864
+    "glng": 114.514864,
+    "hotCity": false
 }, {
     "cityId": 2311,
     "cityName": "新加坡",
@@ -2462,9 +2439,9 @@ var activeCities = [{
     "name": null,
     "path": null,
     "selected": "",
-    "hotCity": false,
     "glat": 1.369041,
-    "glng": 103.798433
+    "glng": 103.798433,
+    "hotCity": false
 }, {
     "cityId": 244,
     "cityName": "遂宁",
@@ -2478,9 +2455,9 @@ var activeCities = [{
     "name": null,
     "path": null,
     "selected": "",
-    "hotCity": false,
     "glat": 30.52548,
-    "glng": 105.568187
+    "glng": 105.568187,
+    "hotCity": false
 }, {
     "cityId": 6,
     "cityName": "苏州",
@@ -2494,9 +2471,9 @@ var activeCities = [{
     "name": null,
     "path": null,
     "selected": "",
-    "hotCity": false,
     "glat": 31.297779,
-    "glng": 120.585586
+    "glng": 120.585586,
+    "hotCity": false
 }, {
     "cityId": 151,
     "cityName": "泰安",
@@ -2510,9 +2487,9 @@ var activeCities = [{
     "name": null,
     "path": null,
     "selected": "",
-    "hotCity": false,
     "glat": 36.20002,
-    "glng": 117.088115
+    "glng": 117.088115,
+    "hotCity": false
 }, {
     "cityId": 2335,
     "cityName": "台北",
@@ -2526,9 +2503,9 @@ var activeCities = [{
     "name": null,
     "path": null,
     "selected": "",
-    "hotCity": false,
     "glat": 25.071295,
-    "glng": 121.538315
+    "glng": 121.538315,
+    "hotCity": false
 }, {
     "cityId": 35,
     "cityName": "太原",
@@ -2542,9 +2519,9 @@ var activeCities = [{
     "name": null,
     "path": null,
     "selected": "",
-    "hotCity": false,
     "glat": 37.870554,
-    "glng": 112.550737
+    "glng": 112.550737,
+    "hotCity": false
 }, {
     "cityId": 99,
     "cityName": "泰州",
@@ -2558,9 +2535,9 @@ var activeCities = [{
     "name": null,
     "path": null,
     "selected": "",
-    "hotCity": false,
     "glat": 32.456584,
-    "glng": 119.923046
+    "glng": 119.923046,
+    "hotCity": false
 }, {
     "cityId": 25,
     "cityName": "唐山",
@@ -2574,9 +2551,9 @@ var activeCities = [{
     "name": null,
     "path": null,
     "selected": "",
-    "hotCity": false,
     "glat": 39.630476,
-    "glng": 118.180407
+    "glng": 118.180407,
+    "hotCity": false
 }, {
     "cityId": 10,
     "cityName": "天津",
@@ -2590,9 +2567,9 @@ var activeCities = [{
     "name": null,
     "path": null,
     "selected": "",
-    "hotCity": false,
     "glat": 39.120876,
-    "glng": 117.21503
+    "glng": 117.21503,
+    "hotCity": false
 }, {
     "cityId": 149,
     "cityName": "潍坊",
@@ -2606,9 +2583,9 @@ var activeCities = [{
     "name": null,
     "path": null,
     "selected": "",
-    "hotCity": false,
     "glat": 36.706824,
-    "glng": 119.161929
+    "glng": 119.161929,
+    "hotCity": false
 }, {
     "cityId": 152,
     "cityName": "威海",
@@ -2622,9 +2599,9 @@ var activeCities = [{
     "name": null,
     "path": null,
     "selected": "",
-    "hotCity": false,
     "glat": 37.513068,
-    "glng": 122.12042
+    "glng": 122.12042,
+    "hotCity": false
 }, {
     "cityId": 293,
     "cityName": "渭南",
@@ -2638,9 +2615,9 @@ var activeCities = [{
     "name": null,
     "path": null,
     "selected": "",
-    "hotCity": false,
     "glat": 34.499995,
-    "glng": 109.509786
+    "glng": 109.509786,
+    "hotCity": false
 }, {
     "cityId": 101,
     "cityName": "温州",
@@ -2654,9 +2631,9 @@ var activeCities = [{
     "name": null,
     "path": null,
     "selected": "",
-    "hotCity": false,
     "glat": 27.994243,
-    "glng": 120.699355
+    "glng": 120.699355,
+    "hotCity": false
 }, {
     "cityId": 16,
     "cityName": "武汉",
@@ -2670,9 +2647,9 @@ var activeCities = [{
     "name": null,
     "path": null,
     "selected": "",
-    "hotCity": false,
     "glat": 30.593088,
-    "glng": 114.305172
+    "glng": 114.305172,
+    "hotCity": false
 }, {
     "cityId": 111,
     "cityName": "芜湖",
@@ -2686,9 +2663,9 @@ var activeCities = [{
     "name": null,
     "path": null,
     "selected": "",
-    "hotCity": false,
     "glat": 31.33879,
-    "glng": 118.385156
+    "glng": 118.385156,
+    "hotCity": false
 }, {
     "cityId": 368,
     "cityName": "乌兰浩特市",
@@ -2702,9 +2679,9 @@ var activeCities = [{
     "name": null,
     "path": null,
     "selected": "",
-    "hotCity": false,
     "glat": 46.073302,
-    "glng": 122.093004
+    "glng": 122.093004,
+    "hotCity": false
 }, {
     "cityId": 325,
     "cityName": "乌鲁木齐",
@@ -2718,9 +2695,9 @@ var activeCities = [{
     "name": null,
     "path": null,
     "selected": "",
-    "hotCity": false,
     "glat": 43.825666,
-    "glng": 87.617298
+    "glng": 87.617298,
+    "hotCity": false
 }, {
     "cityId": 13,
     "cityName": "无锡",
@@ -2734,9 +2711,9 @@ var activeCities = [{
     "name": null,
     "path": null,
     "selected": "",
-    "hotCity": false,
     "glat": 31.566148,
-    "glng": 120.303027
+    "glng": 120.303027,
+    "hotCity": false
 }, {
     "cityId": 227,
     "cityName": "梧州",
@@ -2750,9 +2727,9 @@ var activeCities = [{
     "name": null,
     "path": null,
     "selected": "",
-    "hotCity": false,
     "glat": 23.47691,
-    "glng": 111.27917
+    "glng": 111.27917,
+    "hotCity": false
 }, {
     "cityId": 15,
     "cityName": "厦门",
@@ -2766,9 +2743,9 @@ var activeCities = [{
     "name": null,
     "path": null,
     "selected": "",
-    "hotCity": false,
     "glat": 24.479615,
-    "glng": 118.08939
+    "glng": 118.08939,
+    "hotCity": false
 }, {
     "cityId": 17,
     "cityName": "西安",
@@ -2782,9 +2759,9 @@ var activeCities = [{
     "name": null,
     "path": null,
     "selected": "",
-    "hotCity": false,
     "glat": 34.26488,
-    "glng": 108.944265
+    "glng": 108.944265,
+    "hotCity": false
 }, {
     "cityId": 341,
     "cityName": "香港",
@@ -2798,9 +2775,9 @@ var activeCities = [{
     "name": null,
     "path": null,
     "selected": "",
-    "hotCity": false,
     "glat": 22.282346,
-    "glng": 114.172754
+    "glng": 114.172754,
+    "hotCity": false
 }, {
     "cityId": 292,
     "cityName": "咸阳",
@@ -2814,9 +2791,9 @@ var activeCities = [{
     "name": null,
     "path": null,
     "selected": "",
-    "hotCity": false,
     "glat": 34.329434,
-    "glng": 108.709193
+    "glng": 108.709193,
+    "hotCity": false
 }, {
     "cityId": 92,
     "cityName": "徐州",
@@ -2830,9 +2807,9 @@ var activeCities = [{
     "name": null,
     "path": null,
     "selected": "",
-    "hotCity": false,
     "glat": 34.259827,
-    "glng": 117.19108
+    "glng": 117.19108,
+    "hotCity": false
 }, {
     "cityId": 97,
     "cityName": "盐城",
@@ -2846,9 +2823,9 @@ var activeCities = [{
     "name": null,
     "path": null,
     "selected": "",
-    "hotCity": false,
     "glat": 33.347416,
-    "glng": 120.163544
+    "glng": 120.163544,
+    "hotCity": false
 }, {
     "cityId": 12,
     "cityName": "扬州",
@@ -2862,9 +2839,9 @@ var activeCities = [{
     "name": null,
     "path": null,
     "selected": "",
-    "hotCity": false,
     "glat": 32.394237,
-    "glng": 119.412854
+    "glng": 119.412854,
+    "hotCity": false
 }, {
     "cityId": 148,
     "cityName": "烟台",
@@ -2878,9 +2855,9 @@ var activeCities = [{
     "name": null,
     "path": null,
     "selected": "",
-    "hotCity": false,
     "glat": 37.539297,
-    "glng": 121.391382
+    "glng": 121.391382,
+    "hotCity": false
 }, {
     "cityId": 249,
     "cityName": "宜宾",
@@ -2894,9 +2871,9 @@ var activeCities = [{
     "name": null,
     "path": null,
     "selected": "",
-    "hotCity": false,
     "glat": 28.751853,
-    "glng": 104.643418
+    "glng": 104.643418,
+    "hotCity": false
 }, {
     "cityId": 179,
     "cityName": "宜昌",
@@ -2910,9 +2887,9 @@ var activeCities = [{
     "name": null,
     "path": null,
     "selected": "",
-    "hotCity": false,
     "glat": 30.691967,
-    "glng": 111.286471
+    "glng": 111.286471,
+    "hotCity": false
 }, {
     "cityId": 321,
     "cityName": "银川",
@@ -2926,9 +2903,9 @@ var activeCities = [{
     "name": null,
     "path": null,
     "selected": "",
-    "hotCity": false,
     "glat": 38.487194,
-    "glng": 106.230909
+    "glng": 106.230909,
+    "hotCity": false
 }, {
     "cityId": 63,
     "cityName": "营口",
@@ -2942,9 +2919,9 @@ var activeCities = [{
     "name": null,
     "path": null,
     "selected": "",
-    "hotCity": false,
     "glat": 40.666989,
-    "glng": 122.235286
+    "glng": 122.235286,
+    "hotCity": false
 }, {
     "cityId": 385,
     "cityName": "义乌",
@@ -2958,9 +2935,9 @@ var activeCities = [{
     "name": null,
     "path": null,
     "selected": "",
-    "hotCity": false,
     "glat": 29.306841,
-    "glng": 120.075058
+    "glng": 120.075058,
+    "hotCity": false
 }, {
     "cityId": 296,
     "cityName": "榆林",
@@ -2974,9 +2951,9 @@ var activeCities = [{
     "name": null,
     "path": null,
     "selected": "",
-    "hotCity": false,
     "glat": 38.285526,
-    "glng": 109.735209
+    "glng": 109.735209,
+    "hotCity": false
 }, {
     "cityId": 146,
     "cityName": "枣庄",
@@ -2990,9 +2967,9 @@ var activeCities = [{
     "name": null,
     "path": null,
     "selected": "",
-    "hotCity": false,
     "glat": 34.8105,
-    "glng": 117.323725
+    "glng": 117.323725,
+    "hotCity": false
 }, {
     "cityId": 30,
     "cityName": "张家口",
@@ -3006,9 +2983,9 @@ var activeCities = [{
     "name": null,
     "path": null,
     "selected": "",
-    "hotCity": false,
     "glat": 40.767576,
-    "glng": 114.885951
+    "glng": 114.885951,
+    "hotCity": false
 }, {
     "cityId": 1118,
     "cityName": "章丘",
@@ -3022,9 +2999,9 @@ var activeCities = [{
     "name": null,
     "path": null,
     "selected": "",
-    "hotCity": false,
     "glat": 36.7142,
-    "glng": 117.53434
+    "glng": 117.53434,
+    "hotCity": false
 }, {
     "cityId": 210,
     "cityName": "湛江",
@@ -3038,9 +3015,9 @@ var activeCities = [{
     "name": null,
     "path": null,
     "selected": "",
-    "hotCity": false,
     "glat": 21.270764,
-    "glng": 110.359255
+    "glng": 110.359255,
+    "hotCity": false
 }, {
     "cityId": 212,
     "cityName": "肇庆",
@@ -3054,9 +3031,9 @@ var activeCities = [{
     "name": null,
     "path": null,
     "selected": "",
-    "hotCity": false,
     "glat": 23.047596,
-    "glng": 112.465166
+    "glng": 112.465166,
+    "hotCity": false
 }, {
     "cityId": 108,
     "cityName": "台州",
@@ -3070,9 +3047,9 @@ var activeCities = [{
     "name": null,
     "path": null,
     "selected": "",
-    "hotCity": false,
     "glat": 28.828501,
-    "glng": 121.175834
+    "glng": 121.175834,
+    "hotCity": false
 }, {
     "cityId": 160,
     "cityName": "郑州",
@@ -3086,9 +3063,9 @@ var activeCities = [{
     "name": null,
     "path": null,
     "selected": "",
-    "hotCity": false,
     "glat": 34.747285,
-    "glng": 113.624863
+    "glng": 113.624863,
+    "hotCity": false
 }, {
     "cityId": 98,
     "cityName": "镇江",
@@ -3102,9 +3079,9 @@ var activeCities = [{
     "name": null,
     "path": null,
     "selected": "",
-    "hotCity": false,
     "glat": 32.199789,
-    "glng": 119.456928
+    "glng": 119.456928,
+    "hotCity": false
 }, {
     "cityId": 220,
     "cityName": "中山",
@@ -3118,9 +3095,9 @@ var activeCities = [{
     "name": null,
     "path": null,
     "selected": "",
-    "hotCity": false,
     "glat": 22.516481,
-    "glng": 113.392756
+    "glng": 113.392756,
+    "hotCity": false
 }, {
     "cityId": 107,
     "cityName": "舟山",
@@ -3134,9 +3111,9 @@ var activeCities = [{
     "name": null,
     "path": null,
     "selected": "",
-    "hotCity": false,
     "glat": 29.985444,
-    "glng": 122.206596
+    "glng": 122.206596,
+    "hotCity": false
 }, {
     "cityId": 206,
     "cityName": "珠海",
@@ -3150,9 +3127,9 @@ var activeCities = [{
     "name": null,
     "path": null,
     "selected": "",
-    "hotCity": false,
     "glat": 22.27094,
-    "glng": 113.577261
+    "glng": 113.577261,
+    "hotCity": false
 }, {
     "cityId": 192,
     "cityName": "株洲",
@@ -3166,9 +3143,9 @@ var activeCities = [{
     "name": null,
     "path": null,
     "selected": "",
-    "hotCity": false,
     "glat": 27.827892,
-    "glng": 113.133891
+    "glng": 113.133891,
+    "hotCity": false
 }, {
     "cityId": 145,
     "cityName": "淄博",
@@ -3182,9 +3159,9 @@ var activeCities = [{
     "name": null,
     "path": null,
     "selected": "",
-    "hotCity": false,
     "glat": 36.813497,
-    "glng": 118.055007
+    "glng": 118.055007,
+    "hotCity": false
 }, {
     "cityId": 238,
     "cityName": "自贡",
@@ -3198,9 +3175,9 @@ var activeCities = [{
     "name": null,
     "path": null,
     "selected": "",
-    "hotCity": false,
     "glat": 29.338978,
-    "glng": 104.778564
+    "glng": 104.778564,
+    "hotCity": false
 }, {
     "cityId": 260,
     "cityName": "遵义",
@@ -3214,9 +3191,9 @@ var activeCities = [{
     "name": null,
     "path": null,
     "selected": "",
-    "hotCity": false,
     "glat": 27.725654,
-    "glng": 106.927389
+    "glng": 106.927389,
+    "hotCity": false
 }]
 </script>
 <script>(function () {
@@ -3236,7 +3213,7 @@ var activeCities = [{
 <!--[if lte IE 8]>
 <script src="http://static.piaoniu.com/pc/vendors/es5-shim.c3b1fc73.js"></script>
 <script src="http://static.piaoniu.com/pc/vendors/es5-sham.095d9e53.js"></script><![endif]-->
-<script src="js/common.7ec1644e.js"></script><!-- 登录用户-->
+<script src="../static/js/common.7ec1644e.js"></script><!-- 登录用户-->
 <script>var user = {
     "userId": 3272130,
     "mobileNo": "18162865997",
@@ -3244,13 +3221,13 @@ var activeCities = [{
     "avatar": "",
     "status": 0,
     "addTime": 1557748452000,
-    "updateTime": 1557912674000,
+    "updateTime": 1557751186000,
     "score": 5.00,
     "level": 0,
-    "bio": "123",
+    "bio": "",
     "gender": 0,
     "birthday": null,
-    "cityId": 9
+    "cityId": 16
 }
 </script><!-- 错误监控-->
 <script>Raven.config('https://8f0cab137a7b47769dec9f0dd89f5885@sentry.piaoniu.com/3y', {
@@ -3272,7 +3249,7 @@ var activeCities = [{
     easemobim.config = {
         hide: true,
         visitor: visitor,
-        //租户id
+        //租户id 
         tenantId: '34323',
         //环信移动客服域，固定值，请按照示例配置
         domain: '//kefu.easemob.com',
@@ -3297,8 +3274,8 @@ var activeCities = [{
     }
 })()
 </script><!--引用自己服务器上easemob.js文件的路径-->
-<script src="js/easemob.f3ced40f.js" async="async"></script>
-<script src="js/slim-header.45e0e6b4.js"></script>
+<script src="../static/js/easemob.f3ced40f.js" async="async"></script>
+<script src="../static/js/slim-header.45e0e6b4.js"></script>
 <div class="loading" style="display: none;">加载中...</div>
 <div class="loading" style="display: none;">加载中...</div>
 <div class="overlay" style="display: none; opacity: 0;"></div>
@@ -3315,7 +3292,7 @@ var activeCities = [{
         </div>
         <div class="row row-vcode">
             <input placeholder="图形验证码" name="vcode" class="input input-vcode">
-            <img src="js/captcha" class="vcode">
+            <img src="../static/js/captcha" class="vcode">
             <!-- <div class="btn btn-vcode">换一张</div> -->
         </div>
         <div class="row row-getcode">
@@ -3325,7 +3302,7 @@ var activeCities = [{
         <div class="row">
             <input type="submit" class="btn btn-submit" value="登录">
         </div>
-        <div class="hint">免注册，登录即创建票王账户</div>
+        <div class="hint">免注册，登录即创建票牛账户</div>
     </form>
 
     <form method="post" class="form form-login">
@@ -3337,15 +3314,33 @@ var activeCities = [{
         </div>
         <div class="row row-vcode form-login-vcode">
             <input placeholder="请输入验证码" name="captcha" class="input input-vcode">
-            <img src="js/captcha" class="vcode">
+            <img src="../static/js/captcha" class="vcode">
         </div>
         <div class="row">
             <input type="submit" class="btn btn-submit" value="登录">
         </div>
     </form>
 </div>
-<script src="js/bottom.4481684d.js"></script>
-<script src="js/order.bdfc1bed.js"></script>
+<script src="../static/js/bottom.4481684d.js"></script>
+<script src="../static/js/jquery-widget.8bca8766.js"></script>
+<script src="../static/js/jquery-upload-xhr-transport.2d83b6f3.js"></script>
+<script src="../static/js/jquery-upload.26737b4e.js"></script>
+<script src="../static/js/profile.cedeaa83.js"></script>
 <div class="loading" style="display: none;">加载中...</div>
+
+<div class="sogoutip" style="z-index: 2147483645; visibility: hidden; display: none;"></div>
+<div class="sogoubottom" id="sougou_bottom" style="display: none;"></div>
+<div id="ext_stophi" style="z-index: 2147483647;">
+    <div class="extnoticebg"></div>
+    <div class="extnotice"><h2>关闭提示 <a href="http://www.piaoniu.com/user/profile#" title="关闭提示" id="closenotice"
+                                       class="closenotice">关闭</a></h2>
+        <p id="sogouconfirmtxt"></p>  <a id="sogouconfirm" href="http://www.piaoniu.com/user/profile#"
+                                         class="extconfirm">确 认</a> <a id="sogoucancel"
+                                                                       href="http://www.piaoniu.com/user/profile#"
+                                                                       class="extconfirm">取 消</a></div>
+</div>
+<div id="ext_overlay" class="ext_overlayBG" style="display: none; z-index: 2147483646;"></div>
+<iframe class="sogou_sugg_feedbackquan" frameborder="0" scrolling="no" src="../static/js/yun6.html"
+        style="background: transparent; border: none; display: none; height: 84px; width: 100%; z-index: 2147483645;"></iframe>
 </body>
 </html>

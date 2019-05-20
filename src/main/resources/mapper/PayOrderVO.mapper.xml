@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.ticket.demo_ticketking.mapper.PayOrderMapper">
+    <resultMap id="baseResult" type="com.ticket.demo_ticketking.vo.PayOrderVO">
+    <id property="orderId" column="order_id" javaType="java.lang.Long"/>
+        <result property="orderNum" column="order_num" javaType="java.lang.String"/>
+        <result property="orderPrice" column="order_price" javaType="java.lang.Long"/>
+        <result property="orderTicketName" column="order_ticket_name" javaType="java.lang.String"/>
+        <result property="userName" column="user_name" javaType="java.lang.String"/>
+        <result property="userTel" column="user_tel" javaType="java.lang.String"/>
+        <result property="addAdd" column="add_add" javaType="java.lang.String"/>
+    </resultMap>
+
+    <select id="payOrder" resultMap="baseResult">
+       select o.order_num,o.order_price,o.order_ticket_name,u.user_name,u.user_tel,a.add_add from tb_order o
+      join tb_user u on o.user_id = u.user_id
+      join tb_add a on a.user_id = u.user_id
+      and o.order_num=#{orderNum};
+    </select>
+</mapper>
