@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.ticket.demo_ticketking.mapper.AddOrderMapper">
+    
+    <insert id="inserIntoOrder">
+      insert into tb_order(order_price,order_sum,order_num,order_state,order_time,order_ticket_name,order_ticket_place,order_ticket_time,order_ticket_image,user_id)
+      values (#{orderPrice},#{orderSum},#{orderNum},#{orderState},#{orderTime},#{orderTicketName},#{orderTicketPlace},#{orderTicketTime},#{orderTicketImage},#{userId});
+    </insert>
+</mapper>

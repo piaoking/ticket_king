@@ -1,15 +1,17 @@
 package com.ticket.demo_ticketking.po;
 
 
+import com.ticket.demo_ticketking.utils.IdGenerator;
+
 public class TbOrder {
 
   private long orderId;
   private long userId;
   private long orderPrice;
   private long orderSum;
-  private String orderNum;
+  private String orderNum = IdGenerator.getId();
   private String orderState;
-  private java.sql.Date orderTime;
+  private String orderTime;
   private String orderTicketName;
   private String orderTicketCity;
   private String orderTicketPlace;
@@ -71,11 +73,11 @@ public class TbOrder {
   }
 
 
-  public java.sql.Date getOrderTime() {
+  public String getOrderTime() {
     return orderTime;
   }
 
-  public void setOrderTime(java.sql.Date orderTime) {
+  public void setOrderTime(String orderTime) {
     this.orderTime = orderTime;
   }
 

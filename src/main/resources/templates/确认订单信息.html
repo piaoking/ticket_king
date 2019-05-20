@@ -81,7 +81,7 @@
             </li>
             </tbody>
         </ul>
-        <a href="http://www.piaoniu.com/order/confirm?ticketGroupDetails=[{%22ticketGroupId%22:5332665,%22count%22:1}]#"
+        <a href="http://localhost:8080/ticketking/users/add/?userId=1"
            class="btn-add">添加新地址</a></div>
     <div class="delivery-info type-block type-block-2" style="display: none;">
         <div class="form">
@@ -113,26 +113,33 @@
                                                          class="compensate">无票赔付272元</a></th>
         </tr>
         </thead>
-        <tbody>
         <tr>
-            <td><img src="js/c1428200c527eaaea39f5752755485f53b6e6c94.jpg" class="poster">
+            <tbody th:each="buy,itemStat:${orderBuyVOS}" th:if="${itemStat.count}<=1">
+            <td id="tupian">
+                <span th:text="${buy.ticketImage}" style="display: none"></span>
+                <img  th:src="@{'picture/'+${buy.ticketImage}}" class="poster">
                 <div class="info">
-                    <div class="title">周蕙重庆音乐会</div>
-                    <div class="address">重庆施光南大剧院</div>
-                    <div class="time">2019年06月05日 19:30</div>
+                    <div class="title yanchanghui" th:text="${buy.ticketName}">周蕙重庆音乐会</div>
+                    <div class="address dizhi" th:text="${buy.placeName}">重庆施光南大剧院</div>
+                    <div class="time shijian" th:text="${buy.showTime}">2019年06月05日 19:30</div>
                     <div class="deliver-notice"></div>
                 </div>
             </td>
-            <td>
-                <div class="ticket-category"><span class="area">680</span></div>
+            </tbody>
+            <td type="">
+                <div class="ticket-category">
+                    <span class="area piaodang" style="margin-left: 460px;margin-top: -75px; position: absolute;">680</span>
+                </div>
             </td>
             <td>
-                <div class="sale-price">¥412.00</div>
+                <tbody th:each="item1,itemStat:${orderBuyList}" th:if="${itemStat.count}<=1">
+                <div class="sale-price" th:text="'最低票价：￥'+${item1.price}" style="margin-top: 95px;margin-left:600px;position: absolute">¥412.00</div>
+                </tbody>
             </td>
-            <td>x1
-                <div class="lz"></div>
+            <td >
+                <div class="lz zuowei" style="margin-top: -93px; margin-left: 780px; position: absolute;">x1</div>
             </td>
-            <td data-amount="412" class="subtotal">¥412</td>
+            <td data-amount="412" class="subtotal zongjia" style="margin-top: -93px; margin-left: 500px; position: absolute;">¥412</td>
         </tr>
         </tbody>
     </table>
@@ -145,10 +152,10 @@
             </div>
             <div class="deal row">
                 <div class="label">应付金额：</div>
-                <div class="price">¥422.00</div>
+                <div class="price zongjiage">¥422.00</div>
             </div>
             <div class="row">
-                <div class="btn-purchase">确认订单</div>
+                <div class="btn-purchase querendingdan" onclick="querendingdan()">确认订单</div>
                 <a href="http://www.piaoniu.com/about-refund" target="_blank" class="notice">支持有条件退款</a></div>
             <a href="http://www.piaoniu.com/about-promo" target="_blank" class="row promo-notice">优惠说明</a></div>
     </div>
@@ -3104,33 +3111,6 @@ var additionComponents = null</script>
     </div>
 </div>
 <div class="loading" style="display: none;">加载中...</div>
-<div class="side-toolbar low">
-    <div class="item totop" style="opacity: 0;">
-        <div class="icon"></div>
-        <div class="text">回到顶部</div>
-    </div>
-    <div class="item custom-service">
-        <div class="icon"></div>
-        <div class="text">在线客服</div>
-    </div>
-    <div class="item common">
-        <div class="icon"></div>
-        <div class="text">常见问题</div>
-    </div>
-</div>
-<div class="side-toolbar low">
-    <div class="item totop" style="opacity: 0;">
-        <div class="icon"></div>
-        <div class="text">回到顶部</div>
-    </div>
-    <div class="item custom-service">
-        <div class="icon"></div>
-        <div class="text">在线客服</div>
-    </div>
-    <div class="item common">
-        <div class="icon"></div>
-        <div class="text">常见问题</div>
-    </div>
 </div>
 <script type="javascript" src="js/jquery-3.1.1.js"></script>
 <script>
@@ -3144,7 +3124,36 @@ var additionComponents = null</script>
         r = null;
         return context == null || context == "" || context == "undefined" ? "" : context;
     }
+
     alert(GetQueryString("price"));
+    var prices = GetQueryString("price");
+    var pricesss = parseInt(prices)+10;
+    alert(GetQueryString("piaodang"));
+    var piaodang = GetQueryString("piaodang");
+    alert(GetQueryString("zuoweishu"));
+    var zuoweishu = GetQueryString("zuoweishu");
+    $(document).ready(function () {
+        $(".piaodang").html("票档类型:"+piaodang);
+        $(".zongjia").html("￥<span>"+prices+"</span>");
+        $(".zuowei").html("座位数：x<span>"+zuoweishu+"</span>");
+        $(".zongjiage").html("￥<span>"+pricesss+"</span>")
+    })
+   function querendingdan() {
+       var zongjia = $(".zongjiage").find("span").text();
+       var zuoweishu = $(".zuowei").find("span").text();
+       var zuowei = parseInt(zuoweishu);
+       var yanchang = $(".yanchanghui").text();
+       var dizhihi = $(".dizhi").text();
+       var yanchushijian = $(".shijian").text();
+       var yanchutupian = $("#tupian").find("span").text();
+       $.post("addOder/insertOder",//你要传值的controller
+           {orderPrice:zongjia,orderSum:zuowei,orderTicketName:yanchang,orderTicketPlace:dizhihi,orderTicketTime:yanchushijian,orderTicketImage:yanchutupian}, //你要传的json数组（参数）
+           function (data) {
+               alert("添加成功");
+               window.location.href="http://192.168.53.21/ticketking/buyTicket/payOrder/?orderId=1";
+           }
+       )
+   }
 </script>
 </body>
 </html>
