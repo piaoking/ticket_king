@@ -14,7 +14,7 @@
     </resultMap>
 
     <select id="payOrder" resultMap="baseResult">
-       select o.order_num,o.order_price,o.order_ticket_name,u.user_name,u.user_tel,a.add_add from tb_order o
+       select o.order_id,o.order_num,o.order_price,o.order_ticket_name,u.user_name,u.user_tel,a.add_add from tb_order o
       join tb_user u on o.user_id = u.user_id
       join tb_add a on a.user_id = u.user_id
       and o.order_num=#{orderNum};

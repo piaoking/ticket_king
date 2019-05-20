@@ -55,14 +55,14 @@ public class DemoTicketKingApplicationTests {
         }
         System.out.println(tbIntro);
     }
-   /* @Test
+    @Test
     public void test4(){
         TbIntro tbIntro = null;
         try {
-            PayOrderVO payOrderVO = payOrderService.payOrder(1);
+            PayOrderVO payOrderVO = payOrderService.payOrder("00100");
             System.out.println(payOrderVO);
         } catch (Exception e) {
             e.printStackTrace();
         }
-    }*/
+    }
 }
