@@ -42,6 +42,7 @@ public class BuyTicketController {
     public String payOrder(String orderNum,Model model){
         try {
             PayOrderVO payOrderVO = payOrderService.payOrder(orderNum);
+            System.out.println(payOrderVO);
             model.addAttribute("payOrderVO",payOrderVO);
             return "支付订单";
         } catch (Exception e) {
