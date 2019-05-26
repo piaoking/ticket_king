@@ -6,6 +6,7 @@ public class TbFocus {
   private long focusId;
   private long ticketId;
   private long focusNum;
+  private long userId;
 
 
   public long getFocusId() {
@@ -32,6 +33,15 @@ public class TbFocus {
 
   public void setFocusNum(long focusNum) {
     this.focusNum = focusNum;
+  }
+
+
+  public long getUserId() {
+    return userId;
+  }
+
+  public void setUserId(long userId) {
+    this.userId = userId;
   }
 
 }

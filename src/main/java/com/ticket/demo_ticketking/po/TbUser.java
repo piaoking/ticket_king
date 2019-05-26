@@ -22,20 +22,6 @@ public class TbUser {
     this.userFrozen = userFrozen;
   }
 
-  @Override
-  public String toString() {
-    return "TbUser{" +
-            "userId=" + userId +
-            ", userName='" + userName + '\'' +
-            ", userTel='" + userTel + '\'' +
-            ", userPassword='" + userPassword + '\'' +
-            ", userBalance=" + userBalance +
-            ", userPs='" + userPs + '\'' +
-            ", userCoupon='" + userCoupon + '\'' +
-            ", userImage='" + userImage + '\'' +
-            ", userLv=" + userLv +
-            '}';
-  }
 
   public long getUserId() {
     return userId;
@@ -117,4 +103,18 @@ public class TbUser {
     this.userLv = userLv;
   }
 
+  @Override
+  public String toString() {
+    return "TbUser{" +
+            "userId=" + userId +
+            ", userName='" + userName + '\'' +
+            ", userTel='" + userTel + '\'' +
+            ", userPassword='" + userPassword + '\'' +
+            ", userBalance=" + userBalance +
+            ", userPs='" + userPs + '\'' +
+            ", userCoupon='" + userCoupon + '\'' +
+            ", userImage='" + userImage + '\'' +
+            ", userLv=" + userLv +
+            '}';
+  }
 }

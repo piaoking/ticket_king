@@ -1,22 +1,20 @@
 package com.ticket.demo_ticketking.po;
 
 
-import com.ticket.demo_ticketking.utils.IdGenerator;
-
 public class TbOrder {
 
   private long orderId;
-  private long userId;
   private long orderPrice;
   private long orderSum;
-  private String orderNum = IdGenerator.getId();
+  private String orderNum;
   private String orderState;
-  private String orderTime;
+  private java.sql.Date orderTime;
   private String orderTicketName;
   private String orderTicketCity;
   private String orderTicketPlace;
   private String orderTicketTime;
   private String orderTicketImage;
+  private long userId;
 
 
   public long getOrderId() {
@@ -25,15 +23,6 @@ public class TbOrder {
 
   public void setOrderId(long orderId) {
     this.orderId = orderId;
-  }
-
-
-  public long getUserId() {
-    return userId;
-  }
-
-  public void setUserId(long userId) {
-    this.userId = userId;
   }
 
 
@@ -73,11 +62,11 @@ public class TbOrder {
   }
 
 
-  public String getOrderTime() {
+  public java.sql.Date getOrderTime() {
     return orderTime;
   }
 
-  public void setOrderTime(String orderTime) {
+  public void setOrderTime(java.sql.Date orderTime) {
     this.orderTime = orderTime;
   }
 
@@ -124,6 +113,15 @@ public class TbOrder {
 
   public void setOrderTicketImage(String orderTicketImage) {
     this.orderTicketImage = orderTicketImage;
+  }
+
+
+  public long getUserId() {
+    return userId;
+  }
+
+  public void setUserId(long userId) {
+    this.userId = userId;
   }
 
 }
