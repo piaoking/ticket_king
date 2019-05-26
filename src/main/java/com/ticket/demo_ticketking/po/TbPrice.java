@@ -2,10 +2,10 @@ package com.ticket.demo_ticketking.po;
 
 
 public class TbPrice {
-
+  private long priceId;
   private long showId;
   private long placeId;
-  private long priceId;
+
 
 
   public long getShowId() {

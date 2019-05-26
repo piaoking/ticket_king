@@ -20,4 +20,14 @@
     <select id="queryOrder" resultMap="baseResult">
     select order_id,user_id,order_price,order_sum,order_num,order_time,order_state,order_ticket_name,order_ticket_city,order_ticket_place,order_ticket_time,order_ticket_image from tb_order where user_id=#{userId}
     </select>
+
+    <select id="queryOrderById" resultMap="baseResult">
+        select order_id,user_id,order_price,order_sum,order_num,order_State,
+        order_time,order_ticket_name,order_ticket_city,order_ticket_place,order_ticket_time,order_ticket_image
+        from tb_order where order_id  =  #{orderId};
+    </select>
+
+    <update id="updateOrderStatus">
+        update tb_order set order_status="已支付" where order_num=#{orderNum};
+    </update>
 </mapper>

@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.ticket.demo_ticketking.mapper.SonMapper">
+    <resultMap id="sonResult" type="com.ticket.demo_ticketking.po.TbSon">
+        <id property="sonId" column="son_id" javaType="java.lang.Long"/>
+        <result property="parentId" column="parent_id" javaType="java.lang.Long"/>
+        <result property="sonName" column="son_name" javaType="java.lang.String"/>
+    </resultMap>
+
+    <select id="querySon" resultMap="sonResult">
+        select * from tb_son
+    </select>
+    <insert id="savaSon">
+            insert into tb_son(son_id,parent_id,son_name)
+            values(#{sonId},#{parentId},#{sonName});
+        </insert>
+    <!--按id查询-->
+    <select id="querySonById" resultMap="sonResult">
+        select * from tb_son where son_id=#{sonId}
+    </select>
+    <!--更新-->
+    <update id="UpdateSon">
+        update tb_son set parent_id=#{parentId},son_name=#{sonName}
+        where son_id=#{sonId};
+    </update>
+</mapper>

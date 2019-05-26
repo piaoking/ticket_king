@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.ticket.demo_ticketking.mapper.TicketMapper">
+    <resultMap id="baseResult" type="com.ticket.demo_ticketking.po.TbTicket">
+        <id property="ticketId" column="ticket_id" javaType="java.lang.Long"/>
+        <result property="cityId" column="city_id" javaType="java.lang.Long"/>
+        <result property="starId" column="star_id" javaType="java.lang.Long"/>
+        <result property="sonId" column="son_id" javaType="java.lang.Long"/>
+        <result property="placeId" column="place_id" javaType="java.lang.Long"/>
+        <result property="ticketName" column="ticket_name" javaType="java.lang.String"/>
+        <result property="ticketPostage" column="ticket_postage" javaType="java.lang.Long"/>
+        <result property="ticketImage" column="ticket_image" javaType="java.lang.String"/>
+        <result property="ticketState" column="ticket_state" javaType="java.lang.String"/>
+        <result property="ticketPricemin" column="ticket_pricemin" javaType="java.lang.Long"/>
+        <result property="ticketMode" column="ticket_mode" javaType="java.lang.String"/>
+        <result property="ticketRun" column="ticket_run" javaType="java.lang.String"/>
+        <result property="ticketBlance" column="ticket_blance" javaType="java.lang.Long"/>
+        <result property="ticketNum" column="ticket_num" javaType="java.lang.Long"/>
+        <result property="ticketZan" column="ticket_zan" javaType="java.lang.Long"/>
+    </resultMap>
+    <!--ticket_id, city_id,star_id,son_id,place_id,ticket_name,ticket_postage-->
+    <!--ticket_image,ticket_state,ticket_pricemin,ticket_mode,ticket_run,ticket_blance,ticket_num,ticket_zan-->
+    <insert id="savaTbTicket">
+            insert into tb_ticket(ticket_id,city_id,star_id,son_id,place_id,ticket_name,ticket_postage,ticket_image,ticket_state,ticket_pricemin,ticket_mode,ticket_run,ticket_blance,ticket_num,ticket_zan)
+            values(#{ticketId},#{cityId},#{starId},#{sonId},#{placeId},#{ticketName},#{ticketPostage},#{ticketImage},#{ticketState},#{ticketPricemin},#{ticketMode},#{ticketRun},#{ticketBlance},#{ticketNum},#{ticketZan});
+        </insert>
+    <!--#{ticketId},#{cityId},#{starId},#{sonId},#{placeId},#{ticketName},#{ticketPostage},#{ticketState},#{ticketPricemin},#{ticketMode}-->
+    <!--#{ticketRun},#{ticketBlance},#{ticketNum},#{ticketZan}-->
+
+    <select id="queryTbTicket" resultMap="baseResult">
+        select * from tb_ticket
+    </select>
+    <!--根据id查询-->
+    <select id="TicketById" resultMap="baseResult">
+        select ticket_id,city_id,star_id,son_id,place_id,ticket_name,ticket_postage,
+    ticket_image,ticket_state,ticket_pricemin,ticket_mode,ticket_run,ticket_blance,ticket_num,ticket_zan from tb_ticket where ticket_id=#{ticketId};
+    </select>
+    <!--更新-->
+    <update id="updateTicket">
+    update tb_ticket set city_id=#{cityId},star_id=#{starId},son_id=#{sonId},place_id=#{placeId},ticket_name=#{ticketName},ticket_postage=#{ticketPostage},ticket_image=#{ticketImage},ticket_state=#{ticketState},
+    ticket_pricemin=#{ticketPricemin},ticket_mode=#{ticketMode},ticket_run=#{ticketRun},ticket_blance=#{ticketBlance},ticket_num=#{ticketNum}, ticket_zan=#{ticketZan}
+    where ticket_id=#{ticketId};
+</update>
+</mapper>

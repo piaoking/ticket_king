@@ -1,7 +1,6 @@
 package com.ticket.demo_ticketking;
 
 
-import com.ticket.demo_ticketking.mapper.SeatMapper;
 import com.ticket.demo_ticketking.po.TbIntro;
 import com.ticket.demo_ticketking.po.TbPlace;
 import com.ticket.demo_ticketking.po.TbUser;

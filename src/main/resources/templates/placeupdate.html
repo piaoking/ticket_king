@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="zh-CN" xmlns:th="http://www.thymeleaf.org">
+
+
+	<head>
+		<meta charset="utf-8" />
+		<title>首页</title>
+		<style type="text/css">
+			.index{
+				position: relative;
+				top: -200px;
+				font-size:18px;
+				width: 1070px;
+				text-overflow: ellipsis;
+				/*height:300px;*/
+
+			}
+			.index a{
+				text-decoration:none;
+				color: #4a4a4a;
+			}
+
+			table{
+				margin: 0px;
+				padding: 0px;
+				width: 30%;
+				border-collapse: collapse;
+				table-layout: fixed;  /*不添加此样式，会全部显示    */
+			}
+			table td{
+
+				/* text-overflow: ellipsis; */ /* 加上，显示省略号*/
+				white-space: nowrap;
+				overflow: hidden;
+			}
+			table td:hover { /* 鼠标滑过  显示隐藏的内容  伴有横向的滚动条 */
+				overflow:auto;
+				text-overflow:clip;
+			}
+
+
+			.active a{
+				text-decoration:none;
+				color: floralwhite;
+			}
+			.left{
+				height:800px;
+
+			}
+			.so{
+				position: relative;
+				top: -400px;
+			}
+
+
+
+		</style>
+		<base th:href="${#request.getContextPath()}+'/'">
+		<link rel="stylesheet" href="css/page.css" />
+		<script type="text/javascript" src="js/jquery.min.js" ></script>
+		<script type="text/javascript" src="js/index.js" ></script>
+
+		<script src="https://cdn.jsdelivr.net/npm/vue"></script>
+        <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+	</head>
+
+	<body>
+	<div id="users">
+		<div  class="left">
+			<div class="bigTitle">商圈后台管理系统</div>
+			<div class="lines">
+				<div onclick="pageClick(this)" class="active"><img src="img/icon-1.png" /><a href="http://localhost:8081/qfclothes/user/index">用户表</a></div>
+				<div onclick="pageClick(this)" class="active"><img src="img/icon-1.png" /><a href="http://localhost:8081/qfclothes//king/queryAllStation">商品表</a></div>
+				<div onclick="pageClick(this)" class="active"><img src="img/icon-1.png" /><a href="http://localhost:8081/qfclothes/star/tar">明星表</a></div>
+				<div onclick="pageClick(this)" class="active"><img src="img/icon-1.png" /><a href="http://localhost:8081/qfclothes/son/so">商品子表</a></div>
+				<div onclick="pageClick(this)" class="active"><img src="img/icon-1.png" /><a href="http://localhost:8081/qfclothes/show/sho">城市表</a></div>
+				<div onclick="pageClick(this)" class="active"><img src="img/icon-1.png" /><a href="http://localhost:8081/qfclothes/see/session">场次表</a></div>
+				<div onclick="pageClick(this)" class="active"><img src="img/icon-1.png" /><a href="http://localhost:8081/qfclothes/price/pr">中间表</a></div>
+				<div onclick="pageClick(this)" class="active"><img src="img/icon-1.png" /><a href="http://localhost:8081/qfclothes/place/pla">场地表</a></div>
+				<div onclick="pageClick(this)" class="active"><img src="img/icon-1.png" /><a href="http://localhost:8081/qfclothes/parent/par">商品分类表</a></div>
+				<div onclick="pageClick(this)" class="active"><img src="img/icon-1.png" /><a href="http://localhost:8081/qfclothes/order/to">订单表</a></div>
+				<div onclick="pageClick(this)" class="active"><img src="img/icon-1.png" /><a href="http://localhost:8081/qfclothes/lv/ll">票档表</a></div>
+				<div onclick="pageClick(this)" class="active"><img src="img/icon-1.png" /><a href="http://localhost:8081/qfclothes/intro/in">商品简介表</a></div>
+				<div onclick="pageClick(this)" class="active"><img src="img/icon-1.png" /><a href="http://localhost:8081/qfclothes/focus/fo">关注表</a></div>
+				<div onclick="pageClick(this)" class="active"><img src="img/icon-1.png" /><a href="http://localhost:8081/qfclothes/comment/com">评论表</a></div>
+				<div onclick="pageClick(this)" class="active"><img src="img/icon-1.png" /><a href="http://localhost:8081/qfclothes/city/po">城市表</a></div>
+				<div onclick="pageClick(this)" class="active"><img src="img/icon-1.png" /><a href="http://localhost:8081/qfclothes/save/indexs">用户地址表</a></div>
+
+			</div>
+		</div>
+		<div class="top">
+			<div class="leftTiyle" id="flTitle">商品表管理</div>
+			<div class="thisUser">
+
+			</div>
+		</div>
+		<div class="content index">
+
+			<table class="table table-bordered  table-layout:fixed" cellpadding="0" border="1"  >
+				<tbody th:each="pal:${placeupdate}">
+				<tr >
+					<input id="placeId" placeholder="请输入场地名称" name="placeId" maxlength="11" type="text"
+						   class="input input-mobile" th:value="${pal.placeId}"><br>
+
+					<input id="placeName" placeholder="请输入场地名称" name="placeName" maxlength="11" type="text"
+						   class="input input-mobile" th:value="${pal.placeName}"><br>
+
+
+                        <input id="placeSeat" placeholder="请输入座位" name="placeSeat" maxlength="11" type="text"
+                               class="input input-mobile" th:value="${pal.placeSeat}"><br>
+
+
+                        <input id="placeAdd" placeholder="请输入场地地址" name="placeAdd" maxlength="11" type="text"
+                               class="input input-mobile"th:value="${pal.placeAdd}"><br>
+
+
+		<div class="row"><input type="submit" value="提 交" class="btn btn-submit" onclick="register()" ></div><br>
+
+				</tr>
+				</tbody>
+
+
+
+			</table>
+
+		</div>
+	<script type="text/javascript">
+        function register() {
+            var placeId = $("#placeId").val();
+            var placeName = $("#placeName").val();
+            var placeSeat = $("#placeSeat").val();
+            var placeAdd = $("#placeAdd").val();
+            $.post("place/updateplace",
+
+                {	placeId:placeId,
+                    placeName:placeName,
+                    placeSeat:placeSeat,
+                    placeAdd:placeAdd,
+
+                },
+                function (data) {
+                    if (data.code == 1) {
+                        window.location.href="place/pla";
+                    } else {
+                        alert(data.msg);
+                    }
+                })
+
+        }
+	</script>
+</html>

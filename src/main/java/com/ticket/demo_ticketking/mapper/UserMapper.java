@@ -14,5 +14,11 @@ public interface UserMapper {
     TbUser query(@Param("userId") long userId);
     void insertUser(@Param("userTel") String userTel,@Param("userName") String userName);
     void updatePassword(@Param("userPassword") String userPassword,@Param("userId") long userId);
+    TbUser queryBalanceById(@Param("userId") Long userId);
 
+    void frozenMoney(@Param("userFrozen") Long userFrozen, @Param("userId") Long userId);
+
+    void kouFrozenMoney(@Param("userFrozen") Long userFrozen, @Param("userId") Long userId);
+
+    TbUser queryUserById(@Param("userId") Integer userId);
 }

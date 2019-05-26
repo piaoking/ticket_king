@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.ticket.demo_ticketking.mapper.ParentMapper">
+
+
+    <resultMap id="baseResultMap" type="com.ticket.demo_ticketking.po.TbParent">
+        <id property="parentId" column="parent_id" javaType="java.lang.Long"/>
+        <result property="parentName" column="parent_name" javaType="java.lang.String"/>
+        <result property="parentNum" column="parent_num" javaType="java.lang.Long"/>
+    </resultMap>
+
+    <select id="queryParent" resultMap="baseResultMap">
+        select parent_name,parent_id,parent_num from tb_parent;
+    </select>
+</mapper>
