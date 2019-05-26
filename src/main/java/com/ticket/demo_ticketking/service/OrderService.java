@@ -4,4 +4,5 @@ import com.ticket.demo_ticketking.po.TbOrder;
 
 public interface OrderService {
     TbOrder queryOrder(long userId) throws Exception;
+    TbOrder queryOrderById(Integer orderId) throws Exception;
 }

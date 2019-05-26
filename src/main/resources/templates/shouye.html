@@ -1,6 +1,7 @@
 ﻿<!DOCTYPE html>
-<html>
+<html lang="zh-CN" xmlns:th="http://www.thymeleaf.org" xmlns:v-if="http://www.w3.org/1999/XSL/Transform">
 <head><title>上海演唱会门票,音乐会,体育赛事,话剧演出票务网上预订-票牛上海</title>
+    <base th:href="${#request.getContextPath()}+'/'">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
     <meta id="viewport" name="viewport"
@@ -8,10 +9,45 @@
     <meta name="keywords" content="上海演出门票,上海演唱会门票,上海音乐会门票,上海体育赛事门票,上海话剧门票">
     <meta name="description"
           content="票牛网-专业演出票务网站,提供演唱会,音乐会,体育赛事,话剧歌剧,休闲展览,儿童亲子,舞蹈芭蕾,戏曲综艺等门票在线订购服务。上海最新最热门演出信息尽在票牛上海站。">
-    <meta name="baidu-site-verification" content="K4F8wWE2Bq"
-    /" />
-        <link rel="stylesheet" href="../static/css/ui.343fbb43.css">
-    <link rel="stylesheet" href="../static/css/slim-header.9887b921.css">
+    <meta name="baidu-site-verification" content="K4F8wWE2Bq">
+    <link rel="stylesheet" href="css/ui.343fbb43.css">
+    <link rel="stylesheet" href="css/slim-header.9887b921.css">
+
+    <!--1、导入vue.js的包-->
+    <script src="https://cdn.jsdelivr.net/npm/vue"></script>
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+</head>
+    <style type="text/css">
+        /*css*/
+        select{
+            font-family: "微软雅黑";
+            background: rgba(0,0,0,0);
+            width: 70px;
+            height: 25px;
+            font-size: 16px;
+            text-align: center;
+            border: 1px #989898 solid;
+            border-radius: 3px;
+        }
+        option{
+            line-height: 20px;
+            border-radius: 3px;
+        }
+        select:focus{
+            border: 2px #ddd solid;
+            box-shadow: 0 0 15px 1px #DDDDDD;
+        }
+        option:hover{
+            background: #EBCCD1;
+        }
+        .login{
+            cursor: pointer;
+            margin-top: 23px;
+        }
+        .typeText{
+            font-size:12px;
+        }
+    </style>
     <script>var _hmt = _hmt || [];
     (function () {
         var hm = document.createElement("script");
@@ -19,7 +55,7 @@
         var s = document.getElementsByTagName("script")[0];
         s.parentNode.insertBefore(hm, s);
     })();
-    _hmt.push(['_setCustomVar', 1, 'city', '重庆']);
+    _hmt.push(['_setCustomVar', 1, 'city', '上海']);
     </script>
     <script>var _vds = _vds || [];
     window._vds = _vds;
@@ -48,21 +84,29 @@
     })(window, document, 'script', '//www.google-analytics.com/analytics.js', 'ga');
     ga('create', 'UA-71591200-1', 'auto');
     ga('send', 'pageview');</script>
-    <link rel="stylesheet" href="../static/css/home.8b9675ae.css">
-</head>
+    <link rel="stylesheet" href="css/home.8b9675ae.css">
 <body class="home">
+
 <div class="slim-header">
-    <div class="container"><a href="/" class="logo-link"><img src="../static/picture/logo.252971b3.png" class="logo"></a>
+
+    <div class="container"><a href="/" class="logo-link"><img src="picture/logo.252971b3.png" class="logo"></a>
         <div class="city-picker">
-            <div class="city-name">重庆</div>
-            <div class="citylist"></div>
+            <select  id="city" onchange="isSelected(this.value)">
+                <tbody >
+                    <option value="1" >上海</option>
+                </tbody>
+                <tbody th:each="citys:${cities}">
+                    <option th:value="${citys.cityId}" th:text="${citys.cityName}">北京</option>
+                </tbody>
+            </select>
         </div>
-        <div class="menu"><a href="/chongqing" class="menu-item selected">首页</a><a href="/cq-all"
-                                                                                   class="menu-item">全部演出</a><a
-                href="/cq-discovery" class="menu-item">发现</a></div>
+        <div class="menu"><a href="/chongqing" class="menu-item selected">首页</a>
+            <a class="menu-item" onclick="shaixuan()">全部演出</a>
+            <a href="/cq-discovery" class="menu-item">发现</a></div>
         <div class="search-bar">
-            <div path="/cq-all" class="form"><input placeholder="找演出、明星、场馆" autocomplete="off" name="keyword" value=""
-                                                    class="input"><input type="button" value="搜索" class="btn-submit">
+            <div path="/cq-all" class="form">
+                <input value="找演出、明星、场馆" class="input" type="text" id="txt">
+                <input type="button" value="搜索" class="btn-submit" id="btn">
             </div>
             <div class="keywords">
                 <div class="item"><a href="/cq-all/s_杨乃文">杨乃文</a></div>
@@ -75,38 +119,43 @@
                 <div class="item"><a href="/cq-all/s_重庆斯威">重庆斯威</a></div>
             </div>
         </div>
-        <div class="right-funcs">
-            <div style="display: block" class="item-login item">
-                <div class="text">
-                    <div class="icon"></div>
+        <div class="right-funcs" id="loginList">
+            <template v-if="userList.code == 0">
+            <div class="login item">
+                <div class="text typeText">
+                    <div class="icon"><img src="//dn-piaoniu-static.qbox.me/pc/ui/img/icon-user.55c9dbcd.png" height="20px" width="14px" style="margin-top: 10px"></div>
                     登录
                 </div>
             </div>
-            <div style="display: none" class="item-user item"><img src="../static/picture/default-avatar.c0a5928c.png"
-                                                                   class="avatar">
-                <div class="submenu submenu-account">
-                    <ul class="submenu-inner">
-                        <li><a href="/user/order">我的订单</a></li>
-                        <li><a href="/user/balance">我的钱包</a></li>
-                        <li><a href="/user/profile">账户设置</a></li>
-                        <li><a href="javascript:;" class="logout">退出登录</a></li>
-                    </ul>
+            </template>
+            <template v-if="userList.code == 1">
+                <div class="login item" style="margin-left: 60px">
+                <div class="text typeText">
+                    <div class="icon"><img src="//dn-piaoniu-static.qbox.me/pc/ui/img/icon-user.55c9dbcd.png" height="20px" width="14px" style="margin-top: 10px"></div>
+                    {{userList.msg}}
                 </div>
             </div>
+            </template>
+            <!--<ul class="submenu-inner">
+                       <li><a href="/user/order">我的订单</a></li>
+                       <li><a href="/user/balance">我的钱包</a></li>
+                       <li><a href="/user/profile">账户设置</a></li>
+                       <li><a href="javascript:;" class="logout">退出登录</a></li>
+                   </ul>-->
             <div class="item-app item">
-                <div class="text">
+               <!-- <div class="text">
                     <div class="icon"></div>
                     APP下载
-                </div>
+                </div>-->
                 <div class="submenu">
                     <ul class="submenu-inner">
-                        <li><img src="../static/picture/qr-app.f6b3ee0e.png" class="qr">
+                        <li><img src="picture/qr-app.f6b3ee0e.png" class="qr">
                             <div class="txt">
                                 <div class="title">票牛APP</div>
                                 <div class="desc">热门票随时抢<br/>折扣票随时买</div>
                             </div>
                         </li>
-                        <li><img src="../static/picture/qr-wechat.72c6a6c0.png" class="qr">
+                        <li><img src="picture/qr-wechat.72c6a6c0.png" class="qr">
                             <div class="txt">
                                 <div class="title">微信订阅号</div>
                                 <div class="desc">精彩剧评最新<br/>活动随时看</div>
@@ -120,16 +169,10 @@
 </div>
 <div style="background-color: #142833" class="top-container">
     <div class="container">
-        <ul class="categories">
-            <li class="item-1"><a href="/cq-concerts" class="last">演唱会</a></li>
-            <li class="item-2"><a href="/cq-dramas" class="last">话剧歌剧</a></li>
-            <li class="item-5"><a href="/cq-exhibits" class="last">休闲展览</a></li>
-            <li class="item-8"><a href="/cq-sports" class="last">体育赛事</a></li>
-            <li class="item-3"><a href="/cq-musicale" class="last">音乐会</a></li>
-            <li class="item-4"><a href="/cq-family" class="last">儿童亲子</a></li>
-            <li class="item-7"><a href="/cq-shows" class="last">戏曲综艺</a></li>
-            <li class="item-6"><a href="/cq-dance" class="last">舞蹈芭蕾</a></li>
-            <li class="item-9"><a href="/cq-travel" class="last">旅游玩乐</a></li>
+        <ul class="categories" >
+            <tbody th:each="parent:${parentList}">
+                <li class="item-1"><a onclick="ticketByParent()" class="last" th:text="${parent.parentName}">演唱会</a></li>
+            </tbody>
         </ul>
         <div class="main">
             <div class="home-banner">
@@ -188,21 +231,22 @@
                                          href="https://m.piaoniu.com/taro/index.html?channel=zn_yyw_cq_bawangpiao"
                                          class="op-position op-position-1">
                 <div class="info">
-                        <div class="tt"><img src="../static/picture/op1-title@3x.png"></div>
+                        <div class="tt"><img src="picture/op1-title@3x.png"></div>
                     <div class="desc">周杰伦免费送</div>
                 </div>
                 <div style="background-image:url(&quot;https://img.piaoniu.com/misc/1e5deba535af25c16126a67b391cbbb1193b3ef8.png&quot;)"
                      class="poster"></div>
-            </a><a target="_blank" href="cq-all?highestPrice=150" class="op-position op-position-2">
+                </a>
+                <a target="_blank"  class="op-position op-position-2" onclick="ticketByPricemin()">
                 <div class="info">
-                    <div class="tt"><img src="../static/picture/op2-title@3x.png"></div>
+                    <div class="tt"><img src="picture/op2-title@3x.png"></div>
                     <div class="desc">限时限量抢</div>
                 </div>
                 <div style="background-image:url(&quot;https://img.piaoniu.com/misc/d137104cc5ee0f28759efcd67aa75f7f6280c755.png&quot;)"
                      class="poster"></div>
             </a><a href="cq-all/weekend-hottest" class="op-position monthly-recommends">
                 <div class="info">
-                    <div class="tt"><img src="../static/picture/weekend.a1b51d54.png"></div>
+                    <div class="tt"><img src="picture/weekend.a1b51d54.png"></div>
                     <div class="desc">每个周末都好玩</div>
                 </div>
                 <div class="activities">
@@ -220,169 +264,50 @@
     </div>
 </div>
 <div class="list-block container hot-list new-block">
-    <div class="block-title"><a href="/cq-hot" class="title"><img src="../static/picture/icon-hot.5960562f.png"
+    <div class="block-title"><a href="/cq-hot" class="title"><img src="picture/icon-hot.5960562f.png"
                                                                   class="title-icon"><span
             class="title-text">近期热门</span></a><a href="/cq-hot" class="more">更多 &gt;</a></div>
     <div style="border-top-color:#ffcca6;border-top-width:2px" class="items">
         <ul>
-            <li class="item"><a target="_blank" href="/activity/91341" class="inner">
-                <div class="discount"><span class="amount">9.4</span><span class="zhe">折</span></div>
-                <div class="hot"><span class="amount">3292</span>
-                    <div class="fire"><img src="../static/picture/hot.a33590cb.png" class="icon"><span>想看</span></div>
-                </div>
-                <div style="background-image:url(images/default-poster.cd723968.png)"
-                     data-style="background-image:url(https://img.piaoniu.com/poster/d1f2e3af597748e6ed1e6b4a84dc17dec579241e.jpg)"
-                     class="poster"></div>
-                <div class="info">
-                    <div class="title">[重庆] 杨乃文重庆专场</div>
-                    <div class="price"><span class="unit">¥</span><span class="amount">361</span>起</div>
-                </div>
-            </a></li>
-            <li class="item"><a target="_blank" href="/activity/91329" class="inner">
-                <div class="discount"><span class="amount">8.9</span><span class="zhe">折</span></div>
-                <div class="hot"><span class="amount">1163</span>
-                    <div class="fire"><img src="../static/picture/hot.a33590cb.png" class="icon"><span>想看</span></div>
-                </div>
-                <div style="background-image:url(images/default-poster.cd723968.png)"
-                     data-style="background-image:url(https://img.piaoniu.com/poster/3ede7453ef92a4c180af30e32eb62dce57685e91.jpg)"
-                     class="poster"></div>
-                <div class="info">
-                    <div class="title">[重庆] 大型实景舞台剧《托马斯&amp;朋友&mdash;迷失宝藏》</div>
-                    <div class="price"><span class="unit">¥</span><span class="amount">42</span>起</div>
-                </div>
-            </a></li>
-            <li class="item"><a target="_blank" href="/activity/89352" class="inner">
-                <div class="discount"><span class="amount">6.5</span><span class="zhe">折</span></div>
-                <div class="hot"><span class="amount">4813</span>
-                    <div class="fire"><img src="../static/picture/hot.a33590cb.png" class="icon"><span>想看</span></div>
-                </div>
-                <div style="background-image:url(images/default-poster.cd723968.png)"
-                     data-style="background-image:url(https://img.piaoniu.com/poster/b134b32e9743ec5fbcd029b3a2f76ac36ff4e423.jpg)"
-                     class="poster"></div>
-                <div class="info">
-                    <div class="title">[重庆] 开心麻花爆笑舞台剧《牢友记》</div>
-                    <div class="price"><span class="unit">¥</span><span class="amount">98</span>起</div>
-                </div>
-            </a></li>
-            <li class="item"><a target="_blank" href="/activity/90626" class="inner">
-                <div class="discount"><span class="amount">9.9</span><span class="zhe">折</span></div>
-                <div class="hot"><span class="amount">8426</span>
-                    <div class="fire"><img src="../static/picture/hot.a33590cb.png" class="icon"><span>想看</span></div>
-                </div>
-                <div style="background-image:url(images/default-poster.cd723968.png)"
-                     data-style="background-image:url(https://img.piaoniu.com/poster/845a2eed1e425682a92ea22f00182c60915e76e6.jpg)"
-                     class="poster"></div>
-                <div class="info">
-                    <div class="title">[重庆] Greyson Chance巡演重庆站</div>
-                    <div class="price"><span class="unit">¥</span><span class="amount">278</span>起</div>
-                </div>
-            </a></li>
-            <li class="item"><a target="_blank" href="/activity/91688" class="inner">
-                <div class="discount"><span class="amount">7.4</span><span class="zhe">折</span></div>
-                <div class="hot"><span class="amount">1844</span>
-                    <div class="fire"><img src="../static/picture/hot.a33590cb.png" class="icon"><span>想看</span></div>
-                </div>
-                <div style="background-image:url(images/default-poster.cd723968.png)"
-                     data-style="background-image:url(https://img.piaoniu.com/poster/747f6960b41c1afce637c2312fdb748046b93032.jpg)"
-                     class="poster"></div>
-                <div class="info">
-                    <div class="title">[重庆] 剑网3舞台剧《剑网3&middot;曲云传》</div>
-                    <div class="price"><span class="unit">¥</span><span class="amount">407</span>起</div>
-                </div>
-            </a></li>
-            <li class="item"><a target="_blank" href="/activity/87613" class="inner">
-                <div class="hot"><span class="amount">2506</span>
-                    <div class="fire"><img src="../static/picture/hot.a33590cb.png" class="icon"><span>想看</span></div>
-                </div>
-                <div style="background-image:url(images/default-poster.cd723968.png)"
-                     data-style="background-image:url(https://img.piaoniu.com/poster/d9f2230242bc86baa9785aa96ec9a504aa0a2bdc.jpg)"
-                     class="poster"></div>
-                <div class="info">
-                    <div class="title">[重庆] 扯馆儿喜剧专场</div>
-                    <div class="price"><span class="unit">¥</span><span class="amount">53</span>起</div>
-                </div>
-            </a></li>
+            <tbody th:each="city:${cityList}" th:if="${city.focusNum > 4000}">
+                <li class="item"><a target="_blank"
+                                    th:href="'http://192.168.53.253:8080/ticketking/orderBuy/ticketseat/?ticketId='+${city.ticketId}+'&showId='+${city.showId}" class="inner">
+                    <div class="discount"><span class="amount">9.4</span><span class="zhe">折</span></div>
+                    <div class="hot"><span class="amount" th:text="${city.focusNum}">3292</span>
+                        <div class="fire"><img src="picture/hot.a33590cb.png" class="icon"><span>想看</span></div>
+                    </div>
+                    <img th:src="@{'http://188.131.215.108/img/'+${city.ticketImage}}" height="226px" width="172px">
+                    <div class="info">
+                        <div class="title" th:text="${city.cityName+city.ticketName}"></div>
+                        <div class="price"><span class="unit">¥</span><span class="amount" th:text="${city.ticketPricemin}">361</span>起</div>
+                    </div>
+                </a></li>
+            </tbody>
+
         </ul>
     </div>
 </div>
 <div class="list-block container new-block">
-    <div class="block-title"><a href="/cq-discount" class="title"><img src="../static/picture/icon-discount.82c0ae81.png"
+    <div class="block-title"><a href="/cq-discount" class="title"><img src="picture/icon-discount.82c0ae81.png"
                                                                        class="title-icon"><span
             class="title-text">折扣专区</span></a><a href="/cq-discount" class="more">更多 &gt;</a></div>
     <div style="border-top-color:#ffbdc8;border-top-width:2px" class="items">
         <ul>
-            <li class="item"><a target="_blank" href="/activity/89224?eventId=353995&amp;ticketCategoryId=1558013"
+            <tbody th:each="city:${cityList}" th:if="${city.ticketPricemin < 45 && city.ticketPricemin != 0 }">
+            <li class="item"><a target="_blank" href="/activity/89224?eventId=353995&amp;ticketCategoryId=1558 013"
                                 class="inner">
                 <div class="discount"><span class="amount">6.7</span><span class="zhe">折</span></div>
-                <div style="background-image:url(images/default-poster.cd723968.png)"
+                <!--<div style="background-image:url(images/default-poster.cd723968.png)"
                      data-style="background-image:url(https://img.piaoniu.com/poster/c1428200c527eaaea39f5752755485f53b6e6c94.jpg)"
-                     class="poster"></div>
+                     class="poster"></div>-->
+                <img th:src="@{'http://188.131.215.108/img/'+${city.ticketImage}}" height="226px" width="172px">
                 <div class="info">
-                    <div class="title">[重庆] 周蕙重庆音乐会</div>
-                    <div class="price"><span class="unit">¥</span><span class="amount">453</span><span
-                            class="unitOrigin">¥</span><span class="amountOrigin">680</span></div>
+                    <div class="title" th:text="${city.cityName+city.ticketName}">[重庆] </div>
+                    <div class="price"><span class="unit">¥</span><span class="amount" th:text="${city.ticketPricemin}">453</span><span
+                            class="unitOrigin">¥</span><span class="amountOrigin" th:text="${city.ticketPricemin * 2}">680</span></div>
                 </div>
             </a></li>
-            <li class="item"><a target="_blank" href="/activity/88397?eventId=351455&amp;ticketCategoryId=1546627"
-                                class="inner">
-                <div class="discount"><span class="amount">8.3</span><span class="zhe">折</span></div>
-                <div style="background-image:url(images/default-poster.cd723968.png)"
-                     data-style="background-image:url(https://img.piaoniu.com/poster/45a3895c4ec52b60a95384fe786c52d23cd5afec.jpg)"
-                     class="poster"></div>
-                <div class="info">
-                    <div class="title">[重庆] 麦斯米兰 重庆演唱会</div>
-                    <div class="price"><span class="unit">¥</span><span class="amount">315</span><span
-                            class="unitOrigin">¥</span><span class="amountOrigin">380</span></div>
-                </div>
-            </a></li>
-            <li class="item"><a target="_blank" href="/activity/80358?eventId=321517&amp;ticketCategoryId=1427365"
-                                class="inner">
-                <div class="discount"><span class="amount">6.0</span><span class="zhe">折</span></div>
-                <div style="background-image:url(images/default-poster.cd723968.png)"
-                     data-style="background-image:url(https://img.piaoniu.com/poster/d0d35d600e0b08f8934900998808500a2233f885.jpg)"
-                     class="poster"></div>
-                <div class="info">
-                    <div class="title">[重庆] 家庭音乐剧《素敵小魔女》</div>
-                    <div class="price"><span class="unit">¥</span><span class="amount">72</span><span
-                            class="unitOrigin">¥</span><span class="amountOrigin">120</span></div>
-                </div>
-            </a></li>
-            <li class="item"><a target="_blank" href="/activity/82501?eventId=326318&amp;ticketCategoryId=1447086"
-                                class="inner">
-                <div class="discount"><span class="amount">5.4</span><span class="zhe">折</span></div>
-                <div style="background-image:url(images/default-poster.cd723968.png)"
-                     data-style="background-image:url(https://img.piaoniu.com/poster/c0295a76605095fc47b349598e3b53a418373585.jpg)"
-                     class="poster"></div>
-                <div class="info">
-                    <div class="title">[重庆] 儿童舞台剧《真假美猴王》</div>
-                    <div class="price"><span class="unit">¥</span><span class="amount">108</span><span
-                            class="unitOrigin">¥</span><span class="amountOrigin">200</span></div>
-                </div>
-            </a></li>
-            <li class="item"><a target="_blank" href="/activity/75610?eventId=306932&amp;ticketCategoryId=1367534"
-                                class="inner">
-                <div class="discount"><span class="amount">5.8</span><span class="zhe">折</span></div>
-                <div style="background-image:url(images/default-poster.cd723968.png)"
-                     data-style="background-image:url(https://img.piaoniu.com/poster/9b09b8e93057163217826b6eff2069bfc09bbd0e.jpg)"
-                     class="poster"></div>
-                <div class="info">
-                    <div class="title">[重庆] 童话剧《小王子》</div>
-                    <div class="price"><span class="unit">¥</span><span class="amount">105</span><span
-                            class="unitOrigin">¥</span><span class="amountOrigin">180</span></div>
-                </div>
-            </a></li>
-            <li class="item"><a target="_blank" href="/activity/86269?eventId=341016&amp;ticketCategoryId=1507284"
-                                class="inner">
-                <div class="discount"><span class="amount">8.0</span><span class="zhe">折</span></div>
-                <div style="background-image:url(images/default-poster.cd723968.png)"
-                     data-style="background-image:url(https://img.piaoniu.com/poster/48daf681b88783d12029a7b428b92288fcebf4ac.jpg)"
-                     class="poster"></div>
-                <div class="info">
-                    <div class="title">[重庆] 《演砸了》</div>
-                    <div class="price"><span class="unit">¥</span><span class="amount">144</span><span
-                            class="unitOrigin">¥</span><span class="amountOrigin">180</span></div>
-                </div>
-            </a></li>
+
         </ul>
     </div>
 </div>
@@ -393,25 +318,25 @@
             <span class="title-text">演唱会</span></a><a href="/cq-concerts" class="more">更多 &gt;</a></div>
         <div class="items">
             <ul>
+                <tbody th:each="city:${cityList}" th:if="${city.sonId == 1 && city.parentNum == 1 }">
                 <li class="item main-item"><a href="/activity/91341"><img
-                        alt="2019咪咕音乐现场&ldquo;FEAR LESS无惧&rdquo;杨乃文重庆专场" src="../static/picture/default-poster.cd723968.png"
-                        data-src="https://img.piaoniu.com/poster/d1f2e3af597748e6ed1e6b4a84dc17dec579241e.jpg"
-                        class="poster"></a>
+                        alt="2019咪咕音乐现场&ldquo;FEAR LESS无惧&rdquo;杨乃文重庆专场"
+                        th:src="@{'http://188.131.215.108/img/'+${city.ticketImage}}" height="466px" width="368px"></a>
                     <div class="info">
                         <div data-style="background-color:#e54671" class="bg"></div>
                         <a href="/activity/91341">
-                            <div class="title">[重庆] 2019咪咕音乐现场&ldquo;FEAR LESS无惧&rdquo;杨乃文重庆专场</div>
+                            <div class="title" th:text="${city.cityName+city.ticketName}">[重庆] 2019咪咕音乐现场&ldquo;FEAR LESS无惧&rdquo;杨乃文重庆专场</div>
                         </a>
-                        <div class="price"><span class="unit">¥</span><span class="amount">361</span>起</div>
+                        <div class="price"><span class="unit">¥</span><span class="amount" th:text="${city.ticketPricemin}">361</span>起</div>
                     </div>
                 </li>
+                </tbody>
+                <tbody th:each="city:${cityList}" th:if="${city.sonId != 1 && city.parentNum == 1 }">
                 <li style="" class="item"><a href="/activity/90626"><img
                         alt="《&ldquo;Portraits&rdquo; Greyson Chance 2019 巡回演唱会》-重庆站"
-                        src="../static/picture/default-poster.cd723968.png"
-                        data-src="https://img.piaoniu.com/poster/845a2eed1e425682a92ea22f00182c60915e76e6.jpg"
-                        class="poster"></a>
+                        th:src="@{'http://188.131.215.108/img/'+${city.ticketImage}}" height="166px" width="123px"></a>
                     <div class="info other-info"><a href="/activity/90626">
-                        <div class="title">[重庆] 《&ldquo;Portraits&rdquo; Greyson Chance 2019 巡回演唱会》-重庆站</div>
+                        <div class="title" th:text="${city.cityName+city.ticketName}">[重庆] 《&ldquo;Portraits&rdquo; Greyson Chance 2019 巡回演唱会》-重庆站</div>
                     </a>
                         <div class="rank-partial">
                             <div class="rank">
@@ -419,77 +344,17 @@
                                 <div class="num"><span>10</span>.0</div>
                             </div>
                         </div>
-                        <div class="time">2019.09.21 19:30</div>
+                        <div class="time" th:text="${city.showTime}">2019.09.21 19:30</div>
                         <a href="/venue/1387">
-                            <div class="venue">重庆文化宫大剧院</div>
+                            <div class="venue" th:text="${city.placeName}">重庆文化宫大剧院</div>
                         </a>
-                        <div class="price"><span class="unit">¥</span><span class="amount">278</span>起</div>
+                        <div class="price"><span class="unit">¥</span><span class="amount" th:text="${city.ticketPricemin}">278</span>起</div>
                     </div>
                 </li>
-                <li style="" class="item"><a href="/activity/89224"><img alt="周蕙【不被遗忘的时光音乐会】"
-                                                                         src="../static/picture/default-poster.cd723968.png"
-                                                                         data-src="https://img.piaoniu.com/poster/c1428200c527eaaea39f5752755485f53b6e6c94.jpg"
-                                                                         class="poster"></a>
-                    <div class="info other-info"><a href="/activity/89224">
-                        <div class="title">[重庆] 周蕙【不被遗忘的时光音乐会】</div>
-                    </a>
-                        <div class="rank-partial">
-                            <div class="rank">
-                                <div class="star star-10"></div>
-                                <div class="num"><span>10</span>.0</div>
-                            </div>
-                        </div>
-                        <div class="time">2019.06.05 19:30</div>
-                        <a href="/venue/15866">
-                            <div class="venue">重庆施光南大剧院</div>
-                        </a>
-                        <div class="price"><span class="unit">¥</span><span class="amount">155</span>起</div>
-                    </div>
-                </li>
-                <li style="margin-bottom:0" class="item"><a href="/activity/87599"><img
-                        alt="天&middot;地&middot;东&middot;西&middot;ALIVE TOUR吴亦凡2019巡回演唱会"
-                        src="../static/picture/default-poster.cd723968.png"
-                        data-src="https://img.piaoniu.com/poster/1676fe8f5d258b512e7b476f5d8c33a563f21f6b.jpg"
-                        class="poster"></a>
-                    <div class="info other-info"><a href="/activity/87599">
-                        <div class="title">[重庆] 天&middot;地&middot;东&middot;西&middot;ALIVE TOUR吴亦凡2019巡回演唱会</div>
-                    </a>
-                        <div class="rank-partial">
-                            <div class="rank">
-                                <div class="star star-10"></div>
-                                <div class="num"><span>10</span>.0</div>
-                            </div>
-                        </div>
-                        <div class="time">2019.05.25 19:30</div>
-                        <a href="/venue/5579">
-                            <div class="venue">华熙文化体育中心</div>
-                        </a>
-                        <div class="price">暂时售空</div>
-                    </div>
-                </li>
-                <li style="margin-bottom:0" class="item"><a href="/activity/90891"><img
-                        alt="花粥 2019&ldquo;两碗三百&rdquo;Livehouse巡演 重庆站" src="../static/picture/default-poster.cd723968.png"
-                        data-src="https://img.piaoniu.com/poster/afb0e16918201ca282f5b162cee75acef129640e.jpg"
-                        class="poster"></a>
-                    <div class="info other-info"><a href="/activity/90891">
-                        <div class="title">[重庆] 花粥 2019&ldquo;两碗三百&rdquo;Livehouse巡演 重庆站</div>
-                    </a>
-                        <div class="rank-partial">
-                            <div class="rank">
-                                <div class="star star-10"></div>
-                                <div class="num"><span>10</span>.0</div>
-                            </div>
-                        </div>
-                        <div class="time">2019.07.19 20:00</div>
-                        <a href="/venue/5163">
-                            <div class="venue">坚果（NUTS）LiveHouse</div>
-                        </a>
-                        <div class="price"><span class="unit">¥</span><span class="amount">371</span>起</div>
-                    </div>
-                </li>
+                </tbody>
                 <div class="comment-container comment-container-1">
                     <div class="comment-carousel"><a href="/review/204611" class="comment-item">
-                        <div class="comment-info"><img src="../static/picture/default-avatar.c0a5928c.png" class="avatar">
+                        <div class="comment-info"><img src="picture/default-avatar.c0a5928c.png" class="avatar">
                             <div class="info">
                                 <div class="name">用户151****5721-ORcNf</div>
                                 <div class="text">评论了<span class="title">五月天 香港演唱会 2019</span></div>
@@ -499,7 +364,7 @@
                             位置不错，这个价格值了！
                         </div>
                     </a><a href="/review/203062" class="comment-item">
-                        <div class="comment-info"><img src="../static/picture/e0437d9111954dcfade97764ceb2cd29.gif"
+                        <div class="comment-info"><img src="picture/e0437d9111954dcfade97764ceb2cd29.gif"
                                                        class="avatar">
                             <div class="info">
                                 <div class="name">眠空。</div>
@@ -508,7 +373,7 @@
                         </div>
                         <div class="comment-content">只期待后来的你能快乐。</div>
                     </a><a href="/review/203180" class="comment-item">
-                        <div class="comment-info"><img src="../static/picture/default-avatar.c0a5928c.png" class="avatar">
+                        <div class="comment-info"><img src="picture/default-avatar.c0a5928c.png" class="avatar">
                             <div class="info">
                                 <div class="name">用户150****5301-XuDf2</div>
                                 <div class="text">评论了<span class="title">五月天 香港演唱会 2019</span></div>
@@ -518,7 +383,7 @@
                             3号刚看完，四号回到家，五号上着班突然就有想去见大爷们,就这么请假出发去看了......人生太多次冲动都是因为五月天啦！五月五号在第五排五十五号看五月天✋
                         </div>
                     </a><a href="/review/202743" class="comment-item">
-                        <div class="comment-info"><img src="../static/picture/4c495ff1e3214724a15653e6a1460252.gif"
+                        <div class="comment-info"><img src="picture/4c495ff1e3214724a15653e6a1460252.gif"
                                                        class="avatar">
                             <div class="info">
                                 <div class="name">Zoey-yE8sk</div>
@@ -528,7 +393,7 @@
                         <div class="comment-content">重庆本地有一起的吗？私信我
                         </div>
                     </a><a href="/review/203090" class="comment-item">
-                        <div class="comment-info"><img src="../static/picture/fed088828a40417b9873c13b19fa904b.gif"
+                        <div class="comment-info"><img src="picture/fed088828a40417b9873c13b19fa904b.gif"
                                                        class="avatar">
                             <div class="info">
                                 <div class="name">亓小兮</div>
@@ -537,7 +402,7 @@
                         </div>
                         <div class="comment-content">去看陈粒，有一起的吗</div>
                     </a><a href="/review/203693" class="comment-item">
-                        <div class="comment-info"><img src="../static/picture/df4984de586bf6d9c87ef93e8d76c33117903ca3.jpg"
+                        <div class="comment-info"><img src="picture/df4984de586bf6d9c87ef93e8d76c33117903ca3.jpg"
                                                        class="avatar">
                             <div class="info">
                                 <div class="name">ZWting</div>
@@ -546,7 +411,7 @@
                         </div>
                         <div class="comment-content">18号有没有要组队的朋友？？举个小手手🖐🏻</div>
                     </a><a href="/review/204066" class="comment-item">
-                        <div class="comment-info"><img src="../static/picture/869ecd161a4aa5c967329d82c9bb875ba30dbe73.jpg"
+                        <div class="comment-info"><img src="picture/869ecd161a4aa5c967329d82c9bb875ba30dbe73.jpg"
                                                        class="avatar">
                             <div class="info">
                                 <div class="name">梦。-7ZGaX</div>
@@ -558,7 +423,7 @@
                             但愿能，和你一直做彼此的华生。
                         </div>
                     </a><a href="/review/202820" class="comment-item">
-                        <div class="comment-info"><img src="../static/picture/732b5bcf71ec4e6690a1c3b0b261e2a6.gif"
+                        <div class="comment-info"><img src="picture/732b5bcf71ec4e6690a1c3b0b261e2a6.gif"
                                                        class="avatar">
                             <div class="info">
                                 <div class="name">💓May💎婚礼.活动.策划</div>
@@ -567,7 +432,7 @@
                         </div>
                         <div class="comment-content">坚持很孤独的，可是你要坚持，最终被看到的，都是坚持的人。</div>
                     </a><a href="/review/203210" class="comment-item">
-                        <div class="comment-info"><img src="../static/picture/default-avatar.c0a5928c.png" class="avatar">
+                        <div class="comment-info"><img src="picture/default-avatar.c0a5928c.png" class="avatar">
                             <div class="info">
                                 <div class="name">用户136****0196-5rHWJ</div>
                                 <div class="text">评论了<span class="title">薛之谦香港演唱会</span></div>
@@ -575,7 +440,7 @@
                         </div>
                         <div class="comment-content">这个是5区几排3.4号呀</div>
                     </a><a href="/review/202696" class="comment-item">
-                        <div class="comment-info"><img src="../static/picture/810325cb086d48b7abbb9c01513f721f.gif"
+                        <div class="comment-info"><img src="picture/810325cb086d48b7abbb9c01513f721f.gif"
                                                        class="avatar">
                             <div class="info">
                                 <div class="name">往南</div>
@@ -596,101 +461,43 @@
             <span class="title-text">话剧歌剧</span></a><a href="/cq-dramas" class="more">更多 &gt;</a></div>
         <div class="items">
             <ul>
-                <li class="item main-item"><a href="/activity/89352"><img alt="开心麻花爆笑舞台剧《牢友记》"
-                                                                          src="../static/picture/default-poster.cd723968.png"
-                                                                          data-src="https://img.piaoniu.com/poster/b134b32e9743ec5fbcd029b3a2f76ac36ff4e423.jpg"
-                                                                          class="poster"></a>
+                <tbody th:each="city:${cityList}" th:if="${city.sonId == 7 && city.parentNum == 2 }">
+                <li class="item main-item"><a href="/activity/91341"><img
+                        alt="2019咪咕音乐现场&ldquo;FEAR LESS无惧&rdquo;杨乃文重庆专场"
+                        th:src="@{'http://188.131.215.108/img/'+${city.ticketImage}}" height="466px" width="368px"></a>
                     <div class="info">
-                        <div data-style="background-color:#ad8547" class="bg"></div>
-                        <a href="/activity/89352">
-                            <div class="title">[重庆] 开心麻花爆笑舞台剧《牢友记》</div>
+                        <div data-style="background-color:#e54671" class="bg"></div>
+                        <a href="/activity/91341">
+                            <div class="title" th:text="${city.cityName+city.ticketName}">[重庆] 2019咪咕音乐现场&ldquo;FEAR LESS无惧&rdquo;杨乃文重庆专场</div>
                         </a>
-                        <div class="price"><span class="unit">¥</span><span class="amount">98</span>起</div>
+                        <div class="price"><span class="unit">¥</span><span class="amount" th:text="${city.ticketPricemin}">361</span>起</div>
                     </div>
                 </li>
-                <li style="" class="item"><a href="/activity/91688"><img alt="剑网3舞台剧《剑网3&middot;曲云传》&mdash;&mdash;重庆站"
-                                                                         src="../static/picture/default-poster.cd723968.png"
-                                                                         data-src="https://img.piaoniu.com/poster/747f6960b41c1afce637c2312fdb748046b93032.jpg"
-                                                                         class="poster"></a>
-                    <div class="info other-info"><a href="/activity/91688">
-                        <div class="title">[重庆] 剑网3舞台剧《剑网3&middot;曲云传》&mdash;&mdash;重庆站</div>
+                </tbody>
+                <tbody th:each="city:${cityList}" th:if="${city.sonId != 7 && city.parentNum == 2 }">
+                <li style="" class="item"><a href="/activity/90626"><img
+                        alt="《&ldquo;Portraits&rdquo; Greyson Chance 2019 巡回演唱会》-重庆站"
+                        th:src="@{'http://188.131.215.108/img/'+${city.ticketImage}}" height="166px" width="123px"></a>
+                    <div class="info other-info"><a href="/activity/90626">
+                        <div class="title" th:text="${city.cityName+city.ticketName}">[重庆] 《&ldquo;Portraits&rdquo; Greyson Chance 2019 巡回演唱会》-重庆站</div>
                     </a>
                         <div class="rank-partial">
                             <div class="rank">
-                                <div class="star star-0"></div>
-                                <div class="num no-num">暂无评分</div>
+                                <div class="star star-10"></div>
+                                <div class="num"><span>10</span>.0</div>
                             </div>
                         </div>
-                        <div class="time">2019.05.17 - 05.18</div>
-                        <a href="/venue/499">
-                            <div class="venue">重庆大剧院</div>
-                        </a>
-                        <div class="price"><span class="unit">¥</span><span class="amount">407</span>起</div>
-                    </div>
-                </li>
-                <li style="" class="item"><a href="/activity/89320"><img alt="音乐剧《白夜行》领衔主演韩雪、刘令飞"
-                                                                         src="../static/picture/default-poster.cd723968.png"
-                                                                         data-src="https://img.piaoniu.com/poster/e9a3ca028589cb1de8977d1e4f6479bc67ba18f2.jpg"
-                                                                         class="poster"></a>
-                    <div class="info other-info"><a href="/activity/89320">
-                        <div class="title">[重庆] 音乐剧《白夜行》领衔主演韩雪、刘令飞</div>
-                    </a>
-                        <div class="rank-partial">
-                            <div class="rank">
-                                <div class="star star-2"></div>
-                                <div class="num"><span>2</span>.0</div>
-                            </div>
-                        </div>
-                        <div class="time">2019.06.06 - 06.07</div>
-                        <a href="/venue/499">
-                            <div class="venue">重庆大剧院</div>
-                        </a>
-                        <div class="price"><span class="unit">¥</span><span class="amount">333</span>起</div>
-                    </div>
-                </li>
-                <li style="margin-bottom:0" class="item"><a href="/activity/91987"><img alt="致敬曹禺&bull;经典话剧作品展演话剧《雷雨》"
-                                                                                        src="../static/picture/default-poster.cd723968.png"
-                                                                                        data-src="https://img.piaoniu.com/poster/f48ee4fe5e97d2f98dec9c0f204ccfeed3aaf161.jpg"
-                                                                                        class="poster"></a>
-                    <div class="info other-info"><a href="/activity/91987">
-                        <div class="title">[重庆] 致敬曹禺&bull;经典话剧作品展演话剧《雷雨》</div>
-                    </a>
-                        <div class="rank-partial">
-                            <div class="rank">
-                                <div class="star star-0"></div>
-                                <div class="num no-num">暂无评分</div>
-                            </div>
-                        </div>
-                        <div class="time">2019.05.29 19:30</div>
-                        <a href="/venue/499">
-                            <div class="venue">重庆大剧院</div>
-                        </a>
-                        <div class="price"><span class="unit">¥</span><span class="amount">88</span>起</div>
-                    </div>
-                </li>
-                <li style="margin-bottom:0" class="item"><a href="/activity/92998"><img alt="开心麻花独角音乐剧《求婚女王》"
-                                                                                        src="../static/picture/default-poster.cd723968.png"
-                                                                                        data-src="https://img.piaoniu.com/poster/a81f2bf6668dbf915d8c98a93bf15ffbef2f7f5e.jpg"
-                                                                                        class="poster"></a>
-                    <div class="info other-info"><a href="/activity/92998">
-                        <div class="title">[重庆] 开心麻花独角音乐剧《求婚女王》</div>
-                    </a>
-                        <div class="rank-partial">
-                            <div class="rank">
-                                <div class="star star-0"></div>
-                                <div class="num no-num">暂无评分</div>
-                            </div>
-                        </div>
-                        <div class="time">2019.06.14 - 06.16</div>
+                        <div class="time" th:text="${city.showTime}">2019.09.21 19:30</div>
                         <a href="/venue/1387">
-                            <div class="venue">重庆文化宫大剧院</div>
+                            <div class="venue" th:text="${city.placeName}">重庆文化宫大剧院</div>
                         </a>
-                        <div class="price"><span class="unit">¥</span><span class="amount">95</span>起</div>
+                        <div class="price"><span class="unit">¥</span><span class="amount" th:text="${city.ticketPricemin}">278</span>起</div>
                     </div>
                 </li>
+                </tbody>
                 <div class="comment-container comment-container-2">
                     <div class="comment-carousel"><a href="/review/204250" class="comment-item">
-                        <div class="comment-info"><img src="../static/picture/default-avatar.c0a5928c.png" class="avatar">
+                        <div class="comment-info"><img src="picture/default-avatar.c0a5928c.png" class="avatar">
                             <div class="info">
                                 <div class="name">用户158****9087-z5ScY</div>
                                 <div class="text">评论了<span class="title">《声音的力量》名家朗诵会</span></div>
@@ -701,7 +508,7 @@
                             几处可潸然泪下
                         </div>
                     </a><a href="/review/203978" class="comment-item">
-                        <div class="comment-info"><img src="../static/picture/default-avatar.c0a5928c.png" class="avatar">
+                        <div class="comment-info"><img src="picture/default-avatar.c0a5928c.png" class="avatar">
                             <div class="info">
                                 <div class="name">用户186****1600-VTXqN</div>
                                 <div class="text">评论了<span class="title">话剧《苏东坡》</span></div>
@@ -709,7 +516,7 @@
                         </div>
                         <div class="comment-content">制作方还是比较用心的，票价也不高，值得去看。</div>
                     </a><a href="/review/204249" class="comment-item">
-                        <div class="comment-info"><img src="../static/picture/f75d838c5041d488f004c2f83e644d1b0731cb9e.jpg"
+                        <div class="comment-info"><img src="picture/f75d838c5041d488f004c2f83e644d1b0731cb9e.jpg"
                                                        class="avatar">
                             <div class="info">
                                 <div class="name">盏茶灯</div>
@@ -732,24 +539,25 @@
             <span class="title-text">休闲展览</span></a><a href="/cq-exhibits" class="more">更多 &gt;</a></div>
         <div class="items">
             <ul>
-                <li class="item main-item"><a href="/activity/45582"><img alt="华人当代美术馆"
-                                                                          src="../static/picture/default-poster.cd723968.png"
-                                                                          data-src="https://img.piaoniu.com/perform/project/1438/143823_n.jpg"
-                                                                          class="poster"></a>
+                <tbody th:each="city:${cityList}" th:if="${city.sonId == 13 && city.parentNum == 3 }">
+                <li class="item main-item"><a href="/activity/91341"><img
+                        alt="2019咪咕音乐现场&ldquo;FEAR LESS无惧&rdquo;杨乃文重庆专场"
+                        th:src="@{'http://188.131.215.108/img/'+${city.ticketImage}}" height="466px" width="368px"></a>
                     <div class="info">
-                        <div data-style="background-color:#4e9b9d" class="bg"></div>
-                        <a href="/activity/45582">
-                            <div class="title">[重庆] 华人当代美术馆</div>
+                        <div data-style="background-color:#e54671" class="bg"></div>
+                        <a href="/activity/91341">
+                            <div class="title" th:text="${city.cityName+city.ticketName}">[重庆] 2019咪咕音乐现场&ldquo;FEAR LESS无惧&rdquo;杨乃文重庆专场</div>
                         </a>
-                        <div class="price"><span class="unit">¥</span><span class="amount">25</span>起</div>
+                        <div class="price"><span class="unit">¥</span><span class="amount" th:text="${city.ticketPricemin}">361</span>起</div>
                     </div>
                 </li>
-                <li style="" class="item"><a href="/activity/90242"><img alt="世界文明与艺术系列展之&ldquo;穆夏：欧洲新艺术运动先锋&rdquo;特展"
-                                                                         src="../static/picture/default-poster.cd723968.png"
-                                                                         data-src="https://img.piaoniu.com/poster/e61fe92ac74f9e7b87243bcb15a26056ba0cdf59.jpg"
-                                                                         class="poster"></a>
-                    <div class="info other-info"><a href="/activity/90242">
-                        <div class="title">[重庆] 世界文明与艺术系列展之&ldquo;穆夏：欧洲新艺术运动先锋&rdquo;特展</div>
+                </tbody>
+                <tbody th:each="city:${cityList}" th:if="${city.sonId != 13 && city.parentNum == 3 }">
+                <li style="" class="item"><a href="/activity/90626"><img
+                        alt="《&ldquo;Portraits&rdquo; Greyson Chance 2019 巡回演唱会》-重庆站"
+                        th:src="@{'http://188.131.215.108/img/'+${city.ticketImage}}" height="166px" width="123px"></a>
+                    <div class="info other-info"><a href="/activity/90626">
+                        <div class="title" th:text="${city.cityName+city.ticketName}">[重庆] 《&ldquo;Portraits&rdquo; Greyson Chance 2019 巡回演唱会》-重庆站</div>
                     </a>
                         <div class="rank-partial">
                             <div class="rank">
@@ -757,76 +565,18 @@
                                 <div class="num"><span>10</span>.0</div>
                             </div>
                         </div>
-                        <div class="time">2019.04.23 - 07.21</div>
-                        <a href="/venue/22573">
-                            <div class="venue">重庆中国三峡博物馆一楼临展厅A</div>
+                        <div class="time" th:text="${city.showTime}">2019.09.21 19:30</div>
+                        <a href="/venue/1387">
+                            <div class="venue" th:text="${city.placeName}">重庆文化宫大剧院</div>
                         </a>
-                        <div class="price"><span class="unit">¥</span><span class="amount">32</span>起</div>
+                        <div class="price"><span class="unit">¥</span><span class="amount" th:text="${city.ticketPricemin}">278</span>起</div>
                     </div>
                 </li>
-                <li style="" class="item"><a href="/activity/86885"><img alt="公众演说与沟通领导力"
-                                                                         src="../static/picture/default-poster.cd723968.png"
-                                                                         data-src="https://img.piaoniu.com/poster/03440c63c4a3821a839f440c36fe639a98b3b82e.jpg"
-                                                                         class="poster"></a>
-                    <div class="info other-info"><a href="/activity/86885">
-                        <div class="title">[重庆] 公众演说与沟通领导力</div>
-                    </a>
-                        <div class="rank-partial">
-                            <div class="rank">
-                                <div class="star star-10"></div>
-                                <div class="num"><span>9</span>.6</div>
-                            </div>
-                        </div>
-                        <div class="time">2019.02.16 - 05.29</div>
-                        <a href="/venue/19043">
-                            <div class="venue">口才中国</div>
-                        </a>
-                        <div class="price"><span class="unit">¥</span><span class="amount">19.80</span>起</div>
-                    </div>
-                </li>
-                <li style="margin-bottom:0" class="item"><a href="/activity/93571"><img
-                        alt="Limitless PARTY 3rd Live 极次元动漫音乐派对" src="../static/picture/default-poster.cd723968.png"
-                        data-src="https://img.piaoniu.com/poster/93b9b8e3c25bb69b7ba66442e83a7cb52e3b11ed.jpg"
-                        class="poster"></a>
-                    <div class="info other-info"><a href="/activity/93571">
-                        <div class="title">[重庆] Limitless PARTY 3rd Live 极次元动漫音乐派对</div>
-                    </a>
-                        <div class="rank-partial">
-                            <div class="rank">
-                                <div class="star star-0"></div>
-                                <div class="num no-num">暂无评分</div>
-                            </div>
-                        </div>
-                        <div class="time">2019.06.07 10:00</div>
-                        <a href="/venue/1443">
-                            <div class="venue">寅派动力</div>
-                        </a>
-                        <div class="price"><span class="unit">¥</span><span class="amount">50</span>起</div>
-                    </div>
-                </li>
-                <li style="margin-bottom:0" class="item"><a href="/activity/58960"><img alt="炫影空间卡丁车"
-                                                                                        src="../static/picture/default-poster.cd723968.png"
-                                                                                        data-src="https://img.piaoniu.com/poster/9f21e52d075090f778db7d97075e59e994618d2d.jpg"
-                                                                                        class="poster"></a>
-                    <div class="info other-info"><a href="/activity/58960">
-                        <div class="title">[重庆] 炫影空间卡丁车</div>
-                    </a>
-                        <div class="rank-partial">
-                            <div class="rank">
-                                <div class="star star-10"></div>
-                                <div class="num"><span>10</span>.0</div>
-                            </div>
-                        </div>
-                        <div class="time">2018.07.30 - 2019.07.30</div>
-                        <a href="/venue/1583">
-                            <div class="venue">重庆大坪龙湖时代天街D馆</div>
-                        </a>
-                        <div class="price"><span class="unit">¥</span><span class="amount">128</span>起</div>
-                    </div>
-                </li>
+                </tbody>
+
                 <div class="comment-container comment-container-5">
                     <div class="comment-carousel"><a href="/review/202880" class="comment-item">
-                        <div class="comment-info"><img src="../static/picture/default-avatar.c0a5928c.png" class="avatar">
+                        <div class="comment-info"><img src="picture/default-avatar.c0a5928c.png" class="avatar">
                             <div class="info">
                                 <div class="name">保界南海</div>
                                 <div class="text">评论了<span class="title">武汉简单生活节</span></div>
@@ -834,7 +584,7 @@
                         </div>
                         <div class="comment-content">很好看的表演～太棒了～</div>
                     </a><a href="/review/204855" class="comment-item">
-                        <div class="comment-info"><img src="../static/picture/0462abb51eb9f0ce5aba8597c2ec137903dee237.jpg"
+                        <div class="comment-info"><img src="picture/0462abb51eb9f0ce5aba8597c2ec137903dee237.jpg"
                                                        class="avatar">
                             <div class="info">
                                 <div class="name">yepoypo</div>
@@ -843,7 +593,7 @@
                         </div>
                         <div class="comment-content">尼克胡哲：生命没有炫耀，只需要它的本质</div>
                     </a><a href="/review/203594" class="comment-item">
-                        <div class="comment-info"><img src="../static/picture/1513642564767.jpg" class="avatar">
+                        <div class="comment-info"><img src="picture/1513642564767.jpg" class="avatar">
                             <div class="info">
                                 <div class="name">Speciallucy</div>
                                 <div class="text">评论了<span class="title">【现票当日发货】海贼王路飞中国巡展深圳站</span></div>
@@ -851,7 +601,7 @@
                         </div>
                         <div class="comment-content">末期去的 蛮失望的 就是一些海报</div>
                     </a><a href="/review/204527" class="comment-item">
-                        <div class="comment-info"><img src="../static/picture/445569e307d5485485bda1713ba676b6.gif"
+                        <div class="comment-info"><img src="picture/445569e307d5485485bda1713ba676b6.gif"
                                                        class="avatar">
                             <div class="info">
                                 <div class="name"></div>
@@ -860,7 +610,7 @@
                         </div>
                         <div class="comment-content">他怎么还在靠鸡汤赚钱，用自己的缺憾来谋生，一谋就是十几二十年，观众也不会舒服吧</div>
                     </a><a href="/review/205062" class="comment-item">
-                        <div class="comment-info"><img src="../static/picture/default-avatar.c0a5928c.png" class="avatar">
+                        <div class="comment-info"><img src="picture/default-avatar.c0a5928c.png" class="avatar">
                             <div class="info">
                                 <div class="name">用户182****8680-EctDa</div>
                                 <div class="text">评论了<span class="title">公众演说与沟通领导力</span></div>
@@ -880,24 +630,25 @@
             <span class="title-text">体育赛事</span></a><a href="/cq-sports" class="more">更多 &gt;</a></div>
         <div class="items">
             <ul>
-                <li class="item main-item"><a href="/activity/94088"><img alt="2019国际冠军杯南京站尤文图斯VS国际米兰足球"
-                                                                          src="../static/picture/default-poster.cd723968.png"
-                                                                          data-src="https://img.piaoniu.com/poster/175af9242c87a9646a271d989418690984484620.jpg"
-                                                                          class="poster"></a>
+                <tbody th:each="city:${cityList}" th:if="${city.sonId == 27 && city.parentNum == 4 }">
+                <li class="item main-item"><a href="/activity/91341"><img
+                        alt="2019咪咕音乐现场&ldquo;FEAR LESS无惧&rdquo;杨乃文重庆专场"
+                        th:src="@{'http://188.131.215.108/img/'+${city.ticketImage}}" height="466px" width="368px"></a>
                     <div class="info">
-                        <div data-style="background-color:#3d68a4" class="bg"></div>
-                        <a href="/activity/94088">
-                            <div class="title">[南京] 2019国际冠军杯南京站尤文图斯VS国际米兰足球</div>
+                        <div data-style="background-color:#e54671" class="bg"></div>
+                        <a href="/activity/91341">
+                            <div class="title" th:text="${city.cityName+city.ticketName}">[重庆] 2019咪咕音乐现场&ldquo;FEAR LESS无惧&rdquo;杨乃文重庆专场</div>
                         </a>
-                        <div class="price"><span class="unit">¥</span><span class="amount">420</span>起</div>
+                        <div class="price"><span class="unit">¥</span><span class="amount" th:text="${city.ticketPricemin}">361</span>起</div>
                     </div>
                 </li>
-                <li style="" class="item"><a href="/activity/84410"><img alt="2019赛季重庆当代力帆足球俱乐部 套卡"
-                                                                         src="../static/picture/default-poster.cd723968.png"
-                                                                         data-src="https://img.piaoniu.com/poster/427e629bfdb7f77174ec17f83cd90058ab823fbd.jpg"
-                                                                         class="poster"></a>
-                    <div class="info other-info"><a href="/activity/84410">
-                        <div class="title">[重庆] 2019赛季重庆当代力帆足球俱乐部 套卡</div>
+                </tbody>
+                <tbody th:each="city:${cityList}" th:if="${city.sonId != 27 && city.parentNum == 4 }">
+                <li style="" class="item"><a href="/activity/90626"><img
+                        alt="《&ldquo;Portraits&rdquo; Greyson Chance 2019 巡回演唱会》-重庆站"
+                        th:src="@{'http://188.131.215.108/img/'+${city.ticketImage}}" height="166px" width="123px"></a>
+                    <div class="info other-info"><a href="/activity/90626">
+                        <div class="title" th:text="${city.cityName+city.ticketName}">[重庆] 《&ldquo;Portraits&rdquo; Greyson Chance 2019 巡回演唱会》-重庆站</div>
                     </a>
                         <div class="rank-partial">
                             <div class="rank">
@@ -905,76 +656,17 @@
                                 <div class="num"><span>10</span>.0</div>
                             </div>
                         </div>
-                        <div class="time">2019赛季</div>
-                        <a href="/venue/500">
-                            <div class="venue">重庆奥体中心</div>
+                        <div class="time" th:text="${city.showTime}">2019.09.21 19:30</div>
+                        <a href="/venue/1387">
+                            <div class="venue" th:text="${city.placeName}">重庆文化宫大剧院</div>
                         </a>
-                        <div class="price"><span class="unit">¥</span><span class="amount">350</span>起</div>
+                        <div class="price"><span class="unit">¥</span><span class="amount" th:text="${city.ticketPricemin}">278</span>起</div>
                     </div>
                 </li>
-                <li style="" class="item"><a href="/activity/91319"><img alt="2019国际冠军杯上海站 曼联VS热刺"
-                                                                         src="../static/picture/default-poster.cd723968.png"
-                                                                         data-src="https://img.piaoniu.com/poster/76c0074674fa6a35cc4e944ca4759ae4ff452de4.jpg"
-                                                                         class="poster"></a>
-                    <div class="info other-info"><a href="/activity/91319">
-                        <div class="title">[上海] 2019国际冠军杯上海站 曼联VS热刺</div>
-                    </a>
-                        <div class="rank-partial">
-                            <div class="rank">
-                                <div class="star star-5"></div>
-                                <div class="num"><span>4</span>.5</div>
-                            </div>
-                        </div>
-                        <div class="time">2019.07.25 19:30</div>
-                        <a href="/venue/11">
-                            <div class="venue">虹口足球场</div>
-                        </a>
-                        <div class="price"><span class="unit">¥</span><span class="amount">1004</span>起</div>
-                    </div>
-                </li>
-                <li style="margin-bottom:0" class="item"><a href="/activity/89922"><img
-                        alt="2019中国足球协会乙级联赛四川优必选主场（成都主场）" src="../static/picture/default-poster.cd723968.png"
-                        data-src="https://img.piaoniu.com/poster/63f98bf9f5138fa132072aed3b62fe5748292766.jpg"
-                        class="poster"></a>
-                    <div class="info other-info"><a href="/activity/89922">
-                        <div class="title">[成都] 2019中国足球协会乙级联赛四川优必选主场（成都主场）</div>
-                    </a>
-                        <div class="rank-partial">
-                            <div class="rank">
-                                <div class="star star-0"></div>
-                                <div class="num no-num">暂无评分</div>
-                            </div>
-                        </div>
-                        <div class="time">2019.05.25 - 09.28</div>
-                        <a href="/venue/21365">
-                            <div class="venue">龙泉驿足球场</div>
-                        </a>
-                        <div class="price"><span class="unit">¥</span><span class="amount">32</span>起</div>
-                    </div>
-                </li>
-                <li style="margin-bottom:0" class="item"><a href="/activity/89917"><img
-                        alt="2019中国足球协会乙级联赛四川优必选主场（自贡主场）" src="../static/picture/default-poster.cd723968.png"
-                        data-src="https://img.piaoniu.com/poster/63f98bf9f5138fa132072aed3b62fe5748292766.jpg"
-                        class="poster"></a>
-                    <div class="info other-info"><a href="/activity/89917">
-                        <div class="title">[自贡] 2019中国足球协会乙级联赛四川优必选主场（自贡主场）</div>
-                    </a>
-                        <div class="rank-partial">
-                            <div class="rank">
-                                <div class="star star-0"></div>
-                                <div class="num no-num">暂无评分</div>
-                            </div>
-                        </div>
-                        <div class="time">2019.03.23 - 09.28</div>
-                        <a href="/venue/22213">
-                            <div class="venue">南湖体育中心</div>
-                        </a>
-                        <div class="price"><span class="unit">¥</span><span class="amount">32</span>起</div>
-                    </div>
-                </li>
+                </tbody>
                 <div class="comment-container comment-container-8">
                     <div class="comment-carousel"><a href="/review/204350" class="comment-item">
-                        <div class="comment-info"><img src="../static/picture/4772ab28c9f84c40b8957572473abdb0.gif"
+                        <div class="comment-info"><img src="picture/4772ab28c9f84c40b8957572473abdb0.gif"
                                                        class="avatar">
                             <div class="info">
                                 <div class="name">wang👹_兴</div>
@@ -983,7 +675,7 @@
                         </div>
                         <div class="comment-content">座位图看不懂啊，请问怎么订？</div>
                     </a><a href="/review/202789" class="comment-item">
-                        <div class="comment-info"><img src="../static/picture/85c856effbb142e5b43d7ed3391261dd.gif"
+                        <div class="comment-info"><img src="picture/85c856effbb142e5b43d7ed3391261dd.gif"
                                                        class="avatar">
                             <div class="info">
                                 <div class="name">Jack__Bing</div>
@@ -992,7 +684,7 @@
                         </div>
                         <div class="comment-content">请让我买到！！！！！！</div>
                     </a><a href="/review/202817" class="comment-item">
-                        <div class="comment-info"><img src="../static/picture/cd5be0e6601249f0a115b5c75a2fef23.gif"
+                        <div class="comment-info"><img src="picture/cd5be0e6601249f0a115b5c75a2fef23.gif"
                                                        class="avatar">
                             <div class="info">
                                 <div class="name">温温💕</div>
@@ -1001,7 +693,7 @@
                         </div>
                         <div class="comment-content">请让我买到吧！男朋友真的很想要去看！</div>
                     </a><a href="/review/203321" class="comment-item">
-                        <div class="comment-info"><img src="../static/picture/9b5abe4e09524be9b635924945fa79d3.gif"
+                        <div class="comment-info"><img src="picture/9b5abe4e09524be9b635924945fa79d3.gif"
                                                        class="avatar">
                             <div class="info">
                                 <div class="name">Dieee</div>
@@ -1010,7 +702,7 @@
                         </div>
                         <div class="comment-content">请留一张位置最好的给我！</div>
                     </a><a href="/review/203387" class="comment-item">
-                        <div class="comment-info"><img src="../static/picture/19501a0b2bee4c8d9490af1b15af36c7.gif"
+                        <div class="comment-info"><img src="picture/19501a0b2bee4c8d9490af1b15af36c7.gif"
                                                        class="avatar">
                             <div class="info">
                                 <div class="name">🥃</div>
@@ -1019,7 +711,7 @@
                         </div>
                         <div class="comment-content">我也是，只想为男朋友抢到一张</div>
                     </a><a href="/review/203515" class="comment-item">
-                        <div class="comment-info"><img src="../static/picture/20cea0af21e46f3828f45cb1e24bbab3570f2983.jpg"
+                        <div class="comment-info"><img src="picture/20cea0af21e46f3828f45cb1e24bbab3570f2983.jpg"
                                                        class="avatar">
                             <div class="info">
                                 <div class="name">玥霖大帅</div>
@@ -1028,7 +720,7 @@
                         </div>
                         <div class="comment-content">罗总C罗会不会来啊？我是他12年铁杆粉丝啊</div>
                     </a><a href="/review/203535" class="comment-item">
-                        <div class="comment-info"><img src="../static/picture/e70cc7df490b4153982e14ce9d7a8db5.gif"
+                        <div class="comment-info"><img src="picture/e70cc7df490b4153982e14ce9d7a8db5.gif"
                                                        class="avatar">
                             <div class="info">
                                 <div class="name">FU🍬</div>
@@ -1037,7 +729,7 @@
                         </div>
                         <div class="comment-content">尤文一贯是南看台，但微博大v说这回是北看台？？</div>
                     </a><a href="/review/204585" class="comment-item">
-                        <div class="comment-info"><img src="../static/picture/default-avatar.c0a5928c.png" class="avatar">
+                        <div class="comment-info"><img src="picture/default-avatar.c0a5928c.png" class="avatar">
                             <div class="info">
                                 <div class="name">用户186****0415-2Y3de</div>
                                 <div class="text">评论了<span class="title">Dota2 国际邀请赛 TI9</span></div>
@@ -1045,7 +737,7 @@
                         </div>
                         <div class="comment-content">请让我买到吧难得在家门口</div>
                     </a><a href="/review/203330" class="comment-item">
-                        <div class="comment-info"><img src="../static/picture/default-avatar.c0a5928c.png" class="avatar">
+                        <div class="comment-info"><img src="picture/default-avatar.c0a5928c.png" class="avatar">
                             <div class="info">
                                 <div class="name">用户153****6164-gcK7G</div>
                                 <div class="text">评论了<span class="title">国际冠军杯 南京站尤文图斯V国际米兰足球</span></div>
@@ -1053,7 +745,7 @@
                         </div>
                         <div class="comment-content">看来我要撸起袖子加油干了</div>
                     </a><a href="/review/203332" class="comment-item">
-                        <div class="comment-info"><img src="../static/picture/default-avatar.c0a5928c.png" class="avatar">
+                        <div class="comment-info"><img src="picture/default-avatar.c0a5928c.png" class="avatar">
                             <div class="info">
                                 <div class="name">用户135****9236-v53at</div>
                                 <div class="text">评论了<span class="title">国际冠军杯 南京站尤文图斯V国际米兰足球</span></div>
@@ -1079,7 +771,7 @@
                                            class="poster"></a>
                         <div class="cont"><a href="/userArticles/1498" class="tt">展览美照TOP榜</a>
                             <div class="desc">初夏来啦~啦~啦~阳光明媚，风和日丽！正是出去逛展拍美照的好时节！小秘书为大家贴心整理票友们的逛展Repo~种草的同时看看你有没有被我翻牌&darr;&darr;&darr;点击下方查看展览</div>
-                            <div class="user-info"><img src="../static/picture/1514439435334.jpg" class="avatar"><span
+                            <div class="user-info"><img src="picture/1514439435334.jpg" class="avatar"><span
                                     class="name">票牛小秘书</span><span class="update-time">05-13</span></div>
                         </div>
                     </li>
@@ -1090,7 +782,7 @@
                             <div class="desc">
                                 （本文虽略长但干货满满哦~）文末还有超省钱攻略上周小编去了一个超美丽的城市远征也是最轻松愉快的一次远征春暖花开~大家是时候出动了~▼打住！小编是去帮广大玩家考察
                             </div>
-                            <div class="user-info"><img src="../static/picture/c6ce8ffc7e8614534c683a9cabab3132bb927dbe.jpg"
+                            <div class="user-info"><img src="picture/c6ce8ffc7e8614534c683a9cabab3132bb927dbe.jpg"
                                                         class="avatar"><span class="name">EPU密室玩家大联盟的KIRA</span><span
                                     class="update-time">05-05</span></div>
                         </div>
@@ -1102,7 +794,7 @@
                             <div class="desc">
                                 这不是标题党只是小编发现EPU密室玩家大联盟创立两年多以来却未曾有机会将为什么要做EPU告诉大家此处仿佛听到了小伙伴的声音。。。好吧~听起来都好有道理~但小编就
                             </div>
-                            <div class="user-info"><img src="../static/picture/c6ce8ffc7e8614534c683a9cabab3132bb927dbe.jpg"
+                            <div class="user-info"><img src="picture/c6ce8ffc7e8614534c683a9cabab3132bb927dbe.jpg"
                                                         class="avatar"><span class="name">EPU密室玩家大联盟的KIRA</span><span
                                     class="update-time">05-04</span></div>
                         </div>
@@ -1156,78 +848,16 @@
             <span class="title-text">音乐会</span></a><a href="/cq-musicale" class="more">更多 &gt;</a></div>
         <div style="border-top-color:#ffcca6;border-top-width:2px" class="items">
             <ul>
+                <tbody th:each="city:${cityList}" th:if="${city.parentNum == 5 }">
                 <li class="item"><a target="_blank" href="/activity/90953" class="inner">
-                    <div style="background-image:url(images/default-poster.cd723968.png)"
-                         data-style="background-image:url(https://img.piaoniu.com/poster/8a3e1bc1ab121ca99b64f92455f99926e5b90bd2.jpg)"
-                         class="poster"></div>
+                    <img th:src="@{'http://188.131.215.108/img/'+${city.ticketImage}}" height="162px" width="123px">
                     <div class="info">
-                        <div class="title">[重庆] 琴弦上的世界&mdash;&mdash;黛茜&middot;乔普林小提琴音乐会</div>
-                        <div class="price"><span class="unit">¥</span><span class="amount">88</span>起</div>
+                        <div class="title" th:text="${city.cityName+city.ticketName}">[重庆] 琴弦上的世界&mdash;&mdash;黛茜&middot;乔普林小提琴音乐会</div>
+                        <div class="price"><span class="unit">¥</span><span class="amount" th:text="${city.ticketPricemin}">88</span>起</div>
                     </div>
                 </a></li>
-                <li class="item"><a target="_blank" href="/activity/88642" class="inner">
-                    <div style="background-image:url(images/default-poster.cd723968.png)"
-                         data-style="background-image:url(https://img.piaoniu.com/poster/89f3e4cfab18d576cd96e50214255c7cbf179e8d.jpg)"
-                         class="poster"></div>
-                    <div class="info">
-                        <div class="title">[重庆] 永恒经典名曲精选重庆音乐会</div>
-                        <div class="price"><span class="unit">¥</span><span class="amount">105</span>起</div>
-                    </div>
-                </a></li>
-                <li class="item"><a target="_blank" href="/activity/94166" class="inner">
-                    <div style="background-image:url(images/default-poster.cd723968.png)"
-                         data-style="background-image:url(https://img.piaoniu.com/poster/90dd7406c4d1bbfce3e7c6a7bbcd9c9c9f6fa150.jpg)"
-                         class="poster"></div>
-                    <div class="info">
-                        <div class="title">[重庆] 大型原创民族管弦乐组曲《永远的山丹丹》</div>
-                        <div class="price"><span class="unit">¥</span><span class="amount">63</span>起</div>
-                    </div>
-                </a></li>
-                <li class="item"><a target="_blank" href="/activity/94224" class="inner">
-                    <div style="background-image:url(images/default-poster.cd723968.png)"
-                         data-style="background-image:url(https://img.piaoniu.com/poster/cef626cca95654a41b8386ca239df5a04213a60b.jpg)"
-                         class="poster"></div>
-                    <div class="info">
-                        <div class="title">[重庆] 英国UKEBOX尤克里里弹唱音乐会</div>
-                        <div class="price"><span class="unit">¥</span><span class="amount">74</span>起</div>
-                    </div>
-                </a></li>
-                <li class="item"><a target="_blank" href="/activity/88695" class="inner">
-                    <div style="background-image:url(images/default-poster.cd723968.png)"
-                         data-style="background-image:url(https://img.piaoniu.com/poster/d0e635ffce58f49b84318422e571784c5eab2cca.jpg)"
-                         class="poster"></div>
-                    <div class="info">
-                        <div class="title">[重庆] 尺八一声一世 火的意志巡回演奏会</div>
-                        <div class="price"><span class="unit">¥</span><span class="amount">252</span>起</div>
-                    </div>
-                </a></li>
-                <li class="item"><a target="_blank" href="/activity/93915" class="inner">
-                    <div style="background-image:url(images/default-poster.cd723968.png)"
-                         data-style="background-image:url(https://img.piaoniu.com/poster/ec90d06fec602ad48a08c8ecbdfb5ac0f1ada18a.jpg)"
-                         class="poster"></div>
-                    <div class="info">
-                        <div class="title">[重庆] 《声入人心音乐会》</div>
-                        <div class="price">暂时售空</div>
-                    </div>
-                </a></li>
-                <li class="item"><a target="_blank" href="/activity/89974" class="inner">
-                    <div style="background-image:url(images/default-poster.cd723968.png)"
-                         data-style="background-image:url(https://img.piaoniu.com/poster/76e3842bf4500eb957a8d3a5aa5e4aef8b5975b2.jpg)"
-                         class="poster"></div>
-                    <div class="info">
-                        <div class="title">[重庆] 2019动漫钢琴音乐会</div>
-                        <div class="price"><span class="unit">¥</span><span class="amount">179</span>起</div>
-                    </div>
-                </a></li>
-                <li class="item"><a target="_blank" href="/activity/88452" class="inner">
-                    <div style="background-image:url(images/default-poster.cd723968.png)"
-                         data-style="background-image:url(https://img.piaoniu.com/poster/e6fe78607e9d4c099448ee32d7623872f22b057a.jpg)"
-                         class="poster"></div>
-                    <div class="info">
-                        <div class="title">[重庆] 最后的莫西干人 印第安音乐品鉴会</div>
-                        <div class="price"><span class="unit">¥</span><span class="amount">147</span>起</div>
-                    </div>
-                </a></li>
+                </tbody>
+
             </ul>
         </div>
     </div>
@@ -1239,78 +869,16 @@
             <span class="title-text">儿童亲子</span></a><a href="/cq-family" class="more">更多 &gt;</a></div>
         <div style="border-top-color:#ffcca6;border-top-width:2px" class="items">
             <ul>
-                <li class="item"><a target="_blank" href="/activity/91329" class="inner">
-                    <div style="background-image:url(images/default-poster.cd723968.png)"
-                         data-style="background-image:url(https://img.piaoniu.com/poster/3ede7453ef92a4c180af30e32eb62dce57685e91.jpg)"
-                         class="poster"></div>
+                <tbody th:each="city:${cityList}" th:if="${city.parentNum == 6 }">
+                <li class="item"><a target="_blank" href="/activity/90953" class="inner">
+                    <img th:src="@{'http://188.131.215.108/img/'+${city.ticketImage}}" height="162px" width="123px">
                     <div class="info">
-                        <div class="title">[重庆] 大型实景舞台剧《托马斯&amp;朋友&mdash;迷失宝藏》</div>
-                        <div class="price"><span class="unit">¥</span><span class="amount">42</span>起</div>
+                        <div class="title" th:text="${city.cityName+city.ticketName}">[重庆] 琴弦上的世界&mdash;&mdash;黛茜&middot;乔普林小提琴音乐会</div>
+                        <div class="price"><span class="unit">¥</span><span class="amount" th:text="${city.ticketPricemin}">88</span>起</div>
                     </div>
                 </a></li>
-                <li class="item"><a target="_blank" href="/activity/88580" class="inner">
-                    <div style="background-image:url(images/default-poster.cd723968.png)"
-                         data-style="background-image:url(https://img.piaoniu.com/poster/c4555e43f37f22d4ab4ce2a4bfb75b39193d6208.jpg)"
-                         class="poster"></div>
-                    <div class="info">
-                        <div class="title">[重庆] 《汪汪队立大功-救援先锋》</div>
-                        <div class="price"><span class="unit">¥</span><span class="amount">179</span>起</div>
-                    </div>
-                </a></li>
-                <li class="item"><a target="_blank" href="/activity/93010" class="inner">
-                    <div style="background-image:url(images/default-poster.cd723968.png)"
-                         data-style="background-image:url(https://img.piaoniu.com/poster/61b8772baaf8dd223f7990e0f45e149b942b33d5.jpg)"
-                         class="poster"></div>
-                    <div class="info">
-                        <div class="title">[重庆] 儿童剧《冰雪女王》</div>
-                        <div class="price"><span class="unit">¥</span><span class="amount">100</span>起</div>
-                    </div>
-                </a></li>
-                <li class="item"><a target="_blank" href="/activity/94315" class="inner">
-                    <div style="background-image:url(images/default-poster.cd723968.png)"
-                         data-style="background-image:url(https://img.piaoniu.com/poster/b2a7a91869bc1d7f7e9429941fd70dcefcb7064b.jpg)"
-                         class="poster"></div>
-                    <div class="info">
-                        <div class="title">[重庆] 小人国与大人国</div>
-                        <div class="price"><span class="unit">¥</span><span class="amount">74</span>起</div>
-                    </div>
-                </a></li>
-                <li class="item"><a target="_blank" href="/activity/82501" class="inner">
-                    <div style="background-image:url(images/default-poster.cd723968.png)"
-                         data-style="background-image:url(https://img.piaoniu.com/poster/c0295a76605095fc47b349598e3b53a418373585.jpg)"
-                         class="poster"></div>
-                    <div class="info">
-                        <div class="title">[重庆] 儿童舞台剧《真假美猴王》</div>
-                        <div class="price"><span class="unit">¥</span><span class="amount">58</span>起</div>
-                    </div>
-                </a></li>
-                <li class="item"><a target="_blank" href="/activity/80358" class="inner">
-                    <div style="background-image:url(images/default-poster.cd723968.png)"
-                         data-style="background-image:url(https://img.piaoniu.com/poster/d0d35d600e0b08f8934900998808500a2233f885.jpg)"
-                         class="poster"></div>
-                    <div class="info">
-                        <div class="title">[重庆] 家庭音乐剧《素敵小魔女》</div>
-                        <div class="price"><span class="unit">¥</span><span class="amount">40</span>起</div>
-                    </div>
-                </a></li>
-                <li class="item"><a target="_blank" href="/activity/90378" class="inner">
-                    <div style="background-image:url(images/default-poster.cd723968.png)"
-                         data-style="background-image:url(https://img.piaoniu.com/poster/0d1e8dbd3038ce6aad40f6024a31f07896c5d3de.jpg)"
-                         class="poster"></div>
-                    <div class="info">
-                        <div class="title">[重庆] 经典亲子童话剧《胡桃夹子》</div>
-                        <div class="price"><span class="unit">¥</span><span class="amount">47</span>起</div>
-                    </div>
-                </a></li>
-                <li class="item"><a target="_blank" href="/activity/91830" class="inner">
-                    <div style="background-image:url(images/default-poster.cd723968.png)"
-                         data-style="background-image:url(https://img.piaoniu.com/poster/077c58c92535d2a077ceced7474d0710b69e0b21.jpg)"
-                         class="poster"></div>
-                    <div class="info">
-                        <div class="title">[重庆] 主题实景童话剧-《你看起来好像很好吃》</div>
-                        <div class="price"><span class="unit">¥</span><span class="amount">95</span>起</div>
-                    </div>
-                </a></li>
+                </tbody>
+
             </ul>
         </div>
     </div>
@@ -1322,78 +890,16 @@
             <span class="title-text">戏曲综艺</span></a><a href="/cq-shows" class="more">更多 &gt;</a></div>
         <div style="border-top-color:#ffcca6;border-top-width:2px" class="items">
             <ul>
-                <li class="item"><a target="_blank" href="/activity/93302" class="inner">
-                    <div style="background-image:url(images/default-poster.cd723968.png)"
-                         data-style="background-image:url(https://img.piaoniu.com/poster/2b21a6cfabf03a9d801401e63ea67864622f3e93.jpg)"
-                         class="poster"></div>
+                <tbody th:each="city:${cityList}" th:if="${city.parentNum == 7 }">
+                <li class="item"><a target="_blank" href="/activity/90953" class="inner">
+                    <img th:src="@{'http://188.131.215.108/img/'+${city.ticketImage}}" height="162px" width="123px">
                     <div class="info">
-                        <div class="title">[重庆] 相声新势力2019巡演</div>
-                        <div class="price"><span class="unit">¥</span><span class="amount">175</span>起</div>
+                        <div class="title" th:text="${city.cityName+city.ticketName}">[重庆] 琴弦上的世界&mdash;&mdash;黛茜&middot;乔普林小提琴音乐会</div>
+                        <div class="price"><span class="unit">¥</span><span class="amount" th:text="${city.ticketPricemin}">88</span>起</div>
                     </div>
                 </a></li>
-                <li class="item"><a target="_blank" href="/activity/87613" class="inner">
-                    <div style="background-image:url(images/default-poster.cd723968.png)"
-                         data-style="background-image:url(https://img.piaoniu.com/poster/d9f2230242bc86baa9785aa96ec9a504aa0a2bdc.jpg)"
-                         class="poster"></div>
-                    <div class="info">
-                        <div class="title">[重庆] 扯馆儿喜剧专场</div>
-                        <div class="price"><span class="unit">¥</span><span class="amount">53</span>起</div>
-                    </div>
-                </a></li>
-                <li class="item"><a target="_blank" href="/activity/91118" class="inner">
-                    <div style="background-image:url(images/default-poster.cd723968.png)"
-                         data-style="background-image:url(https://img.piaoniu.com/poster/2a7c70855e5c4500170b4a7569377156a8f11cb1.jpg)"
-                         class="poster"></div>
-                    <div class="info">
-                        <div class="title">[重庆] 沈铁梅 川剧《江姐》</div>
-                        <div class="price"><span class="unit">¥</span><span class="amount">100</span>起</div>
-                    </div>
-                </a></li>
-                <li class="item"><a target="_blank" href="/activity/91990" class="inner">
-                    <div style="background-image:url(images/default-poster.cd723968.png)"
-                         data-style="background-image:url(https://img.piaoniu.com/poster/76418fed2ada1a10bbb1ef72ec457b026a947557.jpg)"
-                         class="poster"></div>
-                    <div class="info">
-                        <div class="title">[重庆] 央华戏剧《北京人》</div>
-                        <div class="price"><span class="unit">¥</span><span class="amount">95</span>起</div>
-                    </div>
-                </a></li>
-                <li class="item"><a target="_blank" href="/activity/33549" class="inner">
-                    <div style="background-image:url(images/default-poster.cd723968.png)"
-                         data-style="background-image:url(https://img.piaoniu.com/poster/49a35d842069183845a6452a629c365e20a352c6.jpg)"
-                         class="poster"></div>
-                    <div class="info">
-                        <div class="title">[长沙] 大兵领衔笑工厂爆笑来袭</div>
-                        <div class="price"><span class="unit">¥</span><span class="amount">99</span>起</div>
-                    </div>
-                </a></li>
-                <li class="item"><a target="_blank" href="/activity/63236" class="inner">
-                    <div style="background-image:url(images/default-poster.cd723968.png)"
-                         data-style="background-image:url(https://img.piaoniu.com/poster/7f850808f0a519feaf0e70e070da628cf754de21.jpg)"
-                         class="poster"></div>
-                    <div class="info">
-                        <div class="title">[昆明] 昆曲《牡丹亭》</div>
-                        <div class="price"><span class="unit">¥</span><span class="amount">120</span>起</div>
-                    </div>
-                </a></li>
-                <li class="item"><a target="_blank" href="/activity/87143" class="inner">
-                    <div style="background-image:url(images/default-poster.cd723968.png)"
-                         data-style="background-image:url(https://img.piaoniu.com/poster/755f1c43fd15f7f3fe775d7a174c4e9589955dc5.jpg)"
-                         class="poster"></div>
-                    <div class="info">
-                        <div class="title">[重庆] 重庆崽儿重庆范儿</div>
-                        <div class="price">暂时售空</div>
-                    </div>
-                </a></li>
-                <li class="item"><a target="_blank" href="/activity/90031" class="inner">
-                    <div style="background-image:url(images/default-poster.cd723968.png)"
-                         data-style="background-image:url(https://img.piaoniu.com/poster/62de7a1380fd9da722de66c81e5b04e5139042ae.jpg)"
-                         class="poster"></div>
-                    <div class="info">
-                        <div class="title">[重庆] 重庆逗乐坊相声专场</div>
-                        <div class="price">暂时售空</div>
-                    </div>
-                </a></li>
+                </tbody>
+
             </ul>
         </div>
     </div>
@@ -1405,78 +911,16 @@
             <span class="title-text">舞蹈芭蕾</span></a><a href="/cq-dance" class="more">更多 &gt;</a></div>
         <div style="border-top-color:#ffcca6;border-top-width:2px" class="items">
             <ul>
-                <li class="item"><a target="_blank" href="/activity/92461" class="inner">
-                    <div style="background-image:url(images/default-poster.cd723968.png)"
-                         data-style="background-image:url(https://img.piaoniu.com/poster/c6a341182125eb44f13980e132edb9b93a6078af.jpg)"
-                         class="poster"></div>
+                <tbody th:each="city:${cityList}" th:if="${city.parentNum == 8 }">
+                <li class="item"><a target="_blank" href="/activity/90953" class="inner">
+                    <img th:src="@{'http://188.131.215.108/img/'+${city.ticketImage}}" height="162px" width="123px">
                     <div class="info">
-                        <div class="title">[重庆] 李玉刚诗意歌舞剧 《昭君出塞》</div>
-                        <div class="price"><span class="unit">¥</span><span class="amount">179</span>起</div>
+                        <div class="title" th:text="${city.cityName+city.ticketName}">[重庆] 琴弦上的世界&mdash;&mdash;黛茜&middot;乔普林小提琴音乐会</div>
+                        <div class="price"><span class="unit">¥</span><span class="amount" th:text="${city.ticketPricemin}">88</span>起</div>
                     </div>
                 </a></li>
-                <li class="item"><a target="_blank" href="/activity/87943" class="inner">
-                    <div style="background-image:url(images/default-poster.cd723968.png)"
-                         data-style="background-image:url(https://img.piaoniu.com/poster/df0c31c4a4616146cd88bd3ee02952c51cc0da7b.jpg)"
-                         class="poster"></div>
-                    <div class="info">
-                        <div class="title">[重庆] 皇家芭蕾舞团《天鹅湖》</div>
-                        <div class="price"><span class="unit">¥</span><span class="amount">250</span>起</div>
-                    </div>
-                </a></li>
-                <li class="item"><a target="_blank" href="/activity/88632" class="inner">
-                    <div style="background-image:url(images/default-poster.cd723968.png)"
-                         data-style="background-image:url(https://img.piaoniu.com/poster/86e0c36fcf0e24de34c91a98c1148c770b81e326.jpg)"
-                         class="poster"></div>
-                    <div class="info">
-                        <div class="title">[重庆] 俄罗斯芭蕾国家剧院《天鹅湖》</div>
-                        <div class="price"><span class="unit">¥</span><span class="amount">160</span>起</div>
-                    </div>
-                </a></li>
-                <li class="item"><a target="_blank" href="/activity/91862" class="inner">
-                    <div style="background-image:url(images/default-poster.cd723968.png)"
-                         data-style="background-image:url(https://img.piaoniu.com/poster/56076f14521fb61aad15617d55ad423c3085d1ed.jpg)"
-                         class="poster"></div>
-                    <div class="info">
-                        <div class="title">[重庆] 古典芭蕾舞剧《灰姑娘》</div>
-                        <div class="price"><span class="unit">¥</span><span class="amount">58</span>起</div>
-                    </div>
-                </a></li>
-                <li class="item"><a target="_blank" href="/activity/91027" class="inner">
-                    <div style="background-image:url(images/default-poster.cd723968.png)"
-                         data-style="background-image:url(https://img.piaoniu.com/poster/bdd8e838428c43876685ce23bb34c2b6ef1f316a.jpg)"
-                         class="poster"></div>
-                    <div class="info">
-                        <div class="title">[重庆] 大型民族舞剧 《孔子》</div>
-                        <div class="price"><span class="unit">¥</span><span class="amount">231</span>起</div>
-                    </div>
-                </a></li>
-                <li class="item"><a target="_blank" href="/activity/91558" class="inner">
-                    <div style="background-image:url(images/default-poster.cd723968.png)"
-                         data-style="background-image:url(https://img.piaoniu.com/poster/efbe561941952bfc46e93b059eb25f4a48c89da3.jpg)"
-                         class="poster"></div>
-                    <div class="info">
-                        <div class="title">[重庆] 经典民族歌剧《洪湖赤卫队》</div>
-                        <div class="price"><span class="unit">¥</span><span class="amount">173</span>起</div>
-                    </div>
-                </a></li>
-                <li class="item"><a target="_blank" href="/activity/91706" class="inner">
-                    <div style="background-image:url(images/default-poster.cd723968.png)"
-                         data-style="background-image:url(https://img.piaoniu.com/poster/9bcbc6501096261d36de320cdc6f59487c47e863.jpg)"
-                         class="poster"></div>
-                    <div class="info">
-                        <div class="title">[重庆] 儿童版芭蕾舞剧《睡美人》</div>
-                        <div class="price"><span class="unit">¥</span><span class="amount">74</span>起</div>
-                    </div>
-                </a></li>
-                <li class="item"><a target="_blank" href="/activity/91116" class="inner">
-                    <div style="background-image:url(images/default-poster.cd723968.png)"
-                         data-style="background-image:url(https://img.piaoniu.com/poster/c09316642bb362ee76f22b564244922a9277c83c.jpg)"
-                         class="poster"></div>
-                    <div class="info">
-                        <div class="title">[重庆] 儿童版芭蕾舞剧《白雪公主》</div>
-                        <div class="price"><span class="unit">¥</span><span class="amount">74</span>起</div>
-                    </div>
-                </a></li>
+                </tbody>
+
             </ul>
         </div>
     </div>
@@ -1488,60 +932,16 @@
             <span class="title-text">旅游玩乐</span></a><a href="/cq-travel" class="more">更多 &gt;</a></div>
         <div style="border-top-color:#ffcca6;border-top-width:2px" class="items">
             <ul>
-                <li class="item"><a target="_blank" href="/activity/21764" class="inner">
-                    <div style="background-image:url(images/default-poster.cd723968.png)"
-                         data-style="background-image:url(https://img.piaoniu.com/poster/5ea1589604fc74c344c0dfd3e00248606e75ba29.jpg)"
-                         class="poster"></div>
+                <tbody th:each="city:${cityList}" th:if="${city.parentNum == 9 }">
+                <li class="item"><a target="_blank" href="/activity/90953" class="inner">
+                    <img th:src="@{'http://188.131.215.108/img/'+${city.ticketImage}}" height="162px" width="123px">
                     <div class="info">
-                        <div class="title">[广州] 长隆水上乐园</div>
-                        <div class="price"><span class="unit">¥</span><span class="amount">128</span>起</div>
+                        <div class="title" th:text="${city.cityName+city.ticketName}">[重庆] 琴弦上的世界&mdash;&mdash;黛茜&middot;乔普林小提琴音乐会</div>
+                        <div class="price"><span class="unit">¥</span><span class="amount" th:text="${city.ticketPricemin}">88</span>起</div>
                     </div>
                 </a></li>
-                <li class="item"><a target="_blank" href="/activity/88256" class="inner">
-                    <div style="background-image:url(images/default-poster.cd723968.png)"
-                         data-style="background-image:url(https://img.piaoniu.com/poster/5afc67971a5226c1aab6d2b3148a18c18ebbff2f.jpg)"
-                         class="poster"></div>
-                    <div class="info">
-                        <div class="title">[香港] 香港迪士尼乐园门票</div>
-                        <div class="price"><span class="unit">¥</span><span class="amount">79</span>起</div>
-                    </div>
-                </a></li>
-                <li class="item"><a target="_blank" href="/activity/19804" class="inner">
-                    <div style="background-image:url(images/default-poster.cd723968.png)"
-                         data-style="background-image:url(https://img.piaoniu.com/poster/932611c10b5c8b5592a5a7a3ddf048825777506f.jpg)"
-                         class="poster"></div>
-                    <div class="info">
-                        <div class="title">[广州] 长隆野生动物世界门票</div>
-                        <div class="price"><span class="unit">¥</span><span class="amount">210</span>起</div>
-                    </div>
-                </a></li>
-                <li class="item"><a target="_blank" href="/activity/84795" class="inner">
-                    <div style="background-image:url(images/default-poster.cd723968.png)"
-                         data-style="background-image:url(https://img.piaoniu.com/poster/9eeb37f922ee71340044ecb7ec494b26218737cc.jpg)"
-                         class="poster"></div>
-                    <div class="info">
-                        <div class="title">[长沙] 疯狂的麦咭</div>
-                        <div class="price"><span class="unit">¥</span><span class="amount">128</span>起</div>
-                    </div>
-                </a></li>
-                <li class="item"><a target="_blank" href="/activity/89084" class="inner">
-                    <div style="background-image:url(images/default-poster.cd723968.png)"
-                         data-style="background-image:url(https://img.piaoniu.com/poster/8af4e3cc326d701a3d91621b316d669ebf5397c2.jpg)"
-                         class="poster"></div>
-                    <div class="info">
-                        <div class="title">[长沙] 黑麋峰滑翔伞飞行体验</div>
-                        <div class="price"><span class="unit">¥</span><span class="amount">692</span>起</div>
-                    </div>
-                </a></li>
-                <li class="item"><a target="_blank" href="/activity/19647" class="inner">
-                    <div style="background-image:url(images/default-poster.cd723968.png)"
-                         data-style="background-image:url(https://img.piaoniu.com/poster/a3e65e4d86d4070a7c33d8f088ef83557c0a67a1.jpg)"
-                         class="poster"></div>
-                    <div class="info">
-                        <div class="title">[广州] 长隆欢乐世界</div>
-                        <div class="price"><span class="unit">¥</span><span class="amount">160</span>起</div>
-                    </div>
-                </a></li>
+                </tbody>
+
             </ul>
         </div>
     </div>
@@ -1549,27 +949,27 @@
 <div class="banner-content">
     <div class="banner">
         <div class="center">
-            <div class="left"><img src="../static/picture/logox2.78a31cd1.png"></div>
+            <div class="left"><img src="picture/logox2.78a31cd1.png"></div>
             <div class="app-load"><a href="/app" class="apple"></a><a href="/app" class="android"></a></div>
-            <div class="code"><img src="../static/picture/code.0294fe21.png"></div>
+            <div class="code"><img src="picture/code.0294fe21.png"></div>
         </div>
         <span class="close"></span></div>
-    <div class="left-img"><img src="../static/picture/left.e32ac038.png"></div>
+    <div class="left-img"><img src="picture/left.e32ac038.png"></div>
 </div>
 <div class="slogan-bar">
     <div class="container"><a href="/services#service1" rel="nofollow" class="item"><img
-            src="../static/picture/icon-diamond.bb7002bc.png" class="icon">
+            src="picture/icon-diamond.bb7002bc.png" class="icon">
         <div class="text">
             <div class="title">无票赔付</div>
             <div class="desc">无票赔付，最高退一赔二</div>
         </div>
-    </a><a href="/services#service2" rel="nofollow" class="item"><img src="../static/picture/icon-shield.09fa5cdb.png"
+    </a><a href="/services#service2" rel="nofollow" class="item"><img src="picture/icon-shield.09fa5cdb.png"
                                                                       class="icon">
         <div class="text">
             <div class="title">出票保真</div>
             <div class="desc">全程消费保障，买得放心</div>
         </div>
-    </a><a href="/services#service3" rel="nofollow" class="item"><img src="../static/picture/icon-umbrella.b2c3c4c4.png"
+    </a><a href="/services#service3" rel="nofollow" class="item"><img src="picture/icon-umbrella.b2c3c4c4.png"
                                                                       class="icon">
         <div class="text">
             <div class="title">配送保障</div>
@@ -1589,9 +989,9 @@
 <!--					img(src='#{staticHelper.getUrl("/img/footer/juchen.png")}', style='height:23px')-->
 <div class="footer bottom-bar">
     <div class="container">
-        <div class="links-and-brand"><img src="../static/picture/footer-logo.d5e1202e.png" class="footer-logo">
+        <div class="links-and-brand"><img src="picture/footer-logo.d5e1202e.png" class="footer-logo">
             <div class="qr-codes">
-                <div class="item"><img src="../static/picture/qr-app.f6b3ee0e.png" class="img">
+                <div class="item"><img src="picture/qr-app.f6b3ee0e.png" class="img">
                     <div class="text">票牛app</div>
                 </div>
             </div>
@@ -1670,2573 +1070,66 @@
             href="http://www.miitbeian.gov.cn" target='_blank'>沪ICP备14000399号-2</a></div>
     <div class="police-icons"><a href="http://www.beian.gov.cn/portal/registerSystemInfo?recordcode=31010602001682"
                                  target="_blank" rel="nofollow" class="link link-police"><img
-            src="../static/picture/police.c9ff2fec.png" class="icon">
+            src="picture/police.c9ff2fec.png" class="icon">
         <div class="text">沪公网安备 31010602001682号</div>
     </a><a href="http://www.sgs.gov.cn/lz/licenseLink.do?method=licenceView&amp;entyId=2016050618242638" target="_blank"
-           rel="nofollow" class="link link-gongshang"><img src="../static/picture/gongshang.df298c0c.png" class="icon">
+           rel="nofollow" class="link link-gongshang"><img src="picture/gongshang.df298c0c.png" class="icon">
         <div class="text">上海工商</div>
     </a></div>
-</div>
-<script>var currentCity = {
-    "cityId": 9,
-    "cityName": "重庆",
-    "cityEnName": "chongqing",
-    "cityAbbrCode": "cq",
-    "provinceId": 22,
-    "status": 3,
-    "regionCityId": 9,
-    "adCode": "500100",
-    "glat": 29.562686,
-    "glng": 106.551234,
-    "hotCity": true
-}
-var city = {
-    "cityId": 9,
-    "cityName": "重庆",
-    "cityEnName": "chongqing",
-    "cityAbbrCode": "cq",
-    "provinceId": 22,
-    "status": 3,
-    "regionCityId": 9,
-    "adCode": "500100",
-    "glat": 29.562686,
-    "glng": 106.551234,
-    "hotCity": true
-}
-var hotCities = [{
-    "cityId": 1,
-    "cityName": "上海",
-    "cityEnName": "shanghai",
-    "cityAbbrCode": "sh",
-    "provinceId": 9,
-    "status": 3,
-    "regionCityId": 1,
-    "adCode": "310100",
-    "glat": 31.230708,
-    "glng": 121.472916,
-    "hotCity": true
-}, {
-    "cityId": 2,
-    "cityName": "北京",
-    "cityEnName": "beijing",
-    "cityAbbrCode": "bj",
-    "provinceId": 1,
-    "status": 3,
-    "regionCityId": 2,
-    "adCode": "110100",
-    "glat": 39.904667,
-    "glng": 116.408198,
-    "hotCity": true
-}, {
-    "cityId": 4,
-    "cityName": "广州",
-    "cityEnName": "guangzhou",
-    "cityAbbrCode": "gz",
-    "provinceId": 19,
-    "status": 3,
-    "regionCityId": 4,
-    "adCode": "440100",
-    "glat": 23.129075,
-    "glng": 113.264423,
-    "hotCity": true
-}, {
-    "cityId": 7,
-    "cityName": "深圳",
-    "cityEnName": "shenzhen",
-    "cityAbbrCode": "sz",
-    "provinceId": 19,
-    "status": 3,
-    "regionCityId": 7,
-    "adCode": "440300",
-    "glat": 22.543447,
-    "glng": 114.057818,
-    "hotCity": true
-}, {
-    "cityId": 8,
-    "cityName": "成都",
-    "cityEnName": "chengdu",
-    "cityAbbrCode": "cd",
-    "provinceId": 23,
-    "status": 3,
-    "regionCityId": 8,
-    "adCode": "510100",
-    "glat": 30.658602,
-    "glng": 104.064857,
-    "hotCity": true
-}, {
-    "cityId": 9,
-    "cityName": "重庆",
-    "cityEnName": "chongqing",
-    "cityAbbrCode": "cq",
-    "provinceId": 22,
-    "status": 3,
-    "regionCityId": 9,
-    "adCode": "500100",
-    "glat": 29.562686,
-    "glng": 106.551234,
-    "hotCity": true
-}, {
-    "cityId": 10,
-    "cityName": "天津",
-    "cityEnName": "tianjin",
-    "cityAbbrCode": "tj",
-    "provinceId": 2,
-    "status": 3,
-    "regionCityId": 10,
-    "adCode": "120100",
-    "glat": 39.120876,
-    "glng": 117.21503,
-    "hotCity": true
-}, {
-    "cityId": 3,
-    "cityName": "杭州",
-    "cityEnName": "hangzhou",
-    "cityAbbrCode": "hz",
-    "provinceId": 11,
-    "status": 3,
-    "regionCityId": 3,
-    "adCode": "330100",
-    "glat": 30.273497,
-    "glng": 120.155249,
-    "hotCity": true
-}, {
-    "cityId": 5,
-    "cityName": "南京",
-    "cityEnName": "nanjing",
-    "cityAbbrCode": "nj",
-    "provinceId": 10,
-    "status": 3,
-    "regionCityId": 5,
-    "adCode": "320100",
-    "glat": 32.058365,
-    "glng": 118.796468,
-    "hotCity": true
-}, {
-    "cityId": 11,
-    "cityName": "宁波",
-    "cityEnName": "ningbo",
-    "cityAbbrCode": "nb",
-    "provinceId": 11,
-    "status": 3,
-    "regionCityId": 11,
-    "adCode": "330200",
-    "glat": 29.868336,
-    "glng": 121.54399,
-    "hotCity": true
-}, {
-    "cityId": 16,
-    "cityName": "武汉",
-    "cityEnName": "wuhan",
-    "cityAbbrCode": "wh",
-    "provinceId": 17,
-    "status": 3,
-    "regionCityId": 16,
-    "adCode": "420100",
-    "glat": 30.593088,
-    "glng": 114.305172,
-    "hotCity": true
-}, {
-    "cityId": 17,
-    "cityName": "西安",
-    "cityEnName": "xian",
-    "cityAbbrCode": "xa",
-    "provinceId": 27,
-    "status": 3,
-    "regionCityId": 17,
-    "adCode": "610100",
-    "glat": 34.26488,
-    "glng": 108.944265,
-    "hotCity": true
-}, {
-    "cityId": 344,
-    "cityName": "长沙",
-    "cityEnName": "changsha",
-    "cityAbbrCode": "cs",
-    "provinceId": 18,
-    "status": 3,
-    "regionCityId": 344,
-    "adCode": "430100",
-    "glat": 28.228528,
-    "glng": 112.938827,
-    "hotCity": true
-}, {
-    "cityId": 160,
-    "cityName": "郑州",
-    "cityEnName": "zhengzhou",
-    "cityAbbrCode": "zz11",
-    "provinceId": 16,
-    "status": 3,
-    "regionCityId": 160,
-    "adCode": "410100",
-    "glat": 34.747285,
-    "glng": 113.624863,
-    "hotCity": true
-}, {
-    "cityId": 267,
-    "cityName": "昆明",
-    "cityEnName": "kunming",
-    "cityAbbrCode": "km",
-    "provinceId": 25,
-    "status": 3,
-    "regionCityId": 267,
-    "adCode": "530100",
-    "glat": 25.037283,
-    "glng": 102.722125,
-    "hotCity": true
-}]
-var activeCities = [{
-    "cityId": 117,
-    "cityName": "安庆",
-    "cityEnName": "anqing",
-    "cityAbbrCode": "aq",
-    "provinceId": 12,
-    "status": 1,
-    "regionCityId": 5,
-    "adCode": "340800",
-    "firstLetter": "A",
-    "name": null,
-    "path": null,
-    "selected": "",
-    "glat": 30.524961,
-    "glng": 117.05673,
-    "hotCity": false
-}, {
-    "cityId": 58,
-    "cityName": "鞍山",
-    "cityEnName": "anshan",
-    "cityAbbrCode": "as",
-    "provinceId": 6,
-    "status": 1,
-    "regionCityId": 2,
-    "adCode": "210300",
-    "firstLetter": "A",
-    "name": null,
-    "path": null,
-    "selected": "",
-    "glat": 41.108546,
-    "glng": 122.994646,
-    "hotCity": false
-}, {
-    "cityId": 261,
-    "cityName": "安顺",
-    "cityEnName": "anshun",
-    "cityAbbrCode": "as3",
-    "provinceId": 24,
-    "status": 1,
-    "regionCityId": 8,
-    "adCode": "520400",
-    "firstLetter": "A",
-    "name": null,
-    "path": null,
-    "selected": "",
-    "glat": 26.253072,
-    "glng": 105.947594,
-    "hotCity": false
-}, {
-    "cityId": 342,
-    "cityName": "澳门",
-    "cityEnName": "macau",
-    "cityAbbrCode": "am",
-    "provinceId": 33,
-    "status": 1,
-    "regionCityId": 7,
-    "adCode": null,
-    "firstLetter": "A",
-    "name": null,
-    "path": null,
-    "selected": "",
-    "glat": 22.198745,
-    "glng": 113.543873,
-    "hotCity": false
-}, {
-    "cityId": 2342,
-    "cityName": "曼谷",
-    "cityEnName": "bangkok",
-    "cityAbbrCode": "bkk",
-    "provinceId": 103,
-    "status": 1,
-    "regionCityId": 4,
-    "adCode": null,
-    "firstLetter": "B",
-    "name": null,
-    "path": null,
-    "selected": "",
-    "glat": 13.752222,
-    "glng": 100.493889,
-    "hotCity": false
-}, {
-    "cityId": 29,
-    "cityName": "保定",
-    "cityEnName": "baoding",
-    "cityAbbrCode": "bd",
-    "provinceId": 3,
-    "status": 1,
-    "regionCityId": 2,
-    "adCode": "130600",
-    "firstLetter": "B",
-    "name": null,
-    "path": null,
-    "selected": "",
-    "glat": 38.873972,
-    "glng": 115.46463,
-    "hotCity": false
-}, {
-    "cityId": 47,
-    "cityName": "包头",
-    "cityEnName": "baotou",
-    "cityAbbrCode": "bt",
-    "provinceId": 5,
-    "status": 1,
-    "regionCityId": 2,
-    "adCode": "150200",
-    "firstLetter": "B",
-    "name": null,
-    "path": null,
-    "selected": "",
-    "glat": 40.657447,
-    "glng": 109.840385,
-    "hotCity": false
-}, {
-    "cityId": 228,
-    "cityName": "北海",
-    "cityEnName": "beihai",
-    "cityAbbrCode": "bh",
-    "provinceId": 20,
-    "status": 1,
-    "regionCityId": 4,
-    "adCode": "450500",
-    "firstLetter": "B",
-    "name": null,
-    "path": null,
-    "selected": "",
-    "glat": 21.481198,
-    "glng": 109.119951,
-    "hotCity": false
-}, {
-    "cityId": 2,
-    "cityName": "北京",
-    "cityEnName": "beijing",
-    "cityAbbrCode": "bj",
-    "provinceId": 1,
-    "status": 3,
-    "regionCityId": 2,
-    "adCode": "110100",
-    "firstLetter": "B",
-    "name": null,
-    "path": null,
-    "selected": "",
-    "glat": 39.904667,
-    "glng": 116.408198,
-    "hotCity": false
-}, {
-    "cityId": 112,
-    "cityName": "蚌埠",
-    "cityEnName": "bengbu",
-    "cityAbbrCode": "bb",
-    "provinceId": 12,
-    "status": 1,
-    "regionCityId": 5,
-    "adCode": "340300",
-    "firstLetter": "B",
-    "name": null,
-    "path": null,
-    "selected": "",
-    "glat": 32.916282,
-    "glng": 117.38971,
-    "hotCity": false
-}, {
-    "cityId": 60,
-    "cityName": "本溪",
-    "cityEnName": "benxi",
-    "cityAbbrCode": "bx",
-    "provinceId": 6,
-    "status": 1,
-    "regionCityId": 2,
-    "adCode": "210500",
-    "firstLetter": "B",
-    "name": null,
-    "path": null,
-    "selected": "",
-    "glat": 41.294176,
-    "glng": 123.766485,
-    "hotCity": false
-}, {
-    "cityId": 158,
-    "cityName": "滨州",
-    "cityEnName": "binzhou",
-    "cityAbbrCode": "bz1",
-    "provinceId": 15,
-    "status": 1,
-    "regionCityId": 2,
-    "adCode": "371600",
-    "firstLetter": "B",
-    "name": null,
-    "path": null,
-    "selected": "",
-    "glat": 37.381403,
-    "glng": 117.97143,
-    "hotCity": false
-}, {
-    "cityId": 70,
-    "cityName": "长春",
-    "cityEnName": "changchun",
-    "cityAbbrCode": "cc",
-    "provinceId": 7,
-    "status": 1,
-    "regionCityId": 2,
-    "adCode": "220100",
-    "firstLetter": "C",
-    "name": null,
-    "path": null,
-    "selected": "",
-    "glat": 43.886841,
-    "glng": 125.3245,
-    "hotCity": false
-}, {
-    "cityId": 329,
-    "cityName": "昌吉州",
-    "cityEnName": "changjizhou",
-    "cityAbbrCode": "cj",
-    "provinceId": 31,
-    "status": 0,
-    "regionCityId": 17,
-    "adCode": "652300",
-    "firstLetter": "C",
-    "name": null,
-    "path": null,
-    "selected": "",
-    "glat": 44.011183,
-    "glng": 87.308225,
-    "hotCity": false
-}, {
-    "cityId": 344,
-    "cityName": "长沙",
-    "cityEnName": "changsha",
-    "cityAbbrCode": "cs",
-    "provinceId": 18,
-    "status": 3,
-    "regionCityId": 344,
-    "adCode": "430100",
-    "firstLetter": "C",
-    "name": null,
-    "path": null,
-    "selected": "",
-    "glat": 28.228528,
-    "glng": 112.938827,
-    "hotCity": false
-}, {
-    "cityId": 417,
-    "cityName": "常熟",
-    "cityEnName": "changshu",
-    "cityAbbrCode": "cs5",
-    "provinceId": 10,
-    "status": 1,
-    "regionCityId": 5,
-    "adCode": "320500",
-    "firstLetter": "C",
-    "name": null,
-    "path": null,
-    "selected": "",
-    "glat": 31.65355,
-    "glng": 120.75239,
-    "hotCity": false
-}, {
-    "cityId": 93,
-    "cityName": "常州",
-    "cityEnName": "changzhou",
-    "cityAbbrCode": "cz5",
-    "provinceId": 10,
-    "status": 1,
-    "regionCityId": 5,
-    "adCode": "320400",
-    "firstLetter": "C",
-    "name": null,
-    "path": null,
-    "selected": "",
-    "glat": 31.810077,
-    "glng": 119.974454,
-    "hotCity": false
-}, {
-    "cityId": 31,
-    "cityName": "承德",
-    "cityEnName": "chengde",
-    "cityAbbrCode": "cd2",
-    "provinceId": 3,
-    "status": 1,
-    "regionCityId": 2,
-    "adCode": "130800",
-    "firstLetter": "C",
-    "name": null,
-    "path": null,
-    "selected": "",
-    "glat": 40.978744,
-    "glng": 117.943621,
-    "hotCity": false
-}, {
-    "cityId": 8,
-    "cityName": "成都",
-    "cityEnName": "chengdu",
-    "cityAbbrCode": "cd",
-    "provinceId": 23,
-    "status": 3,
-    "regionCityId": 8,
-    "adCode": "510100",
-    "firstLetter": "C",
-    "name": null,
-    "path": null,
-    "selected": "",
-    "glat": 30.658602,
-    "glng": 104.064857,
-    "hotCity": false
-}, {
-    "cityId": 9,
-    "cityName": "重庆",
-    "cityEnName": "chongqing",
-    "cityAbbrCode": "cq",
-    "provinceId": 22,
-    "status": 3,
-    "regionCityId": 9,
-    "adCode": "500100",
-    "firstLetter": "C",
-    "name": null,
-    "path": null,
-    "selected": "",
-    "glat": 29.562686,
-    "glng": 106.551234,
-    "hotCity": false
-}, {
-    "cityId": 19,
-    "cityName": "大连",
-    "cityEnName": "dalian",
-    "cityAbbrCode": "dl",
-    "provinceId": 6,
-    "status": 1,
-    "regionCityId": 2,
-    "adCode": "210200",
-    "firstLetter": "D",
-    "name": null,
-    "path": null,
-    "selected": "",
-    "glat": 38.913779,
-    "glng": 121.614771,
-    "hotCity": false
-}, {
-    "cityId": 84,
-    "cityName": "大庆",
-    "cityEnName": "daqing",
-    "cityAbbrCode": "dq",
-    "provinceId": 8,
-    "status": 1,
-    "regionCityId": 2,
-    "adCode": "230600",
-    "firstLetter": "D",
-    "name": null,
-    "path": null,
-    "selected": "",
-    "glat": 46.59019,
-    "glng": 125.104637,
-    "hotCity": false
-}, {
-    "cityId": 241,
-    "cityName": "德阳",
-    "cityEnName": "deyang",
-    "cityAbbrCode": "dy4",
-    "provinceId": 23,
-    "status": 1,
-    "regionCityId": 8,
-    "adCode": "510600",
-    "firstLetter": "D",
-    "name": null,
-    "path": null,
-    "selected": "",
-    "glat": 31.127537,
-    "glng": 104.397808,
-    "hotCity": false
-}, {
-    "cityId": 156,
-    "cityName": "德州",
-    "cityEnName": "dezhou",
-    "cityAbbrCode": "dz",
-    "provinceId": 15,
-    "status": 1,
-    "regionCityId": 2,
-    "adCode": "371400",
-    "firstLetter": "D",
-    "name": null,
-    "path": null,
-    "selected": "",
-    "glat": 37.45092,
-    "glng": 116.302587,
-    "hotCity": false
-}, {
-    "cityId": 219,
-    "cityName": "东莞",
-    "cityEnName": "dongguan",
-    "cityAbbrCode": "dg",
-    "provinceId": 19,
-    "status": 1,
-    "regionCityId": 4,
-    "adCode": "441900",
-    "firstLetter": "D",
-    "name": null,
-    "path": null,
-    "selected": "",
-    "glat": 23.020536,
-    "glng": 113.751766,
-    "hotCity": false
-}, {
-    "cityId": 147,
-    "cityName": "东营",
-    "cityEnName": "dongying",
-    "cityAbbrCode": "dy",
-    "provinceId": 15,
-    "status": 1,
-    "regionCityId": 2,
-    "adCode": "370500",
-    "firstLetter": "D",
-    "name": null,
-    "path": null,
-    "selected": "",
-    "glat": 37.435382,
-    "glng": 118.675487,
-    "hotCity": false
-}, {
-    "cityId": 208,
-    "cityName": "佛山",
-    "cityEnName": "foshan",
-    "cityAbbrCode": "fs5",
-    "provinceId": 19,
-    "status": 1,
-    "regionCityId": 4,
-    "adCode": "440600",
-    "firstLetter": "F",
-    "name": null,
-    "path": null,
-    "selected": "",
-    "glat": 23.021721,
-    "glng": 113.121316,
-    "hotCity": false
-}, {
-    "cityId": 59,
-    "cityName": "抚顺",
-    "cityEnName": "fushun",
-    "cityAbbrCode": "fs",
-    "provinceId": 6,
-    "status": 1,
-    "regionCityId": 2,
-    "adCode": "210400",
-    "firstLetter": "F",
-    "name": null,
-    "path": null,
-    "selected": "",
-    "glat": 41.880701,
-    "glng": 123.915237,
-    "hotCity": false
-}, {
-    "cityId": 14,
-    "cityName": "福州",
-    "cityEnName": "fuzhou",
-    "cityAbbrCode": "fz",
-    "provinceId": 13,
-    "status": 1,
-    "regionCityId": 7,
-    "adCode": "350100",
-    "firstLetter": "F",
-    "name": null,
-    "path": null,
-    "selected": "",
-    "glat": 26.074286,
-    "glng": 119.296579,
-    "hotCity": false
-}, {
-    "cityId": 140,
-    "cityName": "赣州",
-    "cityEnName": "ganzhou",
-    "cityAbbrCode": "gz2",
-    "provinceId": 14,
-    "status": 1,
-    "regionCityId": 344,
-    "adCode": "360700",
-    "firstLetter": "G",
-    "name": null,
-    "path": null,
-    "selected": "",
-    "glat": 25.829209,
-    "glng": 114.933553,
-    "hotCity": false
-}, {
-    "cityId": 250,
-    "cityName": "广安",
-    "cityEnName": "guangan",
-    "cityAbbrCode": "ga",
-    "provinceId": 23,
-    "status": 1,
-    "regionCityId": 8,
-    "adCode": "511600",
-    "firstLetter": "G",
-    "name": null,
-    "path": null,
-    "selected": "",
-    "glat": 30.45593,
-    "glng": 106.633204,
-    "hotCity": false
-}, {
-    "cityId": 232,
-    "cityName": "玉林",
-    "cityEnName": "guangxiyulin",
-    "cityAbbrCode": "yl",
-    "provinceId": 20,
-    "status": 1,
-    "regionCityId": 4,
-    "adCode": "450900",
-    "firstLetter": "G",
-    "name": null,
-    "path": null,
-    "selected": "",
-    "glat": 22.636379,
-    "glng": 110.164756,
-    "hotCity": false
-}, {
-    "cityId": 4,
-    "cityName": "广州",
-    "cityEnName": "guangzhou",
-    "cityAbbrCode": "gz",
-    "provinceId": 19,
-    "status": 3,
-    "regionCityId": 4,
-    "adCode": "440100",
-    "firstLetter": "G",
-    "name": null,
-    "path": null,
-    "selected": "",
-    "glat": 23.129075,
-    "glng": 113.264423,
-    "hotCity": false
-}, {
-    "cityId": 226,
-    "cityName": "桂林",
-    "cityEnName": "guilin",
-    "cityAbbrCode": "gl",
-    "provinceId": 20,
-    "status": 1,
-    "regionCityId": 4,
-    "adCode": "450300",
-    "firstLetter": "G",
-    "name": null,
-    "path": null,
-    "selected": "",
-    "glat": 25.273567,
-    "glng": 110.290195,
-    "hotCity": false
-}, {
-    "cityId": 258,
-    "cityName": "贵阳",
-    "cityEnName": "guiyang",
-    "cityAbbrCode": "gy1",
-    "provinceId": 24,
-    "status": 1,
-    "regionCityId": 8,
-    "adCode": "520100",
-    "firstLetter": "G",
-    "name": null,
-    "path": null,
-    "selected": "",
-    "glat": 26.578343,
-    "glng": 106.713478,
-    "hotCity": false
-}, {
-    "cityId": 79,
-    "cityName": "哈尔滨",
-    "cityEnName": "haerbin",
-    "cityAbbrCode": "hb",
-    "provinceId": 8,
-    "status": 1,
-    "regionCityId": 2,
-    "adCode": "230100",
-    "firstLetter": "H",
-    "name": null,
-    "path": null,
-    "selected": "",
-    "glat": 45.756967,
-    "glng": 126.642464,
-    "hotCity": false
-}, {
-    "cityId": 23,
-    "cityName": "海口",
-    "cityEnName": "haikou",
-    "cityAbbrCode": "hk",
-    "provinceId": 21,
-    "status": 1,
-    "regionCityId": 4,
-    "adCode": "460100",
-    "firstLetter": "H",
-    "name": null,
-    "path": null,
-    "selected": "",
-    "glat": 20.030765,
-    "glng": 110.328873,
-    "hotCity": false
-}, {
-    "cityId": 27,
-    "cityName": "邯郸",
-    "cityEnName": "handan",
-    "cityAbbrCode": "hd",
-    "provinceId": 3,
-    "status": 1,
-    "regionCityId": 2,
-    "adCode": "130400",
-    "firstLetter": "H",
-    "name": null,
-    "path": null,
-    "selected": "",
-    "glat": 36.612267,
-    "glng": 114.492968,
-    "hotCity": false
-}, {
-    "cityId": 3,
-    "cityName": "杭州",
-    "cityEnName": "hangzhou",
-    "cityAbbrCode": "hz",
-    "provinceId": 11,
-    "status": 3,
-    "regionCityId": 3,
-    "adCode": "330100",
-    "firstLetter": "H",
-    "name": null,
-    "path": null,
-    "selected": "",
-    "glat": 30.273497,
-    "glng": 120.155249,
-    "hotCity": false
-}, {
-    "cityId": 110,
-    "cityName": "合肥",
-    "cityEnName": "hefei",
-    "cityAbbrCode": "hf",
-    "provinceId": 12,
-    "status": 1,
-    "regionCityId": 5,
-    "adCode": "340100",
-    "firstLetter": "H",
-    "name": null,
-    "path": null,
-    "selected": "",
-    "glat": 31.865779,
-    "glng": 117.286983,
-    "hotCity": false
-}, {
-    "cityId": 34,
-    "cityName": "衡水",
-    "cityEnName": "hengshui",
-    "cityAbbrCode": "hs",
-    "provinceId": 3,
-    "status": 1,
-    "regionCityId": 2,
-    "adCode": "131100",
-    "firstLetter": "H",
-    "name": null,
-    "path": null,
-    "selected": "",
-    "glat": 37.735302,
-    "glng": 115.69868,
-    "hotCity": false
-}, {
-    "cityId": 194,
-    "cityName": "衡阳",
-    "cityEnName": "hengyang",
-    "cityAbbrCode": "hy",
-    "provinceId": 18,
-    "status": 1,
-    "regionCityId": 344,
-    "adCode": "430400",
-    "firstLetter": "H",
-    "name": null,
-    "path": null,
-    "selected": "",
-    "glat": 26.893839,
-    "glng": 112.5719,
-    "hotCity": false
-}, {
-    "cityId": 216,
-    "cityName": "河源",
-    "cityEnName": "heyuan",
-    "cityAbbrCode": "hy3",
-    "provinceId": 19,
-    "status": 1,
-    "regionCityId": 4,
-    "adCode": "441600",
-    "firstLetter": "H",
-    "name": null,
-    "path": null,
-    "selected": "",
-    "glat": 23.743538,
-    "glng": 114.700446,
-    "hotCity": false
-}, {
-    "cityId": 96,
-    "cityName": "淮安",
-    "cityEnName": "huaian",
-    "cityAbbrCode": "ha",
-    "provinceId": 10,
-    "status": 1,
-    "regionCityId": 5,
-    "adCode": "320800",
-    "firstLetter": "H",
-    "name": null,
-    "path": null,
-    "selected": "",
-    "glat": 33.611084,
-    "glng": 119.015755,
-    "hotCity": false
-}, {
-    "cityId": 185,
-    "cityName": "黄冈",
-    "cityEnName": "huanggang",
-    "cityAbbrCode": "hg1",
-    "provinceId": 17,
-    "status": 1,
-    "regionCityId": 16,
-    "adCode": "421100",
-    "firstLetter": "H",
-    "name": null,
-    "path": null,
-    "selected": "",
-    "glat": 30.453877,
-    "glng": 114.872253,
-    "hotCity": false
-}, {
-    "cityId": 46,
-    "cityName": "呼和浩特",
-    "cityEnName": "huhehaote",
-    "cityAbbrCode": "hh",
-    "provinceId": 5,
-    "status": 1,
-    "regionCityId": 2,
-    "adCode": "150100",
-    "firstLetter": "H",
-    "name": null,
-    "path": null,
-    "selected": "",
-    "glat": 40.84231,
-    "glng": 111.748847,
-    "hotCity": false
-}, {
-    "cityId": 213,
-    "cityName": "惠州",
-    "cityEnName": "huizhou",
-    "cityAbbrCode": "hz5",
-    "provinceId": 19,
-    "status": 1,
-    "regionCityId": 4,
-    "adCode": "441300",
-    "firstLetter": "H",
-    "name": null,
-    "path": null,
-    "selected": "",
-    "glat": 23.079404,
-    "glng": 114.412599,
-    "hotCity": false
-}, {
-    "cityId": 103,
-    "cityName": "湖州",
-    "cityEnName": "huzhou",
-    "cityAbbrCode": "hz14",
-    "provinceId": 11,
-    "status": 1,
-    "regionCityId": 3,
-    "adCode": "330500",
-    "firstLetter": "H",
-    "name": null,
-    "path": null,
-    "selected": "",
-    "glat": 30.89436,
-    "glng": 120.08681800000001,
-    "hotCity": false
-}, {
-    "cityId": 209,
-    "cityName": "江门",
-    "cityEnName": "jiangmen",
-    "cityAbbrCode": "jm1",
-    "provinceId": 19,
-    "status": 1,
-    "regionCityId": 4,
-    "adCode": "440700",
-    "firstLetter": "J",
-    "name": null,
-    "path": null,
-    "selected": "",
-    "glat": 22.57877,
-    "glng": 113.08187,
-    "hotCity": false
-}, {
-    "cityId": 143,
-    "cityName": "抚州",
-    "cityEnName": "jiangxifuzhou",
-    "cityAbbrCode": "fz4",
-    "provinceId": 14,
-    "status": 1,
-    "regionCityId": 344,
-    "adCode": "361000",
-    "firstLetter": "J",
-    "name": null,
-    "path": null,
-    "selected": "",
-    "glat": 27.992296,
-    "glng": 116.358378,
-    "hotCity": false
-}, {
-    "cityId": 142,
-    "cityName": "宜春",
-    "cityEnName": "jiangxiyichun",
-    "cityAbbrCode": "yc12",
-    "provinceId": 14,
-    "status": 1,
-    "regionCityId": 344,
-    "adCode": "360900",
-    "firstLetter": "J",
-    "name": null,
-    "path": null,
-    "selected": "",
-    "glat": 27.796561,
-    "glng": 114.395108,
-    "hotCity": false
-}, {
-    "cityId": 102,
-    "cityName": "嘉兴",
-    "cityEnName": "jiaxing",
-    "cityAbbrCode": "jx12",
-    "provinceId": 11,
-    "status": 1,
-    "regionCityId": 3,
-    "adCode": "330400",
-    "firstLetter": "J",
-    "name": null,
-    "path": null,
-    "selected": "",
-    "glat": 30.753924,
-    "glng": 120.758543,
-    "hotCity": false
-}, {
-    "cityId": 71,
-    "cityName": "吉林",
-    "cityEnName": "jilin",
-    "cityAbbrCode": "jl",
-    "provinceId": 7,
-    "status": 1,
-    "regionCityId": 2,
-    "adCode": "220200",
-    "firstLetter": "J",
-    "name": null,
-    "path": null,
-    "selected": "",
-    "glat": 43.837883,
-    "glng": 126.549572,
-    "hotCity": false
-}, {
-    "cityId": 22,
-    "cityName": "济南",
-    "cityEnName": "jinan",
-    "cityAbbrCode": "jn",
-    "provinceId": 15,
-    "status": 1,
-    "regionCityId": 2,
-    "adCode": "370100",
-    "firstLetter": "J",
-    "name": null,
-    "path": null,
-    "selected": "",
-    "glat": 36.665282,
-    "glng": 116.994915,
-    "hotCity": false
-}, {
-    "cityId": 184,
-    "cityName": "荆州",
-    "cityEnName": "jingzhou",
-    "cityAbbrCode": "jz12",
-    "provinceId": 17,
-    "status": 1,
-    "regionCityId": 16,
-    "adCode": "421000",
-    "firstLetter": "J",
-    "name": null,
-    "path": null,
-    "selected": "",
-    "glat": 30.335165,
-    "glng": 112.239741,
-    "hotCity": false
-}, {
-    "cityId": 105,
-    "cityName": "金华",
-    "cityEnName": "jinhua",
-    "cityAbbrCode": "jh",
-    "provinceId": 11,
-    "status": 1,
-    "regionCityId": 3,
-    "adCode": "330700",
-    "firstLetter": "J",
-    "name": null,
-    "path": null,
-    "selected": "",
-    "glat": 29.079164,
-    "glng": 119.647422,
-    "hotCity": false
-}, {
-    "cityId": 150,
-    "cityName": "济宁",
-    "cityEnName": "jining",
-    "cityAbbrCode": "jn5",
-    "provinceId": 15,
-    "status": 1,
-    "regionCityId": 2,
-    "adCode": "370800",
-    "firstLetter": "J",
-    "name": null,
-    "path": null,
-    "selected": "",
-    "glat": 35.414865,
-    "glng": 116.587075,
-    "hotCity": false
-}, {
-    "cityId": 182,
-    "cityName": "荆门",
-    "cityEnName": "jinmen",
-    "cityAbbrCode": "jm",
-    "provinceId": 17,
-    "status": 1,
-    "regionCityId": 16,
-    "adCode": "420800",
-    "firstLetter": "J",
-    "name": null,
-    "path": null,
-    "selected": "",
-    "glat": 31.035423,
-    "glng": 112.199265,
-    "hotCity": false
-}, {
-    "cityId": 137,
-    "cityName": "九江",
-    "cityEnName": "jiujiang",
-    "cityAbbrCode": "jj",
-    "provinceId": 14,
-    "status": 1,
-    "regionCityId": 344,
-    "adCode": "360400",
-    "firstLetter": "J",
-    "name": null,
-    "path": null,
-    "selected": "",
-    "glat": 29.705096,
-    "glng": 116.001982,
-    "hotCity": false
-}, {
-    "cityId": 267,
-    "cityName": "昆明",
-    "cityEnName": "kunming",
-    "cityAbbrCode": "km",
-    "provinceId": 25,
-    "status": 3,
-    "regionCityId": 267,
-    "adCode": "530100",
-    "firstLetter": "K",
-    "name": null,
-    "path": null,
-    "selected": "",
-    "glat": 25.037283,
-    "glng": 102.722125,
-    "hotCity": false
-}, {
-    "cityId": 416,
-    "cityName": "昆山",
-    "cityEnName": "kunshan",
-    "cityAbbrCode": "ks",
-    "provinceId": 10,
-    "status": 1,
-    "regionCityId": 5,
-    "adCode": "320500",
-    "firstLetter": "K",
-    "name": null,
-    "path": null,
-    "selected": "",
-    "glat": 31.387641,
-    "glng": 120.982604,
-    "hotCity": false
-}, {
-    "cityId": 33,
-    "cityName": "廊坊",
-    "cityEnName": "langfang",
-    "cityAbbrCode": "lf",
-    "provinceId": 3,
-    "status": 1,
-    "regionCityId": 2,
-    "adCode": "131000",
-    "firstLetter": "L",
-    "name": null,
-    "path": null,
-    "selected": "",
-    "glat": 39.521017,
-    "glng": 116.706651,
-    "hotCity": false
-}, {
-    "cityId": 299,
-    "cityName": "兰州",
-    "cityEnName": "lanzhou",
-    "cityAbbrCode": "lz5",
-    "provinceId": 28,
-    "status": 1,
-    "regionCityId": 17,
-    "adCode": "620100",
-    "firstLetter": "L",
-    "name": null,
-    "path": null,
-    "selected": "",
-    "glat": 36.061255,
-    "glng": 103.834377,
-    "hotCity": false
-}, {
-    "cityId": 2398,
-    "cityName": "拉斯维加斯",
-    "cityEnName": "lasvegas",
-    "cityAbbrCode": "las",
-    "provinceId": 118,
-    "status": 1,
-    "regionCityId": 1,
-    "adCode": null,
-    "firstLetter": "L",
-    "name": null,
-    "path": null,
-    "selected": "",
-    "glat": 36.208704,
-    "glng": -115.188733,
-    "hotCity": false
-}, {
-    "cityId": 246,
-    "cityName": "乐山",
-    "cityEnName": "leshan",
-    "cityAbbrCode": "ls27",
-    "provinceId": 23,
-    "status": 1,
-    "regionCityId": 8,
-    "adCode": "511100",
-    "firstLetter": "L",
-    "name": null,
-    "path": null,
-    "selected": "",
-    "glat": 29.552064,
-    "glng": 103.765623,
-    "hotCity": false
-}, {
-    "cityId": 95,
-    "cityName": "连云港",
-    "cityEnName": "lianyuangang",
-    "cityAbbrCode": "lyg",
-    "provinceId": 10,
-    "status": 1,
-    "regionCityId": 5,
-    "adCode": "320700",
-    "firstLetter": "L",
-    "name": null,
-    "path": null,
-    "selected": "",
-    "glat": 34.600018,
-    "glng": 119.178821,
-    "hotCity": false
-}, {
-    "cityId": 157,
-    "cityName": "聊城",
-    "cityEnName": "liaocheng",
-    "cityAbbrCode": "lc",
-    "provinceId": 15,
-    "status": 1,
-    "regionCityId": 2,
-    "adCode": "371500",
-    "firstLetter": "L",
-    "name": null,
-    "path": null,
-    "selected": "",
-    "glat": 36.456696,
-    "glng": 115.985371,
-    "hotCity": false
-}, {
-    "cityId": 279,
-    "cityName": "丽江",
-    "cityEnName": "lijiang",
-    "cityAbbrCode": "lj",
-    "provinceId": 25,
-    "status": 1,
-    "regionCityId": 267,
-    "adCode": "530700",
-    "firstLetter": "L",
-    "name": null,
-    "path": null,
-    "selected": "",
-    "glat": 26.876774,
-    "glng": 100.230376,
-    "hotCity": false
-}, {
-    "cityId": 155,
-    "cityName": "临沂",
-    "cityEnName": "linyi",
-    "cityAbbrCode": "ly20",
-    "provinceId": 15,
-    "status": 1,
-    "regionCityId": 2,
-    "adCode": "371300",
-    "firstLetter": "L",
-    "name": null,
-    "path": null,
-    "selected": "",
-    "glat": 35.051712,
-    "glng": 118.347708,
-    "hotCity": false
-}, {
-    "cityId": 109,
-    "cityName": "丽水",
-    "cityEnName": "lishui",
-    "cityAbbrCode": "ls",
-    "provinceId": 11,
-    "status": 1,
-    "regionCityId": 11,
-    "adCode": "331100",
-    "firstLetter": "L",
-    "name": null,
-    "path": null,
-    "selected": "",
-    "glat": 28.451695,
-    "glng": 119.916875,
-    "hotCity": false
-}, {
-    "cityId": 225,
-    "cityName": "柳州",
-    "cityEnName": "liuzhou",
-    "cityAbbrCode": "lz",
-    "provinceId": 20,
-    "status": 1,
-    "regionCityId": 4,
-    "adCode": "450200",
-    "firstLetter": "L",
-    "name": null,
-    "path": null,
-    "selected": "",
-    "glat": 24.32551,
-    "glng": 109.415577,
-    "hotCity": false
-}, {
-    "cityId": 162,
-    "cityName": "洛阳",
-    "cityEnName": "luoyang",
-    "cityAbbrCode": "ly3",
-    "provinceId": 16,
-    "status": 1,
-    "regionCityId": 17,
-    "adCode": "410300",
-    "firstLetter": "L",
-    "name": null,
-    "path": null,
-    "selected": "",
-    "glat": 34.618154,
-    "glng": 112.454363,
-    "hotCity": false
-}, {
-    "cityId": 240,
-    "cityName": "泸州",
-    "cityEnName": "luzhou",
-    "cityAbbrCode": "lz19",
-    "provinceId": 23,
-    "status": 1,
-    "regionCityId": 8,
-    "adCode": "510500",
-    "firstLetter": "L",
-    "name": null,
-    "path": null,
-    "selected": "",
-    "glat": 28.87176,
-    "glng": 105.442141,
-    "hotCity": false
-}, {
-    "cityId": 114,
-    "cityName": "马鞍山",
-    "cityEnName": "maanshan",
-    "cityAbbrCode": "mas",
-    "provinceId": 12,
-    "status": 1,
-    "regionCityId": 5,
-    "adCode": "340500",
-    "firstLetter": "M",
-    "name": null,
-    "path": null,
-    "selected": "",
-    "glat": 31.696788,
-    "glng": 118.504657,
-    "hotCity": false
-}, {
-    "cityId": 211,
-    "cityName": "茂名",
-    "cityEnName": "maoming",
-    "cityAbbrCode": "mm",
-    "provinceId": 19,
-    "status": 1,
-    "regionCityId": 4,
-    "adCode": "440900",
-    "firstLetter": "M",
-    "name": null,
-    "path": null,
-    "selected": "",
-    "glat": 21.662956,
-    "glng": 110.925467,
-    "hotCity": false
-}, {
-    "cityId": 242,
-    "cityName": "绵阳",
-    "cityEnName": "mianyang",
-    "cityAbbrCode": "my",
-    "provinceId": 23,
-    "status": 1,
-    "regionCityId": 8,
-    "adCode": "510700",
-    "firstLetter": "M",
-    "name": null,
-    "path": null,
-    "selected": "",
-    "glat": 31.463377,
-    "glng": 104.741274,
-    "hotCity": false
-}, {
-    "cityId": 3150,
-    "cityName": "莫斯科",
-    "cityEnName": "moscow",
-    "cityAbbrCode": "mos",
-    "provinceId": 162,
-    "status": 1,
-    "regionCityId": 1,
-    "adCode": null,
-    "firstLetter": "M",
-    "name": null,
-    "path": null,
-    "selected": "",
-    "glat": 55.735104,
-    "glng": 37.631122,
-    "hotCity": false
-}, {
-    "cityId": 88,
-    "cityName": "牡丹江",
-    "cityEnName": "mudanjiang",
-    "cityAbbrCode": "mdj",
-    "provinceId": 8,
-    "status": 1,
-    "regionCityId": 2,
-    "adCode": "231000",
-    "firstLetter": "M",
-    "name": null,
-    "path": null,
-    "selected": "",
-    "glat": 44.587633,
-    "glng": 129.614665,
-    "hotCity": false
-}, {
-    "cityId": 134,
-    "cityName": "南昌",
-    "cityEnName": "nanchang",
-    "cityAbbrCode": "nc",
-    "provinceId": 14,
-    "status": 1,
-    "regionCityId": 344,
-    "adCode": "360100",
-    "firstLetter": "N",
-    "name": null,
-    "path": null,
-    "selected": "",
-    "glat": 28.676493,
-    "glng": 115.892151,
-    "hotCity": false
-}, {
-    "cityId": 5,
-    "cityName": "南京",
-    "cityEnName": "nanjing",
-    "cityAbbrCode": "nj",
-    "provinceId": 10,
-    "status": 3,
-    "regionCityId": 5,
-    "adCode": "320100",
-    "firstLetter": "N",
-    "name": null,
-    "path": null,
-    "selected": "",
-    "glat": 32.058365,
-    "glng": 118.796468,
-    "hotCity": false
-}, {
-    "cityId": 224,
-    "cityName": "南宁",
-    "cityEnName": "nanning",
-    "cityAbbrCode": "nn",
-    "provinceId": 20,
-    "status": 1,
-    "regionCityId": 4,
-    "adCode": "450100",
-    "firstLetter": "N",
-    "name": null,
-    "path": null,
-    "selected": "",
-    "glat": 22.818012,
-    "glng": 108.365546,
-    "hotCity": false
-}, {
-    "cityId": 94,
-    "cityName": "南通",
-    "cityEnName": "nantong",
-    "cityAbbrCode": "nt",
-    "provinceId": 10,
-    "status": 1,
-    "regionCityId": 5,
-    "adCode": "320600",
-    "firstLetter": "N",
-    "name": null,
-    "path": null,
-    "selected": "",
-    "glat": 31.979997,
-    "glng": 120.894324,
-    "hotCity": false
-}, {
-    "cityId": 245,
-    "cityName": "内江",
-    "cityEnName": "neijiang",
-    "cityAbbrCode": "nj4",
-    "provinceId": 23,
-    "status": 1,
-    "regionCityId": 8,
-    "adCode": "511000",
-    "firstLetter": "N",
-    "name": null,
-    "path": null,
-    "selected": "",
-    "glat": 29.580237,
-    "glng": 105.0583,
-    "hotCity": false
-}, {
-    "cityId": 11,
-    "cityName": "宁波",
-    "cityEnName": "ningbo",
-    "cityAbbrCode": "nb",
-    "provinceId": 11,
-    "status": 3,
-    "regionCityId": 11,
-    "adCode": "330200",
-    "firstLetter": "N",
-    "name": null,
-    "path": null,
-    "selected": "",
-    "glat": 29.868336,
-    "glng": 121.54399,
-    "hotCity": false
-}, {
-    "cityId": 136,
-    "cityName": "萍乡",
-    "cityEnName": "pingxiang",
-    "cityAbbrCode": "px",
-    "provinceId": 14,
-    "status": 1,
-    "regionCityId": 344,
-    "adCode": "360300",
-    "firstLetter": "P",
-    "name": null,
-    "path": null,
-    "selected": "",
-    "glat": 27.622865,
-    "glng": 113.854676,
-    "hotCity": false
-}, {
-    "cityId": 190,
-    "cityName": "潜江",
-    "cityEnName": "qianjiang",
-    "cityAbbrCode": "qj",
-    "provinceId": 17,
-    "status": 1,
-    "regionCityId": 16,
-    "adCode": "429005",
-    "firstLetter": "Q",
-    "name": null,
-    "path": null,
-    "selected": "",
-    "glat": 30.40211,
-    "glng": 112.900078,
-    "hotCity": false
-}, {
-    "cityId": 21,
-    "cityName": "青岛",
-    "cityEnName": "qingdao",
-    "cityAbbrCode": "qd",
-    "provinceId": 15,
-    "status": 1,
-    "regionCityId": 2,
-    "adCode": "370200",
-    "firstLetter": "Q",
-    "name": null,
-    "path": null,
-    "selected": "",
-    "glat": 36.066348,
-    "glng": 120.382771,
-    "hotCity": false
-}, {
-    "cityId": 218,
-    "cityName": "清远",
-    "cityEnName": "qingyuan",
-    "cityAbbrCode": "qy",
-    "provinceId": 19,
-    "status": 1,
-    "regionCityId": 4,
-    "adCode": "441800",
-    "firstLetter": "Q",
-    "name": null,
-    "path": null,
-    "selected": "",
-    "glat": 23.681801,
-    "glng": 113.056042,
-    "hotCity": false
-}, {
-    "cityId": 26,
-    "cityName": "秦皇岛",
-    "cityEnName": "qinhuangdao",
-    "cityAbbrCode": "qhd",
-    "provinceId": 3,
-    "status": 1,
-    "regionCityId": 2,
-    "adCode": "130300",
-    "firstLetter": "Q",
-    "name": null,
-    "path": null,
-    "selected": "",
-    "glat": 39.935377,
-    "glng": 119.600492,
-    "hotCity": false
-}, {
-    "cityId": 129,
-    "cityName": "泉州",
-    "cityEnName": "quanzhou",
-    "cityAbbrCode": "qz3",
-    "provinceId": 13,
-    "status": 1,
-    "regionCityId": 7,
-    "adCode": "350500",
-    "firstLetter": "Q",
-    "name": null,
-    "path": null,
-    "selected": "",
-    "glat": 24.907398,
-    "glng": 118.587114,
-    "hotCity": false
-}, {
-    "cityId": 153,
-    "cityName": "日照",
-    "cityEnName": "rizhao",
-    "cityAbbrCode": "rz",
-    "provinceId": 15,
-    "status": 1,
-    "regionCityId": 2,
-    "adCode": "371100",
-    "firstLetter": "R",
-    "name": null,
-    "path": null,
-    "selected": "",
-    "glat": 35.416377,
-    "glng": 119.526888,
-    "hotCity": false
-}, {
-    "cityId": 3258,
-    "cityName": "俄罗斯",
-    "cityEnName": "russia",
-    "cityAbbrCode": "rus",
-    "provinceId": 162,
-    "status": 1,
-    "regionCityId": 1,
-    "adCode": null,
-    "firstLetter": "R",
-    "name": null,
-    "path": null,
-    "selected": "",
-    "glat": 62.428794,
-    "glng": 105.636719,
-    "hotCity": false
-}, {
-    "cityId": 345,
-    "cityName": "三亚",
-    "cityEnName": "sanya",
-    "cityAbbrCode": "sy13",
-    "provinceId": 21,
-    "status": 1,
-    "regionCityId": 4,
-    "adCode": "460200",
-    "firstLetter": "S",
-    "name": null,
-    "path": null,
-    "selected": "",
-    "glat": 18.252847,
-    "glng": 109.511909,
-    "hotCity": false
-}, {
-    "cityId": 1,
-    "cityName": "上海",
-    "cityEnName": "shanghai",
-    "cityAbbrCode": "sh",
-    "provinceId": 9,
-    "status": 3,
-    "regionCityId": 1,
-    "adCode": "310100",
-    "firstLetter": "S",
-    "name": null,
-    "path": null,
-    "selected": "",
-    "glat": 31.230708,
-    "glng": 121.472916,
-    "hotCity": false
-}, {
-    "cityId": 207,
-    "cityName": "汕头",
-    "cityEnName": "shantou",
-    "cityAbbrCode": "st",
-    "provinceId": 19,
-    "status": 1,
-    "regionCityId": 4,
-    "adCode": "440500",
-    "firstLetter": "S",
-    "name": null,
-    "path": null,
-    "selected": "",
-    "glat": 23.353362,
-    "glng": 116.681943,
-    "hotCity": false
-}, {
-    "cityId": 104,
-    "cityName": "绍兴",
-    "cityEnName": "shaoxing",
-    "cityAbbrCode": "sx",
-    "provinceId": 11,
-    "status": 1,
-    "regionCityId": 3,
-    "adCode": "330600",
-    "firstLetter": "S",
-    "name": null,
-    "path": null,
-    "selected": "",
-    "glat": 29.995762,
-    "glng": 120.586109,
-    "hotCity": false
-}, {
-    "cityId": 18,
-    "cityName": "沈阳",
-    "cityEnName": "shenyang",
-    "cityAbbrCode": "sy",
-    "provinceId": 6,
-    "status": 1,
-    "regionCityId": 2,
-    "adCode": "210100",
-    "firstLetter": "S",
-    "name": null,
-    "path": null,
-    "selected": "",
-    "glat": 41.807321,
-    "glng": 123.43045,
-    "hotCity": false
-}, {
-    "cityId": 7,
-    "cityName": "深圳",
-    "cityEnName": "shenzhen",
-    "cityAbbrCode": "sz",
-    "provinceId": 19,
-    "status": 3,
-    "regionCityId": 7,
-    "adCode": "440300",
-    "firstLetter": "S",
-    "name": null,
-    "path": null,
-    "selected": "",
-    "glat": 22.543447,
-    "glng": 114.057818,
-    "hotCity": false
-}, {
-    "cityId": 24,
-    "cityName": "石家庄",
-    "cityEnName": "shijiazhuang",
-    "cityAbbrCode": "sjz",
-    "provinceId": 3,
-    "status": 1,
-    "regionCityId": 2,
-    "adCode": "130100",
-    "firstLetter": "S",
-    "name": null,
-    "path": null,
-    "selected": "",
-    "glat": 38.04232,
-    "glng": 114.514864,
-    "hotCity": false
-}, {
-    "cityId": 2311,
-    "cityName": "新加坡",
-    "cityEnName": "singapore",
-    "cityAbbrCode": "sg4",
-    "provinceId": 101,
-    "status": 1,
-    "regionCityId": 4,
-    "adCode": null,
-    "firstLetter": "S",
-    "name": null,
-    "path": null,
-    "selected": "",
-    "glat": 1.369041,
-    "glng": 103.798433,
-    "hotCity": false
-}, {
-    "cityId": 244,
-    "cityName": "遂宁",
-    "cityEnName": "suining",
-    "cityAbbrCode": "sn",
-    "provinceId": 23,
-    "status": 1,
-    "regionCityId": 8,
-    "adCode": "510900",
-    "firstLetter": "S",
-    "name": null,
-    "path": null,
-    "selected": "",
-    "glat": 30.52548,
-    "glng": 105.568187,
-    "hotCity": false
-}, {
-    "cityId": 6,
-    "cityName": "苏州",
-    "cityEnName": "suzhou",
-    "cityAbbrCode": "suz",
-    "provinceId": 10,
-    "status": 1,
-    "regionCityId": 5,
-    "adCode": "320500",
-    "firstLetter": "S",
-    "name": null,
-    "path": null,
-    "selected": "",
-    "glat": 31.297779,
-    "glng": 120.585586,
-    "hotCity": false
-}, {
-    "cityId": 151,
-    "cityName": "泰安",
-    "cityEnName": "taian",
-    "cityAbbrCode": "ta",
-    "provinceId": 15,
-    "status": 1,
-    "regionCityId": 2,
-    "adCode": "370900",
-    "firstLetter": "T",
-    "name": null,
-    "path": null,
-    "selected": "",
-    "glat": 36.20002,
-    "glng": 117.088115,
-    "hotCity": false
-}, {
-    "cityId": 2335,
-    "cityName": "台北",
-    "cityEnName": "taipei",
-    "cityAbbrCode": "tpe",
-    "provinceId": 34,
-    "status": 1,
-    "regionCityId": 7,
-    "adCode": "710000",
-    "firstLetter": "T",
-    "name": null,
-    "path": null,
-    "selected": "",
-    "glat": 25.071295,
-    "glng": 121.538315,
-    "hotCity": false
-}, {
-    "cityId": 35,
-    "cityName": "太原",
-    "cityEnName": "taiyuan",
-    "cityAbbrCode": "ty",
-    "provinceId": 4,
-    "status": 1,
-    "regionCityId": 17,
-    "adCode": "140100",
-    "firstLetter": "T",
-    "name": null,
-    "path": null,
-    "selected": "",
-    "glat": 37.870554,
-    "glng": 112.550737,
-    "hotCity": false
-}, {
-    "cityId": 99,
-    "cityName": "泰州",
-    "cityEnName": "taizhou",
-    "cityAbbrCode": "tz",
-    "provinceId": 10,
-    "status": 1,
-    "regionCityId": 5,
-    "adCode": null,
-    "firstLetter": "T",
-    "name": null,
-    "path": null,
-    "selected": "",
-    "glat": 32.456584,
-    "glng": 119.923046,
-    "hotCity": false
-}, {
-    "cityId": 25,
-    "cityName": "唐山",
-    "cityEnName": "tangshan",
-    "cityAbbrCode": "ts",
-    "provinceId": 3,
-    "status": 1,
-    "regionCityId": 2,
-    "adCode": "130200",
-    "firstLetter": "T",
-    "name": null,
-    "path": null,
-    "selected": "",
-    "glat": 39.630476,
-    "glng": 118.180407,
-    "hotCity": false
-}, {
-    "cityId": 10,
-    "cityName": "天津",
-    "cityEnName": "tianjin",
-    "cityAbbrCode": "tj",
-    "provinceId": 2,
-    "status": 3,
-    "regionCityId": 10,
-    "adCode": "120100",
-    "firstLetter": "T",
-    "name": null,
-    "path": null,
-    "selected": "",
-    "glat": 39.120876,
-    "glng": 117.21503,
-    "hotCity": false
-}, {
-    "cityId": 149,
-    "cityName": "潍坊",
-    "cityEnName": "weifang",
-    "cityAbbrCode": "wf",
-    "provinceId": 15,
-    "status": 1,
-    "regionCityId": 2,
-    "adCode": "370700",
-    "firstLetter": "W",
-    "name": null,
-    "path": null,
-    "selected": "",
-    "glat": 36.706824,
-    "glng": 119.161929,
-    "hotCity": false
-}, {
-    "cityId": 152,
-    "cityName": "威海",
-    "cityEnName": "weihai",
-    "cityAbbrCode": "wh6",
-    "provinceId": 15,
-    "status": 1,
-    "regionCityId": 2,
-    "adCode": "371000",
-    "firstLetter": "W",
-    "name": null,
-    "path": null,
-    "selected": "",
-    "glat": 37.513068,
-    "glng": 122.12042,
-    "hotCity": false
-}, {
-    "cityId": 293,
-    "cityName": "渭南",
-    "cityEnName": "weinan",
-    "cityAbbrCode": "wn",
-    "provinceId": 27,
-    "status": 1,
-    "regionCityId": 17,
-    "adCode": "610500",
-    "firstLetter": "W",
-    "name": null,
-    "path": null,
-    "selected": "",
-    "glat": 34.499995,
-    "glng": 109.509786,
-    "hotCity": false
-}, {
-    "cityId": 101,
-    "cityName": "温州",
-    "cityEnName": "wenzhou",
-    "cityAbbrCode": "wz",
-    "provinceId": 11,
-    "status": 1,
-    "regionCityId": 11,
-    "adCode": "330300",
-    "firstLetter": "W",
-    "name": null,
-    "path": null,
-    "selected": "",
-    "glat": 27.994243,
-    "glng": 120.699355,
-    "hotCity": false
-}, {
-    "cityId": 16,
-    "cityName": "武汉",
-    "cityEnName": "wuhan",
-    "cityAbbrCode": "wh",
-    "provinceId": 17,
-    "status": 3,
-    "regionCityId": 16,
-    "adCode": "420100",
-    "firstLetter": "W",
-    "name": null,
-    "path": null,
-    "selected": "",
-    "glat": 30.593088,
-    "glng": 114.305172,
-    "hotCity": false
-}, {
-    "cityId": 111,
-    "cityName": "芜湖",
-    "cityEnName": "wuhu",
-    "cityAbbrCode": "wh5",
-    "provinceId": 12,
-    "status": 1,
-    "regionCityId": 5,
-    "adCode": "340200",
-    "firstLetter": "W",
-    "name": null,
-    "path": null,
-    "selected": "",
-    "glat": 31.33879,
-    "glng": 118.385156,
-    "hotCity": false
-}, {
-    "cityId": 368,
-    "cityName": "乌兰浩特市",
-    "cityEnName": "wulanhaote",
-    "cityAbbrCode": "wlh",
-    "provinceId": 5,
-    "status": 0,
-    "regionCityId": 2,
-    "adCode": "152200",
-    "firstLetter": "W",
-    "name": null,
-    "path": null,
-    "selected": "",
-    "glat": 46.073302,
-    "glng": 122.093004,
-    "hotCity": false
-}, {
-    "cityId": 325,
-    "cityName": "乌鲁木齐",
-    "cityEnName": "wulumuqi",
-    "cityAbbrCode": "wlm",
-    "provinceId": 31,
-    "status": 1,
-    "regionCityId": 17,
-    "adCode": "650100",
-    "firstLetter": "W",
-    "name": null,
-    "path": null,
-    "selected": "",
-    "glat": 43.825666,
-    "glng": 87.617298,
-    "hotCity": false
-}, {
-    "cityId": 13,
-    "cityName": "无锡",
-    "cityEnName": "wuxi",
-    "cityAbbrCode": "wx",
-    "provinceId": 10,
-    "status": 1,
-    "regionCityId": 5,
-    "adCode": null,
-    "firstLetter": "W",
-    "name": null,
-    "path": null,
-    "selected": "",
-    "glat": 31.566148,
-    "glng": 120.303027,
-    "hotCity": false
-}, {
-    "cityId": 227,
-    "cityName": "梧州",
-    "cityEnName": "wuzhou",
-    "cityAbbrCode": "wz2",
-    "provinceId": 20,
-    "status": 1,
-    "regionCityId": 4,
-    "adCode": "450400",
-    "firstLetter": "W",
-    "name": null,
-    "path": null,
-    "selected": "",
-    "glat": 23.47691,
-    "glng": 111.27917,
-    "hotCity": false
-}, {
-    "cityId": 15,
-    "cityName": "厦门",
-    "cityEnName": "xiamen",
-    "cityAbbrCode": "xm",
-    "provinceId": 13,
-    "status": 1,
-    "regionCityId": 7,
-    "adCode": "350200",
-    "firstLetter": "X",
-    "name": null,
-    "path": null,
-    "selected": "",
-    "glat": 24.479615,
-    "glng": 118.08939,
-    "hotCity": false
-}, {
-    "cityId": 17,
-    "cityName": "西安",
-    "cityEnName": "xian",
-    "cityAbbrCode": "xa",
-    "provinceId": 27,
-    "status": 3,
-    "regionCityId": 17,
-    "adCode": "610100",
-    "firstLetter": "X",
-    "name": null,
-    "path": null,
-    "selected": "",
-    "glat": 34.26488,
-    "glng": 108.944265,
-    "hotCity": false
-}, {
-    "cityId": 341,
-    "cityName": "香港",
-    "cityEnName": "hongkong",
-    "cityAbbrCode": "hk3",
-    "provinceId": 32,
-    "status": 1,
-    "regionCityId": 7,
-    "adCode": null,
-    "firstLetter": "X",
-    "name": null,
-    "path": null,
-    "selected": "",
-    "glat": 22.282346,
-    "glng": 114.172754,
-    "hotCity": false
-}, {
-    "cityId": 292,
-    "cityName": "咸阳",
-    "cityEnName": "xianyang",
-    "cityAbbrCode": "xy21",
-    "provinceId": 27,
-    "status": 1,
-    "regionCityId": 17,
-    "adCode": "610400",
-    "firstLetter": "X",
-    "name": null,
-    "path": null,
-    "selected": "",
-    "glat": 34.329434,
-    "glng": 108.709193,
-    "hotCity": false
-}, {
-    "cityId": 92,
-    "cityName": "徐州",
-    "cityEnName": "xuzhou",
-    "cityAbbrCode": "xz5",
-    "provinceId": 10,
-    "status": 1,
-    "regionCityId": 5,
-    "adCode": "320300",
-    "firstLetter": "X",
-    "name": null,
-    "path": null,
-    "selected": "",
-    "glat": 34.259827,
-    "glng": 117.19108,
-    "hotCity": false
-}, {
-    "cityId": 97,
-    "cityName": "盐城",
-    "cityEnName": "yancheng",
-    "cityAbbrCode": "yc8",
-    "provinceId": 10,
-    "status": 1,
-    "regionCityId": 5,
-    "adCode": "320900",
-    "firstLetter": "Y",
-    "name": null,
-    "path": null,
-    "selected": "",
-    "glat": 33.347416,
-    "glng": 120.163544,
-    "hotCity": false
-}, {
-    "cityId": 12,
-    "cityName": "扬州",
-    "cityEnName": "yangzhou",
-    "cityAbbrCode": "yz",
-    "provinceId": 10,
-    "status": 1,
-    "regionCityId": 5,
-    "adCode": "321000",
-    "firstLetter": "Y",
-    "name": null,
-    "path": null,
-    "selected": "",
-    "glat": 32.394237,
-    "glng": 119.412854,
-    "hotCity": false
-}, {
-    "cityId": 148,
-    "cityName": "烟台",
-    "cityEnName": "yantai",
-    "cityAbbrCode": "yt6",
-    "provinceId": 15,
-    "status": 1,
-    "regionCityId": 2,
-    "adCode": "370600",
-    "firstLetter": "Y",
-    "name": null,
-    "path": null,
-    "selected": "",
-    "glat": 37.539297,
-    "glng": 121.391382,
-    "hotCity": false
-}, {
-    "cityId": 249,
-    "cityName": "宜宾",
-    "cityEnName": "yibin",
-    "cityAbbrCode": "yb1",
-    "provinceId": 23,
-    "status": 1,
-    "regionCityId": 8,
-    "adCode": "511500",
-    "firstLetter": "Y",
-    "name": null,
-    "path": null,
-    "selected": "",
-    "glat": 28.751853,
-    "glng": 104.643418,
-    "hotCity": false
-}, {
-    "cityId": 179,
-    "cityName": "宜昌",
-    "cityEnName": "yichang",
-    "cityAbbrCode": "yc16",
-    "provinceId": 17,
-    "status": 1,
-    "regionCityId": 16,
-    "adCode": "420500",
-    "firstLetter": "Y",
-    "name": null,
-    "path": null,
-    "selected": "",
-    "glat": 30.691967,
-    "glng": 111.286471,
-    "hotCity": false
-}, {
-    "cityId": 321,
-    "cityName": "银川",
-    "cityEnName": "yinchuan",
-    "cityAbbrCode": "yc20",
-    "provinceId": 30,
-    "status": 1,
-    "regionCityId": 17,
-    "adCode": "640100",
-    "firstLetter": "Y",
-    "name": null,
-    "path": null,
-    "selected": "",
-    "glat": 38.487194,
-    "glng": 106.230909,
-    "hotCity": false
-}, {
-    "cityId": 63,
-    "cityName": "营口",
-    "cityEnName": "yingkou",
-    "cityAbbrCode": "yk",
-    "provinceId": 6,
-    "status": 1,
-    "regionCityId": 2,
-    "adCode": "210800",
-    "firstLetter": "Y",
-    "name": null,
-    "path": null,
-    "selected": "",
-    "glat": 40.666989,
-    "glng": 122.235286,
-    "hotCity": false
-}, {
-    "cityId": 385,
-    "cityName": "义乌",
-    "cityEnName": "yiwu",
-    "cityAbbrCode": "yw",
-    "provinceId": 11,
-    "status": 1,
-    "regionCityId": 3,
-    "adCode": "330700",
-    "firstLetter": "Y",
-    "name": null,
-    "path": null,
-    "selected": "",
-    "glat": 29.306841,
-    "glng": 120.075058,
-    "hotCity": false
-}, {
-    "cityId": 296,
-    "cityName": "榆林",
-    "cityEnName": "yulin",
-    "cityAbbrCode": "yl4",
-    "provinceId": 27,
-    "status": 1,
-    "regionCityId": 17,
-    "adCode": "610800",
-    "firstLetter": "Y",
-    "name": null,
-    "path": null,
-    "selected": "",
-    "glat": 38.285526,
-    "glng": 109.735209,
-    "hotCity": false
-}, {
-    "cityId": 146,
-    "cityName": "枣庄",
-    "cityEnName": "zaozhuang",
-    "cityAbbrCode": "zz9",
-    "provinceId": 15,
-    "status": 1,
-    "regionCityId": 2,
-    "adCode": "370400",
-    "firstLetter": "Z",
-    "name": null,
-    "path": null,
-    "selected": "",
-    "glat": 34.8105,
-    "glng": 117.323725,
-    "hotCity": false
-}, {
-    "cityId": 30,
-    "cityName": "张家口",
-    "cityEnName": "zhangjiakou",
-    "cityAbbrCode": "zjk",
-    "provinceId": 3,
-    "status": 1,
-    "regionCityId": 2,
-    "adCode": "130700",
-    "firstLetter": "Z",
-    "name": null,
-    "path": null,
-    "selected": "",
-    "glat": 40.767576,
-    "glng": 114.885951,
-    "hotCity": false
-}, {
-    "cityId": 1118,
-    "cityName": "章丘",
-    "cityEnName": "zhangqiu",
-    "cityAbbrCode": "zq3",
-    "provinceId": 15,
-    "status": 1,
-    "regionCityId": 2,
-    "adCode": "370100",
-    "firstLetter": "Z",
-    "name": null,
-    "path": null,
-    "selected": "",
-    "glat": 36.7142,
-    "glng": 117.53434,
-    "hotCity": false
-}, {
-    "cityId": 210,
-    "cityName": "湛江",
-    "cityEnName": "zhanjiang",
-    "cityAbbrCode": "zj3",
-    "provinceId": 19,
-    "status": 1,
-    "regionCityId": 4,
-    "adCode": "440800",
-    "firstLetter": "Z",
-    "name": null,
-    "path": null,
-    "selected": "",
-    "glat": 21.270764,
-    "glng": 110.359255,
-    "hotCity": false
-}, {
-    "cityId": 212,
-    "cityName": "肇庆",
-    "cityEnName": "zhaoqing",
-    "cityAbbrCode": "zq",
-    "provinceId": 19,
-    "status": 1,
-    "regionCityId": 4,
-    "adCode": "441200",
-    "firstLetter": "Z",
-    "name": null,
-    "path": null,
-    "selected": "",
-    "glat": 23.047596,
-    "glng": 112.465166,
-    "hotCity": false
-}, {
-    "cityId": 108,
-    "cityName": "台州",
-    "cityEnName": "zhejiangtaizhou",
-    "cityAbbrCode": "tz2",
-    "provinceId": 11,
-    "status": 1,
-    "regionCityId": 11,
-    "adCode": "331000",
-    "firstLetter": "Z",
-    "name": null,
-    "path": null,
-    "selected": "",
-    "glat": 28.828501,
-    "glng": 121.175834,
-    "hotCity": false
-}, {
-    "cityId": 160,
-    "cityName": "郑州",
-    "cityEnName": "zhengzhou",
-    "cityAbbrCode": "zz11",
-    "provinceId": 16,
-    "status": 3,
-    "regionCityId": 160,
-    "adCode": "410100",
-    "firstLetter": "Z",
-    "name": null,
-    "path": null,
-    "selected": "",
-    "glat": 34.747285,
-    "glng": 113.624863,
-    "hotCity": false
-}, {
-    "cityId": 98,
-    "cityName": "镇江",
-    "cityEnName": "zhenjiang",
-    "cityAbbrCode": "zj",
-    "provinceId": 10,
-    "status": 1,
-    "regionCityId": 5,
-    "adCode": "321100",
-    "firstLetter": "Z",
-    "name": null,
-    "path": null,
-    "selected": "",
-    "glat": 32.199789,
-    "glng": 119.456928,
-    "hotCity": false
-}, {
-    "cityId": 220,
-    "cityName": "中山",
-    "cityEnName": "zhongshan",
-    "cityAbbrCode": "zs6",
-    "provinceId": 19,
-    "status": 1,
-    "regionCityId": 4,
-    "adCode": "442000",
-    "firstLetter": "Z",
-    "name": null,
-    "path": null,
-    "selected": "",
-    "glat": 22.516481,
-    "glng": 113.392756,
-    "hotCity": false
-}, {
-    "cityId": 107,
-    "cityName": "舟山",
-    "cityEnName": "zhoushan",
-    "cityAbbrCode": "zs",
-    "provinceId": 11,
-    "status": 1,
-    "regionCityId": 11,
-    "adCode": "330900",
-    "firstLetter": "Z",
-    "name": null,
-    "path": null,
-    "selected": "",
-    "glat": 29.985444,
-    "glng": 122.206596,
-    "hotCity": false
-}, {
-    "cityId": 206,
-    "cityName": "珠海",
-    "cityEnName": "zhuhai",
-    "cityAbbrCode": "zh",
-    "provinceId": 19,
-    "status": 1,
-    "regionCityId": 4,
-    "adCode": "440400",
-    "firstLetter": "Z",
-    "name": null,
-    "path": null,
-    "selected": "",
-    "glat": 22.27094,
-    "glng": 113.577261,
-    "hotCity": false
-}, {
-    "cityId": 192,
-    "cityName": "株洲",
-    "cityEnName": "zhuzhou",
-    "cityAbbrCode": "zz2",
-    "provinceId": 18,
-    "status": 1,
-    "regionCityId": 344,
-    "adCode": "430200",
-    "firstLetter": "Z",
-    "name": null,
-    "path": null,
-    "selected": "",
-    "glat": 27.827892,
-    "glng": 113.133891,
-    "hotCity": false
-}, {
-    "cityId": 145,
-    "cityName": "淄博",
-    "cityEnName": "zibo",
-    "cityAbbrCode": "zb",
-    "provinceId": 15,
-    "status": 1,
-    "regionCityId": 2,
-    "adCode": "370300",
-    "firstLetter": "Z",
-    "name": null,
-    "path": null,
-    "selected": "",
-    "glat": 36.813497,
-    "glng": 118.055007,
-    "hotCity": false
-}, {
-    "cityId": 238,
-    "cityName": "自贡",
-    "cityEnName": "zigong",
-    "cityAbbrCode": "zg",
-    "provinceId": 23,
-    "status": 1,
-    "regionCityId": 8,
-    "adCode": "510300",
-    "firstLetter": "Z",
-    "name": null,
-    "path": null,
-    "selected": "",
-    "glat": 29.338978,
-    "glng": 104.778564,
-    "hotCity": false
-}, {
-    "cityId": 260,
-    "cityName": "遵义",
-    "cityEnName": "zunyi",
-    "cityAbbrCode": "zy5",
-    "provinceId": 24,
-    "status": 1,
-    "regionCityId": 8,
-    "adCode": "520300",
-    "firstLetter": "Z",
-    "name": null,
-    "path": null,
-    "selected": "",
-    "glat": 27.725654,
-    "glng": 106.927389,
-    "hotCity": false
-}]
+    </div>
+<script type="text/javascript">
+    function isSelected(value) {
+        var city = document.getElementById("city");
+        var cityId = city.options[city.selectedIndex].value;
+        window.location.href="http://localhost:8080/ticketking/home/parent?cityId="+cityId;
+       /* if (cityId == 1) {
+            $("#city").val(1);
+        }else if(cityId == 2){
+            $("#city").val(2);
+        }*/
+    }
+    function GetQueryString(name){
+        var reg = new RegExp("(^|&amp;)"+ name +"=([^&amp;]*)(&amp;|$)");
+        var r = window.location.search.substr(1).match(reg);//search,查询？后面的参数，并匹配正则
+        if(r!=null){
+            return unescape(r[2]);
+        }
+        return null;
+    }
+    var cityId = GetQueryString("cityId");
+    function shaixuan() {
+        window.location.href="http://localhost:8080/ticketking/page/all.html?cityId="+cityId+"&pricemin="+1+"&name="+"1";
+    }
+    function ticketByPricemin() {
+        window.location.href="http://localhost:8080/ticketking/page/all.html?cityId="+cityId+"&pricemin="+100+"&name="+"1";
+    }
+    function ticketByParent() {
+        window.location.href="http://localhost:8080/ticketking/page/all.html?cityId="+cityId+"&pricemin="+1+"&name="+"1";
+    }
+    function $(id){
+        return document.getElementById(id);
+    }
+    $("btn").onclick = function(){  //按钮点击时，执行函数（事件源 . 事件 = 事件处理程序）
+        /*alert($("#txt").val());  //弹出输入的信息*/
+        var tname = $("#txt").val();
+        if(tname == "找演出、明星、场馆"){  //判断输入信息
+            alert("抱歉 , 输入错误");
+        }else{
+            window.location.href="http://localhost:8080/ticketking/page/all.html?cityId="+cityId+"&pricemin="+1+"&name="+tname;
+        }
+    }
+    new Vue({
+        el:"#loginList",
+        data:{
+            userList:null
+        },
+        mounted() {
+            axios.get("http://localhost:8080/ticketking/home/login")
+                .then(response => {this.userList = response.data});
+        }
+    });
+</script>
+<script>
 </script>
 <script>(function () {
     var bp = document.createElement('script');
@@ -4251,11 +1144,11 @@ var activeCities = [{
     s.parentNode.insertBefore(bp, s);
 })();</script>
 <!--[if lte IE 7]>
-<script src="../static/js/json3.6787b55e.js"></script><![endif]-->
+<script src="js/json3.6787b55e.js"></script><![endif]-->
 <!--[if lte IE 8]>
-<script src="../static/js/es5-shim.c3b1fc73.js"></script>
-<script src="../static/js/es5-sham.095d9e53.js"></script><![endif]-->
-<script src="../static/js/common.7ec1644e.js"></script><!-- 登录用户--><!-- 错误监控-->
+<script src="js/es5-shim.c3b1fc73.js"></script>
+<script src="js/es5-sham.095d9e53.js"></script><![endif]-->
+<script src="js/common.7ec1644e.js"></script><!-- 登录用户--><!-- 错误监控-->
 <script>Raven.config('https://8f0cab137a7b47769dec9f0dd89f5885@sentry.piaoniu.com/3y', {
     whitelistUrls: [/www\.piaoniu\.com/],
     ignoreErrors: [/MyAppGet/, '$UCBrowser']
@@ -4300,9 +1193,10 @@ var activeCities = [{
     }
 })()
 </script><!--引用自己服务器上easemob.js文件的路径-->
-<script src="../static/js/easemob.f3ced40f.js" async="async"></script>
-<script src="../static/js/slim-header.38b1caeb.js"></script>
-<script src="../static/js/bottom.0e38a26e.js"></script>
-<script src="../static/js/home.1cdacdb5.js"></script>
+<script src="js/easemob.f3ced40f.js" async="async"></script>
+<script src="js/slim-header.38b1caeb.js"></script>
+<script src="js/bottom.0e38a26e.js"></script>
+<script src="js/home.1cdacdb5.js"></script>
+</tbody>
 </body>
 </html>

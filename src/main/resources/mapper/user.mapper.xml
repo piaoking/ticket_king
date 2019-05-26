@@ -12,6 +12,7 @@
         <result property="userPs" column="user_ps" javaType="java.lang.String"/>
         <result property="userCoupon" column="user_coupon" javaType="java.lang.String"/>
         <result property="userImage" column="user_image" javaType="java.lang.String"/>
+        <result property="userFrozen" column="user_frozen" javaType="java.lang.Long"/>
     </resultMap>
         <insert id="register">
             insert into tb_user(user_tel, user_password)
@@ -33,6 +34,21 @@
     </update>
 
 
+<select id="queryBalanceById" resultMap="baseResult">
+        select user_balance from tb_user where user_id=#{userId};
+    </select>
+
+<update id="frozenMoney">
+        update tb_user set user_balance = 0, user_frozen = #{userFrozen} where user_id=#{userId};
+    </update>
+
+<update id="kouFrozenMoney">
+        update tb_user set user_frozen = #{userFrozen}  where user_id=#{userId};
+    </update>
+
+<select id="queryUserById" resultMap="baseResult">
+        select user_id,user_name,user_tel,user_image from tb_user where user_id = #{userId};
+    </select>
 
 
 </mapper>

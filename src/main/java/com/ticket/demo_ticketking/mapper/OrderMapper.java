@@ -9,4 +9,7 @@ import org.springframework.stereotype.Component;
 @Component
 public interface OrderMapper {
     TbOrder queryOrder(@Param("userId") long userId);
+    TbOrder queryOrderById(@Param("orderId") Integer orderId);
+
+    void updateOrderStatus(@Param("orderNum") String orderNum);
 }

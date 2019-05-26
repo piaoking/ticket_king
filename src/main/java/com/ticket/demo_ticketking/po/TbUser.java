@@ -12,6 +12,15 @@ public class TbUser {
   private String userCoupon;
   private String userImage;
   private long userLv;
+  private Long userFrozen;
+
+  public Long getUserFrozen() {
+    return userFrozen;
+  }
+
+  public void setUserFrozen(Long userFrozen) {
+    this.userFrozen = userFrozen;
+  }
 
   @Override
   public String toString() {

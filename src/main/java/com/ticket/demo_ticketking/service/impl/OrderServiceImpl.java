@@ -15,4 +15,10 @@ public class OrderServiceImpl implements OrderService {
         TbOrder tbOrder = orderMapper.queryOrder(userId);
         return tbOrder;
     }
+
+    @Override
+    public TbOrder queryOrderById(Integer orderId) throws Exception {
+        TbOrder tbOrder = orderMapper.queryOrderById(orderId);
+        return tbOrder;
+    }
 }
