@@ -4,6 +4,7 @@ package com.ticket.demo_ticketking.shiro;
 
 import com.ticket.demo_ticketking.mapper.UserMapper;
 import com.ticket.demo_ticketking.po.TbUser;
+import com.ticket.demo_ticketking.utils.MD5Utils;
 import org.apache.shiro.SecurityUtils;
 import org.apache.shiro.authc.*;
 import org.apache.shiro.authz.AuthorizationInfo;
@@ -46,7 +47,13 @@ public class MyRealm extends AuthorizingRealm {
         if (tbUsers == null) {
             throw new UnknownAccountException();
         }
-
+        if (!password.equals("psw")&& !password.equals("")) {
+            String passwordSalt = "qianfeng";
+            String md5Password = MD5Utils.md5(password,passwordSalt);
+            if(!tbUsers.getUserPassword().equals(md5Password)){
+                throw new AuthenticationException();
+            }
+        }
 
         SecurityUtils.getSubject().getSession().setAttribute("user",tbUsers);
         return new SimpleAuthenticationInfo(username,password,"myrealm");

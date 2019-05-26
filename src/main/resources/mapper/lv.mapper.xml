@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.ticket.demo_ticketking.mapper.LvMapper">
+    <resultMap id="lvResult" type="com.ticket.demo_ticketking.po.TbLv">
+        <id property="lvId" column="lv_id" javaType="java.lang.Long"/>
+        <result property="priceId" column="price_id" javaType="java.lang.Long"/>
+        <result property="price" column="price" javaType="java.lang.Long"/>
+        <result property="ticketLv" column="ticket_lv" javaType="java.lang.String"/>
+    </resultMap>
+
+    <select id="queryLv" resultMap="lvResult">
+        select  * from tb_lv
+    </select>
+    <insert id="savaLv">
+        insert into tb_lv(price_id,price,ticket_lv)
+            values(#{priceId},#{price},#{ticketLv});
+    </insert>
+
+    <select id="queryLvById" resultMap="lvResult">
+         select  * from tb_lv where lv_id=#{lvId};
+    </select>
+
+    <update id="updateLv">
+        update tb_lv set price_id=#{priceId},price=#{price},ticket_lv=#{ticketLv}
+        where lv_id=#{lvId};
+    </update>
+
+</mapper>

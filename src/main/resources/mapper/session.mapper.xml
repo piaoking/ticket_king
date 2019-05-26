@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.ticket.demo_ticketking.mapper.SessionMapper">
+    <resultMap id="sessionResult" type="com.ticket.demo_ticketking.po.TbSession">
+        <id property="sessionId" column="session_id" javaType="java.lang.Long"/>
+        <result property="ticketId" column="ticket_id" javaType="java.lang.Long"/>
+        <result property="sessionTime" column="session_time" javaType="java.lang.String"/>
+        <result property="sessionChoice" column="session_choice" javaType="java.lang.String"/>
+
+    </resultMap>
+
+    <select id="querySession" resultMap="sessionResult">
+        select * from tb_session
+    </select>
+
+    <insert id="saveSession">
+        insert into tb_session(ticket_id,session_time,session_choice)
+            values(#{ticketId},#{sessionTime},#{sessionChoice});
+    </insert>
+
+    <select id="querySessionById" resultMap="sessionResult">
+        select * from tb_session where session_id=#{sessionId};
+    </select>
+
+    <update id="updateSession">
+        update tb_session set ticket_id=#{ticketId},session_time=#{sessionTime},session_choice=#{sessionChoice}
+        where session_id=#{sessionId};
+    </update>
+
+</mapper>

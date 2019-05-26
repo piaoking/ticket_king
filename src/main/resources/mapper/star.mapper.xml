@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.ticket.demo_ticketking.mapper.StarMapper">
+    <resultMap id="starResult" type="com.ticket.demo_ticketking.po.TbStar">
+        <id property="starId" column="star_id" javaType="java.lang.Long"/>
+        <result property="starName" column="star_name" javaType="java.lang.String"/>
+        <result property="starIntro" column="star_intro" javaType="java.lang.String"/>
+        <result property="starImage" column="star_image" javaType="java.lang.String"/>
+        <result property="starEng" column="star_eng" javaType="java.lang.String"/>
+        <result property="starAdd" column="star_add" javaType="java.lang.String"/>
+        <result property="starBir" column="star_bir" javaType="java.lang.String"/>
+        <result property="starWeigtht" column="star_weigtht" javaType="java.lang.String"/>
+        <result property="starStar" column="star_star" javaType="java.lang.String"/>
+        <result property="starJob" column="star_job" javaType="java.lang.String"/>
+
+    </resultMap>
+        <select id="queryStar" resultMap="starResult">
+            select * from tb_star
+        </select>
+
+    <insert id="saveStar">
+         insert into tb_star(star_name,star_intro,star_image,star_eng,star_add,star_bir,star_weigtht,star_star,star_job)
+                 values(#{starName},#{starIntro},#{starImage},#{starEng},#{starAdd},#{starBir},#{starWeigtht},#{starStar},#{starJob});
+  </insert>
+
+    <select id="queryStarId" resultMap="starResult">
+        select * from tb_star where star_id=#{starId}
+    </select>
+
+    <update id="updatequery">
+    update tb_star set star_name=#{starName},star_intro=#{starIntro},star_image=#{starImage},star_eng=#{starEng},star_add=#{starAdd},star_bir=#{starBir},star_weigtht=#{starWeigtht},star_star=#{starStar},
+    star_job=#{starJob}
+    where star_id=#{starId};
+    </update>
+
+</mapper>

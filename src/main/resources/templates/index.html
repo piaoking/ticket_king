@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="zh-CN" xmlns:th="http://www.thymeleaf.org">
+<base th:href="${#request.getContextPath()}+'/'">
+
+	<head>
+		<meta charset="utf-8" />
+		<title>首页</title>
+        <style type="text/css">
+            .index{
+                position: relative;
+                top: -300px;
+                font-size:18px;
+                width: 1070px;
+                text-overflow: ellipsis;
+                /*height:300px;*/
+
+            }
+            .index a{
+                text-decoration:none;
+                color: #4a4a4a;
+            }
+
+            table{
+                margin: 0px;
+                padding: 0px;
+                width: 30%;
+                border-collapse: collapse;
+                table-layout: fixed;  /*不添加此样式，会全部显示    */
+            }
+            table td{
+
+                /* text-overflow: ellipsis; */ /* 加上，显示省略号*/
+                white-space: nowrap;
+                overflow: hidden;
+            }
+            table td:hover { /* 鼠标滑过  显示隐藏的内容  伴有横向的滚动条 */
+                overflow:auto;
+                text-overflow:clip;
+            }
+            .h1{
+                position: relative;
+                left: 20px;
+            }
+            .h1 a{
+                text-decoration:none;
+                color: #4a4a4a;
+            }
+            .active a{
+                text-decoration:none;
+                color: floralwhite;
+            }
+			.left{
+				height:800px;
+
+			}
+            .img{
+                width: 30px;
+                height:30px;
+
+            }
+			.fenye{
+				position: relative;
+				top: 150px;
+				left: 300px;
+				font-size:18px;
+			}
+			.fenye ul li{
+				top: 100px;
+				list-style: none;
+				float:left;
+			}
+			.fenye a{
+				text-decoration:none;
+				color: #4a4a4a;
+			}
+
+        </style>
+		<link rel="stylesheet" href="css/page.css" />
+		<script type="text/javascript" src="js/jquery.min.js" ></script>
+		<script type="text/javascript" src="js/index.js" ></script>
+
+		<script src="https://cdn.jsdelivr.net/npm/vue"></script>
+        <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+
+	</head>
+
+	<body>
+	<div id="users">
+		<div  class="left">
+			<div class="bigTitle">商圈后台管理系统</div>
+			<div class="lines">
+				<div onclick="pageClick(this)" class="active"><img src="img/icon-1.png" /><a href="http://localhost:8081/qfclothes/user/index">用户表</a></div>
+				<div onclick="pageClick(this)" class="active"><img src="img/icon-1.png" /><a href="http://localhost:8081/qfclothes//king/queryAllStation">商品表</a></div>
+				<div onclick="pageClick(this)" class="active"><img src="img/icon-1.png" /><a href="http://localhost:8081/qfclothes/star/tar">明星表</a></div>
+				<div onclick="pageClick(this)" class="active"><img src="img/icon-1.png" /><a href="http://localhost:8081/qfclothes/son/so">商品子表</a></div>
+				<div onclick="pageClick(this)" class="active"><img src="img/icon-1.png" /><a href="http://localhost:8081/qfclothes/show/sho">城市表</a></div>
+				<div onclick="pageClick(this)" class="active"><img src="img/icon-1.png" /><a href="http://localhost:8081/qfclothes/see/session">场次表</a></div>
+				<div onclick="pageClick(this)" class="active"><img src="img/icon-1.png" /><a href="http://localhost:8081/qfclothes/price/pr">中间表</a></div>
+				<div onclick="pageClick(this)" class="active"><img src="img/icon-1.png" /><a href="http://localhost:8081/qfclothes/place/pla">场地表</a></div>
+				<div onclick="pageClick(this)" class="active"><img src="img/icon-1.png" /><a href="http://localhost:8081/qfclothes/parent/par">商品分类表</a></div>
+				<div onclick="pageClick(this)" class="active"><img src="img/icon-1.png" /><a href="http://localhost:8081/qfclothes/order/to">订单表</a></div>
+				<div onclick="pageClick(this)" class="active"><img src="img/icon-1.png" /><a href="http://localhost:8081/qfclothes/lv/ll">票档表</a></div>
+				<div onclick="pageClick(this)" class="active"><img src="img/icon-1.png" /><a href="http://localhost:8081/qfclothes/intro/in">商品简介表</a></div>
+				<div onclick="pageClick(this)" class="active"><img src="img/icon-1.png" /><a href="http://localhost:8081/qfclothes/focus/fo">关注表</a></div>
+				<div onclick="pageClick(this)" class="active"><img src="img/icon-1.png" /><a href="http://localhost:8081/qfclothes/comment/com">评论表</a></div>
+				<div onclick="pageClick(this)" class="active"><img src="img/icon-1.png" /><a href="http://localhost:8081/qfclothes/city/po">城市表</a></div>
+				<div onclick="pageClick(this)" class="active"><img src="img/icon-1.png" /><a href="http://localhost:8081/qfclothes/save/indexs">用户地址表</a></div>
+
+
+			</div>
+		</div>
+		<div class="top">
+			<div class="leftTiyle" id="flTitle">用户表管理</div>
+			<div class="thisUser">
+
+				<h1 class="h1"><a href="http://localhost:8081/qfclothes/page/usesAdd.html">添加商品</a> </h1>
+			</div>
+		</div>
+		<div class="content">
+
+			<table class="table  table-bordered  index " cellpadding="0" border="1" >
+				<tr>
+					<th>编号</th>
+					<th>用户姓名</th>
+					<th>手机号</th>
+					<th>密码</th>
+					<th>余额</th>
+					<th>个性签名</th>
+					<th>优惠卷</th>
+					<th>用户头像</th>
+					<th>星级</th>
+					<th>操作</th>
+				</tr>
+				<tbody th:each="user:${pageInfo.list}">
+					<tr>
+						<td th:text="${user.userId}"></td>
+						<td th:text="${user.userName}"></td>
+						<td th:text="${user.userTel}"></td>
+						<td th:text="${user.userPassword}"></td>
+						<td th:text="${user.userBalance}"></td>
+						<td th:text="${user.userPs}"></td>
+						<td th:text="${user.userCoupon}"></td>
+                        <td><img class="img" th:src="@{'http://188.131.215.108/img/'+${user.userImage}}"></td>
+
+						<td th:text="${user.userLv}"></td>
+						<td ><a th:href="@{'user/queryById/'+${user.userId}}">编辑</a></td>
+					</tr>
+				</tbody>
+				<div id="fenye" class="fenye">
+					<nav aria-label="Page navigation">
+						<ul class="pagination">
+
+							<li>
+								<a th:href="@{/user/index}">首页</a>
+								<a th:href="@{/user/index(pageNum=${pageInfo.hasPreviousPage}?${pageInfo.prePage}:1)}" aria-label="Previous">
+									<span aria-hidden="true">&laquo;</span>
+								</a>
+							</li>
+							<li><a th:href="@{'/user/index?pageNum=1'}">1&nbsp;&nbsp;</a></li>
+							<li><a th:href="@{'/user/index?pageNum=2'}">2&nbsp;&nbsp;</a></li>
+							<li><a th:href="@{'/user/index?pageNum=3'}">3&nbsp;&nbsp;</a></li>
+							<li><a th:href="@{'/user/index?pageNum=4'}">4&nbsp;&nbsp;</a></li>
+							<li><a th:href="@{'/user/index?pageNum=5'}">5&nbsp;&nbsp;</a></li>
+							<li><a th:href="@{'/user/index?pageNum=6'}">6&nbsp;&nbsp;</a></li>
+							<li><a th:href="@{'/user/index?pageNum=7'}">7&nbsp;&nbsp;</a></li>
+							<li><a th:href="@{'/user/index?pageNum=8'}">8&nbsp;&nbsp;</a></li>
+							<li><a th:href="@{'/user/index?pageNum=9'}">9&nbsp;&nbsp;</a></li>
+							<li><a th:href="@{'/user/index?pageNum=10'}">10&nbsp;&nbsp;</a></li>
+							<li>
+								<a th:href="@{/user/index(pageNum=${pageInfo.hasNextPage}?${pageInfo.nextPage}:${pageInfo.pages})}" aria-label="Next">
+									<span aria-hidden="true">&raquo;</span>
+								</a>
+								<a th:href="@{/user/index(pageNum=${pageInfo.pages})}">尾页</a>
+							</li><br>
+							<li>
+								<p id="dangqian">&nbsp;&nbsp;&nbsp;&nbsp;  当前 <span th:text="${pageInfo.pageNum}"></span> 页,总 <span th:text="${pageInfo.pages}"></span> 页,共 <span th:text="${pageInfo.total}"></span> 条记录</p>
+
+							</li>
+						</ul>
+					</nav>
+				</div>
+			</table>
+		</div>
+	</div>
+
+
+
+			</table>
+		</div>
+		</div>
+
+	</body>
+
+</html>

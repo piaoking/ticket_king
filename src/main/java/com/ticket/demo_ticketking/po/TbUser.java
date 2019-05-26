@@ -11,6 +11,7 @@ public class TbUser {
   private String userPs;
   private String userCoupon;
   private String userImage;
+  private long userLv;
 
 
   public long getUserId() {
@@ -84,4 +85,27 @@ public class TbUser {
     this.userImage = userImage;
   }
 
+
+  public long getUserLv() {
+    return userLv;
+  }
+
+  public void setUserLv(long userLv) {
+    this.userLv = userLv;
+  }
+
+  @Override
+  public String toString() {
+    return "TbUser{" +
+            "userId=" + userId +
+            ", userName='" + userName + '\'' +
+            ", userTel='" + userTel + '\'' +
+            ", userPassword='" + userPassword + '\'' +
+            ", userBalance=" + userBalance +
+            ", userPs='" + userPs + '\'' +
+            ", userCoupon='" + userCoupon + '\'' +
+            ", userImage='" + userImage + '\'' +
+            ", userLv=" + userLv +
+            '}';
+  }
 }

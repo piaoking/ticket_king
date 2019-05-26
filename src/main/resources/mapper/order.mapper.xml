@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.ticket.demo_ticketking.mapper.OrderMappr">
+    <resultMap id="orderResult" type="com.ticket.demo_ticketking.po.TbOrder">
+        <id property="orderId" column="order_id" javaType="java.lang.Long"/>
+        <result property="orderPrice" column="order_price" javaType="java.lang.Long"/>
+        <result property="orderSum" column="order_sum" javaType="java.lang.Long"/>
+        <result property="orderNum" column="order_num" javaType="java.lang.String"/>
+        <result property="orderState" column="order_state" javaType="java.lang.String"/>
+        <result property="orderTime" column="order_time" javaType="java.sql.Date"/>
+        <result property="orderTicketName" column="order_ticket_name" javaType="java.lang.String"/>
+        <result property="orderTicketCity" column="order_ticket_city" javaType="java.lang.String"/>
+        <result property="orderTicketPlace" column="order_ticket_place" javaType="java.lang.String"/>
+        <result property="orderTicketTime" column="order_ticket_time" javaType="java.lang.String"/>
+        <result property="orderTicketImage" column="order_ticket_image" javaType="java.lang.String"/>
+        <result property="userId" column="user_id" javaType="java.lang.Long"/>
+
+    </resultMap>
+   <select id="queryOrder" resultMap="orderResult">
+       select * from tb_order
+   </select>
+
+    <insert id="savaOrder">
+        insert into tb_order(order_price,order_sum,order_num,order_state,order_time,order_ticket_name,order_ticket_city,order_ticket_place,order_ticket_time,order_ticket_image,user_id)
+            values(#{orderPrice},#{orderSum},#{orderNum},#{orderState},#{orderTime},#{orderTicketName},#{orderTicketCity},#{orderTicketPlace},#{orderTicketTime},#{orderTicketImage},#{userId});
+    </insert>
+
+    <select id="queryOrderById" resultMap="orderResult">
+        select * from tb_order where order_id=#{orderId};
+    </select>
+
+    <update id="updateOrder">
+        update tb_order set order_price=#{orderPrice},order_sum=#{orderSum},order_num=#{orderNum},order_state=#{orderState},
+        order_time=#{orderTime},order_ticket_name=#{orderTicketName},order_ticket_city=#{orderTicketCity},order_ticket_place=#{orderTicketPlace},
+        order_ticket_time=#{orderTicketTime},order_ticket_image=#{orderTicketImage},user_id=#{userId}
+        where order_id=#{orderId};
+    </update>
+
+</mapper>

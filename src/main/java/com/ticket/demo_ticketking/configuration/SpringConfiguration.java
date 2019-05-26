@@ -18,11 +18,9 @@ public class SpringConfiguration {
      */
     @Bean
     public ShiroFilterFactoryBean provideShiroFilter(MyRealm myRealm){
-
         System.out.println("----->>>>");
         //spring整合Shiro的过滤器工厂类，在此工厂中由SPring管理Shiro的一些对象。
         ShiroFilterFactoryBean factoryBean = new ShiroFilterFactoryBean();
-
         //创建一个SecurityManager
         //厨师
         DefaultWebSecurityManager securityManager = new DefaultWebSecurityManager();
@@ -32,21 +30,13 @@ public class SpringConfiguration {
         //权限拦截的配置
         //为什么要使用有序的map
         LinkedHashMap<String, String> linkedHashMap = new LinkedHashMap<>();
-        linkedHashMap.put("/user/login","anon");
-//        linkedHashMap.put("/**","authc");
+        linkedHashMap.put("/user/login","anon");;
         factoryBean.setFilterChainDefinitionMap(linkedHashMap);
-        // book/query=authc
+
 
         return factoryBean;
     }
 
-    /**
-     * 因为Thymeleaf支持shiro没有jsp容易，需要让shiro知道当前的页面是jsp还是thymeleaf，
-     * 所以需要加入方言。
-     *
-     * 以下方言是thymeleaf的方言
-     * @return
-     */
     @Bean
     public ShiroDialect shiroDialect() {
         return new ShiroDialect();
