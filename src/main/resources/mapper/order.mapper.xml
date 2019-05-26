@@ -10,7 +10,7 @@
         <result property="orderSum" column="order_sum" javaType="java.lang.Long"/>
         <result property="orderNum" column="order_num" javaType="java.lang.String"/>
         <result property="orderState" column="order_State" javaType="java.lang.String"/>
-        <result property="orderTime" column="order_time" javaType="java.sql.Date"/>
+        <result property="orderTime" column="order_time" javaType="java.lang.String"/>
         <result property="orderTicketName" column="order_ticket_name" javaType="java.lang.String"/>
         <result property="orderTicketCity" column="order_ticket_city" javaType="java.lang.String"/>
         <result property="orderTicketPlace" column="order_ticket_place" javaType="java.lang.String"/>
@@ -19,5 +19,16 @@
     </resultMap>
     <select id="queryOrder" resultMap="baseResult">
     select order_id,user_id,order_price,order_sum,order_num,order_time,order_state,order_ticket_name,order_ticket_city,order_ticket_place,order_ticket_time,order_ticket_image from tb_order where user_id=#{userId}
-    </select>
+    <if test="select!=''">
+        <if test="select==0">
+            and order_state='已付款' or order_state='未付款'
+        </if>
+        <if test="select==1">
+            and order_state='已付款'
+        </if>
+        <if test="select==2">
+            and order_state='未付款'
+        </if>
+    </if>
+</select>
 </mapper>

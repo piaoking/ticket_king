@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.ticket.demo_ticketking.mapper.FocusMapper">
+    <resultMap id="focusResult" type="com.ticket.demo_ticketking.po.TbFocus">
+        <id property="focusId" column="focus_id" javaType="java.lang.Long"/>
+        <result property="ticketId" column="ticket_id" javaType="java.lang.Long"/>
+        <result property="userId" column="user_id" javaType="java.lang.Long"/>
+        <result property="focusNum" column="focus_num" javaType="java.lang.Long"/>
+    </resultMap>
+
+    <select id="queryFocus" resultMap="focusResult">
+        select * from  tb_focus
+    </select>
+    <insert id="savaFocus">
+         insert into tb_focus(ticket_id,user_id,focus_num)
+            values(#{ticketId},#{userId},#{focusNum});
+    </insert>
+
+    <select id="queryFocusById" resultMap="focusResult">
+        select * from  tb_focus where focus_id=#{focusId};
+    </select>
+
+    <update id="upateFocus">
+        update tb_focus set ticket_id=#{ticketId},user_id=#{userId},focus_num=#{focusNum}
+        where focus_id=#{focusId};
+    </update>
+
+</mapper>

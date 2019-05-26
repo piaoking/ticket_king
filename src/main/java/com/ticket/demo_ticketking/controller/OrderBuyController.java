@@ -16,11 +16,12 @@ public class OrderBuyController {
     @Autowired
     private OrderBuyService orderBuyService;
     @RequestMapping("ticketseat")
-    public String queryPrices(Model model){
+    public String queryPrices(Long ticketId, Long showId, Model model){
         try {
-            List<OrderBuyVO> orderBuyList = orderBuyService.queryPrice(35L, 3L);
-            TbIntro tbIntro = orderBuyService.selectIntroAll(35L);
+            List<OrderBuyVO> orderBuyList = orderBuyService.queryPrice(ticketId, showId);
+            TbIntro tbIntro = orderBuyService.selectIntroAll(ticketId);
             model.addAttribute("orderBuyList",orderBuyList);
+            System.out.println(orderBuyList);
             model.addAttribute("tbIntro",tbIntro);
             return "goupiaopiao";
         } catch (Exception e) {

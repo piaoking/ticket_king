@@ -9,6 +9,7 @@
         <result property="placeName" column="place_name" javaType="java.lang.String"/>
         <result property="showId" column="show_id" javaType="java.lang.Long"/>
         <result property="showTime" column="show_time" javaType="java.lang.String"/>
+        <result property="placeId" column="place_id" javaType="java.lang.Long"/>
         <result property="ticketImage" column="ticket_image" javaType="java.lang.String"/>
     </resultMap>
     
@@ -22,7 +23,7 @@
         select intro_id,intro_details,intro_image from tb_intro where ticket_id = #{ticketId};
     </select>
     <select id="queryPrice" resultMap="baseResult">
-        select t.ticket_image,t.ticket_id,t.ticket_name,p.place_name,s.show_time,s.show_id,l.price from tb_ticket t
+        select t.ticket_image,p.place_id,t.ticket_id,t.ticket_name,p.place_name,s.show_time,s.show_id,l.price from tb_ticket t
         join tb_place p on t.place_id = p.place_id
         join tb_price pr on pr.place_id = p.place_id
         join tb_lv l on pr.price_id = l.price_id

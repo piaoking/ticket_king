@@ -1,23 +1,25 @@
 <!DOCTYPE html>
 <!-- saved from url=(0034)http://www.piaoniu.com/user/coupon -->
-<html>
+<html xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-    <title>我的优惠券 - 票王</title>
+    <title>我的优惠券 - 票牛</title>
+    <base th:href="${#request.getContextPath()}+'/'">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta id="viewport" name="viewport"
           content="initial-scale=1.0, maximum-scale=1.0, width=device-width, user-scalable=0, minimal-ui">
     <meta name="keywords">
     <meta name="description">
-    <meta name="baidu-site-verification" content="K4F8wWE2Bq"
-    "="">
-    <link rel="stylesheet" href="../static/css/ui.343fbb43.css">
-    <link rel="stylesheet" href="../static/css/slim-header.9887b921.css">
-    <script charset="utf-8" src="../static/css/v.js"></script>
-    <script src="../static/js/push.js"></script>
-    <script async="" src="../static/js/analytics.js"></script>
-    <script type="text/javascript" async="" src="../static/js/vds.js"></script>
-    <script src="../static/js/hm.js"></script>
+    <!--<meta name="baidu-site-verification" content="K4F8wWE2Bq">-->
+    <link rel="stylesheet" href="css/ui.343fbb43.css">
+    <link rel="stylesheet" href="css/slim-header.9887b921.css">
+    <link rel="stylesheet" href="css/dianjibianse.css">
+    <script charset="utf-8" src="css/v.js"></script>
+    <script src="js/push.js"></script>
+    <script async="" src="js/analytics.js"></script>
+    <script type="text/javascript" async="" src="js/vds.js"></script>
+
+    <script src="js/hm.js"></script>
     <script>var _hmt = _hmt || [];
     (function () {
         var hm = document.createElement("script");
@@ -54,12 +56,12 @@
     })(window, document, 'script', '//www.google-analytics.com/analytics.js', 'ga');
     ga('create', 'UA-71591200-1', 'auto');
     ga('send', 'pageview');</script>
-    <link rel="stylesheet" href="../static/css/user.5c5daf8b.css">
-    <link rel="stylesheet" href="../static/css/coupon.43c2c41e.css">
+    <link rel="stylesheet" href="css/user.5c5daf8b.css">
+    <link rel="stylesheet" href="css/coupon.43c2c41e.css">
 </head>
 <body>
 <div class="slim-header">
-    <div class="container"><a href="http://www.piaoniu.com/" class="logo-link"><img src="../static/picture/logo.252971b3.png"
+    <div class="container"><a href="http://www.piaoniu.com/" class="logo-link"><img src="picture/logo.252971b3.png"
                                                                                     class="logo"></a>
         <div class="city-picker">
             <div class="city-name">北京</div>
@@ -376,9 +378,9 @@
                 </div>
             </div>
         </div>
-        <div class="menu"><a href="shouye.html" class="menu-item">首页</a><a
-                href="all.html" class="menu-item">全部演出</a><a
-                href="faxian.html" class="menu-item">发现</a></div>
+        <div class="menu"><a href="http://www.piaoniu.com/beijing" class="menu-item">首页</a><a
+                href="http://www.piaoniu.com/bj-all" class="menu-item">全部演出</a><a
+                href="http://www.piaoniu.com/bj-discovery" class="menu-item">发现</a></div>
         <div class="search-bar">
             <div path="/bj-all" class="form"><input placeholder="找演出、明星、场馆" autocomplete="off" name="keyword" value=""
                                                     class="input"><input type="button" value="搜索" class="btn-submit">
@@ -394,13 +396,13 @@
                     登录
                 </div>
             </div>
-            <div style="display: block" class="item-user item"><img src="../static/picture/default-avatar.c0a5928c.png"
+            <div style="display: block" class="item-user item"><img src="picture/default-avatar.c0a5928c.png"
                                                                     class="avatar">
                 <div class="submenu submenu-account">
                     <ul class="submenu-inner">
-                        <li><a href="http://localhost:8080/ticketking/users/goorders/?userId=1">我的订单</a></li>
-                        <li><a href="http://localhost:8080/ticketking/users/balance/?userId=1">我的钱包</a></li>
-                        <li><a href="http://localhost:8080/ticketking/users/name/?userId=1">账户设置</a></li>
+                        <li><a href="http://www.piaoniu.com/user/order">我的订单</a></li>
+                        <li><a href="http://www.piaoniu.com/user/balance">我的钱包</a></li>
+                        <li><a href="http://www.piaoniu.com/user/profile">账户设置</a></li>
                         <li><a href="javascript:;" class="logout">退出登录</a></li>
                     </ul>
                 </div>
@@ -412,13 +414,13 @@
                 </div>
                 <div class="submenu">
                     <ul class="submenu-inner">
-                        <li><img src="../static/picture/qr-app.f6b3ee0e.png" class="qr">
+                        <li><img src="picture/qr-app.f6b3ee0e.png" class="qr">
                             <div class="txt">
-                                <div class="title">票王APP</div>
+                                <div class="title">票牛APP</div>
                                 <div class="desc">热门票随时抢<br>折扣票随时买</div>
                             </div>
                         </li>
-                        <li><img src="../static/picture/qr-wechat.72c6a6c0.png" class="qr">
+                        <li><img src="picture/qr-wechat.72c6a6c0.png" class="qr">
                             <div class="txt">
                                 <div class="title">微信订阅号</div>
                                 <div class="desc">精彩剧评最新<br>活动随时看</div>
@@ -431,30 +433,28 @@
     </div>
 </div>
 <div class="container user-container">
-    <div class="aside"><h2 class="h2"><a href="http://localhost:8080/ticketking/users/home/?userId=1">我的票王</a></h2>
+    <div class="aside"><h2 class="h2 wodepiaowang" style="cursor:pointer;">我的票王</h2>
         <div class="group"><h3 class="h3">我的演出</h3>
             <ul>
-                <li><a href="http://localhost:8080/ticketking/users/goorders/?userId=1">我的订单</a></li>
-                <li><a href="我的关注.html">我的关注</a></li>
+                <li style="line-height: 36px;cursor:pointer;" class="active wodedingdan">我的订单</li>
             </ul>
         </div>
         <div class="group"><h3 class="h3">我的钱包</h3>
             <ul>
-                <li class="active"><a href="我的优惠券.html">我的优惠券</a></li>
-                <li><a href="http://localhost:8080/ticketking/users/balance/?userId=1">我的余额</a></li>
+                <li style="line-height: 36px;cursor:pointer;" class="wodeyouhuiquan">我的优惠券</li>
+                <li style="line-height: 36px;cursor:pointer;" class="wodeyue">我的余额</li>
             </ul>
         </div>
         <div class="group"><h3 class="h3">账户设置</h3>
             <ul>
-                <li><a href="http://localhost:8080/ticketking/users/name/?userId=1">个人信息</a></li>
-                <li><a href="http://localhost:8080/ticketking/users/add/?userId=1">收货地址</a></li>
-                <li><a href="http://localhost:8080/ticketking/users/update/?userId=1">密码管理</a></li>
+                <li style="line-height: 36px;cursor:pointer;" class="gerenxinxi">个人信息</li>
+                <li style="line-height: 36px;cursor:pointer;" class="shouhuodizhi">收货地址</li>
+                <li style="line-height: 36px;cursor:pointer;" class="mimaguanli">密码管理</li>
             </ul>
         </div>
     </div>
     <div class="content">
-        <div class="tab-header"><a href="我的优惠券.html" class="item active">未使用</a><a
-                href="#" class="item">已过期</a>
+        <div class="tab-header"><a href="" class="item active">优惠券</a>
             <div class="btn btn-primary">兑换优惠券</div>
         </div>
         <div class="coupons">
@@ -659,29 +659,29 @@
 <div class="banner-content">
     <div class="banner">
         <div class="center">
-            <div class="left"><img src="../static/picture/logox2.78a31cd1.png"></div>
+            <div class="left"><img src="picture/logox2.78a31cd1.png"></div>
             <div class="app-load"><a href="http://www.piaoniu.com/app" class="apple"></a><a
                     href="http://www.piaoniu.com/app" class="android"></a></div>
-            <div class="code"><img src="../static/picture/code.0294fe21.png"></div>
+            <div class="code"><img src="picture/code.0294fe21.png"></div>
         </div>
         <span class="close"></span></div>
-    <div class="left-img left"><img src="../static/picture/left.e32ac038.png"></div>
+    <div class="left-img left"><img src="picture/left.e32ac038.png"></div>
 </div>
 <div class="slogan-bar">
     <div class="container"><a href="http://www.piaoniu.com/services#service1" rel="nofollow" class="item"><img
-            src="../static/picture/icon-diamond.bb7002bc.png" class="icon">
+            src="picture/icon-diamond.bb7002bc.png" class="icon">
         <div class="text">
             <div class="title">无票赔付</div>
             <div class="desc">无票赔付，最高退一赔二</div>
         </div>
     </a><a href="http://www.piaoniu.com/services#service2" rel="nofollow" class="item"><img
-            src="../static/picture/icon-shield.09fa5cdb.png" class="icon">
+            src="picture/icon-shield.09fa5cdb.png" class="icon">
         <div class="text">
             <div class="title">出票保真</div>
             <div class="desc">全程消费保障，买得放心</div>
         </div>
     </a><a href="http://www.piaoniu.com/services#service3" rel="nofollow" class="item"><img
-            src="../static/picture/icon-umbrella.b2c3c4c4.png" class="icon">
+            src="picture/icon-umbrella.b2c3c4c4.png" class="icon">
         <div class="text">
             <div class="title">配送保障</div>
             <div class="desc">多种取票方式 安全送达</div>
@@ -700,10 +700,10 @@
 <!--					img(src='#{staticHelper.getUrl("/img/footer/juchen.png")}', style='height:23px')-->
 <div class="footer bottom-bar">
     <div class="container">
-        <div class="links-and-brand"><img src="../static/picture/footer-logo.d5e1202e.png" class="footer-logo">
+        <div class="links-and-brand"><img src="picture/footer-logo.d5e1202e.png" class="footer-logo">
             <div class="qr-codes">
-                <div class="item"><img src="../static/picture/qr-app.f6b3ee0e.png" class="img">
-                    <div class="text">票王app</div>
+                <div class="item"><img src="picture/qr-app.f6b3ee0e.png" class="img">
+                    <div class="text">票牛app</div>
                 </div>
             </div>
             <div class="helps">
@@ -777,7 +777,7 @@
                                                                                     rel="nofollow">加入我们</a><a
                     href="http://www.piaoniu.com/actor" rel="nofollow">艺人</a><a href="http://www.piaoniu.com/city/all"
                                                                                 rel="nofollow">全部城市</a><a
-                    href="http://news.piaoniu.com/" rel="nofollow">票王资讯</a><a
+                    href="http://news.piaoniu.com/" rel="nofollow">票牛资讯</a><a
                     href="https://m.piaoniu.com/about/privacy-policy.html" rel="nofollow">隐私政策</a><a
                     href="http://www.piaoniu.com/disputeResolution" rel="nofollow">争议调解</a>
                 <div class="hot-search"><span>热门搜索</span>
@@ -801,10 +801,10 @@
             href="http://www.miitbeian.gov.cn/" target="_blank">沪ICP备14000399号-2</a></div>
     <div class="police-icons"><a href="http://www.beian.gov.cn/portal/registerSystemInfo?recordcode=31010602001682"
                                  target="_blank" rel="nofollow" class="link link-police"><img
-            src="../static/picture/police.c9ff2fec.png" class="icon">
+            src="picture/police.c9ff2fec.png" class="icon">
         <div class="text">沪公网安备 31010602001682号</div>
     </a><a href="http://www.sgs.gov.cn/lz/licenseLink.do?method=licenceView&amp;entyId=2016050618242638" target="_blank"
-           rel="nofollow" class="link link-gongshang"><img src="../static/picture/gongshang.df298c0c.png" class="icon">
+           rel="nofollow" class="link link-gongshang"><img src="picture/gongshang.df298c0c.png" class="icon">
         <div class="text">上海工商</div>
     </a></div>
 </div>
@@ -3386,7 +3386,7 @@ var activeCities = [{
 <!--[if lte IE 8]>
 <script src="http://static.piaoniu.com/pc/vendors/es5-shim.c3b1fc73.js"></script>
 <script src="http://static.piaoniu.com/pc/vendors/es5-sham.095d9e53.js"></script><![endif]-->
-<script src="../static/js/common.7ec1644e.js"></script><!-- 登录用户-->
+<script src="js/common.7ec1644e.js"></script><!-- 登录用户-->
 <script>var user = {
     "userId": 3272130,
     "mobileNo": "18162865997",
@@ -3447,8 +3447,8 @@ var activeCities = [{
     }
 })()
 </script><!--引用自己服务器上easemob.js文件的路径-->
-<script src="../static/js/easemob.f3ced40f.js" async="async"></script>
-<script src="../static/js/slim-header.45e0e6b4.js"></script>
+<script src="js/easemob.f3ced40f.js" async="async"></script>
+<script src="js/slim-header.45e0e6b4.js"></script>
 <div class="loading" style="display: none;">加载中...</div>
 <div class="loading" style="display: none;">加载中...</div>
 <div class="overlay" style="display: none; opacity: 0;"></div>
@@ -3465,7 +3465,7 @@ var activeCities = [{
         </div>
         <div class="row row-vcode">
             <input placeholder="图形验证码" name="vcode" class="input input-vcode">
-            <img src="../static/js/captcha" class="vcode">
+            <img src="js/captcha" class="vcode">
             <!-- <div class="btn btn-vcode">换一张</div> -->
         </div>
         <div class="row row-getcode">
@@ -3475,7 +3475,7 @@ var activeCities = [{
         <div class="row">
             <input type="submit" class="btn btn-submit" value="登录">
         </div>
-        <div class="hint">免注册，登录即创建票王账户</div>
+        <div class="hint">免注册，登录即创建票牛账户</div>
     </form>
 
     <form method="post" class="form form-login">
@@ -3487,15 +3487,15 @@ var activeCities = [{
         </div>
         <div class="row row-vcode form-login-vcode">
             <input placeholder="请输入验证码" name="captcha" class="input input-vcode">
-            <img src="../static/js/captcha" class="vcode">
+            <img src="js/captcha" class="vcode">
         </div>
         <div class="row">
             <input type="submit" class="btn btn-submit" value="登录">
         </div>
     </form>
 </div>
-<script src="../static/js/bottom.4481684d.js"></script>
-<script src="../static/js/coupon.c39f501a.js"></script>
+<script src="js/bottom.4481684d.js"></script>
+<script src="js/coupon.c39f501a.js"></script>
 <div class="loading" style="display: none;">加载中...</div>
 <div class="overlay" style="display: none;"></div>
 <div class="mbox coupon-exchange-box" style="display: none;">
@@ -3507,6 +3507,9 @@ var activeCities = [{
         <div class="btn btn-primary btn-large">确定</div>
     </div>
 </div>
-
+<script type="text/javascript" src="js/dianjitiaozhuan.js"></script>
+<script type="text/javascript">
+    init();
+</script>
 </body>
 </html>

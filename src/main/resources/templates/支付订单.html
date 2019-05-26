@@ -25,7 +25,7 @@
                     alert("订单超时")
                     window.location.href="";
                 }else{
-                    window.location.href="users/goorders/?userId=1";
+                    window.location.href="http://192.168.53.2:8080/ticketking/page/pay.html";
                 }
             });
         })
@@ -116,11 +116,11 @@
                 <div class="label">配送方式：</div>
                 <div class="value">快递配送 <div>
                 </div>
-            <div class="row">
+            <div class="row" style="margin-left: -100px;">
                 <div class="label">个人信息：</div>
                 <div class="value" th:text="${ord.userName}+'&nbsp;&nbsp;&nbsp;&nbsp;'+${ord.userTel}">呜呜呜, 18186668664</div>
             </div>
-            <div class="row">
+            <div class="row" style="margin-left: -100px;">
                 <div class="label">收货地址：</div>
                 <div class="value" th:text="${ord.addAdd}">湖南省 长沙市 芙蓉区 吾问无为谓</div>
             </div>
@@ -3032,33 +3032,5 @@ ga('send', 'pageview');</script>
 <script src="js/bottom.4481684d.js"></script>
 <script src="js/payorder.045376a2.js"></script>
 <div class="loading" style="display: none;">加载中...</div>
-<div class="side-toolbar low">
-    <div class="item totop" style="opacity: 0;">
-        <div class="icon"></div>
-        <div class="text">回到顶部</div>
-    </div>
-    <div class="item custom-service">
-        <div class="icon"></div>
-        <div class="text">在线客服</div>
-    </div>
-    <div class="item common">
-        <div class="icon"></div>
-        <div class="text">常见问题</div>
-    </div>
-</div>
-<div class="side-toolbar low">
-    <div class="item totop" style="opacity: 0;">
-        <div class="icon"></div>
-        <div class="text">回到顶部</div>
-    </div>
-    <div class="item custom-service">
-        <div class="icon"></div>
-        <div class="text">在线客服</div>
-    </div>
-    <div class="item common">
-        <div class="icon"></div>
-        <div class="text">常见问题</div>
-    </div>
-</div>
 </body>
 </html>

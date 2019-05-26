@@ -5,7 +5,7 @@
 <head>
     <base th:href="${#request.getContextPath()}+'/'">
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-    <title>收货地址 - 票王</title>
+    <title>收货地址 - 票牛</title>
     <style type="text/css">
         .button1{
             weight:20px;
@@ -20,10 +20,11 @@
     <meta name="baidu-site-verification" content="K4F8wWE2Bq">
     <link rel="stylesheet" href="css/ui.343fbb43.css">
     <link rel="stylesheet" href="css/slim-header.9887b921.css">
-    <script src="js/push.js"></script>
-    <script charset="utf-8" src="js/v.js"></script>
-    <script async="" src="js/analytics.js"></script>
-    <script type="text/javascript" async="" src="js/vds.js"></script>
+    <!--<script src="js/push.js"></script>-->
+    <!--<script charset="utf-8" src="js/v.js"></script>-->
+    <!--<script async="" src="js/analytics.js"></script>-->
+    <!--<script type="text/javascript" async="" src="js/vds.js"></script>-->
+
     <script type="text/javascript" src="js/jquery-3.1.1.js"></script>
     <script type="text/javascript">
         function addUserAdd(userId) {
@@ -39,7 +40,7 @@
             )
         }
     </script>
-    <script src="js/hm.js"></script>
+    <!--<script src="js/hm.js"></script>-->
     <script>var _hmt = _hmt || [];
     (function () {
         var hm = document.createElement("script");
@@ -78,6 +79,7 @@
     ga('send', 'pageview');</script>
     <link rel="stylesheet" href="css/user.5c5daf8b.css">
     <link rel="stylesheet" href="css/address.57d199ae.css">
+    <link rel="stylesheet" href="css/dianjibianse.css">
 </head>
 <body>
 <div class="slim-header">
@@ -410,67 +412,44 @@
             </div>
         </div>
         <div class="right-funcs">
-            <div style="display: none" class="item-login item">
-                <div class="text">
-                    <div class="icon"></div>
+            <div  class="item-login item denglu">
+                <div class="text ">
+                    <div class="icon "></div>
                     登录
                 </div>
             </div>
-            <div style="display: block" class="item-user item"><img src="picture/default-avatar.c0a5928c.png"
-                                                                    class="avatar">
-                <div class="submenu submenu-account">
-                    <ul class="submenu-inner">
-                        <li><a href="http://localhost:8080/ticketking/users/goorders/?userId=1">我的订单</a></li>
-                        <li><a href="http://localhost:8080/ticketking/users/balance/?userId=1">我的钱包</a></li>
-                        <li><a href="http://localhost:8080/ticketking/users/name/?userId=1">账户设置</a></li>
-                        <li><a href="javascript:;" class="logout">退出登录</a></li>
-                    </ul>
-                </div>
+            <!--<div style="display: block" class="item-user item"><img src="picture/default-avatar.c0a5928c.png"-->
+                                                                    <!--class="avatar">-->
+                <!--<div class="submenu submenu-account">-->
+                    <!--<ul class="submenu-inner">-->
+                        <!--<li><a href="http://localhost:8080/ticketking/users/goorders/?userId=1">我的订单</a></li>-->
+                        <!--<li><a href="http://localhost:8080/ticketking/users/balance/?userId=1">我的钱包</a></li>-->
+                        <!--<li><a href="http://localhost:8080/ticketking/users/name/?userId=1">账户设置</a></li>-->
+                        <!--<li><a href="javascript:;" class="logout">退出登录</a></li>-->
+                    <!--</ul>-->
+                <!--</div>-->
             </div>
-            <div class="item-app item">
-                <div class="text">
-                    <div class="icon"></div>
-                    APP下载
-                </div>
-                <div class="submenu">
-                    <ul class="submenu-inner">
-                        <li><img src="picture/qr-app.f6b3ee0e.png" class="qr">
-                            <div class="txt">
-                                <div class="title">票王APP</div>
-                                <div class="desc">热门票随时抢<br>折扣票随时买</div>
-                            </div>
-                        </li>
-                        <li><img src="picture/qr-wechat.72c6a6c0.png" class="qr">
-                            <div class="txt">
-                                <div class="title">微信订阅号</div>
-                                <div class="desc">精彩剧评最新<br>活动随时看</div>
-                            </div>
-                        </li>
-                    </ul>
-                </div>
-            </div>
-        </div>
+       </div>
     </div>
 </div>
 <div class="container user-container">
-    <div class="aside"><h2 class="h2"><a href="http://localhost:8080/ticketking/users/home/?userId=1">我的票王</a></h2>
+    <div class="aside"><h2 class="h2 wodepiaowang" style="cursor:pointer;">我的票王</h2>
         <div class="group"><h3 class="h3">我的演出</h3>
             <ul>
-                <li><a href="http://localhost:8080/ticketking/users/goorders/?userId=1">我的订单</a></li>
-                <li><a href="我的关注.html">我的关注</a></li>
+                <li style="line-height: 36px;cursor:pointer;" class="active wodedingdan">我的订单</li>
             </ul>
         </div>
         <div class="group"><h3 class="h3">我的钱包</h3>
             <ul>
-                <li><a href="我的优惠券.html">我的优惠券</a></li>
-                <li><a href="http://localhost:8080/ticketking/users/balance/?userId=1">我的余额</a></li>
+                <li style="line-height: 36px;cursor:pointer;" class="wodeyouhuiquan">我的优惠券</li>
+                <li style="line-height: 36px;cursor:pointer;" class="wodeyue">我的余额</li>
             </ul>
         </div>
         <div class="group"><h3 class="h3">账户设置</h3>
             <ul>
-                <li><a href="http://localhost:8080/ticketking/users/name/?userId=1">个人信息</a></li>
-                <li class="active"><a href="http://localhost:8080/ticketking/users/add/?userId=1">收货地址</a></li>
-                <li><a href="http://localhost:8080/ticketking/users/update/?userId=1">密码管理</a></li>
+                <li style="line-height: 36px;cursor:pointer;" class="gerenxinxi">个人信息</li>
+                <li style="line-height: 36px;cursor:pointer;" class="shouhuodizhi">收货地址</li>
+                <li style="line-height: 36px;cursor:pointer;" class="mimaguanli">密码管理</li>
             </ul>
         </div>
     </div>
@@ -482,7 +461,6 @@
                     <div data-id="2117736" class="item">
                         <div class="head">
                             <div class="name"></div>
-                            <div class="func"><a href="javascript:;" class="link delete">删除</a></div>
                         </div>
                         <tbody th:each="add,itemStat:${tbAdds}" th:if="${itemStat.count}<=1">
                         <div class="address" th:text="${add.addAdd}">天津市 天津市 和平区 是</div>
@@ -3270,7 +3248,7 @@ var activeCities = [{
 <!--[if lte IE 8]>
 <script src="http://static.piaoniu.com/pc/vendors/es5-shim.c3b1fc73.js"></script>
 <script src="http://static.piaoniu.com/pc/vendors/es5-sham.095d9e53.js"></script><![endif]-->
-<script src="js/common.7ec1644e.js"></script><!-- 登录用户-->
+<!--<script src="js/common.7ec1644e.js"></script>&lt;!&ndash; 登录用户&ndash;&gt;-->
 <script>var user = {
     "userId": 3272130,
     "mobileNo": "18162865997",
@@ -3331,54 +3309,13 @@ var activeCities = [{
     }
 })()
 </script><!--引用自己服务器上easemob.js文件的路径-->
-<script src="js/easemob.f3ced40f.js" async="async"></script>
-<script src="js/slim-header.45e0e6b4.js"></script>
-<div class="loading" style="display: none;">加载中...</div>
-<div class="loading" style="display: none;">加载中...</div>
-<div class="overlay" style="display: none; opacity: 0;"></div>
-<div class="light-login quick-login mbox" style="display: none;">
-    <div class="close"></div>
-    <div class="titles">
-        <div class="title-quick-login">快捷登录</div>
-        <div class="title-login">密码登录</div>
-    </div>
-
-    <form method="post" class="form form-quick-login">
-        <div class="row">
-            <input placeholder="手机号" name="ua" maxlength="11" class="input input-mobile">
-        </div>
-        <div class="row row-vcode">
-            <input placeholder="图形验证码" name="vcode" class="input input-vcode">
-            <img src="js/captcha" class="vcode">
-            <!-- <div class="btn btn-vcode">换一张</div> -->
-        </div>
-        <div class="row row-getcode">
-            <input placeholder="验证码" maxlength="6" name="code" class="input input-getcode">
-            <div class="btn btn-getcode disabled">获取验证码</div>
-        </div>
-        <div class="row">
-            <input type="submit" class="btn btn-submit" value="登录">
-        </div>
-        <div class="hint">免注册，登录即创建票王账户</div>
-    </form>
-
-    <form method="post" class="form form-login">
-        <div class="row">
-            <input placeholder="手机号" name="ua" maxlength="11" class="input input-mobile">
-        </div>
-        <div class="row">
-            <input type="password" name="pw" placeholder="密码" class="input input-password">
-        </div>
-        <div class="row row-vcode form-login-vcode">
-            <input placeholder="请输入验证码" name="captcha" class="input input-vcode">
-            <img src="js/captcha" class="vcode">
-        </div>
-        <div class="row">
-            <input type="submit" class="btn btn-submit" value="登录">
-        </div>
-    </form>
-</div>
-<script src="js/bottom.4481684d.js"></script>
-<!--<script src="js/address.b4db8147.js"></script>-->
+<!--<script src="js/easemob.f3ced40f.js" async="async"></script>-->
+<!--<script src="js/slim-header.45e0e6b4.js"></script>-->
+<script type="text/javascript">
+    $(".denglu").click(function () {
+        window.location.href="http://192.168.53.12:8081/qfclothes/page/denglu2.html"
+    })
+    init();
+</script>
 </body>
 </html>

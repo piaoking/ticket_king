@@ -5,8 +5,10 @@ import org.apache.ibatis.annotations.Mapper;
 import org.apache.ibatis.annotations.Param;
 import org.springframework.stereotype.Component;
 
+import java.util.List;
+
 @Mapper
 @Component
 public interface OrderMapper {
-    TbOrder queryOrder(@Param("userId") long userId);
+    List<TbOrder> queryOrder(@Param("userId") long userId,@Param("select") Integer select);
 }

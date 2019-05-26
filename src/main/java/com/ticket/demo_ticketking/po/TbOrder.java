@@ -1,15 +1,13 @@
 package com.ticket.demo_ticketking.po;
 
 
-import com.ticket.demo_ticketking.utils.IdGenerator;
-
 public class TbOrder {
 
   private long orderId;
   private long userId;
   private long orderPrice;
   private long orderSum;
-  private String orderNum = IdGenerator.getId();
+  private String orderNum;
   private String orderState;
   private String orderTime;
   private String orderTicketName;
@@ -18,6 +16,23 @@ public class TbOrder {
   private String orderTicketTime;
   private String orderTicketImage;
 
+  @Override
+  public String toString() {
+    return "TbOrder{" +
+            "orderId=" + orderId +
+            ", userId=" + userId +
+            ", orderPrice=" + orderPrice +
+            ", orderSum=" + orderSum +
+            ", orderNum='" + orderNum + '\'' +
+            ", orderState='" + orderState + '\'' +
+            ", orderTime='" + orderTime + '\'' +
+            ", orderTicketName='" + orderTicketName + '\'' +
+            ", orderTicketCity='" + orderTicketCity + '\'' +
+            ", orderTicketPlace='" + orderTicketPlace + '\'' +
+            ", orderTicketTime='" + orderTicketTime + '\'' +
+            ", orderTicketImage='" + orderTicketImage + '\'' +
+            '}';
+  }
 
   public long getOrderId() {
     return orderId;
@@ -27,7 +42,6 @@ public class TbOrder {
     this.orderId = orderId;
   }
 
-
   public long getUserId() {
     return userId;
   }
@@ -35,7 +49,6 @@ public class TbOrder {
   public void setUserId(long userId) {
     this.userId = userId;
   }
-
 
   public long getOrderPrice() {
     return orderPrice;
@@ -45,7 +58,6 @@ public class TbOrder {
     this.orderPrice = orderPrice;
   }
 
-
   public long getOrderSum() {
     return orderSum;
   }
@@ -53,7 +65,6 @@ public class TbOrder {
   public void setOrderSum(long orderSum) {
     this.orderSum = orderSum;
   }
-
 
   public String getOrderNum() {
     return orderNum;
@@ -63,7 +74,6 @@ public class TbOrder {
     this.orderNum = orderNum;
   }
 
-
   public String getOrderState() {
     return orderState;
   }
@@ -71,7 +81,6 @@ public class TbOrder {
   public void setOrderState(String orderState) {
     this.orderState = orderState;
   }
-
 
   public String getOrderTime() {
     return orderTime;
@@ -81,7 +90,6 @@ public class TbOrder {
     this.orderTime = orderTime;
   }
 
-
   public String getOrderTicketName() {
     return orderTicketName;
   }
@@ -89,7 +97,6 @@ public class TbOrder {
   public void setOrderTicketName(String orderTicketName) {
     this.orderTicketName = orderTicketName;
   }
-
 
   public String getOrderTicketCity() {
     return orderTicketCity;
@@ -99,7 +106,6 @@ public class TbOrder {
     this.orderTicketCity = orderTicketCity;
   }
 
-
   public String getOrderTicketPlace() {
     return orderTicketPlace;
   }
@@ -107,7 +113,6 @@ public class TbOrder {
   public void setOrderTicketPlace(String orderTicketPlace) {
     this.orderTicketPlace = orderTicketPlace;
   }
-
 
   public String getOrderTicketTime() {
     return orderTicketTime;
@@ -117,7 +122,6 @@ public class TbOrder {
     this.orderTicketTime = orderTicketTime;
   }
 
-
   public String getOrderTicketImage() {
     return orderTicketImage;
   }
@@ -125,5 +129,4 @@ public class TbOrder {
   public void setOrderTicketImage(String orderTicketImage) {
     this.orderTicketImage = orderTicketImage;
   }
-
 }

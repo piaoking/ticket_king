@@ -145,12 +145,13 @@
     </table>
     <div class="table-footer">
         <div class="total">
-            <div class="postage row">
+            <div class="postage row dingdanss">
+                <!--<span  style="display: block" th:text="${dingdan}"></span>-->
                 <div class="label">运费：</div>
                 <div class="text">邮费</div>
                 <div class="price">¥10</div>
             </div>
-            <div class="deal row">
+            <div class="deal row ">
                 <div class="label">应付金额：</div>
                 <div class="price zongjiage">¥422.00</div>
             </div>
@@ -3124,13 +3125,9 @@ var additionComponents = null</script>
         r = null;
         return context == null || context == "" || context == "undefined" ? "" : context;
     }
-
-    alert(GetQueryString("price"));
     var prices = GetQueryString("price");
     var pricesss = parseInt(prices)+10;
-    alert(GetQueryString("piaodang"));
     var piaodang = GetQueryString("piaodang");
-    alert(GetQueryString("zuoweishu"));
     var zuoweishu = GetQueryString("zuoweishu");
     $(document).ready(function () {
         $(".piaodang").html("票档类型:"+piaodang);
@@ -3146,11 +3143,12 @@ var additionComponents = null</script>
        var dizhihi = $(".dizhi").text();
        var yanchushijian = $(".shijian").text();
        var yanchutupian = $("#tupian").find("span").text();
+       var dingdandan = $(".dingdanss").find("span").text();
        $.post("addOder/insertOder",//你要传值的controller
            {orderPrice:zongjia,orderSum:zuowei,orderTicketName:yanchang,orderTicketPlace:dizhihi,orderTicketTime:yanchushijian,orderTicketImage:yanchutupian}, //你要传的json数组（参数）
            function (data) {
-               alert("添加成功");
-               window.location.href="http://192.168.53.21/ticketking/buyTicket/payOrder/?orderId=1";
+               alert("添加订单成功");
+               window.location.href="buyTicket/payOrder/?orderNum="+data;
            }
        )
    }

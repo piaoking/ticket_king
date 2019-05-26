@@ -2,12 +2,21 @@ package com.ticket.demo_ticketking.vo;
 
 public class OrderBuyVO {
     private long ticketId;
+    private long placeId;
     private String ticketName;
     private String placeName;
     private long showId;
     private String showTime;
     private long price;
     private String ticketImage;
+
+    public long getPlaceId() {
+        return placeId;
+    }
+
+    public void setPlaceId(long placeId) {
+        this.placeId = placeId;
+    }
 
     public String getTicketImage() {
         return ticketImage;
@@ -21,6 +30,7 @@ public class OrderBuyVO {
     public String toString() {
         return "OrderBuyVO{" +
                 "ticketId=" + ticketId +
+                ", placeId=" + placeId +
                 ", ticketName='" + ticketName + '\'' +
                 ", placeName='" + placeName + '\'' +
                 ", showId=" + showId +

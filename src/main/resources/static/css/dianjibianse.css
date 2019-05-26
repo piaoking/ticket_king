@@ -1,0 +1,12 @@
+.dianjibianse{
+    width: 163px;
+    position: relative;
+    left: -42px;
+    display: block;
+    background-color: #fff;
+    padding-left: 40px;
+    color: #666;
+    border: 1px solid #eaeaec;
+    border-right: 0;
+    border-left: 3px solid #ffa9b6;
+}

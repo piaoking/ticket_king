@@ -16,6 +16,7 @@
     <script charset="utf-8" src="js/v.js"></script>
     <script src="js/push.js"></script>
     <script async="" src="js/analytics.js"></script>
+
     <script type="text/javascript" async="" src="js/vds.js"></script>
     <script src="js/hm.js"></script>
     <script>var _hmt = _hmt || [];
@@ -431,24 +432,23 @@
     </div>
 </div>
 <div class="container user-container">
-    <div class="aside"><h2 class="h2 active">我的票王</h2>
+    <div class="aside"><h2 class="h2 wodepiaowang" style="cursor:pointer;">我的票王</h2>
         <div class="group"><h3 class="h3">我的演出</h3>
             <ul>
-                <li><a href="http://localhost:8080/ticketking/users/goorders/?userId=1">我的订单</a></li>
-                <li><a href="">我的关注</a></li>
+                <li style="line-height: 36px;cursor:pointer;" class="active wodedingdan">我的订单</li>
             </ul>
         </div>
         <div class="group"><h3 class="h3">我的钱包</h3>
             <ul>
-                <li><a href="我的优惠券.html">我的优惠券</a></li>
-                <li><a href="http://localhost:8080/ticketking/users/balance/?userId=1">我的余额</a></li>
+                <li style="line-height: 36px;cursor:pointer;" class="wodeyouhuiquan">我的优惠券</li>
+                <li style="line-height: 36px;cursor:pointer;" class="wodeyue">我的余额</li>
             </ul>
         </div>
         <div class="group"><h3 class="h3">账户设置</h3>
             <ul>
-                <li><a href="http://localhost:8080/ticketking/users/name/?userId=1">个人信息</a></li>
-                <li><a href="http://localhost:8080/ticketking/users/add/?userId=1">收货地址</a></li>
-                <li><a href="http://localhost:8080/ticketking/users/update/?userId=1">密码管理</a></li>
+                <li style="line-height: 36px;cursor:pointer;" class="gerenxinxi">个人信息</li>
+                <li style="line-height: 36px;cursor:pointer;" class="shouhuodizhi">收货地址</li>
+                <li style="line-height: 36px;cursor:pointer;" class="mimaguanli">密码管理</li>
             </ul>
         </div>
     </div>
@@ -460,10 +460,9 @@
                     href="我的余额.html" class="remain">我的余额：<span class="price" th:text="${tbUser.userBalance}">0.00</span>元</a>
             </div>
             <div class="funcs">
-                <li><i class="icon-info"></i><a href="个人信息.html">个人信息</a></li>
-                <li><i class="icon-location"></i><a rel="nofollow" href="收货地址.html">收货地址</a>
-                </li>
-                <li><i class="icon-lock"></i><a href="密码管理.html">密码管理</a></li>
+                <li style="cursor:pointer;" class="gerenxinxi"><i class="icon-info"></i>个人信息</li>
+                <li style="cursor: pointer;" class="shouhuodizhi"><i class="icon-location"></i>收货地址</li>
+                <li style="cursor:pointer;" class="mimaguanli"><i class="icon-lock "></i>密码管理</li>
             </div>
         </div>
         </tbody>
@@ -3319,5 +3318,9 @@ var activeCities = [{
 <script src="js/bottom.4481684d.js"></script>
 <script src="js/order.bdfc1bed.js"></script>
 <div class="loading" style="display: none;">加载中...</div>
+<script type="text/javascript" src="js/dianjitiaozhuan.js"></script>
+<script type="text/javascript">
+    init();
+</script>
 </body>
 </html>

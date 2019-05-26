@@ -11,6 +11,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 
+import javax.servlet.http.HttpSession;
 import java.util.List;
 
 @Controller
@@ -23,12 +24,13 @@ public class BuyTicketController {
     @Autowired
     private PayOrderService payOrderService;
     @RequestMapping("/shoppingCar")
-    public String queryBuyTicket(long userId, Model model){
+    public String queryBuyTicket(HttpSession session, Long ticketId, Long showId, Model model){
         List<OrderBuyVO> orderBuyVOS = null;
+        Long usersId = (Long) session.getAttribute("userId");
         try {
-            List<BuyTicketVO> buyTicketVOS = buyTicketService.queryBuyTicket(userId);
-            orderBuyVOS = orderBuyService.queryPrice(35L, 3L);
-            List<OrderBuyVO> orderBuyList = orderBuyService.queryPrice(35L, 3L);
+            List<BuyTicketVO> buyTicketVOS = buyTicketService.queryBuyTicket(usersId);
+            orderBuyVOS = orderBuyService.queryPrice(ticketId, showId);
+            List<OrderBuyVO> orderBuyList = orderBuyService.queryPrice(ticketId, showId);
             model.addAttribute("orderBuyList",orderBuyList);
             model.addAttribute("orderBuyVOS",orderBuyVOS);
             model.addAttribute("buyTicketVOS",buyTicketVOS);

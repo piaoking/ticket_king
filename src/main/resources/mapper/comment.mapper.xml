@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.ticket.demo_ticketking.mapper.CommentMapper">
+    <resultMap id="commentResult" type="com.ticket.demo_ticketking.po.TbComment">
+        <id property="commentId" column="comment_id" javaType="java.lang.Long"/>
+        <result property="ticketId" column="ticket_id" javaType="java.lang.Long"/>
+        <result property="commentDetails" column="comment_details" javaType="java.lang.String"/>
+        <result property="commentZan" column="comment_zan" javaType="java.lang.Long"/>
+        <result property="commentTime" column="comment_time" javaType="java.sql.Date"/>
+        <result property="commentImage" column="comment_image" javaType="java.lang.String"/>
+        <result property="commentStar" column="comment_star" javaType="java.lang.String"/>
+    </resultMap>
+
+    <select id="queryComment" resultMap="commentResult">
+        select * from tb_comment
+    </select>
+    <insert id="saveComment">
+        insert into tb_comment(ticket_id,comment_details,comment_zan,comment_time,comment_image,comment_star)
+            values(#{ticketId},#{commentDetails},#{commentZan},#{commentTime},#{commentImage},#{commentStar});
+    </insert>
+
+    <select id="queryCommntById" resultMap="commentResult">
+        select * from tb_comment where comment_id=#{commentId};
+    </select>
+
+    <update id="updateComment">
+        update tb_comment set  ticket_id=#{ticketId},comment_details=#{commentDetails},comment_zan=#{commentZan},comment_time=#{commentTime},comment_image=#{commentImage},comment_star=#{commentStar}
+        where comment_id=#{commentId};
+    </update>
+
+
+
+</mapper>

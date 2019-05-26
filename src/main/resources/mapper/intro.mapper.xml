@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.ticket.demo_ticketking.mapper.IntroMapper">
+    <resultMap id="introResult" type="com.ticket.demo_ticketking.po.TbIntro">
+        <id property="introId" column="intro_id" javaType="java.lang.Long"/>
+        <result property="ticketId" column="ticket_id" javaType="java.lang.Long"/>
+        <result property="introDetails" column="intro_details" javaType="java.lang.String"/>
+        <result property="introImage" column="intro_image" javaType="java.lang.String"/>
+
+    </resultMap>
+
+    <select id="queryIntro" resultMap="introResult">
+        select * from tb_intro
+    </select>
+    <insert id="saveIntro">
+         insert into tb_intro(ticket_id,intro_details,intro_image)
+            values(#{ticketId},#{introDetails},#{introImage});
+    </insert>
+
+    <select id="queryIntroById" resultMap="introResult">
+         select * from tb_intro where intro_id=#{introId};
+    </select>
+
+    <update id="updateIntro">
+        update tb_intro set ticket_id=#{ticketId},intro_details=#{introDetails},intro_image=#{introImage}
+        where intro_id=#{introId};
+    </update>
+</mapper>
