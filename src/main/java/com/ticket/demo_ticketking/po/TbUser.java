@@ -12,21 +12,16 @@ public class TbUser {
   private String userCoupon;
   private String userImage;
   private long userLv;
+  private Long userFrozen;
 
-  @Override
-  public String toString() {
-    return "TbUser{" +
-            "userId=" + userId +
-            ", userName='" + userName + '\'' +
-            ", userTel='" + userTel + '\'' +
-            ", userPassword='" + userPassword + '\'' +
-            ", userBalance=" + userBalance +
-            ", userPs='" + userPs + '\'' +
-            ", userCoupon='" + userCoupon + '\'' +
-            ", userImage='" + userImage + '\'' +
-            ", userLv=" + userLv +
-            '}';
+  public Long getUserFrozen() {
+    return userFrozen;
   }
+
+  public void setUserFrozen(Long userFrozen) {
+    this.userFrozen = userFrozen;
+  }
+
 
   public long getUserId() {
     return userId;
@@ -108,4 +103,18 @@ public class TbUser {
     this.userLv = userLv;
   }
 
+  @Override
+  public String toString() {
+    return "TbUser{" +
+            "userId=" + userId +
+            ", userName='" + userName + '\'' +
+            ", userTel='" + userTel + '\'' +
+            ", userPassword='" + userPassword + '\'' +
+            ", userBalance=" + userBalance +
+            ", userPs='" + userPs + '\'' +
+            ", userCoupon='" + userCoupon + '\'' +
+            ", userImage='" + userImage + '\'' +
+            ", userLv=" + userLv +
+            '}';
+  }
 }

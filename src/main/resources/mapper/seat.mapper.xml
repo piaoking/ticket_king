@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.ticket.demo_ticketking.mapper.SeatMapper">
+    <resultMap id="baseResult" type="com.ticket.demo_ticketking.po.TbPlace">
+        <id property="placeId" column="place_id" javaType="java.lang.Long"/>
+        <result property="placeSeat" column="place_seat" javaType="java.lang.String"/>
+    </resultMap>
+    <select id="querySeat" resultMap="baseResult">
+        select place_seat from tb_place where place_id = #{placeId}
+    </select>
+</mapper>

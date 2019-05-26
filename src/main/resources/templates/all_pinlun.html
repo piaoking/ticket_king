@@ -1,16 +1,16 @@
 ﻿<!DOCTYPE html>
-<html>
+<html lang="zh-CN" xmlns:th="http://www.thymeleaf.org">
 <head><title>上海演唱会,话剧演出最新评价_音乐会,体育赛事热门评论</title>
+    <base th:href="${#request.getContextPath()}+'/'">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
     <meta id="viewport" name="viewport"
           content="initial-scale=1.0, maximum-scale=1.0, width=device-width, user-scalable=0, minimal-ui">
     <meta name="keywords" content="上海演唱会评论,上海话剧评论,上海音乐会评论,上海体育比赛评论">
     <meta name="description" content="上海最新演唱会评论,上海近期上映的哪些话剧评价较高?了解体育比赛,音乐会,歌剧,展览,舞蹈,戏曲,相声最新评论，就上票牛网!看演出,上票牛!">
-    <meta name="baidu-site-verification" content="K4F8wWE2Bq"
-    /" />
-    <link rel="stylesheet" href="../static/css/ui.343fbb43.css">
-    <link rel="stylesheet" href="../static/css/slim-header.9887b921.css">
+    <meta name="baidu-site-verification" content="K4F8wWE2Bq">
+    <link rel="stylesheet" href="css/ui.343fbb43.css">
+    <link rel="stylesheet" href="css/slim-header.9887b921.css">
     <script>var _hmt = _hmt || [];
     (function () {
         var hm = document.createElement("script");
@@ -47,12 +47,12 @@
     })(window, document, 'script', '//www.google-analytics.com/analytics.js', 'ga');
     ga('create', 'UA-71591200-1', 'auto');
     ga('send', 'pageview');</script>
-    <link rel="stylesheet" href="../static/css/search.c256e0ee.css">
+    <link rel="stylesheet" href="css/search.c256e0ee.css">
 </head>
 <body>
 <div class="slim-header">
-    <div class="container"><a href="/" class="logo-link"><img src="../static/picture/logo.252971b3.png"
-                                                              class="logo"></a>
+    <div class="container"><a href="/" class="logo-link">
+        <img src="picture/logo.252971b3.png" class="logo"></a>
         <div class="city-picker">
             <div class="city-name">重庆</div>
             <div class="citylist"></div>
@@ -71,7 +71,7 @@
                     登录
                 </div>
             </div>
-            <div style="display: none" class="item-user item"><img src="../static/picture/default-avatar.c0a5928c.png"
+            <div style="display: none" class="item-user item"><img src="picture/default-avatar.c0a5928c.png"
                                                                    class="avatar">
                 <div class="submenu submenu-account">
                     <ul class="submenu-inner">
@@ -89,13 +89,13 @@
                 </div>
                 <div class="submenu">
                     <ul class="submenu-inner">
-                        <li><img src="../static/picture/qr-app.f6b3ee0e.png" class="qr">
+                        <li><img src="picture/qr-app.f6b3ee0e.png" class="qr">
                             <div class="txt">
                                 <div class="title">票牛APP</div>
                                 <div class="desc">热门票随时抢<br/>折扣票随时买</div>
                             </div>
                         </li>
-                        <li><img src="../static/picture/qr-wechat.72c6a6c0.png" class="qr">
+                        <li><img src="picture/qr-wechat.72c6a6c0.png" class="qr">
                             <div class="txt">
                                 <div class="title">微信订阅号</div>
                                 <div class="desc">精彩剧评最新<br/>活动随时看</div>
@@ -109,684 +109,54 @@
 </div>
 <div class="container body">
     <div class="main">
-        <div class="search-tabs"><a href="/cq-all/s_" class="tab">演出</a><a href="/review-search?keyword=" rel="nofollow"
+        <div class="search-tabs"><a  class="tab" onclick="yanchu()">演出</a><a href="/review-search?keyword=" rel="nofollow"
                                                                            class="tab active">评论</a></div>
         <div class="list-container review-list">
             <ul>
-                <li data-id="198374" class="review-item"><a href="/user/354011" class="userhead"><img
-                        src="../static/picture/1514455284331.jpg" class="avatar">
-                    <div class="level">
-                        <div class="text">官方</div>
-                    </div>
-                </a>
+                <tbody th:each="com:${comments}">
+                <li data-id="198374" class="review-item">
+                    <a href="/user/354011" class="userhead">
+                        <img th:src="@{'http://188.131.215.108/img/'+${com.commentImage}}" class="avatar">
+                        <div class="level">
+                            <div class="text">官方</div>
+                        </div>
+                    </a>
                     <div class="review-main">
                         <div class="head">
-                            <div class="username">票牛福利汪</div>
+                            <div class="username" th:text="${com.commentName}">票牛福利汪</div>
                             <div class="level">
                                 <div class="text">官方</div>
                             </div>
                             <div class="star star-small star-10"></div>
-                            <div class="time">2019-04-25</div>
+                            <div class="time" th:text="${com.commentTime}">2019-04-25</div>
                         </div>
-                        <a href="/review/198374" rel="nofollow" class="content">为“许嵩寻宝游戏Vae2019巡回演唱会武汉站”助力盖楼！送许嵩专辑。<br/>1.参与方式:直接在本条评论后回复，一句话表白许嵩。<br/>2.中奖回复及奖品设置：回复总数的50%,90%（四舍五入）为中奖回复，各获得许嵩专辑一份！
+                        <a href="/review/198374" rel="nofollow" class="content" th:text="${com.commentDetails}">为“许嵩寻宝游戏Vae2019巡回演唱会武汉站”助力盖楼！送许嵩专辑。<br/>1.参与方式:直接在本条评论后回复，一句话表白许嵩。<br/>2.中奖回复及奖品设置：回复总数的50%,90%（四舍五入）为中奖回复，各获得许嵩专辑一份！
                             <br/>*示例：假如活动期间总共有512条回复，则获奖回复为第256（512*50%）条回复、第461（512*90%）条回复<br/>3.回复规则：每个用户只有一次中奖机会，重复中奖则顺延至下一层不重复的用户ID
                             <br/>*发表无关灌水内容者取消中奖资格<br/>4.活动时间：2019.04.25-06.10<br/>5.获奖公示：2019.06.10-06.11由票牛福利汪公布在本条评论回复中奖名单<br/>*截止2019.06.10
                             18:00 <br/>本条评论 回复数若<200，则不进行开奖 <br/>*本活动解释权最终归票牛所有<br/></a>
-                        <div class="piclist"><a
-                                href="https://img.piaoniu.com/review/3812ef44e22fb210c66b8b6bf942ca0580d51090.jpg"
-                                style="background-image:url(images/3812ef44e22fb210c66b8b6bf942ca0580d51090.jpg)"
-                                rel="gallery198374" class="img"></a><a
-                                href="https://img.piaoniu.com/review/b9826755ee1eb2959dafca2f5e94e8475d29c990.jpg"
-                                style="background-image:url(images/b9826755ee1eb2959dafca2f5e94e8475d29c990.jpg)"
-                                rel="gallery198374" class="img"></a><a
-                                href="https://img.piaoniu.com/review/84affa6fdcb5e6f87a85293fb479740b80e0c9e9.jpg"
-                                style="background-image:url(images/84affa6fdcb5e6f87a85293fb479740b80e0c9e9.jpg)"
-                                rel="gallery198374" class="img"></a><a
-                                href="https://img.piaoniu.com/review/6d4c335eeb1563d459c3a5127f516e96a2d22770.jpg"
-                                style="background-image:url(images/6d4c335eeb1563d459c3a5127f516e96a2d22770.jpg)"
-                                rel="gallery198374" class="img"></a><a
-                                href="https://img.piaoniu.com/review/fd05965ab88ad0dfcc77a098805509dd279cb3d6.jpg"
-                                style="background-image:url(images/fd05965ab88ad0dfcc77a098805509dd279cb3d6.jpg)"
-                                rel="gallery198374" class="img"></a></div>
-                        <div class="review-activity"><a ="/activity/91113" class="poster-link"><img
+                        <div class="piclist">
+                            <a>
+                                <img th:src="@{'http://188.131.215.108/img/'+${com.starImage}}" height="100px" width="100px">
+                            </a>
+                        </div>
+                        <div class="review-activity"><a class="poster-link"><img
                                 alt="许嵩寻宝游戏Vae2019巡回演唱会 武汉站"
-                                src="../static/picture/15c3d2f4a7062fe9f0b3942b8d0cbcee79d9a978.jpg" class="poster"></a>
+                                th:src="@{'http://188.131.215.108/img/'+${com.ticketImage}}" height="55px" width="42px" class="poster"></a>
                             <a href="/activity/91113" class="info">
-                                <div class="title">许嵩寻宝游戏Vae2019巡回演唱会 武汉站</div>
+                                <div class="title" th:text="${com.ticketName}"></div>
                             </a></div>
                         <div class="funcs"><a href="/review/198374" data-replies="62"
                                               class="func-btn btn-reply">62回复</a>
-                            <div data-likes="19" class="func-btn btn-like">19赞</div>
+                            <div data-likes="19" class="func-btn btn-like"><span th:text="${com.commentZan}"></span>赞</div>
                         </div>
                     </div>
                 </li>
-                <li data-id="197794" class="review-item"><a href="/user/354011" class="userhead"><img
-                        src="../static/picture/1514455284331.jpg" class="avatar">
-                    <div class="level">
-                        <div class="text">官方</div>
-                    </div>
-                </a>
-                    <div class="review-main">
-                        <div class="head">
-                            <div class="username">票牛福利汪</div>
-                            <div class="level">
-                                <div class="text">官方</div>
-                            </div>
-                            <div class="star star-small star-10"></div>
-                            <div class="time">2019-04-23</div>
-                        </div>
-                        <a href="/review/197794" rel="nofollow" class="content">为“林宥嘉IDOL偶像巡回演唱会北京站”助力盖楼！送林宥嘉专辑。<br/>1.参与方式:直接在本条评论后回复，一句话表白林宥嘉。<br/>2.中奖回复及奖品设置：回复总数的50%,90%（四舍五入）为中奖回复，各获得林宥嘉专辑一份！
-                            <br/>*示例：假如活动期间总共有512条回复，则获奖回复为第256（512*50%）条回复、第461（512*90%）条回复<br/>3.回复规则：每个用户只有一次中奖机会，重复中奖则顺延至下一层不重复的用户ID
-                            <br/>*发表无关灌水内容者取消中奖资格<br/>4.活动时间：2019.04.23-07.15<br/>5.获奖公示：2019.07.15-16由票牛福利汪公布在本条评论回复中奖名单<br/>*截止2019.07.15
-                            18:00 <br/>本条评论 回复数若<200，则不进行开奖 <br/>*本活动解释权最终归票牛所有<br/></a>
-                        <div class="piclist"><a
-                                href="https://img.piaoniu.com/review/36c1d7bd8eee9a27ee9f37819ac682075a96fd86.jpg"
-                                style="background-image:url(images/36c1d7bd8eee9a27ee9f37819ac682075a96fd86.jpg)"
-                                rel="gallery197794" class="img"></a><a
-                                href="https://img.piaoniu.com/review/8fb6dda31009d83391b50e34ea38760795598394.jpg"
-                                style="background-image:url(images/8fb6dda31009d83391b50e34ea38760795598394.jpg)"
-                                rel="gallery197794" class="img"></a><a
-                                href="https://img.piaoniu.com/review/3d4c5f4ccc6d01052f751775a1421c60396e24d9.jpg"
-                                style="background-image:url(images/3d4c5f4ccc6d01052f751775a1421c60396e24d9.jpg)"
-                                rel="gallery197794" class="img"></a><a
-                                href="https://img.piaoniu.com/review/da0e204af42e91f8bd6b99cfa275af0f9cd75277.jpg"
-                                style="background-image:url(images/da0e204af42e91f8bd6b99cfa275af0f9cd75277.jpg)"
-                                rel="gallery197794" class="img"></a><a
-                                href="https://img.piaoniu.com/review/47700cfce319c13db5fb67f22f628ac3cf116aba.jpg"
-                                style="background-image:url(images/47700cfce319c13db5fb67f22f628ac3cf116aba.jpg)"
-                                rel="gallery197794" class="img"></a></div>
-                        <div class="review-activity"><a href="/activity/80567" class="poster-link"><img
-                                alt="林宥嘉IDOL偶像巡回演唱会2019北京站"
-                                src="../static/picture/23a3bcf34a93af983722d18532deb68e4c8d83b2.jpg" class="poster"></a><a
-                                href="/activity/80567" class="info">
-                            <div class="title">林宥嘉IDOL偶像巡回演唱会2019北京站</div>
-                        </a></div>
-                        <div class="funcs"><a href="/review/197794" data-replies="36"
-                                              class="func-btn btn-reply">36回复</a>
-                            <div data-likes="19" class="func-btn btn-like">19赞</div>
-                        </div>
-                    </div>
-                </li>
-                <li data-id="196031" class="review-item"><a href="/user/354011" class="userhead"><img
-                        src="../static/picture/1514455284331.jpg" class="avatar">
-                    <div class="level">
-                        <div class="text">官方</div>
-                    </div>
-                </a>
-                    <div class="review-main">
-                        <div class="head">
-                            <div class="username">票牛福利汪</div>
-                            <div class="level">
-                                <div class="text">官方</div>
-                            </div>
-                            <div class="star star-small star-10"></div>
-                            <div class="time">2019-04-18</div>
-                        </div>
-                        <a href="/review/196031" rel="nofollow" class="content">为“2019李易峰Dream Visit ·
-                            成都”助力盖楼！送李易峰周边。<br/>1.参与方式:直接在本条评论后回复，一句话形容你心目中的李易峰。<br/>2.中奖回复及奖品设置：回复总数的50%,90%（四舍五入）为中奖回复，各获得李易峰周边一份！
-                            <br/>*示例：假如活动期间总共有512条回复，则获奖回复为第256（512*50%）条回复、第461（512*90%）条回复<br/>3.回复规则：每个用户只有一次中奖机会，重复中奖则顺延至下一层不重复的用户ID
-                            <br/>*发表无关灌水内容者取消中奖资格<br/>4.活动时间：2019.04.18-05.10<br/>5.获奖公示：2019.05.10-11由票牛福利汪公布在本条评论回复中奖名单<br/>*截止2019.05.10
-                            18:00 <br/>本条评论 回复数若<200，则不进行开奖 <br/>*本活动解释权最终归票牛所有<br/></a>
-                        <div class="piclist"><a
-                                href="https://img.piaoniu.com/review/382f22da13f070ba43942f2474545bf24dc47db6.jpg"
-                                style="background-image:url(images/382f22da13f070ba43942f2474545bf24dc47db6.jpg)"
-                                rel="gallery196031" class="img"></a><a
-                                href="https://img.piaoniu.com/review/f9dbd7d55b887700cde2bac478aeea129c8cd58d.jpg"
-                                style="background-image:url(images/f9dbd7d55b887700cde2bac478aeea129c8cd58d.jpg)"
-                                rel="gallery196031" class="img"></a><a
-                                href="https://img.piaoniu.com/review/6a0d79c6ad0ca0e7360bc43e649062b5e962c1aa.jpg"
-                                style="background-image:url(images/6a0d79c6ad0ca0e7360bc43e649062b5e962c1aa.jpg)"
-                                rel="gallery196031" class="img"></a><a
-                                href="https://img.piaoniu.com/review/ef3d73e9030d7fe2e5ff31444ca6dafc01747d1e.jpg"
-                                style="background-image:url(images/ef3d73e9030d7fe2e5ff31444ca6dafc01747d1e.jpg)"
-                                rel="gallery196031" class="img"></a><a
-                                href="https://img.piaoniu.com/review/9fb759f2a42acb7cac0e19aa5c740dd8d2a62c64.jpg"
-                                style="background-image:url(images/9fb759f2a42acb7cac0e19aa5c740dd8d2a62c64.jpg)"
-                                rel="gallery196031" class="img"></a></div>
-                        <div class="review-activity"><a href="/activity/91024" class="poster-link"><img
-                                alt="2019 李易峰Dream Visit &middot; 成都"
-                                src="../static/picture/066dda51c79734b6a536a5683b07e0680278d884.jpg" class="poster"></a><a
-                                href="/activity/91024" class="info">
-                            <div class="title">2019 李易峰Dream Visit &middot; 成都</div>
-                        </a></div>
-                        <div class="funcs"><a href="/review/196031" data-replies="66"
-                                              class="func-btn btn-reply">66回复</a>
-                            <div data-likes="32" class="func-btn btn-like">32赞</div>
-                        </div>
-                    </div>
-                </li>
-                <li data-id="195771" class="review-item"><a href="/user/354011" class="userhead"><img
-                        src="../static/picture/1514455284331.jpg" class="avatar">
-                    <div class="level">
-                        <div class="text">官方</div>
-                    </div>
-                </a>
-                    <div class="review-main">
-                        <div class="head">
-                            <div class="username">票牛福利汪</div>
-                            <div class="level">
-                                <div class="text">官方</div>
-                            </div>
-                            <div class="star star-small star-10"></div>
-                            <div class="time">2019-04-17</div>
-                        </div>
-                        <a href="/review/195771" rel="nofollow" class="content">为“李健苏州演唱会”助力盖楼！送李健专辑。<br/>1.参与方式:直接在本条评论后回复，一句话表白李健。<br/>2.中奖回复及奖品设置：回复总数的50%,90%（四舍五入）为中奖回复，各获得李健专辑一份！
-                            <br/>*示例：假如活动期间总共有512条回复，则获奖回复为第256（512*50%）条回复、第461（512*90%）条回复<br/>3.回复规则：每个用户只有一次中奖机会，重复中奖则顺延至下一层不重复的用户ID
-                            <br/>*发表无关灌水内容者取消中奖资格<br/>4.活动时间：2019.04.17-05.10<br/>5.获奖公示：2019.05.10-11由票牛福利汪公布在本条评论回复中奖名单<br/>*截止2019.05.10
-                            18:00 <br/>本条评论 回复数若<200，则不进行开奖 <br/>*本活动解释权最终归票牛所有<br/></a>
-                        <div class="piclist"><a
-                                href="https://img.piaoniu.com/review/de475473b45c7167ff8c55bded4683b651f82f50.jpg"
-                                style="background-image:url(images/de475473b45c7167ff8c55bded4683b651f82f50.jpg)"
-                                rel="gallery195771" class="img"></a><a
-                                href="https://img.piaoniu.com/review/4379365bf09d595ba68e9809a664ae210ca56223.jpg"
-                                style="background-image:url(images/4379365bf09d595ba68e9809a664ae210ca56223.jpg)"
-                                rel="gallery195771" class="img"></a><a
-                                href="https://img.piaoniu.com/review/950cb5876cd95ccb83362cbf8a49eec3c0bd6a98.jpg"
-                                style="background-image:url(images/950cb5876cd95ccb83362cbf8a49eec3c0bd6a98.jpg)"
-                                rel="gallery195771" class="img"></a><a
-                                href="https://img.piaoniu.com/review/b2d4b5ee81bac90e4e454dfb3a944e54ac5ae3e0.jpg"
-                                style="background-image:url(images/b2d4b5ee81bac90e4e454dfb3a944e54ac5ae3e0.jpg)"
-                                rel="gallery195771" class="img"></a><a
-                                href="https://img.piaoniu.com/review/838baa02959e6b34075497363fe085f430bb0380.jpg"
-                                style="background-image:url(images/838baa02959e6b34075497363fe085f430bb0380.jpg)"
-                                rel="gallery195771" class="img"></a></div>
-                        <div class="review-activity"><a href="/activity/90959" class="poster-link"><img
-                                alt="中国平安 &ldquo;不止，是李健&rdquo; 李健世界巡回演唱会 苏州站"
-                                src="../static/picture/970fbd8d95d6e7068799eded25f6d7cf197794f8.jpg" class="poster"></a><a
-                                href="/activity/90959" class="info">
-                            <div class="title">中国平安 &ldquo;不止，是李健&rdquo; 李健世界巡回演唱会 苏州站</div>
-                        </a></div>
-                        <div class="funcs"><a href="/review/195771" data-replies="39"
-                                              class="func-btn btn-reply">39回复</a>
-                            <div data-likes="17" class="func-btn btn-like">17赞</div>
-                        </div>
-                    </div>
-                </li>
-                <li data-id="193170" class="review-item"><a href="/user/354011" class="userhead"><img
-                        src="../static/picture/1514455284331.jpg" class="avatar">
-                    <div class="level">
-                        <div class="text">官方</div>
-                    </div>
-                </a>
-                    <div class="review-main">
-                        <div class="head">
-                            <div class="username">票牛福利汪</div>
-                            <div class="level">
-                                <div class="text">官方</div>
-                            </div>
-                            <div class="star star-small star-10"></div>
-                            <div class="time">2019-04-08</div>
-                        </div>
-                        <a href="/review/193170" rel="nofollow" class="content">为“吴亦凡2019 天·地·东·西·ALIVE TOUR
-                            巡回演唱会北京站”助力盖楼！送吴亦凡专辑。<br/>1.参与方式:直接在本条评论后回复，一句话表白吴亦凡。<br/>2.中奖回复及奖品设置：回复总数的50%,90%（四舍五入）为中奖回复，各获得吴亦凡专辑一份！
-                            <br/>*示例：假如活动期间总共有512条回复，则获奖回复为第256（512*50%）条回复、第461（512*90%）条回复<br/>3.回复规则：每个用户只有一次中奖机会，重复中奖则顺延至下一层不重复的用户ID
-                            <br/>*发表无关灌水内容者取消中奖资格<br/>4.活动时间：2019.04.08-05.13<br/>5.获奖公示：2019.05.13-14由票牛福利汪公布在本条评论回复中奖名单<br/>*截止2019.05.13
-                            18:00 <br/>本条评论 回复数若<300，则不进行开奖 <br/>*本活动解释权最终归票牛所有<br/></a>
-                        <div class="piclist"><a
-                                href="https://img.piaoniu.com/review/c73002100cc6e92d3a857695aef851060ff8fca1.jpg"
-                                style="background-image:url(images/c73002100cc6e92d3a857695aef851060ff8fca1.jpg)"
-                                rel="gallery193170" class="img"></a><a
-                                href="https://img.piaoniu.com/review/ffe674abeefca896399a87af595540bdbe37720b.jpg"
-                                style="background-image:url(images/ffe674abeefca896399a87af595540bdbe37720b.jpg)"
-                                rel="gallery193170" class="img"></a><a
-                                href="https://img.piaoniu.com/review/a186fbabc56a22751c026a8a8009a2246e63c96b.jpg"
-                                style="background-image:url(images/a186fbabc56a22751c026a8a8009a2246e63c96b.jpg)"
-                                rel="gallery193170" class="img"></a><a
-                                href="https://img.piaoniu.com/review/aa961f87fa2c0e7142553d123d1a0e83d830ea48.jpg"
-                                style="background-image:url(images/aa961f87fa2c0e7142553d123d1a0e83d830ea48.jpg)"
-                                rel="gallery193170" class="img"></a><a
-                                href="https://img.piaoniu.com/review/d7913bb9a74a3c2c21d3c369dac4b74cf2d74c42.jpg"
-                                style="background-image:url(images/d7913bb9a74a3c2c21d3c369dac4b74cf2d74c42.jpg)"
-                                rel="gallery193170" class="img"></a></div>
-                        <div class="review-activity"><a href="/activity/87598" class="poster-link"><img
-                                alt="天&middot;地&middot;东&middot;西&middot;ALIVE TOUR吴亦凡2019巡回演唱会"
-                                src="../static/picture/e2e7ae40c12b74afbe17a49d439d4e2345da8562.jpg" class="poster"></a><a
-                                href="/activity/87598" class="info">
-                            <div class="title">天&middot;地&middot;东&middot;西&middot;ALIVE TOUR吴亦凡2019巡回演唱会</div>
-                        </a></div>
-                        <div class="funcs"><a href="/review/193170" data-replies="349"
-                                              class="func-btn btn-reply">349回复</a>
-                            <div data-likes="25" class="func-btn btn-like">25赞</div>
-                        </div>
-                    </div>
-                </li>
-                <li data-id="194239" class="review-item"><a href="/user/354009" class="userhead"><img
-                        src="../static/picture/1514439435334.jpg" class="avatar">
-                    <div class="level">
-                        <div class="text">官方</div>
-                    </div>
-                </a>
-                    <div class="review-main">
-                        <div class="head">
-                            <div class="username">票牛小秘书</div>
-                            <div class="level">
-                                <div class="text">官方</div>
-                            </div>
-                            <div class="star star-small star-10"></div>
-                            <div class="time">2019-04-12</div>
-                        </div>
-                        <a href="/review/194239" rel="nofollow" class="content">#不说再见#<br/>郑云龙、余笛、王凯、简弘亦、廖佳琳、李琦、周深<br/>七位音乐才子魔都深情开唱！哪位令你印象深刻？<br/>带话题#不说再见#分享你钟爱的音乐才子精彩舞台瞬间（美图或视频），让大家来品一品你爱豆的硬核颜值/实力吧～</a>
-                        <div class="piclist"><a
-                                href="https://img.piaoniu.com/review/868a63b4b5daffa0c0609d849c70c94cccfa4453_ts.jpg"
-                                style="background-image:url(images/868a63b4b5daffa0c0609d849c70c94cccfa4453_ts.jpg)"
-                                rel="gallery194239" class="img"></a><a
-                                href="https://img.piaoniu.com/review/5ebb8195610754b0d81660608671dfbe84a30bdf_ts.jpg"
-                                style="background-image:url(images/5ebb8195610754b0d81660608671dfbe84a30bdf_ts.jpg)"
-                                rel="gallery194239" class="img"></a><a
-                                href="https://img.piaoniu.com/review/90281bfe2099299f082aab55b674cddb4bdff585_ts.jpg"
-                                style="background-image:url(images/90281bfe2099299f082aab55b674cddb4bdff585_ts.jpg)"
-                                rel="gallery194239" class="img"></a><a
-                                href="https://img.piaoniu.com/review/04296f4b588bc86eca09ebcaced3c530809edf6b_ts.jpg"
-                                style="background-image:url(images/04296f4b588bc86eca09ebcaced3c530809edf6b_ts.jpg)"
-                                rel="gallery194239" class="img"></a><a
-                                href="https://img.piaoniu.com/review/e2b6b1df3d738a22198cc9713fa69f4869608a7b_ts.jpg"
-                                style="background-image:url(images/e2b6b1df3d738a22198cc9713fa69f4869608a7b_ts.jpg)"
-                                rel="gallery194239" class="img"></a></div>
-                        <div class="review-activity"><a href="/activity/90995" class="poster-link"><img
-                                alt="&ldquo;不说再见&rdquo;系列演唱会上海站"
-                                src="../static/picture/3d7c9014a9865bca423134b5fa884b8f005f03bd.jpg" class="poster"></a><a
-                                href="/activity/90995" class="info">
-                            <div class="title">&ldquo;不说再见&rdquo;系列演唱会上海站</div>
-                        </a></div>
-                        <div class="funcs"><a href="/review/194239" data-replies="12"
-                                              class="func-btn btn-reply">12回复</a>
-                            <div data-likes="21" class="func-btn btn-like">21赞</div>
-                        </div>
-                    </div>
-                </li>
-                <li data-id="193649" class="review-item"><a href="/user/354011" class="userhead"><img
-                        src="../static/picture/1514455284331.jpg" class="avatar">
-                    <div class="level">
-                        <div class="text">官方</div>
-                    </div>
-                </a>
-                    <div class="review-main">
-                        <div class="head">
-                            <div class="username">票牛福利汪</div>
-                            <div class="level">
-                                <div class="text">官方</div>
-                            </div>
-                            <div class="star star-small star-10"></div>
-                            <div class="time">2019-04-10</div>
-                        </div>
-                        <a href="/review/193649" rel="nofollow" class="content">为“林峯澳门演唱会”助力盖楼！送林峯专辑。<br/>1.参与方式:直接在本条评论后回复，一句话表白林峯。<br/>2.中奖回复及奖品设置：回复总数的50%,90%（四舍五入）为中奖回复，各获得林峯专辑一份！
-                            <br/>*示例：假如活动期间总共有512条回复，则获奖回复为第256（512*50%）条回复、第461（512*90%）条回复<br/>3.回复规则：每个用户只有一次中奖机会，重复中奖则顺延至下一层不重复的用户ID
-                            <br/>*发表无关灌水内容者取消中奖资格<br/>4.活动时间：2019.04.10-05.13<br/>5.获奖公示：2019.05.13-14由票牛福利汪公布在本条评论回复中奖名单<br/>*截止2019.05.13
-                            18:00 <br/>本条评论 回复数若<200，则不进行开奖 <br/>*本活动解释权最终归票牛所有<br/></a>
-                        <div class="piclist"><a
-                                href="https://img.piaoniu.com/review/8cdfc90f3313f40cd84ecbb8f9d609e79ed2e5c0.jpg"
-                                style="background-image:url(images/8cdfc90f3313f40cd84ecbb8f9d609e79ed2e5c0.jpg)"
-                                rel="gallery193649" class="img"></a><a
-                                href="https://img.piaoniu.com/review/7f2c908762ad8c34427ad74685221827c4b52e9c.jpg"
-                                style="background-image:url(images/7f2c908762ad8c34427ad74685221827c4b52e9c.jpg)"
-                                rel="gallery193649" class="img"></a><a
-                                href="https://img.piaoniu.com/review/8854f07b88df71bdf7f60d246b8575ca5e72dd70.jpg"
-                                style="background-image:url(images/8854f07b88df71bdf7f60d246b8575ca5e72dd70.jpg)"
-                                rel="gallery193649" class="img"></a><a
-                                href="https://img.piaoniu.com/review/9d537e61aecef9030535f398bd1e8225132a2fcf.jpg"
-                                style="background-image:url(images/9d537e61aecef9030535f398bd1e8225132a2fcf.jpg)"
-                                rel="gallery193649" class="img"></a><a
-                                href="https://img.piaoniu.com/review/f7aee02d0e0ee0221c88ab434928ed5b52ef2759.jpg"
-                                style="background-image:url(images/f7aee02d0e0ee0221c88ab434928ed5b52ef2759.jpg)"
-                                rel="gallery193649" class="img"></a></div>
-                        <div class="review-activity"><a href="/activity/90912" class="poster-link"><img alt="林峯演唱会-澳门站"
-                                                                                                        src="../static/picture/05387559c5cd5e099a561b0b017f16a188249bcf.jpg"
-                                                                                                        class="poster"></a><a
-                                href="/activity/90912" class="info">
-                            <div class="title">林峯演唱会-澳门站</div>
-                        </a></div>
-                        <div class="funcs"><a href="/review/193649" data-replies="75"
-                                              class="func-btn btn-reply">75回复</a>
-                            <div data-likes="29" class="func-btn btn-like">29赞</div>
-                        </div>
-                    </div>
-                </li>
-                <li data-id="160782" class="review-item"><a href="/user/354011" class="userhead"><img
-                        src="../static/picture/1514455284331.jpg" class="avatar">
-                    <div class="level">
-                        <div class="text">官方</div>
-                    </div>
-                </a>
-                    <div class="review-main">
-                        <div class="head">
-                            <div class="username">票牛福利汪</div>
-                            <div class="level">
-                                <div class="text">官方</div>
-                            </div>
-                            <div class="star star-small star-10"></div>
-                            <div class="time">2018-12-10</div>
-                        </div>
-                        <a href="/review/160782" rel="nofollow" class="content">2018[A CLASSIC TOUR
-                            学友·经典]张学友巡回演唱会——北京站免单开奖啦！！恭喜以下订单号：25001016，24381079，24401113，<br/>锦鲤附体，快来吸欧气吧！工作人员会联系各位中奖用户关于领奖事宜！<br/></a>
-                        <div class="videolist">
-                            <video poster="https://img.piaoniu.com/video/1a5435430bc2a505432aa893b20eab74debba030.jpg"
-                                   controls controlsList="nodownload">
-                                <source src="https://video.piaoniu.com/review/15444299463898106_ts.mp4"
-                                        type="video/mp4">
-                            </video>
-                        </div>
-                        <div class="review-activity"><a href="/activity/68275" class="poster-link"><img
-                                alt="2018[A CLASSIC TOUR 学友&middot;经典]张学友巡回演唱会&mdash;&mdash;北京站"
-                                src="../static/picture/31a4ddccc625cfb72f486381e78a1148978af27c.jpg" class="poster"></a><a
-                                href="/activity/68275" class="info">
-                            <div class="title">2018[A CLASSIC TOUR 学友&middot;经典]张学友巡回演唱会&mdash;&mdash;北京站</div>
-                        </a></div>
-                        <div class="funcs"><a href="/review/160782" data-replies="22"
-                                              class="func-btn btn-reply">22回复</a>
-                            <div data-likes="41" class="func-btn btn-like">41赞</div>
-                        </div>
-                    </div>
-                </li>
-                <li data-id="191673" class="review-item"><a href="/user/354009" class="userhead"><img
-                        src="../static/picture/1514439435334.jpg" class="avatar">
-                    <div class="level">
-                        <div class="text">官方</div>
-                    </div>
-                </a>
-                    <div class="review-main">
-                        <div class="head">
-                            <div class="username">票牛小秘书</div>
-                            <div class="level">
-                                <div class="text">官方</div>
-                            </div>
-                            <div class="star star-small star-10"></div>
-                            <div class="time">2019-04-03</div>
-                        </div>
-                        <a href="/review/191673" rel="nofollow" class="content">#实用展览测评##小秘书最新展览优惠信息#<br/>展览名称：第十八届上海国际汽车工业展览会<br/>展览地点：上海国家会展中心参加第十八届上海国际汽车工业展览会，<br/>展览日期：2019.4.18-4.25<br/>活动期间（4.3-4.25
-                            12:00），下单满200元立减5元，带上你的朋友们一起来吧！</a>
-                        <div class="piclist"><a
-                                href="https://img.piaoniu.com/review/c0e7c53ed904ff55d54732f40470f2fe6e592397.jpg"
-                                style="background-image:url(images/c0e7c53ed904ff55d54732f40470f2fe6e592397.jpg)"
-                                rel="gallery191673" class="img"></a></div>
-                        <div class="review-activity"><a href="/activity/90887" class="poster-link"><img
-                                alt="【2019车展】第十八届上海国际汽车工业展览会" src="../static/picture/0b81e76fa4c825c505f77ccb0eb5e7a613d7f86d.jpg"
-                                class="poster"></a><a href="/activity/90887" class="info">
-                            <div class="title">【2019车展】第十八届上海国际汽车工业展览会</div>
-                        </a></div>
-                        <div class="funcs"><a href="/review/191673" data-replies="5" class="func-btn btn-reply">5回复</a>
-                            <div data-likes="24" class="func-btn btn-like">24赞</div>
-                        </div>
-                    </div>
-                </li>
-                <li data-id="152141" class="review-item"><a href="/user/354011" class="userhead"><img
-                        src="../static/picture/1514455284331.jpg" class="avatar">
-                    <div class="level">
-                        <div class="text">官方</div>
-                    </div>
-                </a>
-                    <div class="review-main">
-                        <div class="head">
-                            <div class="username">票牛福利汪</div>
-                            <div class="level">
-                                <div class="text">官方</div>
-                            </div>
-                            <div class="star star-small star-10"></div>
-                            <div class="time">2018-11-15</div>
-                        </div>
-                        <a href="/review/152141" rel="nofollow" class="content">免单活动开奖啦！！！<br/>恭喜以下订单号：15015691,11394430,22854954,15044415。<br/><br/>锦鲤附体，快来吸欧气吧！<br/>工作人员会联系各位中奖用户关于领奖事宜！</a>
-                        <div class="videolist">
-                            <video poster="https://img.piaoniu.com/video/5f5435b362e0749c06c8cc3e390b21977855a012.jpg"
-                                   controls controlsList="nodownload">
-                                <source src="https://video.piaoniu.com/review/15422693901326850_ts.mp4"
-                                        type="video/mp4">
-                            </video>
-                        </div>
-                        <div class="review-activity"><a href="/activity/60563" class="poster-link"><img
-                                alt="2018周杰伦【地表最强2】世界巡回演唱会-贵阳站"
-                                src="../static/picture/af0fc984ecee50b67cd78445de05ce3074335ee9.jpg" class="poster"></a><a
-                                href="/activity/60563" class="info">
-                            <div class="title">2018周杰伦【地表最强2】世界巡回演唱会-贵阳站</div>
-                        </a></div>
-                        <div class="funcs"><a href="/review/152141" data-replies="5" class="func-btn btn-reply">5回复</a>
-                            <div data-likes="39" class="func-btn btn-like">39赞</div>
-                        </div>
-                    </div>
-                </li>
-                <li data-id="190009" class="review-item"><a href="/user/354011" class="userhead"><img
-                        src="../static/picture/1514455284331.jpg" class="avatar">
-                    <div class="level">
-                        <div class="text">官方</div>
-                    </div>
-                </a>
-                    <div class="review-main">
-                        <div class="head">
-                            <div class="username">票牛福利汪</div>
-                            <div class="level">
-                                <div class="text">官方</div>
-                            </div>
-                            <div class="star star-small star-10"></div>
-                            <div class="time">2019-03-29</div>
-                        </div>
-                        <a href="/review/190009" rel="nofollow"
-                           class="content">为“2019张信哲“未来式”世界巡回演唱会南京站”助力盖楼！送张信哲专辑。<br/>1.参与方式:直接在本条评论后回复，一句话表白张信哲。<br/>2.中奖回复及奖品设置：回复总数的50%,90%（四舍五入）为中奖回复，各获得张信哲专辑一份！
-                            <br/>*示例：假如活动期间总共有512条回复，则获奖回复为第256（512*50%）条回复、第461（512*90%）条回复<br/>3.回复规则：每个用户只有一次中奖机会，重复中奖则顺延至下一层不重复的用户ID
-                            <br/>*发表无关灌水内容者取消中奖资格<br/>4.活动时间：2019.03.29-04.29<br/>5.获奖公示：2019.04.29-30由票牛福利汪公布在本条评论回复中奖名单<br/>*截止2019.04.29
-                            18:00 <br/>本条评论 回复数若<200，则不进行开奖 <br/>*本活动解释权最终归票牛所有<br/></a>
-                        <div class="piclist"><a
-                                href="https://img.piaoniu.com/review/857ff1e0421f9127860c1e1fc32ec31b83701255.jpg"
-                                style="background-image:url(images/857ff1e0421f9127860c1e1fc32ec31b83701255.jpg)"
-                                rel="gallery190009" class="img"></a><a
-                                href="https://img.piaoniu.com/review/132862ddd9e81776ce73aa2fb24955da3b78bd09.jpg"
-                                style="background-image:url(images/132862ddd9e81776ce73aa2fb24955da3b78bd09.jpg)"
-                                rel="gallery190009" class="img"></a><a
-                                href="https://img.piaoniu.com/review/2516c6890436df73908b38993d17a168aaf905d3.jpg"
-                                style="background-image:url(images/2516c6890436df73908b38993d17a168aaf905d3.jpg)"
-                                rel="gallery190009" class="img"></a><a
-                                href="https://img.piaoniu.com/review/9562e6845729b847e6424ae60ea52ad47f21acfc.jpg"
-                                style="background-image:url(images/9562e6845729b847e6424ae60ea52ad47f21acfc.jpg)"
-                                rel="gallery190009" class="img"></a><a
-                                href="https://img.piaoniu.com/review/399a81f6bfe1cce03f0b49727dd8ffafb922fa69.jpg"
-                                style="background-image:url(images/399a81f6bfe1cce03f0b49727dd8ffafb922fa69.jpg)"
-                                rel="gallery190009" class="img"></a></div>
-                        <div class="review-activity"><a href="/activity/86424" class="poster-link"><img
-                                alt="2019张信哲&ldquo;未来式&rdquo;世界巡回演唱会南京站"
-                                src="../static/picture/4ef4db126a752395b4d3b13e013d9931483c2815.jpg" class="poster"></a><a
-                                href="/activity/86424" class="info">
-                            <div class="title">2019张信哲&ldquo;未来式&rdquo;世界巡回演唱会南京站</div>
-                        </a></div>
-                        <div class="funcs"><a href="/review/190009" data-replies="34"
-                                              class="func-btn btn-reply">34回复</a>
-                            <div data-likes="15" class="func-btn btn-like">15赞</div>
-                        </div>
-                    </div>
-                </li>
-                <li data-id="189752" class="review-item"><a href="/user/354011" class="userhead"><img
-                        src="../static/picture/1514455284331.jpg" class="avatar">
-                    <div class="level">
-                        <div class="text">官方</div>
-                    </div>
-                </a>
-                    <div class="review-main">
-                        <div class="head">
-                            <div class="username">票牛福利汪</div>
-                            <div class="level">
-                                <div class="text">官方</div>
-                            </div>
-                            <div class="star star-small star-10"></div>
-                            <div class="time">2019-03-28</div>
-                        </div>
-                        <a href="/review/189752" rel="nofollow" class="content">为“陈小春「STOP ANGRY」巡回演唱会（北京站）”助力盖楼！送陈小春专辑。<br/>1.参与方式:直接在本条评论后回复，一句话表白陈小春。<br/>2.中奖回复及奖品设置：回复总数的50%,90%（四舍五入）为中奖回复，各获得陈小春专辑一份！
-                            <br/>*示例：假如活动期间总共有512条回复，则获奖回复为第256（512*50%）条回复、第461（512*90%）条回复<br/>3.回复规则：每个用户只有一次中奖机会，重复中奖则顺延至下一层不重复的用户ID
-                            <br/>*发表无关灌水内容者取消中奖资格<br/>4.活动时间：2019.03.28-05.07<br/>5.获奖公示：2019.05.07-08由票牛福利汪公布在本条评论回复中奖名单<br/>*截止2019.05.07
-                            18:00 <br/>本条评论 回复数若<200，则不进行开奖 <br/>*本活动解释权最终归票牛所有<br/></a>
-                        <div class="piclist"><a
-                                href="https://img.piaoniu.com/review/341fb3e43049cf8e563cd6f3143e6058fe5d7e48.jpg"
-                                style="background-image:url(images/341fb3e43049cf8e563cd6f3143e6058fe5d7e48.jpg)"
-                                rel="gallery189752" class="img"></a><a
-                                href="https://img.piaoniu.com/review/c8ba73776b3e51ca00b6a664297b071f7ae0fd3d.jpg"
-                                style="background-image:url(images/c8ba73776b3e51ca00b6a664297b071f7ae0fd3d.jpg)"
-                                rel="gallery189752" class="img"></a><a
-                                href="https://img.piaoniu.com/review/24dc6af09a1faa8c582747a20bffa2a560db4e2f.jpg"
-                                style="background-image:url(images/24dc6af09a1faa8c582747a20bffa2a560db4e2f.jpg)"
-                                rel="gallery189752" class="img"></a><a
-                                href="https://img.piaoniu.com/review/70a46e3c4325a91b0245ca6d5d14396bf84cce88.jpg"
-                                style="background-image:url(images/70a46e3c4325a91b0245ca6d5d14396bf84cce88.jpg)"
-                                rel="gallery189752" class="img"></a><a
-                                href="https://img.piaoniu.com/review/a8f57b44680d62e9b9ceccf1edea44826dcaf8d2.jpg"
-                                style="background-image:url(images/a8f57b44680d62e9b9ceccf1edea44826dcaf8d2.jpg)"
-                                rel="gallery189752" class="img"></a></div>
-                        <div class="review-activity"><a href="/activity/83508" class="poster-link"><img
-                                alt="陈小春「STOP ANGRY」巡回演唱会（北京站）"
-                                src="../static/picture/8f25e2444b40f86328cc34b34147168d70f1106b.jpg" class="poster"></a><a
-                                href="/activity/83508" class="info">
-                            <div class="title">陈小春「STOP ANGRY」巡回演唱会（北京站）</div>
-                        </a></div>
-                        <div class="funcs"><a href="/review/189752" data-replies="37"
-                                              class="func-btn btn-reply">37回复</a>
-                            <div data-likes="22" class="func-btn btn-like">22赞</div>
-                        </div>
-                    </div>
-                </li>
-                <li data-id="188274" class="review-item"><a href="/user/354011" class="userhead"><img
-                        src="../static/picture/1514455284331.jpg" class="avatar">
-                    <div class="level">
-                        <div class="text">官方</div>
-                    </div>
-                </a>
-                    <div class="review-main">
-                        <div class="head">
-                            <div class="username">票牛福利汪</div>
-                            <div class="level">
-                                <div class="text">官方</div>
-                            </div>
-                            <div class="star star-small star-10"></div>
-                            <div class="time">2019-03-22</div>
-                        </div>
-                        <a href="/review/188274" rel="nofollow" class="content">为“许巍‘无尽光芒’巡回演唱会-深圳站”助力盖楼！送许巍专辑。<br/>1.参与方式:直接在本条评论后回复，一句话表白许巍。<br/>2.中奖回复及奖品设置：回复总数的50%,90%（四舍五入）为中奖回复，各获得许巍专辑一份！
-                            <br/>*示例：假如活动期间总共有512条回复，则获奖回复为第256（512*50%）条回复、第461（512*90%）条回复<br/>3.回复规则：每个用户只有一次中奖机会，重复中奖则顺延至下一层不重复的用户ID
-                            <br/>*发表无关灌水内容者取消中奖资格<br/>4.活动时间：2019.03.22-05.20<br/>5.获奖公示：2019.05.20-21由票牛福利汪公布在本条评论回复中奖名单<br/>*截止2019.05.20
-                            18:00 <br/>本条评论 回复数若<200，则不进行开奖 <br/>*本活动解释权最终归票牛所有<br/></a>
-                        <div class="piclist"><a
-                                href="https://img.piaoniu.com/review/e51a9b960f425544d180b87c21c6c11480b4348c.jpg"
-                                style="background-image:url(images/e51a9b960f425544d180b87c21c6c11480b4348c.jpg)"
-                                rel="gallery188274" class="img"></a><a
-                                href="https://img.piaoniu.com/review/b4000d488c7d7f23ef6ce20cb198970e12d230de.jpg"
-                                style="background-image:url(images/b4000d488c7d7f23ef6ce20cb198970e12d230de.jpg)"
-                                rel="gallery188274" class="img"></a><a
-                                href="https://img.piaoniu.com/review/82ad08857aaf3fce8aac964a84ad8742e8e77956.jpg"
-                                style="background-image:url(images/82ad08857aaf3fce8aac964a84ad8742e8e77956.jpg)"
-                                rel="gallery188274" class="img"></a><a
-                                href="https://img.piaoniu.com/review/a9808108eaa6ea61723f3caa0380108dcf5a28b8.jpg"
-                                style="background-image:url(images/a9808108eaa6ea61723f3caa0380108dcf5a28b8.jpg)"
-                                rel="gallery188274" class="img"></a><a
-                                href="https://img.piaoniu.com/review/322e138c38922713586288dc3e00992b4bf0deef.jpg"
-                                style="background-image:url(images/322e138c38922713586288dc3e00992b4bf0deef.jpg)"
-                                rel="gallery188274" class="img"></a></div>
-                        <div class="review-activity"><a href="/activity/86127" class="poster-link"><img
-                                alt="许巍&ldquo;无尽光芒&rdquo;巡回演唱会-深圳站"
-                                src="../static/picture/41aa317e2ed44808d1b2c08aed6c997e5aa39115.jpg" class="poster"></a><a
-                                href="/activity/86127" class="info">
-                            <div class="title">许巍&ldquo;无尽光芒&rdquo;巡回演唱会-深圳站</div>
-                        </a></div>
-                        <div class="funcs"><a href="/review/188274" data-replies="80"
-                                              class="func-btn btn-reply">80回复</a>
-                            <div data-likes="26" class="func-btn btn-like">26赞</div>
-                        </div>
-                    </div>
-                </li>
-                <li data-id="187819" class="review-item"><a href="/user/354011" class="userhead"><img
-                        src="../static/picture/1514455284331.jpg" class="avatar">
-                    <div class="level">
-                        <div class="text">官方</div>
-                    </div>
-                </a>
-                    <div class="review-main">
-                        <div class="head">
-                            <div class="username">票牛福利汪</div>
-                            <div class="level">
-                                <div class="text">官方</div>
-                            </div>
-                            <div class="star star-small star-10"></div>
-                            <div class="time">2019-03-20</div>
-                        </div>
-                        <a href="/review/187819" rel="nofollow" class="content">为“NEXT TO
-                            YOU乐华七子世界巡迴演唱会-香港站”助力盖楼！送乐华七子周边。<br/>1.参与方式:直接在本条评论后回复，一句话表白乐华七子。<br/>2.中奖回复及奖品设置：回复总数的50%,90%（四舍五入）为中奖回复，各获得乐华七子周边一份！
-                            <br/>*示例：假如活动期间总共有512条回复，则获奖回复为第256（512*50%）条回复、第461（512*90%）条回复<br/>3.回复规则：每个用户只有一次中奖机会，重复中奖则顺延至下一层不重复的用户ID
-                            <br/>*发表无关灌水内容者取消中奖资格<br/>4.活动时间：2019.03.20-04.05<br/>5.获奖公示：2019.04.05-06由票牛福利汪公布在本条评论回复中奖名单<br/>*截止2019.04.05
-                            18:00 <br/>本条评论 回复数若<200，则不进行开奖 <br/>*本活动解释权最终归票牛所有<br/></a>
-                        <div class="piclist"><a
-                                href="https://img.piaoniu.com/review/a71a5de0512687a6cad1fc77e0c26782c01794d6.jpg"
-                                style="background-image:url(images/a71a5de0512687a6cad1fc77e0c26782c01794d6.jpg)"
-                                rel="gallery187819" class="img"></a><a
-                                href="https://img.piaoniu.com/review/ed153989b439ef1bf00c0c278e6fa1e65fbca7b3.jpg"
-                                style="background-image:url(images/ed153989b439ef1bf00c0c278e6fa1e65fbca7b3.jpg)"
-                                rel="gallery187819" class="img"></a><a
-                                href="https://img.piaoniu.com/review/2a5302bfcb15bc4eeeee0b24b616ef89f173a0bb.jpg"
-                                style="background-image:url(images/2a5302bfcb15bc4eeeee0b24b616ef89f173a0bb.jpg)"
-                                rel="gallery187819" class="img"></a><a
-                                href="https://img.piaoniu.com/review/57302073ef5831c609b7eea2eead650614c3b1f1.jpg"
-                                style="background-image:url(images/57302073ef5831c609b7eea2eead650614c3b1f1.jpg)"
-                                rel="gallery187819" class="img"></a><a
-                                href="https://img.piaoniu.com/review/80ed3be8dcf6b834f3f406b9d505262a352966db.jpg"
-                                style="background-image:url(images/80ed3be8dcf6b834f3f406b9d505262a352966db.jpg)"
-                                rel="gallery187819" class="img"></a></div>
-                        <div class="review-activity"><a href="/activity/87184" class="poster-link"><img
-                                alt="NEXT TO YOU乐华七子世界巡迴演唱会-香港站"
-                                src="../static/picture/c06efdac880cded79a8d4551a5f8ed7bbbb47eef.jpg" class="poster"></a><a
-                                href="/activity/87184" class="info">
-                            <div class="title">NEXT TO YOU乐华七子世界巡迴演唱会-香港站</div>
-                        </a></div>
-                        <div class="funcs"><a href="/review/187819" data-replies="7" class="func-btn btn-reply">7回复</a>
-                            <div data-likes="15" class="func-btn btn-like">15赞</div>
-                        </div>
-                    </div>
-                </li>
-                <li data-id="185604" class="review-item"><a href="/user/354011" class="userhead"><img
-                        src="../static/picture/1514455284331.jpg" class="avatar">
-                    <div class="level">
-                        <div class="text">官方</div>
-                    </div>
-                </a>
-                    <div class="review-main">
-                        <div class="head">
-                            <div class="username">票牛福利汪</div>
-                            <div class="level">
-                                <div class="text">官方</div>
-                            </div>
-                            <div class="star star-small star-10"></div>
-                            <div class="time">2019-03-11</div>
-                        </div>
-                        <a href="/review/185604" rel="nofollow" class="content">为“莫文蔚巡回演唱会-天津站”助力盖楼！送莫文蔚专辑。<br/>1.参与方式:直接在本条评论后回复，一句话表白莫文蔚。<br/>2.中奖回复及奖品设置：回复总数的50%,90%（四舍五入）为中奖回复，各获得莫文蔚专辑一份！
-                            <br/>*示例：假如活动期间总共有512条回复，则获奖回复为第256（512*50%）条回复、第461（512*90%）条回复<br/>3.回复规则：每个用户只有一次中奖机会，重复中奖则顺延至下一层不重复的用户ID
-                            <br/>*发表无关灌水内容者取消中奖资格<br/>4.活动时间：2019.03.11-04.02<br/>5.获奖公示：2019.04.02-03由票牛福利汪公布在本条评论回复中奖名单<br/>*截止2019.04.02
-                            18:00 <br/>本条评论 回复数若<200，则不进行开奖 <br/>*本活动解释权最终归票牛所有<br/></a>
-                        <div class="piclist"><a
-                                href="https://img.piaoniu.com/review/71158a78d6f46e6a9c8548835d5187403a54361e.jpg"
-                                style="background-image:url(images/71158a78d6f46e6a9c8548835d5187403a54361e.jpg)"
-                                rel="gallery185604" class="img"></a><a
-                                href="https://img.piaoniu.com/review/b817a6fcce7d681c8852614f6c915ce4c8714aee.jpg"
-                                style="background-image:url(images/b817a6fcce7d681c8852614f6c915ce4c8714aee.jpg)"
-                                rel="gallery185604" class="img"></a><a
-                                href="https://img.piaoniu.com/review/40a01465168557b935cf6555a2a8af58eb735494.jpg"
-                                style="background-image:url(images/40a01465168557b935cf6555a2a8af58eb735494.jpg)"
-                                rel="gallery185604" class="img"></a><a
-                                href="https://img.piaoniu.com/review/406fb7438ba77b8224da598bd71d0fa068602649.jpg"
-                                style="background-image:url(images/406fb7438ba77b8224da598bd71d0fa068602649.jpg)"
-                                rel="gallery185604" class="img"></a><a
-                                href="https://img.piaoniu.com/review/96aeadedd998aa54fc1c632a893ef91d50234d56.jpg"
-                                style="background-image:url(images/96aeadedd998aa54fc1c632a893ef91d50234d56.jpg)"
-                                rel="gallery185604" class="img"></a></div>
-                        <div class="review-activity"><a href="/activity/87451" class="poster-link"><img
-                                alt="2019 绝色&rdquo;莫文蔚巡回演唱会-天津站"
-                                src="../static/picture/c86591c3a2d75c40b92860da433a96ca787b2b66.jpg" class="poster"></a><a
-                                href="/activity/87451" class="info">
-                            <div class="title">2019 绝色&rdquo;莫文蔚巡回演唱会-天津站</div>
-                        </a></div>
-                        <div class="funcs"><a href="/review/185604" data-replies="205"
-                                              class="func-btn btn-reply">205回复</a>
-                            <div data-likes="27" class="func-btn btn-like">27赞</div>
-                        </div>
-                    </div>
-                </li>
+                </tbody>
             </ul>
             <div class="paging">
-                <div class="total">共10473页</div>
+                <div class="total">共1页</div>
                 <ul class="paginator">
                     <li class="page selected"><a href="/review-search?pageIndex=1&amp;pageSize=15">1</a></li>
-                    <li class="page"><a href="/review-search?pageIndex=2&amp;pageSize=15">2</a></li>
-                    <li class="page"><a href="/review-search?pageIndex=3&amp;pageSize=15">3</a></li>
-                    <div class="page ellipsis">...</div>
-                    <li class="page"><a href="/review-search?pageIndex=10473&amp;pageSize=15">10473</a></li>
                     <li class="page"><a href="/review-search?pageIndex=2&amp;pageSize=15">下一页</a></li>
                 </ul>
             </div>
@@ -798,7 +168,7 @@
                 <div class="title">扫码下载</div>
             </div>
             <div class="block-content">
-                <div class="item"><img alt="票牛APP" src="../static/picture/qrcode.e7315dc5.png" class="icon">
+                <div class="item"><img alt="票牛APP" src="picture/qrcode.e7315dc5.png" class="icon">
                     <div class="text"><a href="https://www.piaoniu.com/app" rel="nofollow" class="title">票牛APP</a>
                         <div class="desc">热门票随时抢 折扣票随时买</div>
                     </div>
@@ -810,12 +180,12 @@
 <div class="banner-content">
     <div class="banner">
         <div class="center">
-            <div class="left"><img src="../static/picture/logox2.78a31cd1.png"></div>
+            <div class="left"><img src="picture/logox2.78a31cd1.png"></div>
             <div class="app-load"><a href="/app" class="apple"></a><a href="/app" class="android"></a></div>
-            <div class="code"><img src="../static/picture/code.0294fe21.png"></div>
+            <div class="code"><img src="picture/code.0294fe21.png"></div>
         </div>
         <span class="close"></span></div>
-    <div class="left-img"><img src="../static/picture/left.e32ac038.png"></div>
+    <div class="left-img"><img src="picture/left.e32ac038.png"></div>
 </div><!--if isHome--><!--	.partners--><!--		.title 合作伙伴：--><!--		ul.list--><!--			li-->
 <!--				a(href='http://maoyan.com/',target='_blank')-->
 <!--					img(src='#{staticHelper.getUrl("/img/footer/maoyan.png")}', style='height:30px')-->
@@ -835,10 +205,10 @@
             href="http://www.miitbeian.gov.cn" target='_blank'>沪ICP备14000399号-2</a></div>
     <div class="police-icons"><a href="http://www.beian.gov.cn/portal/registerSystemInfo?recordcode=31010602001682"
                                  target="_blank" rel="nofollow" class="link link-police"><img
-            src="../static/picture/police.c9ff2fec.png" class="icon">
+            src="picture/police.c9ff2fec.png" class="icon">
         <div class="text">沪公网安备 31010602001682号</div>
     </a><a href="http://www.sgs.gov.cn/lz/licenseLink.do?method=licenceView&amp;entyId=2016050618242638" target="_blank"
-           rel="nofollow" class="link link-gongshang"><img src="../static/picture/gongshang.df298c0c.png" class="icon">
+           rel="nofollow" class="link link-gongshang"><img src="picture/gongshang.df298c0c.png" class="icon">
         <div class="text">上海工商</div>
     </a></div>
 </div>
@@ -3403,6 +2773,11 @@ var activeCities = [{
     "glng": 106.927389
 }]
 </script>
+<script type="text/javascript">
+    function yanchu() {
+        window.location.href="http://localhost:8080/ticketking/page/all.html?cityId="+1+"&pricemin="+1+"&name="+"上";
+    }
+</script>
 <script>(function () {
     var bp = document.createElement('script');
     var curProtocol = window.location.protocol.split(':')[0];
@@ -3416,11 +2791,11 @@ var activeCities = [{
     s.parentNode.insertBefore(bp, s);
 })();</script>
 <!--[if lte IE 7]>
-<script src="../static/js/json3.6787b55e.js"></script><![endif]-->
+<script src="js/json3.6787b55e.js"></script><![endif]-->
 <!--[if lte IE 8]>
-<script src="../static/js/es5-shim.c3b1fc73.js"></script>
-<script src="../static/js/es5-sham.095d9e53.js"></script><![endif]-->
-<script src="../static/js/common.7ec1644e.js"></script><!-- 登录用户-->
+<script src="js/es5-shim.c3b1fc73.js"></script>
+<script src="js/es5-sham.095d9e53.js"></script><![endif]-->
+<script src="js/common.7ec1644e.js"></script><!-- 登录用户-->
 <script>var isContentPage = true</script><!-- 错误监控-->
 <script>Raven.config('https://8f0cab137a7b47769dec9f0dd89f5885@sentry.piaoniu.com/3y', {
     whitelistUrls: [/www\.piaoniu\.com/],
@@ -3466,9 +2841,9 @@ var activeCities = [{
     }
 })()
 </script><!--引用自己服务器上easemob.js文件的路径-->
-<script src="../static/js/easemob.f3ced40f.js" async="async"></script>
-<script src="../static/js/slim-header.38b1caeb.js"></script>
-<script src="../static/js/bottom.0e38a26e.js"></script>
-<script src="../static/js/search.f425907d.js"></script>
+<script src="js/easemob.f3ced40f.js" async="async"></script>
+<script src="js/slim-header.38b1caeb.js"></script>
+<script src="js/bottom.0e38a26e.js"></script>
+<script src="js/search.f425907d.js"></script>
 </body>
 </html>

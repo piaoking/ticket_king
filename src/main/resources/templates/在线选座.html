@@ -1,8 +1,11 @@
 <!DOCTYPE html>
+<html lang="zh-CN" xmlns:th="http://www.thymeleaf.org">
 <!-- saved from url=(0088)http://www.piaoniu.com/activity/89753/onlineSeat?eventId=355588&ticketCategoryId=1564429 -->
 <html class="">
 <head>
+    <base th:href="${#request.getContextPath()}+'/'">
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta name="viewport" content="maximum-scale=3.0,minimum-scale=0.3,user-scalable=1,initial-scale=0.5"/>
     <title>在线选座</title>
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta id="viewport" name="viewport"
@@ -10,12 +13,49 @@
     <meta name="keywords">
     <meta name="description">
     <meta name="360-site-verification" content="ffa82a5e22b3b2935c234b9ea4ff70cf">
-    <link rel="stylesheet" href="../static/css/ui.343fbb43.css">
-    <link rel="stylesheet" href="../static/css/header.2192bc4c.css">
-    <link rel="stylesheet" href="../static/css/onlineseat.ad945a04.css">
-    <link rel="stylesheet" href="../static/css/jquery.fancybox.d73e1c22.css">
-    <link rel="stylesheet" href="../static/css/pannellum.css">
+    <link rel="stylesheet" href="css/ui.343fbb43.css">
+    <link rel="stylesheet" href="css/header.2192bc4c.css">
+    <link rel="stylesheet" href="css/onlineseat.ad945a04.css">
+    <link rel="stylesheet" href="css/jquery.fancybox.d73e1c22.css">
+    <link rel="stylesheet" href="css/pannellum.css">
     <style type="text/css">
+        html {
+            margin:0px;
+            padding:0px;
+        }
+        body {
+            padding:0px;
+            margin: 0px;
+            width: 750px;
+        }
+        ul {
+            padding:0px;
+            list-style: none;/*去掉ul样式*/
+        }
+        ul li {
+            float:left;/*使li水平平铺*/
+        }
+
+        /*为奇数的li*/
+        ul li:nth-child(odd) {
+        }
+        /*椅子的样式*/
+        ul[name = "chair"] li img {
+            height: 16px;/*位置宽高*/
+            width: 16px;
+        }
+        /*每行第一个椅子*/
+        ul[name = "chair"] li:first-child img {
+            margin-left:20px;
+        }
+        /*奇数椅子*/
+        ul[name = "chair"] li:nth-child(2n+3) img {
+            margin-left:30px;/*异桌椅子之间的距离*/
+        }
+        /*偶数椅子*/
+        ul[name = "chair"] li:nth-child(even) img {
+            margin-left:10px;/*同桌椅子之间的距离*/
+        }
         .ticket-category {
             display: flex;
             line-height: 20px;
@@ -42,7 +82,9 @@
             display: flex;
             padding-right: 10px;
         }
-
+        .xiaoshi{
+            display: none;
+        }
         .ticket-category__item span {
             min-width: 40px;
         }
@@ -676,13 +718,13 @@
                 <div class="item item-mobile item-menu">
                     <div class="text">手机票牛</div>
                     <ul>
-                        <li><img src="../static/picture/qr-app.f6b3ee0e.png" class="qr">
+                        <li><img src="picture/qr-app.f6b3ee0e.png" class="qr">
                             <div class="text">
                                 <div class="title">票牛APP</div>
                                 <div class="desc">热门票随时抢<br>折扣票随时买</div>
                             </div>
                         </li>
-                        <li><img src="../static/picture/qr-wechat.72c6a6c0.png" class="qr">
+                        <li><img src="picture/qr-wechat.72c6a6c0.png" class="qr">
                             <div class="text">
                                 <div class="title">微信订阅号</div>
                                 <div class="desc">精彩剧评最新<br>活动随时看</div>
@@ -693,7 +735,7 @@
             </a></div>
     </div>
 </div>
-<div class="step-header"><a href="http://www.piaoniu.com/"><img src="../static/picture/logo.252971b3.png" class="logo"></a>
+<div class="step-header"><a href="http://www.piaoniu.com/"><img src="picture/logo.252971b3.png" class="logo"></a>
     <div class="steps">
         <div class="step">1.选择演出场次</div>
         <div class="selected step">2.选择座位</div>
@@ -746,1595 +788,9 @@
                     </div>
                 </div>
             </div>
-            <div class="seat-map" style="overflow: hidden;">
-                <div class="seat-map__scroll-wrap" style="transform: scale(1);">
-                    <div class="seat-map__seats">
-                        <div class="seat-map__coordinate-row">
-                            <div class="seat-map__point disabled point-0-0"></div>
-                            <div class="seat-map__point disabled point-1-0"></div>
-                            <div class="seat-map__point disabled point-2-0"></div>
-                            <div class="seat-map__point disabled point-3-0"></div>
-                            <div class="seat-map__point disabled point-4-0"></div>
-                            <div class="seat-map__point disabled point-5-0"></div>
-                            <div class="seat-map__point disabled point-6-0"></div>
-                            <div class="seat-map__point disabled point-7-0"></div>
-                            <div class="seat-map__point disabled point-8-0"></div>
-                            <div class="seat-map__point disabled point-9-0"></div>
-                            <div class="seat-map__point disabled point-10-0"></div>
-                            <div class="seat-map__point disabled point-11-0"></div>
-                            <div class="seat-map__point disabled point-12-0"></div>
-                            <div class="seat-map__point disabled point-13-0"></div>
-                            <div class="seat-map__point disabled point-14-0"></div>
-                            <div class="seat-map__point disabled point-15-0"></div>
-                            <div class="seat-map__point disabled point-16-0"></div>
-                            <div class="seat-map__point disabled point-17-0"></div>
-                            <div class="seat-map__point disabled point-18-0"></div>
-                            <div class="seat-map__point disabled point-19-0"></div>
-                            <div class="seat-map__point disabled point-20-0"></div>
-                            <div class="seat-map__point disabled point-21-0"></div>
-                            <div class="seat-map__point disabled point-22-0"></div>
-                            <div class="seat-map__point disabled point-23-0"></div>
-                            <div class="seat-map__point disabled point-24-0"></div>
-                            <div class="seat-map__point disabled point-25-0"></div>
-                            <div class="seat-map__point disabled point-26-0"></div>
-                            <div class="seat-map__point disabled point-27-0"></div>
-                            <div class="seat-map__point disabled point-28-0"></div>
-                            <div class="seat-map__point disabled point-29-0"></div>
-                            <div class="seat-map__point disabled point-30-0"></div>
-                            <div class="seat-map__point disabled point-31-0"></div>
-                            <div class="seat-map__point disabled point-32-0"></div>
-                            <div class="seat-map__point disabled point-33-0"></div>
-                            <div class="seat-map__point disabled point-34-0"></div>
-                            <div class="seat-map__point disabled point-35-0"></div>
-                            <div class="seat-map__point disabled point-36-0"></div>
-                            <div class="seat-map__point disabled point-37-0"></div>
-                            <div class="seat-map__point disabled point-38-0"></div>
-                            <div class="seat-map__point disabled point-39-0"></div>
-                            <div class="seat-map__point disabled point-40-0"></div>
-                            <div class="seat-map__point disabled point-41-0"></div>
-                        </div>
-                        <div class="seat-map__coordinate-row">
-                            <div class="seat-map__point disabled point-0-1"></div>
-                            <div class="seat-map__point disabled point-1-1"></div>
-                            <div class="seat-map__point disabled point-2-1"></div>
-                            <div class="seat-map__point disabled point-3-1"></div>
-                            <div class="seat-map__point disabled point-4-1"></div>
-                            <div class="seat-map__point disabled point-5-1"></div>
-                            <div class="seat-map__point disabled point-6-1"></div>
-                            <div class="seat-map__point disabled point-7-1"></div>
-                            <div class="seat-map__point disabled point-8-1"></div>
-                            <div class="seat-map__point seat-map__seat point-9-1"
-                                 style="background-image: url(&quot;https://assets.piaoniu.com/icon/mahuaSeat/3.png&quot;);"></div>
-                            <div class="seat-map__point seat-map__seat point-10-1"
-                                 style="background-image: url(&quot;https://assets.piaoniu.com/icon/mahuaSeat/3.png&quot;);"></div>
-                            <div class="seat-map__point seat-map__seat point-11-1"
-                                 style="background-image: url(&quot;https://assets.piaoniu.com/icon/mahuaSeat/3.png&quot;);"></div>
-                            <div class="seat-map__point seat-map__seat point-12-1"
-                                 style="background-image: url(&quot;https://assets.piaoniu.com/icon/mahuaSeat/3.png&quot;);"></div>
-                            <div class="seat-map__point disabled point-13-1"></div>
-                            <div class="seat-map__point disabled point-14-1"></div>
-                            <div class="seat-map__point seat-map__seat point-15-1"
-                                 style="background-image: url(&quot;https://assets.piaoniu.com/icon/mahuaSeat/1.png&quot;);"></div>
-                            <div class="seat-map__point seat-map__seat point-16-1"
-                                 style="background-image: url(&quot;https://assets.piaoniu.com/icon/mahuaSeat/1.png&quot;);"></div>
-                            <div class="seat-map__point seat-map__seat point-17-1"
-                                 style="background-image: url(&quot;https://assets.piaoniu.com/icon/mahuaSeat/1.png&quot;);"></div>
-                            <div class="seat-map__point seat-map__seat point-18-1"
-                                 style="background-image: url(&quot;https://assets.piaoniu.com/icon/mahuaSeat/1.png&quot;);"></div>
-                            <div class="seat-map__point seat-map__seat point-19-1"
-                                 style="background-image: url(&quot;https://assets.piaoniu.com/icon/mahuaSeat/1.png&quot;);"></div>
-                            <div class="seat-map__point seat-map__seat point-20-1"
-                                 style="background-image: url(&quot;https://assets.piaoniu.com/icon/mahuaSeat/1.png&quot;);"></div>
-                            <div class="seat-map__point seat-map__seat point-21-1"
-                                 style="background-image: url(&quot;https://assets.piaoniu.com/icon/mahuaSeat/1.png&quot;);"></div>
-                            <div class="seat-map__point seat-map__seat point-22-1"
-                                 style="background-image: url(&quot;https://assets.piaoniu.com/icon/mahuaSeat/1.png&quot;);"></div>
-                            <div class="seat-map__point seat-map__seat point-23-1"
-                                 style="background-image: url(&quot;https://assets.piaoniu.com/icon/mahuaSeat/1.png&quot;);"></div>
-                            <div class="seat-map__point seat-map__seat point-24-1"
-                                 style="background-image: url(&quot;https://assets.piaoniu.com/icon/mahuaSeat/1.png&quot;);"></div>
-                            <div class="seat-map__point seat-map__seat point-25-1"
-                                 style="background-image: url(&quot;https://assets.piaoniu.com/icon/mahuaSeat/1.png&quot;);"></div>
-                            <div class="seat-map__point seat-map__seat point-26-1"
-                                 style="background-image: url(&quot;https://assets.piaoniu.com/icon/mahuaSeat/1.png&quot;);"></div>
-                            <div class="seat-map__point seat-map__seat point-27-1"
-                                 style="background-image: url(&quot;https://assets.piaoniu.com/icon/mahuaSeat/1.png&quot;);"></div>
-                            <div class="seat-map__point seat-map__seat point-28-1"
-                                 style="background-image: url(&quot;https://assets.piaoniu.com/icon/mahuaSeat/1.png&quot;);"></div>
-                            <div class="seat-map__point seat-map__seat point-29-1"
-                                 style="background-image: url(&quot;https://assets.piaoniu.com/icon/mahuaSeat/1.png&quot;);"></div>
-                            <div class="seat-map__point seat-map__seat point-30-1"
-                                 style="background-image: url(&quot;https://assets.piaoniu.com/icon/mahuaSeat/1.png&quot;);"></div>
-                            <div class="seat-map__point disabled point-31-1"></div>
-                            <div class="seat-map__point disabled point-32-1"></div>
-                            <div class="seat-map__point seat-map__seat disabled point-33-1"
-                                 style="background-image: url(&quot;https://assets.piaoniu.com/icon/seat/unable.png&quot;);"></div>
-                            <div class="seat-map__point seat-map__seat point-34-1"
-                                 style="background-image: url(&quot;https://assets.piaoniu.com/icon/mahuaSeat/3.png&quot;);"></div>
-                            <div class="seat-map__point seat-map__seat point-35-1"
-                                 style="background-image: url(&quot;https://assets.piaoniu.com/icon/mahuaSeat/3.png&quot;);"></div>
-                            <div class="seat-map__point seat-map__seat point-36-1"
-                                 style="background-image: url(&quot;https://assets.piaoniu.com/icon/mahuaSeat/3.png&quot;);"></div>
-                            <div class="seat-map__point disabled point-37-1"></div>
-                            <div class="seat-map__point disabled point-38-1"></div>
-                            <div class="seat-map__point disabled point-39-1"></div>
-                            <div class="seat-map__point disabled point-40-1"></div>
-                            <div class="seat-map__point disabled point-41-1"></div>
-                        </div>
-                        <div class="seat-map__coordinate-row">
-                            <div class="seat-map__point disabled point-0-2"></div>
-                            <div class="seat-map__point disabled point-1-2"></div>
-                            <div class="seat-map__point disabled point-2-2"></div>
-                            <div class="seat-map__point disabled point-3-2"></div>
-                            <div class="seat-map__point disabled point-4-2"></div>
-                            <div class="seat-map__point disabled point-5-2"></div>
-                            <div class="seat-map__point disabled point-6-2"></div>
-                            <div class="seat-map__point disabled point-7-2"></div>
-                            <div class="seat-map__point seat-map__seat point-8-2"
-                                 style="background-image: url(&quot;https://assets.piaoniu.com/icon/mahuaSeat/3.png&quot;);"></div>
-                            <div class="seat-map__point seat-map__seat point-9-2"
-                                 style="background-image: url(&quot;https://assets.piaoniu.com/icon/mahuaSeat/3.png&quot;);"></div>
-                            <div class="seat-map__point seat-map__seat point-10-2"
-                                 style="background-image: url(&quot;https://assets.piaoniu.com/icon/mahuaSeat/3.png&quot;);"></div>
-                            <div class="seat-map__point seat-map__seat point-11-2"
-                                 style="background-image: url(&quot;https://assets.piaoniu.com/icon/mahuaSeat/3.png&quot;);"></div>
-                            <div class="seat-map__point seat-map__seat point-12-2"
-                                 style="background-image: url(&quot;https://assets.piaoniu.com/icon/mahuaSeat/3.png&quot;);"></div>
-                            <div class="seat-map__point disabled point-13-2"></div>
-                            <div class="seat-map__point disabled point-14-2"></div>
-                            <div class="seat-map__point seat-map__seat point-15-2"
-                                 style="background-image: url(&quot;https://assets.piaoniu.com/icon/mahuaSeat/2.png&quot;);"></div>
-                            <div class="seat-map__point seat-map__seat point-16-2"
-                                 style="background-image: url(&quot;https://assets.piaoniu.com/icon/mahuaSeat/2.png&quot;);"></div>
-                            <div class="seat-map__point seat-map__seat point-17-2"
-                                 style="background-image: url(&quot;https://assets.piaoniu.com/icon/mahuaSeat/2.png&quot;);"></div>
-                            <div class="seat-map__point seat-map__seat point-18-2"
-                                 style="background-image: url(&quot;https://assets.piaoniu.com/icon/mahuaSeat/2.png&quot;);"></div>
-                            <div class="seat-map__point seat-map__seat point-19-2"
-                                 style="background-image: url(&quot;https://assets.piaoniu.com/icon/mahuaSeat/2.png&quot;);"></div>
-                            <div class="seat-map__point seat-map__seat point-20-2"
-                                 style="background-image: url(&quot;https://assets.piaoniu.com/icon/mahuaSeat/2.png&quot;);"></div>
-                            <div class="seat-map__point seat-map__seat point-21-2"
-                                 style="background-image: url(&quot;https://assets.piaoniu.com/icon/mahuaSeat/2.png&quot;);"></div>
-                            <div class="seat-map__point seat-map__seat point-22-2"
-                                 style="background-image: url(&quot;https://assets.piaoniu.com/icon/mahuaSeat/2.png&quot;);"></div>
-                            <div class="seat-map__point seat-map__seat point-23-2"
-                                 style="background-image: url(&quot;https://assets.piaoniu.com/icon/mahuaSeat/2.png&quot;);"></div>
-                            <div class="seat-map__point seat-map__seat point-24-2"
-                                 style="background-image: url(&quot;https://assets.piaoniu.com/icon/mahuaSeat/2.png&quot;);"></div>
-                            <div class="seat-map__point seat-map__seat point-25-2"
-                                 style="background-image: url(&quot;https://assets.piaoniu.com/icon/mahuaSeat/2.png&quot;);"></div>
-                            <div class="seat-map__point seat-map__seat point-26-2"
-                                 style="background-image: url(&quot;https://assets.piaoniu.com/icon/mahuaSeat/2.png&quot;);"></div>
-                            <div class="seat-map__point seat-map__seat point-27-2"
-                                 style="background-image: url(&quot;https://assets.piaoniu.com/icon/mahuaSeat/2.png&quot;);"></div>
-                            <div class="seat-map__point seat-map__seat point-28-2"
-                                 style="background-image: url(&quot;https://assets.piaoniu.com/icon/mahuaSeat/2.png&quot;);"></div>
-                            <div class="seat-map__point seat-map__seat point-29-2"
-                                 style="background-image: url(&quot;https://assets.piaoniu.com/icon/mahuaSeat/2.png&quot;);"></div>
-                            <div class="seat-map__point seat-map__seat point-30-2"
-                                 style="background-image: url(&quot;https://assets.piaoniu.com/icon/mahuaSeat/2.png&quot;);"></div>
-                            <div class="seat-map__point disabled point-31-2"></div>
-                            <div class="seat-map__point disabled point-32-2"></div>
-                            <div class="seat-map__point seat-map__seat point-33-2"
-                                 style="background-image: url(&quot;https://assets.piaoniu.com/icon/mahuaSeat/3.png&quot;);"></div>
-                            <div class="seat-map__point seat-map__seat point-34-2"
-                                 style="background-image: url(&quot;https://assets.piaoniu.com/icon/mahuaSeat/3.png&quot;);"></div>
-                            <div class="seat-map__point seat-map__seat point-35-2"
-                                 style="background-image: url(&quot;https://assets.piaoniu.com/icon/mahuaSeat/3.png&quot;);"></div>
-                            <div class="seat-map__point seat-map__seat point-36-2"
-                                 style="background-image: url(&quot;https://assets.piaoniu.com/icon/mahuaSeat/3.png&quot;);"></div>
-                            <div class="seat-map__point seat-map__seat point-37-2"
-                                 style="background-image: url(&quot;https://assets.piaoniu.com/icon/mahuaSeat/3.png&quot;);"></div>
-                            <div class="seat-map__point disabled point-38-2"></div>
-                            <div class="seat-map__point disabled point-39-2"></div>
-                            <div class="seat-map__point disabled point-40-2"></div>
-                            <div class="seat-map__point disabled point-41-2"></div>
-                        </div>
-                        <div class="seat-map__coordinate-row">
-                            <div class="seat-map__point disabled point-0-3"></div>
-                            <div class="seat-map__point disabled point-1-3"></div>
-                            <div class="seat-map__point disabled point-2-3"></div>
-                            <div class="seat-map__point disabled point-3-3"></div>
-                            <div class="seat-map__point disabled point-4-3"></div>
-                            <div class="seat-map__point disabled point-5-3"></div>
-                            <div class="seat-map__point disabled point-6-3"></div>
-                            <div class="seat-map__point seat-map__seat point-7-3"
-                                 style="background-image: url(&quot;https://assets.piaoniu.com/icon/mahuaSeat/4.png&quot;);"></div>
-                            <div class="seat-map__point seat-map__seat point-8-3"
-                                 style="background-image: url(&quot;https://assets.piaoniu.com/icon/mahuaSeat/4.png&quot;);"></div>
-                            <div class="seat-map__point seat-map__seat point-9-3"
-                                 style="background-image: url(&quot;https://assets.piaoniu.com/icon/mahuaSeat/3.png&quot;);"></div>
-                            <div class="seat-map__point seat-map__seat point-10-3"
-                                 style="background-image: url(&quot;https://assets.piaoniu.com/icon/mahuaSeat/3.png&quot;);"></div>
-                            <div class="seat-map__point seat-map__seat point-11-3"
-                                 style="background-image: url(&quot;https://assets.piaoniu.com/icon/mahuaSeat/3.png&quot;);"></div>
-                            <div class="seat-map__point seat-map__seat point-12-3"
-                                 style="background-image: url(&quot;https://assets.piaoniu.com/icon/mahuaSeat/3.png&quot;);"></div>
-                            <div class="seat-map__point disabled point-13-3"></div>
-                            <div class="seat-map__point disabled point-14-3"></div>
-                            <div class="seat-map__point seat-map__seat point-15-3"
-                                 style="background-image: url(&quot;https://assets.piaoniu.com/icon/mahuaSeat/3.png&quot;);"></div>
-                            <div class="seat-map__point seat-map__seat point-16-3"
-                                 style="background-image: url(&quot;https://assets.piaoniu.com/icon/mahuaSeat/3.png&quot;);"></div>
-                            <div class="seat-map__point seat-map__seat point-17-3"
-                                 style="background-image: url(&quot;https://assets.piaoniu.com/icon/mahuaSeat/3.png&quot;);"></div>
-                            <div class="seat-map__point seat-map__seat disabled point-18-3"
-                                 style="background-image: url(&quot;https://assets.piaoniu.com/icon/seat/unable.png&quot;);"></div>
-                            <div class="seat-map__point seat-map__seat disabled point-19-3"
-                                 style="background-image: url(&quot;https://assets.piaoniu.com/icon/seat/unable.png&quot;);"></div>
-                            <div class="seat-map__point seat-map__seat disabled point-20-3"
-                                 style="background-image: url(&quot;https://assets.piaoniu.com/icon/seat/unable.png&quot;);"></div>
-                            <div class="seat-map__point seat-map__seat disabled point-21-3"
-                                 style="background-image: url(&quot;https://assets.piaoniu.com/icon/seat/unable.png&quot;);"></div>
-                            <div class="seat-map__point seat-map__seat disabled point-22-3"
-                                 style="background-image: url(&quot;https://assets.piaoniu.com/icon/seat/unable.png&quot;);"></div>
-                            <div class="seat-map__point seat-map__seat disabled point-23-3"
-                                 style="background-image: url(&quot;https://assets.piaoniu.com/icon/seat/unable.png&quot;);"></div>
-                            <div class="seat-map__point seat-map__seat disabled point-24-3"
-                                 style="background-image: url(&quot;https://assets.piaoniu.com/icon/seat/unable.png&quot;);"></div>
-                            <div class="seat-map__point seat-map__seat disabled point-25-3"
-                                 style="background-image: url(&quot;https://assets.piaoniu.com/icon/seat/unable.png&quot;);"></div>
-                            <div class="seat-map__point seat-map__seat disabled point-26-3"
-                                 style="background-image: url(&quot;https://assets.piaoniu.com/icon/seat/unable.png&quot;);"></div>
-                            <div class="seat-map__point seat-map__seat disabled point-27-3"
-                                 style="background-image: url(&quot;https://assets.piaoniu.com/icon/seat/unable.png&quot;);"></div>
-                            <div class="seat-map__point seat-map__seat disabled point-28-3"
-                                 style="background-image: url(&quot;https://assets.piaoniu.com/icon/seat/unable.png&quot;);"></div>
-                            <div class="seat-map__point seat-map__seat disabled point-29-3"
-                                 style="background-image: url(&quot;https://assets.piaoniu.com/icon/seat/unable.png&quot;);"></div>
-                            <div class="seat-map__point seat-map__seat point-30-3"
-                                 style="background-image: url(&quot;https://assets.piaoniu.com/icon/mahuaSeat/3.png&quot;);"></div>
-                            <div class="seat-map__point disabled point-31-3"></div>
-                            <div class="seat-map__point disabled point-32-3"></div>
-                            <div class="seat-map__point seat-map__seat point-33-3"
-                                 style="background-image: url(&quot;https://assets.piaoniu.com/icon/mahuaSeat/3.png&quot;);"></div>
-                            <div class="seat-map__point seat-map__seat point-34-3"
-                                 style="background-image: url(&quot;https://assets.piaoniu.com/icon/mahuaSeat/3.png&quot;);"></div>
-                            <div class="seat-map__point seat-map__seat point-35-3"
-                                 style="background-image: url(&quot;https://assets.piaoniu.com/icon/mahuaSeat/3.png&quot;);"></div>
-                            <div class="seat-map__point seat-map__seat point-36-3"
-                                 style="background-image: url(&quot;https://assets.piaoniu.com/icon/mahuaSeat/3.png&quot;);"></div>
-                            <div class="seat-map__point seat-map__seat point-37-3"
-                                 style="background-image: url(&quot;https://assets.piaoniu.com/icon/mahuaSeat/4.png&quot;);"></div>
-                            <div class="seat-map__point seat-map__seat point-38-3"
-                                 style="background-image: url(&quot;https://assets.piaoniu.com/icon/mahuaSeat/4.png&quot;);"></div>
-                            <div class="seat-map__point disabled point-39-3"></div>
-                            <div class="seat-map__point disabled point-40-3"></div>
-                            <div class="seat-map__point disabled point-41-3"></div>
-                        </div>
-                        <div class="seat-map__coordinate-row">
-                            <div class="seat-map__point disabled point-0-4"></div>
-                            <div class="seat-map__point disabled point-1-4"></div>
-                            <div class="seat-map__point disabled point-2-4"></div>
-                            <div class="seat-map__point disabled point-3-4"></div>
-                            <div class="seat-map__point disabled point-4-4"></div>
-                            <div class="seat-map__point disabled point-5-4"></div>
-                            <div class="seat-map__point seat-map__seat disabled point-6-4"
-                                 style="background-image: url(&quot;https://assets.piaoniu.com/icon/seat/unable.png&quot;);"></div>
-                            <div class="seat-map__point seat-map__seat point-7-4"
-                                 style="background-image: url(&quot;https://assets.piaoniu.com/icon/mahuaSeat/4.png&quot;);"></div>
-                            <div class="seat-map__point seat-map__seat point-8-4"
-                                 style="background-image: url(&quot;https://assets.piaoniu.com/icon/mahuaSeat/4.png&quot;);"></div>
-                            <div class="seat-map__point seat-map__seat point-9-4"
-                                 style="background-image: url(&quot;https://assets.piaoniu.com/icon/mahuaSeat/3.png&quot;);"></div>
-                            <div class="seat-map__point seat-map__seat point-10-4"
-                                 style="background-image: url(&quot;https://assets.piaoniu.com/icon/mahuaSeat/3.png&quot;);"></div>
-                            <div class="seat-map__point seat-map__seat point-11-4"
-                                 style="background-image: url(&quot;https://assets.piaoniu.com/icon/mahuaSeat/3.png&quot;);"></div>
-                            <div class="seat-map__point seat-map__seat point-12-4"
-                                 style="background-image: url(&quot;https://assets.piaoniu.com/icon/mahuaSeat/3.png&quot;);"></div>
-                            <div class="seat-map__point disabled point-13-4"></div>
-                            <div class="seat-map__point disabled point-14-4"></div>
-                            <div class="seat-map__point seat-map__seat point-15-4"
-                                 style="background-image: url(&quot;https://assets.piaoniu.com/icon/mahuaSeat/3.png&quot;);"></div>
-                            <div class="seat-map__point seat-map__seat point-16-4"
-                                 style="background-image: url(&quot;https://assets.piaoniu.com/icon/mahuaSeat/3.png&quot;);"></div>
-                            <div class="seat-map__point seat-map__seat point-17-4"
-                                 style="background-image: url(&quot;https://assets.piaoniu.com/icon/mahuaSeat/3.png&quot;);"></div>
-                            <div class="seat-map__point seat-map__seat disabled point-18-4"
-                                 style="background-image: url(&quot;https://assets.piaoniu.com/icon/seat/unable.png&quot;);"></div>
-                            <div class="seat-map__point seat-map__seat disabled point-19-4"
-                                 style="background-image: url(&quot;https://assets.piaoniu.com/icon/seat/unable.png&quot;);"></div>
-                            <div class="seat-map__point seat-map__seat disabled point-20-4"
-                                 style="background-image: url(&quot;https://assets.piaoniu.com/icon/seat/unable.png&quot;);"></div>
-                            <div class="seat-map__point seat-map__seat disabled point-21-4"
-                                 style="background-image: url(&quot;https://assets.piaoniu.com/icon/seat/unable.png&quot;);"></div>
-                            <div class="seat-map__point seat-map__seat disabled point-22-4"
-                                 style="background-image: url(&quot;https://assets.piaoniu.com/icon/seat/unable.png&quot;);"></div>
-                            <div class="seat-map__point seat-map__seat disabled point-23-4"
-                                 style="background-image: url(&quot;https://assets.piaoniu.com/icon/seat/unable.png&quot;);"></div>
-                            <div class="seat-map__point seat-map__seat disabled point-24-4"
-                                 style="background-image: url(&quot;https://assets.piaoniu.com/icon/seat/unable.png&quot;);"></div>
-                            <div class="seat-map__point seat-map__seat disabled point-25-4"
-                                 style="background-image: url(&quot;https://assets.piaoniu.com/icon/seat/unable.png&quot;);"></div>
-                            <div class="seat-map__point seat-map__seat disabled point-26-4"
-                                 style="background-image: url(&quot;https://assets.piaoniu.com/icon/seat/unable.png&quot;);"></div>
-                            <div class="seat-map__point seat-map__seat disabled point-27-4"
-                                 style="background-image: url(&quot;https://assets.piaoniu.com/icon/seat/unable.png&quot;);"></div>
-                            <div class="seat-map__point seat-map__seat point-28-4"
-                                 style="background-image: url(&quot;https://assets.piaoniu.com/icon/mahuaSeat/3.png&quot;);"></div>
-                            <div class="seat-map__point seat-map__seat point-29-4"
-                                 style="background-image: url(&quot;https://assets.piaoniu.com/icon/mahuaSeat/3.png&quot;);"></div>
-                            <div class="seat-map__point seat-map__seat point-30-4"
-                                 style="background-image: url(&quot;https://assets.piaoniu.com/icon/mahuaSeat/3.png&quot;);"></div>
-                            <div class="seat-map__point disabled point-31-4"></div>
-                            <div class="seat-map__point disabled point-32-4"></div>
-                            <div class="seat-map__point seat-map__seat point-33-4"
-                                 style="background-image: url(&quot;https://assets.piaoniu.com/icon/mahuaSeat/3.png&quot;);"></div>
-                            <div class="seat-map__point seat-map__seat point-34-4"
-                                 style="background-image: url(&quot;https://assets.piaoniu.com/icon/mahuaSeat/3.png&quot;);"></div>
-                            <div class="seat-map__point seat-map__seat point-35-4"
-                                 style="background-image: url(&quot;https://assets.piaoniu.com/icon/mahuaSeat/3.png&quot;);"></div>
-                            <div class="seat-map__point seat-map__seat point-36-4"
-                                 style="background-image: url(&quot;https://assets.piaoniu.com/icon/mahuaSeat/3.png&quot;);"></div>
-                            <div class="seat-map__point seat-map__seat point-37-4"
-                                 style="background-image: url(&quot;https://assets.piaoniu.com/icon/mahuaSeat/4.png&quot;);"></div>
-                            <div class="seat-map__point seat-map__seat point-38-4"
-                                 style="background-image: url(&quot;https://assets.piaoniu.com/icon/mahuaSeat/4.png&quot;);"></div>
-                            <div class="seat-map__point seat-map__seat point-39-4"
-                                 style="background-image: url(&quot;https://assets.piaoniu.com/icon/mahuaSeat/6.png&quot;);"></div>
-                            <div class="seat-map__point disabled point-40-4"></div>
-                            <div class="seat-map__point disabled point-41-4"></div>
-                        </div>
-                        <div class="seat-map__coordinate-row">
-                            <div class="seat-map__point disabled point-0-5"></div>
-                            <div class="seat-map__point disabled point-1-5"></div>
-                            <div class="seat-map__point disabled point-2-5"></div>
-                            <div class="seat-map__point disabled point-3-5"></div>
-                            <div class="seat-map__point disabled point-4-5"></div>
-                            <div class="seat-map__point seat-map__seat point-5-5"
-                                 style="background-image: url(&quot;https://assets.piaoniu.com/icon/mahuaSeat/6.png&quot;);"></div>
-                            <div class="seat-map__point seat-map__seat point-6-5"
-                                 style="background-image: url(&quot;https://assets.piaoniu.com/icon/mahuaSeat/6.png&quot;);"></div>
-                            <div class="seat-map__point seat-map__seat point-7-5"
-                                 style="background-image: url(&quot;https://assets.piaoniu.com/icon/mahuaSeat/4.png&quot;);"></div>
-                            <div class="seat-map__point seat-map__seat point-8-5"
-                                 style="background-image: url(&quot;https://assets.piaoniu.com/icon/mahuaSeat/4.png&quot;);"></div>
-                            <div class="seat-map__point seat-map__seat point-9-5"
-                                 style="background-image: url(&quot;https://assets.piaoniu.com/icon/mahuaSeat/4.png&quot;);"></div>
-                            <div class="seat-map__point seat-map__seat point-10-5"
-                                 style="background-image: url(&quot;https://assets.piaoniu.com/icon/mahuaSeat/4.png&quot;);"></div>
-                            <div class="seat-map__point seat-map__seat point-11-5"
-                                 style="background-image: url(&quot;https://assets.piaoniu.com/icon/mahuaSeat/3.png&quot;);"></div>
-                            <div class="seat-map__point seat-map__seat point-12-5"
-                                 style="background-image: url(&quot;https://assets.piaoniu.com/icon/mahuaSeat/3.png&quot;);"></div>
-                            <div class="seat-map__point disabled point-13-5"></div>
-                            <div class="seat-map__point disabled point-14-5"></div>
-                            <div class="seat-map__point seat-map__seat point-15-5"
-                                 style="background-image: url(&quot;https://assets.piaoniu.com/icon/mahuaSeat/3.png&quot;);"></div>
-                            <div class="seat-map__point seat-map__seat point-16-5"
-                                 style="background-image: url(&quot;https://assets.piaoniu.com/icon/mahuaSeat/3.png&quot;);"></div>
-                            <div class="seat-map__point seat-map__seat point-17-5"
-                                 style="background-image: url(&quot;https://assets.piaoniu.com/icon/mahuaSeat/3.png&quot;);"></div>
-                            <div class="seat-map__point seat-map__seat disabled point-18-5"
-                                 style="background-image: url(&quot;https://assets.piaoniu.com/icon/seat/unable.png&quot;);"></div>
-                            <div class="seat-map__point seat-map__seat disabled point-19-5"
-                                 style="background-image: url(&quot;https://assets.piaoniu.com/icon/seat/unable.png&quot;);"></div>
-                            <div class="seat-map__point seat-map__seat disabled point-20-5"
-                                 style="background-image: url(&quot;https://assets.piaoniu.com/icon/seat/unable.png&quot;);"></div>
-                            <div class="seat-map__point seat-map__seat disabled point-21-5"
-                                 style="background-image: url(&quot;https://assets.piaoniu.com/icon/seat/unable.png&quot;);"></div>
-                            <div class="seat-map__point seat-map__seat disabled point-22-5"
-                                 style="background-image: url(&quot;https://assets.piaoniu.com/icon/seat/unable.png&quot;);"></div>
-                            <div class="seat-map__point seat-map__seat disabled point-23-5"
-                                 style="background-image: url(&quot;https://assets.piaoniu.com/icon/seat/unable.png&quot;);"></div>
-                            <div class="seat-map__point seat-map__seat disabled point-24-5"
-                                 style="background-image: url(&quot;https://assets.piaoniu.com/icon/seat/unable.png&quot;);"></div>
-                            <div class="seat-map__point seat-map__seat disabled point-25-5"
-                                 style="background-image: url(&quot;https://assets.piaoniu.com/icon/seat/unable.png&quot;);"></div>
-                            <div class="seat-map__point seat-map__seat disabled point-26-5"
-                                 style="background-image: url(&quot;https://assets.piaoniu.com/icon/seat/unable.png&quot;);"></div>
-                            <div class="seat-map__point seat-map__seat disabled point-27-5"
-                                 style="background-image: url(&quot;https://assets.piaoniu.com/icon/seat/unable.png&quot;);"></div>
-                            <div class="seat-map__point seat-map__seat point-28-5"
-                                 style="background-image: url(&quot;https://assets.piaoniu.com/icon/mahuaSeat/3.png&quot;);"></div>
-                            <div class="seat-map__point seat-map__seat point-29-5"
-                                 style="background-image: url(&quot;https://assets.piaoniu.com/icon/mahuaSeat/3.png&quot;);"></div>
-                            <div class="seat-map__point seat-map__seat point-30-5"
-                                 style="background-image: url(&quot;https://assets.piaoniu.com/icon/mahuaSeat/3.png&quot;);"></div>
-                            <div class="seat-map__point disabled point-31-5"></div>
-                            <div class="seat-map__point disabled point-32-5"></div>
-                            <div class="seat-map__point seat-map__seat point-33-5"
-                                 style="background-image: url(&quot;https://assets.piaoniu.com/icon/mahuaSeat/3.png&quot;);"></div>
-                            <div class="seat-map__point seat-map__seat point-34-5"
-                                 style="background-image: url(&quot;https://assets.piaoniu.com/icon/mahuaSeat/3.png&quot;);"></div>
-                            <div class="seat-map__point seat-map__seat point-35-5"
-                                 style="background-image: url(&quot;https://assets.piaoniu.com/icon/mahuaSeat/4.png&quot;);"></div>
-                            <div class="seat-map__point seat-map__seat point-36-5"
-                                 style="background-image: url(&quot;https://assets.piaoniu.com/icon/mahuaSeat/4.png&quot;);"></div>
-                            <div class="seat-map__point seat-map__seat point-37-5"
-                                 style="background-image: url(&quot;https://assets.piaoniu.com/icon/mahuaSeat/4.png&quot;);"></div>
-                            <div class="seat-map__point seat-map__seat point-38-5"
-                                 style="background-image: url(&quot;https://assets.piaoniu.com/icon/mahuaSeat/4.png&quot;);"></div>
-                            <div class="seat-map__point seat-map__seat disabled point-39-5"
-                                 style="background-image: url(&quot;https://assets.piaoniu.com/icon/seat/unable.png&quot;);"></div>
-                            <div class="seat-map__point seat-map__seat disabled point-40-5"
-                                 style="background-image: url(&quot;https://assets.piaoniu.com/icon/seat/unable.png&quot;);"></div>
-                            <div class="seat-map__point disabled point-41-5"></div>
-                        </div>
-                        <div class="seat-map__coordinate-row">
-                            <div class="seat-map__point disabled point-0-6"></div>
-                            <div class="seat-map__point disabled point-1-6"></div>
-                            <div class="seat-map__point disabled point-2-6"></div>
-                            <div class="seat-map__point disabled point-3-6"></div>
-                            <div class="seat-map__point disabled point-4-6"></div>
-                            <div class="seat-map__point seat-map__seat point-5-6"
-                                 style="background-image: url(&quot;https://assets.piaoniu.com/icon/mahuaSeat/6.png&quot;);"></div>
-                            <div class="seat-map__point seat-map__seat point-6-6"
-                                 style="background-image: url(&quot;https://assets.piaoniu.com/icon/mahuaSeat/6.png&quot;);"></div>
-                            <div class="seat-map__point seat-map__seat point-7-6"
-                                 style="background-image: url(&quot;https://assets.piaoniu.com/icon/mahuaSeat/4.png&quot;);"></div>
-                            <div class="seat-map__point seat-map__seat point-8-6"
-                                 style="background-image: url(&quot;https://assets.piaoniu.com/icon/mahuaSeat/4.png&quot;);"></div>
-                            <div class="seat-map__point seat-map__seat point-9-6"
-                                 style="background-image: url(&quot;https://assets.piaoniu.com/icon/mahuaSeat/4.png&quot;);"></div>
-                            <div class="seat-map__point seat-map__seat point-10-6"
-                                 style="background-image: url(&quot;https://assets.piaoniu.com/icon/mahuaSeat/4.png&quot;);"></div>
-                            <div class="seat-map__point seat-map__seat point-11-6"
-                                 style="background-image: url(&quot;https://assets.piaoniu.com/icon/mahuaSeat/3.png&quot;);"></div>
-                            <div class="seat-map__point seat-map__seat point-12-6"
-                                 style="background-image: url(&quot;https://assets.piaoniu.com/icon/mahuaSeat/3.png&quot;);"></div>
-                            <div class="seat-map__point disabled point-13-6"></div>
-                            <div class="seat-map__point disabled point-14-6"></div>
-                            <div class="seat-map__point seat-map__seat point-15-6"
-                                 style="background-image: url(&quot;https://assets.piaoniu.com/icon/mahuaSeat/3.png&quot;);"></div>
-                            <div class="seat-map__point seat-map__seat point-16-6"
-                                 style="background-image: url(&quot;https://assets.piaoniu.com/icon/mahuaSeat/3.png&quot;);"></div>
-                            <div class="seat-map__point seat-map__seat point-17-6"
-                                 style="background-image: url(&quot;https://assets.piaoniu.com/icon/mahuaSeat/3.png&quot;);"></div>
-                            <div class="seat-map__point seat-map__seat disabled point-18-6"
-                                 style="background-image: url(&quot;https://assets.piaoniu.com/icon/seat/unable.png&quot;);"></div>
-                            <div class="seat-map__point seat-map__seat disabled point-19-6"
-                                 style="background-image: url(&quot;https://assets.piaoniu.com/icon/seat/unable.png&quot;);"></div>
-                            <div class="seat-map__point seat-map__seat disabled point-20-6"
-                                 style="background-image: url(&quot;https://assets.piaoniu.com/icon/seat/unable.png&quot;);"></div>
-                            <div class="seat-map__point seat-map__seat disabled point-21-6"
-                                 style="background-image: url(&quot;https://assets.piaoniu.com/icon/seat/unable.png&quot;);"></div>
-                            <div class="seat-map__point seat-map__seat disabled point-22-6"
-                                 style="background-image: url(&quot;https://assets.piaoniu.com/icon/seat/unable.png&quot;);"></div>
-                            <div class="seat-map__point seat-map__seat disabled point-23-6"
-                                 style="background-image: url(&quot;https://assets.piaoniu.com/icon/seat/unable.png&quot;);"></div>
-                            <div class="seat-map__point seat-map__seat disabled point-24-6"
-                                 style="background-image: url(&quot;https://assets.piaoniu.com/icon/seat/unable.png&quot;);"></div>
-                            <div class="seat-map__point seat-map__seat disabled point-25-6"
-                                 style="background-image: url(&quot;https://assets.piaoniu.com/icon/seat/unable.png&quot;);"></div>
-                            <div class="seat-map__point seat-map__seat disabled point-26-6"
-                                 style="background-image: url(&quot;https://assets.piaoniu.com/icon/seat/unable.png&quot;);"></div>
-                            <div class="seat-map__point seat-map__seat disabled point-27-6"
-                                 style="background-image: url(&quot;https://assets.piaoniu.com/icon/seat/unable.png&quot;);"></div>
-                            <div class="seat-map__point seat-map__seat point-28-6"
-                                 style="background-image: url(&quot;https://assets.piaoniu.com/icon/mahuaSeat/3.png&quot;);"></div>
-                            <div class="seat-map__point seat-map__seat point-29-6"
-                                 style="background-image: url(&quot;https://assets.piaoniu.com/icon/mahuaSeat/3.png&quot;);"></div>
-                            <div class="seat-map__point seat-map__seat point-30-6"
-                                 style="background-image: url(&quot;https://assets.piaoniu.com/icon/mahuaSeat/3.png&quot;);"></div>
-                            <div class="seat-map__point disabled point-31-6"></div>
-                            <div class="seat-map__point disabled point-32-6"></div>
-                            <div class="seat-map__point seat-map__seat point-33-6"
-                                 style="background-image: url(&quot;https://assets.piaoniu.com/icon/mahuaSeat/3.png&quot;);"></div>
-                            <div class="seat-map__point seat-map__seat point-34-6"
-                                 style="background-image: url(&quot;https://assets.piaoniu.com/icon/mahuaSeat/3.png&quot;);"></div>
-                            <div class="seat-map__point seat-map__seat point-35-6"
-                                 style="background-image: url(&quot;https://assets.piaoniu.com/icon/mahuaSeat/4.png&quot;);"></div>
-                            <div class="seat-map__point seat-map__seat point-36-6"
-                                 style="background-image: url(&quot;https://assets.piaoniu.com/icon/mahuaSeat/4.png&quot;);"></div>
-                            <div class="seat-map__point seat-map__seat point-37-6"
-                                 style="background-image: url(&quot;https://assets.piaoniu.com/icon/mahuaSeat/4.png&quot;);"></div>
-                            <div class="seat-map__point seat-map__seat point-38-6"
-                                 style="background-image: url(&quot;https://assets.piaoniu.com/icon/mahuaSeat/4.png&quot;);"></div>
-                            <div class="seat-map__point seat-map__seat point-39-6"
-                                 style="background-image: url(&quot;https://assets.piaoniu.com/icon/mahuaSeat/6.png&quot;);"></div>
-                            <div class="seat-map__point seat-map__seat point-40-6"
-                                 style="background-image: url(&quot;https://assets.piaoniu.com/icon/mahuaSeat/6.png&quot;);"></div>
-                            <div class="seat-map__point disabled point-41-6"></div>
-                        </div>
-                        <div class="seat-map__coordinate-row">
-                            <div class="seat-map__point disabled point-0-7"></div>
-                            <div class="seat-map__point disabled point-1-7"></div>
-                            <div class="seat-map__point disabled point-2-7"></div>
-                            <div class="seat-map__point disabled point-3-7"></div>
-                            <div class="seat-map__point disabled point-4-7"></div>
-                            <div class="seat-map__point seat-map__seat point-5-7"
-                                 style="background-image: url(&quot;https://assets.piaoniu.com/icon/mahuaSeat/6.png&quot;);"></div>
-                            <div class="seat-map__point seat-map__seat point-6-7"
-                                 style="background-image: url(&quot;https://assets.piaoniu.com/icon/mahuaSeat/6.png&quot;);"></div>
-                            <div class="seat-map__point seat-map__seat point-7-7"
-                                 style="background-image: url(&quot;https://assets.piaoniu.com/icon/mahuaSeat/4.png&quot;);"></div>
-                            <div class="seat-map__point seat-map__seat point-8-7"
-                                 style="background-image: url(&quot;https://assets.piaoniu.com/icon/mahuaSeat/4.png&quot;);"></div>
-                            <div class="seat-map__point seat-map__seat point-9-7"
-                                 style="background-image: url(&quot;https://assets.piaoniu.com/icon/mahuaSeat/4.png&quot;);"></div>
-                            <div class="seat-map__point seat-map__seat point-10-7"
-                                 style="background-image: url(&quot;https://assets.piaoniu.com/icon/mahuaSeat/4.png&quot;);"></div>
-                            <div class="seat-map__point seat-map__seat point-11-7"
-                                 style="background-image: url(&quot;https://assets.piaoniu.com/icon/mahuaSeat/3.png&quot;);"></div>
-                            <div class="seat-map__point seat-map__seat point-12-7"
-                                 style="background-image: url(&quot;https://assets.piaoniu.com/icon/mahuaSeat/3.png&quot;);"></div>
-                            <div class="seat-map__point disabled point-13-7"></div>
-                            <div class="seat-map__point disabled point-14-7"></div>
-                            <div class="seat-map__point seat-map__seat point-15-7"
-                                 style="background-image: url(&quot;https://assets.piaoniu.com/icon/mahuaSeat/3.png&quot;);"></div>
-                            <div class="seat-map__point seat-map__seat point-16-7"
-                                 style="background-image: url(&quot;https://assets.piaoniu.com/icon/mahuaSeat/3.png&quot;);"></div>
-                            <div class="seat-map__point seat-map__seat point-17-7"
-                                 style="background-image: url(&quot;https://assets.piaoniu.com/icon/mahuaSeat/3.png&quot;);"></div>
-                            <div class="seat-map__point seat-map__seat disabled point-18-7"
-                                 style="background-image: url(&quot;https://assets.piaoniu.com/icon/seat/unable.png&quot;);"></div>
-                            <div class="seat-map__point seat-map__seat disabled point-19-7"
-                                 style="background-image: url(&quot;https://assets.piaoniu.com/icon/seat/unable.png&quot;);"></div>
-                            <div class="seat-map__point seat-map__seat disabled point-20-7"
-                                 style="background-image: url(&quot;https://assets.piaoniu.com/icon/seat/unable.png&quot;);"></div>
-                            <div class="seat-map__point seat-map__seat disabled point-21-7"
-                                 style="background-image: url(&quot;https://assets.piaoniu.com/icon/seat/unable.png&quot;);"></div>
-                            <div class="seat-map__point seat-map__seat disabled point-22-7"
-                                 style="background-image: url(&quot;https://assets.piaoniu.com/icon/seat/unable.png&quot;);"></div>
-                            <div class="seat-map__point seat-map__seat disabled point-23-7"
-                                 style="background-image: url(&quot;https://assets.piaoniu.com/icon/seat/unable.png&quot;);"></div>
-                            <div class="seat-map__point seat-map__seat disabled point-24-7"
-                                 style="background-image: url(&quot;https://assets.piaoniu.com/icon/seat/unable.png&quot;);"></div>
-                            <div class="seat-map__point seat-map__seat disabled point-25-7"
-                                 style="background-image: url(&quot;https://assets.piaoniu.com/icon/seat/unable.png&quot;);"></div>
-                            <div class="seat-map__point seat-map__seat disabled point-26-7"
-                                 style="background-image: url(&quot;https://assets.piaoniu.com/icon/seat/unable.png&quot;);"></div>
-                            <div class="seat-map__point seat-map__seat disabled point-27-7"
-                                 style="background-image: url(&quot;https://assets.piaoniu.com/icon/seat/unable.png&quot;);"></div>
-                            <div class="seat-map__point seat-map__seat point-28-7"
-                                 style="background-image: url(&quot;https://assets.piaoniu.com/icon/mahuaSeat/3.png&quot;);"></div>
-                            <div class="seat-map__point seat-map__seat point-29-7"
-                                 style="background-image: url(&quot;https://assets.piaoniu.com/icon/mahuaSeat/3.png&quot;);"></div>
-                            <div class="seat-map__point seat-map__seat point-30-7"
-                                 style="background-image: url(&quot;https://assets.piaoniu.com/icon/mahuaSeat/3.png&quot;);"></div>
-                            <div class="seat-map__point disabled point-31-7"></div>
-                            <div class="seat-map__point disabled point-32-7"></div>
-                            <div class="seat-map__point seat-map__seat point-33-7"
-                                 style="background-image: url(&quot;https://assets.piaoniu.com/icon/mahuaSeat/3.png&quot;);"></div>
-                            <div class="seat-map__point seat-map__seat point-34-7"
-                                 style="background-image: url(&quot;https://assets.piaoniu.com/icon/mahuaSeat/3.png&quot;);"></div>
-                            <div class="seat-map__point seat-map__seat point-35-7"
-                                 style="background-image: url(&quot;https://assets.piaoniu.com/icon/mahuaSeat/4.png&quot;);"></div>
-                            <div class="seat-map__point seat-map__seat point-36-7"
-                                 style="background-image: url(&quot;https://assets.piaoniu.com/icon/mahuaSeat/4.png&quot;);"></div>
-                            <div class="seat-map__point seat-map__seat point-37-7"
-                                 style="background-image: url(&quot;https://assets.piaoniu.com/icon/mahuaSeat/4.png&quot;);"></div>
-                            <div class="seat-map__point seat-map__seat point-38-7"
-                                 style="background-image: url(&quot;https://assets.piaoniu.com/icon/mahuaSeat/4.png&quot;);"></div>
-                            <div class="seat-map__point seat-map__seat point-39-7"
-                                 style="background-image: url(&quot;https://assets.piaoniu.com/icon/mahuaSeat/6.png&quot;);"></div>
-                            <div class="seat-map__point seat-map__seat point-40-7"
-                                 style="background-image: url(&quot;https://assets.piaoniu.com/icon/mahuaSeat/6.png&quot;);"></div>
-                            <div class="seat-map__point disabled point-41-7"></div>
-                        </div>
-                        <div class="seat-map__coordinate-row">
-                            <div class="seat-map__point disabled point-0-8"></div>
-                            <div class="seat-map__point disabled point-1-8"></div>
-                            <div class="seat-map__point disabled point-2-8"></div>
-                            <div class="seat-map__point disabled point-3-8"></div>
-                            <div class="seat-map__point disabled point-4-8"></div>
-                            <div class="seat-map__point seat-map__seat point-5-8"
-                                 style="background-image: url(&quot;https://assets.piaoniu.com/icon/mahuaSeat/6.png&quot;);"></div>
-                            <div class="seat-map__point seat-map__seat point-6-8"
-                                 style="background-image: url(&quot;https://assets.piaoniu.com/icon/mahuaSeat/6.png&quot;);"></div>
-                            <div class="seat-map__point seat-map__seat point-7-8"
-                                 style="background-image: url(&quot;https://assets.piaoniu.com/icon/mahuaSeat/4.png&quot;);"></div>
-                            <div class="seat-map__point seat-map__seat point-8-8"
-                                 style="background-image: url(&quot;https://assets.piaoniu.com/icon/mahuaSeat/4.png&quot;);"></div>
-                            <div class="seat-map__point seat-map__seat point-9-8"
-                                 style="background-image: url(&quot;https://assets.piaoniu.com/icon/mahuaSeat/4.png&quot;);"></div>
-                            <div class="seat-map__point seat-map__seat point-10-8"
-                                 style="background-image: url(&quot;https://assets.piaoniu.com/icon/mahuaSeat/4.png&quot;);"></div>
-                            <div class="seat-map__point seat-map__seat point-11-8"
-                                 style="background-image: url(&quot;https://assets.piaoniu.com/icon/mahuaSeat/4.png&quot;);"></div>
-                            <div class="seat-map__point seat-map__seat point-12-8"
-                                 style="background-image: url(&quot;https://assets.piaoniu.com/icon/mahuaSeat/4.png&quot;);"></div>
-                            <div class="seat-map__point disabled point-13-8"></div>
-                            <div class="seat-map__point disabled point-14-8"></div>
-                            <div class="seat-map__point seat-map__seat point-15-8"
-                                 style="background-image: url(&quot;https://assets.piaoniu.com/icon/mahuaSeat/4.png&quot;);"></div>
-                            <div class="seat-map__point seat-map__seat disabled point-16-8"
-                                 style="background-image: url(&quot;https://assets.piaoniu.com/icon/seat/unable.png&quot;);"></div>
-                            <div class="seat-map__point seat-map__seat disabled point-17-8"
-                                 style="background-image: url(&quot;https://assets.piaoniu.com/icon/seat/unable.png&quot;);"></div>
-                            <div class="seat-map__point seat-map__seat disabled point-18-8"
-                                 style="background-image: url(&quot;https://assets.piaoniu.com/icon/seat/unable.png&quot;);"></div>
-                            <div class="seat-map__point seat-map__seat disabled point-19-8"
-                                 style="background-image: url(&quot;https://assets.piaoniu.com/icon/seat/unable.png&quot;);"></div>
-                            <div class="seat-map__point seat-map__seat disabled point-20-8"
-                                 style="background-image: url(&quot;https://assets.piaoniu.com/icon/seat/unable.png&quot;);"></div>
-                            <div class="seat-map__point seat-map__seat disabled point-21-8"
-                                 style="background-image: url(&quot;https://assets.piaoniu.com/icon/seat/unable.png&quot;);"></div>
-                            <div class="seat-map__point seat-map__seat disabled point-22-8"
-                                 style="background-image: url(&quot;https://assets.piaoniu.com/icon/seat/unable.png&quot;);"></div>
-                            <div class="seat-map__point seat-map__seat disabled point-23-8"
-                                 style="background-image: url(&quot;https://assets.piaoniu.com/icon/seat/unable.png&quot;);"></div>
-                            <div class="seat-map__point seat-map__seat disabled point-24-8"
-                                 style="background-image: url(&quot;https://assets.piaoniu.com/icon/seat/unable.png&quot;);"></div>
-                            <div class="seat-map__point seat-map__seat disabled point-25-8"
-                                 style="background-image: url(&quot;https://assets.piaoniu.com/icon/seat/unable.png&quot;);"></div>
-                            <div class="seat-map__point seat-map__seat disabled point-26-8"
-                                 style="background-image: url(&quot;https://assets.piaoniu.com/icon/seat/unable.png&quot;);"></div>
-                            <div class="seat-map__point seat-map__seat disabled point-27-8"
-                                 style="background-image: url(&quot;https://assets.piaoniu.com/icon/seat/unable.png&quot;);"></div>
-                            <div class="seat-map__point seat-map__seat disabled point-28-8"
-                                 style="background-image: url(&quot;https://assets.piaoniu.com/icon/seat/unable.png&quot;);"></div>
-                            <div class="seat-map__point seat-map__seat disabled point-29-8"
-                                 style="background-image: url(&quot;https://assets.piaoniu.com/icon/seat/unable.png&quot;);"></div>
-                            <div class="seat-map__point seat-map__seat point-30-8"
-                                 style="background-image: url(&quot;https://assets.piaoniu.com/icon/mahuaSeat/4.png&quot;);"></div>
-                            <div class="seat-map__point disabled point-31-8"></div>
-                            <div class="seat-map__point disabled point-32-8"></div>
-                            <div class="seat-map__point seat-map__seat point-33-8"
-                                 style="background-image: url(&quot;https://assets.piaoniu.com/icon/mahuaSeat/4.png&quot;);"></div>
-                            <div class="seat-map__point seat-map__seat point-34-8"
-                                 style="background-image: url(&quot;https://assets.piaoniu.com/icon/mahuaSeat/4.png&quot;);"></div>
-                            <div class="seat-map__point seat-map__seat point-35-8"
-                                 style="background-image: url(&quot;https://assets.piaoniu.com/icon/mahuaSeat/4.png&quot;);"></div>
-                            <div class="seat-map__point seat-map__seat point-36-8"
-                                 style="background-image: url(&quot;https://assets.piaoniu.com/icon/mahuaSeat/4.png&quot;);"></div>
-                            <div class="seat-map__point seat-map__seat point-37-8"
-                                 style="background-image: url(&quot;https://assets.piaoniu.com/icon/mahuaSeat/4.png&quot;);"></div>
-                            <div class="seat-map__point seat-map__seat point-38-8"
-                                 style="background-image: url(&quot;https://assets.piaoniu.com/icon/mahuaSeat/4.png&quot;);"></div>
-                            <div class="seat-map__point seat-map__seat disabled point-39-8"
-                                 style="background-image: url(&quot;https://assets.piaoniu.com/icon/seat/unable.png&quot;);"></div>
-                            <div class="seat-map__point seat-map__seat disabled point-40-8"
-                                 style="background-image: url(&quot;https://assets.piaoniu.com/icon/seat/unable.png&quot;);"></div>
-                            <div class="seat-map__point disabled point-41-8"></div>
-                        </div>
-                        <div class="seat-map__coordinate-row">
-                            <div class="seat-map__point disabled point-0-9"></div>
-                            <div class="seat-map__point disabled point-1-9"></div>
-                            <div class="seat-map__point disabled point-2-9"></div>
-                            <div class="seat-map__point disabled point-3-9"></div>
-                            <div class="seat-map__point disabled point-4-9"></div>
-                            <div class="seat-map__point seat-map__seat point-5-9"
-                                 style="background-image: url(&quot;https://assets.piaoniu.com/icon/mahuaSeat/6.png&quot;);"></div>
-                            <div class="seat-map__point seat-map__seat point-6-9"
-                                 style="background-image: url(&quot;https://assets.piaoniu.com/icon/mahuaSeat/6.png&quot;);"></div>
-                            <div class="seat-map__point seat-map__seat point-7-9"
-                                 style="background-image: url(&quot;https://assets.piaoniu.com/icon/mahuaSeat/4.png&quot;);"></div>
-                            <div class="seat-map__point seat-map__seat point-8-9"
-                                 style="background-image: url(&quot;https://assets.piaoniu.com/icon/mahuaSeat/4.png&quot;);"></div>
-                            <div class="seat-map__point seat-map__seat point-9-9"
-                                 style="background-image: url(&quot;https://assets.piaoniu.com/icon/mahuaSeat/4.png&quot;);"></div>
-                            <div class="seat-map__point seat-map__seat point-10-9"
-                                 style="background-image: url(&quot;https://assets.piaoniu.com/icon/mahuaSeat/4.png&quot;);"></div>
-                            <div class="seat-map__point seat-map__seat point-11-9"
-                                 style="background-image: url(&quot;https://assets.piaoniu.com/icon/mahuaSeat/4.png&quot;);"></div>
-                            <div class="seat-map__point seat-map__seat point-12-9"
-                                 style="background-image: url(&quot;https://assets.piaoniu.com/icon/mahuaSeat/4.png&quot;);"></div>
-                            <div class="seat-map__point disabled point-13-9"></div>
-                            <div class="seat-map__point disabled point-14-9"></div>
-                            <div class="seat-map__point seat-map__seat point-15-9"
-                                 style="background-image: url(&quot;https://assets.piaoniu.com/icon/mahuaSeat/4.png&quot;);"></div>
-                            <div class="seat-map__point seat-map__seat disabled point-16-9"
-                                 style="background-image: url(&quot;https://assets.piaoniu.com/icon/seat/unable.png&quot;);"></div>
-                            <div class="seat-map__point seat-map__seat disabled point-17-9"
-                                 style="background-image: url(&quot;https://assets.piaoniu.com/icon/seat/unable.png&quot;);"></div>
-                            <div class="seat-map__point seat-map__seat disabled point-18-9"
-                                 style="background-image: url(&quot;https://assets.piaoniu.com/icon/seat/unable.png&quot;);"></div>
-                            <div class="seat-map__point seat-map__seat disabled point-19-9"
-                                 style="background-image: url(&quot;https://assets.piaoniu.com/icon/seat/unable.png&quot;);"></div>
-                            <div class="seat-map__point seat-map__seat disabled point-20-9"
-                                 style="background-image: url(&quot;https://assets.piaoniu.com/icon/seat/unable.png&quot;);"></div>
-                            <div class="seat-map__point seat-map__seat disabled point-21-9"
-                                 style="background-image: url(&quot;https://assets.piaoniu.com/icon/seat/unable.png&quot;);"></div>
-                            <div class="seat-map__point seat-map__seat disabled point-22-9"
-                                 style="background-image: url(&quot;https://assets.piaoniu.com/icon/seat/unable.png&quot;);"></div>
-                            <div class="seat-map__point seat-map__seat disabled point-23-9"
-                                 style="background-image: url(&quot;https://assets.piaoniu.com/icon/seat/unable.png&quot;);"></div>
-                            <div class="seat-map__point seat-map__seat disabled point-24-9"
-                                 style="background-image: url(&quot;https://assets.piaoniu.com/icon/seat/unable.png&quot;);"></div>
-                            <div class="seat-map__point seat-map__seat disabled point-25-9"
-                                 style="background-image: url(&quot;https://assets.piaoniu.com/icon/seat/unable.png&quot;);"></div>
-                            <div class="seat-map__point seat-map__seat disabled point-26-9"
-                                 style="background-image: url(&quot;https://assets.piaoniu.com/icon/seat/unable.png&quot;);"></div>
-                            <div class="seat-map__point seat-map__seat disabled point-27-9"
-                                 style="background-image: url(&quot;https://assets.piaoniu.com/icon/seat/unable.png&quot;);"></div>
-                            <div class="seat-map__point seat-map__seat point-28-9"
-                                 style="background-image: url(&quot;https://assets.piaoniu.com/icon/mahuaSeat/4.png&quot;);"></div>
-                            <div class="seat-map__point seat-map__seat disabled point-29-9"
-                                 style="background-image: url(&quot;https://assets.piaoniu.com/icon/seat/unable.png&quot;);"></div>
-                            <div class="seat-map__point seat-map__seat disabled point-30-9"
-                                 style="background-image: url(&quot;https://assets.piaoniu.com/icon/seat/unable.png&quot;);"></div>
-                            <div class="seat-map__point disabled point-31-9"></div>
-                            <div class="seat-map__point disabled point-32-9"></div>
-                            <div class="seat-map__point seat-map__seat point-33-9"
-                                 style="background-image: url(&quot;https://assets.piaoniu.com/icon/mahuaSeat/4.png&quot;);"></div>
-                            <div class="seat-map__point seat-map__seat point-34-9"
-                                 style="background-image: url(&quot;https://assets.piaoniu.com/icon/mahuaSeat/4.png&quot;);"></div>
-                            <div class="seat-map__point seat-map__seat point-35-9"
-                                 style="background-image: url(&quot;https://assets.piaoniu.com/icon/mahuaSeat/4.png&quot;);"></div>
-                            <div class="seat-map__point seat-map__seat point-36-9"
-                                 style="background-image: url(&quot;https://assets.piaoniu.com/icon/mahuaSeat/4.png&quot;);"></div>
-                            <div class="seat-map__point seat-map__seat point-37-9"
-                                 style="background-image: url(&quot;https://assets.piaoniu.com/icon/mahuaSeat/4.png&quot;);"></div>
-                            <div class="seat-map__point seat-map__seat point-38-9"
-                                 style="background-image: url(&quot;https://assets.piaoniu.com/icon/mahuaSeat/4.png&quot;);"></div>
-                            <div class="seat-map__point seat-map__seat disabled point-39-9"
-                                 style="background-image: url(&quot;https://assets.piaoniu.com/icon/seat/unable.png&quot;);"></div>
-                            <div class="seat-map__point seat-map__seat disabled point-40-9"
-                                 style="background-image: url(&quot;https://assets.piaoniu.com/icon/seat/unable.png&quot;);"></div>
-                            <div class="seat-map__point disabled point-41-9"></div>
-                        </div>
-                        <div class="seat-map__coordinate-row">
-                            <div class="seat-map__point disabled point-0-10"></div>
-                            <div class="seat-map__point disabled point-1-10"></div>
-                            <div class="seat-map__point disabled point-2-10"></div>
-                            <div class="seat-map__point disabled point-3-10"></div>
-                            <div class="seat-map__point disabled point-4-10"></div>
-                            <div class="seat-map__point seat-map__seat point-5-10"
-                                 style="background-image: url(&quot;https://assets.piaoniu.com/icon/mahuaSeat/5.png&quot;);"></div>
-                            <div class="seat-map__point seat-map__seat point-6-10"
-                                 style="background-image: url(&quot;https://assets.piaoniu.com/icon/mahuaSeat/5.png&quot;);"></div>
-                            <div class="seat-map__point seat-map__seat point-7-10"
-                                 style="background-image: url(&quot;https://assets.piaoniu.com/icon/mahuaSeat/4.png&quot;);"></div>
-                            <div class="seat-map__point seat-map__seat point-8-10"
-                                 style="background-image: url(&quot;https://assets.piaoniu.com/icon/mahuaSeat/4.png&quot;);"></div>
-                            <div class="seat-map__point seat-map__seat point-9-10"
-                                 style="background-image: url(&quot;https://assets.piaoniu.com/icon/mahuaSeat/4.png&quot;);"></div>
-                            <div class="seat-map__point seat-map__seat point-10-10"
-                                 style="background-image: url(&quot;https://assets.piaoniu.com/icon/mahuaSeat/4.png&quot;);"></div>
-                            <div class="seat-map__point seat-map__seat point-11-10"
-                                 style="background-image: url(&quot;https://assets.piaoniu.com/icon/mahuaSeat/4.png&quot;);"></div>
-                            <div class="seat-map__point seat-map__seat point-12-10"
-                                 style="background-image: url(&quot;https://assets.piaoniu.com/icon/mahuaSeat/4.png&quot;);"></div>
-                            <div class="seat-map__point disabled point-13-10"></div>
-                            <div class="seat-map__point disabled point-14-10"></div>
-                            <div class="seat-map__point seat-map__seat point-15-10"
-                                 style="background-image: url(&quot;https://assets.piaoniu.com/icon/mahuaSeat/4.png&quot;);"></div>
-                            <div class="seat-map__point seat-map__seat point-16-10"
-                                 style="background-image: url(&quot;https://assets.piaoniu.com/icon/mahuaSeat/4.png&quot;);"></div>
-                            <div class="seat-map__point seat-map__seat point-17-10"
-                                 style="background-image: url(&quot;https://assets.piaoniu.com/icon/mahuaSeat/4.png&quot;);"></div>
-                            <div class="seat-map__point seat-map__seat disabled point-18-10"
-                                 style="background-image: url(&quot;https://assets.piaoniu.com/icon/seat/unable.png&quot;);"></div>
-                            <div class="seat-map__point seat-map__seat disabled point-19-10"
-                                 style="background-image: url(&quot;https://assets.piaoniu.com/icon/seat/unable.png&quot;);"></div>
-                            <div class="seat-map__point seat-map__seat disabled point-20-10"
-                                 style="background-image: url(&quot;https://assets.piaoniu.com/icon/seat/unable.png&quot;);"></div>
-                            <div class="seat-map__point seat-map__seat disabled point-21-10"
-                                 style="background-image: url(&quot;https://assets.piaoniu.com/icon/seat/unable.png&quot;);"></div>
-                            <div class="seat-map__point seat-map__seat disabled point-22-10"
-                                 style="background-image: url(&quot;https://assets.piaoniu.com/icon/seat/unable.png&quot;);"></div>
-                            <div class="seat-map__point seat-map__seat disabled point-23-10"
-                                 style="background-image: url(&quot;https://assets.piaoniu.com/icon/seat/unable.png&quot;);"></div>
-                            <div class="seat-map__point seat-map__seat disabled point-24-10"
-                                 style="background-image: url(&quot;https://assets.piaoniu.com/icon/seat/unable.png&quot;);"></div>
-                            <div class="seat-map__point seat-map__seat disabled point-25-10"
-                                 style="background-image: url(&quot;https://assets.piaoniu.com/icon/seat/unable.png&quot;);"></div>
-                            <div class="seat-map__point seat-map__seat disabled point-26-10"
-                                 style="background-image: url(&quot;https://assets.piaoniu.com/icon/seat/unable.png&quot;);"></div>
-                            <div class="seat-map__point seat-map__seat disabled point-27-10"
-                                 style="background-image: url(&quot;https://assets.piaoniu.com/icon/seat/unable.png&quot;);"></div>
-                            <div class="seat-map__point seat-map__seat point-28-10"
-                                 style="background-image: url(&quot;https://assets.piaoniu.com/icon/mahuaSeat/4.png&quot;);"></div>
-                            <div class="seat-map__point seat-map__seat point-29-10"
-                                 style="background-image: url(&quot;https://assets.piaoniu.com/icon/mahuaSeat/4.png&quot;);"></div>
-                            <div class="seat-map__point seat-map__seat point-30-10"
-                                 style="background-image: url(&quot;https://assets.piaoniu.com/icon/mahuaSeat/4.png&quot;);"></div>
-                            <div class="seat-map__point disabled point-31-10"></div>
-                            <div class="seat-map__point disabled point-32-10"></div>
-                            <div class="seat-map__point seat-map__seat point-33-10"
-                                 style="background-image: url(&quot;https://assets.piaoniu.com/icon/mahuaSeat/4.png&quot;);"></div>
-                            <div class="seat-map__point seat-map__seat point-34-10"
-                                 style="background-image: url(&quot;https://assets.piaoniu.com/icon/mahuaSeat/4.png&quot;);"></div>
-                            <div class="seat-map__point seat-map__seat point-35-10"
-                                 style="background-image: url(&quot;https://assets.piaoniu.com/icon/mahuaSeat/4.png&quot;);"></div>
-                            <div class="seat-map__point seat-map__seat point-36-10"
-                                 style="background-image: url(&quot;https://assets.piaoniu.com/icon/mahuaSeat/4.png&quot;);"></div>
-                            <div class="seat-map__point seat-map__seat point-37-10"
-                                 style="background-image: url(&quot;https://assets.piaoniu.com/icon/mahuaSeat/4.png&quot;);"></div>
-                            <div class="seat-map__point seat-map__seat point-38-10"
-                                 style="background-image: url(&quot;https://assets.piaoniu.com/icon/mahuaSeat/4.png&quot;);"></div>
-                            <div class="seat-map__point seat-map__seat point-39-10"
-                                 style="background-image: url(&quot;https://assets.piaoniu.com/icon/mahuaSeat/5.png&quot;);"></div>
-                            <div class="seat-map__point seat-map__seat point-40-10"
-                                 style="background-image: url(&quot;https://assets.piaoniu.com/icon/mahuaSeat/5.png&quot;);"></div>
-                            <div class="seat-map__point disabled point-41-10"></div>
-                        </div>
-                        <div class="seat-map__coordinate-row">
-                            <div class="seat-map__point disabled point-0-11"></div>
-                            <div class="seat-map__point disabled point-1-11"></div>
-                            <div class="seat-map__point disabled point-2-11"></div>
-                            <div class="seat-map__point disabled point-3-11"></div>
-                            <div class="seat-map__point disabled point-4-11"></div>
-                            <div class="seat-map__point seat-map__seat point-5-11"
-                                 style="background-image: url(&quot;https://assets.piaoniu.com/icon/mahuaSeat/5.png&quot;);"></div>
-                            <div class="seat-map__point seat-map__seat point-6-11"
-                                 style="background-image: url(&quot;https://assets.piaoniu.com/icon/mahuaSeat/5.png&quot;);"></div>
-                            <div class="seat-map__point seat-map__seat point-7-11"
-                                 style="background-image: url(&quot;https://assets.piaoniu.com/icon/mahuaSeat/4.png&quot;);"></div>
-                            <div class="seat-map__point seat-map__seat point-8-11"
-                                 style="background-image: url(&quot;https://assets.piaoniu.com/icon/mahuaSeat/4.png&quot;);"></div>
-                            <div class="seat-map__point seat-map__seat point-9-11"
-                                 style="background-image: url(&quot;https://assets.piaoniu.com/icon/mahuaSeat/4.png&quot;);"></div>
-                            <div class="seat-map__point seat-map__seat point-10-11"
-                                 style="background-image: url(&quot;https://assets.piaoniu.com/icon/mahuaSeat/4.png&quot;);"></div>
-                            <div class="seat-map__point seat-map__seat point-11-11"
-                                 style="background-image: url(&quot;https://assets.piaoniu.com/icon/mahuaSeat/4.png&quot;);"></div>
-                            <div class="seat-map__point seat-map__seat point-12-11"
-                                 style="background-image: url(&quot;https://assets.piaoniu.com/icon/mahuaSeat/4.png&quot;);"></div>
-                            <div class="seat-map__point disabled point-13-11"></div>
-                            <div class="seat-map__point disabled point-14-11"></div>
-                            <div class="seat-map__point seat-map__seat point-15-11"
-                                 style="background-image: url(&quot;https://assets.piaoniu.com/icon/mahuaSeat/4.png&quot;);"></div>
-                            <div class="seat-map__point seat-map__seat point-16-11"
-                                 style="background-image: url(&quot;https://assets.piaoniu.com/icon/mahuaSeat/4.png&quot;);"></div>
-                            <div class="seat-map__point seat-map__seat point-17-11"
-                                 style="background-image: url(&quot;https://assets.piaoniu.com/icon/mahuaSeat/4.png&quot;);"></div>
-                            <div class="seat-map__point seat-map__seat point-18-11"
-                                 style="background-image: url(&quot;https://assets.piaoniu.com/icon/mahuaSeat/4.png&quot;);"></div>
-                            <div class="seat-map__point seat-map__seat point-19-11"
-                                 style="background-image: url(&quot;https://assets.piaoniu.com/icon/mahuaSeat/4.png&quot;);"></div>
-                            <div class="seat-map__point seat-map__seat disabled point-20-11"
-                                 style="background-image: url(&quot;https://assets.piaoniu.com/icon/seat/unable.png&quot;);"></div>
-                            <div class="seat-map__point seat-map__seat disabled point-21-11"
-                                 style="background-image: url(&quot;https://assets.piaoniu.com/icon/seat/unable.png&quot;);"></div>
-                            <div class="seat-map__point seat-map__seat disabled point-22-11"
-                                 style="background-image: url(&quot;https://assets.piaoniu.com/icon/seat/unable.png&quot;);"></div>
-                            <div class="seat-map__point seat-map__seat disabled point-23-11"
-                                 style="background-image: url(&quot;https://assets.piaoniu.com/icon/seat/unable.png&quot;);"></div>
-                            <div class="seat-map__point seat-map__seat disabled point-24-11"
-                                 style="background-image: url(&quot;https://assets.piaoniu.com/icon/seat/unable.png&quot;);"></div>
-                            <div class="seat-map__point seat-map__seat disabled point-25-11"
-                                 style="background-image: url(&quot;https://assets.piaoniu.com/icon/seat/unable.png&quot;);"></div>
-                            <div class="seat-map__point seat-map__seat disabled point-26-11"
-                                 style="background-image: url(&quot;https://assets.piaoniu.com/icon/seat/unable.png&quot;);"></div>
-                            <div class="seat-map__point seat-map__seat disabled point-27-11"
-                                 style="background-image: url(&quot;https://assets.piaoniu.com/icon/seat/unable.png&quot;);"></div>
-                            <div class="seat-map__point seat-map__seat point-28-11"
-                                 style="background-image: url(&quot;https://assets.piaoniu.com/icon/mahuaSeat/4.png&quot;);"></div>
-                            <div class="seat-map__point seat-map__seat point-29-11"
-                                 style="background-image: url(&quot;https://assets.piaoniu.com/icon/mahuaSeat/4.png&quot;);"></div>
-                            <div class="seat-map__point seat-map__seat point-30-11"
-                                 style="background-image: url(&quot;https://assets.piaoniu.com/icon/mahuaSeat/4.png&quot;);"></div>
-                            <div class="seat-map__point disabled point-31-11"></div>
-                            <div class="seat-map__point disabled point-32-11"></div>
-                            <div class="seat-map__point seat-map__seat point-33-11"
-                                 style="background-image: url(&quot;https://assets.piaoniu.com/icon/mahuaSeat/4.png&quot;);"></div>
-                            <div class="seat-map__point seat-map__seat point-34-11"
-                                 style="background-image: url(&quot;https://assets.piaoniu.com/icon/mahuaSeat/4.png&quot;);"></div>
-                            <div class="seat-map__point seat-map__seat point-35-11"
-                                 style="background-image: url(&quot;https://assets.piaoniu.com/icon/mahuaSeat/4.png&quot;);"></div>
-                            <div class="seat-map__point seat-map__seat point-36-11"
-                                 style="background-image: url(&quot;https://assets.piaoniu.com/icon/mahuaSeat/4.png&quot;);"></div>
-                            <div class="seat-map__point seat-map__seat point-37-11"
-                                 style="background-image: url(&quot;https://assets.piaoniu.com/icon/mahuaSeat/4.png&quot;);"></div>
-                            <div class="seat-map__point seat-map__seat point-38-11"
-                                 style="background-image: url(&quot;https://assets.piaoniu.com/icon/mahuaSeat/4.png&quot;);"></div>
-                            <div class="seat-map__point seat-map__seat point-39-11"
-                                 style="background-image: url(&quot;https://assets.piaoniu.com/icon/mahuaSeat/5.png&quot;);"></div>
-                            <div class="seat-map__point seat-map__seat point-40-11"
-                                 style="background-image: url(&quot;https://assets.piaoniu.com/icon/mahuaSeat/5.png&quot;);"></div>
-                            <div class="seat-map__point disabled point-41-11"></div>
-                        </div>
-                        <div class="seat-map__coordinate-row">
-                            <div class="seat-map__point disabled point-0-12"></div>
-                            <div class="seat-map__point disabled point-1-12"></div>
-                            <div class="seat-map__point disabled point-2-12"></div>
-                            <div class="seat-map__point disabled point-3-12"></div>
-                            <div class="seat-map__point disabled point-4-12"></div>
-                            <div class="seat-map__point seat-map__seat point-5-12"
-                                 style="background-image: url(&quot;https://assets.piaoniu.com/icon/mahuaSeat/5.png&quot;);"></div>
-                            <div class="seat-map__point seat-map__seat point-6-12"
-                                 style="background-image: url(&quot;https://assets.piaoniu.com/icon/mahuaSeat/5.png&quot;);"></div>
-                            <div class="seat-map__point seat-map__seat point-7-12"
-                                 style="background-image: url(&quot;https://assets.piaoniu.com/icon/mahuaSeat/5.png&quot;);"></div>
-                            <div class="seat-map__point seat-map__seat point-8-12"
-                                 style="background-image: url(&quot;https://assets.piaoniu.com/icon/mahuaSeat/5.png&quot;);"></div>
-                            <div class="seat-map__point seat-map__seat point-9-12"
-                                 style="background-image: url(&quot;https://assets.piaoniu.com/icon/mahuaSeat/4.png&quot;);"></div>
-                            <div class="seat-map__point seat-map__seat point-10-12"
-                                 style="background-image: url(&quot;https://assets.piaoniu.com/icon/mahuaSeat/4.png&quot;);"></div>
-                            <div class="seat-map__point seat-map__seat point-11-12"
-                                 style="background-image: url(&quot;https://assets.piaoniu.com/icon/mahuaSeat/4.png&quot;);"></div>
-                            <div class="seat-map__point seat-map__seat point-12-12"
-                                 style="background-image: url(&quot;https://assets.piaoniu.com/icon/mahuaSeat/4.png&quot;);"></div>
-                            <div class="seat-map__point disabled point-13-12"></div>
-                            <div class="seat-map__point disabled point-14-12"></div>
-                            <div class="seat-map__point seat-map__seat point-15-12"
-                                 style="background-image: url(&quot;https://assets.piaoniu.com/icon/mahuaSeat/4.png&quot;);"></div>
-                            <div class="seat-map__point seat-map__seat point-16-12"
-                                 style="background-image: url(&quot;https://assets.piaoniu.com/icon/mahuaSeat/4.png&quot;);"></div>
-                            <div class="seat-map__point seat-map__seat point-17-12"
-                                 style="background-image: url(&quot;https://assets.piaoniu.com/icon/mahuaSeat/4.png&quot;);"></div>
-                            <div class="seat-map__point seat-map__seat point-18-12"
-                                 style="background-image: url(&quot;https://assets.piaoniu.com/icon/mahuaSeat/4.png&quot;);"></div>
-                            <div class="seat-map__point seat-map__seat point-19-12"
-                                 style="background-image: url(&quot;https://assets.piaoniu.com/icon/mahuaSeat/4.png&quot;);"></div>
-                            <div class="seat-map__point seat-map__seat point-20-12"
-                                 style="background-image: url(&quot;https://assets.piaoniu.com/icon/mahuaSeat/4.png&quot;);"></div>
-                            <div class="seat-map__point seat-map__seat point-21-12"
-                                 style="background-image: url(&quot;https://assets.piaoniu.com/icon/mahuaSeat/4.png&quot;);"></div>
-                            <div class="seat-map__point seat-map__seat disabled point-22-12"
-                                 style="background-image: url(&quot;https://assets.piaoniu.com/icon/seat/unable.png&quot;);"></div>
-                            <div class="seat-map__point seat-map__seat disabled point-23-12"
-                                 style="background-image: url(&quot;https://assets.piaoniu.com/icon/seat/unable.png&quot;);"></div>
-                            <div class="seat-map__point seat-map__seat point-24-12"
-                                 style="background-image: url(&quot;https://assets.piaoniu.com/icon/mahuaSeat/4.png&quot;);"></div>
-                            <div class="seat-map__point seat-map__seat point-25-12"
-                                 style="background-image: url(&quot;https://assets.piaoniu.com/icon/mahuaSeat/4.png&quot;);"></div>
-                            <div class="seat-map__point seat-map__seat point-26-12"
-                                 style="background-image: url(&quot;https://assets.piaoniu.com/icon/mahuaSeat/4.png&quot;);"></div>
-                            <div class="seat-map__point seat-map__seat point-27-12"
-                                 style="background-image: url(&quot;https://assets.piaoniu.com/icon/mahuaSeat/4.png&quot;);"></div>
-                            <div class="seat-map__point seat-map__seat point-28-12"
-                                 style="background-image: url(&quot;https://assets.piaoniu.com/icon/mahuaSeat/4.png&quot;);"></div>
-                            <div class="seat-map__point seat-map__seat point-29-12"
-                                 style="background-image: url(&quot;https://assets.piaoniu.com/icon/mahuaSeat/4.png&quot;);"></div>
-                            <div class="seat-map__point seat-map__seat point-30-12"
-                                 style="background-image: url(&quot;https://assets.piaoniu.com/icon/mahuaSeat/4.png&quot;);"></div>
-                            <div class="seat-map__point disabled point-31-12"></div>
-                            <div class="seat-map__point disabled point-32-12"></div>
-                            <div class="seat-map__point seat-map__seat point-33-12"
-                                 style="background-image: url(&quot;https://assets.piaoniu.com/icon/mahuaSeat/4.png&quot;);"></div>
-                            <div class="seat-map__point seat-map__seat point-34-12"
-                                 style="background-image: url(&quot;https://assets.piaoniu.com/icon/mahuaSeat/4.png&quot;);"></div>
-                            <div class="seat-map__point seat-map__seat point-35-12"
-                                 style="background-image: url(&quot;https://assets.piaoniu.com/icon/mahuaSeat/4.png&quot;);"></div>
-                            <div class="seat-map__point seat-map__seat point-36-12"
-                                 style="background-image: url(&quot;https://assets.piaoniu.com/icon/mahuaSeat/4.png&quot;);"></div>
-                            <div class="seat-map__point seat-map__seat point-37-12"
-                                 style="background-image: url(&quot;https://assets.piaoniu.com/icon/mahuaSeat/5.png&quot;);"></div>
-                            <div class="seat-map__point seat-map__seat point-38-12"
-                                 style="background-image: url(&quot;https://assets.piaoniu.com/icon/mahuaSeat/5.png&quot;);"></div>
-                            <div class="seat-map__point seat-map__seat point-39-12"
-                                 style="background-image: url(&quot;https://assets.piaoniu.com/icon/mahuaSeat/5.png&quot;);"></div>
-                            <div class="seat-map__point seat-map__seat point-40-12"
-                                 style="background-image: url(&quot;https://assets.piaoniu.com/icon/mahuaSeat/5.png&quot;);"></div>
-                            <div class="seat-map__point disabled point-41-12"></div>
-                        </div>
-                        <div class="seat-map__coordinate-row">
-                            <div class="seat-map__point disabled point-0-13"></div>
-                            <div class="seat-map__point disabled point-1-13"></div>
-                            <div class="seat-map__point disabled point-2-13"></div>
-                            <div class="seat-map__point disabled point-3-13"></div>
-                            <div class="seat-map__point disabled point-4-13"></div>
-                            <div class="seat-map__point disabled point-5-13"></div>
-                            <div class="seat-map__point disabled point-6-13"></div>
-                            <div class="seat-map__point disabled point-7-13"></div>
-                            <div class="seat-map__point disabled point-8-13"></div>
-                            <div class="seat-map__point disabled point-9-13"></div>
-                            <div class="seat-map__point disabled point-10-13"></div>
-                            <div class="seat-map__point disabled point-11-13"></div>
-                            <div class="seat-map__point disabled point-12-13"></div>
-                            <div class="seat-map__point disabled point-13-13"></div>
-                            <div class="seat-map__point disabled point-14-13"></div>
-                            <div class="seat-map__point disabled point-15-13"></div>
-                            <div class="seat-map__point disabled point-16-13"></div>
-                            <div class="seat-map__point disabled point-17-13"></div>
-                            <div class="seat-map__point disabled point-18-13"></div>
-                            <div class="seat-map__point disabled point-19-13"></div>
-                            <div class="seat-map__point disabled point-20-13"></div>
-                            <div class="seat-map__point disabled point-21-13"></div>
-                            <div class="seat-map__point disabled point-22-13"></div>
-                            <div class="seat-map__point disabled point-23-13"></div>
-                            <div class="seat-map__point disabled point-24-13"></div>
-                            <div class="seat-map__point disabled point-25-13"></div>
-                            <div class="seat-map__point disabled point-26-13"></div>
-                            <div class="seat-map__point disabled point-27-13"></div>
-                            <div class="seat-map__point disabled point-28-13"></div>
-                            <div class="seat-map__point disabled point-29-13"></div>
-                            <div class="seat-map__point disabled point-30-13"></div>
-                            <div class="seat-map__point disabled point-31-13"></div>
-                            <div class="seat-map__point disabled point-32-13"></div>
-                            <div class="seat-map__point disabled point-33-13"></div>
-                            <div class="seat-map__point disabled point-34-13"></div>
-                            <div class="seat-map__point disabled point-35-13"></div>
-                            <div class="seat-map__point disabled point-36-13"></div>
-                            <div class="seat-map__point disabled point-37-13"></div>
-                            <div class="seat-map__point disabled point-38-13"></div>
-                            <div class="seat-map__point disabled point-39-13"></div>
-                            <div class="seat-map__point disabled point-40-13"></div>
-                            <div class="seat-map__point disabled point-41-13"></div>
-                        </div>
-                        <div class="seat-map__coordinate-row">
-                            <div class="seat-map__point disabled point-0-14"></div>
-                            <div class="seat-map__point disabled point-1-14"></div>
-                            <div class="seat-map__point disabled point-2-14"></div>
-                            <div class="seat-map__point disabled point-3-14"></div>
-                            <div class="seat-map__point disabled point-4-14"></div>
-                            <div class="seat-map__point disabled point-5-14"></div>
-                            <div class="seat-map__point disabled point-6-14"></div>
-                            <div class="seat-map__point disabled point-7-14"></div>
-                            <div class="seat-map__point disabled point-8-14"></div>
-                            <div class="seat-map__point disabled point-9-14"></div>
-                            <div class="seat-map__point disabled point-10-14"></div>
-                            <div class="seat-map__point disabled point-11-14"></div>
-                            <div class="seat-map__point disabled point-12-14"></div>
-                            <div class="seat-map__point disabled point-13-14"></div>
-                            <div class="seat-map__point disabled point-14-14"></div>
-                            <div class="seat-map__point disabled point-15-14"></div>
-                            <div class="seat-map__point disabled point-16-14"></div>
-                            <div class="seat-map__point disabled point-17-14"></div>
-                            <div class="seat-map__point disabled point-18-14"></div>
-                            <div class="seat-map__point disabled point-19-14"></div>
-                            <div class="seat-map__point disabled point-20-14"></div>
-                            <div class="seat-map__point disabled point-21-14"></div>
-                            <div class="seat-map__point disabled point-22-14"></div>
-                            <div class="seat-map__point disabled point-23-14"></div>
-                            <div class="seat-map__point disabled point-24-14"></div>
-                            <div class="seat-map__point disabled point-25-14"></div>
-                            <div class="seat-map__point disabled point-26-14"></div>
-                            <div class="seat-map__point disabled point-27-14"></div>
-                            <div class="seat-map__point disabled point-28-14"></div>
-                            <div class="seat-map__point disabled point-29-14"></div>
-                            <div class="seat-map__point disabled point-30-14"></div>
-                            <div class="seat-map__point disabled point-31-14"></div>
-                            <div class="seat-map__point disabled point-32-14"></div>
-                            <div class="seat-map__point disabled point-33-14"></div>
-                            <div class="seat-map__point disabled point-34-14"></div>
-                            <div class="seat-map__point disabled point-35-14"></div>
-                            <div class="seat-map__point disabled point-36-14"></div>
-                            <div class="seat-map__point disabled point-37-14"></div>
-                            <div class="seat-map__point disabled point-38-14"></div>
-                            <div class="seat-map__point disabled point-39-14"></div>
-                            <div class="seat-map__point disabled point-40-14"></div>
-                            <div class="seat-map__point disabled point-41-14"></div>
-                        </div>
-                        <div class="seat-map__coordinate-row">
-                            <div class="seat-map__point disabled point-0-15"></div>
-                            <div class="seat-map__point disabled point-1-15"></div>
-                            <div class="seat-map__point disabled point-2-15"></div>
-                            <div class="seat-map__point disabled point-3-15"></div>
-                            <div class="seat-map__point seat-map__seat point-4-15"
-                                 style="background-image: url(&quot;https://assets.piaoniu.com/icon/mahuaSeat/6.png&quot;);"></div>
-                            <div class="seat-map__point seat-map__seat point-5-15"
-                                 style="background-image: url(&quot;https://assets.piaoniu.com/icon/mahuaSeat/6.png&quot;);"></div>
-                            <div class="seat-map__point seat-map__seat point-6-15"
-                                 style="background-image: url(&quot;https://assets.piaoniu.com/icon/mahuaSeat/6.png&quot;);"></div>
-                            <div class="seat-map__point seat-map__seat point-7-15"
-                                 style="background-image: url(&quot;https://assets.piaoniu.com/icon/mahuaSeat/5.png&quot;);"></div>
-                            <div class="seat-map__point seat-map__seat point-8-15"
-                                 style="background-image: url(&quot;https://assets.piaoniu.com/icon/mahuaSeat/5.png&quot;);"></div>
-                            <div class="seat-map__point seat-map__seat point-9-15"
-                                 style="background-image: url(&quot;https://assets.piaoniu.com/icon/mahuaSeat/4.png&quot;);"></div>
-                            <div class="seat-map__point seat-map__seat point-10-15"
-                                 style="background-image: url(&quot;https://assets.piaoniu.com/icon/mahuaSeat/4.png&quot;);"></div>
-                            <div class="seat-map__point seat-map__seat point-11-15"
-                                 style="background-image: url(&quot;https://assets.piaoniu.com/icon/mahuaSeat/4.png&quot;);"></div>
-                            <div class="seat-map__point seat-map__seat point-12-15"
-                                 style="background-image: url(&quot;https://assets.piaoniu.com/icon/mahuaSeat/4.png&quot;);"></div>
-                            <div class="seat-map__point disabled point-13-15"></div>
-                            <div class="seat-map__point disabled point-14-15"></div>
-                            <div class="seat-map__point disabled point-15-15"></div>
-                            <div class="seat-map__point seat-map__seat point-16-15"
-                                 style="background-image: url(&quot;https://assets.piaoniu.com/icon/mahuaSeat/4.png&quot;);"></div>
-                            <div class="seat-map__point seat-map__seat point-17-15"
-                                 style="background-image: url(&quot;https://assets.piaoniu.com/icon/mahuaSeat/4.png&quot;);"></div>
-                            <div class="seat-map__point seat-map__seat point-18-15"
-                                 style="background-image: url(&quot;https://assets.piaoniu.com/icon/mahuaSeat/4.png&quot;);"></div>
-                            <div class="seat-map__point seat-map__seat point-19-15"
-                                 style="background-image: url(&quot;https://assets.piaoniu.com/icon/mahuaSeat/4.png&quot;);"></div>
-                            <div class="seat-map__point seat-map__seat disabled point-20-15"
-                                 style="background-image: url(&quot;https://assets.piaoniu.com/icon/seat/unable.png&quot;);"></div>
-                            <div class="seat-map__point seat-map__seat disabled point-21-15"
-                                 style="background-image: url(&quot;https://assets.piaoniu.com/icon/seat/unable.png&quot;);"></div>
-                            <div class="seat-map__point seat-map__seat disabled point-22-15"
-                                 style="background-image: url(&quot;https://assets.piaoniu.com/icon/seat/unable.png&quot;);"></div>
-                            <div class="seat-map__point seat-map__seat disabled point-23-15"
-                                 style="background-image: url(&quot;https://assets.piaoniu.com/icon/seat/unable.png&quot;);"></div>
-                            <div class="seat-map__point seat-map__seat disabled point-24-15"
-                                 style="background-image: url(&quot;https://assets.piaoniu.com/icon/seat/unable.png&quot;);"></div>
-                            <div class="seat-map__point seat-map__seat disabled point-25-15"
-                                 style="background-image: url(&quot;https://assets.piaoniu.com/icon/seat/unable.png&quot;);"></div>
-                            <div class="seat-map__point seat-map__seat point-26-15"
-                                 style="background-image: url(&quot;https://assets.piaoniu.com/icon/mahuaSeat/4.png&quot;);"></div>
-                            <div class="seat-map__point seat-map__seat point-27-15"
-                                 style="background-image: url(&quot;https://assets.piaoniu.com/icon/mahuaSeat/4.png&quot;);"></div>
-                            <div class="seat-map__point seat-map__seat point-28-15"
-                                 style="background-image: url(&quot;https://assets.piaoniu.com/icon/mahuaSeat/4.png&quot;);"></div>
-                            <div class="seat-map__point seat-map__seat point-29-15"
-                                 style="background-image: url(&quot;https://assets.piaoniu.com/icon/mahuaSeat/4.png&quot;);"></div>
-                            <div class="seat-map__point seat-map__seat point-30-15"
-                                 style="background-image: url(&quot;https://assets.piaoniu.com/icon/mahuaSeat/4.png&quot;);"></div>
-                            <div class="seat-map__point disabled point-31-15"></div>
-                            <div class="seat-map__point disabled point-32-15"></div>
-                            <div class="seat-map__point seat-map__seat point-33-15"
-                                 style="background-image: url(&quot;https://assets.piaoniu.com/icon/mahuaSeat/4.png&quot;);"></div>
-                            <div class="seat-map__point seat-map__seat point-34-15"
-                                 style="background-image: url(&quot;https://assets.piaoniu.com/icon/mahuaSeat/4.png&quot;);"></div>
-                            <div class="seat-map__point seat-map__seat point-35-15"
-                                 style="background-image: url(&quot;https://assets.piaoniu.com/icon/mahuaSeat/4.png&quot;);"></div>
-                            <div class="seat-map__point seat-map__seat point-36-15"
-                                 style="background-image: url(&quot;https://assets.piaoniu.com/icon/mahuaSeat/4.png&quot;);"></div>
-                            <div class="seat-map__point seat-map__seat point-37-15"
-                                 style="background-image: url(&quot;https://assets.piaoniu.com/icon/mahuaSeat/5.png&quot;);"></div>
-                            <div class="seat-map__point seat-map__seat point-38-15"
-                                 style="background-image: url(&quot;https://assets.piaoniu.com/icon/mahuaSeat/5.png&quot;);"></div>
-                            <div class="seat-map__point seat-map__seat point-39-15"
-                                 style="background-image: url(&quot;https://assets.piaoniu.com/icon/mahuaSeat/6.png&quot;);"></div>
-                            <div class="seat-map__point seat-map__seat point-40-15"
-                                 style="background-image: url(&quot;https://assets.piaoniu.com/icon/mahuaSeat/6.png&quot;);"></div>
-                            <div class="seat-map__point seat-map__seat point-41-15"
-                                 style="background-image: url(&quot;https://assets.piaoniu.com/icon/mahuaSeat/6.png&quot;);"></div>
-                        </div>
-                        <div class="seat-map__coordinate-row">
-                            <div class="seat-map__point disabled point-0-16"></div>
-                            <div class="seat-map__point disabled point-1-16"></div>
-                            <div class="seat-map__point disabled point-2-16"></div>
-                            <div class="seat-map__point disabled point-3-16"></div>
-                            <div class="seat-map__point seat-map__seat point-4-16"
-                                 style="background-image: url(&quot;https://assets.piaoniu.com/icon/mahuaSeat/6.png&quot;);"></div>
-                            <div class="seat-map__point seat-map__seat point-5-16"
-                                 style="background-image: url(&quot;https://assets.piaoniu.com/icon/mahuaSeat/6.png&quot;);"></div>
-                            <div class="seat-map__point seat-map__seat point-6-16"
-                                 style="background-image: url(&quot;https://assets.piaoniu.com/icon/mahuaSeat/6.png&quot;);"></div>
-                            <div class="seat-map__point seat-map__seat point-7-16"
-                                 style="background-image: url(&quot;https://assets.piaoniu.com/icon/mahuaSeat/5.png&quot;);"></div>
-                            <div class="seat-map__point seat-map__seat point-8-16"
-                                 style="background-image: url(&quot;https://assets.piaoniu.com/icon/mahuaSeat/5.png&quot;);"></div>
-                            <div class="seat-map__point seat-map__seat point-9-16"
-                                 style="background-image: url(&quot;https://assets.piaoniu.com/icon/mahuaSeat/5.png&quot;);"></div>
-                            <div class="seat-map__point seat-map__seat point-10-16"
-                                 style="background-image: url(&quot;https://assets.piaoniu.com/icon/mahuaSeat/5.png&quot;);"></div>
-                            <div class="seat-map__point seat-map__seat point-11-16"
-                                 style="background-image: url(&quot;https://assets.piaoniu.com/icon/mahuaSeat/5.png&quot;);"></div>
-                            <div class="seat-map__point seat-map__seat point-12-16"
-                                 style="background-image: url(&quot;https://assets.piaoniu.com/icon/mahuaSeat/5.png&quot;);"></div>
-                            <div class="seat-map__point disabled point-13-16"></div>
-                            <div class="seat-map__point disabled point-14-16"></div>
-                            <div class="seat-map__point disabled point-15-16"></div>
-                            <div class="seat-map__point seat-map__seat disabled point-16-16"
-                                 style="background-image: url(&quot;https://assets.piaoniu.com/icon/seat/unable.png&quot;);"></div>
-                            <div class="seat-map__point seat-map__seat disabled point-17-16"
-                                 style="background-image: url(&quot;https://assets.piaoniu.com/icon/seat/unable.png&quot;);"></div>
-                            <div class="seat-map__point seat-map__seat disabled point-18-16"
-                                 style="background-image: url(&quot;https://assets.piaoniu.com/icon/seat/unable.png&quot;);"></div>
-                            <div class="seat-map__point seat-map__seat disabled point-19-16"
-                                 style="background-image: url(&quot;https://assets.piaoniu.com/icon/seat/unable.png&quot;);"></div>
-                            <div class="seat-map__point seat-map__seat disabled point-20-16"
-                                 style="background-image: url(&quot;https://assets.piaoniu.com/icon/seat/unable.png&quot;);"></div>
-                            <div class="seat-map__point seat-map__seat disabled point-21-16"
-                                 style="background-image: url(&quot;https://assets.piaoniu.com/icon/seat/unable.png&quot;);"></div>
-                            <div class="seat-map__point seat-map__seat disabled point-22-16"
-                                 style="background-image: url(&quot;https://assets.piaoniu.com/icon/seat/unable.png&quot;);"></div>
-                            <div class="seat-map__point seat-map__seat disabled point-23-16"
-                                 style="background-image: url(&quot;https://assets.piaoniu.com/icon/seat/unable.png&quot;);"></div>
-                            <div class="seat-map__point seat-map__seat disabled point-24-16"
-                                 style="background-image: url(&quot;https://assets.piaoniu.com/icon/seat/unable.png&quot;);"></div>
-                            <div class="seat-map__point seat-map__seat disabled point-25-16"
-                                 style="background-image: url(&quot;https://assets.piaoniu.com/icon/seat/unable.png&quot;);"></div>
-                            <div class="seat-map__point seat-map__seat disabled point-26-16"
-                                 style="background-image: url(&quot;https://assets.piaoniu.com/icon/seat/unable.png&quot;);"></div>
-                            <div class="seat-map__point seat-map__seat disabled point-27-16"
-                                 style="background-image: url(&quot;https://assets.piaoniu.com/icon/seat/unable.png&quot;);"></div>
-                            <div class="seat-map__point seat-map__seat disabled point-28-16"
-                                 style="background-image: url(&quot;https://assets.piaoniu.com/icon/seat/unable.png&quot;);"></div>
-                            <div class="seat-map__point seat-map__seat disabled point-29-16"
-                                 style="background-image: url(&quot;https://assets.piaoniu.com/icon/seat/unable.png&quot;);"></div>
-                            <div class="seat-map__point seat-map__seat disabled point-30-16"
-                                 style="background-image: url(&quot;https://assets.piaoniu.com/icon/seat/unable.png&quot;);"></div>
-                            <div class="seat-map__point disabled point-31-16"></div>
-                            <div class="seat-map__point disabled point-32-16"></div>
-                            <div class="seat-map__point seat-map__seat point-33-16"
-                                 style="background-image: url(&quot;https://assets.piaoniu.com/icon/mahuaSeat/5.png&quot;);"></div>
-                            <div class="seat-map__point seat-map__seat point-34-16"
-                                 style="background-image: url(&quot;https://assets.piaoniu.com/icon/mahuaSeat/5.png&quot;);"></div>
-                            <div class="seat-map__point seat-map__seat point-35-16"
-                                 style="background-image: url(&quot;https://assets.piaoniu.com/icon/mahuaSeat/5.png&quot;);"></div>
-                            <div class="seat-map__point seat-map__seat point-36-16"
-                                 style="background-image: url(&quot;https://assets.piaoniu.com/icon/mahuaSeat/5.png&quot;);"></div>
-                            <div class="seat-map__point seat-map__seat point-37-16"
-                                 style="background-image: url(&quot;https://assets.piaoniu.com/icon/mahuaSeat/5.png&quot;);"></div>
-                            <div class="seat-map__point seat-map__seat point-38-16"
-                                 style="background-image: url(&quot;https://assets.piaoniu.com/icon/mahuaSeat/5.png&quot;);"></div>
-                            <div class="seat-map__point seat-map__seat point-39-16"
-                                 style="background-image: url(&quot;https://assets.piaoniu.com/icon/mahuaSeat/6.png&quot;);"></div>
-                            <div class="seat-map__point seat-map__seat point-40-16"
-                                 style="background-image: url(&quot;https://assets.piaoniu.com/icon/mahuaSeat/6.png&quot;);"></div>
-                            <div class="seat-map__point seat-map__seat point-41-16"
-                                 style="background-image: url(&quot;https://assets.piaoniu.com/icon/mahuaSeat/6.png&quot;);"></div>
-                        </div>
-                        <div class="seat-map__coordinate-row">
-                            <div class="seat-map__point disabled point-0-17"></div>
-                            <div class="seat-map__point disabled point-1-17"></div>
-                            <div class="seat-map__point disabled point-2-17"></div>
-                            <div class="seat-map__point disabled point-3-17"></div>
-                            <div class="seat-map__point seat-map__seat point-4-17"
-                                 style="background-image: url(&quot;https://assets.piaoniu.com/icon/mahuaSeat/6.png&quot;);"></div>
-                            <div class="seat-map__point seat-map__seat point-5-17"
-                                 style="background-image: url(&quot;https://assets.piaoniu.com/icon/mahuaSeat/6.png&quot;);"></div>
-                            <div class="seat-map__point seat-map__seat point-6-17"
-                                 style="background-image: url(&quot;https://assets.piaoniu.com/icon/mahuaSeat/6.png&quot;);"></div>
-                            <div class="seat-map__point seat-map__seat point-7-17"
-                                 style="background-image: url(&quot;https://assets.piaoniu.com/icon/mahuaSeat/5.png&quot;);"></div>
-                            <div class="seat-map__point seat-map__seat point-8-17"
-                                 style="background-image: url(&quot;https://assets.piaoniu.com/icon/mahuaSeat/5.png&quot;);"></div>
-                            <div class="seat-map__point seat-map__seat point-9-17"
-                                 style="background-image: url(&quot;https://assets.piaoniu.com/icon/mahuaSeat/5.png&quot;);"></div>
-                            <div class="seat-map__point seat-map__seat point-10-17"
-                                 style="background-image: url(&quot;https://assets.piaoniu.com/icon/mahuaSeat/5.png&quot;);"></div>
-                            <div class="seat-map__point seat-map__seat point-11-17"
-                                 style="background-image: url(&quot;https://assets.piaoniu.com/icon/mahuaSeat/5.png&quot;);"></div>
-                            <div class="seat-map__point seat-map__seat point-12-17"
-                                 style="background-image: url(&quot;https://assets.piaoniu.com/icon/mahuaSeat/5.png&quot;);"></div>
-                            <div class="seat-map__point disabled point-13-17"></div>
-                            <div class="seat-map__point disabled point-14-17"></div>
-                            <div class="seat-map__point disabled point-15-17"></div>
-                            <div class="seat-map__point seat-map__seat point-16-17"
-                                 style="background-image: url(&quot;https://assets.piaoniu.com/icon/mahuaSeat/5.png&quot;);"></div>
-                            <div class="seat-map__point seat-map__seat point-17-17"
-                                 style="background-image: url(&quot;https://assets.piaoniu.com/icon/mahuaSeat/5.png&quot;);"></div>
-                            <div class="seat-map__point seat-map__seat point-18-17"
-                                 style="background-image: url(&quot;https://assets.piaoniu.com/icon/mahuaSeat/5.png&quot;);"></div>
-                            <div class="seat-map__point seat-map__seat point-19-17"
-                                 style="background-image: url(&quot;https://assets.piaoniu.com/icon/mahuaSeat/5.png&quot;);"></div>
-                            <div class="seat-map__point seat-map__seat point-20-17"
-                                 style="background-image: url(&quot;https://assets.piaoniu.com/icon/mahuaSeat/5.png&quot;);"></div>
-                            <div class="seat-map__point seat-map__seat point-21-17"
-                                 style="background-image: url(&quot;https://assets.piaoniu.com/icon/mahuaSeat/5.png&quot;);"></div>
-                            <div class="seat-map__point seat-map__seat disabled point-22-17"
-                                 style="background-image: url(&quot;https://assets.piaoniu.com/icon/seat/unable.png&quot;);"></div>
-                            <div class="seat-map__point seat-map__seat disabled point-23-17"
-                                 style="background-image: url(&quot;https://assets.piaoniu.com/icon/seat/unable.png&quot;);"></div>
-                            <div class="seat-map__point seat-map__seat disabled point-24-17"
-                                 style="background-image: url(&quot;https://assets.piaoniu.com/icon/seat/unable.png&quot;);"></div>
-                            <div class="seat-map__point seat-map__seat disabled point-25-17"
-                                 style="background-image: url(&quot;https://assets.piaoniu.com/icon/seat/unable.png&quot;);"></div>
-                            <div class="seat-map__point seat-map__seat disabled point-26-17"
-                                 style="background-image: url(&quot;https://assets.piaoniu.com/icon/seat/unable.png&quot;);"></div>
-                            <div class="seat-map__point seat-map__seat point-27-17"
-                                 style="background-image: url(&quot;https://assets.piaoniu.com/icon/mahuaSeat/5.png&quot;);"></div>
-                            <div class="seat-map__point seat-map__seat point-28-17"
-                                 style="background-image: url(&quot;https://assets.piaoniu.com/icon/mahuaSeat/5.png&quot;);"></div>
-                            <div class="seat-map__point seat-map__seat point-29-17"
-                                 style="background-image: url(&quot;https://assets.piaoniu.com/icon/mahuaSeat/5.png&quot;);"></div>
-                            <div class="seat-map__point seat-map__seat point-30-17"
-                                 style="background-image: url(&quot;https://assets.piaoniu.com/icon/mahuaSeat/5.png&quot;);"></div>
-                            <div class="seat-map__point disabled point-31-17"></div>
-                            <div class="seat-map__point disabled point-32-17"></div>
-                            <div class="seat-map__point seat-map__seat point-33-17"
-                                 style="background-image: url(&quot;https://assets.piaoniu.com/icon/mahuaSeat/5.png&quot;);"></div>
-                            <div class="seat-map__point seat-map__seat point-34-17"
-                                 style="background-image: url(&quot;https://assets.piaoniu.com/icon/mahuaSeat/5.png&quot;);"></div>
-                            <div class="seat-map__point seat-map__seat point-35-17"
-                                 style="background-image: url(&quot;https://assets.piaoniu.com/icon/mahuaSeat/5.png&quot;);"></div>
-                            <div class="seat-map__point seat-map__seat point-36-17"
-                                 style="background-image: url(&quot;https://assets.piaoniu.com/icon/mahuaSeat/5.png&quot;);"></div>
-                            <div class="seat-map__point seat-map__seat point-37-17"
-                                 style="background-image: url(&quot;https://assets.piaoniu.com/icon/mahuaSeat/5.png&quot;);"></div>
-                            <div class="seat-map__point seat-map__seat point-38-17"
-                                 style="background-image: url(&quot;https://assets.piaoniu.com/icon/mahuaSeat/5.png&quot;);"></div>
-                            <div class="seat-map__point seat-map__seat point-39-17"
-                                 style="background-image: url(&quot;https://assets.piaoniu.com/icon/mahuaSeat/6.png&quot;);"></div>
-                            <div class="seat-map__point seat-map__seat point-40-17"
-                                 style="background-image: url(&quot;https://assets.piaoniu.com/icon/mahuaSeat/6.png&quot;);"></div>
-                            <div class="seat-map__point seat-map__seat point-41-17"
-                                 style="background-image: url(&quot;https://assets.piaoniu.com/icon/mahuaSeat/6.png&quot;);"></div>
-                        </div>
-                        <div class="seat-map__coordinate-row">
-                            <div class="seat-map__point disabled point-0-18"></div>
-                            <div class="seat-map__point disabled point-1-18"></div>
-                            <div class="seat-map__point disabled point-2-18"></div>
-                            <div class="seat-map__point disabled point-3-18"></div>
-                            <div class="seat-map__point seat-map__seat point-4-18"
-                                 style="background-image: url(&quot;https://assets.piaoniu.com/icon/mahuaSeat/6.png&quot;);"></div>
-                            <div class="seat-map__point seat-map__seat point-5-18"
-                                 style="background-image: url(&quot;https://assets.piaoniu.com/icon/mahuaSeat/6.png&quot;);"></div>
-                            <div class="seat-map__point seat-map__seat point-6-18"
-                                 style="background-image: url(&quot;https://assets.piaoniu.com/icon/mahuaSeat/6.png&quot;);"></div>
-                            <div class="seat-map__point seat-map__seat point-7-18"
-                                 style="background-image: url(&quot;https://assets.piaoniu.com/icon/mahuaSeat/5.png&quot;);"></div>
-                            <div class="seat-map__point seat-map__seat point-8-18"
-                                 style="background-image: url(&quot;https://assets.piaoniu.com/icon/mahuaSeat/5.png&quot;);"></div>
-                            <div class="seat-map__point seat-map__seat point-9-18"
-                                 style="background-image: url(&quot;https://assets.piaoniu.com/icon/mahuaSeat/5.png&quot;);"></div>
-                            <div class="seat-map__point seat-map__seat point-10-18"
-                                 style="background-image: url(&quot;https://assets.piaoniu.com/icon/mahuaSeat/5.png&quot;);"></div>
-                            <div class="seat-map__point seat-map__seat point-11-18"
-                                 style="background-image: url(&quot;https://assets.piaoniu.com/icon/mahuaSeat/5.png&quot;);"></div>
-                            <div class="seat-map__point seat-map__seat point-12-18"
-                                 style="background-image: url(&quot;https://assets.piaoniu.com/icon/mahuaSeat/5.png&quot;);"></div>
-                            <div class="seat-map__point disabled point-13-18"></div>
-                            <div class="seat-map__point disabled point-14-18"></div>
-                            <div class="seat-map__point disabled point-15-18"></div>
-                            <div class="seat-map__point seat-map__seat point-16-18"
-                                 style="background-image: url(&quot;https://assets.piaoniu.com/icon/mahuaSeat/5.png&quot;);"></div>
-                            <div class="seat-map__point seat-map__seat point-17-18"
-                                 style="background-image: url(&quot;https://assets.piaoniu.com/icon/mahuaSeat/5.png&quot;);"></div>
-                            <div class="seat-map__point seat-map__seat point-18-18"
-                                 style="background-image: url(&quot;https://assets.piaoniu.com/icon/mahuaSeat/5.png&quot;);"></div>
-                            <div class="seat-map__point seat-map__seat point-19-18"
-                                 style="background-image: url(&quot;https://assets.piaoniu.com/icon/mahuaSeat/5.png&quot;);"></div>
-                            <div class="seat-map__point seat-map__seat point-20-18"
-                                 style="background-image: url(&quot;https://assets.piaoniu.com/icon/mahuaSeat/5.png&quot;);"></div>
-                            <div class="seat-map__point seat-map__seat point-21-18"
-                                 style="background-image: url(&quot;https://assets.piaoniu.com/icon/mahuaSeat/5.png&quot;);"></div>
-                            <div class="seat-map__point seat-map__seat point-22-18"
-                                 style="background-image: url(&quot;https://assets.piaoniu.com/icon/mahuaSeat/5.png&quot;);"></div>
-                            <div class="seat-map__point seat-map__seat disabled point-23-18"
-                                 style="background-image: url(&quot;https://assets.piaoniu.com/icon/seat/unable.png&quot;);"></div>
-                            <div class="seat-map__point seat-map__seat disabled point-24-18"
-                                 style="background-image: url(&quot;https://assets.piaoniu.com/icon/seat/unable.png&quot;);"></div>
-                            <div class="seat-map__point seat-map__seat point-25-18"
-                                 style="background-image: url(&quot;https://assets.piaoniu.com/icon/mahuaSeat/5.png&quot;);"></div>
-                            <div class="seat-map__point seat-map__seat point-26-18"
-                                 style="background-image: url(&quot;https://assets.piaoniu.com/icon/mahuaSeat/5.png&quot;);"></div>
-                            <div class="seat-map__point seat-map__seat point-27-18"
-                                 style="background-image: url(&quot;https://assets.piaoniu.com/icon/mahuaSeat/5.png&quot;);"></div>
-                            <div class="seat-map__point seat-map__seat point-28-18"
-                                 style="background-image: url(&quot;https://assets.piaoniu.com/icon/mahuaSeat/5.png&quot;);"></div>
-                            <div class="seat-map__point seat-map__seat point-29-18"
-                                 style="background-image: url(&quot;https://assets.piaoniu.com/icon/mahuaSeat/5.png&quot;);"></div>
-                            <div class="seat-map__point seat-map__seat point-30-18"
-                                 style="background-image: url(&quot;https://assets.piaoniu.com/icon/mahuaSeat/5.png&quot;);"></div>
-                            <div class="seat-map__point disabled point-31-18"></div>
-                            <div class="seat-map__point disabled point-32-18"></div>
-                            <div class="seat-map__point seat-map__seat point-33-18"
-                                 style="background-image: url(&quot;https://assets.piaoniu.com/icon/mahuaSeat/5.png&quot;);"></div>
-                            <div class="seat-map__point seat-map__seat point-34-18"
-                                 style="background-image: url(&quot;https://assets.piaoniu.com/icon/mahuaSeat/5.png&quot;);"></div>
-                            <div class="seat-map__point seat-map__seat point-35-18"
-                                 style="background-image: url(&quot;https://assets.piaoniu.com/icon/mahuaSeat/5.png&quot;);"></div>
-                            <div class="seat-map__point seat-map__seat point-36-18"
-                                 style="background-image: url(&quot;https://assets.piaoniu.com/icon/mahuaSeat/5.png&quot;);"></div>
-                            <div class="seat-map__point seat-map__seat point-37-18"
-                                 style="background-image: url(&quot;https://assets.piaoniu.com/icon/mahuaSeat/5.png&quot;);"></div>
-                            <div class="seat-map__point seat-map__seat point-38-18"
-                                 style="background-image: url(&quot;https://assets.piaoniu.com/icon/mahuaSeat/5.png&quot;);"></div>
-                            <div class="seat-map__point seat-map__seat point-39-18"
-                                 style="background-image: url(&quot;https://assets.piaoniu.com/icon/mahuaSeat/6.png&quot;);"></div>
-                            <div class="seat-map__point seat-map__seat point-40-18"
-                                 style="background-image: url(&quot;https://assets.piaoniu.com/icon/mahuaSeat/6.png&quot;);"></div>
-                            <div class="seat-map__point seat-map__seat point-41-18"
-                                 style="background-image: url(&quot;https://assets.piaoniu.com/icon/mahuaSeat/6.png&quot;);"></div>
-                        </div>
-                        <div class="seat-map__coordinate-row">
-                            <div class="seat-map__point disabled point-0-19"></div>
-                            <div class="seat-map__point disabled point-1-19"></div>
-                            <div class="seat-map__point disabled point-2-19"></div>
-                            <div class="seat-map__point disabled point-3-19"></div>
-                            <div class="seat-map__point seat-map__seat disabled point-4-19"
-                                 style="background-image: url(&quot;https://assets.piaoniu.com/icon/seat/unable.png&quot;);"></div>
-                            <div class="seat-map__point seat-map__seat disabled point-5-19"
-                                 style="background-image: url(&quot;https://assets.piaoniu.com/icon/seat/unable.png&quot;);"></div>
-                            <div class="seat-map__point seat-map__seat disabled point-6-19"
-                                 style="background-image: url(&quot;https://assets.piaoniu.com/icon/seat/unable.png&quot;);"></div>
-                            <div class="seat-map__point seat-map__seat point-7-19"
-                                 style="background-image: url(&quot;https://assets.piaoniu.com/icon/mahuaSeat/6.png&quot;);"></div>
-                            <div class="seat-map__point seat-map__seat point-8-19"
-                                 style="background-image: url(&quot;https://assets.piaoniu.com/icon/mahuaSeat/6.png&quot;);"></div>
-                            <div class="seat-map__point seat-map__seat point-9-19"
-                                 style="background-image: url(&quot;https://assets.piaoniu.com/icon/mahuaSeat/5.png&quot;);"></div>
-                            <div class="seat-map__point seat-map__seat point-10-19"
-                                 style="background-image: url(&quot;https://assets.piaoniu.com/icon/mahuaSeat/5.png&quot;);"></div>
-                            <div class="seat-map__point seat-map__seat point-11-19"
-                                 style="background-image: url(&quot;https://assets.piaoniu.com/icon/mahuaSeat/5.png&quot;);"></div>
-                            <div class="seat-map__point seat-map__seat point-12-19"
-                                 style="background-image: url(&quot;https://assets.piaoniu.com/icon/mahuaSeat/5.png&quot;);"></div>
-                            <div class="seat-map__point disabled point-13-19"></div>
-                            <div class="seat-map__point disabled point-14-19"></div>
-                            <div class="seat-map__point disabled point-15-19"></div>
-                            <div class="seat-map__point seat-map__seat point-16-19"
-                                 style="background-image: url(&quot;https://assets.piaoniu.com/icon/mahuaSeat/5.png&quot;);"></div>
-                            <div class="seat-map__point seat-map__seat point-17-19"
-                                 style="background-image: url(&quot;https://assets.piaoniu.com/icon/mahuaSeat/5.png&quot;);"></div>
-                            <div class="seat-map__point seat-map__seat point-18-19"
-                                 style="background-image: url(&quot;https://assets.piaoniu.com/icon/mahuaSeat/5.png&quot;);"></div>
-                            <div class="seat-map__point seat-map__seat point-19-19"
-                                 style="background-image: url(&quot;https://assets.piaoniu.com/icon/mahuaSeat/5.png&quot;);"></div>
-                            <div class="seat-map__point seat-map__seat point-20-19"
-                                 style="background-image: url(&quot;https://assets.piaoniu.com/icon/mahuaSeat/5.png&quot;);"></div>
-                            <div class="seat-map__point seat-map__seat point-21-19"
-                                 style="background-image: url(&quot;https://assets.piaoniu.com/icon/mahuaSeat/5.png&quot;);"></div>
-                            <div class="seat-map__point seat-map__seat point-22-19"
-                                 style="background-image: url(&quot;https://assets.piaoniu.com/icon/mahuaSeat/5.png&quot;);"></div>
-                            <div class="seat-map__point seat-map__seat point-23-19"
-                                 style="background-image: url(&quot;https://assets.piaoniu.com/icon/mahuaSeat/5.png&quot;);"></div>
-                            <div class="seat-map__point seat-map__seat point-24-19"
-                                 style="background-image: url(&quot;https://assets.piaoniu.com/icon/mahuaSeat/5.png&quot;);"></div>
-                            <div class="seat-map__point seat-map__seat point-25-19"
-                                 style="background-image: url(&quot;https://assets.piaoniu.com/icon/mahuaSeat/5.png&quot;);"></div>
-                            <div class="seat-map__point seat-map__seat point-26-19"
-                                 style="background-image: url(&quot;https://assets.piaoniu.com/icon/mahuaSeat/5.png&quot;);"></div>
-                            <div class="seat-map__point seat-map__seat point-27-19"
-                                 style="background-image: url(&quot;https://assets.piaoniu.com/icon/mahuaSeat/5.png&quot;);"></div>
-                            <div class="seat-map__point seat-map__seat point-28-19"
-                                 style="background-image: url(&quot;https://assets.piaoniu.com/icon/mahuaSeat/5.png&quot;);"></div>
-                            <div class="seat-map__point seat-map__seat point-29-19"
-                                 style="background-image: url(&quot;https://assets.piaoniu.com/icon/mahuaSeat/5.png&quot;);"></div>
-                            <div class="seat-map__point seat-map__seat point-30-19"
-                                 style="background-image: url(&quot;https://assets.piaoniu.com/icon/mahuaSeat/5.png&quot;);"></div>
-                            <div class="seat-map__point disabled point-31-19"></div>
-                            <div class="seat-map__point disabled point-32-19"></div>
-                            <div class="seat-map__point seat-map__seat point-33-19"
-                                 style="background-image: url(&quot;https://assets.piaoniu.com/icon/mahuaSeat/5.png&quot;);"></div>
-                            <div class="seat-map__point seat-map__seat point-34-19"
-                                 style="background-image: url(&quot;https://assets.piaoniu.com/icon/mahuaSeat/5.png&quot;);"></div>
-                            <div class="seat-map__point seat-map__seat point-35-19"
-                                 style="background-image: url(&quot;https://assets.piaoniu.com/icon/mahuaSeat/5.png&quot;);"></div>
-                            <div class="seat-map__point seat-map__seat point-36-19"
-                                 style="background-image: url(&quot;https://assets.piaoniu.com/icon/mahuaSeat/5.png&quot;);"></div>
-                            <div class="seat-map__point seat-map__seat point-37-19"
-                                 style="background-image: url(&quot;https://assets.piaoniu.com/icon/mahuaSeat/6.png&quot;);"></div>
-                            <div class="seat-map__point seat-map__seat point-38-19"
-                                 style="background-image: url(&quot;https://assets.piaoniu.com/icon/mahuaSeat/6.png&quot;);"></div>
-                            <div class="seat-map__point seat-map__seat disabled point-39-19"
-                                 style="background-image: url(&quot;https://assets.piaoniu.com/icon/seat/unable.png&quot;);"></div>
-                            <div class="seat-map__point seat-map__seat disabled point-40-19"
-                                 style="background-image: url(&quot;https://assets.piaoniu.com/icon/seat/unable.png&quot;);"></div>
-                            <div class="seat-map__point seat-map__seat point-41-19"
-                                 style="background-image: url(&quot;https://assets.piaoniu.com/icon/mahuaSeat/7.png&quot;);"></div>
-                        </div>
-                        <div class="seat-map__coordinate-row">
-                            <div class="seat-map__point disabled point-0-20"></div>
-                            <div class="seat-map__point disabled point-1-20"></div>
-                            <div class="seat-map__point disabled point-2-20"></div>
-                            <div class="seat-map__point disabled point-3-20"></div>
-                            <div class="seat-map__point seat-map__seat disabled point-4-20"
-                                 style="background-image: url(&quot;https://assets.piaoniu.com/icon/seat/unable.png&quot;);"></div>
-                            <div class="seat-map__point seat-map__seat disabled point-5-20"
-                                 style="background-image: url(&quot;https://assets.piaoniu.com/icon/seat/unable.png&quot;);"></div>
-                            <div class="seat-map__point seat-map__seat disabled point-6-20"
-                                 style="background-image: url(&quot;https://assets.piaoniu.com/icon/seat/unable.png&quot;);"></div>
-                            <div class="seat-map__point seat-map__seat point-7-20"
-                                 style="background-image: url(&quot;https://assets.piaoniu.com/icon/mahuaSeat/6.png&quot;);"></div>
-                            <div class="seat-map__point seat-map__seat point-8-20"
-                                 style="background-image: url(&quot;https://assets.piaoniu.com/icon/mahuaSeat/6.png&quot;);"></div>
-                            <div class="seat-map__point seat-map__seat disabled point-9-20"
-                                 style="background-image: url(&quot;https://assets.piaoniu.com/icon/seat/unable.png&quot;);"></div>
-                            <div class="seat-map__point seat-map__seat disabled point-10-20"
-                                 style="background-image: url(&quot;https://assets.piaoniu.com/icon/seat/unable.png&quot;);"></div>
-                            <div class="seat-map__point seat-map__seat point-11-20"
-                                 style="background-image: url(&quot;https://assets.piaoniu.com/icon/mahuaSeat/5.png&quot;);"></div>
-                            <div class="seat-map__point seat-map__seat point-12-20"
-                                 style="background-image: url(&quot;https://assets.piaoniu.com/icon/mahuaSeat/5.png&quot;);"></div>
-                            <div class="seat-map__point disabled point-13-20"></div>
-                            <div class="seat-map__point disabled point-14-20"></div>
-                            <div class="seat-map__point disabled point-15-20"></div>
-                            <div class="seat-map__point seat-map__seat point-16-20"
-                                 style="background-image: url(&quot;https://assets.piaoniu.com/icon/mahuaSeat/5.png&quot;);"></div>
-                            <div class="seat-map__point seat-map__seat point-17-20"
-                                 style="background-image: url(&quot;https://assets.piaoniu.com/icon/mahuaSeat/5.png&quot;);"></div>
-                            <div class="seat-map__point seat-map__seat point-18-20"
-                                 style="background-image: url(&quot;https://assets.piaoniu.com/icon/mahuaSeat/5.png&quot;);"></div>
-                            <div class="seat-map__point seat-map__seat point-19-20"
-                                 style="background-image: url(&quot;https://assets.piaoniu.com/icon/mahuaSeat/5.png&quot;);"></div>
-                            <div class="seat-map__point seat-map__seat point-20-20"
-                                 style="background-image: url(&quot;https://assets.piaoniu.com/icon/mahuaSeat/5.png&quot;);"></div>
-                            <div class="seat-map__point seat-map__seat point-21-20"
-                                 style="background-image: url(&quot;https://assets.piaoniu.com/icon/mahuaSeat/5.png&quot;);"></div>
-                            <div class="seat-map__point seat-map__seat point-22-20"
-                                 style="background-image: url(&quot;https://assets.piaoniu.com/icon/mahuaSeat/5.png&quot;);"></div>
-                            <div class="seat-map__point seat-map__seat point-23-20"
-                                 style="background-image: url(&quot;https://assets.piaoniu.com/icon/mahuaSeat/5.png&quot;);"></div>
-                            <div class="seat-map__point seat-map__seat point-24-20"
-                                 style="background-image: url(&quot;https://assets.piaoniu.com/icon/mahuaSeat/5.png&quot;);"></div>
-                            <div class="seat-map__point seat-map__seat point-25-20"
-                                 style="background-image: url(&quot;https://assets.piaoniu.com/icon/mahuaSeat/5.png&quot;);"></div>
-                            <div class="seat-map__point seat-map__seat point-26-20"
-                                 style="background-image: url(&quot;https://assets.piaoniu.com/icon/mahuaSeat/5.png&quot;);"></div>
-                            <div class="seat-map__point seat-map__seat point-27-20"
-                                 style="background-image: url(&quot;https://assets.piaoniu.com/icon/mahuaSeat/5.png&quot;);"></div>
-                            <div class="seat-map__point seat-map__seat point-28-20"
-                                 style="background-image: url(&quot;https://assets.piaoniu.com/icon/mahuaSeat/5.png&quot;);"></div>
-                            <div class="seat-map__point seat-map__seat point-29-20"
-                                 style="background-image: url(&quot;https://assets.piaoniu.com/icon/mahuaSeat/5.png&quot;);"></div>
-                            <div class="seat-map__point seat-map__seat point-30-20"
-                                 style="background-image: url(&quot;https://assets.piaoniu.com/icon/mahuaSeat/5.png&quot;);"></div>
-                            <div class="seat-map__point disabled point-31-20"></div>
-                            <div class="seat-map__point disabled point-32-20"></div>
-                            <div class="seat-map__point seat-map__seat point-33-20"
-                                 style="background-image: url(&quot;https://assets.piaoniu.com/icon/mahuaSeat/5.png&quot;);"></div>
-                            <div class="seat-map__point seat-map__seat point-34-20"
-                                 style="background-image: url(&quot;https://assets.piaoniu.com/icon/mahuaSeat/5.png&quot;);"></div>
-                            <div class="seat-map__point seat-map__seat point-35-20"
-                                 style="background-image: url(&quot;https://assets.piaoniu.com/icon/mahuaSeat/6.png&quot;);"></div>
-                            <div class="seat-map__point seat-map__seat point-36-20"
-                                 style="background-image: url(&quot;https://assets.piaoniu.com/icon/mahuaSeat/6.png&quot;);"></div>
-                            <div class="seat-map__point seat-map__seat point-37-20"
-                                 style="background-image: url(&quot;https://assets.piaoniu.com/icon/mahuaSeat/6.png&quot;);"></div>
-                            <div class="seat-map__point seat-map__seat point-38-20"
-                                 style="background-image: url(&quot;https://assets.piaoniu.com/icon/mahuaSeat/6.png&quot;);"></div>
-                            <div class="seat-map__point seat-map__seat disabled point-39-20"
-                                 style="background-image: url(&quot;https://assets.piaoniu.com/icon/seat/unable.png&quot;);"></div>
-                            <div class="seat-map__point seat-map__seat disabled point-40-20"
-                                 style="background-image: url(&quot;https://assets.piaoniu.com/icon/seat/unable.png&quot;);"></div>
-                            <div class="seat-map__point seat-map__seat disabled point-41-20"
-                                 style="background-image: url(&quot;https://assets.piaoniu.com/icon/seat/unable.png&quot;);"></div>
-                        </div>
-                        <div class="seat-map__coordinate-row">
-                            <div class="seat-map__point disabled point-0-21"></div>
-                            <div class="seat-map__point disabled point-1-21"></div>
-                            <div class="seat-map__point disabled point-2-21"></div>
-                            <div class="seat-map__point disabled point-3-21"></div>
-                            <div class="seat-map__point disabled point-4-21"></div>
-                            <div class="seat-map__point disabled point-5-21"></div>
-                            <div class="seat-map__point seat-map__seat disabled point-6-21"
-                                 style="background-image: url(&quot;https://assets.piaoniu.com/icon/seat/unable.png&quot;);"></div>
-                            <div class="seat-map__point seat-map__seat disabled point-7-21"
-                                 style="background-image: url(&quot;https://assets.piaoniu.com/icon/seat/unable.png&quot;);"></div>
-                            <div class="seat-map__point seat-map__seat point-8-21"
-                                 style="background-image: url(&quot;https://assets.piaoniu.com/icon/mahuaSeat/6.png&quot;);"></div>
-                            <div class="seat-map__point seat-map__seat point-9-21"
-                                 style="background-image: url(&quot;https://assets.piaoniu.com/icon/mahuaSeat/6.png&quot;);"></div>
-                            <div class="seat-map__point seat-map__seat disabled point-10-21"
-                                 style="background-image: url(&quot;https://assets.piaoniu.com/icon/seat/unable.png&quot;);"></div>
-                            <div class="seat-map__point seat-map__seat disabled point-11-21"
-                                 style="background-image: url(&quot;https://assets.piaoniu.com/icon/seat/unable.png&quot;);"></div>
-                            <div class="seat-map__point disabled point-12-21"></div>
-                            <div class="seat-map__point disabled point-13-21"></div>
-                            <div class="seat-map__point disabled point-14-21"></div>
-                            <div class="seat-map__point disabled point-15-21"></div>
-                            <div class="seat-map__point disabled point-16-21"></div>
-                            <div class="seat-map__point disabled point-17-21"></div>
-                            <div class="seat-map__point disabled point-18-21"></div>
-                            <div class="seat-map__point disabled point-19-21"></div>
-                            <div class="seat-map__point disabled point-20-21"></div>
-                            <div class="seat-map__point disabled point-21-21"></div>
-                            <div class="seat-map__point disabled point-22-21"></div>
-                            <div class="seat-map__point disabled point-23-21"></div>
-                            <div class="seat-map__point disabled point-24-21"></div>
-                            <div class="seat-map__point disabled point-25-21"></div>
-                            <div class="seat-map__point disabled point-26-21"></div>
-                            <div class="seat-map__point disabled point-27-21"></div>
-                            <div class="seat-map__point disabled point-28-21"></div>
-                            <div class="seat-map__point disabled point-29-21"></div>
-                            <div class="seat-map__point disabled point-30-21"></div>
-                            <div class="seat-map__point disabled point-31-21"></div>
-                            <div class="seat-map__point disabled point-32-21"></div>
-                            <div class="seat-map__point disabled point-33-21"></div>
-                            <div class="seat-map__point seat-map__seat disabled point-34-21"
-                                 style="background-image: url(&quot;https://assets.piaoniu.com/icon/seat/unable.png&quot;);"></div>
-                            <div class="seat-map__point seat-map__seat disabled point-35-21"
-                                 style="background-image: url(&quot;https://assets.piaoniu.com/icon/seat/unable.png&quot;);"></div>
-                            <div class="seat-map__point seat-map__seat point-36-21"
-                                 style="background-image: url(&quot;https://assets.piaoniu.com/icon/mahuaSeat/6.png&quot;);"></div>
-                            <div class="seat-map__point seat-map__seat point-37-21"
-                                 style="background-image: url(&quot;https://assets.piaoniu.com/icon/mahuaSeat/6.png&quot;);"></div>
-                            <div class="seat-map__point seat-map__seat disabled point-38-21"
-                                 style="background-image: url(&quot;https://assets.piaoniu.com/icon/seat/unable.png&quot;);"></div>
-                            <div class="seat-map__point seat-map__seat disabled point-39-21"
-                                 style="background-image: url(&quot;https://assets.piaoniu.com/icon/seat/unable.png&quot;);"></div>
-                            <div class="seat-map__point disabled point-40-21"></div>
-                            <div class="seat-map__point disabled point-41-21"></div>
-                        </div>
-                    </div>
-                </div>
-                <div class="seat-map__stage"><span>舞台</span></div>
-                <div class="seat-map__rows">
-                    <div class="seat-map__row"></div>
-                    <div class="seat-map__row">1</div>
-                    <div class="seat-map__row">2</div>
-                    <div class="seat-map__row">3</div>
-                    <div class="seat-map__row">4</div>
-                    <div class="seat-map__row">5</div>
-                    <div class="seat-map__row">6</div>
-                    <div class="seat-map__row">7</div>
-                    <div class="seat-map__row">8</div>
-                    <div class="seat-map__row">9</div>
-                    <div class="seat-map__row">10</div>
-                    <div class="seat-map__row">11</div>
-                    <div class="seat-map__row">12</div>
-                    <div class="seat-map__row"></div>
-                    <div class="seat-map__row"></div>
-                    <div class="seat-map__row">13</div>
-                    <div class="seat-map__row">14</div>
-                    <div class="seat-map__row">15</div>
-                    <div class="seat-map__row">16</div>
-                    <div class="seat-map__row">17</div>
-                    <div class="seat-map__row">18</div>
-                    <div class="seat-map__row">19</div>
-                </div>
-                <div class="seat-map__overlay" style="display: none;"></div>
-                <div class="multi-floor"><a
-                        href="http://www.piaoniu.com/activity/89753/onlineSeat?imageView/2/w/800/h/800/format/jpg"
-                        class="area-img-link"><!----></a>
-                    <div class="floors">
-                        <div class="multi-floor__main">
-                            <div class="multi-floor__title">区域</div>
-                            <div class="multi-floor__current-floor">一楼</div>
-                        </div>
-                        <div class="multi-floor__iscroll">
-                            <div class="multi-floor__collapse" style="display: none;">
-                                <div class="multi-floor__item multi-floor__item--select">一楼</div>
-                                <div class="multi-floor__item">二楼</div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+            <div id="seats"></div>
+            <div class="placessa">
+                <span style="display:none;" id="placeSeatsss" th:text="${tbPlace}">11111</span>
             </div>
             <div class="hint-no-empty hint-no-empty--middle" style="display: none;"></div>
             <div class="hint-no-empty hint-no-empty--side" style="display: none;"></div>
@@ -2443,18 +899,18 @@
                     </div>
                 </div>
                 <div class="choosed-seats control">
-                    <div class="lbl">座位</div>
+                    <div class="lbl zuoweiwei" style="width: 300px;height: 50px;">座位</div>
                     <div class="content">
                         <div class="choosed-seat">
                             <div class="choosed-seat__wrap">
-                                <div class="hint">点击左侧座位直接选择</div>
+                                <div class="hint dianjizuoce">点击左侧座位直接选择</div>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
             <div class="bottom">
-                <div class="bottom-bar disabled">请先选座</div>
+                <div class="bottom-bar disabled qingxian" onclick="addSeat()">请先选座</div>
                 <div class="type-desc">
                     <div class="line">
                         <div class="icon icon-zhe"></div>
@@ -2472,19 +928,19 @@
 </div>
 <div class="slogan-bar">
     <div class="container"><a href="http://www.piaoniu.com/services#service1" rel="nofollow" class="item"><img
-            src="../static/picture/icon-diamond.bb7002bc.png" class="icon">
+            src="picture/icon-diamond.bb7002bc.png" class="icon">
         <div class="text">
             <div class="title">无票赔付</div>
             <div class="desc">无票赔付，最高退一赔二</div>
         </div>
     </a><a href="http://www.piaoniu.com/services#service2" rel="nofollow" class="item"><img
-            src="../static/picture/icon-shield.09fa5cdb.png" class="icon">
+            src="picture/icon-shield.09fa5cdb.png" class="icon">
         <div class="text">
             <div class="title">出票保真</div>
             <div class="desc">全程消费保障，买得放心</div>
         </div>
     </a><a href="http://www.piaoniu.com/services#service3" rel="nofollow" class="item"><img
-            src="../static/picture/icon-umbrella.b2c3c4c4.png" class="icon">
+            src="picture/icon-umbrella.b2c3c4c4.png" class="icon">
         <div class="text">
             <div class="title">配送保障</div>
             <div class="desc">多种取票方式 安全送达</div>
@@ -2503,9 +959,9 @@
 <!--					img(src='#{staticHelper.getUrl("/img/footer/juchen.png")}', style='height:23px')-->
 <div class="footer bottom-bar">
     <div class="container">
-        <div class="links-and-brand"><img src="../static/picture/footer-logo.d5e1202e.png" class="footer-logo">
+        <div class="links-and-brand"><img src="picture/footer-logo.d5e1202e.png" class="footer-logo">
             <div class="qr-codes">
-                <div class="item"><img src="../static/picture/qr-app.f6b3ee0e.png" class="img">
+                <div class="item"><img src="picture/qr-app.f6b3ee0e.png" class="img">
                     <div class="text">票牛app</div>
                 </div>
             </div>
@@ -2604,18 +1060,18 @@
             href="http://www.miitbeian.gov.cn/" target="_blank">沪ICP备14000399号-2</a></div>
     <div class="police-icons"><a href="http://www.beian.gov.cn/portal/registerSystemInfo?recordcode=31010602001682"
                                  target="_blank" rel="nofollow" class="link link-police"><img
-            src="../static/picture/police.c9ff2fec.png" class="icon">
+            src="picture/police.c9ff2fec.png" class="icon">
         <div class="text">沪公网安备 31010602001682号</div>
     </a><a href="http://www.sgs.gov.cn/lz/licenseLink.do?method=licenceView&amp;entyId=2016050618242638" target="_blank"
-           rel="nofollow" class="link link-gongshang"><img src="../static/picture/gongshang.df298c0c.png" class="icon">
+           rel="nofollow" class="link link-gongshang"><img src="picture/gongshang.df298c0c.png" class="icon">
         <div class="text">上海工商</div>
     </a></div>
 </div>
-<script charset="utf-8" src="../static/js/v.js"></script>
-<script async="" src="../static/js/analytics.js"></script>
-<script type="text/javascript" async="" src="../static/js/vds.js"></script>
-<script src="../static/js/hm.js"></script>
-<script src="../static/js/push.js"></script>
+<script charset="utf-8" src="js/v.js"></script>
+<script async="" src="js/analytics.js"></script>
+<script type="text/javascript" async="" src="js/vds.js"></script>
+<script src="js/hm.js"></script>
+<script src="js/push.js"></script>
 <script>var currentCity = {
     "cityId": 2,
     "cityName": "北京",
@@ -5192,13 +3648,13 @@ var activeCities = [{
 <div class="banner-content">
     <div class="banner">
         <div class="center">
-            <div class="left"><img src="../static/picture/logox2.78a31cd1.png"></div>
+            <div class="left"><img src="picture/logox2.78a31cd1.png"></div>
             <div class="app-load"><a href="http://www.piaoniu.com/app" class="apple"></a><a
                     href="http://www.piaoniu.com/app" class="android"></a></div>
-            <div class="code"><img src="../static/picture/code.0294fe21.png"></div>
+            <div class="code"><img src="picture/code.0294fe21.png"></div>
         </div>
         <span class="close"></span></div>
-    <div class="left-img left"><img src="../static/picture/left.e32ac038.png"></div>
+    <div class="left-img left"><img src="picture/left.e32ac038.png"></div>
 </div>
 <script>var _hmt = _hmt || [];
 (function () {
@@ -5241,7 +3697,7 @@ ga('send', 'pageview');</script>
 <!--[if lte IE 8]>
 <script src="http://static.piaoniu.com/pc/vendors/es5-shim.c3b1fc73.js"></script>
 <script src="http://static.piaoniu.com/pc/vendors/es5-sham.095d9e53.js"></script><![endif]-->
-<script src="../static/js/common.7ec1644e.js"></script><!-- 登录用户-->
+<script src="js/common.7ec1644e.js"></script><!-- 登录用户-->
 <script>var user = {
     "userId": 3272130,
     "mobileNo": "18162865997",
@@ -5302,8 +3758,8 @@ ga('send', 'pageview');</script>
     }
 })()
 </script><!--引用自己服务器上easemob.js文件的路径-->
-<script src="../static/js/easemob.f3ced40f.js" async="async"></script>
-<script src="../static/js/header.6e3ce691.js"></script>
+<script src="js/easemob.f3ced40f.js" async="async"></script>
+<script src="js/header.6e3ce691.js"></script>
 <div class="loading" style="display: none;">加载中...</div>
 <div class="loading" style="display: none;">加载中...</div>
 <div class="overlay" style="display: none; opacity: 0;"></div>
@@ -5320,7 +3776,7 @@ ga('send', 'pageview');</script>
         </div>
         <div class="row row-vcode">
             <input placeholder="图形验证码" name="vcode" class="input input-vcode">
-            <img src="../static/css/captcha" class="vcode">
+            <img src="css/captcha" class="vcode">
             <!-- <div class="btn btn-vcode">换一张</div> -->
         </div>
         <div class="row row-getcode">
@@ -5342,20 +3798,20 @@ ga('send', 'pageview');</script>
         </div>
         <div class="row row-vcode form-login-vcode">
             <input placeholder="请输入验证码" name="captcha" class="input input-vcode">
-            <img src="../static/css/captcha" class="vcode">
+            <img src="css/captcha" class="vcode">
         </div>
         <div class="row">
             <input type="submit" class="btn btn-submit" value="登录">
         </div>
     </form>
 </div>
-<script src="../static/js/bottom.4481684d.js"></script>
+<script src="js/bottom.4481684d.js"></script>
 <script>var activityId = '89753'
 var areaImg = ''</script>
-<script src="../static/js/jquery.fancybox.921e9cb0.js"></script>
-<script src="../static/js/vue.min.js"></script>
-<script src="../static/js/pannellum.js"></script>
-<script src="../static/js/onlineseat.051fa010.js"></script>
+<script src="js/jquery.fancybox.921e9cb0.js"></script>
+<script src="js/vue.min.js"></script>
+<script src="js/pannellum.js"></script>
+<script src="js/onlineseat.051fa010.js"></script>
 <div class="loading" style="margin-left: -75px; display: none;">加载中...</div>
 <div class="loading" style="display: none;">加载中...</div>
 <div class="overlay" style="display: none; opacity: 0;"></div>
@@ -5372,7 +3828,7 @@ var areaImg = ''</script>
         </div>
         <div class="row row-vcode">
             <input placeholder="图形验证码" name="vcode" class="input input-vcode">
-            <img src="../static/css/captcha" class="vcode">
+            <img src="css/captcha" class="vcode">
             <!-- <div class="btn btn-vcode">换一张</div> -->
         </div>
         <div class="row row-getcode">
@@ -5394,7 +3850,7 @@ var areaImg = ''</script>
         </div>
         <div class="row row-vcode form-login-vcode">
             <input placeholder="请输入验证码" name="captcha" class="input input-vcode">
-            <img src="../static/css/captcha" class="vcode">
+            <img src="css/captcha" class="vcode">
         </div>
         <div class="row">
             <input type="submit" class="btn btn-submit" value="登录">
@@ -5406,7 +3862,102 @@ var areaImg = ''</script>
 <div class="sogoutip" style="z-index: 2147483645; visibility: hidden; display: none;"></div>
 <div class="sogoubottom" id="sougou_bottom" style="display: none;"></div>
 <div id="ext_overlay" class="ext_overlayBG" style="display: none; z-index: 2147483646;"></div>
-<iframe class="sogou_sugg_feedbackquan" frameborder="0" scrolling="no" src="../static/css/yun6.html"
-        style="background: transparent; border: none; display: none; height: 84px; width: 100%; z-index: 2147483645;"></iframe>
+
+
+
+<iframe class="sogou_sugg_feedbackquan" frameborder="0" scrolling="no" src="css/yun6.html" style="background: transparent; border: none; display: none; height: 84px; width: 100%; z-index: 2147483645;">
+</iframe>
+<script type="text/javascript" src="https://code.jquery.com/jquery-1.12.4.js"></script>
+<script type="text/javascript">
+    //$(ul).width = window.screen.width;
+
+    //定义座位二维数组
+    //0表示这个位置没有座位
+    //1可选表示空位
+    //2表示被别人占位
+    //3表示自己选中的座位
+    var seatArray = new Array();
+    for(var i=0;i<=10;i++){//一维数组长度为30
+        seatArray[i]=new Array();
+        for(var j=0;j<=10;j++){//第二维长度为20
+            seatArray[i][j]=1;
+        }
+    }
+
+    //设置空位
+    /* seatArray[2][5]=0;*/
+    //设置被人占得位置
+    seatArray[5][6]=2;
+    //添加30行li
+    var seats =$("#placeSeatsss").text()
+    var obj = eval('(' + seats + ')');
+    alert(obj);
+    var html="";
+    for(var i=0;i<obj.length;i++){
+        html+='<ul name = "chair" style="margin-left: 300px;margin-top: 30px;">';
+        for(var j = 0 ; j < obj[i].length ; j++){
+            html+='<li><img src="picture/zuowei.png"/></li>';
+        }
+        html+='</ul>'+'<br/>';
+    }
+    $('#seats').append(html);
+    //初始化特殊位置：没有座位的，被占的
+    for(var i=0;i<obj.length;i++){
+        for(var j=0;j<obj[i].length;j++){
+            //没有座位
+            if(obj[i][j]==0){
+                $('#seats >ul[name = "chair"]').eq(i).children().eq(j).replaceWith('<li><img src="picture/8.png"/></li>');
+            }else if(obj[i][j]==1){
+                $('#seats >ul[name = "chair"]').eq(i).children().eq(j).replaceWith('<li><img src="picture/zuowei.png"/></li>')
+            }
+        }
+    }
+    //行号：parseInt($(this).parent().index()/2)
+    //列号：$(this).index()
+    var row ;
+    var col ;
+    $("ul[name = 'chair'] li").click(function(){
+        row = parseInt($(this).parent().index()/2)+1;
+        col = $(this).index()+1;
+        //报行列号
+        alert('第'+row+'行  第'+col+'列');
+        $(".zuoweiwei").append('第'+row+'行  第'+col+'列,');
+        $(".dianjizuoce").addClass("xiaoshi");
+        $(".qingxian").removeClass("disabled");
+        $(".qingxian").html("直接购买");
+        // 如果可选则更新状态
+        if (obj[row][col] == 1) {
+            $(this).replaceWith('<li><img src="picture/seat_selected.png"/></li>');//更换图片
+           /* obj[row][col] = 3;//更新自己选定的数组位置状态*/
+        }else if(obj[row][col] == 0){
+            alert("座位已被占或不存在该座位！");
+        }
+    });
+    function addSeat() {
+        $.post("seat/addseat",
+            {row:row,col:col},
+            function (data) {
+                window.location.href="";
+            }
+
+        )
+    }
+
+    function GetQueryString(name) {
+        var reg = new RegExp("(^|&)" + name + "=([^&]*)(&|$)", "i");
+        var r = window.location.search.substr(1).match(reg); //获取url中"?"符后的字符串并正则匹配
+        var context = "";
+        if (r != null)
+            context = r[2];
+        reg = null;
+        r = null;
+        return context == null || context == "" || context == "undefined" ? "" : context;
+    }
+    var prices = GetQueryString("price");
+    alert(prices);
+    var placeld = GetQueryString("placeId");
+    alert(placeld);
+
+</script>
 </body>
 </html>
