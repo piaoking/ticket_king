@@ -1,6 +1,8 @@
 ﻿<!DOCTYPE html>
+<html lang="zh-CN" xmlns:th="http://www.thymeleaf.org">
 <html>
 <head><title>演唱会,话剧评价_音乐会,体育赛事评论-发现重庆-票牛网</title>
+    <base th:href="${#request.getContextPath()}+'/'">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
     <meta id="viewport" name="viewport"
@@ -43,13 +45,13 @@
     })(window, document, 'script', '//www.google-analytics.com/analytics.js', 'ga');
     ga('create', 'UA-71591200-1', 'auto');
     ga('send', 'pageview');</script>
-    <link rel="stylesheet" href="../static/css/ui.343fbb43.css">
-    <link rel="stylesheet" href="../static/css/fancy-header.eedf5c86.css">
-    <link rel="stylesheet" href="../static/css/home.e1629013.css">
+    <link rel="stylesheet" href="css/ui.343fbb43.css">
+    <link rel="stylesheet" href="css/fancy-header.eedf5c86.css">
+    <link rel="stylesheet" href="css/home.e1629013.css">
 </head>
 <body>
 <div class="fancy-header headerbar">
-    <div class="container"><a href="/" class="logo-wrap"><img src="../static/picture/logo-white.a2c333b7.png" class="logo"></a>
+    <div class="container"><a href="/" class="logo-wrap"><img src="picture/logo-white.a2c333b7.png" class="logo"></a>
         <div class="item city-picker">
             <div class="text city-name">重庆</div>
             <div class="citylist submenu"></div>
@@ -93,13 +95,13 @@
                     <div class="text">手机票牛</div>
                     <div class="submenu">
                         <ul class="submenu-inner">
-                            <li><img src="../static/picture/qr-app.f6b3ee0e.png" class="qr">
+                            <li><img src="picture/qr-app.f6b3ee0e.png" class="qr">
                                 <div class="text">
                                     <div class="title">票牛APP</div>
                                     <div class="desc">热门票随时抢<br/>折扣票随时买</div>
                                 </div>
                             </li>
-                            <li><img src="../static/picture/qr-wechat.72c6a6c0.png" class="qr">
+                            <li><img src="picture/qr-wechat.72c6a6c0.png" class="qr">
                                 <div class="text">
                                     <div class="title">微信订阅号</div>
                                     <div class="desc">精彩剧评最新<br/>活动随时看</div>
@@ -129,7 +131,7 @@
         <div class="review-list list-container">
             <ul>
                 <li data-id="198374" class="review-item"><a href="/user/354011" class="userhead"><img
-                        src="../static/picture/1514455284331.jpg" class="avatar">
+                        src="picture/1514455284331.jpg" class="avatar">
                     <div class="level">
                         <div class="text">官方</div>
                     </div>
@@ -149,22 +151,22 @@
                             18:00 <br/>本条评论 回复数若<200，则不进行开奖 <br/>*本活动解释权最终归票牛所有<br/></a>
                         <div class="piclist"><a
                                 href="https://img.piaoniu.com/review/3812ef44e22fb210c66b8b6bf942ca0580d51090.jpg"
-                                style="background-image:url(images/3812ef44e22fb210c66b8b6bf942ca0580d51090.jpg)"
+                                style="background-image:url(picture/3812ef44e22fb210c66b8b6bf942ca0580d51090.jpg)"
                                 rel="gallery198374" class="img"></a><a
                                 href="https://img.piaoniu.com/review/b9826755ee1eb2959dafca2f5e94e8475d29c990.jpg"
-                                style="background-image:url(images/b9826755ee1eb2959dafca2f5e94e8475d29c990.jpg)"
+                                style="background-image:url(picture/b9826755ee1eb2959dafca2f5e94e8475d29c990.jpg)"
                                 rel="gallery198374" class="img"></a><a
                                 href="https://img.piaoniu.com/review/84affa6fdcb5e6f87a85293fb479740b80e0c9e9.jpg"
-                                style="background-image:url(images/84affa6fdcb5e6f87a85293fb479740b80e0c9e9.jpg)"
+                                style="background-image:url(picture/84affa6fdcb5e6f87a85293fb479740b80e0c9e9.jpg)"
                                 rel="gallery198374" class="img"></a><a
                                 href="https://img.piaoniu.com/review/6d4c335eeb1563d459c3a5127f516e96a2d22770.jpg"
-                                style="background-image:url(images/6d4c335eeb1563d459c3a5127f516e96a2d22770.jpg)"
+                                style="background-image:url(picture/6d4c335eeb1563d459c3a5127f516e96a2d22770.jpg)"
                                 rel="gallery198374" class="img"></a><a
                                 href="https://img.piaoniu.com/review/fd05965ab88ad0dfcc77a098805509dd279cb3d6.jpg"
-                                style="background-image:url(images/fd05965ab88ad0dfcc77a098805509dd279cb3d6.jpg)"
+                                style="background-image:url(picture/fd05965ab88ad0dfcc77a098805509dd279cb3d6.jpg)"
                                 rel="gallery198374" class="img"></a></div>
                         <div class="review-activity"><a href="/activity/91113" class="poster-link"><img
-                                alt="许嵩寻宝游戏Vae2019巡回演唱会 武汉站" src="../static/picture/15c3d2f4a7062fe9f0b3942b8d0cbcee79d9a978.jpg"
+                                alt="许嵩寻宝游戏Vae2019巡回演唱会 武汉站" src="picture/15c3d2f4a7062fe9f0b3942b8d0cbcee79d9a978.jpg"
                                 class="poster"></a><a href="/activity/91113" class="info">
                             <div class="title">许嵩寻宝游戏Vae2019巡回演唱会 武汉站</div>
                         </a></div>
@@ -175,7 +177,7 @@
                     </div>
                 </li>
                 <li data-id="197794" class="review-item"><a href="/user/354011" class="userhead"><img
-                        src="../static/picture/1514455284331.jpg" class="avatar">
+                        src="picture/1514455284331.jpg" class="avatar">
                     <div class="level">
                         <div class="text">官方</div>
                     </div>
@@ -195,22 +197,22 @@
                             18:00 <br/>本条评论 回复数若<200，则不进行开奖 <br/>*本活动解释权最终归票牛所有<br/></a>
                         <div class="piclist"><a
                                 href="https://img.piaoniu.com/review/36c1d7bd8eee9a27ee9f37819ac682075a96fd86.jpg"
-                                style="background-image:url(images/36c1d7bd8eee9a27ee9f37819ac682075a96fd86.jpg)"
+                                style="background-image:url(picture/36c1d7bd8eee9a27ee9f37819ac682075a96fd86.jpg)"
                                 rel="gallery197794" class="img"></a><a
                                 href="https://img.piaoniu.com/review/8fb6dda31009d83391b50e34ea38760795598394.jpg"
-                                style="background-image:url(images/8fb6dda31009d83391b50e34ea38760795598394.jpg)"
+                                style="background-image:url(picture/8fb6dda31009d83391b50e34ea38760795598394.jpg)"
                                 rel="gallery197794" class="img"></a><a
                                 href="https://img.piaoniu.com/review/3d4c5f4ccc6d01052f751775a1421c60396e24d9.jpg"
-                                style="background-image:url(images/3d4c5f4ccc6d01052f751775a1421c60396e24d9.jpg)"
+                                style="background-image:url(picture/3d4c5f4ccc6d01052f751775a1421c60396e24d9.jpg)"
                                 rel="gallery197794" class="img"></a><a
                                 href="https://img.piaoniu.com/review/da0e204af42e91f8bd6b99cfa275af0f9cd75277.jpg"
-                                style="background-image:url(images/da0e204af42e91f8bd6b99cfa275af0f9cd75277.jpg)"
+                                style="background-image:url(picture/da0e204af42e91f8bd6b99cfa275af0f9cd75277.jpg)"
                                 rel="gallery197794" class="img"></a><a
                                 href="https://img.piaoniu.com/review/47700cfce319c13db5fb67f22f628ac3cf116aba.jpg"
-                                style="background-image:url(images/47700cfce319c13db5fb67f22f628ac3cf116aba.jpg)"
+                                style="background-image:url(picture/47700cfce319c13db5fb67f22f628ac3cf116aba.jpg)"
                                 rel="gallery197794" class="img"></a></div>
                         <div class="review-activity"><a href="/activity/80567" class="poster-link"><img
-                                alt="林宥嘉IDOL偶像巡回演唱会2019北京站" src="../static/picture/23a3bcf34a93af983722d18532deb68e4c8d83b2.jpg"
+                                alt="林宥嘉IDOL偶像巡回演唱会2019北京站" src="picture/23a3bcf34a93af983722d18532deb68e4c8d83b2.jpg"
                                 class="poster"></a><a href="/activity/80567" class="info">
                             <div class="title">林宥嘉IDOL偶像巡回演唱会2019北京站</div>
                         </a></div>
@@ -221,7 +223,7 @@
                     </div>
                 </li>
                 <li data-id="196031" class="review-item"><a href="/user/354011" class="userhead"><img
-                        src="../static/picture/1514455284331.jpg" class="avatar">
+                        src="picture/1514455284331.jpg" class="avatar">
                     <div class="level">
                         <div class="text">官方</div>
                     </div>
@@ -242,23 +244,23 @@
                             18:00 <br/>本条评论 回复数若<200，则不进行开奖 <br/>*本活动解释权最终归票牛所有<br/></a>
                         <div class="piclist"><a
                                 href="https://img.piaoniu.com/review/382f22da13f070ba43942f2474545bf24dc47db6.jpg"
-                                style="background-image:url(images/382f22da13f070ba43942f2474545bf24dc47db6.jpg)"
+                                style="background-image:url(picture/382f22da13f070ba43942f2474545bf24dc47db6.jpg)"
                                 rel="gallery196031" class="img"></a><a
                                 href="https://img.piaoniu.com/review/f9dbd7d55b887700cde2bac478aeea129c8cd58d.jpg"
-                                style="background-image:url(images/f9dbd7d55b887700cde2bac478aeea129c8cd58d.jpg)"
+                                style="background-image:url(picture/f9dbd7d55b887700cde2bac478aeea129c8cd58d.jpg)"
                                 rel="gallery196031" class="img"></a><a
                                 href="https://img.piaoniu.com/review/6a0d79c6ad0ca0e7360bc43e649062b5e962c1aa.jpg"
-                                style="background-image:url(images/6a0d79c6ad0ca0e7360bc43e649062b5e962c1aa.jpg)"
+                                style="background-image:url(picture/6a0d79c6ad0ca0e7360bc43e649062b5e962c1aa.jpg)"
                                 rel="gallery196031" class="img"></a><a
                                 href="https://img.piaoniu.com/review/ef3d73e9030d7fe2e5ff31444ca6dafc01747d1e.jpg"
-                                style="background-image:url(images/ef3d73e9030d7fe2e5ff31444ca6dafc01747d1e.jpg)"
+                                style="background-image:url(picture/ef3d73e9030d7fe2e5ff31444ca6dafc01747d1e.jpg)"
                                 rel="gallery196031" class="img"></a><a
                                 href="https://img.piaoniu.com/review/9fb759f2a42acb7cac0e19aa5c740dd8d2a62c64.jpg"
-                                style="background-image:url(images/9fb759f2a42acb7cac0e19aa5c740dd8d2a62c64.jpg)"
+                                style="background-image:url(picture/9fb759f2a42acb7cac0e19aa5c740dd8d2a62c64.jpg)"
                                 rel="gallery196031" class="img"></a></div>
                         <div class="review-activity"><a href="/activity/91024" class="poster-link"><img
                                 alt="2019 李易峰Dream Visit &middot; 成都"
-                                src="../static/picture/066dda51c79734b6a536a5683b07e0680278d884.jpg" class="poster"></a><a
+                                src="picture/066dda51c79734b6a536a5683b07e0680278d884.jpg" class="poster"></a><a
                                 href="/activity/91024" class="info">
                             <div class="title">2019 李易峰Dream Visit &middot; 成都</div>
                         </a></div>
@@ -269,7 +271,7 @@
                     </div>
                 </li>
                 <li data-id="195771" class="review-item"><a href="/user/354011" class="userhead"><img
-                        src="../static/picture/1514455284331.jpg" class="avatar">
+                        src="picture/1514455284331.jpg" class="avatar">
                     <div class="level">
                         <div class="text">官方</div>
                     </div>
@@ -289,23 +291,23 @@
                             18:00 <br/>本条评论 回复数若<200，则不进行开奖 <br/>*本活动解释权最终归票牛所有<br/></a>
                         <div class="piclist"><a
                                 href="https://img.piaoniu.com/review/de475473b45c7167ff8c55bded4683b651f82f50.jpg"
-                                style="background-image:url(images/de475473b45c7167ff8c55bded4683b651f82f50.jpg)"
+                                style="background-image:url(picture/de475473b45c7167ff8c55bded4683b651f82f50.jpg)"
                                 rel="gallery195771" class="img"></a><a
                                 href="https://img.piaoniu.com/review/4379365bf09d595ba68e9809a664ae210ca56223.jpg"
-                                style="background-image:url(images/4379365bf09d595ba68e9809a664ae210ca56223.jpg)"
+                                style="background-image:url(picture/4379365bf09d595ba68e9809a664ae210ca56223.jpg)"
                                 rel="gallery195771" class="img"></a><a
                                 href="https://img.piaoniu.com/review/950cb5876cd95ccb83362cbf8a49eec3c0bd6a98.jpg"
-                                style="background-image:url(images/950cb5876cd95ccb83362cbf8a49eec3c0bd6a98.jpg)"
+                                style="background-image:url(picture/950cb5876cd95ccb83362cbf8a49eec3c0bd6a98.jpg)"
                                 rel="gallery195771" class="img"></a><a
                                 href="https://img.piaoniu.com/review/b2d4b5ee81bac90e4e454dfb3a944e54ac5ae3e0.jpg"
-                                style="background-image:url(images/b2d4b5ee81bac90e4e454dfb3a944e54ac5ae3e0.jpg)"
+                                style="background-image:url(picture/b2d4b5ee81bac90e4e454dfb3a944e54ac5ae3e0.jpg)"
                                 rel="gallery195771" class="img"></a><a
                                 href="https://img.piaoniu.com/review/838baa02959e6b34075497363fe085f430bb0380.jpg"
-                                style="background-image:url(images/838baa02959e6b34075497363fe085f430bb0380.jpg)"
+                                style="background-image:url(picture/838baa02959e6b34075497363fe085f430bb0380.jpg)"
                                 rel="gallery195771" class="img"></a></div>
                         <div class="review-activity"><a href="/activity/90959" class="poster-link"><img
                                 alt="中国平安 &ldquo;不止，是李健&rdquo; 李健世界巡回演唱会 苏州站"
-                                src="../static/picture/970fbd8d95d6e7068799eded25f6d7cf197794f8.jpg" class="poster"></a><a
+                                src="picture/970fbd8d95d6e7068799eded25f6d7cf197794f8.jpg" class="poster"></a><a
                                 href="/activity/90959" class="info">
                             <div class="title">中国平安 &ldquo;不止，是李健&rdquo; 李健世界巡回演唱会 苏州站</div>
                         </a></div>
@@ -316,7 +318,7 @@
                     </div>
                 </li>
                 <li data-id="193170" class="review-item"><a href="/user/354011" class="userhead"><img
-                        src="../static/picture/1514455284331.jpg" class="avatar">
+                        src="picture/1514455284331.jpg" class="avatar">
                     <div class="level">
                         <div class="text">官方</div>
                     </div>
@@ -337,23 +339,23 @@
                             18:00 <br/>本条评论 回复数若<300，则不进行开奖 <br/>*本活动解释权最终归票牛所有<br/></a>
                         <div class="piclist"><a
                                 href="https://img.piaoniu.com/review/c73002100cc6e92d3a857695aef851060ff8fca1.jpg"
-                                style="background-image:url(images/c73002100cc6e92d3a857695aef851060ff8fca1.jpg)"
+                                style="background-image:url(picture/c73002100cc6e92d3a857695aef851060ff8fca1.jpg)"
                                 rel="gallery193170" class="img"></a><a
                                 href="https://img.piaoniu.com/review/ffe674abeefca896399a87af595540bdbe37720b.jpg"
-                                style="background-image:url(images/ffe674abeefca896399a87af595540bdbe37720b.jpg)"
+                                style="background-image:url(picture/ffe674abeefca896399a87af595540bdbe37720b.jpg)"
                                 rel="gallery193170" class="img"></a><a
                                 href="https://img.piaoniu.com/review/a186fbabc56a22751c026a8a8009a2246e63c96b.jpg"
-                                style="background-image:url(images/a186fbabc56a22751c026a8a8009a2246e63c96b.jpg)"
+                                style="background-image:url(picture/a186fbabc56a22751c026a8a8009a2246e63c96b.jpg)"
                                 rel="gallery193170" class="img"></a><a
                                 href="https://img.piaoniu.com/review/aa961f87fa2c0e7142553d123d1a0e83d830ea48.jpg"
-                                style="background-image:url(images/aa961f87fa2c0e7142553d123d1a0e83d830ea48.jpg)"
+                                style="background-image:url(picture/aa961f87fa2c0e7142553d123d1a0e83d830ea48.jpg)"
                                 rel="gallery193170" class="img"></a><a
                                 href="https://img.piaoniu.com/review/d7913bb9a74a3c2c21d3c369dac4b74cf2d74c42.jpg"
-                                style="background-image:url(images/d7913bb9a74a3c2c21d3c369dac4b74cf2d74c42.jpg)"
+                                style="background-image:url(picture/d7913bb9a74a3c2c21d3c369dac4b74cf2d74c42.jpg)"
                                 rel="gallery193170" class="img"></a></div>
                         <div class="review-activity"><a href="/activity/87598" class="poster-link"><img
                                 alt="天&middot;地&middot;东&middot;西&middot;ALIVE TOUR吴亦凡2019巡回演唱会"
-                                src="../static/picture/e2e7ae40c12b74afbe17a49d439d4e2345da8562.jpg" class="poster"></a><a
+                                src="picture/e2e7ae40c12b74afbe17a49d439d4e2345da8562.jpg" class="poster"></a><a
                                 href="/activity/87598" class="info">
                             <div class="title">天&middot;地&middot;东&middot;西&middot;ALIVE TOUR吴亦凡2019巡回演唱会</div>
                         </a></div>
@@ -364,7 +366,7 @@
                     </div>
                 </li>
                 <li data-id="194239" class="review-item"><a href="/user/354009" class="userhead"><img
-                        src="../static//1514439435334.jpg" class="avatar">
+                        src="/1514439435334.jpg" class="avatar">
                     <div class="level">
                         <div class="text">官方</div>
                     </div>
@@ -381,23 +383,23 @@
                         <a href="/review/194239" rel="nofollow" class="content">#不说再见#<br/>郑云龙、余笛、王凯、简弘亦、廖佳琳、李琦、周深<br/>七位音乐才子魔都深情开唱！哪位令你印象深刻？<br/>带话题#不说再见#分享你钟爱的音乐才子精彩舞台瞬间（美图或视频），让大家来品一品你爱豆的硬核颜值/实力吧～</a>
                         <div class="piclist"><a
                                 href="https://img.piaoniu.com/review/868a63b4b5daffa0c0609d849c70c94cccfa4453_ts.jpg"
-                                style="background-image:url(images/868a63b4b5daffa0c0609d849c70c94cccfa4453_ts.jpg)"
+                                style="background-image:url(picture/868a63b4b5daffa0c0609d849c70c94cccfa4453_ts.jpg)"
                                 rel="gallery194239" class="img"></a><a
                                 href="https://img.piaoniu.com/review/5ebb8195610754b0d81660608671dfbe84a30bdf_ts.jpg"
-                                style="background-image:url(images/5ebb8195610754b0d81660608671dfbe84a30bdf_ts.jpg)"
+                                style="background-image:url(picture/5ebb8195610754b0d81660608671dfbe84a30bdf_ts.jpg)"
                                 rel="gallery194239" class="img"></a><a
                                 href="https://img.piaoniu.com/review/90281bfe2099299f082aab55b674cddb4bdff585_ts.jpg"
-                                style="background-image:url(images/90281bfe2099299f082aab55b674cddb4bdff585_ts.jpg)"
+                                style="background-image:url(picture/90281bfe2099299f082aab55b674cddb4bdff585_ts.jpg)"
                                 rel="gallery194239" class="img"></a><a
                                 href="https://img.piaoniu.com/review/04296f4b588bc86eca09ebcaced3c530809edf6b_ts.jpg"
-                                style="background-image:url(images/04296f4b588bc86eca09ebcaced3c530809edf6b_ts.jpg)"
+                                style="background-image:url(picture/04296f4b588bc86eca09ebcaced3c530809edf6b_ts.jpg)"
                                 rel="gallery194239" class="img"></a><a
                                 href="https://img.piaoniu.com/review/e2b6b1df3d738a22198cc9713fa69f4869608a7b_ts.jpg"
-                                style="background-image:url(images/e2b6b1df3d738a22198cc9713fa69f4869608a7b_ts.jpg)"
+                                style="background-image:url(picture/e2b6b1df3d738a22198cc9713fa69f4869608a7b_ts.jpg)"
                                 rel="gallery194239" class="img"></a></div>
                         <div class="review-activity"><a href="/activity/90995" class="poster-link"><img
                                 alt="&ldquo;不说再见&rdquo;系列演唱会上海站"
-                                src="../static/picture/3d7c9014a9865bca423134b5fa884b8f005f03bd.jpg" class="poster"></a><a
+                                src="picture/3d7c9014a9865bca423134b5fa884b8f005f03bd.jpg" class="poster"></a><a
                                 href="/activity/90995" class="info">
                             <div class="title">&ldquo;不说再见&rdquo;系列演唱会上海站</div>
                         </a></div>
@@ -408,7 +410,7 @@
                     </div>
                 </li>
                 <li data-id="193649" class="review-item"><a href="/user/354011" class="userhead"><img
-                        src="../static/picture/1514455284331.jpg" class="avatar">
+                        src="picture/1514455284331.jpg" class="avatar">
                     <div class="level">
                         <div class="text">官方</div>
                     </div>
@@ -428,22 +430,22 @@
                             18:00 <br/>本条评论 回复数若<200，则不进行开奖 <br/>*本活动解释权最终归票牛所有<br/></a>
                         <div class="piclist"><a
                                 href="https://img.piaoniu.com/review/8cdfc90f3313f40cd84ecbb8f9d609e79ed2e5c0.jpg"
-                                style="background-image:url(images/8cdfc90f3313f40cd84ecbb8f9d609e79ed2e5c0.jpg)"
+                                style="background-image:url(picture/8cdfc90f3313f40cd84ecbb8f9d609e79ed2e5c0.jpg)"
                                 rel="gallery193649" class="img"></a><a
                                 href="https://img.piaoniu.com/review/7f2c908762ad8c34427ad74685221827c4b52e9c.jpg"
-                                style="background-image:url(images/7f2c908762ad8c34427ad74685221827c4b52e9c.jpg)"
+                                style="background-image:url(picture/7f2c908762ad8c34427ad74685221827c4b52e9c.jpg)"
                                 rel="gallery193649" class="img"></a><a
                                 href="https://img.piaoniu.com/review/8854f07b88df71bdf7f60d246b8575ca5e72dd70.jpg"
-                                style="background-image:url(images/8854f07b88df71bdf7f60d246b8575ca5e72dd70.jpg)"
+                                style="background-image:url(picture/8854f07b88df71bdf7f60d246b8575ca5e72dd70.jpg)"
                                 rel="gallery193649" class="img"></a><a
                                 href="https://img.piaoniu.com/review/9d537e61aecef9030535f398bd1e8225132a2fcf.jpg"
-                                style="background-image:url(images/9d537e61aecef9030535f398bd1e8225132a2fcf.jpg)"
+                                style="background-image:url(picture/9d537e61aecef9030535f398bd1e8225132a2fcf.jpg)"
                                 rel="gallery193649" class="img"></a><a
                                 href="https://img.piaoniu.com/review/f7aee02d0e0ee0221c88ab434928ed5b52ef2759.jpg"
-                                style="background-image:url(images/f7aee02d0e0ee0221c88ab434928ed5b52ef2759.jpg)"
+                                style="background-image:url(picture/f7aee02d0e0ee0221c88ab434928ed5b52ef2759.jpg)"
                                 rel="gallery193649" class="img"></a></div>
                         <div class="review-activity"><a href="/activity/90912" class="poster-link"><img alt="林峯演唱会-澳门站"
-                                                                                                        src="../static/picture/05387559c5cd5e099a561b0b017f16a188249bcf.jpg"
+                                                                                                        src="picture/05387559c5cd5e099a561b0b017f16a188249bcf.jpg"
                                                                                                         class="poster"></a><a
                                 href="/activity/90912" class="info">
                             <div class="title">林峯演唱会-澳门站</div>
@@ -455,7 +457,7 @@
                     </div>
                 </li>
                 <li data-id="160782" class="review-item"><a href="/user/354011" class="userhead"><img
-                        src="../static/picture/1514455284331.jpg" class="avatar">
+                        src="picture/1514455284331.jpg" class="avatar">
                     <div class="level">
                         <div class="text">官方</div>
                     </div>
@@ -480,7 +482,7 @@
                         </div>
                         <div class="review-activity"><a href="/activity/68275" class="poster-link"><img
                                 alt="2018[A CLASSIC TOUR 学友&middot;经典]张学友巡回演唱会&mdash;&mdash;北京站"
-                                src="../static/picture/31a4ddccc625cfb72f486381e78a1148978af27c.jpg" class="poster"></a><a
+                                src="picture/31a4ddccc625cfb72f486381e78a1148978af27c.jpg" class="poster"></a><a
                                 href="/activity/68275" class="info">
                             <div class="title">2018[A CLASSIC TOUR 学友&middot;经典]张学友巡回演唱会&mdash;&mdash;北京站</div>
                         </a></div>
@@ -491,7 +493,7 @@
                     </div>
                 </li>
                 <li data-id="191673" class="review-item"><a href="/user/354009" class="userhead"><img
-                        src="../static/picture/1514439435334.jpg" class="avatar">
+                        src="picture/1514439435334.jpg" class="avatar">
                     <div class="level">
                         <div class="text">官方</div>
                     </div>
@@ -509,10 +511,10 @@
                             12:00），下单满200元立减5元，带上你的朋友们一起来吧！</a>
                         <div class="piclist"><a
                                 href="https://img.piaoniu.com/review/c0e7c53ed904ff55d54732f40470f2fe6e592397.jpg"
-                                style="background-image:url(images/c0e7c53ed904ff55d54732f40470f2fe6e592397.jpg)"
+                                style="background-image:url(picture/c0e7c53ed904ff55d54732f40470f2fe6e592397.jpg)"
                                 rel="gallery191673" class="img"></a></div>
                         <div class="review-activity"><a href="/activity/90887" class="poster-link"><img
-                                alt="【2019车展】第十八届上海国际汽车工业展览会" src="../static/picture/0b81e76fa4c825c505f77ccb0eb5e7a613d7f86d.jpg"
+                                alt="【2019车展】第十八届上海国际汽车工业展览会" src="picture/0b81e76fa4c825c505f77ccb0eb5e7a613d7f86d.jpg"
                                 class="poster"></a><a href="/activity/90887" class="info">
                             <div class="title">【2019车展】第十八届上海国际汽车工业展览会</div>
                         </a></div>
@@ -522,7 +524,7 @@
                     </div>
                 </li>
                 <li data-id="152141" class="review-item"><a href="/user/354011" class="userhead"><img
-                        src="../static/picture/1514455284331.jpg" class="avatar">
+                        src="picture/1514455284331.jpg" class="avatar">
                     <div class="level">
                         <div class="text">官方</div>
                     </div>
@@ -546,7 +548,7 @@
                         </div>
                         <div class="review-activity"><a href="/activity/60563" class="poster-link"><img
                                 alt="2018周杰伦【地表最强2】世界巡回演唱会-贵阳站"
-                                src="../static/picture/af0fc984ecee50b67cd78445de05ce3074335ee9.jpg" class="poster"></a><a
+                                src="picture/af0fc984ecee50b67cd78445de05ce3074335ee9.jpg" class="poster"></a><a
                                 href="/activity/60563" class="info">
                             <div class="title">2018周杰伦【地表最强2】世界巡回演唱会-贵阳站</div>
                         </a></div>
@@ -568,7 +570,7 @@
                 <ul>
                     <li class="article-item">
                         <div class="head"><a href="/userArticles/1498"
-                                             style="background-image:url(images/9242a82a0323315cd731bafb04ca995c49ed30cb.jpg)"
+                                             style="background-image:url(picture/9242a82a0323315cd731bafb04ca995c49ed30cb.jpg)"
                                              class="poster"></a></div>
                         <div class="info"><a href="/userArticles/1498" class="title">展览美照TOP榜</a>
                             <div class="desc">初夏来啦~啦~啦~阳光明媚，风和日丽！正是出去逛展拍美照的好时节！小秘书为大家贴心整理票友们的逛展Repo~种草的同时看看你有没有被我翻牌&darr;&darr;&darr;点击下方查看展览</div>
@@ -577,7 +579,7 @@
                     </li>
                     <li class="article-item">
                         <div class="head"><a href="/userArticles/1495"
-                                             style="background-image:url(images/c684a5282e89b732296e16982d6b25b3ef87a3d7.jpg)"
+                                             style="background-image:url(picture/c684a5282e89b732296e16982d6b25b3ef87a3d7.jpg)"
                                              class="poster"></a></div>
                         <div class="info"><a href="/userArticles/1495" class="title">该出发了！密室+美食+美景=厦门超小资远征之旅！</a>
                             <div class="desc">
@@ -588,7 +590,7 @@
                     </li>
                     <li class="article-item">
                         <div class="head"><a href="/userArticles/1494"
-                                             style="background-image:url(images/f27e038aa9616e2b9a12a2a1e99218506904f734.jpg)"
+                                             style="background-image:url(picture/f27e038aa9616e2b9a12a2a1e99218506904f734.jpg)"
                                              class="poster"></a></div>
                         <div class="info"><a href="/userArticles/1494" class="title">此文献给所有热爱密室的玩家</a>
                             <div class="desc">
@@ -602,7 +604,7 @@
         </div>
         <div class="block block-app">
             <div class="block-content">
-                <div class="item"><img alt="票牛APP" src="../static/picture/qrcode.e7315dc5.png" class="icon">
+                <div class="item"><img alt="票牛APP" src="picture/qrcode.e7315dc5.png" class="icon">
                     <div class="text"><a href="https://www.piaoniu.com/app" rel="nofollow" class="title">票牛APP</a>
                         <div class="desc">热门票随时抢 <br>折扣票随时买</div>
                     </div>
@@ -629,10 +631,10 @@
             href="http://www.miitbeian.gov.cn" target='_blank'>沪ICP备14000399号-2</a></div>
     <div class="police-icons"><a href="http://www.beian.gov.cn/portal/registerSystemInfo?recordcode=31010602001682"
                                  target="_blank" rel="nofollow" class="link link-police"><img
-            src="../static/picture/police.c9ff2fec.png" class="icon">
+            src="picture/police.c9ff2fec.png" class="icon">
         <div class="text">沪公网安备 31010602001682号</div>
     </a><a href="http://www.sgs.gov.cn/lz/licenseLink.do?method=licenceView&amp;entyId=2016050618242638" target="_blank"
-           rel="nofollow" class="link link-gongshang"><img src="../static/picture/gongshang.df298c0c.png" class="icon">
+           rel="nofollow" class="link link-gongshang"><img src="picture/gongshang.df298c0c.png" class="icon">
         <div class="text">上海工商</div>
     </a></div>
 </div>
@@ -3212,19 +3214,19 @@ var activeCities = [{
 <div class="banner-content">
     <div class="banner">
         <div class="center">
-            <div class="left"><img src="../static/picture/logox2.78a31cd1.png"></div>
+            <div class="left"><img src="picture/logox2.78a31cd1.png"></div>
             <div class="app-load"><a href="/app" class="apple"></a><a href="/app" class="android"></a></div>
-            <div class="code"><img src="../static/picture/code.0294fe21.png"></div>
+            <div class="code"><img src="picture/code.0294fe21.png"></div>
         </div>
         <span class="close"></span></div>
-    <div class="left-img"><img src="../static/picture/left.e32ac038.png"></div>
+    <div class="left-img"><img src="picture/left.e32ac038.png"></div>
 </div>
 <!--[if lte IE 7]>
-<script src="../static/js/json3.6787b55e.js"></script><![endif]-->
+<script src="js/json3.6787b55e.js"></script><![endif]-->
 <!--[if lte IE 8]>
-<script src="../static/js/es5-shim.c3b1fc73.js"></script>
-<script src="../static/js/es5-sham.095d9e53.js"></script><![endif]-->
-<script src="../static/js/common.7ec1644e.js"></script><!-- 登录用户-->
+<script src="js/es5-shim.c3b1fc73.js"></script>
+<script src="js/es5-sham.095d9e53.js"></script><![endif]-->
+<script src="js/common.7ec1644e.js"></script><!-- 登录用户-->
 <script>var isContentPage = true</script><!-- 错误监控-->
 <script>Raven.config('https://8f0cab137a7b47769dec9f0dd89f5885@sentry.piaoniu.com/3y', {
     whitelistUrls: [/www\.piaoniu\.com/],
@@ -3270,9 +3272,9 @@ var activeCities = [{
     }
 })()
 </script><!--引用自己服务器上easemob.js文件的路径-->
-<script src="../static/js/easemob.f3ced40f.js" async="async"></script>
-<script src="../static/js/fancy-header.a323fa4f.js"></script>
-<script src="../static/js/bottom.0e38a26e.js"></script>
-<script src="../static/js/home.5f6d9f09.js"></script>
+<script src="js/easemob.f3ced40f.js" async="async"></script>
+<script src="js/fancy-header.a323fa4f.js"></script>
+<script src="js/bottom.0e38a26e.js"></script>
+<script src="js/home.5f6d9f09.js"></script>
 </body>
 </html>

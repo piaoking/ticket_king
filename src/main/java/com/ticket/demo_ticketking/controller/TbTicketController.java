@@ -3,15 +3,12 @@ package com.ticket.demo_ticketking.controller;
 import com.github.pagehelper.PageHelper;
 import com.github.pagehelper.PageInfo;
 import com.ticket.demo_ticketking.po.TbTicket;
-import com.ticket.demo_ticketking.po.TbUser;
 import com.ticket.demo_ticketking.service.ITicketService;
-import com.ticket.demo_ticketking.utils.PageInfoUtils;
 import com.ticket.demo_ticketking.vo.JsonResult;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
-import org.springframework.web.multipart.MultipartFile;
 
 import java.io.IOException;
 import java.util.List;

@@ -1,0 +1,3384 @@
+<!DOCTYPE html>
+<!-- saved from url=(0035)http://www.piaoniu.com/user/address -->
+<html lang="zh-CN" xmlns:th="http://www.thymeleaf.org">
+<html>
+<head>
+    <base th:href="${#request.getContextPath()}+'/'">
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <title>收货地址 - 票王</title>
+    <style type="text/css">
+        .button1{
+            weight:20px;
+            height:20px;
+        }
+    </style>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta id="viewport" name="viewport"
+          content="initial-scale=1.0, maximum-scale=1.0, width=device-width, user-scalable=0, minimal-ui">
+    <meta name="keywords">
+    <meta name="description">
+    <meta name="baidu-site-verification" content="K4F8wWE2Bq">
+    <link rel="stylesheet" href="css/ui.343fbb43.css">
+    <link rel="stylesheet" href="css/slim-header.9887b921.css">
+    <script src="js/push.js"></script>
+    <script charset="utf-8" src="js/v.js"></script>
+    <script async="" src="js/analytics.js"></script>
+    <script type="text/javascript" async="" src="js/vds.js"></script>
+    <script type="text/javascript" src="js/jquery-3.1.1.js"></script>
+    <script type="text/javascript">
+        function addUserAdd(userId) {
+            var addAdds = $("#adds").val();
+            var userNames = $("#adds2").val();
+            var userTels = $("#adds3").val();
+            $.post("users/insertAdd",
+                {userId:userId,addAdd:addAdds,userName:userNames,userTel:userTels},
+                function (data) {
+                 alert("添加成功");
+                }
+
+            )
+        }
+    </script>
+    <script src="js/hm.js"></script>
+    <script>var _hmt = _hmt || [];
+    (function () {
+        var hm = document.createElement("script");
+        hm.src = "//hm.baidu.com/hm.js?01b5937de16f243ccb7252c91a31af07";
+        var s = document.getElementsByTagName("script")[0];
+        s.parentNode.insertBefore(hm, s);
+    })();
+    _hmt.push(['_setCustomVar', 1, 'city', '北京']);
+    </script>
+    <script>var _vds = _vds || [];
+    window._vds = _vds;
+    (function () {
+        _vds.push(['setAccountId', 'b90318d3834bb1b6']);
+        (function () {
+            var vds = document.createElement('script');
+            vds.type = 'text/javascript';
+            vds.async = true;
+            vds.src = ('https:' == document.location.protocol ? 'https://' : 'http://') + 'dn-growing.qbox.me/vds.js';
+            var s = document.getElementsByTagName('script')[0];
+            s.parentNode.insertBefore(vds, s);
+        })();
+    })();
+    </script>
+    <script>(function (i, s, o, g, r, a, m) {
+        i['GoogleAnalyticsObject'] = r;
+        i[r] = i[r] || function () {
+            (i[r].q = i[r].q || []).push(arguments)
+        }, i[r].l = 1 * new Date();
+        a = s.createElement(o),
+            m = s.getElementsByTagName(o)[0];
+        a.async = 1;
+        a.src = g;
+        m.parentNode.insertBefore(a, m)
+    })(window, document, 'script', '//www.google-analytics.com/analytics.js', 'ga');
+    ga('create', 'UA-71591200-1', 'auto');
+    ga('send', 'pageview');</script>
+    <link rel="stylesheet" href="css/user.5c5daf8b.css">
+    <link rel="stylesheet" href="css/address.57d199ae.css">
+</head>
+<body>
+<div class="slim-header">
+    <div class="container"><a href="shouye.html" class="logo-link"><img src="picture/logo.252971b3.png"
+                                                                                    class="logo"></a>
+        <div class="city-picker">
+            <div class="city-name">北京</div>
+            <div class="citylist">
+                <div class="top-rows">
+                    <div class="row">
+                        <div class="title">当前城市：</div>
+                        <ul>
+                            <li class="selected" data-name="beijing">北京</li>
+                        </ul>
+                    </div>
+                    <div class="row">
+                        <div class="title">热门城市：</div>
+                        <ul>
+                            <li class="city-item" data-name="shanghai">上海</li>
+                            <li class="city-item" data-name="beijing">北京</li>
+                            <li class="city-item" data-name="guangzhou">广州</li>
+                            <li class="city-item" data-name="shenzhen">深圳</li>
+                            <li class="city-item" data-name="chengdu">成都</li>
+                            <li class="city-item" data-name="chongqing">重庆</li>
+                            <li class="city-item" data-name="tianjin">天津</li>
+                            <li class="city-item" data-name="hangzhou">杭州</li>
+                            <li class="city-item" data-name="nanjing">南京</li>
+                            <li class="city-item" data-name="ningbo">宁波</li>
+                            <li class="city-item" data-name="wuhan">武汉</li>
+                            <li class="city-item" data-name="xian">西安</li>
+                            <li class="city-item" data-name="changsha">长沙</li>
+                            <li class="city-item" data-name="zhengzhou">郑州</li>
+                            <li class="city-item" data-name="kunming">昆明</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="city-indexes">
+                    <div class="title">按字母查找</div>
+                    <ul class="hot-city-capitcals">
+                        <li class="cap">A</li>
+                        <li class="cap">B</li>
+                        <li class="cap">C</li>
+                        <li class="cap">D</li>
+                        <li class="cap">F</li>
+                        <li class="cap">G</li>
+                        <li class="cap">H</li>
+                        <li class="cap">J</li>
+                        <li class="cap">K</li>
+                        <li class="cap">L</li>
+                        <li class="cap">M</li>
+                        <li class="cap">N</li>
+                        <li class="cap">P</li>
+                        <li class="cap">Q</li>
+                        <li class="cap">R</li>
+                        <li class="cap">S</li>
+                        <li class="cap">T</li>
+                        <li class="cap">W</li>
+                        <li class="cap">X</li>
+                        <li class="cap">Y</li>
+                        <li class="cap">Z</li>
+                    </ul>
+                </div>
+                <div class="hot-cities">
+                    <ul>
+                        <li data-capital="A">
+                            <div class="capital">A</div>
+                            <ul class="items">
+                                <div class="item city-item" data-name="anqing">安庆</div>
+                                <div class="item city-item" data-name="anshan">鞍山</div>
+                                <div class="item city-item" data-name="anshun">安顺</div>
+                                <div class="item city-item" data-name="macau">澳门</div>
+                            </ul>
+                        </li>
+                        <li data-capital="B">
+                            <div class="capital">B</div>
+                            <ul class="items">
+                                <div class="item city-item" data-name="bangkok">曼谷</div>
+                                <div class="item city-item" data-name="baoding">保定</div>
+                                <div class="item city-item" data-name="baotou">包头</div>
+                                <div class="item city-item" data-name="beihai">北海</div>
+                                <div class="item city-item" data-name="beijing">北京</div>
+                                <div class="item city-item" data-name="bengbu">蚌埠</div>
+                                <div class="item city-item" data-name="benxi">本溪</div>
+                                <div class="item city-item" data-name="binzhou">滨州</div>
+                            </ul>
+                        </li>
+                        <li data-capital="C">
+                            <div class="capital">C</div>
+                            <ul class="items">
+                                <div class="item city-item" data-name="changchun">长春</div>
+                                <div class="item city-item" data-name="changjizhou">昌吉州</div>
+                                <div class="item city-item" data-name="changsha">长沙</div>
+                                <div class="item city-item" data-name="changshu">常熟</div>
+                                <div class="item city-item" data-name="changzhou">常州</div>
+                                <div class="item city-item" data-name="chengde">承德</div>
+                                <div class="item city-item" data-name="chengdu">成都</div>
+                                <div class="item city-item" data-name="chongqing">重庆</div>
+                            </ul>
+                        </li>
+                        <li data-capital="D">
+                            <div class="capital">D</div>
+                            <ul class="items">
+                                <div class="item city-item" data-name="dalian">大连</div>
+                                <div class="item city-item" data-name="daqing">大庆</div>
+                                <div class="item city-item" data-name="deyang">德阳</div>
+                                <div class="item city-item" data-name="dezhou">德州</div>
+                                <div class="item city-item" data-name="dongguan">东莞</div>
+                                <div class="item city-item" data-name="dongying">东营</div>
+                            </ul>
+                        </li>
+                        <li data-capital="F">
+                            <div class="capital">F</div>
+                            <ul class="items">
+                                <div class="item city-item" data-name="foshan">佛山</div>
+                                <div class="item city-item" data-name="fushun">抚顺</div>
+                                <div class="item city-item" data-name="fuzhou">福州</div>
+                            </ul>
+                        </li>
+                        <li data-capital="G">
+                            <div class="capital">G</div>
+                            <ul class="items">
+                                <div class="item city-item" data-name="ganzhou">赣州</div>
+                                <div class="item city-item" data-name="guangan">广安</div>
+                                <div class="item city-item" data-name="guangxiyulin">玉林</div>
+                                <div class="item city-item" data-name="guangzhou">广州</div>
+                                <div class="item city-item" data-name="guilin">桂林</div>
+                                <div class="item city-item" data-name="guiyang">贵阳</div>
+                            </ul>
+                        </li>
+                        <li data-capital="H">
+                            <div class="capital">H</div>
+                            <ul class="items">
+                                <div class="item city-item" data-name="haerbin">哈尔滨</div>
+                                <div class="item city-item" data-name="haikou">海口</div>
+                                <div class="item city-item" data-name="handan">邯郸</div>
+                                <div class="item city-item" data-name="hangzhou">杭州</div>
+                                <div class="item city-item" data-name="hefei">合肥</div>
+                                <div class="item city-item" data-name="hengshui">衡水</div>
+                                <div class="item city-item" data-name="hengyang">衡阳</div>
+                                <div class="item city-item" data-name="heyuan">河源</div>
+                                <div class="item city-item" data-name="huaian">淮安</div>
+                                <div class="item city-item" data-name="huanggang">黄冈</div>
+                                <div class="item city-item" data-name="huhehaote">呼和浩特</div>
+                                <div class="item city-item" data-name="huizhou">惠州</div>
+                                <div class="item city-item" data-name="huzhou">湖州</div>
+                            </ul>
+                        </li>
+                        <li data-capital="J">
+                            <div class="capital">J</div>
+                            <ul class="items">
+                                <div class="item city-item" data-name="jiangmen">江门</div>
+                                <div class="item city-item" data-name="jiangxifuzhou">抚州</div>
+                                <div class="item city-item" data-name="jiangxiyichun">宜春</div>
+                                <div class="item city-item" data-name="jiaxing">嘉兴</div>
+                                <div class="item city-item" data-name="jilin">吉林</div>
+                                <div class="item city-item" data-name="jinan">济南</div>
+                                <div class="item city-item" data-name="jingzhou">荆州</div>
+                                <div class="item city-item" data-name="jinhua">金华</div>
+                                <div class="item city-item" data-name="jining">济宁</div>
+                                <div class="item city-item" data-name="jinmen">荆门</div>
+                                <div class="item city-item" data-name="jiujiang">九江</div>
+                            </ul>
+                        </li>
+                        <li data-capital="K">
+                            <div class="capital">K</div>
+                            <ul class="items">
+                                <div class="item city-item" data-name="kunming">昆明</div>
+                                <div class="item city-item" data-name="kunshan">昆山</div>
+                            </ul>
+                        </li>
+                        <li data-capital="L">
+                            <div class="capital">L</div>
+                            <ul class="items">
+                                <div class="item city-item" data-name="langfang">廊坊</div>
+                                <div class="item city-item" data-name="lanzhou">兰州</div>
+                                <div class="item city-item" data-name="lasvegas">拉斯维加斯</div>
+                                <div class="item city-item" data-name="leshan">乐山</div>
+                                <div class="item city-item" data-name="lianyuangang">连云港</div>
+                                <div class="item city-item" data-name="liaocheng">聊城</div>
+                                <div class="item city-item" data-name="lijiang">丽江</div>
+                                <div class="item city-item" data-name="linyi">临沂</div>
+                                <div class="item city-item" data-name="lishui">丽水</div>
+                                <div class="item city-item" data-name="liuzhou">柳州</div>
+                                <div class="item city-item" data-name="luoyang">洛阳</div>
+                                <div class="item city-item" data-name="luzhou">泸州</div>
+                            </ul>
+                        </li>
+                        <li data-capital="M">
+                            <div class="capital">M</div>
+                            <ul class="items">
+                                <div class="item city-item" data-name="maanshan">马鞍山</div>
+                                <div class="item city-item" data-name="maoming">茂名</div>
+                                <div class="item city-item" data-name="mianyang">绵阳</div>
+                                <div class="item city-item" data-name="moscow">莫斯科</div>
+                                <div class="item city-item" data-name="mudanjiang">牡丹江</div>
+                            </ul>
+                        </li>
+                        <li data-capital="N">
+                            <div class="capital">N</div>
+                            <ul class="items">
+                                <div class="item city-item" data-name="nanchang">南昌</div>
+                                <div class="item city-item" data-name="nanjing">南京</div>
+                                <div class="item city-item" data-name="nanning">南宁</div>
+                                <div class="item city-item" data-name="nantong">南通</div>
+                                <div class="item city-item" data-name="neijiang">内江</div>
+                                <div class="item city-item" data-name="ningbo">宁波</div>
+                            </ul>
+                        </li>
+                        <li data-capital="P">
+                            <div class="capital">P</div>
+                            <ul class="items">
+                                <div class="item city-item" data-name="pingxiang">萍乡</div>
+                            </ul>
+                        </li>
+                        <li data-capital="Q">
+                            <div class="capital">Q</div>
+                            <ul class="items">
+                                <div class="item city-item" data-name="qianjiang">潜江</div>
+                                <div class="item city-item" data-name="qingdao">青岛</div>
+                                <div class="item city-item" data-name="qingyuan">清远</div>
+                                <div class="item city-item" data-name="qinhuangdao">秦皇岛</div>
+                                <div class="item city-item" data-name="quanzhou">泉州</div>
+                            </ul>
+                        </li>
+                        <li data-capital="R">
+                            <div class="capital">R</div>
+                            <ul class="items">
+                                <div class="item city-item" data-name="rizhao">日照</div>
+                                <div class="item city-item" data-name="russia">俄罗斯</div>
+                            </ul>
+                        </li>
+                        <li data-capital="S">
+                            <div class="capital">S</div>
+                            <ul class="items">
+                                <div class="item city-item" data-name="sanya">三亚</div>
+                                <div class="item city-item" data-name="shanghai">上海</div>
+                                <div class="item city-item" data-name="shantou">汕头</div>
+                                <div class="item city-item" data-name="shaoxing">绍兴</div>
+                                <div class="item city-item" data-name="shenyang">沈阳</div>
+                                <div class="item city-item" data-name="shenzhen">深圳</div>
+                                <div class="item city-item" data-name="shijiazhuang">石家庄</div>
+                                <div class="item city-item" data-name="singapore">新加坡</div>
+                                <div class="item city-item" data-name="suining">遂宁</div>
+                                <div class="item city-item" data-name="suzhou">苏州</div>
+                            </ul>
+                        </li>
+                        <li data-capital="T">
+                            <div class="capital">T</div>
+                            <ul class="items">
+                                <div class="item city-item" data-name="taian">泰安</div>
+                                <div class="item city-item" data-name="taipei">台北</div>
+                                <div class="item city-item" data-name="taiyuan">太原</div>
+                                <div class="item city-item" data-name="taizhou">泰州</div>
+                                <div class="item city-item" data-name="tangshan">唐山</div>
+                                <div class="item city-item" data-name="tianjin">天津</div>
+                            </ul>
+                        </li>
+                        <li data-capital="W">
+                            <div class="capital">W</div>
+                            <ul class="items">
+                                <div class="item city-item" data-name="weifang">潍坊</div>
+                                <div class="item city-item" data-name="weihai">威海</div>
+                                <div class="item city-item" data-name="weinan">渭南</div>
+                                <div class="item city-item" data-name="wenzhou">温州</div>
+                                <div class="item city-item" data-name="wuhan">武汉</div>
+                                <div class="item city-item" data-name="wuhu">芜湖</div>
+                                <div class="item city-item" data-name="wulanhaote">乌兰浩特市</div>
+                                <div class="item city-item" data-name="wulumuqi">乌鲁木齐</div>
+                                <div class="item city-item" data-name="wuxi">无锡</div>
+                                <div class="item city-item" data-name="wuzhou">梧州</div>
+                            </ul>
+                        </li>
+                        <li data-capital="X">
+                            <div class="capital">X</div>
+                            <ul class="items">
+                                <div class="item city-item" data-name="xiamen">厦门</div>
+                                <div class="item city-item" data-name="xian">西安</div>
+                                <div class="item city-item" data-name="hongkong">香港</div>
+                                <div class="item city-item" data-name="xianyang">咸阳</div>
+                                <div class="item city-item" data-name="xuzhou">徐州</div>
+                            </ul>
+                        </li>
+                        <li data-capital="Y">
+                            <div class="capital">Y</div>
+                            <ul class="items">
+                                <div class="item city-item" data-name="yancheng">盐城</div>
+                                <div class="item city-item" data-name="yangzhou">扬州</div>
+                                <div class="item city-item" data-name="yantai">烟台</div>
+                                <div class="item city-item" data-name="yibin">宜宾</div>
+                                <div class="item city-item" data-name="yichang">宜昌</div>
+                                <div class="item city-item" data-name="yinchuan">银川</div>
+                                <div class="item city-item" data-name="yingkou">营口</div>
+                                <div class="item city-item" data-name="yiwu">义乌</div>
+                                <div class="item city-item" data-name="yulin">榆林</div>
+                            </ul>
+                        </li>
+                        <li data-capital="Z">
+                            <div class="capital">Z</div>
+                            <ul class="items">
+                                <div class="item city-item" data-name="zaozhuang">枣庄</div>
+                                <div class="item city-item" data-name="zhangjiakou">张家口</div>
+                                <div class="item city-item" data-name="zhangqiu">章丘</div>
+                                <div class="item city-item" data-name="zhanjiang">湛江</div>
+                                <div class="item city-item" data-name="zhaoqing">肇庆</div>
+                                <div class="item city-item" data-name="zhejiangtaizhou">台州</div>
+                                <div class="item city-item" data-name="zhengzhou">郑州</div>
+                                <div class="item city-item" data-name="zhenjiang">镇江</div>
+                                <div class="item city-item" data-name="zhongshan">中山</div>
+                                <div class="item city-item" data-name="zhoushan">舟山</div>
+                                <div class="item city-item" data-name="zhuhai">珠海</div>
+                                <div class="item city-item" data-name="zhuzhou">株洲</div>
+                                <div class="item city-item" data-name="zibo">淄博</div>
+                                <div class="item city-item" data-name="zigong">自贡</div>
+                                <div class="item city-item" data-name="zunyi">遵义</div>
+                            </ul>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="menu"><a href="shouye.html" class="menu-item">首页</a><a
+                href="all.html" class="menu-item">全部演出</a><a
+                href="faxian.html" class="menu-item">发现</a></div>
+        <div class="search-bar">
+            <div path="/bj-all" class="form"><input placeholder="找演出、明星、场馆" autocomplete="off" name="keyword" value=""
+                                                    class="input"><input type="button" value="搜索" class="btn-submit">
+                <div class="suggest-container" style="display: none;">
+                    <ul class="suggest-item-list"></ul>
+                </div>
+            </div>
+        </div>
+        <div class="right-funcs">
+            <div style="display: none" class="item-login item">
+                <div class="text">
+                    <div class="icon"></div>
+                    登录
+                </div>
+            </div>
+            <div style="display: block" class="item-user item"><img src="picture/default-avatar.c0a5928c.png"
+                                                                    class="avatar">
+                <div class="submenu submenu-account">
+                    <ul class="submenu-inner">
+                        <li><a href="http://localhost:8080/ticketking/users/goorders/?userId=1">我的订单</a></li>
+                        <li><a href="http://localhost:8080/ticketking/users/balance/?userId=1">我的钱包</a></li>
+                        <li><a href="http://localhost:8080/ticketking/users/name/?userId=1">账户设置</a></li>
+                        <li><a href="javascript:;" class="logout">退出登录</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="item-app item">
+                <div class="text">
+                    <div class="icon"></div>
+                    APP下载
+                </div>
+                <div class="submenu">
+                    <ul class="submenu-inner">
+                        <li><img src="picture/qr-app.f6b3ee0e.png" class="qr">
+                            <div class="txt">
+                                <div class="title">票王APP</div>
+                                <div class="desc">热门票随时抢<br>折扣票随时买</div>
+                            </div>
+                        </li>
+                        <li><img src="picture/qr-wechat.72c6a6c0.png" class="qr">
+                            <div class="txt">
+                                <div class="title">微信订阅号</div>
+                                <div class="desc">精彩剧评最新<br>活动随时看</div>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="container user-container">
+    <div class="aside"><h2 class="h2"><a href="http://localhost:8080/ticketking/users/home/?userId=1">我的票王</a></h2>
+        <div class="group"><h3 class="h3">我的演出</h3>
+            <ul>
+                <li><a href="http://localhost:8080/ticketking/users/goorders/?userId=1">我的订单</a></li>
+                <li><a href="我的关注.html">我的关注</a></li>
+            </ul>
+        </div>
+        <div class="group"><h3 class="h3">我的钱包</h3>
+            <ul>
+                <li><a href="我的优惠券.html">我的优惠券</a></li>
+                <li><a href="http://localhost:8080/ticketking/users/balance/?userId=1">我的余额</a></li>
+            </ul>
+        </div>
+        <div class="group"><h3 class="h3">账户设置</h3>
+            <ul>
+                <li><a href="http://localhost:8080/ticketking/users/name/?userId=1">个人信息</a></li>
+                <li class="active"><a href="http://localhost:8080/ticketking/users/add/?userId=1">收货地址</a></li>
+                <li><a href="http://localhost:8080/ticketking/users/update/?userId=1">密码管理</a></li>
+            </ul>
+        </div>
+    </div>
+    <div class="content">
+        <div class="section">
+            <div class="section-head"><h2>收货地址</h2></div>
+            <div class="section-body">
+                <div class="addresses">
+                    <div data-id="2117736" class="item">
+                        <div class="head">
+                            <div class="name"></div>
+                            <div class="func"><a href="javascript:;" class="link delete">删除</a></div>
+                        </div>
+                        <tbody th:each="add,itemStat:${tbAdds}" th:if="${itemStat.count}<=1">
+                        <div class="address" th:text="${add.addAdd}">天津市 天津市 和平区 是</div>
+                        <div class="phone" th:text="${add.userTel}">18162865997</div>
+                        </tbody>
+                    </div>
+                    <div class="item new">
+                        <!--<div class="input-group">
+                            <span class="input-group-addon" id="basic-addon1"></span>
+                            <input type="text" class="form-control" placeholder="姓名" aria-describedby="basic-addon1">
+                        </div>
+
+                        <div class="input-group">
+                            <input type="text" class="form-control" placeholder="地址" aria-describedby="basic-addon2">
+                            <span class="input-group-addon" id="basic-addon2"></span>
+                        </div>
+
+                        <div class="input-group">
+                            <span class="input-group-addon"></span>
+                            <input type="text" class="form-control" placeholder="手机" aria-label="Amount (to the nearest dollar)">
+                            <span class="input-group-addon"></span>
+                        </div>
+
+                        <label for="basic-url"></label>
+                        <div class="input-group">
+                            <span class="input-group-addon" id="basic-addon3"></span>
+                            <input type="text" class="form-control" id="basic-url" aria-describedby="basic-addon3">
+                        </div>-->
+                        <div class="input-group input-group-lg">
+                            <span class="input-group-addon" id="sizing-addon1">姓名</span>
+                            <input type="text" class="form-control" id="adds2" placeholder="" aria-describedby="sizing-addon1">
+                        </div>
+
+                        <div class="input-group">
+                            <span class="input-group-addon" id="sizing-addon2">地址</span>
+                            <input type="text" class="form-control" id="adds" placeholder="" aria-describedby="sizing-addon2">
+                        </div>
+
+                        <div class="input-group input-group-sm">
+                            <span class="input-group-addon" id="sizing-addon3">电话</span>
+                            <input type="text" class="form-control" id="adds3" placeholder="" aria-describedby="sizing-addon3">
+                        </div>
+                        <tbody th:each="add1,itemStat:${tbAdds}" th:if="${itemStat.count}<=1">
+                        <div class="button1">
+                            <button type="button" style="width: 215px;height: 30px;" th:onclick="'addUserAdd('+${add1.userId}+')'">提交地址</button>
+                        </div>
+                        </tbody>
+                       <!-- <div class="text">
+                            <div class="icon-add"></div>
+                            添加新地址
+                        </div>-->
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="banner-content">
+    <div class="banner">
+        <div class="center">
+            <div class="left"><img src="picture/logox2.78a31cd1.png"></div>
+            <div class="app-load"><a href="http://www.piaoniu.com/app" class="apple"></a><a
+                    href="http://www.piaoniu.com/app" class="android"></a></div>
+            <div class="code"><img src="picture/code.0294fe21.png"></div>
+        </div>
+        <span class="close"></span></div>
+    <div class="left-img left"><img src="picture/left.e32ac038.png"></div>
+</div>
+<div class="slogan-bar">
+    <div class="container"><a href="http://www.piaoniu.com/services#service1" rel="nofollow" class="item"><img
+            src="picture/icon-diamond.bb7002bc.png" class="icon">
+        <div class="text">
+            <div class="title">无票赔付</div>
+            <div class="desc">无票赔付，最高退一赔二</div>
+        </div>
+    </a><a href="http://www.piaoniu.com/services#service2" rel="nofollow" class="item"><img
+            src="picture/icon-shield.09fa5cdb.png" class="icon">
+        <div class="text">
+            <div class="title">出票保真</div>
+            <div class="desc">全程消费保障，买得放心</div>
+        </div>
+    </a><a href="http://www.piaoniu.com/services#service3" rel="nofollow" class="item"><img
+            src="picture/icon-umbrella.b2c3c4c4.png" class="icon">
+        <div class="text">
+            <div class="title">配送保障</div>
+            <div class="desc">多种取票方式 安全送达</div>
+        </div>
+    </a></div>
+</div><!--if isHome--><!--	.partners--><!--		.title 合作伙伴：--><!--		ul.list--><!--			li-->
+<!--				a(href='http://maoyan.com/',target='_blank')-->
+<!--					img(src='#{staticHelper.getUrl("/img/footer/maoyan.png")}', style='height:30px')-->
+<!--				a(href='http://meituan.com',target='_blank')-->
+<!--					img(src='#{staticHelper.getUrl("/img/footer/meituan.png")}', style='height:29px')-->
+<!--				a(href='http://www.shpgt.com/',target='_blank')-->
+<!--					img(src='#{staticHelper.getUrl("/img/footer/baoli.png")}', style='height:28px')-->
+<!--				a(href='http://www.kaixinguopiao.com/',target='_blank')-->
+<!--					img(src='#{staticHelper.getUrl("/img/footer/kaixinmahua.png")}', style='height:21px')-->
+<!--				a(href='http://www.juooo.com/',target='_blank')-->
+<!--					img(src='#{staticHelper.getUrl("/img/footer/juchen.png")}', style='height:23px')-->
+<div class="footer bottom-bar">
+    <div class="container">
+        <div class="links-and-brand"><img src="picture/footer-logo.d5e1202e.png" class="footer-logo">
+            <div class="qr-codes">
+                <div class="item"><img src="picture/qr-app.f6b3ee0e.png" class="img">
+                    <div class="text">票王app</div>
+                </div>
+            </div>
+            <div class="helps">
+                <div class="buyDesc help">
+                    <div class="title">订票说明</div>
+                    <div class="item"><a
+                            href="http://www.piaoniu.com/questions?question=%E8%AE%A2%E8%B4%AD%E6%B8%A0%E9%81%93&amp;questionGroup=%E8%AE%A2%E8%B4%AD%E8%AF%B4%E6%98%8E"
+                            rel="nofollow">订购渠道</a></div>
+                    <div class="item"><a
+                            href="http://www.piaoniu.com/questions?question=%E6%BC%94%E5%87%BA%E7%8A%B6%E6%80%81&amp;questionGroup=%E8%AE%A2%E8%B4%AD%E8%AF%B4%E6%98%8E"
+                            rel="nofollow">演出状态</a></div>
+                    <div class="item"><a
+                            href="http://www.piaoniu.com/questions?question=%E5%A6%82%E4%BD%95%E8%AE%A2%E8%B4%AD&amp;questionGroup=%E8%AE%A2%E8%B4%AD%E8%AF%B4%E6%98%8E"
+                            rel="nofollow">如何订购</a></div>
+                    <div class="item"><a
+                            href="http://www.piaoniu.com/questions?question=%E4%BB%B7%E6%A0%BC%E8%AF%B4%E6%98%8E&amp;questionGroup=%E8%AE%A2%E8%B4%AD%E8%AF%B4%E6%98%8E"
+                            rel="nofollow">价格说明</a></div>
+                    <div class="item"><a
+                            href="http://www.piaoniu.com/questions?question=%E5%85%B3%E4%BA%8E%E5%BA%A7%E4%BD%8D&amp;questionGroup=%E8%AE%A2%E8%B4%AD%E8%AF%B4%E6%98%8E"
+                            rel="nofollow">关于座位</a></div>
+                </div>
+                <div class="payType help">
+                    <div class="title">支付方式</div>
+                    <div class="item"><a
+                            href="http://www.piaoniu.com/questions?question=%E5%9C%A8%E7%BA%BF%E6%94%AF%E4%BB%98&amp;questionGroup=%E6%94%AF%E4%BB%98%E6%96%B9%E5%BC%8F"
+                            rel="nofollow">在线支付</a></div>
+                    <div class="item"><a
+                            href="http://www.piaoniu.com/questions?question=%E8%8A%B1%E5%91%97&amp;questionGroup=%E6%94%AF%E4%BB%98%E6%96%B9%E5%BC%8F"
+                            rel="nofollow">花呗</a></div>
+                    <div class="item"><a
+                            href="http://www.piaoniu.com/questions?question=%E9%93%B6%E8%A1%8C%E5%8D%A1%E6%94%AF%E4%BB%98&amp;questionGroup=%E6%94%AF%E4%BB%98%E6%96%B9%E5%BC%8F"
+                            rel="nofollow">银行卡支付</a></div>
+                </div>
+                <div class="deliverType help">
+                    <div class="title">配送方式</div>
+                    <div class="item"><a
+                            href="http://www.piaoniu.com/questions?question=%E4%B8%8A%E9%97%A8%E8%87%AA%E5%8F%96&amp;questionGroup=%E9%85%8D%E9%80%81%E6%96%B9%E5%BC%8F"
+                            rel="nofollow">上门自取</a></div>
+                    <div class="item"><a
+                            href="http://www.piaoniu.com/questions?question=%E7%8E%B0%E5%9C%BA%E8%87%AA%E5%8F%96&amp;questionGroup=%E9%85%8D%E9%80%81%E6%96%B9%E5%BC%8F"
+                            rel="nofollow">现场自取</a></div>
+                    <div class="item"><a
+                            href="http://www.piaoniu.com/questions?question=%E9%A1%BA%E4%B8%B0%E9%85%8D%E9%80%81&amp;questionGroup=%E9%85%8D%E9%80%81%E6%96%B9%E5%BC%8F"
+                            rel="nofollow">顺丰配送</a></div>
+                    <div class="item"><a
+                            href="http://www.piaoniu.com/questions?question=%E7%94%B5%E5%AD%90%E7%A5%A8&amp;questionGroup=%E9%85%8D%E9%80%81%E6%96%B9%E5%BC%8F"
+                            rel="nofollow">电子票</a></div>
+                </div>
+                <div class="afterSaleService help">
+                    <div class="title">售后服务</div>
+                    <div class="item"><a
+                            href="http://www.piaoniu.com/questions?question=%E9%80%80%E6%8D%A2%E7%A5%A8%E8%AF%B4%E6%98%8E&amp;questionGroup=%E5%94%AE%E5%90%8E%E6%9C%8D%E5%8A%A1"
+                            rel="nofollow">退换票说明</a></div>
+                    <div class="item"><a
+                            href="http://www.piaoniu.com/questions?question=%E9%80%80%E6%AC%BE%E8%AF%B4%E6%98%8E&amp;questionGroup=%E5%94%AE%E5%90%8E%E6%9C%8D%E5%8A%A1"
+                            rel="nofollow">退款说明</a></div>
+                    <div class="item"><a
+                            href="http://www.piaoniu.com/questions?question=%E9%80%80%E6%AC%BE%E6%9D%A1%E4%BB%B6&amp;questionGroup=%E5%94%AE%E5%90%8E%E6%9C%8D%E5%8A%A1"
+                            rel="nofollow">退款条件</a></div>
+                </div>
+                <div class="featureService help">
+                    <div class="title">特色服务</div>
+                    <div class="item"><a href="http://www.piaoniu.com/services" rel="nofollow">无票赔付</a></div>
+                    <div class="item"><a href="http://www.piaoniu.com/services" rel="nofollow">下单15分钟内可退款</a></div>
+                    <div class="item"><a href="http://www.piaoniu.com/services" rel="nofollow">保证真票</a></div>
+                    <div class="item"><a href="http://www.piaoniu.com/services" rel="nofollow">配送保障</a></div>
+                </div>
+            </div>
+            <div class="links"><a href="http://www.piaoniu.com/about" rel="nofollow">关于我们</a><a
+                    href="http://www.piaoniu.com/contact" rel="nofollow">联系我们</a><a href="http://piaoniu.zhiye.com/"
+                                                                                    rel="nofollow">加入我们</a><a
+                    href="http://www.piaoniu.com/actor" rel="nofollow">艺人</a><a href="http://www.piaoniu.com/city/all"
+                                                                                rel="nofollow">全部城市</a><a
+                    href="http://news.piaoniu.com/" rel="nofollow">票王资讯</a><a
+                    href="https://m.piaoniu.com/about/privacy-policy.html" rel="nofollow">隐私政策</a><a
+                    href="http://www.piaoniu.com/disputeResolution" rel="nofollow">争议调解</a>
+                <div class="hot-search"><span>热门搜索</span>
+                    <div class="hot-search-list"><a href="http://www.piaoniu.com/stag/34869">李泉重庆演唱会</a><a
+                            href="http://www.piaoniu.com/stag/44872">华中科技大学光谷体育馆门票售价</a><a
+                            href="http://www.piaoniu.com/stag/47916">李克勤深圳演唱会行程</a><a
+                            href="http://www.piaoniu.com/stag/51094">黄家强台州演唱会行程</a><a
+                            href="http://www.piaoniu.com/stag/56945">季袁娅株洲演唱会行程</a><a
+                            href="http://www.piaoniu.com/stag/58938">长谷川大介中山演唱会行程</a><a
+                            href="http://www.piaoniu.com/stag/73782">徐海俏佛山演唱会行程</a><a
+                            href="http://www.piaoniu.com/stag/104532">周慧敏深圳演唱会安排</a><a
+                            href="http://www.piaoniu.com/stag/105229">满舒克嘉兴演唱会安排</a><a
+                            href="http://www.piaoniu.com/stag/110354">何洁南通演唱会安排</a></div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="footer-bottom lightBg">
+    <div class="copyright">上海颂品网络科技有限公司 Copyright (c) 2015年 Songpin. All rights reserved. | <a
+            href="http://www.miitbeian.gov.cn/" target="_blank">沪ICP备14000399号-2</a></div>
+    <div class="police-icons"><a href="http://www.beian.gov.cn/portal/registerSystemInfo?recordcode=31010602001682"
+                                 target="_blank" rel="nofollow" class="link link-police"><img
+            src="picture/police.c9ff2fec.png" class="icon">
+        <div class="text">沪公网安备 31010602001682号</div>
+    </a><a href="http://www.sgs.gov.cn/lz/licenseLink.do?method=licenceView&amp;entyId=2016050618242638" target="_blank"
+           rel="nofollow" class="link link-gongshang"><img src="picture/gongshang.df298c0c.png" class="icon">
+        <div class="text">上海工商</div>
+    </a></div>
+</div>
+<script>var currentCity = {
+    "cityId": 2,
+    "cityName": "北京",
+    "cityEnName": "beijing",
+    "cityAbbrCode": "bj",
+    "provinceId": 1,
+    "status": 3,
+    "regionCityId": 2,
+    "adCode": "110100",
+    "hotCity": true,
+    "glat": 39.904667,
+    "glng": 116.408198
+}
+var city = {
+    "cityId": 2,
+    "cityName": "北京",
+    "cityEnName": "beijing",
+    "cityAbbrCode": "bj",
+    "provinceId": 1,
+    "status": 3,
+    "regionCityId": 2,
+    "adCode": "110100",
+    "hotCity": true,
+    "glat": 39.904667,
+    "glng": 116.408198
+}
+var hotCities = [{
+    "cityId": 1,
+    "cityName": "上海",
+    "cityEnName": "shanghai",
+    "cityAbbrCode": "sh",
+    "provinceId": 9,
+    "status": 3,
+    "regionCityId": 1,
+    "adCode": "310100",
+    "hotCity": true,
+    "glat": 31.230708,
+    "glng": 121.472916
+}, {
+    "cityId": 2,
+    "cityName": "北京",
+    "cityEnName": "beijing",
+    "cityAbbrCode": "bj",
+    "provinceId": 1,
+    "status": 3,
+    "regionCityId": 2,
+    "adCode": "110100",
+    "hotCity": true,
+    "glat": 39.904667,
+    "glng": 116.408198
+}, {
+    "cityId": 4,
+    "cityName": "广州",
+    "cityEnName": "guangzhou",
+    "cityAbbrCode": "gz",
+    "provinceId": 19,
+    "status": 3,
+    "regionCityId": 4,
+    "adCode": "440100",
+    "hotCity": true,
+    "glat": 23.129075,
+    "glng": 113.264423
+}, {
+    "cityId": 7,
+    "cityName": "深圳",
+    "cityEnName": "shenzhen",
+    "cityAbbrCode": "sz",
+    "provinceId": 19,
+    "status": 3,
+    "regionCityId": 7,
+    "adCode": "440300",
+    "hotCity": true,
+    "glat": 22.543447,
+    "glng": 114.057818
+}, {
+    "cityId": 8,
+    "cityName": "成都",
+    "cityEnName": "chengdu",
+    "cityAbbrCode": "cd",
+    "provinceId": 23,
+    "status": 3,
+    "regionCityId": 8,
+    "adCode": "510100",
+    "hotCity": true,
+    "glat": 30.658602,
+    "glng": 104.064857
+}, {
+    "cityId": 9,
+    "cityName": "重庆",
+    "cityEnName": "chongqing",
+    "cityAbbrCode": "cq",
+    "provinceId": 22,
+    "status": 3,
+    "regionCityId": 9,
+    "adCode": "500100",
+    "hotCity": true,
+    "glat": 29.562686,
+    "glng": 106.551234
+}, {
+    "cityId": 10,
+    "cityName": "天津",
+    "cityEnName": "tianjin",
+    "cityAbbrCode": "tj",
+    "provinceId": 2,
+    "status": 3,
+    "regionCityId": 10,
+    "adCode": "120100",
+    "hotCity": true,
+    "glat": 39.120876,
+    "glng": 117.21503
+}, {
+    "cityId": 3,
+    "cityName": "杭州",
+    "cityEnName": "hangzhou",
+    "cityAbbrCode": "hz",
+    "provinceId": 11,
+    "status": 3,
+    "regionCityId": 3,
+    "adCode": "330100",
+    "hotCity": true,
+    "glat": 30.273497,
+    "glng": 120.155249
+}, {
+    "cityId": 5,
+    "cityName": "南京",
+    "cityEnName": "nanjing",
+    "cityAbbrCode": "nj",
+    "provinceId": 10,
+    "status": 3,
+    "regionCityId": 5,
+    "adCode": "320100",
+    "hotCity": true,
+    "glat": 32.058365,
+    "glng": 118.796468
+}, {
+    "cityId": 11,
+    "cityName": "宁波",
+    "cityEnName": "ningbo",
+    "cityAbbrCode": "nb",
+    "provinceId": 11,
+    "status": 3,
+    "regionCityId": 11,
+    "adCode": "330200",
+    "hotCity": true,
+    "glat": 29.868336,
+    "glng": 121.54399
+}, {
+    "cityId": 16,
+    "cityName": "武汉",
+    "cityEnName": "wuhan",
+    "cityAbbrCode": "wh",
+    "provinceId": 17,
+    "status": 3,
+    "regionCityId": 16,
+    "adCode": "420100",
+    "hotCity": true,
+    "glat": 30.593088,
+    "glng": 114.305172
+}, {
+    "cityId": 17,
+    "cityName": "西安",
+    "cityEnName": "xian",
+    "cityAbbrCode": "xa",
+    "provinceId": 27,
+    "status": 3,
+    "regionCityId": 17,
+    "adCode": "610100",
+    "hotCity": true,
+    "glat": 34.26488,
+    "glng": 108.944265
+}, {
+    "cityId": 344,
+    "cityName": "长沙",
+    "cityEnName": "changsha",
+    "cityAbbrCode": "cs",
+    "provinceId": 18,
+    "status": 3,
+    "regionCityId": 344,
+    "adCode": "430100",
+    "hotCity": true,
+    "glat": 28.228528,
+    "glng": 112.938827
+}, {
+    "cityId": 160,
+    "cityName": "郑州",
+    "cityEnName": "zhengzhou",
+    "cityAbbrCode": "zz11",
+    "provinceId": 16,
+    "status": 3,
+    "regionCityId": 160,
+    "adCode": "410100",
+    "hotCity": true,
+    "glat": 34.747285,
+    "glng": 113.624863
+}, {
+    "cityId": 267,
+    "cityName": "昆明",
+    "cityEnName": "kunming",
+    "cityAbbrCode": "km",
+    "provinceId": 25,
+    "status": 3,
+    "regionCityId": 267,
+    "adCode": "530100",
+    "hotCity": true,
+    "glat": 25.037283,
+    "glng": 102.722125
+}]
+var activeCities = [{
+    "cityId": 117,
+    "cityName": "安庆",
+    "cityEnName": "anqing",
+    "cityAbbrCode": "aq",
+    "provinceId": 12,
+    "status": 1,
+    "regionCityId": 5,
+    "adCode": "340800",
+    "firstLetter": "A",
+    "name": null,
+    "path": null,
+    "selected": "",
+    "hotCity": false,
+    "glat": 30.524961,
+    "glng": 117.05673
+}, {
+    "cityId": 58,
+    "cityName": "鞍山",
+    "cityEnName": "anshan",
+    "cityAbbrCode": "as",
+    "provinceId": 6,
+    "status": 1,
+    "regionCityId": 2,
+    "adCode": "210300",
+    "firstLetter": "A",
+    "name": null,
+    "path": null,
+    "selected": "",
+    "hotCity": false,
+    "glat": 41.108546,
+    "glng": 122.994646
+}, {
+    "cityId": 261,
+    "cityName": "安顺",
+    "cityEnName": "anshun",
+    "cityAbbrCode": "as3",
+    "provinceId": 24,
+    "status": 1,
+    "regionCityId": 8,
+    "adCode": "520400",
+    "firstLetter": "A",
+    "name": null,
+    "path": null,
+    "selected": "",
+    "hotCity": false,
+    "glat": 26.253072,
+    "glng": 105.947594
+}, {
+    "cityId": 342,
+    "cityName": "澳门",
+    "cityEnName": "macau",
+    "cityAbbrCode": "am",
+    "provinceId": 33,
+    "status": 1,
+    "regionCityId": 7,
+    "adCode": null,
+    "firstLetter": "A",
+    "name": null,
+    "path": null,
+    "selected": "",
+    "hotCity": false,
+    "glat": 22.198745,
+    "glng": 113.543873
+}, {
+    "cityId": 2342,
+    "cityName": "曼谷",
+    "cityEnName": "bangkok",
+    "cityAbbrCode": "bkk",
+    "provinceId": 103,
+    "status": 1,
+    "regionCityId": 4,
+    "adCode": null,
+    "firstLetter": "B",
+    "name": null,
+    "path": null,
+    "selected": "",
+    "hotCity": false,
+    "glat": 13.752222,
+    "glng": 100.493889
+}, {
+    "cityId": 29,
+    "cityName": "保定",
+    "cityEnName": "baoding",
+    "cityAbbrCode": "bd",
+    "provinceId": 3,
+    "status": 1,
+    "regionCityId": 2,
+    "adCode": "130600",
+    "firstLetter": "B",
+    "name": null,
+    "path": null,
+    "selected": "",
+    "hotCity": false,
+    "glat": 38.873972,
+    "glng": 115.46463
+}, {
+    "cityId": 47,
+    "cityName": "包头",
+    "cityEnName": "baotou",
+    "cityAbbrCode": "bt",
+    "provinceId": 5,
+    "status": 1,
+    "regionCityId": 2,
+    "adCode": "150200",
+    "firstLetter": "B",
+    "name": null,
+    "path": null,
+    "selected": "",
+    "hotCity": false,
+    "glat": 40.657447,
+    "glng": 109.840385
+}, {
+    "cityId": 228,
+    "cityName": "北海",
+    "cityEnName": "beihai",
+    "cityAbbrCode": "bh",
+    "provinceId": 20,
+    "status": 1,
+    "regionCityId": 4,
+    "adCode": "450500",
+    "firstLetter": "B",
+    "name": null,
+    "path": null,
+    "selected": "",
+    "hotCity": false,
+    "glat": 21.481198,
+    "glng": 109.119951
+}, {
+    "cityId": 2,
+    "cityName": "北京",
+    "cityEnName": "beijing",
+    "cityAbbrCode": "bj",
+    "provinceId": 1,
+    "status": 3,
+    "regionCityId": 2,
+    "adCode": "110100",
+    "firstLetter": "B",
+    "name": null,
+    "path": null,
+    "selected": "",
+    "hotCity": false,
+    "glat": 39.904667,
+    "glng": 116.408198
+}, {
+    "cityId": 112,
+    "cityName": "蚌埠",
+    "cityEnName": "bengbu",
+    "cityAbbrCode": "bb",
+    "provinceId": 12,
+    "status": 1,
+    "regionCityId": 5,
+    "adCode": "340300",
+    "firstLetter": "B",
+    "name": null,
+    "path": null,
+    "selected": "",
+    "hotCity": false,
+    "glat": 32.916282,
+    "glng": 117.38971
+}, {
+    "cityId": 60,
+    "cityName": "本溪",
+    "cityEnName": "benxi",
+    "cityAbbrCode": "bx",
+    "provinceId": 6,
+    "status": 1,
+    "regionCityId": 2,
+    "adCode": "210500",
+    "firstLetter": "B",
+    "name": null,
+    "path": null,
+    "selected": "",
+    "hotCity": false,
+    "glat": 41.294176,
+    "glng": 123.766485
+}, {
+    "cityId": 158,
+    "cityName": "滨州",
+    "cityEnName": "binzhou",
+    "cityAbbrCode": "bz1",
+    "provinceId": 15,
+    "status": 1,
+    "regionCityId": 2,
+    "adCode": "371600",
+    "firstLetter": "B",
+    "name": null,
+    "path": null,
+    "selected": "",
+    "hotCity": false,
+    "glat": 37.381403,
+    "glng": 117.97143
+}, {
+    "cityId": 70,
+    "cityName": "长春",
+    "cityEnName": "changchun",
+    "cityAbbrCode": "cc",
+    "provinceId": 7,
+    "status": 1,
+    "regionCityId": 2,
+    "adCode": "220100",
+    "firstLetter": "C",
+    "name": null,
+    "path": null,
+    "selected": "",
+    "hotCity": false,
+    "glat": 43.886841,
+    "glng": 125.3245
+}, {
+    "cityId": 329,
+    "cityName": "昌吉州",
+    "cityEnName": "changjizhou",
+    "cityAbbrCode": "cj",
+    "provinceId": 31,
+    "status": 0,
+    "regionCityId": 17,
+    "adCode": "652300",
+    "firstLetter": "C",
+    "name": null,
+    "path": null,
+    "selected": "",
+    "hotCity": false,
+    "glat": 44.011183,
+    "glng": 87.308225
+}, {
+    "cityId": 344,
+    "cityName": "长沙",
+    "cityEnName": "changsha",
+    "cityAbbrCode": "cs",
+    "provinceId": 18,
+    "status": 3,
+    "regionCityId": 344,
+    "adCode": "430100",
+    "firstLetter": "C",
+    "name": null,
+    "path": null,
+    "selected": "",
+    "hotCity": false,
+    "glat": 28.228528,
+    "glng": 112.938827
+}, {
+    "cityId": 417,
+    "cityName": "常熟",
+    "cityEnName": "changshu",
+    "cityAbbrCode": "cs5",
+    "provinceId": 10,
+    "status": 1,
+    "regionCityId": 5,
+    "adCode": "320500",
+    "firstLetter": "C",
+    "name": null,
+    "path": null,
+    "selected": "",
+    "hotCity": false,
+    "glat": 31.65355,
+    "glng": 120.75239
+}, {
+    "cityId": 93,
+    "cityName": "常州",
+    "cityEnName": "changzhou",
+    "cityAbbrCode": "cz5",
+    "provinceId": 10,
+    "status": 1,
+    "regionCityId": 5,
+    "adCode": "320400",
+    "firstLetter": "C",
+    "name": null,
+    "path": null,
+    "selected": "",
+    "hotCity": false,
+    "glat": 31.810077,
+    "glng": 119.974454
+}, {
+    "cityId": 31,
+    "cityName": "承德",
+    "cityEnName": "chengde",
+    "cityAbbrCode": "cd2",
+    "provinceId": 3,
+    "status": 1,
+    "regionCityId": 2,
+    "adCode": "130800",
+    "firstLetter": "C",
+    "name": null,
+    "path": null,
+    "selected": "",
+    "hotCity": false,
+    "glat": 40.978744,
+    "glng": 117.943621
+}, {
+    "cityId": 8,
+    "cityName": "成都",
+    "cityEnName": "chengdu",
+    "cityAbbrCode": "cd",
+    "provinceId": 23,
+    "status": 3,
+    "regionCityId": 8,
+    "adCode": "510100",
+    "firstLetter": "C",
+    "name": null,
+    "path": null,
+    "selected": "",
+    "hotCity": false,
+    "glat": 30.658602,
+    "glng": 104.064857
+}, {
+    "cityId": 9,
+    "cityName": "重庆",
+    "cityEnName": "chongqing",
+    "cityAbbrCode": "cq",
+    "provinceId": 22,
+    "status": 3,
+    "regionCityId": 9,
+    "adCode": "500100",
+    "firstLetter": "C",
+    "name": null,
+    "path": null,
+    "selected": "",
+    "hotCity": false,
+    "glat": 29.562686,
+    "glng": 106.551234
+}, {
+    "cityId": 19,
+    "cityName": "大连",
+    "cityEnName": "dalian",
+    "cityAbbrCode": "dl",
+    "provinceId": 6,
+    "status": 1,
+    "regionCityId": 2,
+    "adCode": "210200",
+    "firstLetter": "D",
+    "name": null,
+    "path": null,
+    "selected": "",
+    "hotCity": false,
+    "glat": 38.913779,
+    "glng": 121.614771
+}, {
+    "cityId": 84,
+    "cityName": "大庆",
+    "cityEnName": "daqing",
+    "cityAbbrCode": "dq",
+    "provinceId": 8,
+    "status": 1,
+    "regionCityId": 2,
+    "adCode": "230600",
+    "firstLetter": "D",
+    "name": null,
+    "path": null,
+    "selected": "",
+    "hotCity": false,
+    "glat": 46.59019,
+    "glng": 125.104637
+}, {
+    "cityId": 241,
+    "cityName": "德阳",
+    "cityEnName": "deyang",
+    "cityAbbrCode": "dy4",
+    "provinceId": 23,
+    "status": 1,
+    "regionCityId": 8,
+    "adCode": "510600",
+    "firstLetter": "D",
+    "name": null,
+    "path": null,
+    "selected": "",
+    "hotCity": false,
+    "glat": 31.127537,
+    "glng": 104.397808
+}, {
+    "cityId": 156,
+    "cityName": "德州",
+    "cityEnName": "dezhou",
+    "cityAbbrCode": "dz",
+    "provinceId": 15,
+    "status": 1,
+    "regionCityId": 2,
+    "adCode": "371400",
+    "firstLetter": "D",
+    "name": null,
+    "path": null,
+    "selected": "",
+    "hotCity": false,
+    "glat": 37.45092,
+    "glng": 116.302587
+}, {
+    "cityId": 219,
+    "cityName": "东莞",
+    "cityEnName": "dongguan",
+    "cityAbbrCode": "dg",
+    "provinceId": 19,
+    "status": 1,
+    "regionCityId": 4,
+    "adCode": "441900",
+    "firstLetter": "D",
+    "name": null,
+    "path": null,
+    "selected": "",
+    "hotCity": false,
+    "glat": 23.020536,
+    "glng": 113.751766
+}, {
+    "cityId": 147,
+    "cityName": "东营",
+    "cityEnName": "dongying",
+    "cityAbbrCode": "dy",
+    "provinceId": 15,
+    "status": 1,
+    "regionCityId": 2,
+    "adCode": "370500",
+    "firstLetter": "D",
+    "name": null,
+    "path": null,
+    "selected": "",
+    "hotCity": false,
+    "glat": 37.435382,
+    "glng": 118.675487
+}, {
+    "cityId": 208,
+    "cityName": "佛山",
+    "cityEnName": "foshan",
+    "cityAbbrCode": "fs5",
+    "provinceId": 19,
+    "status": 1,
+    "regionCityId": 4,
+    "adCode": "440600",
+    "firstLetter": "F",
+    "name": null,
+    "path": null,
+    "selected": "",
+    "hotCity": false,
+    "glat": 23.021721,
+    "glng": 113.121316
+}, {
+    "cityId": 59,
+    "cityName": "抚顺",
+    "cityEnName": "fushun",
+    "cityAbbrCode": "fs",
+    "provinceId": 6,
+    "status": 1,
+    "regionCityId": 2,
+    "adCode": "210400",
+    "firstLetter": "F",
+    "name": null,
+    "path": null,
+    "selected": "",
+    "hotCity": false,
+    "glat": 41.880701,
+    "glng": 123.915237
+}, {
+    "cityId": 14,
+    "cityName": "福州",
+    "cityEnName": "fuzhou",
+    "cityAbbrCode": "fz",
+    "provinceId": 13,
+    "status": 1,
+    "regionCityId": 7,
+    "adCode": "350100",
+    "firstLetter": "F",
+    "name": null,
+    "path": null,
+    "selected": "",
+    "hotCity": false,
+    "glat": 26.074286,
+    "glng": 119.296579
+}, {
+    "cityId": 140,
+    "cityName": "赣州",
+    "cityEnName": "ganzhou",
+    "cityAbbrCode": "gz2",
+    "provinceId": 14,
+    "status": 1,
+    "regionCityId": 344,
+    "adCode": "360700",
+    "firstLetter": "G",
+    "name": null,
+    "path": null,
+    "selected": "",
+    "hotCity": false,
+    "glat": 25.829209,
+    "glng": 114.933553
+}, {
+    "cityId": 250,
+    "cityName": "广安",
+    "cityEnName": "guangan",
+    "cityAbbrCode": "ga",
+    "provinceId": 23,
+    "status": 1,
+    "regionCityId": 8,
+    "adCode": "511600",
+    "firstLetter": "G",
+    "name": null,
+    "path": null,
+    "selected": "",
+    "hotCity": false,
+    "glat": 30.45593,
+    "glng": 106.633204
+}, {
+    "cityId": 232,
+    "cityName": "玉林",
+    "cityEnName": "guangxiyulin",
+    "cityAbbrCode": "yl",
+    "provinceId": 20,
+    "status": 1,
+    "regionCityId": 4,
+    "adCode": "450900",
+    "firstLetter": "G",
+    "name": null,
+    "path": null,
+    "selected": "",
+    "hotCity": false,
+    "glat": 22.636379,
+    "glng": 110.164756
+}, {
+    "cityId": 4,
+    "cityName": "广州",
+    "cityEnName": "guangzhou",
+    "cityAbbrCode": "gz",
+    "provinceId": 19,
+    "status": 3,
+    "regionCityId": 4,
+    "adCode": "440100",
+    "firstLetter": "G",
+    "name": null,
+    "path": null,
+    "selected": "",
+    "hotCity": false,
+    "glat": 23.129075,
+    "glng": 113.264423
+}, {
+    "cityId": 226,
+    "cityName": "桂林",
+    "cityEnName": "guilin",
+    "cityAbbrCode": "gl",
+    "provinceId": 20,
+    "status": 1,
+    "regionCityId": 4,
+    "adCode": "450300",
+    "firstLetter": "G",
+    "name": null,
+    "path": null,
+    "selected": "",
+    "hotCity": false,
+    "glat": 25.273567,
+    "glng": 110.290195
+}, {
+    "cityId": 258,
+    "cityName": "贵阳",
+    "cityEnName": "guiyang",
+    "cityAbbrCode": "gy1",
+    "provinceId": 24,
+    "status": 1,
+    "regionCityId": 8,
+    "adCode": "520100",
+    "firstLetter": "G",
+    "name": null,
+    "path": null,
+    "selected": "",
+    "hotCity": false,
+    "glat": 26.578343,
+    "glng": 106.713478
+}, {
+    "cityId": 79,
+    "cityName": "哈尔滨",
+    "cityEnName": "haerbin",
+    "cityAbbrCode": "hb",
+    "provinceId": 8,
+    "status": 1,
+    "regionCityId": 2,
+    "adCode": "230100",
+    "firstLetter": "H",
+    "name": null,
+    "path": null,
+    "selected": "",
+    "hotCity": false,
+    "glat": 45.756967,
+    "glng": 126.642464
+}, {
+    "cityId": 23,
+    "cityName": "海口",
+    "cityEnName": "haikou",
+    "cityAbbrCode": "hk",
+    "provinceId": 21,
+    "status": 1,
+    "regionCityId": 4,
+    "adCode": "460100",
+    "firstLetter": "H",
+    "name": null,
+    "path": null,
+    "selected": "",
+    "hotCity": false,
+    "glat": 20.030765,
+    "glng": 110.328873
+}, {
+    "cityId": 27,
+    "cityName": "邯郸",
+    "cityEnName": "handan",
+    "cityAbbrCode": "hd",
+    "provinceId": 3,
+    "status": 1,
+    "regionCityId": 2,
+    "adCode": "130400",
+    "firstLetter": "H",
+    "name": null,
+    "path": null,
+    "selected": "",
+    "hotCity": false,
+    "glat": 36.612267,
+    "glng": 114.492968
+}, {
+    "cityId": 3,
+    "cityName": "杭州",
+    "cityEnName": "hangzhou",
+    "cityAbbrCode": "hz",
+    "provinceId": 11,
+    "status": 3,
+    "regionCityId": 3,
+    "adCode": "330100",
+    "firstLetter": "H",
+    "name": null,
+    "path": null,
+    "selected": "",
+    "hotCity": false,
+    "glat": 30.273497,
+    "glng": 120.155249
+}, {
+    "cityId": 110,
+    "cityName": "合肥",
+    "cityEnName": "hefei",
+    "cityAbbrCode": "hf",
+    "provinceId": 12,
+    "status": 1,
+    "regionCityId": 5,
+    "adCode": "340100",
+    "firstLetter": "H",
+    "name": null,
+    "path": null,
+    "selected": "",
+    "hotCity": false,
+    "glat": 31.865779,
+    "glng": 117.286983
+}, {
+    "cityId": 34,
+    "cityName": "衡水",
+    "cityEnName": "hengshui",
+    "cityAbbrCode": "hs",
+    "provinceId": 3,
+    "status": 1,
+    "regionCityId": 2,
+    "adCode": "131100",
+    "firstLetter": "H",
+    "name": null,
+    "path": null,
+    "selected": "",
+    "hotCity": false,
+    "glat": 37.735302,
+    "glng": 115.69868
+}, {
+    "cityId": 194,
+    "cityName": "衡阳",
+    "cityEnName": "hengyang",
+    "cityAbbrCode": "hy",
+    "provinceId": 18,
+    "status": 1,
+    "regionCityId": 344,
+    "adCode": "430400",
+    "firstLetter": "H",
+    "name": null,
+    "path": null,
+    "selected": "",
+    "hotCity": false,
+    "glat": 26.893839,
+    "glng": 112.5719
+}, {
+    "cityId": 216,
+    "cityName": "河源",
+    "cityEnName": "heyuan",
+    "cityAbbrCode": "hy3",
+    "provinceId": 19,
+    "status": 1,
+    "regionCityId": 4,
+    "adCode": "441600",
+    "firstLetter": "H",
+    "name": null,
+    "path": null,
+    "selected": "",
+    "hotCity": false,
+    "glat": 23.743538,
+    "glng": 114.700446
+}, {
+    "cityId": 96,
+    "cityName": "淮安",
+    "cityEnName": "huaian",
+    "cityAbbrCode": "ha",
+    "provinceId": 10,
+    "status": 1,
+    "regionCityId": 5,
+    "adCode": "320800",
+    "firstLetter": "H",
+    "name": null,
+    "path": null,
+    "selected": "",
+    "hotCity": false,
+    "glat": 33.611084,
+    "glng": 119.015755
+}, {
+    "cityId": 185,
+    "cityName": "黄冈",
+    "cityEnName": "huanggang",
+    "cityAbbrCode": "hg1",
+    "provinceId": 17,
+    "status": 1,
+    "regionCityId": 16,
+    "adCode": "421100",
+    "firstLetter": "H",
+    "name": null,
+    "path": null,
+    "selected": "",
+    "hotCity": false,
+    "glat": 30.453877,
+    "glng": 114.872253
+}, {
+    "cityId": 46,
+    "cityName": "呼和浩特",
+    "cityEnName": "huhehaote",
+    "cityAbbrCode": "hh",
+    "provinceId": 5,
+    "status": 1,
+    "regionCityId": 2,
+    "adCode": "150100",
+    "firstLetter": "H",
+    "name": null,
+    "path": null,
+    "selected": "",
+    "hotCity": false,
+    "glat": 40.84231,
+    "glng": 111.748847
+}, {
+    "cityId": 213,
+    "cityName": "惠州",
+    "cityEnName": "huizhou",
+    "cityAbbrCode": "hz5",
+    "provinceId": 19,
+    "status": 1,
+    "regionCityId": 4,
+    "adCode": "441300",
+    "firstLetter": "H",
+    "name": null,
+    "path": null,
+    "selected": "",
+    "hotCity": false,
+    "glat": 23.079404,
+    "glng": 114.412599
+}, {
+    "cityId": 103,
+    "cityName": "湖州",
+    "cityEnName": "huzhou",
+    "cityAbbrCode": "hz14",
+    "provinceId": 11,
+    "status": 1,
+    "regionCityId": 3,
+    "adCode": "330500",
+    "firstLetter": "H",
+    "name": null,
+    "path": null,
+    "selected": "",
+    "hotCity": false,
+    "glat": 30.89436,
+    "glng": 120.08681800000001
+}, {
+    "cityId": 209,
+    "cityName": "江门",
+    "cityEnName": "jiangmen",
+    "cityAbbrCode": "jm1",
+    "provinceId": 19,
+    "status": 1,
+    "regionCityId": 4,
+    "adCode": "440700",
+    "firstLetter": "J",
+    "name": null,
+    "path": null,
+    "selected": "",
+    "hotCity": false,
+    "glat": 22.57877,
+    "glng": 113.08187
+}, {
+    "cityId": 143,
+    "cityName": "抚州",
+    "cityEnName": "jiangxifuzhou",
+    "cityAbbrCode": "fz4",
+    "provinceId": 14,
+    "status": 1,
+    "regionCityId": 344,
+    "adCode": "361000",
+    "firstLetter": "J",
+    "name": null,
+    "path": null,
+    "selected": "",
+    "hotCity": false,
+    "glat": 27.992296,
+    "glng": 116.358378
+}, {
+    "cityId": 142,
+    "cityName": "宜春",
+    "cityEnName": "jiangxiyichun",
+    "cityAbbrCode": "yc12",
+    "provinceId": 14,
+    "status": 1,
+    "regionCityId": 344,
+    "adCode": "360900",
+    "firstLetter": "J",
+    "name": null,
+    "path": null,
+    "selected": "",
+    "hotCity": false,
+    "glat": 27.796561,
+    "glng": 114.395108
+}, {
+    "cityId": 102,
+    "cityName": "嘉兴",
+    "cityEnName": "jiaxing",
+    "cityAbbrCode": "jx12",
+    "provinceId": 11,
+    "status": 1,
+    "regionCityId": 3,
+    "adCode": "330400",
+    "firstLetter": "J",
+    "name": null,
+    "path": null,
+    "selected": "",
+    "hotCity": false,
+    "glat": 30.753924,
+    "glng": 120.758543
+}, {
+    "cityId": 71,
+    "cityName": "吉林",
+    "cityEnName": "jilin",
+    "cityAbbrCode": "jl",
+    "provinceId": 7,
+    "status": 1,
+    "regionCityId": 2,
+    "adCode": "220200",
+    "firstLetter": "J",
+    "name": null,
+    "path": null,
+    "selected": "",
+    "hotCity": false,
+    "glat": 43.837883,
+    "glng": 126.549572
+}, {
+    "cityId": 22,
+    "cityName": "济南",
+    "cityEnName": "jinan",
+    "cityAbbrCode": "jn",
+    "provinceId": 15,
+    "status": 1,
+    "regionCityId": 2,
+    "adCode": "370100",
+    "firstLetter": "J",
+    "name": null,
+    "path": null,
+    "selected": "",
+    "hotCity": false,
+    "glat": 36.665282,
+    "glng": 116.994915
+}, {
+    "cityId": 184,
+    "cityName": "荆州",
+    "cityEnName": "jingzhou",
+    "cityAbbrCode": "jz12",
+    "provinceId": 17,
+    "status": 1,
+    "regionCityId": 16,
+    "adCode": "421000",
+    "firstLetter": "J",
+    "name": null,
+    "path": null,
+    "selected": "",
+    "hotCity": false,
+    "glat": 30.335165,
+    "glng": 112.239741
+}, {
+    "cityId": 105,
+    "cityName": "金华",
+    "cityEnName": "jinhua",
+    "cityAbbrCode": "jh",
+    "provinceId": 11,
+    "status": 1,
+    "regionCityId": 3,
+    "adCode": "330700",
+    "firstLetter": "J",
+    "name": null,
+    "path": null,
+    "selected": "",
+    "hotCity": false,
+    "glat": 29.079164,
+    "glng": 119.647422
+}, {
+    "cityId": 150,
+    "cityName": "济宁",
+    "cityEnName": "jining",
+    "cityAbbrCode": "jn5",
+    "provinceId": 15,
+    "status": 1,
+    "regionCityId": 2,
+    "adCode": "370800",
+    "firstLetter": "J",
+    "name": null,
+    "path": null,
+    "selected": "",
+    "hotCity": false,
+    "glat": 35.414865,
+    "glng": 116.587075
+}, {
+    "cityId": 182,
+    "cityName": "荆门",
+    "cityEnName": "jinmen",
+    "cityAbbrCode": "jm",
+    "provinceId": 17,
+    "status": 1,
+    "regionCityId": 16,
+    "adCode": "420800",
+    "firstLetter": "J",
+    "name": null,
+    "path": null,
+    "selected": "",
+    "hotCity": false,
+    "glat": 31.035423,
+    "glng": 112.199265
+}, {
+    "cityId": 137,
+    "cityName": "九江",
+    "cityEnName": "jiujiang",
+    "cityAbbrCode": "jj",
+    "provinceId": 14,
+    "status": 1,
+    "regionCityId": 344,
+    "adCode": "360400",
+    "firstLetter": "J",
+    "name": null,
+    "path": null,
+    "selected": "",
+    "hotCity": false,
+    "glat": 29.705096,
+    "glng": 116.001982
+}, {
+    "cityId": 267,
+    "cityName": "昆明",
+    "cityEnName": "kunming",
+    "cityAbbrCode": "km",
+    "provinceId": 25,
+    "status": 3,
+    "regionCityId": 267,
+    "adCode": "530100",
+    "firstLetter": "K",
+    "name": null,
+    "path": null,
+    "selected": "",
+    "hotCity": false,
+    "glat": 25.037283,
+    "glng": 102.722125
+}, {
+    "cityId": 416,
+    "cityName": "昆山",
+    "cityEnName": "kunshan",
+    "cityAbbrCode": "ks",
+    "provinceId": 10,
+    "status": 1,
+    "regionCityId": 5,
+    "adCode": "320500",
+    "firstLetter": "K",
+    "name": null,
+    "path": null,
+    "selected": "",
+    "hotCity": false,
+    "glat": 31.387641,
+    "glng": 120.982604
+}, {
+    "cityId": 33,
+    "cityName": "廊坊",
+    "cityEnName": "langfang",
+    "cityAbbrCode": "lf",
+    "provinceId": 3,
+    "status": 1,
+    "regionCityId": 2,
+    "adCode": "131000",
+    "firstLetter": "L",
+    "name": null,
+    "path": null,
+    "selected": "",
+    "hotCity": false,
+    "glat": 39.521017,
+    "glng": 116.706651
+}, {
+    "cityId": 299,
+    "cityName": "兰州",
+    "cityEnName": "lanzhou",
+    "cityAbbrCode": "lz5",
+    "provinceId": 28,
+    "status": 1,
+    "regionCityId": 17,
+    "adCode": "620100",
+    "firstLetter": "L",
+    "name": null,
+    "path": null,
+    "selected": "",
+    "hotCity": false,
+    "glat": 36.061255,
+    "glng": 103.834377
+}, {
+    "cityId": 2398,
+    "cityName": "拉斯维加斯",
+    "cityEnName": "lasvegas",
+    "cityAbbrCode": "las",
+    "provinceId": 118,
+    "status": 1,
+    "regionCityId": 1,
+    "adCode": null,
+    "firstLetter": "L",
+    "name": null,
+    "path": null,
+    "selected": "",
+    "hotCity": false,
+    "glat": 36.208704,
+    "glng": -115.188733
+}, {
+    "cityId": 246,
+    "cityName": "乐山",
+    "cityEnName": "leshan",
+    "cityAbbrCode": "ls27",
+    "provinceId": 23,
+    "status": 1,
+    "regionCityId": 8,
+    "adCode": "511100",
+    "firstLetter": "L",
+    "name": null,
+    "path": null,
+    "selected": "",
+    "hotCity": false,
+    "glat": 29.552064,
+    "glng": 103.765623
+}, {
+    "cityId": 95,
+    "cityName": "连云港",
+    "cityEnName": "lianyuangang",
+    "cityAbbrCode": "lyg",
+    "provinceId": 10,
+    "status": 1,
+    "regionCityId": 5,
+    "adCode": "320700",
+    "firstLetter": "L",
+    "name": null,
+    "path": null,
+    "selected": "",
+    "hotCity": false,
+    "glat": 34.600018,
+    "glng": 119.178821
+}, {
+    "cityId": 157,
+    "cityName": "聊城",
+    "cityEnName": "liaocheng",
+    "cityAbbrCode": "lc",
+    "provinceId": 15,
+    "status": 1,
+    "regionCityId": 2,
+    "adCode": "371500",
+    "firstLetter": "L",
+    "name": null,
+    "path": null,
+    "selected": "",
+    "hotCity": false,
+    "glat": 36.456696,
+    "glng": 115.985371
+}, {
+    "cityId": 279,
+    "cityName": "丽江",
+    "cityEnName": "lijiang",
+    "cityAbbrCode": "lj",
+    "provinceId": 25,
+    "status": 1,
+    "regionCityId": 267,
+    "adCode": "530700",
+    "firstLetter": "L",
+    "name": null,
+    "path": null,
+    "selected": "",
+    "hotCity": false,
+    "glat": 26.876774,
+    "glng": 100.230376
+}, {
+    "cityId": 155,
+    "cityName": "临沂",
+    "cityEnName": "linyi",
+    "cityAbbrCode": "ly20",
+    "provinceId": 15,
+    "status": 1,
+    "regionCityId": 2,
+    "adCode": "371300",
+    "firstLetter": "L",
+    "name": null,
+    "path": null,
+    "selected": "",
+    "hotCity": false,
+    "glat": 35.051712,
+    "glng": 118.347708
+}, {
+    "cityId": 109,
+    "cityName": "丽水",
+    "cityEnName": "lishui",
+    "cityAbbrCode": "ls",
+    "provinceId": 11,
+    "status": 1,
+    "regionCityId": 11,
+    "adCode": "331100",
+    "firstLetter": "L",
+    "name": null,
+    "path": null,
+    "selected": "",
+    "hotCity": false,
+    "glat": 28.451695,
+    "glng": 119.916875
+}, {
+    "cityId": 225,
+    "cityName": "柳州",
+    "cityEnName": "liuzhou",
+    "cityAbbrCode": "lz",
+    "provinceId": 20,
+    "status": 1,
+    "regionCityId": 4,
+    "adCode": "450200",
+    "firstLetter": "L",
+    "name": null,
+    "path": null,
+    "selected": "",
+    "hotCity": false,
+    "glat": 24.32551,
+    "glng": 109.415577
+}, {
+    "cityId": 162,
+    "cityName": "洛阳",
+    "cityEnName": "luoyang",
+    "cityAbbrCode": "ly3",
+    "provinceId": 16,
+    "status": 1,
+    "regionCityId": 17,
+    "adCode": "410300",
+    "firstLetter": "L",
+    "name": null,
+    "path": null,
+    "selected": "",
+    "hotCity": false,
+    "glat": 34.618154,
+    "glng": 112.454363
+}, {
+    "cityId": 240,
+    "cityName": "泸州",
+    "cityEnName": "luzhou",
+    "cityAbbrCode": "lz19",
+    "provinceId": 23,
+    "status": 1,
+    "regionCityId": 8,
+    "adCode": "510500",
+    "firstLetter": "L",
+    "name": null,
+    "path": null,
+    "selected": "",
+    "hotCity": false,
+    "glat": 28.87176,
+    "glng": 105.442141
+}, {
+    "cityId": 114,
+    "cityName": "马鞍山",
+    "cityEnName": "maanshan",
+    "cityAbbrCode": "mas",
+    "provinceId": 12,
+    "status": 1,
+    "regionCityId": 5,
+    "adCode": "340500",
+    "firstLetter": "M",
+    "name": null,
+    "path": null,
+    "selected": "",
+    "hotCity": false,
+    "glat": 31.696788,
+    "glng": 118.504657
+}, {
+    "cityId": 211,
+    "cityName": "茂名",
+    "cityEnName": "maoming",
+    "cityAbbrCode": "mm",
+    "provinceId": 19,
+    "status": 1,
+    "regionCityId": 4,
+    "adCode": "440900",
+    "firstLetter": "M",
+    "name": null,
+    "path": null,
+    "selected": "",
+    "hotCity": false,
+    "glat": 21.662956,
+    "glng": 110.925467
+}, {
+    "cityId": 242,
+    "cityName": "绵阳",
+    "cityEnName": "mianyang",
+    "cityAbbrCode": "my",
+    "provinceId": 23,
+    "status": 1,
+    "regionCityId": 8,
+    "adCode": "510700",
+    "firstLetter": "M",
+    "name": null,
+    "path": null,
+    "selected": "",
+    "hotCity": false,
+    "glat": 31.463377,
+    "glng": 104.741274
+}, {
+    "cityId": 3150,
+    "cityName": "莫斯科",
+    "cityEnName": "moscow",
+    "cityAbbrCode": "mos",
+    "provinceId": 162,
+    "status": 1,
+    "regionCityId": 1,
+    "adCode": null,
+    "firstLetter": "M",
+    "name": null,
+    "path": null,
+    "selected": "",
+    "hotCity": false,
+    "glat": 55.735104,
+    "glng": 37.631122
+}, {
+    "cityId": 88,
+    "cityName": "牡丹江",
+    "cityEnName": "mudanjiang",
+    "cityAbbrCode": "mdj",
+    "provinceId": 8,
+    "status": 1,
+    "regionCityId": 2,
+    "adCode": "231000",
+    "firstLetter": "M",
+    "name": null,
+    "path": null,
+    "selected": "",
+    "hotCity": false,
+    "glat": 44.587633,
+    "glng": 129.614665
+}, {
+    "cityId": 134,
+    "cityName": "南昌",
+    "cityEnName": "nanchang",
+    "cityAbbrCode": "nc",
+    "provinceId": 14,
+    "status": 1,
+    "regionCityId": 344,
+    "adCode": "360100",
+    "firstLetter": "N",
+    "name": null,
+    "path": null,
+    "selected": "",
+    "hotCity": false,
+    "glat": 28.676493,
+    "glng": 115.892151
+}, {
+    "cityId": 5,
+    "cityName": "南京",
+    "cityEnName": "nanjing",
+    "cityAbbrCode": "nj",
+    "provinceId": 10,
+    "status": 3,
+    "regionCityId": 5,
+    "adCode": "320100",
+    "firstLetter": "N",
+    "name": null,
+    "path": null,
+    "selected": "",
+    "hotCity": false,
+    "glat": 32.058365,
+    "glng": 118.796468
+}, {
+    "cityId": 224,
+    "cityName": "南宁",
+    "cityEnName": "nanning",
+    "cityAbbrCode": "nn",
+    "provinceId": 20,
+    "status": 1,
+    "regionCityId": 4,
+    "adCode": "450100",
+    "firstLetter": "N",
+    "name": null,
+    "path": null,
+    "selected": "",
+    "hotCity": false,
+    "glat": 22.818012,
+    "glng": 108.365546
+}, {
+    "cityId": 94,
+    "cityName": "南通",
+    "cityEnName": "nantong",
+    "cityAbbrCode": "nt",
+    "provinceId": 10,
+    "status": 1,
+    "regionCityId": 5,
+    "adCode": "320600",
+    "firstLetter": "N",
+    "name": null,
+    "path": null,
+    "selected": "",
+    "hotCity": false,
+    "glat": 31.979997,
+    "glng": 120.894324
+}, {
+    "cityId": 245,
+    "cityName": "内江",
+    "cityEnName": "neijiang",
+    "cityAbbrCode": "nj4",
+    "provinceId": 23,
+    "status": 1,
+    "regionCityId": 8,
+    "adCode": "511000",
+    "firstLetter": "N",
+    "name": null,
+    "path": null,
+    "selected": "",
+    "hotCity": false,
+    "glat": 29.580237,
+    "glng": 105.0583
+}, {
+    "cityId": 11,
+    "cityName": "宁波",
+    "cityEnName": "ningbo",
+    "cityAbbrCode": "nb",
+    "provinceId": 11,
+    "status": 3,
+    "regionCityId": 11,
+    "adCode": "330200",
+    "firstLetter": "N",
+    "name": null,
+    "path": null,
+    "selected": "",
+    "hotCity": false,
+    "glat": 29.868336,
+    "glng": 121.54399
+}, {
+    "cityId": 136,
+    "cityName": "萍乡",
+    "cityEnName": "pingxiang",
+    "cityAbbrCode": "px",
+    "provinceId": 14,
+    "status": 1,
+    "regionCityId": 344,
+    "adCode": "360300",
+    "firstLetter": "P",
+    "name": null,
+    "path": null,
+    "selected": "",
+    "hotCity": false,
+    "glat": 27.622865,
+    "glng": 113.854676
+}, {
+    "cityId": 190,
+    "cityName": "潜江",
+    "cityEnName": "qianjiang",
+    "cityAbbrCode": "qj",
+    "provinceId": 17,
+    "status": 1,
+    "regionCityId": 16,
+    "adCode": "429005",
+    "firstLetter": "Q",
+    "name": null,
+    "path": null,
+    "selected": "",
+    "hotCity": false,
+    "glat": 30.40211,
+    "glng": 112.900078
+}, {
+    "cityId": 21,
+    "cityName": "青岛",
+    "cityEnName": "qingdao",
+    "cityAbbrCode": "qd",
+    "provinceId": 15,
+    "status": 1,
+    "regionCityId": 2,
+    "adCode": "370200",
+    "firstLetter": "Q",
+    "name": null,
+    "path": null,
+    "selected": "",
+    "hotCity": false,
+    "glat": 36.066348,
+    "glng": 120.382771
+}, {
+    "cityId": 218,
+    "cityName": "清远",
+    "cityEnName": "qingyuan",
+    "cityAbbrCode": "qy",
+    "provinceId": 19,
+    "status": 1,
+    "regionCityId": 4,
+    "adCode": "441800",
+    "firstLetter": "Q",
+    "name": null,
+    "path": null,
+    "selected": "",
+    "hotCity": false,
+    "glat": 23.681801,
+    "glng": 113.056042
+}, {
+    "cityId": 26,
+    "cityName": "秦皇岛",
+    "cityEnName": "qinhuangdao",
+    "cityAbbrCode": "qhd",
+    "provinceId": 3,
+    "status": 1,
+    "regionCityId": 2,
+    "adCode": "130300",
+    "firstLetter": "Q",
+    "name": null,
+    "path": null,
+    "selected": "",
+    "hotCity": false,
+    "glat": 39.935377,
+    "glng": 119.600492
+}, {
+    "cityId": 129,
+    "cityName": "泉州",
+    "cityEnName": "quanzhou",
+    "cityAbbrCode": "qz3",
+    "provinceId": 13,
+    "status": 1,
+    "regionCityId": 7,
+    "adCode": "350500",
+    "firstLetter": "Q",
+    "name": null,
+    "path": null,
+    "selected": "",
+    "hotCity": false,
+    "glat": 24.907398,
+    "glng": 118.587114
+}, {
+    "cityId": 153,
+    "cityName": "日照",
+    "cityEnName": "rizhao",
+    "cityAbbrCode": "rz",
+    "provinceId": 15,
+    "status": 1,
+    "regionCityId": 2,
+    "adCode": "371100",
+    "firstLetter": "R",
+    "name": null,
+    "path": null,
+    "selected": "",
+    "hotCity": false,
+    "glat": 35.416377,
+    "glng": 119.526888
+}, {
+    "cityId": 3258,
+    "cityName": "俄罗斯",
+    "cityEnName": "russia",
+    "cityAbbrCode": "rus",
+    "provinceId": 162,
+    "status": 1,
+    "regionCityId": 1,
+    "adCode": null,
+    "firstLetter": "R",
+    "name": null,
+    "path": null,
+    "selected": "",
+    "hotCity": false,
+    "glat": 62.428794,
+    "glng": 105.636719
+}, {
+    "cityId": 345,
+    "cityName": "三亚",
+    "cityEnName": "sanya",
+    "cityAbbrCode": "sy13",
+    "provinceId": 21,
+    "status": 1,
+    "regionCityId": 4,
+    "adCode": "460200",
+    "firstLetter": "S",
+    "name": null,
+    "path": null,
+    "selected": "",
+    "hotCity": false,
+    "glat": 18.252847,
+    "glng": 109.511909
+}, {
+    "cityId": 1,
+    "cityName": "上海",
+    "cityEnName": "shanghai",
+    "cityAbbrCode": "sh",
+    "provinceId": 9,
+    "status": 3,
+    "regionCityId": 1,
+    "adCode": "310100",
+    "firstLetter": "S",
+    "name": null,
+    "path": null,
+    "selected": "",
+    "hotCity": false,
+    "glat": 31.230708,
+    "glng": 121.472916
+}, {
+    "cityId": 207,
+    "cityName": "汕头",
+    "cityEnName": "shantou",
+    "cityAbbrCode": "st",
+    "provinceId": 19,
+    "status": 1,
+    "regionCityId": 4,
+    "adCode": "440500",
+    "firstLetter": "S",
+    "name": null,
+    "path": null,
+    "selected": "",
+    "hotCity": false,
+    "glat": 23.353362,
+    "glng": 116.681943
+}, {
+    "cityId": 104,
+    "cityName": "绍兴",
+    "cityEnName": "shaoxing",
+    "cityAbbrCode": "sx",
+    "provinceId": 11,
+    "status": 1,
+    "regionCityId": 3,
+    "adCode": "330600",
+    "firstLetter": "S",
+    "name": null,
+    "path": null,
+    "selected": "",
+    "hotCity": false,
+    "glat": 29.995762,
+    "glng": 120.586109
+}, {
+    "cityId": 18,
+    "cityName": "沈阳",
+    "cityEnName": "shenyang",
+    "cityAbbrCode": "sy",
+    "provinceId": 6,
+    "status": 1,
+    "regionCityId": 2,
+    "adCode": "210100",
+    "firstLetter": "S",
+    "name": null,
+    "path": null,
+    "selected": "",
+    "hotCity": false,
+    "glat": 41.807321,
+    "glng": 123.43045
+}, {
+    "cityId": 7,
+    "cityName": "深圳",
+    "cityEnName": "shenzhen",
+    "cityAbbrCode": "sz",
+    "provinceId": 19,
+    "status": 3,
+    "regionCityId": 7,
+    "adCode": "440300",
+    "firstLetter": "S",
+    "name": null,
+    "path": null,
+    "selected": "",
+    "hotCity": false,
+    "glat": 22.543447,
+    "glng": 114.057818
+}, {
+    "cityId": 24,
+    "cityName": "石家庄",
+    "cityEnName": "shijiazhuang",
+    "cityAbbrCode": "sjz",
+    "provinceId": 3,
+    "status": 1,
+    "regionCityId": 2,
+    "adCode": "130100",
+    "firstLetter": "S",
+    "name": null,
+    "path": null,
+    "selected": "",
+    "hotCity": false,
+    "glat": 38.04232,
+    "glng": 114.514864
+}, {
+    "cityId": 2311,
+    "cityName": "新加坡",
+    "cityEnName": "singapore",
+    "cityAbbrCode": "sg4",
+    "provinceId": 101,
+    "status": 1,
+    "regionCityId": 4,
+    "adCode": null,
+    "firstLetter": "S",
+    "name": null,
+    "path": null,
+    "selected": "",
+    "hotCity": false,
+    "glat": 1.369041,
+    "glng": 103.798433
+}, {
+    "cityId": 244,
+    "cityName": "遂宁",
+    "cityEnName": "suining",
+    "cityAbbrCode": "sn",
+    "provinceId": 23,
+    "status": 1,
+    "regionCityId": 8,
+    "adCode": "510900",
+    "firstLetter": "S",
+    "name": null,
+    "path": null,
+    "selected": "",
+    "hotCity": false,
+    "glat": 30.52548,
+    "glng": 105.568187
+}, {
+    "cityId": 6,
+    "cityName": "苏州",
+    "cityEnName": "suzhou",
+    "cityAbbrCode": "suz",
+    "provinceId": 10,
+    "status": 1,
+    "regionCityId": 5,
+    "adCode": "320500",
+    "firstLetter": "S",
+    "name": null,
+    "path": null,
+    "selected": "",
+    "hotCity": false,
+    "glat": 31.297779,
+    "glng": 120.585586
+}, {
+    "cityId": 151,
+    "cityName": "泰安",
+    "cityEnName": "taian",
+    "cityAbbrCode": "ta",
+    "provinceId": 15,
+    "status": 1,
+    "regionCityId": 2,
+    "adCode": "370900",
+    "firstLetter": "T",
+    "name": null,
+    "path": null,
+    "selected": "",
+    "hotCity": false,
+    "glat": 36.20002,
+    "glng": 117.088115
+}, {
+    "cityId": 2335,
+    "cityName": "台北",
+    "cityEnName": "taipei",
+    "cityAbbrCode": "tpe",
+    "provinceId": 34,
+    "status": 1,
+    "regionCityId": 7,
+    "adCode": "710000",
+    "firstLetter": "T",
+    "name": null,
+    "path": null,
+    "selected": "",
+    "hotCity": false,
+    "glat": 25.071295,
+    "glng": 121.538315
+}, {
+    "cityId": 35,
+    "cityName": "太原",
+    "cityEnName": "taiyuan",
+    "cityAbbrCode": "ty",
+    "provinceId": 4,
+    "status": 1,
+    "regionCityId": 17,
+    "adCode": "140100",
+    "firstLetter": "T",
+    "name": null,
+    "path": null,
+    "selected": "",
+    "hotCity": false,
+    "glat": 37.870554,
+    "glng": 112.550737
+}, {
+    "cityId": 99,
+    "cityName": "泰州",
+    "cityEnName": "taizhou",
+    "cityAbbrCode": "tz",
+    "provinceId": 10,
+    "status": 1,
+    "regionCityId": 5,
+    "adCode": null,
+    "firstLetter": "T",
+    "name": null,
+    "path": null,
+    "selected": "",
+    "hotCity": false,
+    "glat": 32.456584,
+    "glng": 119.923046
+}, {
+    "cityId": 25,
+    "cityName": "唐山",
+    "cityEnName": "tangshan",
+    "cityAbbrCode": "ts",
+    "provinceId": 3,
+    "status": 1,
+    "regionCityId": 2,
+    "adCode": "130200",
+    "firstLetter": "T",
+    "name": null,
+    "path": null,
+    "selected": "",
+    "hotCity": false,
+    "glat": 39.630476,
+    "glng": 118.180407
+}, {
+    "cityId": 10,
+    "cityName": "天津",
+    "cityEnName": "tianjin",
+    "cityAbbrCode": "tj",
+    "provinceId": 2,
+    "status": 3,
+    "regionCityId": 10,
+    "adCode": "120100",
+    "firstLetter": "T",
+    "name": null,
+    "path": null,
+    "selected": "",
+    "hotCity": false,
+    "glat": 39.120876,
+    "glng": 117.21503
+}, {
+    "cityId": 149,
+    "cityName": "潍坊",
+    "cityEnName": "weifang",
+    "cityAbbrCode": "wf",
+    "provinceId": 15,
+    "status": 1,
+    "regionCityId": 2,
+    "adCode": "370700",
+    "firstLetter": "W",
+    "name": null,
+    "path": null,
+    "selected": "",
+    "hotCity": false,
+    "glat": 36.706824,
+    "glng": 119.161929
+}, {
+    "cityId": 152,
+    "cityName": "威海",
+    "cityEnName": "weihai",
+    "cityAbbrCode": "wh6",
+    "provinceId": 15,
+    "status": 1,
+    "regionCityId": 2,
+    "adCode": "371000",
+    "firstLetter": "W",
+    "name": null,
+    "path": null,
+    "selected": "",
+    "hotCity": false,
+    "glat": 37.513068,
+    "glng": 122.12042
+}, {
+    "cityId": 293,
+    "cityName": "渭南",
+    "cityEnName": "weinan",
+    "cityAbbrCode": "wn",
+    "provinceId": 27,
+    "status": 1,
+    "regionCityId": 17,
+    "adCode": "610500",
+    "firstLetter": "W",
+    "name": null,
+    "path": null,
+    "selected": "",
+    "hotCity": false,
+    "glat": 34.499995,
+    "glng": 109.509786
+}, {
+    "cityId": 101,
+    "cityName": "温州",
+    "cityEnName": "wenzhou",
+    "cityAbbrCode": "wz",
+    "provinceId": 11,
+    "status": 1,
+    "regionCityId": 11,
+    "adCode": "330300",
+    "firstLetter": "W",
+    "name": null,
+    "path": null,
+    "selected": "",
+    "hotCity": false,
+    "glat": 27.994243,
+    "glng": 120.699355
+}, {
+    "cityId": 16,
+    "cityName": "武汉",
+    "cityEnName": "wuhan",
+    "cityAbbrCode": "wh",
+    "provinceId": 17,
+    "status": 3,
+    "regionCityId": 16,
+    "adCode": "420100",
+    "firstLetter": "W",
+    "name": null,
+    "path": null,
+    "selected": "",
+    "hotCity": false,
+    "glat": 30.593088,
+    "glng": 114.305172
+}, {
+    "cityId": 111,
+    "cityName": "芜湖",
+    "cityEnName": "wuhu",
+    "cityAbbrCode": "wh5",
+    "provinceId": 12,
+    "status": 1,
+    "regionCityId": 5,
+    "adCode": "340200",
+    "firstLetter": "W",
+    "name": null,
+    "path": null,
+    "selected": "",
+    "hotCity": false,
+    "glat": 31.33879,
+    "glng": 118.385156
+}, {
+    "cityId": 368,
+    "cityName": "乌兰浩特市",
+    "cityEnName": "wulanhaote",
+    "cityAbbrCode": "wlh",
+    "provinceId": 5,
+    "status": 0,
+    "regionCityId": 2,
+    "adCode": "152200",
+    "firstLetter": "W",
+    "name": null,
+    "path": null,
+    "selected": "",
+    "hotCity": false,
+    "glat": 46.073302,
+    "glng": 122.093004
+}, {
+    "cityId": 325,
+    "cityName": "乌鲁木齐",
+    "cityEnName": "wulumuqi",
+    "cityAbbrCode": "wlm",
+    "provinceId": 31,
+    "status": 1,
+    "regionCityId": 17,
+    "adCode": "650100",
+    "firstLetter": "W",
+    "name": null,
+    "path": null,
+    "selected": "",
+    "hotCity": false,
+    "glat": 43.825666,
+    "glng": 87.617298
+}, {
+    "cityId": 13,
+    "cityName": "无锡",
+    "cityEnName": "wuxi",
+    "cityAbbrCode": "wx",
+    "provinceId": 10,
+    "status": 1,
+    "regionCityId": 5,
+    "adCode": null,
+    "firstLetter": "W",
+    "name": null,
+    "path": null,
+    "selected": "",
+    "hotCity": false,
+    "glat": 31.566148,
+    "glng": 120.303027
+}, {
+    "cityId": 227,
+    "cityName": "梧州",
+    "cityEnName": "wuzhou",
+    "cityAbbrCode": "wz2",
+    "provinceId": 20,
+    "status": 1,
+    "regionCityId": 4,
+    "adCode": "450400",
+    "firstLetter": "W",
+    "name": null,
+    "path": null,
+    "selected": "",
+    "hotCity": false,
+    "glat": 23.47691,
+    "glng": 111.27917
+}, {
+    "cityId": 15,
+    "cityName": "厦门",
+    "cityEnName": "xiamen",
+    "cityAbbrCode": "xm",
+    "provinceId": 13,
+    "status": 1,
+    "regionCityId": 7,
+    "adCode": "350200",
+    "firstLetter": "X",
+    "name": null,
+    "path": null,
+    "selected": "",
+    "hotCity": false,
+    "glat": 24.479615,
+    "glng": 118.08939
+}, {
+    "cityId": 17,
+    "cityName": "西安",
+    "cityEnName": "xian",
+    "cityAbbrCode": "xa",
+    "provinceId": 27,
+    "status": 3,
+    "regionCityId": 17,
+    "adCode": "610100",
+    "firstLetter": "X",
+    "name": null,
+    "path": null,
+    "selected": "",
+    "hotCity": false,
+    "glat": 34.26488,
+    "glng": 108.944265
+}, {
+    "cityId": 341,
+    "cityName": "香港",
+    "cityEnName": "hongkong",
+    "cityAbbrCode": "hk3",
+    "provinceId": 32,
+    "status": 1,
+    "regionCityId": 7,
+    "adCode": null,
+    "firstLetter": "X",
+    "name": null,
+    "path": null,
+    "selected": "",
+    "hotCity": false,
+    "glat": 22.282346,
+    "glng": 114.172754
+}, {
+    "cityId": 292,
+    "cityName": "咸阳",
+    "cityEnName": "xianyang",
+    "cityAbbrCode": "xy21",
+    "provinceId": 27,
+    "status": 1,
+    "regionCityId": 17,
+    "adCode": "610400",
+    "firstLetter": "X",
+    "name": null,
+    "path": null,
+    "selected": "",
+    "hotCity": false,
+    "glat": 34.329434,
+    "glng": 108.709193
+}, {
+    "cityId": 92,
+    "cityName": "徐州",
+    "cityEnName": "xuzhou",
+    "cityAbbrCode": "xz5",
+    "provinceId": 10,
+    "status": 1,
+    "regionCityId": 5,
+    "adCode": "320300",
+    "firstLetter": "X",
+    "name": null,
+    "path": null,
+    "selected": "",
+    "hotCity": false,
+    "glat": 34.259827,
+    "glng": 117.19108
+}, {
+    "cityId": 97,
+    "cityName": "盐城",
+    "cityEnName": "yancheng",
+    "cityAbbrCode": "yc8",
+    "provinceId": 10,
+    "status": 1,
+    "regionCityId": 5,
+    "adCode": "320900",
+    "firstLetter": "Y",
+    "name": null,
+    "path": null,
+    "selected": "",
+    "hotCity": false,
+    "glat": 33.347416,
+    "glng": 120.163544
+}, {
+    "cityId": 12,
+    "cityName": "扬州",
+    "cityEnName": "yangzhou",
+    "cityAbbrCode": "yz",
+    "provinceId": 10,
+    "status": 1,
+    "regionCityId": 5,
+    "adCode": "321000",
+    "firstLetter": "Y",
+    "name": null,
+    "path": null,
+    "selected": "",
+    "hotCity": false,
+    "glat": 32.394237,
+    "glng": 119.412854
+}, {
+    "cityId": 148,
+    "cityName": "烟台",
+    "cityEnName": "yantai",
+    "cityAbbrCode": "yt6",
+    "provinceId": 15,
+    "status": 1,
+    "regionCityId": 2,
+    "adCode": "370600",
+    "firstLetter": "Y",
+    "name": null,
+    "path": null,
+    "selected": "",
+    "hotCity": false,
+    "glat": 37.539297,
+    "glng": 121.391382
+}, {
+    "cityId": 249,
+    "cityName": "宜宾",
+    "cityEnName": "yibin",
+    "cityAbbrCode": "yb1",
+    "provinceId": 23,
+    "status": 1,
+    "regionCityId": 8,
+    "adCode": "511500",
+    "firstLetter": "Y",
+    "name": null,
+    "path": null,
+    "selected": "",
+    "hotCity": false,
+    "glat": 28.751853,
+    "glng": 104.643418
+}, {
+    "cityId": 179,
+    "cityName": "宜昌",
+    "cityEnName": "yichang",
+    "cityAbbrCode": "yc16",
+    "provinceId": 17,
+    "status": 1,
+    "regionCityId": 16,
+    "adCode": "420500",
+    "firstLetter": "Y",
+    "name": null,
+    "path": null,
+    "selected": "",
+    "hotCity": false,
+    "glat": 30.691967,
+    "glng": 111.286471
+}, {
+    "cityId": 321,
+    "cityName": "银川",
+    "cityEnName": "yinchuan",
+    "cityAbbrCode": "yc20",
+    "provinceId": 30,
+    "status": 1,
+    "regionCityId": 17,
+    "adCode": "640100",
+    "firstLetter": "Y",
+    "name": null,
+    "path": null,
+    "selected": "",
+    "hotCity": false,
+    "glat": 38.487194,
+    "glng": 106.230909
+}, {
+    "cityId": 63,
+    "cityName": "营口",
+    "cityEnName": "yingkou",
+    "cityAbbrCode": "yk",
+    "provinceId": 6,
+    "status": 1,
+    "regionCityId": 2,
+    "adCode": "210800",
+    "firstLetter": "Y",
+    "name": null,
+    "path": null,
+    "selected": "",
+    "hotCity": false,
+    "glat": 40.666989,
+    "glng": 122.235286
+}, {
+    "cityId": 385,
+    "cityName": "义乌",
+    "cityEnName": "yiwu",
+    "cityAbbrCode": "yw",
+    "provinceId": 11,
+    "status": 1,
+    "regionCityId": 3,
+    "adCode": "330700",
+    "firstLetter": "Y",
+    "name": null,
+    "path": null,
+    "selected": "",
+    "hotCity": false,
+    "glat": 29.306841,
+    "glng": 120.075058
+}, {
+    "cityId": 296,
+    "cityName": "榆林",
+    "cityEnName": "yulin",
+    "cityAbbrCode": "yl4",
+    "provinceId": 27,
+    "status": 1,
+    "regionCityId": 17,
+    "adCode": "610800",
+    "firstLetter": "Y",
+    "name": null,
+    "path": null,
+    "selected": "",
+    "hotCity": false,
+    "glat": 38.285526,
+    "glng": 109.735209
+}, {
+    "cityId": 146,
+    "cityName": "枣庄",
+    "cityEnName": "zaozhuang",
+    "cityAbbrCode": "zz9",
+    "provinceId": 15,
+    "status": 1,
+    "regionCityId": 2,
+    "adCode": "370400",
+    "firstLetter": "Z",
+    "name": null,
+    "path": null,
+    "selected": "",
+    "hotCity": false,
+    "glat": 34.8105,
+    "glng": 117.323725
+}, {
+    "cityId": 30,
+    "cityName": "张家口",
+    "cityEnName": "zhangjiakou",
+    "cityAbbrCode": "zjk",
+    "provinceId": 3,
+    "status": 1,
+    "regionCityId": 2,
+    "adCode": "130700",
+    "firstLetter": "Z",
+    "name": null,
+    "path": null,
+    "selected": "",
+    "hotCity": false,
+    "glat": 40.767576,
+    "glng": 114.885951
+}, {
+    "cityId": 1118,
+    "cityName": "章丘",
+    "cityEnName": "zhangqiu",
+    "cityAbbrCode": "zq3",
+    "provinceId": 15,
+    "status": 1,
+    "regionCityId": 2,
+    "adCode": "370100",
+    "firstLetter": "Z",
+    "name": null,
+    "path": null,
+    "selected": "",
+    "hotCity": false,
+    "glat": 36.7142,
+    "glng": 117.53434
+}, {
+    "cityId": 210,
+    "cityName": "湛江",
+    "cityEnName": "zhanjiang",
+    "cityAbbrCode": "zj3",
+    "provinceId": 19,
+    "status": 1,
+    "regionCityId": 4,
+    "adCode": "440800",
+    "firstLetter": "Z",
+    "name": null,
+    "path": null,
+    "selected": "",
+    "hotCity": false,
+    "glat": 21.270764,
+    "glng": 110.359255
+}, {
+    "cityId": 212,
+    "cityName": "肇庆",
+    "cityEnName": "zhaoqing",
+    "cityAbbrCode": "zq",
+    "provinceId": 19,
+    "status": 1,
+    "regionCityId": 4,
+    "adCode": "441200",
+    "firstLetter": "Z",
+    "name": null,
+    "path": null,
+    "selected": "",
+    "hotCity": false,
+    "glat": 23.047596,
+    "glng": 112.465166
+}, {
+    "cityId": 108,
+    "cityName": "台州",
+    "cityEnName": "zhejiangtaizhou",
+    "cityAbbrCode": "tz2",
+    "provinceId": 11,
+    "status": 1,
+    "regionCityId": 11,
+    "adCode": "331000",
+    "firstLetter": "Z",
+    "name": null,
+    "path": null,
+    "selected": "",
+    "hotCity": false,
+    "glat": 28.828501,
+    "glng": 121.175834
+}, {
+    "cityId": 160,
+    "cityName": "郑州",
+    "cityEnName": "zhengzhou",
+    "cityAbbrCode": "zz11",
+    "provinceId": 16,
+    "status": 3,
+    "regionCityId": 160,
+    "adCode": "410100",
+    "firstLetter": "Z",
+    "name": null,
+    "path": null,
+    "selected": "",
+    "hotCity": false,
+    "glat": 34.747285,
+    "glng": 113.624863
+}, {
+    "cityId": 98,
+    "cityName": "镇江",
+    "cityEnName": "zhenjiang",
+    "cityAbbrCode": "zj",
+    "provinceId": 10,
+    "status": 1,
+    "regionCityId": 5,
+    "adCode": "321100",
+    "firstLetter": "Z",
+    "name": null,
+    "path": null,
+    "selected": "",
+    "hotCity": false,
+    "glat": 32.199789,
+    "glng": 119.456928
+}, {
+    "cityId": 220,
+    "cityName": "中山",
+    "cityEnName": "zhongshan",
+    "cityAbbrCode": "zs6",
+    "provinceId": 19,
+    "status": 1,
+    "regionCityId": 4,
+    "adCode": "442000",
+    "firstLetter": "Z",
+    "name": null,
+    "path": null,
+    "selected": "",
+    "hotCity": false,
+    "glat": 22.516481,
+    "glng": 113.392756
+}, {
+    "cityId": 107,
+    "cityName": "舟山",
+    "cityEnName": "zhoushan",
+    "cityAbbrCode": "zs",
+    "provinceId": 11,
+    "status": 1,
+    "regionCityId": 11,
+    "adCode": "330900",
+    "firstLetter": "Z",
+    "name": null,
+    "path": null,
+    "selected": "",
+    "hotCity": false,
+    "glat": 29.985444,
+    "glng": 122.206596
+}, {
+    "cityId": 206,
+    "cityName": "珠海",
+    "cityEnName": "zhuhai",
+    "cityAbbrCode": "zh",
+    "provinceId": 19,
+    "status": 1,
+    "regionCityId": 4,
+    "adCode": "440400",
+    "firstLetter": "Z",
+    "name": null,
+    "path": null,
+    "selected": "",
+    "hotCity": false,
+    "glat": 22.27094,
+    "glng": 113.577261
+}, {
+    "cityId": 192,
+    "cityName": "株洲",
+    "cityEnName": "zhuzhou",
+    "cityAbbrCode": "zz2",
+    "provinceId": 18,
+    "status": 1,
+    "regionCityId": 344,
+    "adCode": "430200",
+    "firstLetter": "Z",
+    "name": null,
+    "path": null,
+    "selected": "",
+    "hotCity": false,
+    "glat": 27.827892,
+    "glng": 113.133891
+}, {
+    "cityId": 145,
+    "cityName": "淄博",
+    "cityEnName": "zibo",
+    "cityAbbrCode": "zb",
+    "provinceId": 15,
+    "status": 1,
+    "regionCityId": 2,
+    "adCode": "370300",
+    "firstLetter": "Z",
+    "name": null,
+    "path": null,
+    "selected": "",
+    "hotCity": false,
+    "glat": 36.813497,
+    "glng": 118.055007
+}, {
+    "cityId": 238,
+    "cityName": "自贡",
+    "cityEnName": "zigong",
+    "cityAbbrCode": "zg",
+    "provinceId": 23,
+    "status": 1,
+    "regionCityId": 8,
+    "adCode": "510300",
+    "firstLetter": "Z",
+    "name": null,
+    "path": null,
+    "selected": "",
+    "hotCity": false,
+    "glat": 29.338978,
+    "glng": 104.778564
+}, {
+    "cityId": 260,
+    "cityName": "遵义",
+    "cityEnName": "zunyi",
+    "cityAbbrCode": "zy5",
+    "provinceId": 24,
+    "status": 1,
+    "regionCityId": 8,
+    "adCode": "520300",
+    "firstLetter": "Z",
+    "name": null,
+    "path": null,
+    "selected": "",
+    "hotCity": false,
+    "glat": 27.725654,
+    "glng": 106.927389
+}]
+</script>
+<script>(function () {
+    var bp = document.createElement('script');
+    var curProtocol = window.location.protocol.split(':')[0];
+    if (curProtocol === 'https') {
+        bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';
+    }
+    else {
+        bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+    }
+    var s = document.getElementsByTagName("script")[0];
+    s.parentNode.insertBefore(bp, s);
+})();</script>
+<!--[if lte IE 7]>
+<script src="http://static.piaoniu.com/pc/vendors/json3.6787b55e.js"></script><![endif]-->
+<!--[if lte IE 8]>
+<script src="http://static.piaoniu.com/pc/vendors/es5-shim.c3b1fc73.js"></script>
+<script src="http://static.piaoniu.com/pc/vendors/es5-sham.095d9e53.js"></script><![endif]-->
+<script src="js/common.7ec1644e.js"></script><!-- 登录用户-->
+<script>var user = {
+    "userId": 3272130,
+    "mobileNo": "18162865997",
+    "userName": "用户181****5997-RRg9j",
+    "avatar": "",
+    "status": 0,
+    "addTime": 1557748452000,
+    "updateTime": 1557751186000,
+    "score": 5.00,
+    "level": 0,
+    "bio": "",
+    "gender": 0,
+    "birthday": null,
+    "cityId": 16
+}
+</script><!-- 错误监控-->
+<script>Raven.config('https://8f0cab137a7b47769dec9f0dd89f5885@sentry.piaoniu.com/3y', {
+    whitelistUrls: [/www\.piaoniu\.com/],
+    ignoreErrors: [/MyAppGet/, '$UCBrowser']
+}).install()
+</script><!-- 环信-->
+<script>(function () {
+    window.easemobim = window.easemobim || {};
+    var visitor = null
+    if (window.user) {
+        visitor = {
+            phone: user.mobileNo,
+            userNickname: user.userName,
+            description: user.bio
+        }
+    }
+
+    easemobim.config = {
+        hide: true,
+        visitor: visitor,
+        //租户id
+        tenantId: '34323',
+        //环信移动客服域，固定值，请按照示例配置
+        domain: '//kefu.easemob.com',
+        //自己服务器上im.html文件的路径
+        path: 'http://static.piaoniu.com/pc/vendors/huanxin-webim',
+        //访客插件static的路径
+        staticPath: 'http://static.piaoniu.com/pc/vendors/huanxin-webim/static'
+    };
+
+    easemobim.config.path = easemobim.config.path.split(location.protocol).join('')
+    easemobim.config.staticPath = easemobim.config.staticPath.split(location.protocol).join('')
+
+    if (window.easemobExtMsg) {
+        easemobim.config.onready = function () {
+            easemobim.sendExt({
+                ext: {
+                    "type": "custom",
+                    "msgtype": easemobExtMsg
+                }
+            })
+        }
+    }
+})()
+</script><!--引用自己服务器上easemob.js文件的路径-->
+<script src="js/easemob.f3ced40f.js" async="async"></script>
+<script src="js/slim-header.45e0e6b4.js"></script>
+<div class="loading" style="display: none;">加载中...</div>
+<div class="loading" style="display: none;">加载中...</div>
+<div class="overlay" style="display: none; opacity: 0;"></div>
+<div class="light-login quick-login mbox" style="display: none;">
+    <div class="close"></div>
+    <div class="titles">
+        <div class="title-quick-login">快捷登录</div>
+        <div class="title-login">密码登录</div>
+    </div>
+
+    <form method="post" class="form form-quick-login">
+        <div class="row">
+            <input placeholder="手机号" name="ua" maxlength="11" class="input input-mobile">
+        </div>
+        <div class="row row-vcode">
+            <input placeholder="图形验证码" name="vcode" class="input input-vcode">
+            <img src="js/captcha" class="vcode">
+            <!-- <div class="btn btn-vcode">换一张</div> -->
+        </div>
+        <div class="row row-getcode">
+            <input placeholder="验证码" maxlength="6" name="code" class="input input-getcode">
+            <div class="btn btn-getcode disabled">获取验证码</div>
+        </div>
+        <div class="row">
+            <input type="submit" class="btn btn-submit" value="登录">
+        </div>
+        <div class="hint">免注册，登录即创建票王账户</div>
+    </form>
+
+    <form method="post" class="form form-login">
+        <div class="row">
+            <input placeholder="手机号" name="ua" maxlength="11" class="input input-mobile">
+        </div>
+        <div class="row">
+            <input type="password" name="pw" placeholder="密码" class="input input-password">
+        </div>
+        <div class="row row-vcode form-login-vcode">
+            <input placeholder="请输入验证码" name="captcha" class="input input-vcode">
+            <img src="js/captcha" class="vcode">
+        </div>
+        <div class="row">
+            <input type="submit" class="btn btn-submit" value="登录">
+        </div>
+    </form>
+</div>
+<script src="js/bottom.4481684d.js"></script>
+<!--<script src="js/address.b4db8147.js"></script>-->
+</body>
+</html>

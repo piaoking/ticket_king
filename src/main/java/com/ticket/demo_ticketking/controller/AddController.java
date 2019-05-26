@@ -1,7 +1,6 @@
 package com.ticket.demo_ticketking.controller;
 
 import com.ticket.demo_ticketking.po.TbAdd;
-import com.ticket.demo_ticketking.po.TbCity;
 import com.ticket.demo_ticketking.service.IAddService;
 import com.ticket.demo_ticketking.vo.JsonResult;
 import org.springframework.beans.factory.annotation.Autowired;

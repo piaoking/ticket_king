@@ -1,7 +1,6 @@
 package com.ticket.demo_ticketking.configuration;
 
 import at.pollux.thymeleaf.shiro.dialect.ShiroDialect;
-
 import com.ticket.demo_ticketking.shiro.MyRealm;
 import org.apache.shiro.spring.web.ShiroFilterFactoryBean;
 import org.apache.shiro.web.mgt.DefaultWebSecurityManager;

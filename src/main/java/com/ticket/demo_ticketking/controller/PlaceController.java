@@ -1,7 +1,6 @@
 package com.ticket.demo_ticketking.controller;
 
 import com.ticket.demo_ticketking.po.TbPlace;
-import com.ticket.demo_ticketking.po.TbPrice;
 import com.ticket.demo_ticketking.service.IPlaceService;
 import com.ticket.demo_ticketking.vo.JsonResult;
 import org.springframework.beans.factory.annotation.Autowired;

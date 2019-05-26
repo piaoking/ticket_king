@@ -3,8 +3,6 @@ package com.ticket.demo_ticketking.controller;
 import com.github.pagehelper.PageHelper;
 import com.github.pagehelper.PageInfo;
 import com.ticket.demo_ticketking.po.TbLv;
-import com.ticket.demo_ticketking.po.TbOrder;
-import com.ticket.demo_ticketking.po.TbTicket;
 import com.ticket.demo_ticketking.service.ILvService;
 import com.ticket.demo_ticketking.vo.JsonResult;
 import org.springframework.beans.factory.annotation.Autowired;

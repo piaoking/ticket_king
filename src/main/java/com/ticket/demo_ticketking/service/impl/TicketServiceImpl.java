@@ -4,12 +4,9 @@ import com.ticket.demo_ticketking.configuration.UserIdNotFoundException;
 import com.ticket.demo_ticketking.mapper.TicketMapper;
 import com.ticket.demo_ticketking.po.TbTicket;
 import com.ticket.demo_ticketking.service.ITicketService;
-import com.ticket.demo_ticketking.utils.FileUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-import org.springframework.web.multipart.MultipartFile;
 
-import java.io.IOException;
 import java.util.List;
 
 @Service

@@ -1,13 +1,10 @@
 package com.ticket.demo_ticketking.controller;
 
-import com.ticket.demo_ticketking.po.TbCity;
 import com.ticket.demo_ticketking.po.TbShow;
-import com.ticket.demo_ticketking.po.TbSon;
 import com.ticket.demo_ticketking.service.IShowService;
 import com.ticket.demo_ticketking.vo.JsonResult;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
-import org.springframework.stereotype.Service;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;

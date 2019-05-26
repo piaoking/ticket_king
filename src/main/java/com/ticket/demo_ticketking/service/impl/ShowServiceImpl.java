@@ -2,7 +2,6 @@ package com.ticket.demo_ticketking.service.impl;
 
 import com.ticket.demo_ticketking.configuration.UserIdNotFoundException;
 import com.ticket.demo_ticketking.mapper.ShowMapper;
-import com.ticket.demo_ticketking.po.TbCity;
 import com.ticket.demo_ticketking.po.TbShow;
 import com.ticket.demo_ticketking.service.IShowService;
 import org.springframework.beans.factory.annotation.Autowired;
