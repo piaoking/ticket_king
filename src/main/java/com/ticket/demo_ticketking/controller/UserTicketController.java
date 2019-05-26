@@ -37,9 +37,9 @@ public class UserTicketController {
         return null;
     }
     @RequestMapping("/goorders")
-    public String queryOrder(long userId,Model model){
+    public String queryOrder(Long userId,Model model){
         try {
-            TbOrder tbOrder = orderService.queryOrder(userId);
+            List<TbOrder> tbOrder = orderService.queryOrder(1L);
             model.addAttribute("tbOrder",tbOrder);
             return "我的订单";
         } catch (Exception e) {
@@ -90,7 +90,7 @@ public class UserTicketController {
 
 
     @RequestMapping("/insertAdd")
-    public String insertAdd(long userId, String addAdd,String userName,String userTel){
+        public String insertAdd(long userId, String addAdd,String userName,String userTel){
         JsonResult jsonResult = new JsonResult();
         try {
             addUserService.insertAdd(userId,addAdd);

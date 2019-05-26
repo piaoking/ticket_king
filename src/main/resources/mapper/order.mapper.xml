@@ -10,7 +10,7 @@
         <result property="orderSum" column="order_sum" javaType="java.lang.Long"/>
         <result property="orderNum" column="order_num" javaType="java.lang.String"/>
         <result property="orderState" column="order_State" javaType="java.lang.String"/>
-        <result property="orderTime" column="order_time" javaType="java.sql.Date"/>
+        <result property="orderTime" column="order_time" javaType="java.lang.String"/>
         <result property="orderTicketName" column="order_ticket_name" javaType="java.lang.String"/>
         <result property="orderTicketCity" column="order_ticket_city" javaType="java.lang.String"/>
         <result property="orderTicketPlace" column="order_ticket_place" javaType="java.lang.String"/>

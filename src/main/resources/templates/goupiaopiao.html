@@ -829,18 +829,18 @@
 <div class="b2c-submit">
     <div class="row">
         <div class="content">
-            <div class="btn-submit maipiao">立即抢购</div>
+            <div class="btn-submit maipiao" style="margin-left: 30px;">立即抢购</div>
             <span class="postageTip">已有784人购买👑</span></div>
     </div>
 </div>
 <div class="services">
     <div class="label" style="font-size: 12px;color: #666;float: left;">服务承诺</div>
-    <div class="content" style="margin-left: 58px;color: #666666;font-size: 12px;display: inline-block;"><a href="http://www.piaoniu.com/services#service1">无票赔付</a><a
-            href="http://www.piaoniu.com/services#service2">出票保真</a><a href="http://www.piaoniu.com/services#service3">配送保障</a>
+    <div class="content" style="margin-left: 58px;color: #666666;font-size: 12px;display: inline-block;"><a href="http://www.piaoniu.com/services#service1">无票赔付&nbsp;&nbsp;&nbsp;</a><a
+            href="http://www.piaoniu.com/services#service2">出票保真&nbsp;&nbsp;&nbsp;</a><a href="http://www.piaoniu.com/services#service3">配送保障</a>
         <!--a(href='/services#service4') 下单一小时内可退--></div>
 </div>
 </div></div></div>
-<div class="aside" style="margin-top: -400px;left: -100px;">
+<div class="aside" style=" margin-top: -400px;margin-left: 1230px; position: absolute;">
     <div class="rank-action-buttons">
         <div class="rank-partial">
             <div class="title">票牛评分：</div>
@@ -4172,17 +4172,22 @@ var activeCities = [{
 </body>
 <script type="text/javascript" src="js/jquery-3.1.1.js"></script>
 <script type="text/javascript">
+        // $(function(){
+        //     var first = $(".aaas").eq(0).html();
+        //     alert("第一笔数据"+first);
+        // });
     $(function(){
-        var jiage = 380;
+        var jiage = $(".aaas").eq(0).html();
         var jiage2 = 1;
         var zongjia;
-
+        $(".aaas").eq(0).addClass("selected");
     $(".aaas").click(function () {
+
         $(this).parent().find(".cccs").removeClass("selected");
         $(this).addClass("selected");
         jiage = $(this).text();
         zongjia = jiage * jiage2;
-        $("#hhl").text(zongjia);
+        $("#hhl").html("￥"+zongjia);
         alert(jiage);
     });
     $(".ddds").click(function () {
@@ -4190,13 +4195,13 @@ var activeCities = [{
         $(this).addClass("selected");
         jiage2 = $(this).text();
         zongjia = jiage * jiage2;
-        $("#hhl").text(zongjia);
+        $("#hhl").html("￥"+zongjia);
         alert(jiage2);
     });
     $(".maipiao").click(function () {
         zongjia = jiage * jiage2;
         alert(zongjia);
-        window.location.href="buyTicket/shoppingCar/?userId=1&price="+zongjia                                                                                                                 ;
+        window.location.href="buyTicket/shoppingCar/?userId=1&price="+zongjia+"&piaodang="+jiage+"&zuoweishu="+jiage2                                                                                                                 ;
         });
     })
 </script>

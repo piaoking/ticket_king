@@ -1,11 +1,14 @@
 package com.ticket.demo_ticketking;
 
 
+import com.ticket.demo_ticketking.mapper.SeatMapper;
 import com.ticket.demo_ticketking.po.TbIntro;
+import com.ticket.demo_ticketking.po.TbPlace;
 import com.ticket.demo_ticketking.po.TbUser;
 import com.ticket.demo_ticketking.service.IUserService;
 import com.ticket.demo_ticketking.service.OrderBuyService;
 import com.ticket.demo_ticketking.service.PayOrderService;
+import com.ticket.demo_ticketking.service.SeatService;
 import com.ticket.demo_ticketking.vo.OrderBuyVO;
 import com.ticket.demo_ticketking.vo.PayOrderVO;
 import org.junit.Test;
@@ -25,6 +28,8 @@ public class DemoTicketKingApplicationTests {
     private IUserService iUserService;
     @Autowired
     private PayOrderService payOrderService;
+    @Autowired
+    private SeatService seatService;
     @Test
     public void contextLoads() {
     }
@@ -61,6 +66,25 @@ public class DemoTicketKingApplicationTests {
         try {
             PayOrderVO payOrderVO = payOrderService.payOrder("00100");
             System.out.println(payOrderVO);
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+    }
+    @Test
+    public void test5(){
+        int [][] a = {{12345},{12345},{12345},{12345},{12345}};
+        for(int i = 0;i< a.length;i++){
+            for(int j=0;j<a[i].length;j++){
+                System.out.println(a[i][j]);
+            }
+        }
+
+    }
+    @Test
+    public void test6(){
+        try {
+            TbPlace tbPlace = seatService.querySeat(2);
+            System.out.println(tbPlace.getPlaceSeat());
         } catch (Exception e) {
             e.printStackTrace();
         }

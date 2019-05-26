@@ -8,6 +8,15 @@ public class TbPlace {
   private String placeSeat;
   private String placeAdd;
 
+  @Override
+  public String toString() {
+    return "TbPlace{" +
+            "placeId=" + placeId +
+            ", placeName='" + placeName + '\'' +
+            ", placeSeat='" + placeSeat + '\'' +
+            ", placeAdd='" + placeAdd + '\'' +
+            '}';
+  }
 
   public long getPlaceId() {
     return placeId;
